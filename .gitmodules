@@ -1,0 +1,3 @@
+[submodule "dotfiles-original"]
+	path = dotfiles-original
+	url = https://github.com/ojii3/dotfiles.git
