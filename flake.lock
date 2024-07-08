@@ -40,6 +40,22 @@
         "type": "github"
       }
     },
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719990998,
+        "narHash": "sha256-equD2SYBjjEPUGo35umOvZTFCQGn1SJ7gqI/In92CVY=",
+        "ref": "refs/heads/main",
+        "rev": "0ee61505cf8801e69ee498550fab76494a88e516",
+        "revCount": 276,
+        "type": "git",
+        "url": "file:dotfiles"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:dotfiles"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": "nixpkgs-lib"
@@ -378,6 +394,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, dotfiles, ... }: {
 	programs.neovim = {
 		enable = true;
 		viAlias = true;
@@ -7,7 +7,7 @@
 	};
 
   home.file.".config/nvim" = {
-    source = ./dotfiles/.config/nvim;
+    source = ./nvim;
     recursive = true;
   };
 }
