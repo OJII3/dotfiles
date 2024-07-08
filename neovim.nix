@@ -1,4 +1,4 @@
-{ pkgs, lib, dotfiles, ... }: {
+{ pkgs, lib, ... }: {
 	programs.neovim = {
 		enable = true;
 		viAlias = true;
