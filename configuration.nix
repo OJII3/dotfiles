@@ -81,7 +81,7 @@
 
   # Enable the XFCE Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -216,6 +216,11 @@
     enable = true;
     trustedInterfaces = ["tailscale0"];
     allowedUDPPorts = [config.services.tailscale.port];
+  };
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
   };
 
   # Open ports in the firewall.

@@ -12,13 +12,17 @@
 		ripgrep
 		pingu
     fzf
+    tig
+    delta
+    yazi
 	];
-	imports = [
-		./git.nix
-		./neovim.nix
-		./dev.nix
-		./browser.nix
-		./direnv.nix
+  imports = [
+    ./git.nix
+    ./neovim.nix
+    ./dev.nix
+    ./browser.nix
+    ./direnv.nix
     ./apps.nix
-	];
+    ./desktop.nix
+  ];
 }

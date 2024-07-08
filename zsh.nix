@@ -15,4 +15,5 @@
 			ya = "yazi";
 		};
 	};
+  programs.starship.enable = true;
 }
