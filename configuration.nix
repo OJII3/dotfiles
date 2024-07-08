@@ -80,7 +80,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
@@ -124,20 +124,20 @@
     #media-session.enable = true;
   };
 
-  services.xremap = {
-  	userName = "ojii3";
-	serviceMode = "system";
-	config = {
-		modmap = [
-			{
-				name = "Smart CapsLock";
-				remap = {
-					CapsLock = ["Ctrl_L"];
-				};
-			}
-		];
-	};
-  };
+  # services.xremap = {
+  # 	userName = "ojii3";
+	# serviceMode = "system";
+	# config = {
+		# modmap = [
+			# {
+				# name = "Smart CapsLock";
+				# remap = {
+					# CapsLock = ["Ctrl_L"];
+				# };
+			# }
+		# ];
+	# };
+  # };
 
   #services.flatpak.enable = true;
   #xdg.portal.enable = true;
@@ -202,6 +202,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     lshw
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
