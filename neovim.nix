@@ -3,6 +3,11 @@
 		enable = true;
 		viAlias = true;
 		
-		extraLuaConfig = builtins.readFile ~/.config/nvim/init.lua;
+		# extraLuaConfig = builtins.readFile ./dotfiles/.config/nvim/init.lua;
 	};
+
+  home.file.".config/nvim" = {
+    source = ./dotfiles/.config/nvim;
+    recursive = true;
+  };
 }

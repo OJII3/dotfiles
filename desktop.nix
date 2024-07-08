@@ -3,5 +3,5 @@
     playerctl
     wl-clipboard
   ];
-  home.file."~/.config/hypr/hyprland.conf".text = builtins.readFile ./hypr/hyprland.conf;
+  home.file."~/.config/hypr/hyprland.conf".text = builtins.readFile ./dotfiles/hypr/hyprland.conf;
 }
