@@ -4,5 +4,7 @@
     discord
     discord-ptb
     slack
+    parsec-bin
+    evince
   ];
 }

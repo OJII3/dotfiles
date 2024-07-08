@@ -12,4 +12,9 @@
 			editor = "nvim";
 		};
 	};
+
+  home.packages = with pkgs; [
+    tig
+    delta
+  ];
 }
