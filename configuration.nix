@@ -80,7 +80,7 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
@@ -96,17 +96,17 @@
 
   # optimus prime
   hardware.nvidia = {
-	modesetting.enable = true;
-	powerManagement.enable = false;
-	open = false;
-        nvidiaSettings = true;
-	prime = {
-		offload.enable = false;
-		sync.enable = true;
-		# to check, command `sudo lshw -c diplay`
-		intelBusId = "PCI:0:2:0";
-		nvidiaBusId = "PCI:1:0:0";
-	};
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    open = false;
+      nvidiaSettings = true;
+    prime = {
+      offload.enable = false;
+      sync.enable = true;
+      # to check, command `sudo lshw -c diplay`
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 
   # Enable sound with pipewire.
@@ -124,20 +124,20 @@
     #media-session.enable = true;
   };
 
-  # services.xremap = {
-  # 	userName = "ojii3";
-	# serviceMode = "system";
-	# config = {
-		# modmap = [
-			# {
-				# name = "Smart CapsLock";
-				# remap = {
-					# CapsLock = ["Ctrl_L"];
-				# };
-			# }
-		# ];
-	# };
-  # };
+  services.xremap = {
+    userName = "ojii3";
+    serviceMode = "system";
+    config = {
+      modmap = [
+        {
+        name = "Smart CapsLock";
+        remap = {
+            CapsLock = ["Ctrl_L" "Esc"];
+          };
+        }
+      ];
+    };
+  };
 
   #services.flatpak.enable = true;
   #xdg.portal.enable = true;
@@ -156,7 +156,6 @@
     shell = pkgs.zsh;
   };
 
-  # Install firefox.
   programs = {
     git = {
       enable = true;
@@ -166,13 +165,7 @@
       defaultEditor = true;
       viAlias = true;
     };
-    # starship = {
-    #   enable = true;
-    # };
     zsh = {
-      enable = true;
-    };
-    firefox = {
       enable = true;
     };
     noisetorch.enable = true;
@@ -220,9 +213,9 @@
   services.tailscale.enable = true;
 
   networking.firewall = {
-	enable = true;
-	trustedInterfaces = ["tailscale0"];
-	allowedUDPPorts = [config.services.tailscale.port];
+    enable = true;
+    trustedInterfaces = ["tailscale0"];
+    allowedUDPPorts = [config.services.tailscale.port];
   };
 
   # Open ports in the firewall.
@@ -240,14 +233,14 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
   nix = {
-	settings = {
-		auto-optimise-store = true;
-		experimental-features = ["nix-command" "flakes"];
-    	};
-	gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 7d";
-	};
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 }
