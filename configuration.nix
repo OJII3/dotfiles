@@ -132,7 +132,7 @@
 			{
 				name = "Smart CapsLock";
 				remap = {
-					CapsLock = ["Ctrl_L" "Esc"];
+					CapsLock = ["Ctrl_L"];
 				};
 			}
 		];
