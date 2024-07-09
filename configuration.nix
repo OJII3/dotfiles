@@ -53,7 +53,10 @@
 
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = [pkgs.fcitx5-mozc];
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-skk
+    ];
   };
 
   fonts = {
@@ -196,6 +199,7 @@
     wget
     lshw
     kitty
+    wayvnc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -209,7 +213,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh{
+    enable = true;
+    ports = [ 22222 ];
+  };
   services.tailscale.enable = true;
 
   networking.firewall = {
@@ -220,7 +227,7 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    wayland.enable = true;
   };
 
   # Open ports in the firewall.

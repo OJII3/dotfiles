@@ -1,0 +1,92 @@
+Checks: "-*,
+  llvm-include-order,
+  clang-analyzer-*,
+  clang-diagnostic-*,
+  cppcoreguidelines-*,
+  -cppcoreguidelines-avoid-magic-numbers,
+  portability-*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  performance-for-range-copy,
+  performance-inefficient-vector-operation,
+  performance-type-promotion-in-math-fn,
+  performance-unnecessary-copy-initialization,
+  performance-unnecessary-value-param,
+  readability-convert-member-functions-to-static,
+  readability-make-member-function-const,
+  readability-non-const-parameter,
+  readability-else-after-return,
+  readability-implicit-bool-conversion,
+  readability-simplify-boolean-expr,
+  readability-static-accessed-through-instance,
+  readability-qualified-auto,
+  readability-redundant-control-flow,
+  readability-redundant-member-init,
+  readability-const-return-type,
+  readability-identifier-naming,
+  -readability-uppercase-literal-suffix,
+  modernize-make-shared,
+  modernize-make-unique,
+  modernize-use-auto,
+  modernize-use-default-member-init,
+  modernize-use-emplace,
+  modernize-use-equals-delete,
+  modernize-use-nullptr,
+  modernize-use-override,
+  modernize-use-using,
+  -modernize-loop-convert,
+  -modernize-use-trailing-return-type,
+  misc-static-assert,
+  misc-unused-parameters,
+  misc-redundant-expression
+  "
+HeaderFilterRegex: ".*"
+CheckOptions:
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+#   - key: readability-identifier-naming.ClassMemberCase
+#     value: lower_case
+#   - key: readability-identifier-naming.ConstexprVariableCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.ConstexprVariablePrefix
+#     value: ""
+#   - key: readability-identifier-naming.EnumCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.EnumConstantCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.EnumConstantPrefix
+#     value: ""
+#   - key: readability-identifier-naming.FunctionCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.GlobalConstantCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.GlobalConstantPrefix
+#     value: ""
+#   - key: readability-identifier-naming.StaticConstantCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.StaticConstantPrefix
+#     value: ""
+#   - key: readability-identifier-naming.StaticVariableCase
+#     value: lower_case
+#   - key: readability-identifier-naming.MacroDefinitionCase
+#     value: UPPER_CASE
+#   - key: readability-identifier-naming.MacroDefinitionIgnoredRegexp
+#     value: "^[A-Z]+(_[A-Z]+)*_$"
+#   - key: readability-identifier-naming.MemberCase
+#     value: lower_case
+#   - key: readability-identifier-naming.PrivateMemberSuffix
+#     value: _
+#   - key: readability-identifier-naming.PublicMemberSuffix
+#     value: ""
+#   - key: readability-identifier-naming.NamespaceCase
+#     value: lower_case
+#   - key: readability-identifier-naming.ParameterCase
+#     value: lower_case
+#   - key: readability-identifier-naming.TypeAliasCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.TypedefCase
+#     value: CamelCase
+#   - key: readability-identifier-naming.VariableCase
+#     value: lower_case
+#   - key: readability-identifier-naming.IgnoreMainLikeFunctions
+#     value: 1

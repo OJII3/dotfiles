@@ -1,0 +1,36 @@
+set log-options = --pretty=raw
+
+# n / p で単位ごとの移動
+bind diff    n      :/^@@
+bind diff    p      :?^@@
+bind diff    <Esc>n :/^diff --(git|cc)
+bind diff    <Esc>p :?^diff --(git|cc)
+bind stage   n      :/^@@
+bind stage   p      :?^@@
+bind stage   <Esc>n :/^diff --(git|cc)
+bind stage   <Esc>p :?^diff --(git|cc)
+bind pager   n      :/^@@
+bind pager   p      :?^@@
+bind pager   <Esc>n :/^diff --(git|cc)
+bind pager   <Esc>p :?^diff --(git|cc)
+bind log     n      :/^commit
+bind log     p      :?^commit
+
+# F で fetch (default: :toggle file-name / :toggle commit-title-refs)
+bind generic F      ?git fetch %(remote)
+bind main    F      ?git fetch %(remote)
+
+# Alt-f で :toggle file-name / :toggle commit-title-refs
+bind generic <Esc>f :toggle file-name
+bind main    <Esc>f :toggle commit-title-refs
+
+# U で pull
+bind generic U      ?git pull %(remote)
+
+# Alt-u で該当ブランチを更新
+bind main    <Esc>u ?sh -c "git checkout %(branch) && git pull %(remote) --ff-only && git checkout -"
+bind diff    <Esc>u ?sh -c "git checkout %(branch) && git pull %(remote) --ff-only && git checkout -"
+bind refs    <Esc>u ?sh -c "git checkout %(branch) && git pull %(remote) --ff-only && git checkout -"
+
+# P で remote への push
+bind generic P      ?git push -u %(remote) %(repo:head)

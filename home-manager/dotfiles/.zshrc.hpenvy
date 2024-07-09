@@ -1,0 +1,2 @@
+export ROS_DOMAIN_ID=42
+source /opt/ros/humble/setup.zsh

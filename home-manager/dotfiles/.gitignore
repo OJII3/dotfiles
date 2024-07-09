@@ -1,0 +1,120 @@
+*
+
+!/.config/
+
+# editor, ime
+!/.config/nvim/
+!/.config/nvim/**
+/.config/nvim/lazy-lock.json
+!.vimrc
+!/.vim/
+!/.vim/coc-settings.json
+!/.nanorc
+!/.ideavimrc
+!/.config/JetBrains/
+!/.config/JetBrains/* 
+!/.config/JetBrains/*/settings.zip
+!/.config/helix/
+!/.config/helix/**
+# custom scripts
+!/.config/wallpaper/
+!/.config/wallpaper/**
+# gtk
+!/.config/gtk-3.0/
+!/.config/gtk-3.0/settings.ini
+!/.config/gtk-4.0/
+!/.config/gtk-4.0/settings.ini
+!/.config/gtk-4.0/gtk.css
+!/.gtkrc-2.0
+!/.config/user-dirs.dirs
+!/.config/conky/
+!/.config/conky/**
+# i3
+!/.config/i3/
+!/.config/i3/**
+# xmonad
+!/.xmonad/
+!/.xmonad/**.hs
+# hyprland
+!/.config/hypr/
+!/.config/hypr/**
+!/.config/waybar/
+!/.config/waybar/**
+!/.config/anyrun/
+!/.config/anyrun/**
+!/.config/swaync/
+!/.config/swaync/**
+!/.config/swaylock/
+!/.config/swaylock/**
+# launcher, status bar
+!/.config/rofi/
+!/.config/rofi/**
+!/.config/picom/
+!/.config/picom/**
+!/.config/polybar/
+!/.config/polybar/**
+!/.config/tint2/
+!/.config/tint2/**
+!/.config/dunst/
+!/.config/dunst/**
+# xfce4
+!/.config/xfce4/
+!/.config/xfce4/xfconf
+!/.config/xfce4/xfconf/xfce-perchannel-xml/
+!/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+# kde
+!/.config/kglobalshortcutsrc
+!/.config/kdedefaults/
+!/.config/kdedefaults/*
+!/.config/kdeglobals
+!/.config/kxkbrc
+!/.config/lattedockrc
+# music player daemon
+!/.config/mpd/
+!/.config/mpd/mpd.conf
+# ranger (file brwoser)
+!/.config/ranger
+!/.config/ranger/**
+.config/ranger/plugins
+# terminal
+!/.config/wezterm/
+!/.config/wezterm/**
+!/.config/kitty/
+!/.config/kitty/**
+!/.config/rio/
+!/.config/rio/**
+# zsh 
+!.zshrc
+!.zshrc.pre
+!.zshrc.local
+!.zshrc.*
+# bash
+!.bashrc
+!.bash_aliases
+# misc
+!/.config/fcitx5/
+!/.config/fcitx5/config
+!/.config/fcitx5/profile
+!/.config/starship.toml
+!/.config/libskk/
+!/.config/libskk/**
+!/.github/
+!/.github/**
+!/.clang-tidy
+!/.clang-format
+!/.xprofile
+!/.xprofile.*
+!/.Xkbmap
+!/.Xmodmap
+!/.latexmkrc
+!/.tigrc
+!.profile
+!.gitconfig_shared
+!.gitignore
+!.tmux.conf
+!.gitmodules
+
+!install.sh
+!update.sh
+!custom_scripts/
+!README.md

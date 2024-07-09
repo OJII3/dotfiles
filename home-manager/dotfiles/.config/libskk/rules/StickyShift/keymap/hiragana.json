@@ -1,0 +1,9 @@
+{
+  "include": ["default/hiragana"],
+  "define": {
+    "keymap": {
+      "Muhenkan": "set-input-mode-latin",
+      ";": "start-preedit-no-delete"
+    }
+  }
+}

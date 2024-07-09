@@ -1,0 +1,15 @@
+configuration {
+  modes: [window,run,drun,filebrowser,"power-menu:~/.config/rofi/rofi-power-menu"];
+  font: "JetBranins Mono Font:style=Bold 13";
+  combi-modes: [drun,power-menu];
+  drun-display-format: "{name}";
+  sidebar-mode: true;
+  kb-cancel: "Escape,Control+bracketleft,Super_L";
+  kb-mode-previous: "Alt+h";
+  kb-mode-next: "Alt+l";
+  show-icons: true;
+  icon-theme: "Colloid-teal";
+  application-fallback-icon: "/usr/share/icons/WhiteSur/apps/scalable/default-application.svg";
+}
+
+@theme "/home/ojii3/.config/rofi/launchpad.rasi"

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+.  ~/.config/wallpaper/launch.sh &
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+# export GTK_USE_PORTAL=1
+export GDK_DEBUG=portals
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx   # blender will not work
+export XMODIFIERS=@im=fcitx
+export GLFW_IM_MODULE=ibus    # for kitty (ibus itself is not needed)
+fcitx5 &
+

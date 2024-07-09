@@ -1,0 +1,79 @@
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+autoload -U compinit && compinit
+bindkey -d && bindkey -e # emacs mode (bash like)
+
+# ssh agent
+# eval $(ssh-agent)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# common aliases
+alias vi=nvim
+alias ya=yazi 
+alias he="helix"
+alias g='git'
+alias g-g='git log --graph --oneline --decorate --branches --all'
+alias lgit='lazygit'
+alias reflectorjp='sudo reflector --country 'Japan' --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias ls="ls --color=auto"
+alias la="ls -a"
+alias ll="ls -l"
+alias ip="ip -c"
+alias diff="diff --color=auto"
+
+export EDITOR=nvim
+
+eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
+# node ################################################################
+
+# export PNPM_HOME="/home/ojii3/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+
+if [ -e "$HOME/.nodenv" ]
+then
+	export NODENV_ROOT="$HOME/.nodenv"
+	export PATH="$NODENV_ROOT/bin:$PATH"
+	if command -v nodenv 1>/dev/null 2>&1
+	then
+		eval "$(nodenv init -)"
+	fi
+fi
+
+eval "$(mise activate)"
+
+# volta
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
+# bun completions
+[ -s "/home/ojii3/.bun/_bun" ] && source "/home/ojii3/.bun/_bun"
+
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
+
+
+# python ##############################################################
+
+source "$HOME/.rye/env" 
+
+# rust ################################################################
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ojii3/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ojii3/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/ojii3/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ojii3/google-cloud-sdk/completion.zsh.inc'; fi

@@ -7,10 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dotfiles = {
-      url = "git+file:dotfiles";
-      flake = false;
-    };
   };
 
   outputs = inputs: {
@@ -35,7 +31,7 @@
 					inherit inputs;
 				};
 				modules = [
-					./home.nix
+					./home-manager/home.nix
 				];
 			};
  		};

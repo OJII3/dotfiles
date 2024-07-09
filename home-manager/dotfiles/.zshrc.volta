@@ -1,0 +1,10 @@
+autoload -Uz add-zsh-hook
+function chpwd_volta_install() {
+  # .node-versionが存在するかチェック
+  if [[ -e ".node-version" ]]; then
+    # .node-versionから内容を読み取る
+    content=$(cat .node-version)
+    volta install node@$content --quiet
+  fi
+}
+add-zsh-hook chpwd chpwd_volta_install

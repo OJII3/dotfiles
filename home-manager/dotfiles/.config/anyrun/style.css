@@ -1,0 +1,26 @@
+#window {
+  background: transparent;
+}
+
+#entry {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+#main {
+  border-radius: 8px;
+  background: #373b3e;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 8px;
+}
+
+#match {
+  padding: 4px;
+}
+
+#match:selected {
+  background: #039393;
+  color: #ffffff;
+  border-radius: 8px;
+}

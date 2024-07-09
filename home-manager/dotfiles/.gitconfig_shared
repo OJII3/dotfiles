@@ -1,0 +1,20 @@
+[user]
+	name = OJII3
+	email = 84656786+OJII3@users.noreply.github.com
+[gpg]
+	program = gpg
+[commit]
+  gpgsign = true
+[tag]
+	gpgsign = true
+[core]
+	editor = vim
+  pager = delta
+[init]
+	defaultBranch = main
+[alias]
+  st = status
+  sw = switch
+  c = commit -m
+  pr = !gh pr
+
