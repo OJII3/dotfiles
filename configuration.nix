@@ -55,6 +55,7 @@
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
       fcitx5-mozc
+      fcitx5-gtk
       fcitx5-skk
     ];
   };
@@ -213,7 +214,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh{
+  services.openssh = {
     enable = true;
     ports = [ 22222 ];
   };
@@ -227,7 +228,7 @@
 
   programs.hyprland = {
     enable = true;
-    wayland.enable = true;
+    xwayland.enable = true;
   };
 
   # Open ports in the firewall.
