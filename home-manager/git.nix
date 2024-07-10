@@ -13,12 +13,12 @@
       d = "diff";
       l = "log";
       a = "add";
-      pr = "!gh pr"
+      pr = "!gh pr";
       repo = "!gh repo";
-    }
+    };
     extraConfig = {
-      push = { autoSetupRemote = true; }
-    }
+      push = { autoSetupRemote = true; };
+    };
 	};
 
 	programs.gh = {
