@@ -17,6 +17,8 @@
     yazi
     tmux
     imagemagick
+    fastfetch
+    termpdfpy
 	];
   imports = [
     ./git.nix
@@ -26,5 +28,6 @@
     ./direnv.nix
     ./apps.nix
     ./desktop.nix
+    ./zsh.nix
   ];
 }

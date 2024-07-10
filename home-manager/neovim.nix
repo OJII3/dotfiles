@@ -5,16 +5,18 @@
 
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [
+      # tree-sitter
+      # lsp, formatter, linter, etc
       biome
       deno
       nodejs
       tree-sitter
-      luarocks
       tinymist
       typst-lsp
       stylua
       lua-language-server
       nil
+      typescript-language-server
     ];
 
     # extraLuaConfig = builtins.readFile ./dotfiles/.config/nvim/init.lua;
