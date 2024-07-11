@@ -6,9 +6,14 @@
     hyprlock
     anyrun
     waybar
+    grim
     playerctl
     wl-clipboard
   ];
+  programs.waybar = {
+    enable = true;
+  };
+
   home.file.".config/hypr" = {
     source = ./dotfiles/.config/hypr;
     recursive = true;
