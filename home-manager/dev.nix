@@ -13,6 +13,10 @@
     tmux
     imagemagick
     htop
+    patchelf
+    unzip
+    zip
+    unar
 
     # cli apps
     fastfetch

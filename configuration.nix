@@ -167,7 +167,7 @@
   users.users.ojii3 = {
     isNormalUser = true;
     description = "ojii3";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -202,6 +202,7 @@
         setSocketVariable = true;
       };
     };
+    virtualbox.host.enable = true;
   };
 
   # Allow unfree packages
