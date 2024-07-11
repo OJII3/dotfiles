@@ -7,13 +7,17 @@ vim.keymap.set("v", "j", "gj", { noremap = true, silent = true })
 vim.keymap.set("v", "k", "gk", { noremap = true, silent = true })
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-j>", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-k>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<C-b>h", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-b><C-h>", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-b>l", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-b><C-l>", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-b>d", "<cmd>BufferDelete<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-b><C-d>", "<cmd>BufferClose<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b>h", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b><C-h>", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b>l", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b><C-l>", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b>d", "<cmd>BufferDelete<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-b><C-d>", "<cmd>BufferClose<CR>", { noremap = true, silent = true })
 
 -- plugins --
 

@@ -14,5 +14,6 @@
     ./apps.nix
     ./desktop.nix
     ./zsh.nix
+    ./fcitx.nix
   ];
 }

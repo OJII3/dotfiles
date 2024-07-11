@@ -7,8 +7,8 @@
       c = "commit -m";
       co = "checkout";
       s = "status";
-      p = "pull";
-      pu = "push";
+      pl = "pull";
+      ph = "push";
       b = "branch";
       d = "diff";
       l = "log";

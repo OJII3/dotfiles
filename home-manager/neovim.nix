@@ -1,16 +1,16 @@
 { pkgs, lib, ... }: {
-	programs.neovim = {
-		enable = true;
-		viAlias = true;
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
 
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [
       # tree-sitter
-      # lsp, formatter, linter, etc
-      biome
       deno
       nodejs
       tree-sitter
+      # lsp, formatter, linter, etc
+      biome
       tinymist
       typst-lsp
       stylua

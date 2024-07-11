@@ -12,6 +12,7 @@
     yazi
     tmux
     imagemagick
+    htop
 
     # cli apps
     fastfetch
@@ -25,6 +26,7 @@
     go
     rye 
     typst
+    dotnet-sdk
   ];
 }
     

@@ -7,5 +7,9 @@
     parsec-bin
     mate.atril
     lutris
+    unityhub
+    blender
+    gimp
+    mpv
   ];
 }

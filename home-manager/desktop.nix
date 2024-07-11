@@ -7,6 +7,7 @@
     anyrun
     waybar
     grim
+    slurp
     playerctl
     wl-clipboard
   ];

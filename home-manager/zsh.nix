@@ -6,6 +6,7 @@
 
 		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
+    historySubstringSearch.enable = true;
 
 		shellAliases = {
 			cat = "bat";
@@ -21,6 +22,14 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+
+    # fzf
+    initExtra = ''
+      if [ -n "$\{commands[fzf-share]\}" ]; then
+        source "$(fzf-share)/key-bindings.zsh"
+        source "$(fzf-share)/completion.zsh"
+      fi
+    '';
 	};
 
   programs.starship.enable = true;
