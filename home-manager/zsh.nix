@@ -18,6 +18,7 @@
       la = "ls -a";
       g = "git";
       ya = "yazi";
+      tpdf = "termpdf.py";
     };
 
     history = {

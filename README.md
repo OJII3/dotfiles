@@ -1,6 +1,17 @@
-# NixOS and Home-Manager Config
+# NixOS & Arch Linux Dotfiles
 
-I Preserved and Reused The Former dotfiles for Arch Linux as much as Possible
+## NixOS
+
+```bash
+sudo nixos-rebuild switch --flake .#myNixOS
+home-manager switch --flake .#myHomeManager
+```
+
+## Arch Linux
+
+```bash
+./home-manager/dotfiles/install.sh
+```
 
 ## Awesome Apps
 

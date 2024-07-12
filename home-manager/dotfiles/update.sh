@@ -5,6 +5,7 @@
 
 git pull
 
+DOT_DIR="$HOME/dotfiles/home-manager/dotfiles"
 echo "Fetched Remote Changes!"
 
 for f in .??*; do
@@ -17,8 +18,8 @@ for f in .??*; do
   [ "$f" = "custom_scripts" ] && continue
 
   if ! [ -e "$HOME/$f" ]; then
-    ln -sn "$HOME/dotfiles/$f" "$HOME/$f"
-    echo "Created symlink: $HOME/dotfiles/$f -> $HOME/$f"
+    ln -sn "$DOT_DIR/$f" "$HOME/$f"
+    echo "Created symlink: $DOT_DIR/$f -> $HOME/$f"
   fi
 done
 
