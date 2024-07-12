@@ -5,8 +5,8 @@
     enableCompletion = true;
 
     autosuggestion.enable = true;
-    autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
-    defaultKeymap = "vicmd";
+    # autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
+    defaultKeymap = "emacs";
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
 
@@ -28,6 +28,8 @@
 
     # fzf
     initExtra = ''
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
       if [ -n "$\{commands[fzf-share]\}" ]; then
         source "$(fzf-share)/key-bindings.zsh"
         source "$(fzf-share)/completion.zsh"
