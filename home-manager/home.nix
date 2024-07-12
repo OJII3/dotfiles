@@ -15,5 +15,6 @@
     ./desktop.nix
     ./zsh.nix
     ./fcitx.nix
+    ./terminal.nix
   ];
 }

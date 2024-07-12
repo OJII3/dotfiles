@@ -4,7 +4,10 @@
   ];
   programs.kitty = {
     enable = true;
-    theme = "Tokyo Night";
-    font = "HackGen35 Console NF";
+  };
+
+  home.file.".config/kitty" = {
+    source = ./dotfiles/.config/kitty;
+    recursive = true;
   };
 }
