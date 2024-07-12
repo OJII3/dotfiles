@@ -5,6 +5,8 @@
     enableCompletion = true;
 
     autosuggestion.enable = true;
+    autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
+    defaultKeymap = "vicmd";
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
 
@@ -22,6 +24,7 @@
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
     };
+
 
     # fzf
     initExtra = ''
