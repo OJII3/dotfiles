@@ -8,8 +8,9 @@ I Preserved and Reused The Former dotfiles for Arch Linux as much as Possible
   - Waybar
   - Anyrun (launcher)
 - Neovim
-  - Lazy (plugin manager)
-  - Mason (lsp manager)
+  - Lazy.nvim (plugin manager)
+  - Mason.nvim (lsp manager)
+  - Image.nvim (image viewr for kitty)
 - Zsh
   - Starship
   - fzf (for extended history search)
@@ -17,3 +18,5 @@ I Preserved and Reused The Former dotfiles for Arch Linux as much as Possible
 - Lutris (game launcher, installer)
 - Fcitx5
   - skk
+- Kitty (terminal which has own image protocol)
+- termpdf.py (graphical pdf viewer which works inside kitty)
