@@ -35,6 +35,7 @@
     rye 
     typst
     dotnet-sdk
+    rustup
   ];
 }
     

@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -9,21 +9,20 @@
       deno
       nodejs
       tree-sitter
-      # lsp, formatter, linter, etc
-      biome
-      tinymist
-      typst-lsp
-      stylua
-      lua-language-server
-      nil
-      typescript-language-server
     ];
-
-    # extraLuaConfig = builtins.readFile ./dotfiles/.config/nvim/init.lua;
   };
 
   home.file.".config/nvim" = {
     source = ./dotfiles/.config/nvim;
+    recursive = true;
+  };
+
+  home.packages = with pkgs; [
+    skk-dicts
+  ];
+
+  home.file.".skk" = {
+    source = "${pkgs.skk-dicts}/share";
     recursive = true;
   };
 }
