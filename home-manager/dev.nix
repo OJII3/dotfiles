@@ -17,6 +17,9 @@
     unzip
     zip
     unar
+    gnupg
+    ldm
+    udisks2
 
     # cli apps
     fastfetch

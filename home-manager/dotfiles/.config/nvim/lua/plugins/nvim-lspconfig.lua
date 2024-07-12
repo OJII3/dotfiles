@@ -23,9 +23,15 @@ return {
 		},
 	},
 	config = function()
-		require("mason").setup()
+		require("mason").setup({
+			PATH = "append",
+		})
 		local mason_lsp = require("mason-lspconfig")
 		local nvim_lsp = require("lspconfig")
+
+		local mason = require("mason")
+		local mason_lsp = require("mason-lspconfig")
+
 		mason_lsp.setup({
 			ensure_installed = {
 				-- "astro",

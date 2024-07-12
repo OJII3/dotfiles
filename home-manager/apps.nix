@@ -11,5 +11,6 @@
     blender
     gimp
     mpv
+    realvnc-vnc-viewer
   ];
 }
