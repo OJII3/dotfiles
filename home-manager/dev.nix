@@ -26,6 +26,7 @@
     termpdfpy
     byobu
     ollama
+    online-judge-tools
 
     # languages
     gcc
