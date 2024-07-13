@@ -16,6 +16,11 @@
       pr = "!gh pr";
       repo = "!gh repo";
     };
+    ignores = [
+      "**/termpdf.log"
+      "**/__pycache__"
+      "**/.mypy_cache"
+    ];
     extraConfig = {
       push = { autoSetupRemote = true; };
     };
