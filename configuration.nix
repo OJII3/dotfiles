@@ -90,6 +90,7 @@
 
   # Enable the XFCE Desktop Environment.
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "chili";
   # services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
@@ -214,6 +215,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    sddm-chili-theme
     lshw
     kitty
     wayvnc
