@@ -14,5 +14,6 @@
     gimp
     mpv
     realvnc-vnc-viewer
+    gnome-keyring
   ];
 }
