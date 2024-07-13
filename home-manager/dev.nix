@@ -27,6 +27,7 @@
     byobu
     ollama
     online-judge-tools
+    pdftk
 
     # languages
     gcc
