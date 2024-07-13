@@ -9,6 +9,16 @@
       deno
       nodejs
       tree-sitter
+      # lsp
+      typst-lsp
+      tinymist
+      lua-language-server
+      stylua
+      typescript-language-server
+      eslint_d
+      pyright
+      ruff
+      shellcheck
     ];
   };
 
