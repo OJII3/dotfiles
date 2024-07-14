@@ -78,6 +78,7 @@ return {
 				"typescriptreact",
 				"typst",
 				"yaml",
+				"nix",
 			},
 			settings = {
 				rootMarkers = { ".git/" },
@@ -101,6 +102,17 @@ return {
 					typescriptreact = { eslint_linter, prettier, eslint_formatter, biome },
 					typst = { typstyle },
 					yaml = { yamllint },
+          nix = {
+            {
+              lintCommand = "nix-linter",
+              lintFormats = {
+                "%f:%l:%c: %m",
+              },
+              lintStdin = true,
+              formatCommand = "nixpkgs-fmt",
+              formatStdin = true,
+            },
+          }
 				}),
 			},
 		})

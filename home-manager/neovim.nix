@@ -10,15 +10,21 @@
       nodejs
       tree-sitter
       # lsp
+      efm-langserver
       typst-lsp
       tinymist
       lua-language-server
       stylua
       typescript-language-server
       eslint_d
+      prettierd
+      stylelint
       pyright
       ruff
       shellcheck
+      nil
+      nixpkgs-fmt
+      nixpkgs-lint
     ];
   };
 
