@@ -15,5 +15,6 @@
     mpv
     realvnc-vnc-viewer
     gnome-keyring
+    cloudflare-warp
   ];
 }
