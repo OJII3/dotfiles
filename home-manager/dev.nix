@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-	home.packages = with pkgs; [
+  home.packages = with pkgs; [
     # utilities
     bat
     bottom
@@ -33,10 +33,11 @@
     gcc
     cmake
     go
-    rye 
+    rye
     typst
     dotnet-sdk
     rustup
+    python312
   ];
 }
     
