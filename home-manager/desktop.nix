@@ -10,6 +10,10 @@
     slurp
     playerctl
     wl-clipboard
+    networkmanagerapplet
+    swaynotificationcenter
+    rose-pine-gtk-theme
+    rose-pine-icon-theme
   ];
   programs.waybar = {
     enable = true;
@@ -27,4 +31,13 @@
     source = ./dotfiles/.config/waybar;
     recursive = true;
   };
+  home.file.".config/gtk-3.0" = {
+    source = ./dotfiles/.config/gtk-3.0;
+    recursive = true;
+  };
+  home.file.".config/gtk-4.0" = {
+    source = ./dotfiles/.config/gtk-4.0;
+    recursive = true;
+  };
 }
+
