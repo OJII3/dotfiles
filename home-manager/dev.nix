@@ -20,6 +20,7 @@
     gnupg
     ldm
     udisks2
+    brightnessctl
 
     # cli apps
     fastfetch
