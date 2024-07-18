@@ -6,10 +6,6 @@
 
 {
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  # boot.blacklistedKernelModules = [ "nvidia" "nvidia_drm" "nvidia_modeset"];
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
