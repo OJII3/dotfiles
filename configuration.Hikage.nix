@@ -8,7 +8,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./hardware-configuration.Hikage.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
@@ -87,7 +87,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amd" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable the XFCE Desktop Environment.
   # services.displayManager.sddm.enable = true;
