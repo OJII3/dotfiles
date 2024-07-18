@@ -25,6 +25,7 @@
       nil
       nixpkgs-fmt
       nixpkgs-lint
+      clang-tools
     ];
   };
 

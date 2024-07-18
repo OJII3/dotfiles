@@ -24,6 +24,7 @@
     # cli apps
     fastfetch
     termpdfpy
+    libsixel
     byobu
     ollama
     online-judge-tools

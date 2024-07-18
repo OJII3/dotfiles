@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     kitty
+    foot
   ];
   programs.kitty = {
     enable = true;
