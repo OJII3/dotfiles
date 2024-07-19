@@ -42,4 +42,8 @@
     source = "${pkgs.skk-dicts}/share";
     recursive = true;
   };
+
+  home.file.".clang-tidy".source = ./dotfiles/.clang-tidy;
+  home.file.".clang-format".source = ./dotfiles/.clang-format;
 }
+

@@ -21,15 +21,22 @@
 
   # Bootloader.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  boot.loader.grub =
-    {
-      enable = true;
-      device = "/dev/nvme0";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      #     efiSysMountPoint = "/boot";
     };
-  boot.loader.efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
+    #   grub =
+    #     {
+    #       enable = true;
+    #       efiSupport = true;
+    #       device = "/dev/disk/by-uuid/0F55-ACC6";
+    #     };
+  };
 
   networking.hostName = "Hikage"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -37,6 +44,7 @@
 
   # Enable networking
   # networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.macAddress = "random";
 
   # Set your time zone.
   # time.timeZone = "Asia/Tokyo";
