@@ -18,5 +18,6 @@
     cloudflare-warp
     kdePackages.kdeconnect-kde
     rquickshare
+    xournalpp
   ];
 }

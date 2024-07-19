@@ -213,6 +213,7 @@
     wineWowPackages.staging
     winetricks
     vulkan-tools
+    usbutils
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -244,6 +245,15 @@
       { from = 1714; to = 1764; } # KDE Connect
     ];
   };
+
+  services.fprintd = {
+    enable = true;
+    # services.fprintd.tod.enable = true;
+  };
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.devmon.enable = true;
 
   # programs.hyprland = {
   #   enable = true;
@@ -277,3 +287,4 @@
   #   };
   # };
 }
+

@@ -31,6 +31,10 @@
     source = ./dotfiles/.config/waybar;
     recursive = true;
   };
+  home.file.".config/swaync" = {
+    source = ./dotfiles/.config/swaync;
+    recursive = true;
+  };
   home.file.".config/gtk-3.0" = {
     source = ./dotfiles/.config/gtk-3.0;
     recursive = true;

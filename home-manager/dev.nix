@@ -18,8 +18,6 @@
     zip
     unar
     gnupg
-    ldm
-    udisks2
     brightnessctl
 
     # cli apps
