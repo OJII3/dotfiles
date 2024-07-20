@@ -11,7 +11,7 @@
 
   outputs = inputs: {
     nixosConfigurations = {
-      myNixOS = inputs.nixpkgs.lib.nixosSystem {
+      Renge = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
