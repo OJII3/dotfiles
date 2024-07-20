@@ -6,8 +6,6 @@ return {
       function! s:skkeleton_init() abort
         call skkeleton#config({
           \ 'globalDictionaries': [
-            \ '/usr/share/skk/SKK-JISYO.L',
-            \ '/usr/share/skk/SKK-JISYO.fullname',
             \ '~/.skk/SKK-JISYO.L',
             \ ],
           \ })

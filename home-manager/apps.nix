@@ -4,7 +4,7 @@
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
     discord
-    discord-ptb
+    # discord-ptb
     slack
     parsec-bin
     mate.atril

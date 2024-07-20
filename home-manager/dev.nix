@@ -24,20 +24,26 @@
     fastfetch
     termpdfpy
     libsixel
-    byobu
     ollama
     online-judge-tools
     pdftk
 
+    # sdk
+    google-cloud-sdk
+    terraform
+
     # languages
     gcc
     cmake
+    gnumake
     go
     rye
     typst
     dotnet-sdk
     rustup
-    python312
+    python311
+    mise
+    bun
   ];
 }
     

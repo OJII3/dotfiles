@@ -256,7 +256,6 @@
 
   services.fprintd = {
     enable = true;
-    # services.fprintd.tod.enable = true;
   };
 
   services.udisks2.enable = true;
