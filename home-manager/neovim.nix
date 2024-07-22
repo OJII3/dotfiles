@@ -15,9 +15,10 @@
       tinymist
       lua-language-server
       stylua
+      biome
       typescript-language-server
-      eslint_d
       vscode-langservers-extracted
+      eslint_d
       prettierd
       stylelint
       pyright
@@ -27,6 +28,12 @@
       nixpkgs-fmt
       nixpkgs-lint
       clang-tools
+      python311Packages.debugpy
+      dockerfile-language-server-nodejs
+      yaml-language-server
+      yamlfmt
+      yamllint
+      vim-language-server
     ];
   };
 
