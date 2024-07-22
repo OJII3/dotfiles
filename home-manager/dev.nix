@@ -19,6 +19,7 @@
     unar
     gnupg
     brightnessctl
+    wev
 
     # cli apps
     fastfetch
@@ -30,6 +31,7 @@
 
     # sdk
     google-cloud-sdk
+    google-cloud-sql-proxy
     terraform
 
     # languages

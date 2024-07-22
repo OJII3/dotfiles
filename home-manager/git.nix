@@ -1,7 +1,7 @@
 { pkgs, ... }: {
-	programs.git = {
-		enable = true;
-		userName = "ojii3";
+  programs.git = {
+    enable = true;
+    userName = "ojii3";
     userEmail = "84656786+OJII3@users.noreply.github.com";
     aliases = {
       c = "commit -m";
@@ -20,18 +20,19 @@
       "**/termpdf.log"
       "**/__pycache__"
       "**/.mypy_cache"
+      ".direnv"
     ];
     extraConfig = {
       push = { autoSetupRemote = true; };
     };
-	};
+  };
 
-	programs.gh = {
-		enable = true;
-		extensions = with pkgs; [gh-markdown-preview gh-dash gh-copilot];
-		settings = {
-			editor = "nvim";
-		};
-	};
+  programs.gh = {
+    enable = true;
+    extensions = with pkgs; [ gh-markdown-preview gh-dash gh-copilot ];
+    settings = {
+      editor = "nvim";
+    };
+  };
 
 }

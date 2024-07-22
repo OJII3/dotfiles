@@ -17,6 +17,7 @@
       stylua
       typescript-language-server
       eslint_d
+      vscode-langservers-extracted
       prettierd
       stylelint
       pyright

@@ -19,5 +19,6 @@
     kdePackages.kdeconnect-kde
     rquickshare
     xournalpp
+    xfce.thunar
   ];
 }

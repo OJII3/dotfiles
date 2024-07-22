@@ -10,6 +10,7 @@
     slurp
     playerctl
     wl-clipboard
+    nwg-displays
     networkmanagerapplet
     swaynotificationcenter
     rose-pine-gtk-theme
