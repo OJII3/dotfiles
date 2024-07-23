@@ -7,7 +7,7 @@
     # discord-ptb
     slack
     parsec-bin
-    mate.atril
+    evince
     lutris
     unityhub
     blender
@@ -16,6 +16,7 @@
     realvnc-vnc-viewer
     gnome-keyring
     cloudflare-warp
+    cloudflared
     kdePackages.kdeconnect-kde
     rquickshare
     xournalpp

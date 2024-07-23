@@ -164,6 +164,7 @@
       dedicatedServer.openFirewall = true;
     };
   };
+  programs.nix-ld.enable = true;
 
   virtualisation = {
     docker = {

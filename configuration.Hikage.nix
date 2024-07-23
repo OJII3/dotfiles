@@ -195,16 +195,17 @@
   #   };
   # };
 
-  # virtualisation = {
-  #   docker = {
-  #     enable = true;
-  #     rootless = {
-  #       enable = true;
-  #       setSocketVariable = true;
-  #     };
-  #   };
-  #   virtualbox.host.enable = true;
-  # };
+  virtualisation = {
+    waydroid.enable = true;
+    #   docker = {
+    #     enable = true;
+    #     rootless = {
+    #       enable = true;
+    #       setSocketVariable = true;
+    #     };
+    #   };
+    #   virtualbox.host.enable = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -222,6 +223,8 @@
     winetricks
     vulkan-tools
     usbutils
+    cloudflare-warp
+    config.nur.repos.ataraxiasjel.waydroid-script # nur
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -242,6 +245,9 @@
   };
   services.tailscale.enable = true;
 
+  systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
+  systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
+
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" ];
@@ -257,6 +263,8 @@
   services.fprintd = {
     enable = true;
   };
+
+  security.pam.services.login.fprintAuth = false;
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
