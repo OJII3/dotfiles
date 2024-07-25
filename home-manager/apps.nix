@@ -20,6 +20,8 @@
     kdePackages.kdeconnect-kde
     rquickshare
     xournalpp
+    libreoffice-qt
+    hunspell
     xfce.thunar
   ];
 }
