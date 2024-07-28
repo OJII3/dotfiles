@@ -7,6 +7,7 @@ return {
 		local ts = require("nvim-treesitter.configs")
 		ts.setup({
 			ensure_installed = {
+				"astro",
 				"bash",
 				"c",
 				"cmake",

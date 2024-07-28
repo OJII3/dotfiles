@@ -9,10 +9,11 @@
       deno
       nodejs
       tree-sitter
-      # lsp
+      # lsp, formatter, linter
       efm-langserver
       typst-lsp
       tinymist
+      typstyle
       lua-language-server
       stylua
       biome
@@ -34,6 +35,7 @@
       yamlfmt
       yamllint
       vim-language-server
+      # dap
     ];
   };
 
