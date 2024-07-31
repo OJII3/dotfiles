@@ -35,6 +35,7 @@
       yamlfmt
       yamllint
       vim-language-server
+      rust-analyzer
       # dap
     ];
   };
