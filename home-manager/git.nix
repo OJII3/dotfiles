@@ -7,6 +7,7 @@
       c = "commit -m";
       co = "checkout";
       s = "status";
+      sw = "switch";
       pl = "pull";
       ph = "push";
       b = "branch";
@@ -25,6 +26,8 @@
     extraConfig = {
       push = { autoSetupRemote = true; };
       init = { defaultBranch = "main"; };
+      user = { signingKey = "37547FAD690A6133"; };
+      commit = { gpgSign = true; };
     };
   };
 
