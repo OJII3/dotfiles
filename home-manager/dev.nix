@@ -30,10 +30,11 @@
     online-judge-tools
     pdftk
 
-    # sdk
+    # sdk, toolchain
     google-cloud-sdk
     google-cloud-sql-proxy
     terraform
+    mdbook
 
     # languages
     gcc
