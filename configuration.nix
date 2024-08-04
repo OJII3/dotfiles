@@ -125,6 +125,14 @@
           };
         }
       ];
+      keymap = [
+        {
+          name = "Super Muhenkan";
+          remap = {
+            Muhenkan = "Super_L";
+          };
+        }
+      ];
     };
   };
 
