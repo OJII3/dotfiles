@@ -45,7 +45,9 @@ vim.keymap.set("n", "s", "<Plug>Lightspeed_s", { noremap = true, silent = true }
 -- builtin lsp
 vim.keymap.set("n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = true }) -- rename
 vim.keymap.set("n", "<Leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", { silent = true }) -- format
-vim.keymap.set("n", "<Leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", { silent = true }) -- code
+-- vim.keymap.set("n", "<Leader>a", vim.lsp.buf.code_action, { silent = true }) -- code
+vim.keymap.set("n", "<leader>a", require("actions-preview").code_actions, { silent = true }) -- code
+vim.keymap.set("n", "<C-.>", require("actions-preview").code_actions, { silent = true }) -- code
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { silent = true }) -- hover
 vim.keymap.set("n", "ge", vim.diagnostic.open_float, { silent = true }) -- code
 vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, { silent = true }) -- references
