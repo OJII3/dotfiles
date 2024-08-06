@@ -23,5 +23,6 @@
     libreoffice-qt
     hunspell
     xfce.thunar
+    gpu-screen-recorder-gtk
   ];
 }
