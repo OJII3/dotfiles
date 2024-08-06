@@ -4,16 +4,20 @@
     userName = "ojii3";
     userEmail = "84656786+OJII3@users.noreply.github.com";
     aliases = {
+      a = "add";
+      b = "branch";
       c = "commit -m";
       co = "checkout";
-      s = "status";
-      sw = "switch";
-      pl = "pull";
-      ph = "push";
-      b = "branch";
       d = "diff";
+      f = "fetch";
+      g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       l = "log";
-      a = "add";
+      ph = "push";
+      pl = "pull";
+      rs = "reset";
+      s = "status";
+      t = "tag";
+      sw = "switch";
       pr = "!gh pr";
       repo = "!gh repo";
     };

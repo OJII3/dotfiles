@@ -24,6 +24,7 @@
 
     # cli apps
     fastfetch
+    nyancat
     termpdfpy
     libsixel
     ollama
