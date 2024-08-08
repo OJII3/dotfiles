@@ -23,7 +23,7 @@
           inherit inputs;
         };
       };
-      Hikage = inputs.nixpkgs.lib.nixosSystem {
+      Komachan = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           inputs.nur.nixosModules.nur
