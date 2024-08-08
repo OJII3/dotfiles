@@ -18,7 +18,7 @@
     zip
     unar
     lzip
-    gnupg
+    # gnupg
     brightnessctl
     wev
 

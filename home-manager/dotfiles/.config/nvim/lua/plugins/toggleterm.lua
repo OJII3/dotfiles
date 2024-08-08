@@ -13,7 +13,7 @@ return {
 		end
 	end,
 	keys = {
-		{ "<C-n>", "<cmd>ToggleTerm<CR>", mode = "t" },
+		{ "<C-\\>", "<cmd>ToggleTerm<CR>", mode = "t" },
 		{ "<space>tv", "<cmd>ToggleTerm direction=vertical size=100<CR>", mode = "n" },
 		{ "<space>th", "<cmd>ToggleTerm direction=horizontal size=16<CR>", mode = "n" },
 		{ "<space>tf", "<cmd>ToggleTerm direction=float<CR>", mode = "n" },

@@ -88,8 +88,8 @@
   #   fontDir.enable = true;
   #   fontconfig = {
   #     defaultFonts = {
-  #       serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-  #       sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
+  #       serif = [ "Source Han Serif" "Noto Color Emoji" ];
+  #       sansSerif = [ "Source Han Snas" "Noto Color Emoji" ];
   #       monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
   #       emoji = [ "Noto Color Emoji" ];
   #     };
@@ -263,8 +263,8 @@
   services.fprintd = {
     enable = true;
   };
-
-  security.pam.services.login.fprintAuth = false;
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.hyprlock.fprintAuth = true;
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
