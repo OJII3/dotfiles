@@ -28,7 +28,7 @@
         modules = [
           inputs.nur.nixosModules.nur
           ./configuration.nix
-          ./configuration.Hikage.nix
+          ./configuration.Komachan.nix
         ];
         specialArgs = {
           inherit inputs;
