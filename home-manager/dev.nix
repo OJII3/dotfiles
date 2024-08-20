@@ -27,6 +27,7 @@
     nyancat
     termpdfpy
     libsixel
+    libwebp
     ollama
     online-judge-tools
     pdftk

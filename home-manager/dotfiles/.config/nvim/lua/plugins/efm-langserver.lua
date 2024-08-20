@@ -23,7 +23,7 @@ return {
 		local eslint_linter = require("efmls-configs.linters.eslint_d")
 		local eslint_formatter = require("efmls-configs.formatters.eslint_d")
 		local prettier = require("efmls-configs.formatters.prettier_d")
-		-- local biome = require("efmls-configs.formatters.biome")
+		local biome = require("efmls-configs.formatters.biome")
 		-- Python
 		local ruff = require("efmls-configs.formatters.ruff")
 		local black = require("efmls-configs.formatters.black")
@@ -33,7 +33,6 @@ return {
 		local mypy = require("efmls-configs.linters.mypy")
 		-- Haskell
 		local formulu = require("efmls-configs.formatters.fourmolu")
-		-- local prettypst = require("efmls-configs.formatters.prettypst")
 		local textlint = require("efmls-configs.linters.textlint")
 		local typstyle = require("efmls-configs.formatters.typstyle")
 
@@ -41,17 +40,13 @@ return {
 		local biome = {
 			formatCommand = string.format("%s %s", "node_modules/.bin/biome", "check --apply --stdin-file-path '${INPUT}'"),
 			formatStdin = true,
-			roootMarkers = { "biome.json" },
+			roootMarkers = { "biome.json", "biome.jsonc" },
 		}
 		local cmake_format = {
 			formatCommand = "cmake-format ${--line-width:100} -",
 			formatStdin = true,
 			rootMarkers = { "CMakeLists.txt" },
 		}
-		-- local prettypst = {
-		-- 	formatCommand = "prettypst --use-std-in --use-std-out",
-		-- 	formatStdin = true,
-		-- }
 
 		nvim_lsp_efm.setup({
 			init_options = {
@@ -83,10 +78,10 @@ return {
 			settings = {
 				rootMarkers = { ".git/" },
 				languages = vim.tbl_extend("force", languages, {
+					astro = { biome },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
 					cpp = { clang_format, clang_tidy },
-					-- cs = { dotnet_format },
 					css = { prettier, stylelint_linter },
 					haskell = { formulu },
 					javascript = { eslint_linter, biome, prettier, eslint_formatter },
@@ -102,17 +97,17 @@ return {
 					typescriptreact = { eslint_linter, prettier, eslint_formatter, biome },
 					typst = { typstyle },
 					yaml = { yamllint },
-          nix = {
-            {
-              lintCommand = "nix-linter",
-              lintFormats = {
-                "%f:%l:%c: %m",
-              },
-              lintStdin = true,
-              formatCommand = "nixpkgs-fmt",
-              formatStdin = true,
-            },
-          }
+					nix = {
+						{
+							lintCommand = "nix-linter",
+							lintFormats = {
+								"%f:%l:%c: %m",
+							},
+							lintStdin = true,
+							formatCommand = "nixpkgs-fmt",
+							formatStdin = true,
+						},
+					},
 				}),
 			},
 		})

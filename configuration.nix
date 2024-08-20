@@ -124,6 +124,12 @@
             CapsLock = [ "Ctrl_L" "Esc" ];
           };
         }
+        {
+          name = "Super Space";
+          remap = {
+            Muhenkan = [ "Super_L" "Backspace" ];
+          };
+        }
       ];
       keymap = [
       ];
