@@ -31,6 +31,7 @@
     ollama
     online-judge-tools
     pdftk
+    python312Packages.huggingface-hub
 
     # sdk, toolchain
     google-cloud-sdk
@@ -51,5 +52,6 @@
     mise
     bun
   ];
+
 }
     

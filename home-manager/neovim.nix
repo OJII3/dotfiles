@@ -11,7 +11,7 @@
       tree-sitter
       # lsp, formatter, linter
       efm-langserver
-      typst-lsp
+      # typst-lsp
       tinymist
       typstyle
       lua-language-server
