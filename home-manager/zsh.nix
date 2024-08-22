@@ -43,7 +43,7 @@
   # home.packages = with pkgs; [
   #   libglvnd
   # ];
-  home.file.".zshrc".text = "export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:$LD_LIBRARY_PATH\n";
+  # home.file.".zshrc".text = "export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:$LD_LIBRARY_PATH\n";
 
   programs.starship.enable = true;
 }

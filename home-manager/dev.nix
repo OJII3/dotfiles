@@ -18,14 +18,13 @@
     zip
     unar
     lzip
-    # gnupg
     brightnessctl
     wev
 
     # cli apps
     fastfetch
     nyancat
-    termpdfpy
+    # termpdfpy  # <- broken
     libsixel
     libwebp
     ollama
