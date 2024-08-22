@@ -12,6 +12,7 @@
       f = "fetch";
       g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       l = "log";
+      m = "merge";
       ph = "push";
       pl = "pull";
       rs = "reset";
