@@ -20,6 +20,7 @@
     lzip
     brightnessctl
     wev
+    ocs-url
 
     # cli apps
     fastfetch
