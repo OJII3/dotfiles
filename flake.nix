@@ -12,12 +12,12 @@
 
   outputs = inputs: {
     nixosConfigurations = {
-      Renge = inputs.nixpkgs.lib.nixosSystem {
+      Renchon = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           inputs.nur.nixosModules.nur
           ./configuration.nix
-          ./configuration.Renge.nix
+          ./configuration.Renchon.nix
         ];
         specialArgs = {
           inherit inputs;
