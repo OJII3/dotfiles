@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     hyprpaper
-    hyprcursor
+    # hyprcursor # prefer using gtk cursor
     hypridle
     hyprlock
     anyrun
