@@ -44,4 +44,7 @@
     };
   };
 
+  home.file.".tigrc" = {
+    source = ./dotfiles/.tigrc;
+  };
 }
