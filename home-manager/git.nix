@@ -26,6 +26,7 @@
       "**/termpdf.log"
       "**/__pycache__"
       "**/.mypy_cache"
+      "**/.ruff_cache"
       ".direnv"
     ];
     extraConfig = {
