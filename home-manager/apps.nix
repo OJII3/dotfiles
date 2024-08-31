@@ -13,6 +13,7 @@
     blender
     gimp
     mpv
+    inkscape-with-extensions
     realvnc-vnc-viewer
     gnome-keyring
     cloudflare-warp
