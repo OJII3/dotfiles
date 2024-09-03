@@ -19,8 +19,8 @@
       biome
       typescript-language-server
       vscode-langservers-extracted
-      eslint_d
-      prettierd
+      nodePackages.eslint
+      nodePackages.prettier
       stylelint
       pyright
       ruff

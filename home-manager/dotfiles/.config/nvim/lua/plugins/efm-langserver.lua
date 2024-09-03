@@ -21,8 +21,8 @@ return {
 		-- local stylelint_formatter = require("efmls-configs.formatters.stylelint")
 		-- TypeScript, JavaScript
 		local eslint_linter = require("efmls-configs.linters.eslint_d")
-		local eslint_formatter = require("efmls-configs.formatters.eslint_d")
-		local prettier = require("efmls-configs.formatters.prettier_d")
+		local eslint_formatter = require("efmls-configs.formatters.eslint")
+		local prettier = require("efmls-configs.formatters.prettier")
 		local biome = require("efmls-configs.formatters.biome")
 		-- Python
 		local ruff = require("efmls-configs.formatters.ruff")
@@ -37,16 +37,18 @@ return {
 		local typstyle = require("efmls-configs.formatters.typstyle")
 
 		-- customized or manually installed linters/formatters
-		local biome = {
-			formatCommand = string.format("%s %s", "node_modules/.bin/biome", "check --apply --stdin-file-path '${INPUT}'"),
-			formatStdin = true,
-			roootMarkers = { "biome.json", "biome.jsonc" },
-		}
+		-- local biome = {
+		-- 	formatCommand = string.format("%s %s", "node_modules/.bin/biome", "check --apply --stdin-file-path '${INPUT}'"),
+		-- 	formatStdin = true,
+		-- 	roootMarkers = { "biome.json", "biome.jsonc" },
+		-- }
 		local cmake_format = {
 			formatCommand = "cmake-format ${--line-width:100} -",
 			formatStdin = true,
 			rootMarkers = { "CMakeLists.txt" },
 		}
+
+
 
 		nvim_lsp_efm.setup({
 			init_options = {
@@ -78,7 +80,7 @@ return {
 			settings = {
 				rootMarkers = { ".git/" },
 				languages = vim.tbl_extend("force", languages, {
-					astro = { biome },
+					astro = { biome, prettier },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
 					cpp = { clang_format, clang_tidy },

@@ -73,13 +73,14 @@ return {
 					return
 				end
 
-				local opts = {
+				local default_opts = {
 					capabilities = vim.tbl_deep_extend(
 						"force",
 						vim.lsp.protocol.make_client_capabilities(),
 						require("cmp_nvim_lsp").default_capabilities()
 					),
 				}
+				local opts = {}
 				if server_name == "denols" then
 					-- INFO: Neccessary for avoiding conflict with other js severs
 					opts = {
@@ -127,7 +128,7 @@ return {
 						formatterMode = "typstyle",
 					}
 				end
-				nvim_lsp[server_name].setup(opts)
+				nvim_lsp[server_name].setup(vim.tbl_deep_extend("force", default_opts, opts))
 			end,
 		})
 
