@@ -50,6 +50,7 @@
       noto-fonts-cjk-serif
       noto-fonts-cjk-sans
       noto-fonts-emoji
+      twitter-color-emoji
       source-han-sans
       source-han-serif
       jetbrains-mono
@@ -126,9 +127,9 @@
           };
         }
         {
-          name = "Super Space";
+          name = "Super Muhenkan";
           remap = {
-            Muhenkan = [ "Super_L" "Backspace" ];
+            Muhenkan = "Super_L";
           };
         }
       ];
@@ -265,3 +266,4 @@
     };
   };
 }
+
