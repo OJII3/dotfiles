@@ -179,6 +179,7 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
     };
+    wireshark.enable = true;
   };
   programs.nix-ld.enable = true;
 

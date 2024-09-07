@@ -26,7 +26,6 @@
     xfce.thunar
     gpu-screen-recorder-gtk
     vlc
-    wireshark
     # pureref
   ];
 }
