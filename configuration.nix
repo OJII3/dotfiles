@@ -132,6 +132,12 @@
             Muhenkan = "Super_L";
           };
         }
+        {
+          name = "Mouse Back to Numpad .";
+          remap = {
+            BTN_8 = "KEY_KPDOT";
+          };
+        }
       ];
       keymap = [
       ];
