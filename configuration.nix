@@ -154,7 +154,7 @@
   users.users.ojii3 = {
     isNormalUser = true;
     description = "ojii3";
-    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" ];
     packages = with pkgs; [
       #  thunderbird
     ];

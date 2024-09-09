@@ -22,6 +22,9 @@ return {
 			ft = { "json", "yaml", "toml" },
 		},
 	},
+	opts = {
+		format = { timeout_ms = 50000 },
+	},
 	config = function()
 		require("mason").setup({
 			PATH = "append",

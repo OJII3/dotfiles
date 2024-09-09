@@ -20,7 +20,7 @@ return {
 		local stylelint_linter = require("efmls-configs.linters.stylelint")
 		-- local stylelint_formatter = require("efmls-configs.formatters.stylelint")
 		-- TypeScript, JavaScript
-		local eslint_linter = require("efmls-configs.linters.eslint_d")
+		local eslint_linter = require("efmls-configs.linters.eslint")
 		local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
 		local biome = require("efmls-configs.formatters.biome")
@@ -48,14 +48,13 @@ return {
 			rootMarkers = { "CMakeLists.txt" },
 		}
 
-
-
 		nvim_lsp_efm.setup({
 			init_options = {
 				documentFormatting = true,
 				codeAction = true,
 			},
 			filetypes = {
+				"astro",
 				"c",
 				"cmake",
 				"cpp",
@@ -80,7 +79,7 @@ return {
 			settings = {
 				rootMarkers = { ".git/" },
 				languages = vim.tbl_extend("force", languages, {
-					astro = { biome, prettier },
+					astro = { prettier, biome },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
 					cpp = { clang_format, clang_tidy },
