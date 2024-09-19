@@ -223,7 +223,9 @@
     winetricks
     vulkan-tools
     usbutils
-    cloudflare-warp
+    nix-index
+    cloudflared
+    cloudflare-warp # for warp-taskbar, not for warp-cli or warp-svc
     config.nur.repos.ataraxiasjel.waydroid-script # nur
   ];
   environment.pathsToLink = [ "/share/zsh" ];
@@ -235,6 +237,11 @@
     enable = true;
     enableSSHSupport = true;
   };
+  programs.weylus = {
+    enable = true;
+    users = [ "ojii3" ];
+    openFirewall = true;
+  };
 
   # List services that you want to enable:
 
@@ -243,15 +250,45 @@
     enable = true;
     ports = [ 22222 ];
   };
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
+  # make sure to enable auto-connect in the warp profile settings
+  services.cloudflare-warp = {
+    enable = true;
+    openFirewall = true;
+  };
+  systemd.user.warp-taskbar.wantedBy = [ "graphical-session.target" ];
+  # systemd.user.services.warp-taskbar = {
+  #   enable = true;
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.cloudflare-warp}/bin/warp-taskbar";
+  #     Restart = "always";
+  #   };
+  # };
 
-  systemd.packages = [ pkgs.cloudflare-warp ]; # for warp-cli
-  systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
+  # users.users.cloudflared = {
+  #   group = "cloudflared";
+  #   isSystemUser = true;
+  # };
+  # users.groups.cloudflared = { };
+  #
+  # systemd.services."Komachan_Cloudflared" = {
+  #   wantedBy = [ "multi-user.target" ];
+  #   after = [ "network.target" ];
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=eyJhIjoiYzQwMGE0ZDA0NGJmNDY1NTAwNmMzMjQ1MDM2ZmRiNjgiLCJ0IjoiNjE5NjYzMjAtNWU3Zi00ZGUwLWE3YmUtN2FmYjVkNWUxNGM3IiwicyI6Ijg2bGp1Z24zQmFuVWxrWnpDM0s4VlNsS1FIS3JsWldIcEI5bTJUdkxJL1k9In0=";
+  #     Restart = "always";
+  #     User = "cloudflared";
+  #     Group = "cloudflared";
+  #   };
+  # };
 
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" ];
-    allowedUDPPorts = [ config.services.tailscale.port ];
+    allowedUDPPorts = [ 5900 ]; # VNC
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];
@@ -264,23 +301,12 @@
     enable = true;
   };
   security.pam.services.login.fprintAuth = true;
-  security.pam.services.hyprlock.fprintAuth = true;
+  # security.pam.services.hyprlock.fprintAuth = true;
+  # security.pam.services.gdm-password.fprintAuth = true;
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
   services.devmon.enable = true;
-
-  # programs.hyprland = {
-  #   enable = true;
-  #   xwayland.enable = true;
-  # };
-  # programs.kdeconnect.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   services.tlp.enable = true;
   services.tlp.settings =
