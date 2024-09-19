@@ -35,16 +35,11 @@
         source "$(fzf-share)/key-bindings.zsh"
         source "$(fzf-share)/completion.zsh"
       fi
+
+      export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:${pkgs.glib.out}/lib:$LD_LIBRARY_PATH\n
     '';
 
   };
-
-
-  home.packages = with pkgs; [
-    libglvnd
-    glibc
-  ];
-  home.file.".zshrc".text = "export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:${pkgs.glib.out}/lib:$LD_LIBRARY_PATH\n";
 
   programs.starship.enable = true;
 }

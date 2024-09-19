@@ -15,8 +15,7 @@
     mpv
     inkscape-with-extensions
     realvnc-vnc-viewer
-    gnome-keyring
-    cloudflare-warp
+    # gnome-keyring
     cloudflared
     kdePackages.kdeconnect-kde
     rquickshare
@@ -26,7 +25,6 @@
     xfce.thunar
     gpu-screen-recorder-gtk
     vlc
-    wireshark
     # pureref
   ];
 }

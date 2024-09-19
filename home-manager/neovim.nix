@@ -3,7 +3,7 @@
     enable = true;
     viAlias = true;
 
-    extraLuaPackages = ps: [ ps.magick ];
+    extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
       # tree-sitter
       deno
