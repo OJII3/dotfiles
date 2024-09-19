@@ -1,11 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = function()
-		require("nvim-treesitter.install").update({ with_sync = true })
+		require("nvim-treesitter.install").update({ with_sync = false })
 	end,
 	config = function()
-		local ts = require("nvim-treesitter.configs")
-		ts.setup({
+		local ts_configs = require("nvim-treesitter.configs")
+		ts_configs.setup({
 			ensure_installed = {
 				"astro",
 				"bash",

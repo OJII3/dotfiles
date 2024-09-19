@@ -1,7 +1,7 @@
 return {
 	"mattn/efm-langserver",
 	dependencies = {
-		{ "neovim/nvim-lspconfig" },
+		-- { "neovim/nvim-lspconfig" },
 		{ "creativenull/efmls-configs-nvim" },
 	},
 	config = function()

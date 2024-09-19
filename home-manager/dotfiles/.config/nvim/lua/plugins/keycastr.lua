@@ -19,5 +19,5 @@ return {
 		{ "<leader>kh", "<cmd>lua require('keycastr').hide()<CR>", mode = "n" },
 		{ "<leader>ks", "<cmd>lua require('keycastr').show()<CR>", mode = "n" },
 	},
-  event = "VeryLazy",
+	event = "VeryLazy",
 }

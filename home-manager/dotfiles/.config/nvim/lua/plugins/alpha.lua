@@ -2,7 +2,7 @@ return {
 	"goolord/alpha-nvim",
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
-		{ "3rd/image.nvim" },
+		-- { "3rd/image.nvim" },
 	},
 	lazy = false,
 	config = function()
@@ -24,7 +24,7 @@ return {
 			-- })
 			local image = api.from_file("/home/ojii3/.config/nvim/media/hatsune-miku-chibi.png", {
 				x = vim.api.nvim_win_get_width(0) / 2 - 20,
-        y = 5,
+				y = 5,
 			})
 			if image ~= nil then
 				-- dashboard.section.buttons.val = {}

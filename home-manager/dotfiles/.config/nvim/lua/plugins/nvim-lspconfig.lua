@@ -63,7 +63,7 @@ return {
 				"tailwindcss",
 				"taplo",
 				"texlab",
-				"tsserver",
+				-- "ts_ls",
 				"tinymist",
 				"vimls",
 				"yamlls",

@@ -5,6 +5,5 @@ return {
 			theme = "tokyonight",
 		},
 	},
-  event = "VimEnter",
+	event = "VimEnter",
 }
-

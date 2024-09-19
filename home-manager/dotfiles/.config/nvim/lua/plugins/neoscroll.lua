@@ -31,5 +31,5 @@ return {
 		{ "zz" },
 		{ "zb" },
 	},
-  event = "BufRead",
+	event = "BufRead",
 }

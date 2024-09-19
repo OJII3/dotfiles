@@ -7,5 +7,5 @@ return {
 	keys = {
 		{ "<CR>", "<Plug>(kensaku-search-replace)<CR>", mode = "c" },
 	},
-  lazy = false,
+	lazy = false,
 }
