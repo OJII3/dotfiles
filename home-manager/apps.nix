@@ -25,6 +25,5 @@
     xfce.thunar
     gpu-screen-recorder-gtk
     vlc
-    # pureref
   ];
 }

@@ -11,14 +11,13 @@
     historySubstringSearch.enable = true;
 
     shellAliases = {
-      cat = "bat";
       grep = "rg";
       ls = "ls --color=auto";
       ll = "ls -l";
       la = "ls -a";
       g = "git";
       ya = "yazi";
-      tpdf = "termpdf.py";
+      termpdf = "termpdf.py";
     };
 
     history = {

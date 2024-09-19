@@ -259,14 +259,6 @@
     enable = true;
     openFirewall = true;
   };
-  systemd.user.warp-taskbar.wantedBy = [ "graphical-session.target" ];
-  # systemd.user.services.warp-taskbar = {
-  #   enable = true;
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.cloudflare-warp}/bin/warp-taskbar";
-  #     Restart = "always";
-  #   };
-  # };
 
   # users.users.cloudflared = {
   #   group = "cloudflared";
