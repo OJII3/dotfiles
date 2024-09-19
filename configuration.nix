@@ -66,17 +66,50 @@
         monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
         emoji = [ "Noto Color Emoji" ];
       };
+      localConf = ''
+        <?xml version="1.0"?>
+         <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+         <fontconfig>
+           <description>Change default fonts for Steam client</description>
+           <match>
+             <test name="prgname">
+               <string>steamwebhelper</string>
+             </test>
+             <test name="family" qual="any">
+               <string>sans-serif</string>
+             </test>
+             <edit mode="prepend" name="family">
+               <string>Migu 1P</string>
+             </edit>
+           </match>
+         </fontconfig>
+      '';
     };
   };
 
-  # Enable the X11 windowing system.
   # services.xserver.enable = true;
   # services.xserver.videoDrivers = [ "nvidiaBeta" ];
 
-  # Enable the XFCE Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.theme = "chili";
-  # services.xserver.desktopManager.xfce.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.theme = "chili";
+  services.greetd = {
+    enable = true;
+  };
+  programs.regreet = {
+    enable = true;
+    settings = {
+      background = {
+        path = "/home/ojii3/dotfiles/images/haxxor-bunny.png";
+        fit = "cover";
+      };
+      GTK = {
+        theme = "oomox-rose-pine-moon";
+        iconTheme = "oomox-rose-pine-moon";
+        cursorTheme = "miku-cursor-linux";
+      };
+    };
+  };
+  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # Configure keymap in X11
   services.xserver = {

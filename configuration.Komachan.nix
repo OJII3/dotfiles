@@ -100,11 +100,6 @@
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # Enable the XFCE Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.theme = "chili";
-  # services.xserver.desktopManager.xfce.enable = true;
-
   # Configure keymap in X11
   # services.xserver = {
   #   xkb = {
@@ -293,6 +288,8 @@
     enable = true;
   };
   security.pam.services.login.fprintAuth = true;
+  security.pam.services.greetd.fprintAuth = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
   # security.pam.services.hyprlock.fprintAuth = true;
   # security.pam.services.gdm-password.fprintAuth = true;
 
