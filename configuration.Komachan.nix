@@ -289,7 +289,6 @@
   };
   security.pam.services.login.fprintAuth = true;
   security.pam.services.greetd.fprintAuth = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
   # security.pam.services.hyprlock.fprintAuth = true;
   # security.pam.services.gdm-password.fprintAuth = true;
 

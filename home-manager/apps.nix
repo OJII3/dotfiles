@@ -26,5 +26,6 @@
     xfce.thunar
     gpu-screen-recorder-gtk
     vlc
+    figma-linux
   ];
 }

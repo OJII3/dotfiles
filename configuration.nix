@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 {
   # Bootloader.
@@ -94,18 +94,23 @@
   # services.displayManager.sddm.theme = "chili";
   services.greetd = {
     enable = true;
+    settings = {
+      default_session = {
+        user = "ojii3";
+      };
+    };
   };
-  programs.regreet = {
+  programs.regreet = lib.mkDefault {
     enable = true;
     settings = {
       background = {
         path = "/home/ojii3/dotfiles/images/haxxor-bunny.png";
-        fit = "cover";
+        fit = "Cover";
       };
       GTK = {
-        theme = "oomox-rose-pine-moon";
-        iconTheme = "oomox-rose-pine-moon";
-        cursorTheme = "miku-cursor-linux";
+        theme_name = "oomox-rose-pine-moon";
+        icon_theme_name = "oomox-rose-pine-moon";
+        cursor_theme_name = "miku-cursor-linux";
       };
     };
   };
