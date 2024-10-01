@@ -115,7 +115,6 @@
       };
     };
   };
-  security.pam.services.greetd.enableGnomeKeyring = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -251,7 +250,10 @@
     #   wineWowPackages.staging
     #   winetricks
     #   vulkan-tools
-    # gnome-keyring
+    kdePackages.kwallet
+    kwalletmanager
+    kwallet-pam
+    ksshaskpass
   ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
@@ -283,6 +285,15 @@
   #     { from = 1714; to = 1764; } # KDE Connect
   #   ];
   # };
+
+  security.pam.services = {
+    kwallet = {
+      name = "kwallet";
+      enableKwallet = true;
+    };
+    greetd.enableKwallet = true;
+  };
+
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -293,11 +304,6 @@
     xwayland.enable = true;
   };
   programs.kdeconnect.enable = true;
-
-  security.polkit.enable = true;
-  # services.gnome.gnome-keyring.enable = true;
-  # security.pam.services.gdm-password.enableGnomeKeyring = true;
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
