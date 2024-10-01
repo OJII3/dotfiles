@@ -66,6 +66,7 @@
         monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
         emoji = [ "Noto Color Emoji" ];
       };
+      # in steam, use Migu 1P font for compatibility
       localConf = ''
         <?xml version="1.0"?>
          <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
@@ -100,7 +101,7 @@
       };
     };
   };
-  programs.regreet = lib.mkDefault {
+  programs.regreet = lib.mkForce {
     enable = true;
     settings = {
       background = {
@@ -183,7 +184,13 @@
   };
 
   #services.flatpak.enable = true;
-  #xdg.portal.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-kde
+    xdg-desktop-portal-gnome
+    xdg-desktop-portal-hyprland
+  ];
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -194,7 +201,7 @@
     description = "ojii3";
     extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" ];
     packages = with pkgs; [
-      #  thunderbird
+      cloudflare-warp
     ];
     shell = pkgs.zsh;
   };
@@ -237,18 +244,19 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #   wget
-  #   sddm-chili-theme
-  #   lshw
-  #   kitty
-  #   wayvnc
-  #   wineWowPackages.staging
-  #   winetricks
-  #   vulkan-tools
-  # gnome-keyring
-  # ];
+  environment.systemPackages = with pkgs; [
+    #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #   wget
+    #   sddm-chili-theme
+    #   lshw
+    #   kitty
+    #   wayvnc
+    #   wineWowPackages.staging
+    #   winetricks
+    #   vulkan-tools
+    # gnome-keyring
+    gnome-network-displays
+  ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
   # Some programs need SUID wrappers, can be configured further or are

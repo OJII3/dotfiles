@@ -128,67 +128,9 @@
   #media-session.enable = true;
   # };
 
-  # hardware.bluetooth = {
-  #   enable = true;
-  #   powerOnBoot = true;
-  #   settings = {
-  #     General = {
-  #       Experimental = true;
-  #     };
-  #   };
-  # };
-
-  # services.xremap = {
-  #   userName = "ojii3";
-  #   serviceMode = "system";
-  #   config = {
-  #     modmap = [
-  #       {
-  #         name = "Smart CapsLock";
-  #         remap = {
-  #           CapsLock = [ "Ctrl_L" "Esc" ];
-  #         };
-  #       }
-  #     ];
-  #   };
-  # };
-
   #services.flatpak.enable = true;
-  #xdg.portal.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.ojii3 = {
-  #   isNormalUser = true;
-  #   description = "ojii3";
-  #   extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" ];
-  #   packages = with pkgs; [
-  #     #  thunderbird
-  #   ];
-  #   shell = pkgs.zsh;
-  # };
-
-  # programs = {
-  #   git = {
-  #     enable = true;
-  #   };
-  #   neovim = {
-  #     enable = true;
-  #     defaultEditor = true;
-  #     viAlias = true;
-  #   };
-  #   zsh = {
-  #     enable = true;
-  #   };
-  #   noisetorch.enable = true;
-  #   steam = {
-  #     enable = true;
-  #     remotePlay.openFirewall = true;
-  #     dedicatedServer.openFirewall = true;
-  #   };
-  # };
+  programs = { };
 
   virtualisation = {
     waydroid.enable = true;
@@ -210,7 +152,6 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    sddm-chili-theme
     lshw
     kitty
     wayvnc
@@ -274,8 +215,9 @@
 
   networking.firewall = {
     enable = true;
-    trustedInterfaces = [ "tailscale0" ];
-    allowedUDPPorts = [ 5900 ]; # VNC
+    trustedInterfaces = [ "tailscale0" "ClourdlareWARP" ];
+    allowedTCPPorts = [ 7236 7250 ]; #miracast
+    allowedUDPPorts = [ 5900 5353 ]; # VNC, mDNS
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];
@@ -284,12 +226,10 @@
     ];
   };
 
-  services.fprintd = {
-    enable = true;
-  };
-  security.pam.services.login.fprintAuth = true;
+  services.fprintd.enable = true;
+  security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.greetd.fprintAuth = true;
-  # security.pam.services.hyprlock.fprintAuth = true;
+  # security.pam.services.login.fprintAuth = true;
   # security.pam.services.gdm-password.fprintAuth = true;
 
   services.udisks2.enable = true;
