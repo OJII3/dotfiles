@@ -186,9 +186,6 @@
   #services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-kde
-    xdg-desktop-portal-gnome
     xdg-desktop-portal-hyprland
   ];
 
@@ -255,7 +252,6 @@
     #   winetricks
     #   vulkan-tools
     # gnome-keyring
-    gnome-network-displays
   ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
@@ -287,6 +283,10 @@
   #     { from = 1714; to = 1764; } # KDE Connect
   #   ];
   # };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   programs.hyprland = {
     enable = true;
@@ -294,8 +294,8 @@
   };
   programs.kdeconnect.enable = true;
 
-  services.gnome.gnome-keyring.enable = true;
-  # security.pam.services.sddm.enableGnomeKeyring = true;
+  security.polkit.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
   # security.pam.services.gdm-password.enableGnomeKeyring = true;
 
 

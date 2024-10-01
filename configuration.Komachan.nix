@@ -144,6 +144,8 @@
     #   virtualbox.host.enable = true;
   };
 
+
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -216,8 +218,8 @@
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" "ClourdlareWARP" ];
-    allowedTCPPorts = [ 7236 7250 ]; #miracast
-    allowedUDPPorts = [ 5900 5353 ]; # VNC, mDNS
+    allowedTCPPorts = [ 5900 7236 7250 ]; #miracast
+    allowedUDPPorts = [ 7236 5353 ]; # VNC, mDNS
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];

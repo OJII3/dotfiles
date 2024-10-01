@@ -15,6 +15,7 @@
       ls = "ls --color=auto";
       ll = "ls -l";
       la = "ls -a";
+      l = "ls";
       g = "git";
       ya = "yazi";
       termpdf = "termpdf.py";

@@ -25,7 +25,7 @@
     # cli apps
     fastfetch
     nyancat
-    # termpdfpy  # <- broken
+    # termpdfpy # <- broken
     libsixel
     libwebp
     ollama
