@@ -251,7 +251,7 @@
     #   winetricks
     #   vulkan-tools
     kdePackages.kwallet
-    kwalletmanager
+    kdePackages.kwalletmanager
     kwallet-pam
     ksshaskpass
   ];
@@ -285,6 +285,18 @@
   #     { from = 1714; to = 1764; } # KDE Connect
   #   ];
   # };
+
+  systemd.user.services.kwalletd6 = {
+    enable = true;
+    description = "KDE Wallet Manager";
+    path = [ pkgs.kdePackages.kwallet ];
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Restart = "always";
+      ExecStart = "${pkgs.kdePackages.kwallet}/bin/kwalletd6";
+      RestartSec = "5";
+    };
+  };
 
   security.pam.services = {
     kwallet = {
