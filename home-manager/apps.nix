@@ -28,5 +28,6 @@
     vlc
     figma-linux
     logisim-evolution
+    qtrvsim
   ];
 }
