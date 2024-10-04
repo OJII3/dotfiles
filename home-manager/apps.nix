@@ -27,5 +27,6 @@
     gpu-screen-recorder-gtk
     vlc
     figma-linux
+    logisim-evolution
   ];
 }
