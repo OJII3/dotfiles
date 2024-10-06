@@ -299,11 +299,11 @@
   };
 
   security.pam.services = {
-    kwallet = {
-      name = "kwallet";
-      enableKwallet = true;
+    greetd.kwallet = {
+      enable = true;
+      package = pkgs.kdePackages.kwallet-pam;
+      forceRun = true;
     };
-    greetd.enableKwallet = true;
   };
 
   services.avahi = {
