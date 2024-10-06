@@ -18,6 +18,7 @@
     realvnc-vnc-viewer
     # gnome-keyring
     cloudflared
+    kdePackages.wrapQtAppsHook
     kdePackages.kdeconnect-kde
     rquickshare
     xournalpp
