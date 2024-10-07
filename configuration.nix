@@ -304,6 +304,11 @@
       package = pkgs.kdePackages.kwallet-pam;
       forceRun = true;
     };
+    login.kwallet = {
+      enable = true;
+      package = pkgs.kdePackages.kwallet-pam;
+      forceRun = true;
+    };
   };
 
   services.avahi = {

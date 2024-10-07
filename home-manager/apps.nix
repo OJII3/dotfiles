@@ -16,7 +16,7 @@
     mpv
     inkscape-with-extensions
     realvnc-vnc-viewer
-    # gnome-keyring
+    jetbrains-toolbox
     cloudflared
     kdePackages.wrapQtAppsHook
     kdePackages.kdeconnect-kde

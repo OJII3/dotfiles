@@ -56,5 +56,7 @@
 
   home.file.".clang-tidy".source = ./dotfiles/.clang-tidy;
   home.file.".clang-format".source = ./dotfiles/.clang-format;
+
+  home.file.".ideavimrc".source = ./dotfiles/.ideavimrc;
 }
 
