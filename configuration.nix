@@ -197,7 +197,6 @@
     description = "ojii3";
     extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" ];
     packages = with pkgs; [
-      cloudflare-warp
     ];
     shell = pkgs.zsh;
   };

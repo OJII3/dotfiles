@@ -45,12 +45,12 @@
     recursive = true;
   };
 
-  home.packages = with pkgs; [
-    skk-dicts
-  ];
-
+  # home.packages = with pkgs; [
+  #   skk-dicts
+  # ];
+  #
   home.file.".skk" = {
-    source = "${pkgs.skk-dicts}/share";
+    source = "${pkgs.skkDictionaries.l}/share";
     recursive = true;
   };
 

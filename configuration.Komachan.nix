@@ -163,7 +163,7 @@
     usbutils
     nix-index
     cloudflared
-    cloudflare-warp # for warp-taskbar, not for warp-cli or warp-svc
+    # cloudflare-warp # for warp-taskbar, not for warp-cli or warp-svc
     config.nur.repos.ataraxiasjel.waydroid-script # nur
   ];
   environment.pathsToLink = [ "/share/zsh" ];
@@ -194,10 +194,10 @@
     openFirewall = true;
   };
   # make sure to enable auto-connect in the warp profile settings
-  services.cloudflare-warp = {
-    enable = true;
-    openFirewall = true;
-  };
+  # services.cloudflare-warp = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 
   # users.users.cloudflared = {
   #   group = "cloudflared";
