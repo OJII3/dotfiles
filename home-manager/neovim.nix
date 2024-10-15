@@ -36,6 +36,7 @@
       yamllint
       vim-language-server
       rust-analyzer
+      haskell-language-server
       # dap
     ];
   };

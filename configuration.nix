@@ -287,9 +287,9 @@
 
   systemd.user.services.kwalletd6 = {
     enable = true;
-    description = "KDE Wallet Manager";
+    description = "KDE Wallet";
     path = [ pkgs.kdePackages.kwallet ];
-    wantedBy = [ "graphical-session.target" ];
+    wantedBy = [ "graphical-session.target" "multi-user.target" ];
     serviceConfig = {
       Restart = "always";
       ExecStart = "${pkgs.kdePackages.kwallet}/bin/kwalletd6";

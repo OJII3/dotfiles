@@ -51,7 +51,7 @@
     python311
     mise
     bun
+    ghc
   ];
-
 }
     
