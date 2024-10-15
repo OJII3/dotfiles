@@ -251,8 +251,8 @@
     #   vulkan-tools
     kdePackages.kwallet
     kdePackages.kwalletmanager
-    kwallet-pam
-    ksshaskpass
+    kdePackages.kwallet-pam
+    kdePackages.ksshaskpass
   ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
@@ -285,18 +285,6 @@
   #   ];
   # };
 
-  systemd.user.services.kwalletd6 = {
-    enable = true;
-    description = "KDE Wallet";
-    path = [ pkgs.kdePackages.kwallet ];
-    wantedBy = [ "graphical-session.target" "multi-user.target" ];
-    serviceConfig = {
-      Restart = "always";
-      ExecStart = "${pkgs.kdePackages.kwallet}/bin/kwalletd6";
-      RestartSec = "5";
-    };
-  };
-
   security.pam.services = {
     greetd.kwallet = {
       enable = true;
@@ -307,6 +295,15 @@
       enable = true;
       package = pkgs.kdePackages.kwallet-pam;
       forceRun = true;
+    };
+  };
+  systemd.user.services."plasma-kwallet-pam" = {
+    enable = true;
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/kwallet-pam";
+      Restart = "always";
     };
   };
 

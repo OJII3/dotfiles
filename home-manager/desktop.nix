@@ -20,6 +20,23 @@
     enable = true;
   };
 
+  home.file.".config/kwalletrc".text = ''
+    [Wallet]
+    Default Wallet=kdewallet
+    First Use=false
+
+    [org.freedesktop.secrets]
+    apiEnabled=true
+    autoStart=true
+  '';
+  home.file.".local/share/dbus-1/services/org.freedesktop.secrets.service" = {
+    text = ''
+      [D-BUS Service]
+      Name=org.freedesktop.secrets
+      Exec=${pkgs.kdePackages.kwallet}/bin/kwalletd6
+    '';
+  };
+
   home.file.".config/hypr" = {
     source = ./dotfiles/.config/hypr;
     recursive = true;
