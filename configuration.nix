@@ -186,6 +186,7 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-kde
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
