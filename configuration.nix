@@ -256,7 +256,7 @@
     #   vulkan-tools
     greetd.regreet
     kdePackages.kwallet
-    kdePackages.kwalletmanager
+    kwalletmanager
     kdePackages.kwallet-pam
     kdePackages.ksshaskpass
   ];
@@ -305,7 +305,7 @@
   };
   systemd.user.services."plasma-kwallet-pam" = {
     enable = true;
-    wantedBy = [ "graphical-session.target" ];
+    wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/kwallet-pam";

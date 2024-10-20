@@ -34,10 +34,7 @@
       init = { defaultBranch = "main"; };
       user = { signingKey = "37547FAD690A6133"; };
       commit = { gpgSign = true; };
-      # kdewallet is compatible with libsecret
-      credential.helper = "${
-        pkgs.git.override { withLibsecret = true; }
-      }/bin/git-credential-libsecret";
+      # credential.helper = "${pkgs.ksshaskpass}/bin/ksshaskpass";
     };
   };
 
