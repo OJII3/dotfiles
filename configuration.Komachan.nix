@@ -220,7 +220,7 @@
     enable = true;
     trustedInterfaces = [ "tailscale0" "ClourdlareWARP" ];
     allowedTCPPorts = [ 5900 7236 7250 ]; #miracast
-    allowedUDPPorts = [ 7236 5353 ]; # VNC, mDNS
+    allowedUDPPorts = [ 7236 ]; # VNC
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];

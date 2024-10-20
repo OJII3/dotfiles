@@ -97,10 +97,14 @@
     enable = true;
     settings = {
       default_session = {
+        command = "Hyprland --config /etc/greetd/hyprland.conf";
         user = "ojii3";
       };
     };
   };
+  environment.etc."greetd/hyprland.conf".text = ''
+    exec-once = regreet; hyprctl dispatch exit
+  '';
   programs.regreet = lib.mkForce {
     enable = true;
     settings = {
@@ -250,6 +254,7 @@
     #   wineWowPackages.staging
     #   winetricks
     #   vulkan-tools
+    greetd.regreet
     kdePackages.kwallet
     kdePackages.kwalletmanager
     kdePackages.kwallet-pam
@@ -307,10 +312,13 @@
       Restart = "always";
     };
   };
+  services.dbus.packages = with pkgs; [
+    kdePackages.kwallet
+  ];
 
   services.avahi = {
     enable = true;
-    nssmdns4 = true;
+    openFirewall = true;
   };
 
   programs.hyprland = {

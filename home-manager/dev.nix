@@ -21,6 +21,7 @@
     brightnessctl
     wev
     ocs-url
+    tree
 
     # cli apps
     fastfetch
