@@ -30,5 +30,6 @@
     figma-linux
     logisim-evolution
     qtrvsim
+    hyprpicker
   ];
 }

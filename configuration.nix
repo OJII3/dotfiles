@@ -97,28 +97,28 @@
     enable = true;
     settings = {
       default_session = {
-        command = "Hyprland --config /etc/greetd/hyprland.conf";
+        command = "tuigreet";
         user = "ojii3";
       };
     };
   };
-  environment.etc."greetd/hyprland.conf".text = ''
-    exec-once = regreet; hyprctl dispatch exit
-  '';
-  programs.regreet = lib.mkForce {
-    enable = true;
-    settings = {
-      background = {
-        path = "/home/ojii3/dotfiles/images/haxxor-bunny.png";
-        fit = "Cover";
-      };
-      GTK = {
-        theme_name = "oomox-rose-pine-moon";
-        icon_theme_name = "oomox-rose-pine-moon";
-        cursor_theme_name = "miku-cursor-linux";
-      };
-    };
-  };
+  # environment.etc."greetd/hyprland.conf".text = ''
+  #   exec-once = regreet; hyprctl dispatch exit
+  # '';
+  # programs.regreet = lib.mkForce {
+  #   enable = true;
+  #   settings = {
+  #     background = {
+  #       path = "/home/ojii3/dotfiles/images/haxxor-bunny.png";
+  #       fit = "Cover";
+  #     };
+  #     GTK = {
+  #       theme_name = "Canta-dark";
+  #       icon_theme_name = "Canta";
+  #       cursor_theme_name = "miku-cursor-linux";
+  #     };
+  #   };
+  # };
 
   # Configure keymap in X11
   services.xserver = {
@@ -254,7 +254,8 @@
     #   wineWowPackages.staging
     #   winetricks
     #   vulkan-tools
-    greetd.regreet
+    greetd.tuigreet
+    canta-theme
     kdePackages.kwallet
     kwalletmanager
     kdePackages.kwallet-pam

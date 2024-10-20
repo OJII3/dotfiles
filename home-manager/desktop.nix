@@ -13,8 +13,6 @@
     nwg-displays
     networkmanagerapplet
     swaynotificationcenter
-    rose-pine-gtk-theme
-    rose-pine-icon-theme
   ];
   programs.waybar = {
     enable = true;
