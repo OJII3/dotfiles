@@ -52,5 +52,7 @@
     source = ./dotfiles/.config/gtk-4.0;
     recursive = true;
   };
+
+  wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 }
 

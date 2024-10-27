@@ -96,8 +96,11 @@
   services.greetd = {
     enable = true;
     settings = {
+      terminal = {
+        vt = 3;
+      };
       default_session = {
-        command = "tuigreet";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
         user = "ojii3";
       };
     };
@@ -200,7 +203,7 @@
   users.users.ojii3 = {
     isNormalUser = true;
     description = "ojii3";
-    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
@@ -256,10 +259,10 @@
     #   vulkan-tools
     greetd.tuigreet
     canta-theme
-    kdePackages.kwallet
-    kwalletmanager
-    kdePackages.kwallet-pam
-    kdePackages.ksshaskpass
+    libsForQt5.kwallet
+    libsForQt5.kwalletmanager
+    libsForQt5.kwallet-pam
+    libsForQt5.ksshaskpass
   ];
   # environment.pathsToLink = [ "/share/zsh" ];
 
@@ -292,30 +295,39 @@
   #   ];
   # };
 
-  security.pam.services = {
-    greetd.kwallet = {
-      enable = true;
-      package = pkgs.kdePackages.kwallet-pam;
-      forceRun = true;
-    };
-    login.kwallet = {
-      enable = true;
-      package = pkgs.kdePackages.kwallet-pam;
-      forceRun = true;
-    };
-  };
-  systemd.user.services."plasma-kwallet-pam" = {
+  systemd.user.services.polkit-agent = {
     enable = true;
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = [ "graphical-session.target" "sockets.target" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/kwallet-pam";
-      Restart = "always";
+      ExecStart = "${pkgs.lxqt.lxqt-policykit}/bin/lxqt-policykit-agent";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStartSec = 10;
     };
   };
-  services.dbus.packages = with pkgs; [
-    kdePackages.kwallet
-  ];
+
+  # security.pam.services = {
+  #   greetd.kwallet = {
+  #     enable = true;
+  #     package = pkgs.libsForQt5.kwallet-pam;
+  #     forceRun = true;
+  #   };
+  #   login.kwallet = {
+  #     enable = true;
+  #     package = pkgs.libsForQt5.kwallet-pam;
+  #     forceRun = true;
+  #   };
+  # };
+  # systemd.user.services."pam_kwallet_init" = {
+  #   enable = true;
+  #   wantedBy = [ "sockets.target" ];
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = "${pkgs.libsForQt5.kwallet-pam}/libexec/pam_kwallet_init";
+  #     Restart = "always";
+  #   };
+  # };
 
   services.avahi = {
     enable = true;

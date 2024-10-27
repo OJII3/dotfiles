@@ -56,7 +56,6 @@ return {
 				"lemminx",
 				"lua_ls",
 				"mdx_analyzer",
-				"omnisharp_mono",
 				"pyright",
 				"pyright",
 				"stylelint_lsp",

@@ -160,6 +160,7 @@
     wineWowPackages.staging
     winetricks
     vulkan-tools
+    vulkan-headers
     usbutils
     nix-index
     cloudflared
@@ -232,7 +233,7 @@
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.greetd.fprintAuth = true;
-  # security.pam.services.login.fprintAuth = true;
+  security.pam.services.login.fprintAuth = true;
   # security.pam.services.gdm-password.fprintAuth = true;
 
   services.udisks2.enable = true;
