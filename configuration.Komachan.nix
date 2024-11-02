@@ -19,6 +19,18 @@
       inputs.xremap.nixosModules.default
     ];
 
+  # hardware.opengl = {
+  #   driSupport32Bit = true;
+  #   extraPackages = [ pkgs.amdvlk ];
+  #   extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  # };
+
+  hardware.graphics = {
+    enable32Bit = true;
+    extraPackages = [ pkgs.amdvlk ];
+    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  };
+
   # Bootloader.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   boot.loader = {
@@ -159,6 +171,7 @@
     wayvnc
     wineWowPackages.staging
     winetricks
+    glxinfo
     vulkan-tools
     vulkan-headers
     usbutils
@@ -232,13 +245,9 @@
 
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
-  security.pam.services.greetd.fprintAuth = true;
+  # security.pam.services.greetd.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
   # security.pam.services.gdm-password.fprintAuth = true;
-
-  services.udisks2.enable = true;
-  services.gvfs.enable = true;
-  services.devmon.enable = true;
 
   services.tlp.enable = true;
   services.tlp.settings =

@@ -65,7 +65,7 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": "{:%m/%d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
         // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
@@ -118,4 +118,8 @@
       },
       "exec": "pw-volume status"
     },
+    "custom/wlogout": {
+      "format": " ",
+      "on-click": "wlogout"
+    }
 }

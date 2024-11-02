@@ -6,6 +6,7 @@
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
       # tree-sitter
+      imagemagick
       deno
       nodejs
       tree-sitter

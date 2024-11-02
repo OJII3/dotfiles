@@ -36,7 +36,8 @@
         source "$(fzf-share)/completion.zsh"
       fi
 
-      export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:${pkgs.glib.out}/lib:$LD_LIBRARY_PATH\n
+      # export LD_LIBRARY_PATH=${pkgs.libGL}/lib/:${pkgs.glib.out}/lib:$LD_LIBRARY_PATH\n
+      export LD_LIBRARY_PATH="/run/opengl-driver/lib:/run/opengl-driver-32/lib:$LD_LIBRARY_PATH"
     '';
 
   };

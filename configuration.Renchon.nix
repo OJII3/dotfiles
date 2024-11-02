@@ -223,6 +223,8 @@
     wayvnc
     wineWowPackages.staging
     winetricks
+    glxinfo
+    vulkan-headers
     vulkan-tools
   ];
   environment.pathsToLink = [ "/share/zsh" ];

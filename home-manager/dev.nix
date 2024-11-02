@@ -43,6 +43,7 @@
     # languages
     gcc
     cmake
+    meson
     gnumake
     go
     rye

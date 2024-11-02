@@ -6,5 +6,7 @@ return {
 	dependencies = {
 		{ "luarocks.nvim" },
 	},
-	config = true,
+  opts = {
+    max_width = nil,
+  }
 }

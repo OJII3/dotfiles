@@ -1,22 +1,36 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    hyprpaper
-    # hyprcursor # prefer using gtk cursor
-    hypridle
-    hyprlock
-    anyrun
-    waybar
-    grim
-    slurp
-    playerctl
-    wl-clipboard
-    nwg-displays
-    networkmanagerapplet
-    swaynotificationcenter
-  ];
-  programs.waybar = {
-    enable = true;
-  };
+{ inputs, pkgs, ... }: {
+  wayland.windowManager.hyprland =
+    {
+      enable = true;
+      systemd.enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      extraConfig = builtins.readFile ./dotfiles/.config/hypr/hyprland.conf;
+      plugins = [
+        # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
+        # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+      ];
+    };
+
+  home.packages = with pkgs;
+    [
+      hyprpaper
+      hypridle
+      hyprlock
+      hyprpicker
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      anyrun
+      waybar
+      wlogout
+      grim
+      slurp
+      playerctl
+      wl-clipboard
+      networkmanagerapplet
+      swaynotificationcenter
+    ];
+  # programs.waybar = {
+  #   enable = true;
+  # };
 
   home.file.".config/kwalletrc".text = ''
     [Wallet]

@@ -22,43 +22,25 @@ return {
 			-- 	y = 5,
 			-- 	width = 80,
 			-- })
-			local image = api.from_file("/home/ojii3/.config/nvim/media/hatsune-miku-chibi.png", {
-				x = vim.api.nvim_win_get_width(0) / 2 - 20,
+			local image = api.from_file("/home/ojii3/dotfiles/images/silverwolf.chibi.png", {
+				x = vim.api.nvim_win_get_width(0) / 2 - 50,
 				y = 5,
+				width = 100,
 			})
 			if image ~= nil then
 				-- dashboard.section.buttons.val = {}
+				vim.api.nvim_set_hl(0, "CustomAlphaHeader", { fg = "#002233", bold = true })
 				dashboard.section.header.val = {
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
-					[[]],
+					[[                                                                                                                                                                  ]],
+					[[                                                                                                                                                                  ]],
+					[[                                                                                                                                                                  ]],
+					[[                                                                                                                                                                  ]],
 				}
+				dashboard.section.buttons.val = {}
 
 				vim.api.nvim_create_autocmd({ "User" }, {
 					callback = function()
-						image.render(image)
+						image.render(image, { x = vim.api.nvim_win_get_width(0) / 2 - 50, y = 5})
 					end,
 					pattern = "AlphaReady",
 				})
@@ -67,7 +49,13 @@ return {
 					callback = function()
 						image.clear(image)
 					end,
-					pattern = "AlphaClosed",
+					pattern = { "AlphaClosed" },
+				})
+				vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+					callback = function()
+						image.clear(image)
+					end,
+					pattern = { "*" },
 				})
 
 				-- dashboard.config.opts.noautocmd = true

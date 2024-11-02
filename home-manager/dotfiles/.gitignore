@@ -46,6 +46,8 @@
 !/.config/swaync/**
 !/.config/swaylock/
 !/.config/swaylock/**
+!/.config/wlogout/
+!/.config/wlogout/**
 # launcher, status bar
 !/.config/rofi/
 !/.config/rofi/**

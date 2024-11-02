@@ -90,38 +90,20 @@
 
   # services.xserver.enable = true;
   # services.xserver.videoDrivers = [ "nvidiaBeta" ];
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
 
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.theme = "chili";
-  services.greetd = {
+  services.displayManager.sddm = {
     enable = true;
-    settings = {
-      terminal = {
-        vt = 3;
-      };
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
-        user = "ojii3";
-      };
+    wayland = {
+      enable = true;
+      compositor = "kwin";
     };
+    extraPackages = with pkgs; [
+    ];
+    theme = "Catppuccin mocha";
   };
-  # environment.etc."greetd/hyprland.conf".text = ''
-  #   exec-once = regreet; hyprctl dispatch exit
-  # '';
-  # programs.regreet = lib.mkForce {
-  #   enable = true;
-  #   settings = {
-  #     background = {
-  #       path = "/home/ojii3/dotfiles/images/haxxor-bunny.png";
-  #       fit = "Cover";
-  #     };
-  #     GTK = {
-  #       theme_name = "Canta-dark";
-  #       icon_theme_name = "Canta";
-  #       cursor_theme_name = "miku-cursor-linux";
-  #     };
-  #   };
-  # };
 
   # Configure keymap in X11
   services.xserver = {
@@ -192,8 +174,7 @@
   #services.flatpak.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-kde
+    xdg-desktop-portal-gtk
   ];
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -250,18 +231,19 @@
   environment.systemPackages = with pkgs; [
     #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #   wget
-    #   sddm-chili-theme
     #   lshw
     #   kitty
     #   wayvnc
     #   wineWowPackages.staging
     #   winetricks
     #   vulkan-tools
-    greetd.tuigreet
+    # greetd.tuigreet
+    inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
+    catppuccin-sddm
     canta-theme
     libsForQt5.kwallet
-    libsForQt5.kwalletmanager
     libsForQt5.kwallet-pam
+    libsForQt5.kwalletmanager
     libsForQt5.ksshaskpass
   ];
   # environment.pathsToLink = [ "/share/zsh" ];
@@ -295,39 +277,9 @@
   #   ];
   # };
 
-  systemd.user.services.polkit-agent = {
+  security.polkit = {
     enable = true;
-    wantedBy = [ "graphical-session.target" "sockets.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${pkgs.lxqt.lxqt-policykit}/bin/lxqt-policykit-agent";
-      Restart = "on-failure";
-      RestartSec = 1;
-      TimeoutStartSec = 10;
-    };
   };
-
-  # security.pam.services = {
-  #   greetd.kwallet = {
-  #     enable = true;
-  #     package = pkgs.libsForQt5.kwallet-pam;
-  #     forceRun = true;
-  #   };
-  #   login.kwallet = {
-  #     enable = true;
-  #     package = pkgs.libsForQt5.kwallet-pam;
-  #     forceRun = true;
-  #   };
-  # };
-  # systemd.user.services."pam_kwallet_init" = {
-  #   enable = true;
-  #   wantedBy = [ "sockets.target" ];
-  #   serviceConfig = {
-  #     Type = "simple";
-  #     ExecStart = "${pkgs.libsForQt5.kwallet-pam}/libexec/pam_kwallet_init";
-  #     Restart = "always";
-  #   };
-  # };
 
   services.avahi = {
     enable = true;
@@ -336,7 +288,10 @@
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   programs.kdeconnect.enable = true;
 

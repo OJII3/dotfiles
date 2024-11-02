@@ -126,7 +126,7 @@ return {
 					}
 				elseif server_name == "tinymist" then
 					opts.settings = {
-						exportPdf = "onType",
+						-- exportPdf = "onType",
 						formatterMode = "typstyle",
 					}
 				end
