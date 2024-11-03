@@ -96,7 +96,7 @@
 
   services.displayManager.sddm = {
     enable = true;
-    theme = "sddm-chili";
+    theme = "chili";
     wayland = {
       enable = true;
       compositor = "kwin";
