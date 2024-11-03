@@ -96,13 +96,11 @@
 
   services.displayManager.sddm = {
     enable = true;
+    theme = "sddm-chili";
     wayland = {
       enable = true;
       compositor = "kwin";
     };
-    extraPackages = with pkgs; [
-    ];
-    theme = "Catppuccin mocha";
   };
 
   # Configure keymap in X11
@@ -239,7 +237,7 @@
     #   vulkan-tools
     # greetd.tuigreet
     inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
-    catppuccin-sddm
+    sddm-chili-theme
     canta-theme
     libsForQt5.kwallet
     libsForQt5.kwallet-pam

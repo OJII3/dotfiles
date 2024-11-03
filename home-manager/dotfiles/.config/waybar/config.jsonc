@@ -5,7 +5,7 @@
     "spacing": 10,
     "margin-bottom": 0,
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "hyprland/window"],
-    "modules-right": ["tray", "wireplumber", "backlight", "battery", "clock"],
+    "modules-right": ["tray", "wireplumber", "backlight", "battery", "clock", "custom/wlogout"],
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

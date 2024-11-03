@@ -21,6 +21,7 @@
       anyrun
       waybar
       wlogout
+      libnotify
       grim
       slurp
       playerctl
@@ -52,6 +53,10 @@
   };
   home.file.".config/waybar" = {
     source = ./dotfiles/.config/waybar;
+    recursive = true;
+  };
+  home.file.".config/wlogout" = {
+    source = ./dotfiles/.config/wlogout;
     recursive = true;
   };
   home.file.".config/swaync" = {
