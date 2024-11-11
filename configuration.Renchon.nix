@@ -86,7 +86,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidiaBeta" ];
+  services.xserver.videoDrivers = [ "nvidiaBeta" "intel" ];
 
   # Enable the XFCE Desktop Environment.
   # services.displayManager.sddm.enable = true;

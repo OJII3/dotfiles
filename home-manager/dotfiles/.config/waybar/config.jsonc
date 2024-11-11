@@ -15,6 +15,9 @@
             "unlocked": ""
         }
     },
+    "hyprland/workspaces": {
+      "format": "●"
+    },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
