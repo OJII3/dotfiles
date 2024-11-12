@@ -12,7 +12,6 @@
       tree-sitter
       # lsp, formatter, linter
       efm-langserver
-      # typst-lsp
       tinymist
       typstyle
       lua-language-server
@@ -52,7 +51,7 @@
   # ];
   #
   home.file.".skk" = {
-    source = "${pkgs.skkDictionaries.l}/share";
+    source = "${pkgs.skkDictionaries.l}/share/skk";
     recursive = true;
   };
 
