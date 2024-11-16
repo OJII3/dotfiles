@@ -28,6 +28,7 @@
       wl-clipboard
       networkmanagerapplet
       swaynotificationcenter
+      kdePackages.plasma-workspace
     ];
   # programs.waybar = {
   #   enable = true;
