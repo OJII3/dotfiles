@@ -163,6 +163,12 @@
             BTN_8 = "KEY_KPDOT";
           };
         }
+        {
+          name = "Space Shift";
+          remap = {
+            Space = [ "Shift_L" "Space" ];
+          };
+        }
       ];
       keymap = [
       ];
