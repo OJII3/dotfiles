@@ -13,6 +13,7 @@
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
       common-gpu-nvidia
+      common-gpu-intel
       common-pc-ssd
     ])
     ++ [
@@ -86,7 +87,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidiaBeta" "intel" ];
+  services.xserver.videoDrivers = [ "nvidia" "intel" ];
 
   # Enable the XFCE Desktop Environment.
   # services.displayManager.sddm.enable = true;
@@ -108,12 +109,17 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
+    powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
     prime = {
-      offload.enable = false;
-      # offload.enable = true;
       sync.enable = true;
+      offload.enable = false;
+      # offload = {
+      #   # offload and sync cannot be enabled at the same time
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      # };
       # to check, command `sudo lshw -c diplay`
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
