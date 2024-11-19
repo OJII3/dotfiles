@@ -22,6 +22,8 @@
     wev
     ocs-url
     tree
+    xdg-user-dirs
+    ghq
 
     # cli apps
     fastfetch
