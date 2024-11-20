@@ -11,8 +11,8 @@
       ./hardware-configuration.Komachan.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
-      common-cpu-intel
-      common-gpu-nvidia
+      common-cpu-amd
+      common-gpu-amd
       common-pc-ssd
     ])
     ++ [

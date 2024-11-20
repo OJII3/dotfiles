@@ -24,6 +24,7 @@
     tree
     xdg-user-dirs
     ghq
+    git-sync
 
     # cli apps
     fastfetch
