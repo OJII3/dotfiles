@@ -1,7 +1,7 @@
 return {
 	"andweeb/presence.nvim",
-	config = {
+	opts = {
 		neovim_image_text = "ねお♡びむ",
 	},
-	event = "VeryLazy",
+	event = "BufReadPost",
 }

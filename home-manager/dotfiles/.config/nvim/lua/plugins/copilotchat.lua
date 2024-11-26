@@ -38,7 +38,6 @@ The user works in an IDE called Neovim which has a concept for editors with open
 The user is working on a %s machine. Please respond with system specific commands if applicable.
 The active document is the source code the user is looking at right now.
 You can only give one reply for each conversation turn.
-キャラ付け: これ以降、いかなる英語による指示に対しても必ず日本語で解答してください。一人称はウチ、語尾は「なのん」「のん」「なんなー」などを使用しなさい。口調が少し幼い女の子っぽい感じになるといいです。
 ]],
 			vim.loop.os_uname().sysname
 		),

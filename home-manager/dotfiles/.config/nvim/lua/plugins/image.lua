@@ -1,12 +1,10 @@
 return {
+	"3rd/image.nvim",
 	enabled = function()
 		return os.getenv("TERM") == "xterm-kitty"
 	end,
-	"3rd/image.nvim",
 	dependencies = {
-		{ "luarocks.nvim" },
+		{ "MunifTanjim/nui.nvim" },
 	},
-  opts = {
-    max_width = nil,
-  }
+  lazy = false,
 }

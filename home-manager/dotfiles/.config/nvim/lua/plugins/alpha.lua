@@ -2,9 +2,8 @@ return {
 	"goolord/alpha-nvim",
 	dependencies = {
 		{ "nvim-tree/nvim-web-devicons" },
-		-- { "3rd/image.nvim" },
+		{ "3rd/image.nvim", opts = true, lazy = false },
 	},
-	lazy = false,
 	config = function()
 		local alpha = require("alpha")
 
@@ -14,44 +13,47 @@ return {
 		dashboard.section.header.val = {}
 		dashboard.section.header.opts.hl = "CustomAlphaHeader"
 		dashboard.section.footer.opts.hl = "CustomAlphaFooter"
+		dashboard.section.header.opts.position = "center"
+		vim.api.nvim_set_hl(0, "CustomAlphaHeader", { fg = "#039393", bold = true })
+		dashboard.section.buttons.val = {}
 
 		if os.getenv("TERM") == "xterm-kitty" then
 			local api = require("image")
-			-- local image = api.from_file("/home/ojii3/.config/nvim/media/NeovimShadowed.png", {
-			-- 	x = vim.api.nvim_win_get_width(0) / 2 - 40,
-			-- 	y = 5,
-			-- 	width = 80,
-			-- })
-			local image = api.from_file("/home/ojii3/dotfiles/images/silverwolf.chibi.png", {
-				x = vim.api.nvim_win_get_width(0) / 2 - 50,
-				y = 5,
+			local image = api.from_file("/home/ojii3/dotfiles/images/Bronie_Haxxor_Bunny_M.png", {
+				x = math.floor(vim.api.nvim_win_get_width(0) / 2) - 50,
+				y = 10,
 				width = 100,
 			})
 			if image ~= nil then
 				-- dashboard.section.buttons.val = {}
-				vim.api.nvim_set_hl(0, "CustomAlphaHeader", { fg = "#002233", bold = true })
 				dashboard.section.header.val = {
-					[[                                                                                                                                                                  ]],
-					[[                                                                                                                                                                  ]],
-					[[                                                                                                                                                                  ]],
-					[[                                                                                                                                                                  ]],
+					[[        .;        ;.                                                                    ]],
+					[[      .,l,'.      ;l;.                                           ;;;                    ]],
+					[[     ;odl;,,'     ;bcc:                                                                 ]],
+					[[     cddl;,;:,.   ;bccc.    :l.:'',.   :'''l.  .:''':. ox;   .dx.dx, ox:odxc'ldxxl.     ]],
+					[[     cccl;,;:;,.  ;llll.    :d     b .c     ;..c     ;:.kk.  dO' kO; xO:  ;OO'  oOc     ]],
+					[[     cccl; .;;;;, ;llll.    :l     d.;d.....d.c'      d .kx lO:  kO; xO,  'OO.  cOl     ]],
+					[[     lccl;  .;;;;;;looo.    :l     d..c       ';     .l  ;OdOo   kO; xO,  'OO.  cOl     ]],
+					[[     llll,    ,:;:;ldoo.    :l     d  '':..:'  ''...''    cdo    dx, x0'  .00.  :0l     ]],
+					[[     clll;     '::;ldoo.                                                                ]],
+					[[      .co;      .:;dl,                                                                  ]],
+					[[        .;        ;'                                                                    ]],
 				}
-				dashboard.section.buttons.val = {}
 
 				vim.api.nvim_create_autocmd({ "User" }, {
 					callback = function()
-						image.render(image, { x = vim.api.nvim_win_get_width(0) / 2 - 50, y = 5})
+						image:render()
 					end,
 					pattern = "AlphaReady",
 				})
 
 				vim.api.nvim_create_autocmd({ "User" }, {
 					callback = function()
-						image.clear(image)
+						image:clear()
 					end,
 					pattern = { "AlphaClosed" },
 				})
-				vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+				vim.api.nvim_create_autocmd({ "BufEnter" }, {
 					callback = function()
 						image.clear(image)
 					end,

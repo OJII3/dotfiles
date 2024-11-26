@@ -1,6 +1,8 @@
 return {
 	"vim-skk/skkeleton",
-	dependencies = { "vim-denops/denops.vim", lazy = false },
+	dependencies = {
+		{ "vim-denops/denops.vim" },
+	},
 	init = function()
 		vim.cmd([[
       function! s:skkeleton_init() abort
@@ -20,6 +22,4 @@ return {
 		{ "<C-j>", "<Plug>(skkeleton-enable)", mode = "i" },
 		{ "<C-l>", "<Plug>(skkeleton-disable)", mode = "i" },
 	},
-	-- event = "InsertEnter",
-	lazy = false,
 }

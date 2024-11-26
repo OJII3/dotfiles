@@ -93,5 +93,5 @@ return {
 		--   capabilities = capabilities
 		-- }
 	end,
-	event = "VeryLazy",
+	event = "InsertEnter",
 }

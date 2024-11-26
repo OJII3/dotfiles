@@ -9,5 +9,4 @@ return {
 	keys = {
 		{ "<Leader>fl", "<cmd>Flog -raw-args='--all'<CR>", { noremap = true, silent = true } },
 	},
-	event = "VeryLazy",
 }

@@ -21,15 +21,8 @@ vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- plugins --
 
--- telescope
-vim.keymap.set("n", "<Space>g", "<cmd>Telescope git_files<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Space>f", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Space>o", "<cmd>Telescope oldfiles<cr>", { noremap = true, silent = true })
-vim.keymap.set("n", "<Space>r", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
-
 -- lightspeed
 vim.keymap.set("n", "s", "<Plug>Lightspeed_s", { noremap = true, silent = true })
--- vim.keymap.del("n", "s")
 -- coc
 -- vim.keymap.set("i", "<C-Space>", "coc#refresh()", { expr = true, silent = true })    -- trigger completion
 -- vim.keymap.set("n", "<Leader>rn", "<Plug>(coc-rename)", { silent = true })           -- rename

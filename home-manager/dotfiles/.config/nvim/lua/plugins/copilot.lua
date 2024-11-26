@@ -1,4 +1,5 @@
 return {
+  enabled = false,
 	"github/Copilot.vim",
 	config = function()
 		vim.g.copilot_filetypes = {
