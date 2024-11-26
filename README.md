@@ -1,5 +1,7 @@
 # NixOS & Arch Linux Dotfiles
 
+I preserve non-nix config as possible.
+
 ## NixOS
 
 ```bash
@@ -9,8 +11,11 @@ home-manager switch --flake .#myHomeManager
 
 ## Arch Linux
 
+Original dotfiles is `./home`
+
 ```bash
-./home-manager/dotfiles/install.sh
+cd ./home
+./home/install.sh
 ```
 
 ## Awesome Apps
@@ -30,4 +35,3 @@ home-manager switch --flake .#myHomeManager
 - Fcitx5
   - skk
 - Kitty (terminal which has own image protocol)
-- termpdf.py (graphical pdf viewer which works inside kitty)

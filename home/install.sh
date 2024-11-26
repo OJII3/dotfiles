@@ -3,7 +3,7 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 # If the file already exists, it will be moved to $HOME/$f.bak
 
-DOT_DIR="$HOME/dotfiles/home-manager/dotfiles"
+DOT_DIR="$HOME/dotfiles/home"
 
 if ! [ "$(pwd)" = "$DOT_DIR" ]; then
 	echo "
