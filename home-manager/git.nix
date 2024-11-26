@@ -47,6 +47,6 @@
   };
 
   home.file.".tigrc" = {
-    source = ./dotfiles/.tigrc;
+    source = ../home/.tigrc;
   };
 }

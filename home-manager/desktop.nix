@@ -4,7 +4,7 @@
       enable = true;
       systemd.enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      extraConfig = builtins.readFile ./dotfiles/.config/hypr/hyprland.conf;
+      extraConfig = builtins.readFile ../home/.config/hypr/hyprland.conf;
       plugins = [
         # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
         # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
@@ -45,31 +45,31 @@
   '';
 
   home.file.".config/hypr" = {
-    source = ./dotfiles/.config/hypr;
+    source = ../home/.config/hypr;
     recursive = true;
   };
   home.file.".config/anyrun" = {
-    source = ./dotfiles/.config/anyrun;
+    source = ../home/.config/anyrun;
     recursive = true;
   };
   home.file.".config/waybar" = {
-    source = ./dotfiles/.config/waybar;
+    source = ../home/.config/waybar;
     recursive = true;
   };
   home.file.".config/wlogout" = {
-    source = ./dotfiles/.config/wlogout;
+    source = ../home/.config/wlogout;
     recursive = true;
   };
   home.file.".config/swaync" = {
-    source = ./dotfiles/.config/swaync;
+    source = ../home/.config/swaync;
     recursive = true;
   };
   home.file.".config/gtk-3.0" = {
-    source = ./dotfiles/.config/gtk-3.0;
+    source = ../home/.config/gtk-3.0;
     recursive = true;
   };
   home.file.".config/gtk-4.0" = {
-    source = ./dotfiles/.config/gtk-4.0;
+    source = ../home/.config/gtk-4.0;
     recursive = true;
   };
 

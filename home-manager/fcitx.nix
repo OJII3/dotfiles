@@ -9,7 +9,7 @@
   ];
 
   home.file.".config/libskk" = {
-    source = ./dotfiles/.config/libskk;
+    source = ../home/.config/libskk;
     recursive = true;
   };
 }
