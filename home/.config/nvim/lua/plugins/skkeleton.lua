@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		{ "vim-denops/denops.vim" },
 	},
-	init = function()
+	config = function()
 		vim.cmd([[
       function! s:skkeleton_init() abort
         call skkeleton#config({
@@ -22,4 +22,5 @@ return {
 		{ "<C-j>", "<Plug>(skkeleton-enable)", mode = "i" },
 		{ "<C-l>", "<Plug>(skkeleton-disable)", mode = "i" },
 	},
+	lazy = false,
 }

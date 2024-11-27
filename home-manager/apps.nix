@@ -8,7 +8,6 @@
     slack
     parsec-bin
     evince
-    totem
     lutris
     unityhub
     blender
@@ -33,3 +32,4 @@
     hyprpicker
   ];
 }
+

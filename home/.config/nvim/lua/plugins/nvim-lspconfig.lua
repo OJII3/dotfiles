@@ -4,128 +4,145 @@ return {
 		{ "folke/neoconf.nvim" },
 		{
 			"williamboman/mason.nvim",
+			enabled = not vim.fn.executable("home-manager"),
 			event = "VeryLazy",
 		},
 		{
 			"williamboman/mason-lspconfig.nvim",
+			enabled = not vim.fn.executable("home-manager"),
 			cmd = { "LspInstall", "LspUninstall" },
 		},
 		{
 			"b0o/schemastore.nvim",
 			ft = { "json", "yaml", "toml" },
 		},
+		{ "dmmulroy/ts-error-translator", ft = "typescript" },
 	},
 	opts = {
 		format = { timeout_ms = 50000 },
 	},
 	config = function()
-		require("mason").setup({
-			PATH = "append",
-		})
-		local mason_lsp = require("mason-lspconfig")
-		local nvim_lsp = require("lspconfig")
+		local lspconfig = require("lspconfig")
+		-- vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+		-- 	require("ts-error-translator").translate_diagnostics(err, result, ctx, config)
+		-- 	vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx, config)
+		-- end
 
-		local mason = require("mason")
-		local mason_lsp = require("mason-lspconfig")
+		local server_list = {
+			"astro",
+			"bashls",
+			"biome",
+			"clangd",
+			"cmake",
+			"cssls",
+			"cssls",
+			"denols",
+			"docker_compose_language_service",
+			"dockerls",
+			"efm",
+			"eslint",
+			"graphql",
+			"html",
+			"jsonls",
+			"jsonls",
+			"lemminx",
+			"lua_ls",
+			"mdx_analyzer",
+			"pyright",
+			"pyright",
+			"stylelint_lsp",
+			"tailwindcss",
+			"taplo",
+			"texlab",
+			-- "ts_ls",
+			"tinymist",
+			"vimls",
+			"yamlls",
+		}
 
-		mason_lsp.setup({
-			ensure_installed = {
-				"astro",
-				"bashls",
-				"biome",
-				"clangd",
-				"cmake",
-				"cssls",
-				"cssls",
-				"denols",
-				"docker_compose_language_service",
-				"dockerls",
-				"efm",
-				"eslint",
-				"graphql",
-				"html",
-				"jsonls",
-				"jsonls",
-				"lemminx",
-				"lua_ls",
-				"mdx_analyzer",
-				"pyright",
-				"pyright",
-				"stylelint_lsp",
-				"tailwindcss",
-				"taplo",
-				"texlab",
-				-- "ts_ls",
-				"tinymist",
-				"vimls",
-				"yamlls",
-			},
-		})
+		-------------------------------------
+		-- Handlers for each language server
+		-------------------------------------
+		local setup_handler = function(server_name)
+			if server_name == "efm" then
+				return
+			end
 
-		mason_lsp.setup_handlers({
-			function(server_name)
-				if server_name == "efm" then
-					return
-				end
-
-				local default_opts = {
-					capabilities = vim.tbl_deep_extend(
-						"force",
-						vim.lsp.protocol.make_client_capabilities(),
-						require("cmp_nvim_lsp").default_capabilities()
-					),
-				}
-				local opts = {}
-				if server_name == "denols" then
-					-- INFO: Neccessary for avoiding conflict with other js severs
-					opts = {
-						root_dir = nvim_lsp.util.root_pattern("deno.json"),
-						init_options = {
-							lint = true,
-							unstable = true,
-							suggest = {
-								imports = {
-									hosts = {
-										["https://deno.land"] = true,
-										["https://cdn.nest.land"] = true,
-										["https://crux.land"] = true,
-									},
+			local default_opts = {
+				capabilities = vim.tbl_deep_extend(
+					"force",
+					vim.lsp.protocol.make_client_capabilities(),
+					require("cmp_nvim_lsp").default_capabilities()
+				),
+			}
+			local opts = {}
+			if server_name == "denols" then
+				-- INFO: Neccessary for avoiding conflict with other js severs
+				opts = {
+					root_dir = lspconfig.util.root_pattern("deno.json"),
+					init_options = {
+						lint = true,
+						unstable = true,
+						suggest = {
+							imports = {
+								hosts = {
+									["https://deno.land"] = true,
+									["https://cdn.nest.land"] = true,
+									["https://crux.land"] = true,
 								},
 							},
 						},
-					}
-				elseif server_name == "biome" then
-					opts.single_file_support = false
-				elseif server_name == "eslint" then
-					opts.root_dir = nvim_lsp.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc")
-				elseif server_name == "stylelint_lsp" then
-					opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
-				elseif server_name == "jsonls" then
-					opts.settings = {
-						json = {
-							schemas = require("schemastore").json.schemas(),
-							validate = true,
+					},
+				}
+			elseif server_name == "biome" then
+				opts.single_file_support = false
+			elseif server_name == "eslint" then
+				opts.root_dir = lspconfig.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc")
+			elseif server_name == "stylelint_lsp" then
+				opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
+			elseif server_name == "jsonls" then
+				opts.settings = {
+					json = {
+						schemas = require("schemastore").json.schemas(),
+						validate = true,
+					},
+				}
+			elseif server_name == "yamlls" then
+				opts.settings = {
+					yaml = {
+						schemaStore = {
+							enable = true,
+							url = "",
 						},
-					}
-				elseif server_name == "yamlls" then
-					opts.settings = {
-						yaml = {
-							schemaStore = {
-								enable = true,
-								url = "",
-							},
-							schemas = require("schemastore").yaml.schemas(),
-						},
-					}
-				elseif server_name == "tinymist" then
-					opts.settings = {
-						exportPdf = "onType",
-						formatterMode = "typstyle",
-					}
-				end
-				nvim_lsp[server_name].setup(vim.tbl_deep_extend("force", default_opts, opts))
-			end,
-		})
+						schemas = require("schemastore").yaml.schemas(),
+					},
+				}
+			elseif server_name == "tinymist" then
+				opts.settings = {
+					exportPdf = "onType",
+					formatterMode = "typstyle",
+				}
+			end
+			lspconfig[server_name].setup(vim.tbl_deep_extend("force", default_opts, opts))
+		end
+
+		-----------------------------------------------
+		-- Setup ls with mason or without mason
+		-----------------------------------------------
+		if vim.fn.executable("home-manager") then
+			for _, server in ipairs(server_list) do
+				setup_handler(server)
+			end
+		else
+			require("mason").setup({
+				PATH = "append",
+			})
+			local mason_lsp = require("mason-lspconfig")
+			mason_lsp.setup({
+				ensure_installed = server_list,
+			})
+			mason_lsp.setup_handlers({ setup_handler })
+		end
 
 		local function on_list(options)
 			vim.fn.setqflist({}, " ", options)
@@ -142,10 +159,10 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(args)
 				local client = vim.lsp.get_client_by_id(args.data.client_id)
-				client.server_capabilities.semanticTokensProvider = nil
 				if not client then
 					return
 				end
+				client.server_capabilities.semanticTokensProvider = nil
 				if client.server_capabilities.inlayHintProvider then
 					vim.lsp.inlay_hint.enable(true)
 				end
