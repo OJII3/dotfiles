@@ -23,7 +23,7 @@
     xournalpp
     libreoffice-qt
     hunspell
-    xfce.thunar
+    gnome.nautilus
     gpu-screen-recorder-gtk
     vlc
     figma-linux

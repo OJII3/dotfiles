@@ -24,24 +24,5 @@ require("lazy").setup({
 		enabled = false,
 		hererocks = false,
 	},
-	spec = {
-		{ "folke/neoconf.nvim", cmd = "Neoconf" },
-		{ "nvim-tree/nvim-web-devicons", lazy = true },
-		{
-			"kylechui/nvim-surround",
-			config = function()
-				require("nvim-surround").setup()
-			end,
-			event = "BufRead",
-		},
-		{
-			"ggandor/lightspeed.nvim",
-			event = "VeryLazy",
-		},
-		{
-			"mxsdev/nvim-dap-vscode-js",
-			event = "VeryLazy",
-		},
-		{ import = "plugins" },
-	},
+	spec = { import = "plugins" },
 })

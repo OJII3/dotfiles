@@ -21,8 +21,6 @@ vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- plugins --
 
--- lightspeed
-vim.keymap.set("n", "s", "<Plug>Lightspeed_s", { noremap = true, silent = true })
 -- coc
 -- vim.keymap.set("i", "<C-Space>", "coc#refresh()", { expr = true, silent = true })    -- trigger completion
 -- vim.keymap.set("n", "<Leader>rn", "<Plug>(coc-rename)", { silent = true })           -- rename

@@ -11,32 +11,36 @@
       nodejs
       tree-sitter
       # lsp, formatter, linter
-      efm-langserver
-      tinymist
-      typstyle
-      lua-language-server
-      stylua
       biome
-      typescript-language-server
-      vscode-langservers-extracted
-      nodePackages.eslint
-      nodePackages.prettier
-      stylelint
-      pyright
-      ruff
-      shellcheck
+      clang-tools
+      cmake-language-server
+      matlab-language-server
+      csharp-ls
+      dockerfile-language-server-nodejs
+      efm-langserver
+      haskell-language-server
+      lua-language-server
       nil
       nixpkgs-fmt
       nixpkgs-lint
-      clang-tools
+      nodePackages.eslint
+      nodePackages.prettier
+      pyright
       python311Packages.debugpy
-      dockerfile-language-server-nodejs
+      ruff
+      rust-analyzer
+      shellcheck
+      stylelint
+      stylua
+      tailwindcss-language-server
+      tinymist
+      typescript-language-server
+      typstyle
+      vim-language-server
+      vscode-langservers-extracted
       yaml-language-server
       yamlfmt
       yamllint
-      vim-language-server
-      rust-analyzer
-      haskell-language-server
       # dap
     ];
   };

@@ -1,6 +1,6 @@
 # NixOS & Arch Linux Dotfiles
 
-I preserve non-nix config as possible.
+I preserve non-nix configs as possible.
 
 ## NixOS
 

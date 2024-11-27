@@ -46,6 +46,7 @@ return {
 			"jsonls",
 			"jsonls",
 			"lemminx",
+			"nil_ls",
 			"lua_ls",
 			"mdx_analyzer",
 			"pyright",
@@ -54,7 +55,9 @@ return {
 			"tailwindcss",
 			"taplo",
 			"texlab",
-			-- "ts_ls",
+			"rust_analyzer",
+			"ts_ls",
+			"matlab_ls",
 			"tinymist",
 			"vimls",
 			"yamlls",
@@ -97,7 +100,12 @@ return {
 			elseif server_name == "biome" then
 				opts.single_file_support = false
 			elseif server_name == "eslint" then
-				opts.root_dir = lspconfig.util.root_pattern(".eslintrc.js", ".eslintrc.json", ".eslintrc")
+				opts.on_attach = function(client, bufnr)
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						command = "EslintFixAll",
+					})
+				end
 			elseif server_name == "stylelint_lsp" then
 				opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
 			elseif server_name == "jsonls" then

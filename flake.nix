@@ -23,8 +23,8 @@
         system = "x86_64-linux";
         modules = [
           inputs.nur.nixosModules.nur
-          ./configuration.nix
-          ./configuration.Renchon.nix
+          ./nixos/configuration.nix
+          ./nixos/configuration.Renchon.nix
         ];
         specialArgs = {
           inherit inputs;
@@ -34,8 +34,8 @@
         system = "x86_64-linux";
         modules = [
           inputs.nur.nixosModules.nur
-          ./configuration.nix
-          ./configuration.Komachan.nix
+          ./nixos/configuration.nix
+          ./nixos/configuration.Komachan.nix
         ];
         specialArgs = {
           inherit inputs;

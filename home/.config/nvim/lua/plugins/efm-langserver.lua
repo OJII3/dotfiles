@@ -20,8 +20,8 @@ return {
 		local stylelint_linter = require("efmls-configs.linters.stylelint")
 		-- local stylelint_formatter = require("efmls-configs.formatters.stylelint")
 		-- TypeScript, JavaScript
-		local eslint_linter = require("efmls-configs.linters.eslint")
-		local eslint_formatter = require("efmls-configs.formatters.eslint")
+		-- local eslint_linter = require("efmls-configs.linters.eslint")
+		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
 		local biome = require("efmls-configs.formatters.biome")
 		-- Python
@@ -85,8 +85,8 @@ return {
 					cpp = { clang_format, clang_tidy },
 					css = { prettier, stylelint_linter },
 					haskell = { formulu },
-					javascript = { eslint_linter, biome, prettier, eslint_formatter },
-					javascriptreact = { eslint_linter, biome, prettier, eslint_formatter },
+					javascript = { biome, prettier },
+					javascriptreact = { biome, prettier },
 					json = { prettier },
 					latex = { latexindent },
 					lua = { stylua },
@@ -94,8 +94,8 @@ return {
 					python = { ruff, black, isort, autopep8, flake8, mypy },
 					rust = { rustfmt },
 					sh = { shellcheck },
-					typescript = { eslint_linter, prettier, eslint_formatter, biome },
-					typescriptreact = { eslint_linter, prettier, eslint_formatter, biome },
+					typescript = { prettier, biome },
+					typescriptreact = { prettier, biome },
 					typst = { typstyle },
 					yaml = { yamllint },
 					nix = {

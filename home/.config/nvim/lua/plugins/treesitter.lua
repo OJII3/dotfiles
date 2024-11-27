@@ -1,9 +1,14 @@
 return {
-	{ "nvim-treesitter/nvim-tree-docs" },
-	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			{ "nvim-treesitter/nvim-tree-docs" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
 		build = ":TSUpdate",
+		config = function(_, opts)
+			require("nvim-treesitter.configs").setup(opts)
+		end,
 		opts = {
 			auto_install = true,
 			sync_install = false,
@@ -44,18 +49,21 @@ return {
 				"yaml",
 			},
 			ignore_install = {},
-			highlight = {
-				enable = true,
-				disable = { "latex" },
-				additional_vim_regex_highlighting = { "letex", "markdown" },
-			},
-			indent = {
-				enable = true,
-			},
+			highlight = { enable = true },
+			indent = { enable = true },
 			tree_docs = {
 				enable = true,
 			},
 			modules = {},
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<C-space>",
+					node_incremental = "<C-space>",
+					scope_incremental = false,
+					node_decremental = "<bs>",
+				},
+			},
 			textobjects = {
 				select = {
 					enable = true,
@@ -75,6 +83,5 @@ return {
 				},
 			},
 		},
-		event = "BufEnter",
 	},
 }
