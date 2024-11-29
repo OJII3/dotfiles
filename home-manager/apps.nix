@@ -8,7 +8,6 @@
     slack
     parsec-bin
     evince
-    lutris
     unityhub
     blender
     gimp
@@ -28,8 +27,10 @@
     vlc
     figma-linux
     logisim-evolution
+    logisim
     qtrvsim
     hyprpicker
+    bottles
   ];
 }
 

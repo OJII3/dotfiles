@@ -13,6 +13,7 @@
 
   home.packages = with pkgs;
     [
+      ags
       hyprpaper
       hypridle
       hyprlock
@@ -62,6 +63,10 @@
   };
   home.file.".config/swaync" = {
     source = ../home/.config/swaync;
+    recursive = true;
+  };
+  home.file.".config/ags" = {
+    source = ../home/.config/ags;
     recursive = true;
   };
   home.file.".config/gtk-3.0" = {

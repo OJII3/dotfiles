@@ -116,6 +116,9 @@
 !.tmux.conf
 !.gitmodules
 
+!/.config/ags
+!/.config/ags/**
+
 !install.sh
 !update.sh
 !custom_scripts/
