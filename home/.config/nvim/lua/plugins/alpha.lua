@@ -46,16 +46,9 @@ return {
 					end,
 					pattern = "AlphaReady",
 				})
-
-				vim.api.nvim_create_autocmd({ "User" }, {
-					callback = function()
-						image:clear()
-					end,
-					pattern = { "AlphaClosed" },
-				})
 				vim.api.nvim_create_autocmd({ "BufEnter" }, {
 					callback = function()
-						image.clear(image)
+						image:clear()
 					end,
 					pattern = { "*" },
 				})
