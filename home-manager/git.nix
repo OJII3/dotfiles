@@ -34,6 +34,7 @@
       init = { defaultBranch = "main"; };
       user = { signingKey = "37547FAD690A6133"; };
       commit = { gpgSign = true; };
+      ghq = { root = "~/src"; };
       # credential.helper = "${pkgs.ksshaskpass}/bin/ksshaskpass";
     };
   };

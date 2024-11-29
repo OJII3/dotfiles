@@ -13,9 +13,26 @@
 	pager = delta
 [init]
 	defaultBranch = main
+[push]
+  autoSetupRemote = true
 [alias]
-	st = status
-	sw = switch
-	c = commit -m
-	pr = !gh pr
+  a = "add";
+  b = "branch";
+  c = "commit -m";
+  co = "checkout";
+  d = "diff";
+  f = "fetch";
+  g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%--abbrev-commit";
+  l = "log";
+  m = "merge";
+  ph = "push";
+  pl = "pull";
+  rs = "reset";
+  s = "status";
+  t = "tag";
+  sw = "switch";
+  pr = "!gh pr";
+  repo = "!gh repo";
 
+[ghq]
+  root = ~/src
