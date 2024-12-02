@@ -29,6 +29,7 @@ require("lazy").setup({
 		{
 			"ojii3/snowfall.nvim",
 			opts = { startup = false },
+      evnet = "VeryLazy",
 		},
 	},
 })
