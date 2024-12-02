@@ -24,5 +24,11 @@ require("lazy").setup({
 		enabled = false,
 		hererocks = false,
 	},
-	spec = { import = "plugins" },
+	spec = {
+		{ import = "plugins" },
+		{
+			"ojii3/snowfall.nvim",
+			opts = { startup = false },
+		},
+	},
 })

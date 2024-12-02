@@ -57,6 +57,7 @@
     mise
     bun
     ghc
+    R
   ];
 }
     

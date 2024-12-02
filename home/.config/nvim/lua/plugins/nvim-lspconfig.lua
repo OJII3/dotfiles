@@ -55,7 +55,6 @@ return {
 			"tailwindcss",
 			"taplo",
 			"texlab",
-			"rust_analyzer",
 			"ts_ls",
 			"matlab_ls",
 			"tinymist",

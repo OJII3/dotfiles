@@ -12,6 +12,8 @@ vim.keymap.set("n", "<M-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
+vim.keymap.set("n", "g<C-y>", "ggyG", { noremap = true, silent = true })
+
 -- vim.keymap.set("n", "<C-b>h", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
 -- vim.keymap.set("n", "<C-b><C-h>", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
 -- vim.keymap.set("n", "<C-b>l", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
