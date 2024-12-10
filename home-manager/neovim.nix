@@ -33,6 +33,7 @@
       stylelint
       stylua
       tailwindcss-language-server
+      taplo
       tinymist
       typescript-language-server
       typstyle

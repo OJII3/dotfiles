@@ -5,50 +5,29 @@
 { inputs, config, pkgs, ... }:
 
 {
+  networking.hostName = "Renchon"; # Define your hostname.
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.Komachan.nix
+      ./hardware-configuration.nix
+      ../configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
-      common-cpu-amd
-      common-gpu-amd
+      common-cpu-intel
+      common-gpu-nvidia
+      common-gpu-intel
       common-pc-ssd
     ])
     ++ [
       inputs.xremap.nixosModules.default
     ];
 
-  # hardware.opengl = {
-  #   driSupport32Bit = true;
-  #   extraPackages = [ pkgs.amdvlk ];
-  #   extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-  # };
-
-  hardware.graphics = {
-    enable32Bit = true;
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
-  };
-
   # Bootloader.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      #     efiSysMountPoint = "/boot";
-    };
-    systemd-boot.enable = true;
-    #   grub =
-    #     {
-    #       enable = true;
-    #       efiSupport = true;
-    #       device = "/dev/disk/by-uuid/0F55-ACC6";
-    #     };
-  };
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Komachan"; # Define your hostname.
-  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -56,7 +35,6 @@
 
   # Enable networking
   # networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.macAddress = "random";
 
   # Set your time zone.
   # time.timeZone = "Asia/Tokyo";
@@ -100,8 +78,8 @@
   #   fontDir.enable = true;
   #   fontconfig = {
   #     defaultFonts = {
-  #       serif = [ "Source Han Serif" "Noto Color Emoji" ];
-  #       sansSerif = [ "Source Han Snas" "Noto Color Emoji" ];
+  #       serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
+  #       sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
   #       monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
   #       emoji = [ "Noto Color Emoji" ];
   #     };
@@ -110,7 +88,12 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "nvidia" "intel" ];
+
+  # Enable the XFCE Desktop Environment.
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.theme = "chili";
+  # services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
   # services.xserver = {
@@ -124,6 +107,26 @@
   # services.printing.enable = true;
 
   # optimus prime
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    prime = {
+      sync.enable = true;
+      offload.enable = false;
+      # offload = {
+      #   # offload and sync cannot be enabled at the same time
+      #   enable = true;
+      #   enableOffloadCmd = true;
+      # };
+      # to check, command `sudo lshw -c diplay`
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+    # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+  };
 
   # Enable sound with pipewire.
   # hardware.pulseaudio.enable = false;
@@ -140,23 +143,78 @@
   #media-session.enable = true;
   # };
 
+  # hardware.bluetooth = {
+  #   enable = true;
+  #   powerOnBoot = true;
+  #   settings = {
+  #     General = {
+  #       Experimental = true;
+  #     };
+  #   };
+  # };
+
+  # services.xremap = {
+  #   userName = "ojii3";
+  #   serviceMode = "system";
+  #   config = {
+  #     modmap = [
+  #       {
+  #         name = "Smart CapsLock";
+  #         remap = {
+  #           CapsLock = [ "Ctrl_L" "Esc" ];
+  #         };
+  #       }
+  #     ];
+  #   };
+  # };
+
   #services.flatpak.enable = true;
+  #xdg.portal.enable = true;
 
-  programs = { };
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
-  virtualisation = {
-    waydroid.enable = true;
-    #   docker = {
-    #     enable = true;
-    #     rootless = {
-    #       enable = true;
-    #       setSocketVariable = true;
-    #     };
-    #   };
-    #   virtualbox.host.enable = true;
-  };
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # users.users.ojii3 = {
+  #   isNormalUser = true;
+  #   description = "ojii3";
+  #   extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" ];
+  #   packages = with pkgs; [
+  #     #  thunderbird
+  #   ];
+  #   shell = pkgs.zsh;
+  # };
 
+  # programs = {
+  #   git = {
+  #     enable = true;
+  #   };
+  #   neovim = {
+  #     enable = true;
+  #     defaultEditor = true;
+  #     viAlias = true;
+  #   };
+  #   zsh = {
+  #     enable = true;
+  #   };
+  #   noisetorch.enable = true;
+  #   steam = {
+  #     enable = true;
+  #     remotePlay.openFirewall = true;
+  #     dedicatedServer.openFirewall = true;
+  #   };
+  # };
 
+  # virtualisation = {
+  #   docker = {
+  #     enable = true;
+  #     rootless = {
+  #       enable = true;
+  #       setSocketVariable = true;
+  #     };
+  #   };
+  #   virtualbox.host.enable = true;
+  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -166,19 +224,15 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    sddm-chili-theme
     lshw
     kitty
     wayvnc
     wineWowPackages.staging
     winetricks
     glxinfo
-    vulkan-tools
     vulkan-headers
-    usbutils
-    nix-index
-    cloudflared
-    # cloudflare-warp # for warp-taskbar, not for warp-cli or warp-svc
-    config.nur.repos.ataraxiasjel.waydroid-script # nur
+    vulkan-tools
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -190,11 +244,6 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-qt;
   };
-  programs.weylus = {
-    enable = true;
-    users = [ "ojii3" ];
-    openFirewall = true;
-  };
 
   # List services that you want to enable:
 
@@ -203,38 +252,12 @@
     enable = true;
     ports = [ 22222 ];
   };
-  services.tailscale = {
-    enable = true;
-    openFirewall = true;
-  };
-  # make sure to enable auto-connect in the warp profile settings
-  # services.cloudflare-warp = {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
-
-  # users.users.cloudflared = {
-  #   group = "cloudflared";
-  #   isSystemUser = true;
-  # };
-  # users.groups.cloudflared = { };
-  #
-  # systemd.services."Komachan_Cloudflared" = {
-  #   wantedBy = [ "multi-user.target" ];
-  #   after = [ "network.target" ];
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token=eyJhIjoiYzQwMGE0ZDA0NGJmNDY1NTAwNmMzMjQ1MDM2ZmRiNjgiLCJ0IjoiNjE5NjYzMjAtNWU3Zi00ZGUwLWE3YmUtN2FmYjVkNWUxNGM3IiwicyI6Ijg2bGp1Z24zQmFuVWxrWnpDM0s4VlNsS1FIS3JsWldIcEI5bTJUdkxJL1k9In0=";
-  #     Restart = "always";
-  #     User = "cloudflared";
-  #     Group = "cloudflared";
-  #   };
-  # };
+  services.tailscale.enable = true;
 
   networking.firewall = {
     enable = true;
-    trustedInterfaces = [ "tailscale0" "ClourdlareWARP" ];
-    allowedTCPPorts = [ 5900 7236 7250 ]; #miracast
-    allowedUDPPorts = [ 7236 ]; # VNC
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];
@@ -243,22 +266,17 @@
     ];
   };
 
-  services.fprintd.enable = true;
-  security.pam.services.hyprlock.fprintAuth = true;
-  # security.pam.services.greetd.fprintAuth = true;
-  security.pam.services.login.fprintAuth = true;
-  # security.pam.services.gdm-password.fprintAuth = true;
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
+  # programs.kdeconnect.enable = true;
 
-  services.tlp.enable = true;
-  services.tlp.settings =
-    {
-      START_CHARGE_THRESH_BAT0 = 80;
-      STOP_CHARGE_THRESH_BAT0 = 95;
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      ENERGY_PERF_POLICY_ON_AC = "performance";
-      ENERGY_PERF_POLICY_ON_BAT = "powersave";
-    };
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -280,4 +298,3 @@
   #   };
   # };
 }
-

@@ -21,25 +21,13 @@
     nixosConfigurations = {
       Renchon = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          inputs.nur.nixosModules.nur
-          ./nixos/configuration.nix
-          ./nixos/configuration.Renchon.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
+        modules = [ inputs.nur.nixosModules.nur ./nixos/Renchon ];
       };
       Komachan = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          inputs.nur.nixosModules.nur
-          ./nixos/configuration.nix
-          ./nixos/configuration.Komachan.nix
-        ];
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
+        modules = [ inputs.nur.nixosModules.nur ./nixos/Komachan ];
       };
     };
     homeConfigurations = {
@@ -48,12 +36,8 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
         };
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./home-manager
-        ];
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home-manager ];
       };
     };
   };
