@@ -26,10 +26,10 @@ require("lazy").setup({
 	},
 	spec = {
 		{ import = "plugins" },
-		{
-			"ojii3/snowfall.nvim",
-			opts = { startup = false },
-      evnet = "VeryLazy",
-		},
+		-- {
+		-- 	"ojii3/snowfall.nvim",
+		-- 	opts = { startup = false },
+		--     evnet = "VeryLazy",
+		-- },
 	},
 })
