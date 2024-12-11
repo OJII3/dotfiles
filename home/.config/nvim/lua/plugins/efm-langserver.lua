@@ -87,7 +87,7 @@ return {
 					haskell = { formulu },
 					javascript = { biome, prettier },
 					javascriptreact = { biome, prettier },
-					json = { prettier },
+					json = { prettier, biome },
 					latex = { latexindent },
 					lua = { stylua },
 					markdown = { textlint },

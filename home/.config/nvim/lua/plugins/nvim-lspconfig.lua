@@ -96,8 +96,6 @@ return {
 						},
 					},
 				}
-			elseif server_name == "biome" then
-				opts.single_file_support = false
 			elseif server_name == "eslint" then
 				opts.on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePre", {
