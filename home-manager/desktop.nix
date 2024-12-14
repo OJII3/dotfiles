@@ -20,7 +20,6 @@
 
   home.packages = with pkgs;
     [
-      ags
       hyprpaper
       hypridle
       hyprlock
@@ -58,10 +57,13 @@
     autoStart=true
   '';
 
-  # home.file.".config/hypr" = {
-  #   source = ../home/.config/hypr;
-  #   recursive = true;
-  # };
+  home.file.".config/hypr/hyprlock.conf".source = ../home/.config/hypr/hyprlock.conf;
+  home.file.".config/hypr/hypridle.conf".source = ../home/.config/hypr/hypridle.conf;
+  home.file.".config/hypr/hyprpaper.conf".source = ../home/.config/hypr/hyprpaper.conf;
+  home.file.".config/hypr/hyprland/scripts" = {
+    source = ../home/.config/hypr/hyprland/scripts;
+    recursive = true;
+  };
   home.file.".config/anyrun" = {
     source = ../home/.config/anyrun;
     recursive = true;
@@ -76,10 +78,6 @@
   };
   home.file.".config/swaync" = {
     source = ../home/.config/swaync;
-    recursive = true;
-  };
-  home.file.".config/ags" = {
-    source = ../home/.config/ags;
     recursive = true;
   };
   home.file.".config/gtk-3.0" = {

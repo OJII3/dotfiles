@@ -6,7 +6,6 @@
   programs.kitty = {
     enable = true;
   };
-
   home.file.".config/kitty" = {
     source = ../home/.config/kitty;
     recursive = true;

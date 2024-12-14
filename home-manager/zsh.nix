@@ -18,7 +18,6 @@
       l = "ls";
       g = "git";
       ya = "yazi";
-      termpdf = "termpdf.py";
     };
 
     history = {
