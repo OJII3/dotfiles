@@ -1,14 +1,19 @@
 return {
 	enabled = true,
-	"github/Copilot.vim",
-	config = function()
-		vim.g.copilot_filetypes = {
-			markdown = true,
+	"zbirenbaum/copilot.lua",
+	opts = {
+		filetypes = {
 			yaml = true,
-			toml = true,
+			markdown = true,
+			help = true,
 			gitcommit = true,
-			text = true,
-		}
-	end,
-	event = "BufRead",
+			gitrebase = true,
+			hgcommit = true,
+			svn = true,
+			cvs = true,
+			["."] = true,
+		},
+	},
+	event = "InsertEnter",
 }
+
