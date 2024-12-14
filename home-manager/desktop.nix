@@ -2,12 +2,19 @@
   wayland.windowManager.hyprland =
     {
       enable = true;
-      systemd.enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      extraConfig = builtins.readFile ../home/.config/hypr/hyprland.conf;
+      systemd.variables = [ "--all" ];
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      extraConfig = ''
+        ${builtins.readFile ../home/.config/hypr/hyprland/env.conf}
+        ${builtins.readFile ../home/.config/hypr/hyprland/devices.conf}
+        ${builtins.readFile ../home/.config/hypr/hyprland/execs.conf}
+        ${builtins.readFile ../home/.config/hypr/hyprland/general.conf}
+        ${builtins.readFile ../home/.config/hypr/hyprland/keybinds.conf}
+        ${builtins.readFile ../home/.config/hypr/hyprland/rules.conf}
+      '';
       plugins = [
-        # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo
-        # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+        inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+        # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       ];
     };
 
@@ -19,6 +26,7 @@
       hyprlock
       hyprpicker
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
       anyrun
       waybar
       wlogout
@@ -30,6 +38,11 @@
       networkmanagerapplet
       swaynotificationcenter
       kdePackages.plasma-workspace
+      # kwallet
+      libsForQt5.kwallet
+      libsForQt5.kwallet-pam
+      libsForQt5.kwalletmanager
+      libsForQt5.ksshaskpass
     ];
   # programs.waybar = {
   #   enable = true;
@@ -45,10 +58,10 @@
     autoStart=true
   '';
 
-  home.file.".config/hypr" = {
-    source = ../home/.config/hypr;
-    recursive = true;
-  };
+  # home.file.".config/hypr" = {
+  #   source = ../home/.config/hypr;
+  #   recursive = true;
+  # };
   home.file.".config/anyrun" = {
     source = ../home/.config/anyrun;
     recursive = true;
@@ -77,7 +90,5 @@
     source = ../home/.config/gtk-4.0;
     recursive = true;
   };
-
-  wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 }
 

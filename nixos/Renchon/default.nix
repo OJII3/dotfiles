@@ -10,7 +10,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../configuration.nix
+      ../common
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
@@ -26,86 +26,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  # networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  # time.timeZone = "Asia/Tokyo";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-
-  # i18n.extraLocaleSettings = {
-  #   LC_ADDRESS = "ja_JP.UTF-8";
-  #   LC_IDENTIFICATION = "ja_JP.UTF-8";
-  #   LC_MEASUREMENT = "ja_JP.UTF-8";
-  #   LC_MONETARY = "ja_JP.UTF-8";
-  #   LC_NAME = "ja_JP.UTF-8";
-  #   LC_NUMERIC = "ja_JP.UTF-8";
-  #   LC_PAPER = "ja_JP.UTF-8";
-  #   LC_TELEPHONE = "ja_JP.UTF-8";
-  #   LC_TIME = "ja_JP.UTF-8";
-  # };
-
-  # i18n.inputMethod = {
-  #   enabled = "fcitx5";
-  #   fcitx5.addons = with pkgs; [
-  #     fcitx5-mozc
-  #     fcitx5-gtk
-  #     fcitx5-skk
-  #   ];
-  # };
-
-  # fonts = {
-  #   packages = with pkgs; [
-  #     noto-fonts-cjk-serif
-  #     noto-fonts-cjk-sans
-  #     noto-fonts-emoji
-  #     source-han-sans
-  #     source-han-serif
-  #     jetbrains-mono
-  #     hackgen-nf-font
-  #     nerdfonts
-  #     migu
-  #   ];
-  #   fontDir.enable = true;
-  #   fontconfig = {
-  #     defaultFonts = {
-  #       serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-  #       sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-  #       monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
-  #       emoji = [ "Noto Color Emoji" ];
-  #     };
-  #   };
-  # };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # nvidia
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  # Enable the XFCE Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.theme = "chili";
-  # services.xserver.desktopManager.xfce.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver = {
-  #   xkb = {
-  #     variant = "";
-  #     layout = "us";
-  #   };
-  # };
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # optimus prime
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -126,46 +48,6 @@
     };
     package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
-
-  # Enable sound with pipewire.
-  # hardware.pulseaudio.enable = false;
-  # security.rtkit.enable = true;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   jack.enable = true;
-
-  # use the example session manager (no others are packaged yet so this is enabled by default,
-  # no need to redefine it in your config for now)
-  #media-session.enable = true;
-  # };
-
-  # hardware.bluetooth = {
-  #   enable = true;
-  #   powerOnBoot = true;
-  #   settings = {
-  #     General = {
-  #       Experimental = true;
-  #     };
-  #   };
-  # };
-
-  # services.xremap = {
-  #   userName = "ojii3";
-  #   serviceMode = "system";
-  #   config = {
-  #     modmap = [
-  #       {
-  #         name = "Smart CapsLock";
-  #         remap = {
-  #           CapsLock = [ "Ctrl_L" "Esc" ];
-  #         };
-  #       }
-  #     ];
-  #   };
-  # };
 
   #services.flatpak.enable = true;
   #xdg.portal.enable = true;
@@ -215,20 +97,13 @@
   #   virtualbox.host.enable = true;
   # };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    sddm-chili-theme
     lshw
-    kitty
     wayvnc
-    wineWowPackages.staging
-    winetricks
     glxinfo
     vulkan-headers
     vulkan-tools
@@ -250,19 +125,6 @@
   services.openssh = {
     enable = true;
     ports = [ 22222 ];
-  };
-  services.tailscale.enable = true;
-
-  networking.firewall = {
-    enable = true;
-    trustedInterfaces = [ "tailscale0" ];
-    allowedUDPPorts = [ config.services.tailscale.port ];
-    allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
-    allowedUDPPortRanges = [
-      { from = 1714; to = 1764; } # KDE Connect
-    ];
   };
 
   # programs.hyprland = {

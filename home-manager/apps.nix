@@ -22,15 +22,14 @@
     xournalpp
     libreoffice-qt
     hunspell
-    gnome.nautilus
-    gpu-screen-recorder-gtk
+    nautilus
     vlc
     figma-linux
     logisim-evolution
-    logisim
     qtrvsim
     hyprpicker
     bottles
+    wineWowPackages.staging
   ];
 }
 
