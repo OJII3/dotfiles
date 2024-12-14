@@ -13,9 +13,7 @@
       ../configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
-      common-cpu-amd
-      common-gpu-amd
-      common-pc-ssd
+      lenovo-thinkpad-e14-amd
     ])
     ++ [
       inputs.xremap.nixosModules.default
