@@ -15,7 +15,6 @@
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
       common-gpu-nvidia
-      common-gpu-intel
       common-pc-ssd
     ])
     ++ [
@@ -88,7 +87,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" "intel" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable the XFCE Desktop Environment.
   # services.displayManager.sddm.enable = true;
@@ -110,22 +109,22 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
     open = true;
     nvidiaSettings = true;
     prime = {
-      sync.enable = true;
-      offload.enable = false;
-      # offload = {
-      #   # offload and sync cannot be enabled at the same time
-      #   enable = true;
-      #   enableOffloadCmd = true;
-      # };
+      # sync.enable = true;
+      # offload.enable = false;
+      offload = {
+        # offload and sync cannot be enabled at the same time
+        enable = true;
+        enableOffloadCmd = true;
+      };
       # to check, command `sudo lshw -c diplay`
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
-    # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   # Enable sound with pipewire.
