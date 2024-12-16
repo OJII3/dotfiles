@@ -11,6 +11,7 @@
       nodejs
       tree-sitter
       # lsp, formatter, linter
+      bash-language-server
       biome
       clang-tools
       cmake-language-server
