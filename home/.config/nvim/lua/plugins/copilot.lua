@@ -17,7 +17,12 @@ return {
 			auto_trigger = true,
 			hide_during_completion = false,
 			keymap = {
-				accept = "<Tab>",
+				accept = "<C-l>",
+				accept_word = false,
+				accept_line = false,
+				next = "<M-]>",
+				prev = "<M-[>",
+				dismiss = "<C-]>",
 			},
 		},
 	},

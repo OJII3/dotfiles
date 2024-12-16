@@ -20,7 +20,7 @@ return {
 	end,
 	keys = {
 		{ "<C-j>", "<Plug>(skkeleton-enable)", mode = "i" },
-		{ "<C-l>", "<Plug>(skkeleton-disable)", mode = "i" },
+		-- { "<l>", "<Plug>(skkeleton-disable)", mode = "i" },
 	},
 	lazy = false,
 }
