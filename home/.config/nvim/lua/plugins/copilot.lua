@@ -13,7 +13,13 @@ return {
 			cvs = true,
 			["."] = true,
 		},
+		suggestion = {
+			auto_trigger = true,
+			hide_during_completion = false,
+			keymap = {
+				accept = "<Tab>",
+			},
+		},
 	},
 	event = "InsertEnter",
 }
-

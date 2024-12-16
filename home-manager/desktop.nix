@@ -24,8 +24,10 @@
       hypridle
       hyprlock
       hyprpicker
+      hyprpanel
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
+      canta-theme
       anyrun
       waybar
       wlogout
@@ -35,8 +37,8 @@
       playerctl
       wl-clipboard
       networkmanagerapplet
-      swaynotificationcenter
-      kdePackages.plasma-workspace
+      # swaynotificationcenter
+      kdePackages.plasma-workspace # xembedsniproxy
       # kwallet
       libsForQt5.kwallet
       libsForQt5.kwallet-pam
@@ -76,10 +78,10 @@
     source = ../home/.config/wlogout;
     recursive = true;
   };
-  home.file.".config/swaync" = {
-    source = ../home/.config/swaync;
-    recursive = true;
-  };
+  # home.file.".config/swaync" = {
+  #   source = ../home/.config/swaync;
+  #   recursive = true;
+  # };
   home.file.".config/gtk-3.0" = {
     source = ../home/.config/gtk-3.0;
     recursive = true;

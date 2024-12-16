@@ -14,6 +14,7 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = inputs: {
@@ -34,6 +35,9 @@
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
+          overlays = [
+            inputs.hyprpanel.overlay
+          ];
         };
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home-manager ];
