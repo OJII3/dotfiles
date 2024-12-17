@@ -35,7 +35,7 @@
       source-han-serif
       jetbrains-mono
       hackgen-nf-font
-      nerdfonts
+      nerd-fonts._0xproto
       migu
     ];
     fontDir.enable = true;

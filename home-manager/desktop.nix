@@ -13,7 +13,7 @@
         ${builtins.readFile ../home/.config/hypr/hyprland/rules.conf}
       '';
       plugins = [
-        inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+        # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
         # inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       ];
     };
@@ -25,7 +25,7 @@
       hyprlock
       hyprpicker
       hyprpanel
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
+      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
       canta-theme
       anyrun
@@ -37,7 +37,6 @@
       playerctl
       wl-clipboard
       networkmanagerapplet
-      # swaynotificationcenter
       kdePackages.plasma-workspace # xembedsniproxy
       # kwallet
       libsForQt5.kwallet

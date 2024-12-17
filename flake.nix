@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nur.url = "github:nix-community/NUR";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     xremap.url = "github:xremap/nix-flake";
     home-manager = {
@@ -15,6 +14,11 @@
       inputs.hyprland.follows = "hyprland";
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
@@ -22,12 +26,12 @@
       Renchon = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ inputs.nur.nixosModules.nur ./nixos/Renchon ];
+        modules = [ ./nixos/Renchon ];
       };
       Komachan = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ inputs.nur.nixosModules.nur ./nixos/Komachan ];
+        modules = [ ./nixos/Komachan ];
       };
     };
     homeConfigurations = {
@@ -37,6 +41,7 @@
           config.allowUnfree = true;
           overlays = [
             inputs.hyprpanel.overlay
+            # inputs.neovim-nightly-overlay
           ];
         };
         extraSpecialArgs = { inherit inputs; };

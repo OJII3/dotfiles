@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   networking.hostName = "Komachan"; # Define your hostname.
@@ -56,7 +56,7 @@
     usbutils
     nix-index
     cloudflared
-    config.nur.repos.ataraxiasjel.waydroid-script # nur
+    # nur.repos.ataraxiasjel.waydroid-script # nur
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 
