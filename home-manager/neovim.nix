@@ -1,7 +1,8 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [

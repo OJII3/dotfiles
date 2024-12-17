@@ -14,7 +14,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,12 +26,12 @@
       Renchon = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./nixos/Renchon ];
+        modules = [ ./hosts/Renchon ];
       };
       Komachan = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
-        modules = [ ./nixos/Komachan ];
+        modules = [ ./hosts/Komachan ];
       };
     };
     homeConfigurations = {
@@ -41,7 +41,6 @@
           config.allowUnfree = true;
           overlays = [
             inputs.hyprpanel.overlay
-            # inputs.neovim-nightly-overlay
           ];
         };
         extraSpecialArgs = { inherit inputs; };
