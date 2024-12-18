@@ -22,30 +22,7 @@
   };
 
   outputs = inputs: {
-    nixosConfigurations = {
-      Renchon = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [ ./hosts/Renchon ];
-      };
-      Komachan = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [ ./hosts/Komachan ];
-      };
-    };
-    homeConfigurations = {
-      myHome = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = import inputs.nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-          overlays = [
-            inputs.hyprpanel.overlay
-          ];
-        };
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home-manager ];
-      };
-    };
+    nixosConfigurations = (import ./hosts inputs).nixos;
+    homeConfigurations = (import ./hosts inputs).home-manager;
   };
 }

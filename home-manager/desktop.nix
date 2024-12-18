@@ -32,6 +32,7 @@
       waybar
       wlogout
       libnotify
+      brightnessctl
       grim
       slurp
       playerctl
@@ -77,10 +78,6 @@
     source = ../home/.config/wlogout;
     recursive = true;
   };
-  # home.file.".config/swaync" = {
-  #   source = ../home/.config/swaync;
-  #   recursive = true;
-  # };
   home.file.".config/gtk-3.0" = {
     source = ../home/.config/gtk-3.0;
     recursive = true;

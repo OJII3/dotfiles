@@ -5,10 +5,7 @@
     bottom
     httpie
     ripgrep
-    pingu
     fzf
-    tig
-    delta
     yazi
     tmux
     imagemagick
@@ -18,30 +15,22 @@
     zip
     unar
     lzip
-    brightnessctl
     wev
     ocs-url
     tree
-    xdg-user-dirs
-    ghq
-    git-sync
 
     # cli apps
     fastfetch
     nyancat
     # termpdfpy # <- broken
     libsixel
-    libwebp
-    ollama
     online-judge-tools
     pdftk
-    python312Packages.huggingface-hub
 
     # sdk, toolchain
     google-cloud-sdk
     google-cloud-sql-proxy
     terraform
-    mdbook
 
     # languages
     gcc

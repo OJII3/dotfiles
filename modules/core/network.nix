@@ -1,5 +1,8 @@
-{ ... }: {
+{ hostname, ... }: {
   # basic configuration
+  programs.mtr.enable = true; # ping x traceroute
+
+  networking.hostName = hostname;
   networking.networkmanager = {
     enable = true;
     wifi = {
@@ -7,6 +10,12 @@
       scanRandMacAddress = true;
     };
   };
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" ];

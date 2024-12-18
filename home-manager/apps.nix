@@ -3,33 +3,32 @@
   # qt.platformTheme.name = 
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
-    discord
-    # discord-ptb
-    slack
-    parsec-bin
-    evince
-    unityhub
     blender
-    gimp
-    mpv
-    inkscape-with-extensions
-    realvnc-vnc-viewer
-    jetbrains-toolbox
-    cloudflared
-    kdePackages.wrapQtAppsHook
-    kdePackages.kdeconnect-kde
-    rquickshare
-    xournalpp
-    libreoffice-qt
-    hunspell
-    nautilus
-    vlc
-    figma-linux
-    logisim-evolution
-    qtrvsim
-    hyprpicker
     bottles
+    cloudflared
+    discord
+    evince
+    figma-linux
+    gimp
+    hunspell
+    hyprpicker
+    inkscape-with-extensions
+    jetbrains-toolbox
+    kdePackages.kdeconnect-kde
+    kdePackages.wrapQtAppsHook
+    libreoffice-qt
+    logisim-evolution
+    mpv
+    nautilus
+    parsec-bin
+    qtrvsim
+    realvnc-vnc-viewer
+    rquickshare
+    slack
+    unityhub
+    vlc
     wineWowPackages.staging
+    xournalpp
   ];
 }
 

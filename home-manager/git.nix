@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    tig
+    delta
+    ghq
+  ];
   programs.git = {
     enable = true;
     userName = "ojii3";

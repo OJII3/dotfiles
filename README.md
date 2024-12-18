@@ -5,11 +5,11 @@
 ```bash
 nix run nixpkgs#git clone https://github.com/ojii3/dotfiles
 cd dotfiles
-mkdir -p ./nixos/<hostname>
-cp /etc/nixos/hardware-configuration.nix ./nixos/<hostname>/
+mkdir -p ./host/<hostname>
+cp /etc/nixos/hardware-configuration.nix ./host/<hostname>/nixos.nix
 # create ./nixos/<hostname>/default.nix from other host's config, and edit it
 sudo nixos-rebuild switch --flake .#<hostname>
-home-manager switch --flake .#myHomeManager
+home-manager switch --flake .#<username>@<hostname>
 ```
 
 ## Without Nix
