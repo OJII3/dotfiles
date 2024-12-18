@@ -27,7 +27,7 @@
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
-    powerManagement.finegrained = true;
+    powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
     prime = {
@@ -42,12 +42,12 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    # package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ glxinfo ];
+  environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
