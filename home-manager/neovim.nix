@@ -2,6 +2,7 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
+    # withNodeJs = true;
     # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
@@ -9,7 +10,7 @@
       # tree-sitter
       imagemagick
       deno
-      nodejs
+      nodejs-slim
       tree-sitter
       # lsp, formatter, linter
       bash-language-server
