@@ -10,4 +10,8 @@
     source = ../home/.config/kitty;
     recursive = true;
   };
+  home.file.".config/ghostty" = {
+    source = ../home/.config/ghostty;
+    recursive = true;
+  };
 }

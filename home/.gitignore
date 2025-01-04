@@ -85,6 +85,8 @@
 !/.config/kitty/**
 !/.config/rio/
 !/.config/rio/**
+!/.config/ghostty/
+!/.config/ghostty/**
 # zsh 
 !.zshrc
 !.zshrc.pre

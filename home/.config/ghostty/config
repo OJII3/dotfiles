@@ -1,0 +1,15 @@
+shell-integration = zsh
+
+font-family = "JetBrains Mono"
+font-family = "HackGen Console NF"
+font-size = 12
+
+theme = tokyonight
+background-opacity = 0.85
+window-decoration = false
+
+keybind = ctrl+shift+enter=new_split:auto
+keybind = ctrl+super+h=goto_split:left
+keybind = ctrl+super+l=goto_split:right
+keybind = ctrl+super+j=goto_split:bottom
+keybind = ctrl+super+k=goto_split:top

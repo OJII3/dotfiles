@@ -17,6 +17,7 @@
       la = "ls -a";
       l = "ls";
       g = "git";
+      ti = "tig status";
       ya = "yazi";
       se = "serie";
     };
