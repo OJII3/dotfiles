@@ -1,8 +1,6 @@
 return {
 	"giusgad/pets.nvim",
-	enabled = (function()
-		return os.getenv("TERM") == "xterm-kitty"
-	end)(),
+	enabled = os.getenv("TERM") == "xterm-kitty" or os.getenv("TERM") == "xterm-ghostty",
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
 		{ "giusgad/hologram.nvim" },

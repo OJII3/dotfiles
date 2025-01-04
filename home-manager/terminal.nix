@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     kitty
-    foot
+    ghostty
   ];
   programs.kitty = {
     enable = true;

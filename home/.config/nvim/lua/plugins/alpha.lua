@@ -17,7 +17,8 @@ return {
 		vim.api.nvim_set_hl(0, "CustomAlphaHeader", { fg = "#039393", bold = true })
 		dashboard.section.buttons.val = {}
 
-		if os.getenv("TERM") == "xterm-kitty" then
+		local term = os.getenv("TERM")
+		if term == "xterm-kitty" or term == "xterm-ghostty" then
 			local api = require("image")
 			local image = api.from_file("/home/ojii3/dotfiles/assets/images/Bronie_Haxxor_Bunny_M.png", {
 				x = math.floor(vim.api.nvim_win_get_width(0) / 2) - 50,

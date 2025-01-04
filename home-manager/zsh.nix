@@ -18,6 +18,7 @@
       l = "ls";
       g = "git";
       ya = "yazi";
+      se = "serie";
     };
 
     history = {
