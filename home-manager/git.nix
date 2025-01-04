@@ -3,6 +3,7 @@
     tig
     delta
     ghq
+    serie
   ];
   programs.git = {
     enable = true;
@@ -11,11 +12,13 @@
     aliases = {
       a = "add";
       b = "branch";
-      c = "commit -m";
+      c = "commit";
+      cm = "commit -m";
       co = "checkout";
       d = "diff";
       f = "fetch";
-      g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      # g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      g = "!serie";
       l = "log";
       m = "merge";
       ph = "push";
