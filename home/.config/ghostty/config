@@ -6,9 +6,12 @@ font-size = 12
 
 theme = tokyonight
 background-opacity = 0.85
+unfocused-split-opacity = 0.85
 window-decoration = false
 
 keybind = ctrl+shift+enter=new_split:auto
+keybind = ctrl+shift+[=goto_split:prevous
+keybind = ctrl+shift+]=goto_split:next
 keybind = ctrl+super+h=goto_split:left
 keybind = ctrl+super+l=goto_split:right
 keybind = ctrl+super+j=goto_split:bottom

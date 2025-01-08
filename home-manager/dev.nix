@@ -22,7 +22,7 @@
     # cli apps
     fastfetch
     nyancat
-    # termpdfpy # <- broken
+    tdf
     libsixel
     online-judge-tools
     pdftk
