@@ -28,7 +28,6 @@
     unityhub
     vlc
     wineWowPackages.staging
-    xournalpp
   ];
 }
 
