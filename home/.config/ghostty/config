@@ -10,7 +10,7 @@ unfocused-split-opacity = 0.85
 window-decoration = false
 
 keybind = ctrl+shift+enter=new_split:auto
-keybind = ctrl+shift+[=goto_split:prevous
+keybind = ctrl+shift+[=goto_split:previous
 keybind = ctrl+shift+]=goto_split:next
 keybind = ctrl+super+h=goto_split:left
 keybind = ctrl+super+l=goto_split:right
