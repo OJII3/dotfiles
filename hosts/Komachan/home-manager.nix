@@ -13,17 +13,8 @@
     ../../home-manager/zsh.nix
   ];
 
-  # override
-  wayland.windowManager.hyprland =
-    {
-      extraConfig = ''
-        ${builtins.readFile ../../home/.config/hypr/hyprland/env.conf}
-        ${builtins.readFile ../../home/.config/hypr/hyprland/devices.conf}
-        ${builtins.readFile ../../home/.config/hypr/hyprland/execs.conf}
-        ${builtins.readFile ../../home/.config/hypr/hyprland/general.conf}
-        ${builtins.readFile ../../home/.config/hypr/hyprland/keybinds.conf}
-        ${builtins.readFile ../../home/.config/hypr/hyprland/rules.conf}
-        exec-once = hypridle
-      '';
-    };
+  # add laptop specific configuration
+  wayland.windowManager.hyprland.extraConfig = ''
+    exec-once = hypridle
+  '';
 }

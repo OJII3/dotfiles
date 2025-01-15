@@ -22,6 +22,7 @@
       dockerfile-language-server-nodejs
       efm-langserver
       haskell-language-server
+      haskellPackages.lsp
       lua-language-server
       nil
       nixpkgs-fmt
@@ -33,7 +34,7 @@
       ruff
       rust-analyzer
       shellcheck
-      stylelint
+      stylelint-lsp
       stylua
       tailwindcss-language-server
       taplo
