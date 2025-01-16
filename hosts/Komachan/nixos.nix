@@ -50,6 +50,11 @@
     # nur.repos.ataraxiasjel.waydroid-script # nur
   ];
 
+  services.cloudflared = {
+    enable = true;
+    group = "cloudflared";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # List services that you want to enable:
