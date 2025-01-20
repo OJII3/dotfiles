@@ -11,6 +11,7 @@
     ../../home-manager/network.nix
     ../../home-manager/terminal.nix
     ../../home-manager/zsh.nix
+    ../../home-manager/games.nix
   ];
 
   # add laptop specific configuration
