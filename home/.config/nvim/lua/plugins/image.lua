@@ -5,4 +5,20 @@ return {
 		{ "MunifTanjim/nui.nvim" },
 	},
 	lazy = false,
+	opts = {
+		integrations = {
+			markdown = {
+				enabled = false,
+			},
+			typst = {
+				enabled = false,
+			},
+			html = {
+				enabled = false,
+			},
+			css = {
+				enabled = false,
+			},
+		},
+	},
 }
