@@ -38,6 +38,7 @@
       stylua
       tailwindcss-language-server
       taplo
+      texlab
       tinymist
       typescript-language-server
       typstyle
