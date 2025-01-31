@@ -1,8 +1,8 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ../../home-manager/apps.nix
     ../../home-manager/browser.nix
-    ../../home-manager/desktop.nix
+    # ../../home-manager/desktop.nix
     ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
     ../../home-manager/fcitx.nix
@@ -13,11 +13,16 @@
     ../../home-manager/zsh.nix
   ];
 
-  wayland.windowManager.hyprland.extraConfig = ''
-    env = GBM_BACKEND,nvidia-drm
-    env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-    # env = LIBVA_DRIVER_NAME,nvidia
+  home.packages = with pkgs; [
+    kdePackages.krdp
+    wayvnc
+  ];
 
-    exec-once = wayvnc 0.0.0.0
-  '';
+  # wayland.windowManager.hyprland.extraConfig = ''
+  #   env = GBM_BACKEND,nvidia-drm
+  #   env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+  #   # env = LIBVA_DRIVER_NAME,nvidia
+  #
+  #   exec-once = wayvnc 0.0.0.0
+  # '';
 }

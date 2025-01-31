@@ -49,6 +49,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
 
+  # override hyprland
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
+  # qt = {
+  #   enable = true;
+  #   style = "breeze";
+  #   platformTheme = "gnome";
+  # };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
