@@ -45,7 +45,9 @@ in
       system = "x86_64-linux";
       hostname = "Renchon";
       username = "ojii3";
-      modules = [ ./Renchon/nixos.nix ];
+      modules = [
+        ./Renchon/nixos.nix
+      ];
     };
     Komachan = mkNixosSystem {
       system = "x86_64-linux";
@@ -60,7 +62,10 @@ in
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ inputs.hyprpanel.overlay ];
-      modules = [ ./Renchon/home-manager.nix ];
+      modules = [
+        ./Renchon/home-manager.nix
+        inputs.plasma-manager.homeManagerModules.plasma-manager
+      ];
     };
     "ojii3@Komachan" = mkHomeManagerConfiguration {
       system = "x86_64-linux";

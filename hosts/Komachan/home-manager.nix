@@ -2,7 +2,7 @@
   imports = [
     ../../home-manager/apps.nix
     ../../home-manager/browser.nix
-    ../../home-manager/desktop.nix
+    ../../home-manager/hyprland.nix
     ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
     ../../home-manager/fcitx.nix

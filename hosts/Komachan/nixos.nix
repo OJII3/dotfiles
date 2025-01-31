@@ -33,7 +33,10 @@
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  #services.flatpak.enable = true;
+  programs.hyprland = {
+    enable = true;
+  };
+
 
   virtualisation = {
     waydroid.enable = true;

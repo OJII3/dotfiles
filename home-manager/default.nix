@@ -12,7 +12,6 @@
     ./browser.nix
     ./direnv.nix
     ./apps.nix
-    ./desktop.nix
     ./zsh.nix
     ./fcitx.nix
     ./terminal.nix

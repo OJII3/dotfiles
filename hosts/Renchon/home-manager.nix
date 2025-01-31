@@ -2,7 +2,8 @@
   imports = [
     ../../home-manager/apps.nix
     ../../home-manager/browser.nix
-    # ../../home-manager/desktop.nix
+    # ../../home-manager/hyprland.nix
+    ../../home-manager/plasma.nix
     ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
     ../../home-manager/fcitx.nix
@@ -11,11 +12,6 @@
     ../../home-manager/network.nix
     ../../home-manager/terminal.nix
     ../../home-manager/zsh.nix
-  ];
-
-  home.packages = with pkgs; [
-    kdePackages.krdp
-    wayvnc
   ];
 
   # wayland.windowManager.hyprland.extraConfig = ''
