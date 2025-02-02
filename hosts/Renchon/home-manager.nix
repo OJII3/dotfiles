@@ -14,11 +14,18 @@
     ../../home-manager/zsh.nix
   ];
 
-  # wayland.windowManager.hyprland.extraConfig = ''
-  #   env = GBM_BACKEND,nvidia-drm
-  #   env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-  #   # env = LIBVA_DRIVER_NAME,nvidia
-  #
-  #   exec-once = wayvnc 0.0.0.0
-  # '';
-}
+  programs.plasma = {
+    configFile = {
+      "kscreenlockerrc"."Daemon"."Autolock" = false;
+      "kscreenlockerrc"."Daemon"."Timeout" = 0;
+    };
+  };
+    # wayland.windowManager.hyprland.extraConfig = ''
+    #   env = GBM_BACKEND,nvidia-drm
+    #   env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+    #   # env = LIBVA_DRIVER_NAME,nvidia
+    #
+    #   exec-once = wayvnc 0.0.0.0
+    # '';
+    }
+

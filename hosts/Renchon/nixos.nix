@@ -52,11 +52,15 @@
   # override hyprland
   services.desktopManager.plasma6.enable = true;
   services.displayManager.defaultSession = "plasma";
-  # qt = {
-  #   enable = true;
-  #   style = "breeze";
-  #   platformTheme = "gnome";
-  # };
+  services.rustdesk-server = {
+    enable = true;
+    signal = {
+      enable = true;
+      relayHosts = [ "100.121.253.24" ];
+    };
+    relay.enable = true;
+    openFirewall = true;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
