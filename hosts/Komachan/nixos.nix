@@ -33,11 +33,6 @@
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  programs.hyprland = {
-    enable = true;
-  };
-
-
   virtualisation = {
     waydroid.enable = true;
   };
@@ -55,6 +50,10 @@
   services.cloudflared = {
     enable = true;
     group = "cloudflared";
+  };
+
+  programs.hyprland = {
+    enable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -75,10 +74,6 @@
       ENERGY_PERF_POLICY_ON_AC = "performance";
       ENERGY_PERF_POLICY_ON_BAT = "powersave";
     };
-
-  programs.hyprland = {
-    enable = true;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
