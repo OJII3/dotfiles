@@ -1,0 +1,9 @@
+export XCURSOR_SIZE=32
+export WLR_NO_HARDWARE_CURSORS=1
+export QT_QPA_PLATFORM=wayland;xcb
+export QT_QPA_PLATFORMTHEME=qt5ct
+# export GDK_DEBUG=portals
+export SDL_VIDEODRIVER=x11
+export GTK_BACKEND=wayland,x11,*
+export GTK_THEME=canta-dark
+export XDG_DATA_DIRS=XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     sddm-chili-theme
     canta-theme
@@ -9,7 +9,7 @@
     xdg-desktop-portal-gtk
   ];
 
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
   services.xserver = {
     xkb = {
       variant = "";
@@ -17,13 +17,19 @@
     };
   };
 
-  services.displayManager.sddm = {
+  programs.hyprland = {
     enable = true;
-    theme = "chili";
-    wayland.enable = true;
+    withUWSM = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
   };
 
   programs.gnupg.agent = {
     pinentryPackage = pkgs.pinentry-qt;
+  };
+
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "chili";
+    wayland.enable = true;
   };
 }

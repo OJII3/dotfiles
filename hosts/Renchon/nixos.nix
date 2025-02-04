@@ -49,9 +49,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
 
-  # override hyprland
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.defaultSession = "plasma";
   services.rustdesk-server = {
     enable = true;
     signal = {

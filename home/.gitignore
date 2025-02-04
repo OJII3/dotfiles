@@ -48,6 +48,8 @@
 !/.config/swaylock/**
 !/.config/wlogout/
 !/.config/wlogout/**
+!/.config/uwsm/
+!/.config/uwsm/**
 # launcher, status bar
 !/.config/rofi/
 !/.config/rofi/**
