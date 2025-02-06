@@ -7,7 +7,7 @@ return {
 		provider = "copilot",
 		auto_suggestions_provider = "copilot",
 		copilot = {
-			model = "o3-mini",
+			model = "claude-3.5-sonnet",
 		},
 		mappings = {
 			ask = "<Space>aa",
