@@ -1,3 +1,5 @@
+@import "latte.css";
+
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   font-family:
@@ -9,12 +11,12 @@
     sans-serif;
   font-size: 13px;
   font-weight: bold;
+  color: @text;
 }
 
 window#waybar {
-  background: linear-gradient(to right, #039393, #000000);
-  color: #ffffff;
-  transition-property: background-color;
+  background-color: shade(@base, 0.9);
+  border: 2px solid alpha(@crust, 0.3);
   transition-duration: 0.5s;
 }
 
