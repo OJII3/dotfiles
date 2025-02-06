@@ -1,6 +1,6 @@
 {
-	programs = {
-		firefox.enable = true;
-		google-chrome.enable = true;
-	};
+  programs = {
+    firefox.enable = true;
+    google-chrome.enable = true;
+  };
 }

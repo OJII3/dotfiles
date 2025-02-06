@@ -64,14 +64,14 @@
     source = ../home/.config/wlogout;
     recursive = true;
   };
-  home.file.".config/gtk-3.0" = {
-    source = ../home/.config/gtk-3.0;
-    recursive = true;
-  };
-  home.file.".config/gtk-4.0" = {
-    source = ../home/.config/gtk-4.0;
-    recursive = true;
-  };
+  # home.file.".config/gtk-3.0" = {
+  #   source = ../home/.config/gtk-3.0;
+  #   recursive = true;
+  # };
+  # home.file.".config/gtk-4.0" = {
+  #   source = ../home/.config/gtk-4.0;
+  #   recursive = true;
+  # };
 
   gtk = {
     enable = true;
