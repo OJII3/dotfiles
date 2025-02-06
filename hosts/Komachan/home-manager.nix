@@ -5,7 +5,6 @@
     ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
     ../../home-manager/fcitx.nix
-    ../../home-manager/games.nix
     ../../home-manager/git.nix
     ../../home-manager/hyprland.nix
     ../../home-manager/kdewallet.nix
