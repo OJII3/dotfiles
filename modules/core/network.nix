@@ -19,8 +19,8 @@
   networking.firewall = {
     enable = true;
     trustedInterfaces = [ "tailscale0" ];
-    allowedTCPPorts = [ 7236 ]; # VNC
-    allowedUDPPorts = [ 7236 ]; # VNC
+    allowedTCPPorts = [ 7236 7777 ]; # VNC, Uniy programs
+    allowedUDPPorts = [ 7236 7777 ]; # VNC
     allowedTCPPortRanges = [
       { from = 1714; to = 1764; } # KDE Connect
     ];

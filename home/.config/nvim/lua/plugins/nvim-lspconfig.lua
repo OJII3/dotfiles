@@ -52,7 +52,7 @@ return {
 			"pyright",
 			"pyright",
 			"stylelint_lsp",
-			"tailwindcss",
+			-- "tailwindcss",
 			"taplo",
 			"texlab",
 			"ts_ls",

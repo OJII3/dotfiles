@@ -47,6 +47,11 @@
     # nur.repos.ataraxiasjel.waydroid-script # nur
   ];
 
+  networking.dhcpcd.extraConfig = ''
+    interface wlp2s0
+    metric 200
+  '';
+
   services.cloudflared = {
     enable = true;
     group = "cloudflared";

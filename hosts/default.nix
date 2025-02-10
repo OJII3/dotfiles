@@ -61,7 +61,7 @@ in
     "ojii3@Renchon" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
-      overlays = [ inputs.hyprpanel.overlay ];
+      overlays = [ ];
       modules = [
         ./Renchon/home-manager.nix
         inputs.plasma-manager.homeManagerModules.plasma-manager
@@ -70,7 +70,7 @@ in
     "ojii3@Komachan" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
-      overlays = [ inputs.hyprpanel.overlay ];
+      overlays = [ ];
       modules = [ ./Komachan/home-manager.nix ];
     };
   };

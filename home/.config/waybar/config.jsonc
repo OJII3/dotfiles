@@ -1,32 +1,17 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 24,
+    "height": 36,
     "spacing": 10,
     "margin-bottom": 0,
-    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/scratchpad", "hyprland/window"],
-    "modules-right": ["tray", "wireplumber", "backlight", "battery", "clock", "custom/wlogout"],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["mpris"],
+    "modules-right": ["tray", "wireplumber", "backlight", "battery", "clock", "custom/power"],
     "hyprland/workspaces": {
-      "format": "●"
+      "format": "{icon}",
     },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+    "hyprland/window": {
+      "separate-outputs": true,
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -54,13 +39,6 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
@@ -72,11 +50,11 @@
         // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "CPU {usage}%",
+        "format": " {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "RAM {}%"
+        "format": " {}%"
     },
     "disk": {
       "unit": "GB",
@@ -84,8 +62,19 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "󰛩 {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
     },
     "battery": {
         "states": {
@@ -93,9 +82,9 @@
             "warning": 30,
             "critical": 20
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -105,24 +94,36 @@
         "bat": "BAT2"
     },
     "wireplumber": {
-      "format": "{icon} {volume}%",
-      "format-muted": "󰖁 {volume}%",
-      "on-click": "helvum",
-      "format-icons": ["", "", ""]
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 {volume}%",
+        "on-click": "helvum",
+        "format-icons": ["", "", ""]
     },
     "custom/pipewire": {
-      "format": "{icon}",
-      "return-type": "json",
-      "signal": 8,
-      "interval": 1,
-      "format-icons": {
+        "format": "{icon}",
+        "return-type": "json",
+        "signal": 8,
+        "interval": 1,
+        "format-icons": {
           "mute": "󰖁",
           "default": ["", "", ""]
-      },
-      "exec": "pw-volume status"
+        },
+        "exec": "pw-volume status"
     },
-    "custom/wlogout": {
-      "format": " ",
-      "on-click": "wlogout"
+    "custom/power": {
+        "format" : "⏻ ",
+        "on-click": "wlogout",
+    },
+    "mpris": {
+      "format": "DEFAULT: {player_icon} {dynamic}",
+      "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+      "player-icons": {
+        "default": "▶",
+        "mpv": "🎵"
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
+      // "ignored-players": ["firefox"]
     }
 }
