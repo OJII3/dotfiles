@@ -10,6 +10,7 @@
     ./bluetooth.nix
     ./gpg.nix
     ./i18n.nix
+    ./kdewallet.nix
     ./keymap.nix
     ./network.nix
     ./security.nix
