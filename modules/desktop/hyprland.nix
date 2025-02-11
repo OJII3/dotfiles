@@ -34,8 +34,10 @@
   #   wayland.enable = true;
   # };
 
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
+  # INFO: GDM didn't work well with NVIDIA :(, 
+  # so these settings were moved to host specific configuration!
+  # services.xserver.displayManager.gdm = {
+  #   enable = true;
+  #   wayland = true;
+  # };
 }

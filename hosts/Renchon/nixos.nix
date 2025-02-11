@@ -17,12 +17,14 @@
       common-pc-ssd
     ]);
 
+
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # nvidia
+
+  # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -45,18 +47,16 @@
     # package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+
+  # system packages
   environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
 
-  services.rustdesk-server = {
+
+  # services
+  services.displayManager.sddm = {
     enable = true;
-    signal = {
-      enable = true;
-      relayHosts = [ "100.121.253.24" ];
-    };
-    relay.enable = true;
-    openFirewall = true;
+    theme = "chili";
+    wayland.enable = true;
   };
 
   # This value determines the NixOS release from which the default
@@ -66,16 +66,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
-  # nix = {
-  #   settings = {
-  #     auto-optimise-store = true;
-  #     experimental-features = [ "nix-command" "flakes" ];
-  #   };
-  #   gc = {
-  #     automatic = true;
-  #     dates = "weekly";
-  #     options = "--delete-older-than 7d";
-  #   };
-  # };
 }
