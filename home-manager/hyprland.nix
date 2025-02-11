@@ -14,7 +14,6 @@
       playerctl
       slurp
       swaynotificationcenter
-      walker
       wl-clipboard
       wlogout
     ];
