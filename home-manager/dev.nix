@@ -38,7 +38,7 @@
     meson
     gnumake
     go
-    rye
+    uv
     typst
     dotnet-sdk
     rustup
