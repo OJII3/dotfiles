@@ -2,8 +2,6 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
-    # withNodeJs = true;
-    # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
@@ -56,10 +54,6 @@
     recursive = true;
   };
 
-  # home.packages = with pkgs; [
-  #   skk-dicts
-  # ];
-  #
   home.file.".skk" = {
     source = "${pkgs.skkDictionaries.l}/share/skk";
     recursive = true;
