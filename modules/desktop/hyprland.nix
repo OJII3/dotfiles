@@ -27,9 +27,15 @@
     pinentryPackage = pkgs.pinentry-qt;
   };
 
-  services.displayManager.sddm = {
+  # INFO: SDDM works poorly when logging in too fast (e.g. fprintd)
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   theme = "chili";
+  #   wayland.enable = true;
+  # };
+
+  services.xserver.displayManager.gdm = {
     enable = true;
-    theme = "chili";
-    wayland.enable = true;
+    wayland = true;
   };
 }

@@ -63,7 +63,7 @@
 
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
-  security.pam.services.login.fprintAuth = true;
+  # security.pam.services.login.fprintAuth = true;
 
   services.tlp.enable = true;
   services.tlp.settings =
