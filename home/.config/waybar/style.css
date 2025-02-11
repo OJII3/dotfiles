@@ -1,20 +1,32 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    JetBrains Mono NL,
+    FontAwesome,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 16px;
   font-weight: bold;
 }
 
 window#waybar {
-  background-color: rgba(220, 220, 220, 0.8);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  background-color: rgba(220, 220, 220, 1);
+  border-bottom: 6px solid rgba(220, 220, 220, 1);
+  border-top: 6px solid rgba(220, 220, 220, 1);
   color: #000022;
   transition-property: background-color;
   transition-duration: 0.5s;
+  padding: 2px 0;
 }
 
 window#waybar.hidden {
   opacity: 0.2;
+}
+
+window#workspace.active {
+  border-top: 6px solid #f1c40f;
 }
 
 /*
@@ -94,10 +106,9 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
-#mpd {
+#mpris #mpd {
   padding: 0 16px;
   /* color: #ffffff; */
-  border-radius: 20px;
 }
 
 #window,
@@ -118,18 +129,18 @@ button:hover {
 }
 
 #clock {
-  border: 3px solid #64727d;
+  border-top: 6px solid #64727d;
 }
 
 #battery {
-  border: 3px solid #ffffff;
+  border-top: 6px solid #ffffff;
   color: #000000;
 }
 
 #battery.charging,
 #battery.plugged {
   /* color: #ffffff; */
-  border: 3px solid #26a65b;
+  border-top: 6px solid #26a65b;
 }
 
 @keyframes blink {
@@ -187,7 +198,7 @@ label:focus {
 }
 
 #backlight {
-  border: 3px solid #90b1b1;
+  border-top: 6px solid #90b1b1;
 }
 
 #network {
@@ -199,7 +210,7 @@ label:focus {
 }
 
 #pulseaudio {
-  border: 3px solid #f1c40f;
+  border-top: 6px solid #fe340f;
 }
 
 #pulseaudio.muted {
@@ -208,11 +219,11 @@ label:focus {
 }
 
 #wireplumber {
-  border: 3px solid #fff0f5;
+  border-top: 6px solid #fff0f5;
 }
 
 #wireplumber.muted {
-  border: 3px solid #f53c3c;
+  border-top: 6px solid #f53c3c;
 }
 
 #custom-media {
@@ -238,7 +249,7 @@ label:focus {
 }
 
 #tray {
-  border: 3px solid #2980b9;
+  border-top: 6px solid #2980b9;
 }
 
 #tray > .passive {
@@ -274,6 +285,10 @@ label:focus {
 
 #mpd.paused {
   background-color: #51a37a;
+}
+
+#mpris {
+  border-top: 6px solid #f1c40f;
 }
 
 #language {

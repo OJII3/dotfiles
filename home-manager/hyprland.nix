@@ -5,26 +5,19 @@
       hypridle
       hyprlock
       hyprpicker
-      # hyprpanel
-      # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
       inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
-      # canta-theme # set below
       anyrun
-      waybar
-      wlogout
-      libnotify
       brightnessctl
       grim
-      slurp
-      playerctl
-      wl-clipboard
-      networkmanagerapplet
       kdePackages.plasma-workspace # xembedsniproxy
+      networkmanagerapplet
+      playerctl
+      slurp
+      swaynotificationcenter
+      walker
+      wl-clipboard
+      wlogout
     ];
-
-  # programs.waybar = {
-  #   enable = true;
-  # };
 
   wayland.windowManager.hyprland =
     {
@@ -43,6 +36,8 @@
       ];
     };
 
+
+
   home.file.".config/uwsm/env".source = ../home/.config/uwsm/env;
   # home.file.".config/uwsm/env-hyprland".source = ../home/.config/uwsm/env-hyprland;
   home.file.".config/hypr/hyprlock.conf".source = ../home/.config/hypr/hyprlock.conf;
@@ -52,32 +47,38 @@
     source = ../home/.config/hypr/hyprland/scripts;
     recursive = true;
   };
+
   home.file.".config/anyrun" = {
     source = ../home/.config/anyrun;
     recursive = true;
+  };
+
+  # status bar
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
   };
   home.file.".config/waybar" = {
     source = ../home/.config/waybar;
     recursive = true;
   };
+
+  # notification
   home.file.".config/wlogout" = {
     source = ../home/.config/wlogout;
     recursive = true;
   };
-  # home.file.".config/gtk-3.0" = {
-  #   source = ../home/.config/gtk-3.0;
-  #   recursive = true;
-  # };
-  # home.file.".config/gtk-4.0" = {
-  #   source = ../home/.config/gtk-4.0;
-  #   recursive = true;
-  # };
+  services.swaync = {
+    enable = true;
+  };
+
+  services.network-manager-applet.enable = true;
 
   gtk = {
     enable = true;
     theme = {
       package = pkgs.canta-theme;
-      name = "Canta";
+      name = "Canta-dark";
     };
   };
 }
