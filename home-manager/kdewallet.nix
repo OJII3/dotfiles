@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    libsForQt5.kdewallet
+    libsForQt5.kwallet
     libsForQt5.kwallet-pam
     libsForQt5.kwalletmanager
     libsForQt5.ksshaskpass
