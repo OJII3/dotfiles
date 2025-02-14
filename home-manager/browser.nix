@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs = {
     firefox.enable = true;
     google-chrome = {
@@ -10,4 +10,8 @@
       ];
     };
   };
+
+  home.packages = with pkgs; [
+    kdePackages.plasma-browser-integration
+  ];
 }
