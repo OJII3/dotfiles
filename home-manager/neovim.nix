@@ -2,13 +2,13 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
+    withNodeJs = true;
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
       # tree-sitter
       imagemagick
       deno
-      nodejs-slim
       tree-sitter
       # lsp, formatter, linter
       bash-language-server
@@ -25,7 +25,7 @@
       nil
       nixpkgs-fmt
       nixpkgs-lint
-      nodePackages.eslint
+      # eslint
       nodePackages.prettier
       pyright
       python311Packages.debugpy
