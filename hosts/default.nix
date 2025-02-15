@@ -55,6 +55,12 @@ in
       username = "ojii3";
       modules = [ ./Komachan/nixos.nix ];
     };
+    oshio = mkNixosSystem {
+      system = "aarch64-linux";
+      hostname = "oshio";
+      username = "ojii3";
+      modules = [ ./oshio/nixos.nix ];
+    };
   };
 
   home-manager = {
@@ -62,16 +68,19 @@ in
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [
-        ./Renchon/home-manager.nix
-        inputs.plasma-manager.homeManagerModules.plasma-manager
-      ];
+      modules = [ ./Renchon/home-manager.nix ];
     };
     "ojii3@Komachan" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ ];
       modules = [ ./Komachan/home-manager.nix ];
+    };
+    "ojii3@oshio" = mkHomeManagerConfiguration {
+      system = "aarch64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./oshio/home-manager.nix ];
     };
   };
 }
