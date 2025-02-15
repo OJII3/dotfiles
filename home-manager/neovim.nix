@@ -9,6 +9,8 @@
       # tree-sitter
       imagemagick
       deno
+      gnumake
+      gcc
       tree-sitter
       # lsp, formatter, linter
       bash-language-server

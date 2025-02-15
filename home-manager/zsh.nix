@@ -54,5 +54,9 @@
 
   };
 
+    home.packages = with pkgs; [
+      fzf 
+    ];
+
   programs.starship.enable = true;
 }

@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
+    ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
     ../../home-manager/git.nix
     ../../home-manager/kdewallet.nix
@@ -23,8 +24,6 @@
       swaynotificationcenter
       wl-clipboard
       wlogout
-
-      uwsm
     ];
 
   wayland.windowManager.hyprland =
@@ -44,7 +43,6 @@
     };
 
 
-
   home.file.".config/uwsm/env".source = ../../home/.config/uwsm/env;
   # home.file.".config/uwsm/env-hyprland".source = ../../home/.config/uwsm/env-hyprland;
   home.file.".config/hypr/hyprlock.conf".source = ../../home/.config/hypr/hyprlock.conf;
@@ -54,13 +52,10 @@
     source = ../../home/.config/hypr/hyprland/scripts;
     recursive = true;
   };
-
   home.file.".config/anyrun" = {
     source = ../../home/.config/anyrun;
     recursive = true;
   };
-
-  # status bar
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -69,8 +64,6 @@
     source = ../../home/.config/waybar;
     recursive = true;
   };
-
-  # notification
   home.file.".config/wlogout" = {
     source = ../../home/.config/wlogout;
     recursive = true;
@@ -79,13 +72,22 @@
     enable = true;
   };
 
-  services.network-manager-applet.enable = true;
 
+  # theme
   gtk = {
     enable = true;
     theme = {
       package = pkgs.canta-theme;
       name = "Canta-dark";
     };
+  };
+
+  programs.chromium = {
+    enable = true;
+    commandLineArgs = [
+      "--enable-features=UseOzonePlatform"
+      "--ozone-platform=wayland"
+      "--enable-wayland-ime"
+    ];
   };
 }

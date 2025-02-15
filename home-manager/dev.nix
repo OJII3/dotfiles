@@ -5,7 +5,6 @@
     bottom
     httpie
     ripgrep
-    fzf
     yazi
     tmux
     imagemagick
