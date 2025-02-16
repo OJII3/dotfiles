@@ -24,6 +24,7 @@
       swaynotificationcenter
       wl-clipboard
       wlogout
+      wayvnc
     ];
 
   wayland.windowManager.hyprland =
@@ -37,8 +38,10 @@
         ${builtins.readFile ../../home/.config/hypr/hyprland/general.conf}
         ${builtins.readFile ../../home/.config/hypr/hyprland/keybinds.conf}
         ${builtins.readFile ../../home/.config/hypr/hyprland/rules.conf}
+        exec-once = wayvnc 0.0.0.0
       ''; # not load env, because it's loaded by uwsm
       plugins = [
+        pkgs.hyprlandPlugins.hyprbars
       ];
     };
 

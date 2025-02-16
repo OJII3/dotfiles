@@ -69,6 +69,8 @@ in
     };
   };
 
+  virtualisation.waydroid.enable = true;
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
