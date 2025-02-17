@@ -55,7 +55,6 @@
   # status bar
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
   };
   home.file.".config/waybar" = {
     source = ../home/.config/waybar;
@@ -71,7 +70,10 @@
     enable = true;
   };
 
-  services.network-manager-applet.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+  ];
 
   gtk = {
     enable = true;
