@@ -1,6 +1,5 @@
 { inputs, pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    sddm-chili-theme
     canta-theme
   ];
 

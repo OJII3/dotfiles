@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/core
       ../../modules/desktop
-      ../../modules/desktop/tuigreet
+      ../../modules/desktop/tuigreet.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       lenovo-thinkpad-e14-amd

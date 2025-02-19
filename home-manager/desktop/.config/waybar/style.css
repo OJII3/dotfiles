@@ -12,10 +12,10 @@
 }
 
 window#waybar {
-  background-color: rgba(220, 220, 220, 1);
-  border-bottom: 6px solid rgba(220, 220, 220, 1);
-  border-top: 6px solid rgba(220, 220, 220, 1);
-  color: #000022;
+  background-color: rgba(2, 2, 2, 1);
+  border-bottom: 6px solid rgba(2, 2, 2, 1);
+  border-top: 6px solid rgba(2, 2, 2, 1);
+  color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
   padding: 2px 0;
@@ -134,13 +134,13 @@ button:hover {
 
 #battery {
   border-top: 6px solid #ffffff;
-  color: #000000;
+  color: #ffffff;
 }
 
 #battery.charging,
 #battery.plugged {
   /* color: #ffffff; */
-  border-top: 6px solid #26a65b;
+  border-top: 6px solid #ffffff;
 }
 
 @keyframes blink {
@@ -224,20 +224,6 @@ label:focus {
 
 #wireplumber.muted {
   border-top: 6px solid #f53c3c;
-}
-
-#custom-media {
-  background-color: #66cc99;
-  color: #2a5c45;
-  min-width: 100px;
-}
-
-#custom-media.custom-spotify {
-  background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-  background-color: #ffa000;
 }
 
 #temperature {
