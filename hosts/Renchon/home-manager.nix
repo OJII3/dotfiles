@@ -6,7 +6,8 @@
     ../../home-manager/direnv.nix
     ../../home-manager/fcitx.nix
     ../../home-manager/git.nix
-    ../../home-manager/hyprland.nix
+    ../../home-manager/desktop/hyprland.nix
+    ../../home-manager/desktop/theme.nix
     ../../home-manager/kdewallet.nix
     ../../home-manager/neovim.nix
     ../../home-manager/network.nix

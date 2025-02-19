@@ -3,6 +3,9 @@
   # qt.platformTheme.name = 
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
+    # logisim-evolution
+    # parsec-bin
+    # rquickshare
     blender
     bottles
     cloudflared
@@ -17,13 +20,11 @@
     kdePackages.kdeconnect-kde
     kdePackages.wrapQtAppsHook
     libreoffice-qt
-    logisim-evolution
     mpv
     nautilus
-    parsec-bin
+    nautilus-python
     qtrvsim
     realvnc-vnc-viewer
-    rquickshare
     slack
     unityhub
     vlc

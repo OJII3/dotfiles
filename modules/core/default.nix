@@ -17,7 +17,6 @@
     ./services.nix
     ./ssh.nix
     ./tools.nix
-    ./virtualisation.nix
   ];
 
   #services.flatpak.enable = true;

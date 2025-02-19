@@ -8,6 +8,7 @@
     ../../home-manager/network.nix
     ../../home-manager/terminal.nix
     ../../home-manager/zsh.nix
+    ../../home-manager/hyprland.nix
   ];
 
   home.packages = with pkgs;

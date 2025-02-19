@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/core
       ../../modules/desktop
+      ../../modules/desktop/tuigreet
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       lenovo-thinkpad-e14-amd
@@ -44,13 +45,13 @@
   ];
 
 
-  services.cloudflared = {
-    enable = true;
-    group = "cloudflared";
-  };
+  # services.cloudflared = {
+  #   enable = true;
+  #   group = "cloudflared";
+  # };
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
-  # security.pam.services.login.fprintAuth = true;
+  security.pam.services.login.fprintAuth = true;
   services.tlp.enable = true;
   services.tlp.settings =
     {
@@ -61,7 +62,6 @@
       ENERGY_PERF_POLICY_ON_AC = "performance";
       ENERGY_PERF_POLICY_ON_BAT = "powersave";
     };
-
 
   # Others
   networking.dhcpcd.extraConfig = ''

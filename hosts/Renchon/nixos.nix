@@ -9,7 +9,9 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/core
+      ../../modules/core/virtualisation.nix
       ../../modules/desktop
+      ../../modules/desktop/gdm.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
