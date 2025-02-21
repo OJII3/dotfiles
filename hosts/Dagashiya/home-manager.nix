@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
+    ../../home-manager/assets.nix
     ../../home-manager/direnv.nix
     ../../home-manager/git.nix
     ../../home-manager/neovim.nix

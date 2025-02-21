@@ -17,11 +17,13 @@
     enable = true;
     config = {
       window_gap = 8;
+      layout = "bsp";
     };
   };
   services.skhd = {
     enable = true;
     skhdConfig = "
+      cmd - Enter : kitty
       cmd - h : yabai -m window --focus west
       cmd - l : yabai -m window --focus east
       cmd - j : yabai -m window --focus south
