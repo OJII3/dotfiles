@@ -6,7 +6,7 @@
     ../../home-manager/kdewallet.nix
     ../../home-manager/neovim.nix
     ../../home-manager/network.nix
-    ../../home-manager/terminal.nix
+    ../../home-manager/terminal
     ../../home-manager/zsh.nix
     ../../home-manager/hyprland.nix
   ];

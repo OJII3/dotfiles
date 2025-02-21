@@ -6,11 +6,12 @@
     ../../home-manager/neovim.nix
     ../../home-manager/zsh.nix
     ../../home-manager/dev.nix
+    ../../home-manager/terminal/config.nix
   ];
 
+  programs.kitty.enable = true;
   programs.google-chrome.enable = true;
   home.packages = with pkgs; [
-    kitty
     raycast
   ];
 

@@ -12,7 +12,7 @@
     ../../home-manager/neovim.nix
     ../../home-manager/network.nix
     ../../home-manager/plasma.nix
-    ../../home-manager/terminal.nix
+    ../../home-manager/terminal
     ../../home-manager/zsh.nix
   ];
 
