@@ -18,7 +18,6 @@
       clang-tools
       cmake-language-server
       matlab-language-server
-      csharp-ls
       dockerfile-language-server-nodejs
       efm-langserver
       haskell-language-server

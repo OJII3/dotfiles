@@ -14,8 +14,8 @@
     zip
     unar
     lzip
-    wev
-    ocs-url
+    # wev
+    # ocs-url
     tree
 
     # cli apps

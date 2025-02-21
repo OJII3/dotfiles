@@ -31,12 +31,28 @@ let
         {
           home = {
             inherit username;
-            homeDirectory = "/home/${username}";
+            homeDirectory = if system == "aarch64-darwin" then
+              "/Users/${username}" else  "/home/${username}";
             stateVersion = "24.11";
           };
           programs.home-manager.enable = true;
         }
       ];
+    };
+
+  mkDarwinSystem =
+    { system, hostname, username, modules }:
+    inputs.nix-darwin.lib.darwinSystem {
+      inherit system;
+      modules = modules ++ [
+        {
+          nix.enable = false;
+          # stateVersion = "6";
+        }
+      ];
+      specialArgs = {
+        inherit inputs hostname username;
+      };
     };
 in
 {
@@ -76,11 +92,26 @@ in
       overlays = [ ];
       modules = [ ./Komachan/home-manager.nix ];
     };
+    "ojii3@Dagashiya" = mkHomeManagerConfiguration {
+      system = "aarch64-darwin";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Dagashiya/home-manager.nix ];
+    };
     "ojii3@oshio" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "ojii3";
       overlays = [ ];
       modules = [ ./oshio/home-manager.nix ];
+    };
+  };
+
+  nix-darwin = {
+    "Dagashiya" = mkDarwinSystem {
+      system = "aarch64-darwin";
+      hostname = "Dagashiya";
+      username = "ojii3";
+      modules = [ ./Dagashiya/darwin.nix ];
     };
   };
 }

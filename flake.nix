@@ -18,14 +18,15 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin = {
+      url ="github:LnL7/nix-darwin/master";
+      inputs.packages.follows = "nixpkgs";
     };
   };
 
   outputs = inputs: {
     nixosConfigurations = (import ./hosts inputs).nixos;
     homeConfigurations = (import ./hosts inputs).home-manager;
+    darwinConfigurations = (import ./hosts inputs).nix-darwin;
   };
 }
