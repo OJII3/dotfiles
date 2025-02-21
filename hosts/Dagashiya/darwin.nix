@@ -16,20 +16,42 @@
   services.yabai = {
     enable = true;
     config = {
-      window_gap = 8;
       layout = "bsp";
+      window_placement = "second_child";
+      window_animation_duration = 0.2;
+      window_gap = 8;
+      top_padding = 6;
+      bottom_padding = 6;
+      left_padding = 6;
+      right_padding = 6;
     };
+    extraConfig = "
+      yabai -m rule --add app='System Preferences' manage=off
+    ";
   };
   services.skhd = {
     enable = true;
     skhdConfig = "
-      cmd - Enter : kitty
       cmd - h : yabai -m window --focus west
       cmd - l : yabai -m window --focus east
       cmd - j : yabai -m window --focus south
       cmd - k : yabai -m window --focus north
+
+      cmd - return : kitty
     ";
   };
+  services.jankyborders = {
+    enable = true;
+    active_color = "gradient(top_left=0x039393ff,bottom_right=0xf992b3ff)";
+    inactive_color = "0x00000000";
+  };
+  networking.knownNetworkServices = [
+    "USB 10/100/1000 LAN"
+    "Thunderbolt Bridge"
+    "Wi-Fi"
+  ];
+
+  security.pam.enableSudoTouchIdAuth = true;
 
   # Enable alternative shell support in nix-darwin.
   # programs.fish.enable = true;
