@@ -3,6 +3,7 @@
     ../../home-manager/terminal
 
     ../../home-manager/apps.nix
+    ../../home-manager/assets.nix
     ../../home-manager/browser.nix
     ../../home-manager/dev.nix
     ../../home-manager/direnv.nix
