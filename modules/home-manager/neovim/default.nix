@@ -51,7 +51,7 @@
   };
 
   home.file.".config/nvim" = {
-    source = ../home/.config/nvim;
+    source = ./config/nvim;
     recursive = true;
   };
 
@@ -60,9 +60,9 @@
     recursive = true;
   };
 
-  home.file.".clang-tidy".source = ../home/.clang-tidy;
-  home.file.".clang-format".source = ../home/.clang-format;
+  home.file.".clang-tidy".source = ./config/.clang-tidy;
+  home.file.".clang-format".source = ./config/.clang-format;
 
-  home.file.".ideavimrc".source = ../home/.ideavimrc;
+  home.file.".ideavimrc".source = ./config/.ideavimrc;
 }
 

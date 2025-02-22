@@ -9,7 +9,7 @@
   ];
 
   home.file.".config/libskk" = {
-    source = ../home/.config/libskk;
+    source = ./config/libskk;
     recursive = true;
   };
 }

@@ -1,6 +1,6 @@
 { ... }: {
   home.file.".dotassets" = {
-    source = ../assets;
+    source = ../../assets;
     target = ".assets";
   };
 }

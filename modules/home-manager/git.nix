@@ -53,6 +53,26 @@
   };
 
   home.file.".tigrc" = {
-    source = ../home/.tigrc;
+    text = "
+      set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+      set pager-view  = line-number:yes,interval=1 text
+      set log-options = --pretty=raw
+
+      set mouse = true
+      set diff-highlight = true
+
+      # Vim-like keybind ##############################################
+      bind generic g none
+      bind generic gg move-first-line
+      bind generic G move-last-line
+
+      # Git Keybind ###################################################
+
+      bind generic gf ?git fetch %(remote)
+      bind main    gf ?git fetch %(remote)
+
+      bind generic gpl ?git pull %(remote) 
+      bind main    gpl ?git pull %(remote)
+      ";
   };
 }

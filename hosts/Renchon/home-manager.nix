@@ -1,21 +1,21 @@
 { pkgs, ... }: {
   imports = [
-    ../../home-manager/terminal
+    ../../modules/home-manager/im
+    ../../modules/home-manager/neovim
+    ../../modules/home-manager/terminal
 
-    ../../home-manager/apps.nix
-    ../../home-manager/assets.nix
-    ../../home-manager/browser.nix
-    ../../home-manager/dev.nix
-    ../../home-manager/direnv.nix
-    ../../home-manager/fcitx.nix
-    ../../home-manager/git.nix
-    ../../home-manager/desktop/hyprland.nix
-    ../../home-manager/desktop/theme.nix
-    ../../home-manager/kdewallet.nix
-    ../../home-manager/neovim.nix
-    ../../home-manager/network.nix
-    ../../home-manager/plasma.nix
-    ../../home-manager/zsh.nix
+    ../../modules/home-manager/apps.nix
+    ../../modules/home-manager/assets.nix
+    ../../modules/home-manager/browser.nix
+    ../../modules/home-manager/dev.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/desktop/hyprland.nix
+    ../../modules/home-manager/desktop/theme.nix
+    ../../modules/home-manager/kdewallet.nix
+    ../../modules/home-manager/network.nix
+    ../../modules/home-manager/plasma.nix
+    ../../modules/home-manager/zsh.nix
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''

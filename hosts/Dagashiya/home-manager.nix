@@ -1,13 +1,14 @@
 { inputs, pkgs, ... }: {
   imports = [
-    ../../home-manager/assets.nix
-    ../../home-manager/browser.nix
-    ../../home-manager/dev.nix
-    ../../home-manager/direnv.nix
-    ../../home-manager/git.nix
-    ../../home-manager/neovim.nix
-    ../../home-manager/terminal/config.nix
-    ../../home-manager/zsh.nix
+    ../../modules/home-manager/neovim
+
+    ../../modules/home-manager/assets.nix
+    ../../modules/home-manager/browser.nix
+    ../../modules/home-manager/dev.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/terminal/config.nix
+    ../../modules/home-manager/zsh.nix
   ];
 
   programs.kitty.enable = true;

@@ -8,12 +8,13 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../modules/core
-      ../../modules/desktop
-      ../../modules/desktop/tuigreet.nix
+      ../../modules/nixos/core
+      ../../modules/nixos/desktop
+      ../../modules/nixos/desktop/tuigreet.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       lenovo-thinkpad-e14-amd
+      common-pc-laptop # includes power management
     ]);
 
   # Bootloader.
@@ -29,7 +30,6 @@
 
   # graphics
   hardware.graphics = {
-    enable32Bit = true;
     extraPackages = [ pkgs.amdvlk ];
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
@@ -52,18 +52,6 @@
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
-  services.tlp.enable = true;
-  services.tlp.settings =
-    {
-      START_CHARGE_THRESH_BAT0 = 80;
-      STOP_CHARGE_THRESH_BAT0 = 95;
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      ENERGY_PERF_POLICY_ON_AC = "performance";
-      ENERGY_PERF_POLICY_ON_BAT = "powersave";
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
-    };
 
   # Others
   virtualisation = {
