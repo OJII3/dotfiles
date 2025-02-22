@@ -61,13 +61,11 @@
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
       ENERGY_PERF_POLICY_ON_AC = "performance";
       ENERGY_PERF_POLICY_ON_BAT = "powersave";
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
     };
 
   # Others
-  networking.dhcpcd.extraConfig = ''
-    interface wlp2s0
-    metric 200
-  '';
   virtualisation = {
     waydroid.enable = true;
   };
