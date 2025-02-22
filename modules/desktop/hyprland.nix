@@ -14,7 +14,7 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
   };
 
   programs.gnupg.agent = {

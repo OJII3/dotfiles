@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   imports = [
+    ../../home-manager/terminal
+
     ../../home-manager/apps.nix
     ../../home-manager/browser.nix
     ../../home-manager/dev.nix
@@ -12,7 +14,6 @@
     ../../home-manager/neovim.nix
     ../../home-manager/network.nix
     ../../home-manager/plasma.nix
-    ../../home-manager/terminal
     ../../home-manager/zsh.nix
   ];
 

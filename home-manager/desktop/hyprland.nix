@@ -5,7 +5,8 @@
       hypridle
       hyprlock
       hyprpicker
-      inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
+      # inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
+      hyprpolkitagent
       anyrun
       brightnessctl
       grim
@@ -22,7 +23,7 @@
     {
       enable = true;
       systemd.enable = false; # for uwsm
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
       extraConfig = ''
         ${builtins.readFile .config/hypr/hyprland/devices.conf}
         ${builtins.readFile .config/hypr/hyprland/execs.conf}
@@ -75,8 +76,8 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-  ];
+  # xdg.portal.extraPortals = with pkgs; [
+  #   xdg-desktop-portal-gtk
+  # ];
 }
 
