@@ -5,7 +5,6 @@
       hypridle
       hyprlock
       hyprpicker
-      # inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent
       hyprpolkitagent
       anyrun
       brightnessctl
@@ -23,7 +22,6 @@
     {
       enable = true;
       systemd.enable = false; # for uwsm
-      # package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
       extraConfig = ''
         ${builtins.readFile .config/hypr/hyprland/devices.conf}
         ${builtins.readFile .config/hypr/hyprland/execs.conf}
