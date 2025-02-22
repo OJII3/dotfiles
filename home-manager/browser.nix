@@ -10,15 +10,14 @@ let
 in
 {
   programs = {
-    firefox.enable = if isMac then false else true;
+    firefox.enable = !isMac;
     google-chrome = {
-      enable =
-        if isChromeAvailable then true else false;
+      enable = isChromeAvailable;
       commandLineArgs =
-        if !isMac then waylandArgs else [ ];
+        if isMac then [ ] else waylandArgs;
     };
     chromium = {
-      enable = if !isChromeAvailable then true else false;
+      enable = !isChromeAvailable;
       commandLineArgs = waylandArgs;
     };
   };

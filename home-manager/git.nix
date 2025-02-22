@@ -12,23 +12,20 @@
     aliases = {
       a = "add";
       b = "branch";
-      c = "commit";
-      cm = "commit -m";
-      co = "checkout";
+      c = "commit -m";
       d = "diff";
       f = "fetch";
-      # g = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       g = "!serie";
+      h = "push";
       l = "log";
       m = "merge";
-      ph = "push";
-      pl = "pull";
-      rs = "reset";
+      p = "pull";
       s = "status";
       t = "tag";
-      sw = "switch";
+      w = "switch";
       pr = "!gh pr";
       repo = "!gh repo";
+      release = "!gh release";
     };
     ignores = [
       "**/termpdf.log"

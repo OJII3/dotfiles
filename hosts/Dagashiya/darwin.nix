@@ -6,13 +6,14 @@
     git
     gnumake
     python311
+    goku
   ];
 
   services.tailscale = {
     enable = true;
     overrideLocalDns = true;
   };
-  # services.karabiner-elements.enable = true;
+  services.karabiner-elements.enable = true;
   services.yabai = {
     enable = true;
     config = {
@@ -37,6 +38,17 @@
       cmd - j : yabai -m window --focus south
       cmd - k : yabai -m window --focus north
 
+      cmd + shift - h : yabai -m window --warp west
+      cmd + shift - l : yabai -m window --warp east
+      cmd + shift - j : yabai -m window --warp south
+      cmd + shift - k : yabai -m window --warp north
+
+      cmd - 1 : yabai -m space --forcus 1
+      cmd - 2 : yabai -m space --forcus 2
+      cmd - 3 : yabai -m space --forcus 3
+      cmd - 4 : yabai -m space --forcus 4
+      cmd - 5 : yabai -m space --forcus 5
+
       cmd - return : kitty
     ";
   };
@@ -53,11 +65,10 @@
 
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
+  system.startup.chime = false;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
