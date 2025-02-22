@@ -11,6 +11,7 @@
       grim
       # kdePackages.plasma-workspace # xembedsniproxy
       networkmanagerapplet
+      libnotify
       playerctl
       slurp
       swaynotificationcenter
