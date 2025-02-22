@@ -20,7 +20,7 @@ home-manager switch --flake .#<username>@<hostname>
 
 ## Without Nix
 
-old dotfiles is in `./home`.
+Old dotfiles are in `home`, but it's gradually being moved to `home-manager`.
 
 ## Apps & Tools
 
@@ -40,24 +40,5 @@ old dotfiles is in `./home`.
 - Bottles (wine manager)
 - Fcitx5
   - skk
-- Kitty (terminal which has own image protocol)
+- Kitty | Ghostty (terminal which has own image protocol)
 
-
-## Memo
-
-It was not so smooth for me to install Nix and Home Manager to Raspberry Pi OS.
-
-- `DeterminateSystems/nix-installer`: easy installer, with flakes and nix-command enabled.
-
-```bash
-nix run nixpkgs#home-manager -- switch --flake .#<myflake>
-```
-
-Then erorr occured, so I tried below commands.
-
-```bash
-sudo mkdir -m -755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
-sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
-```
-
-Then I run home-manager command and it worked.
