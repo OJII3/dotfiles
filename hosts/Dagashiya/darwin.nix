@@ -6,14 +6,12 @@
     git
     gnumake
     python311
-    goku
   ];
 
   services.tailscale = {
     enable = true;
     overrideLocalDns = true;
   };
-  services.karabiner-elements.enable = true;
   services.yabai = {
     enable = true;
     config = {
@@ -27,7 +25,7 @@
       right_padding = 6;
     };
     extraConfig = "
-      yabai -m rule --add app='System Preferences' manage=off
+      yabai -m rule --add app='System Settings' manage=off
     ";
   };
   services.skhd = {
@@ -49,6 +47,14 @@
       cmd - 4 : yabai -m space --forcus 4
       cmd - 5 : yabai -m space --forcus 5
 
+      cmd + shift - 1 : yabai -m window --space 1; yabai -m space --focus 1
+      cmd + shift - 2 : yabai -m window --space 2; yabai -m space --focus 2
+      cmd + shift - 3 : yabai -m window --space 3; yabai -m space --focus 3
+      cmd + shift - 4 : yabai -m window --space 4; yabai -m space --focus 4
+      cmd + shift - 5 : yabai -m window --space 5; yabai -m space --focus 5
+
+      cmd + shift - f : yabai -m window --toggle float
+
       cmd - return : kitty
     ";
   };
@@ -63,12 +69,32 @@
     "Wi-Fi"
   ];
 
+  homebrew = {
+    enable = true;
+    casks = [
+      "karabiner-elements"
+    ];
+    onActivation = { autoUpdate = true; cleanup = "uninstall"; upgrade = true; };
+  };
+
   security.pam.enableSudoTouchIdAuth = true;
 
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.startup.chime = false;
+  system.defaults = {
+    NSGlobalDomain.AppleShowAllExtensions = true;
+    finder = {
+      AppleShowAllFiles = true;
+      AppleShowAllExtensions = true;
+    };
+    dock = {
+      autohide = true;
+      show-recents = false;
+      orientation = "left";
+    };
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
