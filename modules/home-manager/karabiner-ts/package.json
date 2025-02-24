@@ -1,0 +1,15 @@
+{
+	"name": "karabiner.ts.examples",
+	"description": "Examples for using karabiner.ts",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "bun src/index.ts",
+		"update": "npm update karabiner.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"karabiner.ts": "latest",
+		"typescript": "^5"
+	}
+}

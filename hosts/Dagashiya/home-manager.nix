@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
+    ../../modules/home-manager/apps
     ../../modules/home-manager/neovim
 
     ../../modules/home-manager/assets.nix
@@ -12,10 +13,6 @@
   ];
 
   programs.kitty.enable = true;
-  home.packages = with pkgs; [
-    raycast
-  ];
-
   programs.gpg = {
     enable = true;
   };

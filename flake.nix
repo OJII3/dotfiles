@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
-      url ="github:LnL7/nix-darwin/master";
+      url = "github:LnL7/nix-darwin/master";
       inputs.packages.follows = "nixpkgs";
     };
   };
