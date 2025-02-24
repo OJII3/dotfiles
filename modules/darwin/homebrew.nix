@@ -7,6 +7,7 @@
       "blender"
       "unity-hub"
       "jetbrains-toolbox"
+      "ghostty"
     ];
     onActivation = {
       autoUpdate = true;

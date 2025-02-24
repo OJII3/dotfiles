@@ -1,14 +1,11 @@
 import {
-	type NumberKeyValue,
 	ifApp,
 	ifInputSource,
-	ifKeyboardType,
 	ifVar,
 	layer,
 	map,
 	mapDoubleTap,
 	rule,
-	simlayer,
 	withCondition,
 	withMapper,
 	writeToProfile,
@@ -31,6 +28,9 @@ writeToProfile("Default profile", [
 		map("left_control").to("left_control").toIfAlone("escape"),
 	]),
 
+	// Disable system shortcuts
+	rule("Disable-system").manipulators([map("q", "command").toNone()]),
+
 	layer("japanese_eisuu", "super")
 		.configKey((v) => v.toIfAlone("spacebar", "command"), true)
 		.manipulators([
@@ -45,17 +45,17 @@ writeToProfile("Default profile", [
 			map("k", "shift").to$(yabai + "-m window --warp north"),
 			map("l", "shift").to$(yabai + "-m window --warp east"),
 			// focus space
-			map("1").to$(yabai + "-m space --focus 1"),
-			map("2").to$(yabai + "-m space --focus 2"),
-			map("3").to$(yabai + "-m space --focus 3"),
-			map("4").to$(yabai + "-m space --focus 4"),
+			// map("1").to$(yabai + "-m space --focus 1"),
+			// map("2").to$(yabai + "-m space --focus 2"),
+			// map("3").to$(yabai + "-m space --focus 3"),
+			// map("4").to$(yabai + "-m space --focus 4"),
 			// move window to space
-			map("1", "shift").to$(yabai + "-m window --space 1"),
-			map("2", "shift").to$(yabai + "-m window --space 2"),
-			map("3", "shift").to$(yabai + "-m window --space 3"),
-			map("4", "shift").to$(yabai + "-m window --space 4"),
+			// map("1", "shift").to$(yabai + "-m window --space 1"),
+			// map("2", "shift").to$(yabai + "-m window --space 2"),
+			// map("3", "shift").to$(yabai + "-m window --space 3"),
+			// map("4", "shift").to$(yabai + "-m window --space 4"),
 			// other window operations
-			map("tab").to$(yabai + "-m window --focus last"),
+			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(yabai + "-m window --close"),
 			//  applications
 			map("f", "shift").to$(
@@ -67,7 +67,7 @@ writeToProfile("Default profile", [
 					yabai +
 					"-m window --grid 1:1:0:0:1:1",
 			),
-			map("return_or_enter").to$("$HOME/.nix-profile/bin/kitty"),
+			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
 			map("o").to$(
 				"$HOME/.nix-profile/bin/google-chrome-stable --profile-directory=Default",
 			),
@@ -78,6 +78,7 @@ writeToProfile("Default profile", [
 		.manipulators([
 			map("w", "control").to("w", "command"),
 			map("t", "control").to("t", "command"),
+			map("l", "control").to("l", "command"),
 		])
 		.condition(ifApp("Chrome")),
 
