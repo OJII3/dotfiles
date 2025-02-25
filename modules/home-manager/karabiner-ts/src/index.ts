@@ -1,10 +1,8 @@
 import {
 	ifApp,
-	ifInputSource,
 	ifVar,
 	layer,
 	map,
-	mapDoubleTap,
 	rule,
 	withCondition,
 	withMapper,
@@ -15,18 +13,24 @@ const yabai = "/run/current-system/sw/bin/yabai ";
 
 // ! Change '--dry-run' to your Karabiner-Elements Profile name.
 // (--dry-run print the config json into console)
+// 'Hyper' is ⌘⌥⌃⇧ and 'Meh' is ⌥⌃⇧
 writeToProfile("Default profile", [
-	rule("IME-toggle").manipulators([
-		map("japanese_kana")
-			.to("japanese_eisuu")
-			.condition(ifInputSource({ language: "ja" })),
-	]),
-
-	// 'Hyper' is ⌘⌥⌃⇧ and 'Meh' is ⌥⌃⇧
-	rule("Modifiers").manipulators([
+	// Smart Control without Capslock ----------------------------------
+	rule("Smart Capslock").manipulators([
 		map("caps_lock").to("left_command"),
 		map("left_control").to("left_control").toIfAlone("escape"),
 	]),
+	// ---------------------------------------------------------------------
+	layer("japanese_kana", "Utility Layer")
+		.configKey((v) => v.toIfAlone("fn")) // toggle IME
+		.manipulators([
+			map("1").to("`"),
+			map("1", "shift").to("`", "shift"),
+			map("h").to("left_arrow"),
+			map("j").to("down_arrow"),
+			map("k").to("up_arrow"),
+			map("l").to("right_arrow"),
+		]),
 
 	// Disable system shortcuts
 	rule("Disable-system").manipulators([map("q", "command").toNone()]),
@@ -54,10 +58,10 @@ writeToProfile("Default profile", [
 			// map("2", "shift").to$(yabai + "-m window --space 2"),
 			// map("3", "shift").to$(yabai + "-m window --space 3"),
 			// map("4", "shift").to$(yabai + "-m window --space 4"),
+			//
 			// other window operations
 			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(yabai + "-m window --close"),
-			//  applications
 			map("f", "shift").to$(
 				yabai + "-m window --toggle float --grid 4:4:1:1:2:2",
 			),
@@ -67,10 +71,13 @@ writeToProfile("Default profile", [
 					yabai +
 					"-m window --grid 1:1:0:0:1:1",
 			),
+			// launch  applications ----------------
 			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
 			map("o").to$(
 				"$HOME/.nix-profile/bin/google-chrome-stable --profile-directory=Default",
 			),
+			map("i").to$("/usr/bin/open -a System Settings"),
+			map("e").to$("/usr/bin/open -a Finder"),
 		]),
 
 	// Application specific mappings
@@ -125,7 +132,6 @@ writeToProfile("Default profile", [
 		),
 
 		// And some others like double-tap
-		mapDoubleTap(1).to("w", "⌘"),
 	]),
 ]);
 

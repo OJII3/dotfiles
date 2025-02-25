@@ -21,6 +21,7 @@
       yabai -m rule --add app='System Settings' manage=off
       yabai -m rule --add app='Calculator' manage=off
       yabai -m rule --add app='Karabiner-Elements Settings' manage=off
+      yabai -m rule --add app='Activity Monitor' manage=off
     ";
   };
 }
