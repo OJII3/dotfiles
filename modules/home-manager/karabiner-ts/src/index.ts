@@ -60,16 +60,15 @@ writeToProfile("Default profile", [
 			map("k", "shift").to$(yabai + "-m window --warp north"),
 			map("l", "shift").to$(yabai + "-m window --warp east"),
 			// focus space
-			map("1").to$(yabai + "-m space --focus 1"),
-			map("2").to$(yabai + "-m space --focus 2"),
-			map("3").to$(yabai + "-m space --focus 3"),
-			map("4").to$(yabai + "-m space --focus 4"),
+			map("1").to("1", "control"),
+			map("2").to("2", "control"),
+			map("3").to("3", "control"),
 			// move window to space
 			map("1", "shift").to$(yabai + "-m window --space 1"),
 			map("2", "shift").to$(yabai + "-m window --space 2"),
 			map("3", "shift").to$(yabai + "-m window --space 3"),
 			map("4", "shift").to$(yabai + "-m window --space 4"),
-			// other window operations
+			// other window operations ----------------
 			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(killLast),
 			map("f", "shift").to$(
@@ -84,10 +83,12 @@ writeToProfile("Default profile", [
 			// launch  applications ----------------
 			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
 			map("o").to$(
-				"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --profile-directory=Default",
+				"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --profile-directory=Default && sleep 1",
 			),
 			map("i").to$("/usr/bin/open -a 'System Settings'"),
 			map("e").to$("/usr/bin/open -a Finder"),
+			map("m").to("up_arrow", "command"), // Mission Control (default)
+			map("n").to("down_arrow", "command"), // Notification Center (not a default, need to set)
 		]),
 
 	// Application specific mappings
