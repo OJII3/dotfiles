@@ -10,6 +10,17 @@ import {
 } from "karabiner.ts";
 
 const yabai = "/run/current-system/sw/bin/yabai ";
+const jq = "/usr/bin/jq";
+
+const killLast = `
+window_pid=$(${yabai} -m query --windows --window | jq -r '.pid')
+count_pid=$(${yabai} -m query --windows | jq "[.[] | select(.pid == \${window_pid})] | length")
+if [ "$count_pid" -gt 1 ]; then
+  ${yabai} -m window --close
+else
+  kill "\${window_pid}"
+fi
+`;
 
 // ! Change '--dry-run' to your Karabiner-Elements Profile name.
 // (--dry-run print the config json into console)
@@ -49,19 +60,18 @@ writeToProfile("Default profile", [
 			map("k", "shift").to$(yabai + "-m window --warp north"),
 			map("l", "shift").to$(yabai + "-m window --warp east"),
 			// focus space
-			// map("1").to$(yabai + "-m space --focus 1"),
-			// map("2").to$(yabai + "-m space --focus 2"),
-			// map("3").to$(yabai + "-m space --focus 3"),
-			// map("4").to$(yabai + "-m space --focus 4"),
+			map("1").to$(yabai + "-m space --focus 1"),
+			map("2").to$(yabai + "-m space --focus 2"),
+			map("3").to$(yabai + "-m space --focus 3"),
+			map("4").to$(yabai + "-m space --focus 4"),
 			// move window to space
-			// map("1", "shift").to$(yabai + "-m window --space 1"),
-			// map("2", "shift").to$(yabai + "-m window --space 2"),
-			// map("3", "shift").to$(yabai + "-m window --space 3"),
-			// map("4", "shift").to$(yabai + "-m window --space 4"),
-			//
+			map("1", "shift").to$(yabai + "-m window --space 1"),
+			map("2", "shift").to$(yabai + "-m window --space 2"),
+			map("3", "shift").to$(yabai + "-m window --space 3"),
+			map("4", "shift").to$(yabai + "-m window --space 4"),
 			// other window operations
 			map("tab").to$(yabai + "-m window --focus recent"),
-			map("q").to$(yabai + "-m window --close"),
+			map("q").to$(killLast),
 			map("f", "shift").to$(
 				yabai + "-m window --toggle float --grid 4:4:1:1:2:2",
 			),
@@ -74,9 +84,9 @@ writeToProfile("Default profile", [
 			// launch  applications ----------------
 			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
 			map("o").to$(
-				"$HOME/.nix-profile/bin/google-chrome-stable --profile-directory=Default",
+				"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --profile-directory=Default",
 			),
-			map("i").to$("/usr/bin/open -a System Settings"),
+			map("i").to$("/usr/bin/open -a 'System Settings'"),
 			map("e").to$("/usr/bin/open -a Finder"),
 		]),
 
@@ -98,11 +108,6 @@ writeToProfile("Default profile", [
 	// - to_if_alone        - basic.to_if_alone_timeout_milliseconds
 	// - to_if_held_down    - basic.to_if_held_down_threshold_milliseconds
 	// - to_delayed_action  - basic.to_delayed_action_delay_milliseconds
-	rule("Parameters").manipulators([
-		map("left_option")
-			.toIfAlone("r", "⌘")
-			.parameters({ "basic.to_if_alone_timeout_milliseconds": 500 }),
-	]),
 
 	// There are some other useful abstractions over the json config.
 	// [File an issue](https://github.com/evan-liu/karabiner.ts/issues) to suggest more.

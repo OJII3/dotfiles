@@ -7,6 +7,7 @@
 
   services.yabai = {
     enable = true;
+    enableScriptingAddition = true;
     config = {
       layout = "bsp";
       window_placement = "second_child";
@@ -18,6 +19,8 @@
       right_padding = 6;
     };
     extraConfig = "
+      yabai -m signal --add event=dock_did_restart action='sudo yabai --load-sa'
+      sudo yabai --load-sa
       yabai -m rule --add app='System Settings' manage=off
       yabai -m rule --add app='Calculator' manage=off
       yabai -m rule --add app='Karabiner-Elements Settings' manage=off
