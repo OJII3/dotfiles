@@ -1,5 +1,6 @@
 import {
 	ifApp,
+	ifInputSource,
 	ifVar,
 	layer,
 	map,
@@ -33,7 +34,7 @@ writeToProfile("Default profile", [
 	]),
 	// ---------------------------------------------------------------------
 	layer("japanese_kana", "Utility Layer")
-		.configKey((v) => v.toIfAlone("fn")) // toggle IME
+		.configKey((v) => v.toIfAlone("fn"), true) // toggle IME to Romaji
 		.manipulators([
 			map("1").to("`"),
 			map("1", "shift").to("`", "shift"),
