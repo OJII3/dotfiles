@@ -1,5 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
+    ../../modules/darwin/fonts.nix
     ../../modules/darwin/homebrew.nix
     ../../modules/darwin/networking.nix
     ../../modules/darwin/system.nix
