@@ -33,6 +33,7 @@
       "**/.mypy_cache"
       "**/.ruff_cache"
       ".direnv"
+      ".DS_Store"
     ];
     extraConfig = {
       push = { autoSetupRemote = true; };
