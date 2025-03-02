@@ -27,6 +27,7 @@
         "l" = "ls";
         "la" = "ls -a";
         "ll" = "ls -l";
+        "t" = "tig status";
       };
     };
 
