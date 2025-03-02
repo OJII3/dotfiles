@@ -5,6 +5,7 @@ font-family = "HackGen Console NF"
 font-size = 12
 
 theme = tokyonight
+title = "Ghostty"
 background-opacity = 0.85
 unfocused-split-opacity = 0.85
 window-decoration = false

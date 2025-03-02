@@ -1,8 +1,9 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
     withNodeJs = true;
+    defaultEditor = true;
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [

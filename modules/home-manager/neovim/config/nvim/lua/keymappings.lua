@@ -14,26 +14,8 @@ vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set("n", "g<C-y>", "ggyG", { noremap = true, silent = true })
 
--- vim.keymap.set("n", "<C-b>h", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<C-b><C-h>", "<cmd>BufferPrevious<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<C-b>l", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<C-b><C-l>", "<cmd>BufferNext<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<C-b>d", "<cmd>BufferDelete<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<C-b><C-d>", "<cmd>BufferClose<CR>", { noremap = true, silent = true })
-
--- plugins --
-
--- coc
--- vim.keymap.set("i", "<C-Space>", "coc#refresh()", { expr = true, silent = true })    -- trigger completion
--- vim.keymap.set("n", "<Leader>rn", "<Plug>(coc-rename)", { silent = true })           -- rename
--- vim.keymap.set("n", "<Leader>fm", "<Plug>(coc-format)", { silent = true })           -- format
--- vim.keymap.set("n", "<Leader>c", "<Plug>(coc-codeaction-cursor)", { silent = true }) -- code action
--- vim.keymap.set("n", "<Leader>a", "<Plug>(coc-codeaction)", { silent = true })        -- code action
--- vim.keymap.set("n", "gr", "<Plug>(coc-references)", { silent = true })               -- references
--- vim.keymap.set("n", "gd", "<Plug>(coc-definition)", { silent = true })               -- go to definition
--- vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", { silent = true })          -- go to type definition
--- vim.keymap.set("n", "[g", "<Plug>(coc-diagnostic-prev)", { silent = true })          -- go to previous diagnostic
--- vim.keymap.set("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true })          -- go to next diagnostic
+vim.keymap.set("i", "<C-e>", "<End>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-a>", "<Home>", { noremap = true, silent = true })
 
 -- builtin lsp
 vim.keymap.set("n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = true }) -- rename

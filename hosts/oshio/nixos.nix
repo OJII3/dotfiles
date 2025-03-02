@@ -1,9 +1,4 @@
-{ inputs
-, config
-, pkgs
-, lib
-, ...
-}:
+{ inputs, pkgs, ... }:
 let
   hostname = "oshio";
   user = "ojii3";
@@ -13,9 +8,7 @@ in
     ../../modules/core
   ] ++ (with inputs.nixos-hardware.nixosModules; [
     raspberry-pi-4
-  ]) ++ [
-    inputs.xremap.nixosModules.default
-  ];
+  ]);
 
   fileSystems = {
     "/" = {

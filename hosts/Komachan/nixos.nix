@@ -26,7 +26,10 @@
     };
     systemd-boot.enable = true;
   };
-
+  boot.kernelParams = [
+    "amd_iommmu=on"
+    "mem_sleep_default=deep"
+  ];
 
   # graphics
   hardware.graphics = {
@@ -34,7 +37,6 @@
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
   services.xserver.videoDrivers = [ "amdgpu" ];
-
 
   # system packages
   environment.systemPackages = with pkgs; [
@@ -57,7 +59,6 @@
   virtualisation = {
     waydroid.enable = true;
   };
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -369,7 +369,7 @@
 
 .control-center .control-center-list-placeholder {
   /* The placeholder when there are no notifications */
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .control-center .control-center-list {

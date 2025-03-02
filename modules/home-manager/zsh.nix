@@ -3,9 +3,7 @@
     enable = true;
     autocd = true;
     enableCompletion = true;
-
     autosuggestion.enable = true;
-    # autosuggestion.highlight = "fg=#ff00ff,bg=cyan,bold,underline";
     defaultKeymap = "emacs";
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
@@ -13,13 +11,13 @@
     shellAliases = {
       grep = "rg";
       ls = "ls --color=auto";
-      ll = "ls -l";
-      la = "ls -a";
-      l = "ls";
-      g = "git";
+      # ll = "ls -l";
+      # la = "ls -a";
+      # l = "ls";
+      # g = "git";
       t = "tig status";
-      ya = "yazi";
-      se = "serie";
+      # ya = "yazi";
+      # se = "serie";
     };
 
     history = {
@@ -27,6 +25,17 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
+    zsh-abbr = {
+      enable = true;
+      abbreviations = {
+        "g" = "git";
+        "ya" = "yazi";
+        "se" = "serie";
+        "l" = "ls";
+        "la" = "ls -a";
+        "ll" = "ls -l";
+      };
+    };
 
     # fzf
     initExtra = ''
@@ -54,9 +63,9 @@
 
   };
 
-    home.packages = with pkgs; [
-      fzf 
-    ];
+  home.packages = with pkgs; [
+    fzf
+  ];
 
   programs.starship.enable = true;
 }
