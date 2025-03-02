@@ -1,6 +1,5 @@
-{ pkgs, pkgs-stable, ... }: {
+{ ... }: {
   imports = [
-    ../../modules/home-manager/apps
     ../../modules/home-manager/git
     ../../modules/home-manager/neovim
     ../../modules/home-manager/terminal/config.nix

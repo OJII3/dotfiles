@@ -1,6 +1,5 @@
-{
-  imports = [
-    ./common.nix
-    ./darwin.nix
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    discord
   ];
 }

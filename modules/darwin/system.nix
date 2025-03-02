@@ -1,5 +1,4 @@
 { inputs, ... }: {
-
   security.pam.enableSudoTouchIdAuth = true;
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.startup.chime = false;

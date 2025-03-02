@@ -2,12 +2,14 @@
   homebrew = {
     enable = true;
     casks = [
-      # list of packags that cannot be installed by nix
-      "karabiner-elements"
+      "aldente"
       "blender"
-      "unity-hub"
-      "jetbrains-toolbox"
       "ghostty"
+      "jetbrains-toolbox"
+      "karabiner-elements"
+      "unity-hub"
+      "parsec"
+      "visual-studio-code"
     ];
     onActivation = {
       autoUpdate = true;
