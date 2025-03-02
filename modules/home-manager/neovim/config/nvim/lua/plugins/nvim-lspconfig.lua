@@ -71,11 +71,7 @@ return {
 			end
 
 			local default_opts = {
-				capabilities = vim.tbl_deep_extend(
-					"force",
-					vim.lsp.protocol.make_client_capabilities(),
-					require("cmp_nvim_lsp").default_capabilities()
-				),
+				capabilities = require("blink.cmp").get_lsp_capabilities(),
 			}
 			local opts = {}
 			if server_name == "denols" then

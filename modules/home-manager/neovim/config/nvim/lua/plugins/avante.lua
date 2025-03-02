@@ -9,6 +9,9 @@ return {
 		copilot = {
 			model = "claude-3.7-sonnet",
 		},
+		file_selector = {
+			provider = "telescope",
+		},
 		mappings = {
 			ask = "<Space>aa",
 			edit = "<Space>ae",

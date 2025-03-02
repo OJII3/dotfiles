@@ -38,6 +38,7 @@ writeToProfile("Default profile", [
 		.manipulators([
 			map("1").to("`"),
 			map("1", "shift").to("`", "shift"),
+			map(".").to("keypad_period"),
 			map("h").to("left_arrow"),
 			map("j").to("down_arrow"),
 			map("k").to("up_arrow"),
