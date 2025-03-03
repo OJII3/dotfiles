@@ -1,14 +1,17 @@
 {
   homebrew = {
     enable = true;
+    brews = [
+      "gcc" # for <bits/stdc++.h>
+    ];
     casks = [
       "aldente"
       "blender"
       "ghostty"
       "jetbrains-toolbox"
       "karabiner-elements"
-      "unity-hub"
       "parsec"
+      "unity-hub"
       "visual-studio-code"
     ];
     onActivation = {

@@ -32,18 +32,18 @@
     terraform
 
     # languages
-    gcc
+    bun
     cmake
-    meson
+    dotnet-sdk
+    gcc
     gnumake
     go
-    uv
-    typst
-    dotnet-sdk
-    rustup
-    python311
+    meson
     mise
-    bun
+    python311
+    rustup
+    typst
+    uv
   ];
 }
     

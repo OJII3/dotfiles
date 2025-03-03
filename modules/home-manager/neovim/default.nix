@@ -63,6 +63,8 @@
 
   home.file.".clang-tidy".source = ./config/.clang-tidy;
   home.file.".clang-format".source = ./config/.clang-format;
+  home.file.".config/clangd/config.yaml".source = ./config/clangd/config.yaml;
+  home.file."Library/Preferences/clangd/config.yaml".source = ./config/clangd/config.yaml;
 
   home.file.".ideavimrc".source = ./config/.ideavimrc;
 }

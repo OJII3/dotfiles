@@ -12,7 +12,7 @@ vim.keymap.set("n", "<M-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.keymap.set("n", "g<C-y>", "ggyG", { noremap = true, silent = true })
+vim.keymap.set("n", "g<C-y>", "mzggyG`z", { noremap = true, silent = true })
 
 vim.keymap.set("i", "<C-e>", "<End>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-a>", "<Home>", { noremap = true, silent = true })

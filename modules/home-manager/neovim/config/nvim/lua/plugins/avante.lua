@@ -9,8 +9,18 @@ return {
 		copilot = {
 			model = "claude-3.7-sonnet",
 		},
+		cursor_applying_provider = nil,
+		behaviour = {
+			auto_apply_diff_after_generation = false,
+			auto_suggestions = false,
+			enable_cursor_planning_mode = true,
+			enable_token_counting = true,
+			minimize_diff = true,
+			support_paste_from_clipboard = true,
+		},
 		file_selector = {
 			provider = "telescope",
+			provider_opts = {},
 		},
 		mappings = {
 			ask = "<Space>aa",
@@ -40,6 +50,7 @@ return {
 		"MunifTanjim/nui.nvim",
 		--- The below dependencies are optional,
 		"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+		"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
 		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 		"zbirenbaum/copilot.lua", -- for providers='copilot'
 		{
@@ -59,13 +70,13 @@ return {
 				},
 			},
 		},
-		-- {
-		-- 	-- Make sure to set this up properly if you have lazy=true
-		-- 	"MeanderingProgrammer/render-markdown.nvim",
-		-- 	opts = {
-		-- 		file_types = { "Avante" },
-		-- 	},
-		-- 	ft = { "Avante" },
-		-- },
+		{
+			-- Make sure to set this up properly if you have lazy=true
+			"MeanderingProgrammer/render-markdown.nvim",
+			opts = {
+				file_types = { "Avante" },
+			},
+			ft = { "Avante" },
+		},
 	},
 }

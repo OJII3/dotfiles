@@ -18,7 +18,7 @@
     dock = {
       autohide = true;
       show-recents = false;
-      orientation = "left";
+      orientation = "bottom";
       wvous-bl-corner = 7;
       wvous-br-corner = 1;
     };

@@ -92,6 +92,10 @@ return {
 						},
 					},
 				}
+			elseif server_name == "clangd" then
+				opts = {
+					cmd = { "clangd", "--background-index", "--enable-config" },
+				}
 			elseif server_name == "eslint" then
 				opts.on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePre", {
