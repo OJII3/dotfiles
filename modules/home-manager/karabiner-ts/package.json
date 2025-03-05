@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "bun src/index.ts",
-		"update": "npm update karabiner.ts"
+		"update": "bun update karabiner.ts"
 	},
 	"devDependencies": {
 		"@types/node": "^20",

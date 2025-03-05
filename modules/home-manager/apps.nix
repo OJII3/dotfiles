@@ -1,11 +1,8 @@
 { pkgs, ... }: {
   qt.enable = true;
-  # qt.platformTheme.name = 
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
-    # logisim-evolution
     # parsec-bin
-    # rquickshare
     blender
     bottles
     cloudflared
@@ -23,6 +20,7 @@
     mpv
     nautilus
     nautilus-python
+    ocs-url
     qtrvsim
     realvnc-vnc-viewer
     slack

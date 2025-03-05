@@ -23,6 +23,7 @@ in
   };
 
 
+  # Plasma Browser Integration
   home.file.".config/google-chrome/NativeMessagingHosts/org.kde.plasma.browser_integration.json" =
     if isMac then {
       text = "";

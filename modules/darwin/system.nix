@@ -23,5 +23,4 @@
       wvous-br-corner = 1;
     };
   };
-
 }

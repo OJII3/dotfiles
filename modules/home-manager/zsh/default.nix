@@ -2,15 +2,30 @@
   programs.zsh = {
     enable = true;
     autocd = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
     defaultKeymap = "emacs";
-    syntaxHighlighting.enable = true;
+    enableCompletion = true;
+
+    autosuggestion.enable = true;
     historySubstringSearch.enable = true;
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       ls = "ls --color=auto";
       ip = "ip -c";
+    };
+
+    zsh-abbr = {
+      enable = true;
+      abbreviations = {
+        "g" = "git";
+        "l" = "ls";
+        "la" = "ls -a";
+        "ll" = "ls -l";
+        "se" = "serie";
+        "t" = "tig status";
+        "v" = "nvim";
+        "ya" = "yazi";
+      };
     };
 
     history = {
@@ -18,20 +33,6 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
-    zsh-abbr = {
-      enable = true;
-      abbreviations = {
-        "g" = "git";
-        "ya" = "yazi";
-        "se" = "serie";
-        "l" = "ls";
-        "la" = "ls -a";
-        "ll" = "ls -l";
-        "t" = "tig status";
-      };
-    };
-
-    # fzf
     initExtra = ''
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       ${builtins.readFile ./scripts/ghq-fzf.sh}

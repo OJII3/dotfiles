@@ -5,8 +5,8 @@
       "gcc" # for <bits/stdc++.h>
     ];
     casks = [
-      "aldente"
       "blender"
+      "discord"
       "ghostty"
       "jetbrains-toolbox"
       "karabiner-elements"
