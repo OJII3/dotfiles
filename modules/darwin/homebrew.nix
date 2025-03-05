@@ -1,10 +1,8 @@
 {
   homebrew = {
     enable = true;
-    brews = [
-      "gcc" # for <bits/stdc++.h>
-    ];
     casks = [
+      "minecraft"
       "blender"
       "discord"
       "ghostty"
