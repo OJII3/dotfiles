@@ -1,4 +1,12 @@
-import { ifApp, ifVar, layer, map, rule, writeToProfile } from "karabiner.ts";
+import {
+	duoLayer,
+	ifApp,
+	ifVar,
+	layer,
+	map,
+	rule,
+	writeToProfile,
+} from "karabiner.ts";
 
 const yabai = "/run/current-system/sw/bin/yabai ";
 
@@ -9,6 +17,8 @@ count_pid=$(${yabai} -m query --windows | jq "[.[] | select(.pid == \${window_pi
 
 if [ "$app_name" = "Finder" ]; then
   # For Finder, just close the window without killing the process
+  ${yabai} -m window --close
+elif [ "$app_name" = "Discord" ]; then
   ${yabai} -m window --close
 elif [ "$count_pid" -gt 1 ]; then
   ${yabai} -m window --close
@@ -95,6 +105,14 @@ writeToProfile("Default profile", [
 			map("l", "control").to("l", "command"),
 		])
 		.condition(ifApp("Chrome")),
+
+	// for Minecraft
+	layer("japanese_eisuu", "Minecraft").manipulators([
+		map("a", "left_control").to("f13"),
+		map("s", "left_control").to("f14"),
+		map("d", "left_control").to("f15"),
+		map("f", "left_control").to("f16"),
+	]),
 
 	rule("Conditions", ifApp("^com.apple.finder$")).manipulators([
 		map(0).to(1).condition(ifVar("vi-mode"), ifVar("stop").unless()),

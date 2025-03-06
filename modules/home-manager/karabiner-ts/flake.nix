@@ -7,7 +7,7 @@
   };
 
   outputs =
-    { systems, nixpkgs, ... }@inputs:
+    { systems, nixpkgs, ... }:
     let
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
     in

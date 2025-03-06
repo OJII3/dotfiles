@@ -18,7 +18,7 @@ This is the examples/starter repo to get started with [karabiner.ts](https://git
 
 ### Update karabiner.ts 
 
-Run `npm run update` to update `karabiner.ts` to latest version. 
+Run `bun run update` to update `karabiner.ts` to latest version. 
 
 ## Other examples
 

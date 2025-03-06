@@ -4,6 +4,7 @@
     casks = [
       "minecraft"
       "blender"
+      "blockbench"
       "discord"
       "ghostty"
       "jetbrains-toolbox"

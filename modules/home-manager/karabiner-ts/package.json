@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "bun src/index.ts",
+		"link": "bun src/index.ts && cp ~/.config/karabiner/karabiner.json ./dist",
 		"update": "bun update karabiner.ts"
 	},
 	"devDependencies": {
