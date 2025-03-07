@@ -19,5 +19,9 @@
     enable = true;
     style.name = "kvantum";
   };
+
+  services.darkman = {
+    enable = true;
+  };
 }
 

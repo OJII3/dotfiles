@@ -15,7 +15,6 @@
     ../../modules/home-manager/desktop/theme.nix
     ../../modules/home-manager/kdewallet.nix
     ../../modules/home-manager/network.nix
-    ../../modules/home-manager/plasma.nix
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''

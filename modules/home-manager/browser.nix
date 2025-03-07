@@ -28,12 +28,12 @@ in
     if isMac then {
       text = "";
     } else {
-      source = "${pkgs.plasma-browser-integration}/etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json";
+      source = "${pkgs.kdePackages.plasma-browser-integration}/etc/chromium/native-messaging-hosts/org.kde.plasma.browser_integration.json";
     };
   home.file.".local/share/applications/org.kde.plasma.browser_integration.desktop" =
     if isMac then {
       text = "";
     } else {
-      source = "${pkgs.plasma-browser-integration}/share/applications/org.kde.plasma.browser_integration.desktop";
+      source = "${pkgs.kdePackages.plasma-browser-integration}/share/applications/org.kde.plasma.browser_integration.desktop";
     };
 }
