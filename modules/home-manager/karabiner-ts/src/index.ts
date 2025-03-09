@@ -31,11 +31,13 @@ fi
 // (--dry-run print the config json into console)
 // 'Hyper' is ⌘⌥⌃⇧ and 'Meh' is ⌥⌃⇧
 writeToProfile("Default profile", [
-	// Smart Control without Capslock ----------------------------------
-	rule("Smart Capslock").manipulators([
-		map("caps_lock").to("left_command"),
-		map("left_control").to("left_control").toIfAlone("escape"),
-	]),
+	// Smart Control without Capslock -------------------------------------
+	rule("Smart Capslock")
+		.manipulators([
+			map("caps_lock").to("left_command"),
+			map("left_control").to("left_control").toIfAlone("escape"),
+		])
+		.condition(ifApp("Minecraft").unless()),
 	// ---------------------------------------------------------------------
 	layer("japanese_kana", "Utility Layer")
 		.configKey((v) => v.toIfAlone("fn"), true) // toggle IME to Romaji
@@ -48,7 +50,7 @@ writeToProfile("Default profile", [
 			map("k").to("up_arrow"),
 			map("l").to("right_arrow"),
 		]),
-
+	//---------------------------------------------------------------------
 	layer("japanese_eisuu", "super")
 		.configKey((v) => v.toIfAlone("spacebar", "left_option"), true)
 		.manipulators([
@@ -66,12 +68,13 @@ writeToProfile("Default profile", [
 			map("1").to("1", "control"),
 			map("2").to("2", "control"),
 			map("3").to("3", "control"),
+			map("4").to("4", "control"),
 			// move window to space
 			map("1", "shift").to$(yabai + "-m window --space 1"),
 			map("2", "shift").to$(yabai + "-m window --space 2"),
 			map("3", "shift").to$(yabai + "-m window --space 3"),
 			map("4", "shift").to$(yabai + "-m window --space 4"),
-			// other window operations ----------------
+			// other window operations -------------------------------------
 			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(killLast),
 			map("f", "shift").to$(
@@ -83,7 +86,7 @@ writeToProfile("Default profile", [
 					yabai +
 					"-m window --grid 1:1:0:0:1:1",
 			),
-			// launch  applications ----------------
+			// launch  applications -------------------------------------
 			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
 			map("g").to$(
 				"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
@@ -97,7 +100,7 @@ writeToProfile("Default profile", [
 			map("n").to("down_arrow", "command"), // Notification Center (not a default, can be set in Settings)
 		]),
 
-	// Application specific mappings
+	// Application specific mappings -------------------------------------
 	rule("chrome")
 		.manipulators([
 			map("w", "control").to("w", "command"),
@@ -107,12 +110,7 @@ writeToProfile("Default profile", [
 		.condition(ifApp("Chrome")),
 
 	// for Minecraft
-	layer("japanese_eisuu", "Minecraft").manipulators([
-		map("a", "left_control").to("f13"),
-		map("s", "left_control").to("f14"),
-		map("d", "left_control").to("f15"),
-		map("f", "left_control").to("f16"),
-	]),
+	duoLayer("e", "f").manipulators([map("q").to("f13"), map("w").to("f14")]),
 
 	rule("Conditions", ifApp("^com.apple.finder$")).manipulators([
 		map(0).to(1).condition(ifVar("vi-mode"), ifVar("stop").unless()),
