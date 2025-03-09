@@ -9,6 +9,7 @@
     discord
     evince
     figma-linux
+    gdlauncher-carbon
     gimp
     hunspell
     hyprpicker

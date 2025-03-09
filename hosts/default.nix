@@ -32,8 +32,7 @@ let
           home = {
             inherit username;
             homeDirectory =
-              if system == "aarch64-darwin" then
-                "/Users/${username}" else "/home/${username}";
+              "${if system == "aarch64-darwin" then "/Users" else "/home"}/${username}";
             stateVersion = "24.11";
           };
           programs.home-manager.enable = true;
@@ -72,11 +71,11 @@ in
       username = "ojii3";
       modules = [ ./Komachan/nixos.nix ];
     };
-    oshio = mkNixosSystem {
+    Oshio = mkNixosSystem {
       system = "aarch64-linux";
-      hostname = "oshio";
+      hostname = "Oshio";
       username = "ojii3";
-      modules = [ ./oshio/nixos.nix ];
+      modules = [ ./Oshio/nixos.nix ];
     };
   };
 
@@ -99,11 +98,11 @@ in
       overlays = [ ];
       modules = [ ./Dagashiya/home-manager.nix ];
     };
-    "ojii3@oshio" = mkHomeManagerConfiguration {
+    "ojii3@Oshio" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./oshio/home-manager.nix ];
+      modules = [ ./Oshio/home-manager.nix ];
     };
   };
 
