@@ -14,7 +14,7 @@
         name = "Simple Replace";
         remap."Muhenkan" = "Super_L";
       }
-      { remap."Space" = [ "Shift_L" "Space" ]; }
+      # { remap."Space" = [ "Shift_L" "Space" ]; }
       { remap."CapsLock" = [ "Ctrl_L" "Esc" ]; }
     ];
     config.keymap = [
