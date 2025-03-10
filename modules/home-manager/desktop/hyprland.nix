@@ -17,6 +17,7 @@
       swaynotificationcenter
       wl-clipboard
       wlogout
+      overskride
     ];
 
   wayland.windowManager.hyprland =

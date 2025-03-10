@@ -11,7 +11,7 @@
       ../../modules/nixos/core
       ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/gdm.nix
+      ../../modules/nixos/desktop/tuigreet.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
