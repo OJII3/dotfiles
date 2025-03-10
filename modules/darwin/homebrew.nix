@@ -1,6 +1,9 @@
 {
   homebrew = {
     enable = true;
+    masApps = {
+      # "KDE Connect" = 1580245991;
+    };
     casks = [
       "minecraft"
       "blender"
@@ -12,6 +15,7 @@
       "parsec"
       "unity-hub"
       "visual-studio-code"
+      "wireshark"
     ];
     onActivation = {
       autoUpdate = true;
