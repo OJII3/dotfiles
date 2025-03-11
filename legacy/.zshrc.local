@@ -11,9 +11,7 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # common aliases
 alias vi=nvim
 alias ya=yazi 
-alias he="helix"
 alias g='git'
-alias g-g='git log --graph --oneline --decorate --branches --all'
 alias lgit='lazygit'
 alias reflectorjp='sudo reflector --country 'Japan' --age 24 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 alias ls="ls --color=auto"

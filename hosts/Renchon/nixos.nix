@@ -32,16 +32,16 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     prime = {
-      # sync.enable = true;
-      # offload.enable = false;
-      offload = {
-        # offload and sync cannot be enabled at the same time
-        enable = true;
-        enableOffloadCmd = true;
-      };
+      sync.enable = true;
+      offload.enable = false;
+      # offload = {
+      # offload and sync cannot be enabled at the same time
+      # enable = true;
+      # enableOffloadCmd = true;
+      # };
       # to check, command `sudo lshw -c diplay`
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
@@ -51,7 +51,7 @@
 
 
   # system packages
-  environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
+  # environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
 
 
   # This value determines the NixOS release from which the default

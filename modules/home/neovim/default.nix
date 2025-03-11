@@ -23,6 +23,7 @@
       efm-langserver
       haskell-language-server
       haskellPackages.lsp
+      hyprls
       lua-language-server
       nil
       nixpkgs-fmt
