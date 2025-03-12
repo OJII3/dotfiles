@@ -19,13 +19,23 @@
       right_padding = 6;
     };
     extraConfig = "
-      yabai -m signal --add event=dock_did_restart action='sudo yabai --load-sa'
       sudo yabai --load-sa
-      yabai -m rule --add app='System Settings' manage=off
-      yabai -m rule --add app='Calculator' manage=off
+
+      # Default Apps
+      yabai -m rule --add app='^Activity Monitor$' manage=off
+      yabai -m rule --add app='^Calculator$' manage=off
+      yabai -m rule --add app='^Weather$' manage=off
+      yabai -m rule --add app='^Clock$' manage=off
+      yabai -m rule --add app='^Finder$' title='^.* Info$' manage=off
+      yabai -m rule --add app='^Finder$' title='^Connect to Server$' manage=off
+      yabai -m rule --add app='^Finder$' title='^Connecting to Server$' manage=off
+      yabai -m rule --add app='^System Settings$' manage=off
+
+      # Common Apps
+      yabai -m rule --add app='^Discord$' title='^Discord Updater$' manage=off
       yabai -m rule --add app='Karabiner-Elements Settings' manage=off
-      yabai -m rule --add app='Activity Monitor' manage=off
-      yabai -m rule --add app='GDLauncher' manage=off
+
+      yabai -m rule --add app='GDLauncher' manage=off # GDLauncher
     ";
   };
 }
