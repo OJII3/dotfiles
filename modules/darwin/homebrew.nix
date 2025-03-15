@@ -12,6 +12,7 @@
       "jetbrains-toolbox"
       "karabiner-elements"
       "minecraft"
+      "obs"
       "parsec"
       "unity-hub"
       "visual-studio-code"
