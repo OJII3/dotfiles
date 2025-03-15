@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("toggleterm").setup()
 		local term = require("toggleterm.terminal").Terminal
-		local tig = term:new({ cmd = "tig", hidden = true, direction = "float" })
+		local tig = term:new({ cmd = "tig status", hidden = true, direction = "float" })
 		local lazygit = term:new({ cmd = "lazygit", hidden = true, direction = "float" })
 		function Tig_toggle()
 			tig:toggle()

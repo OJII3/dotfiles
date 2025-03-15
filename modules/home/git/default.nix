@@ -19,6 +19,7 @@
     ];
     extraConfig = {
       push = { autoSetupRemote = true; };
+      pull = { rebase = false; };
       init = { defaultBranch = "main"; };
       user = { signingKey = "37547FAD690A6133"; };
       commit = { gpgSign = true; };

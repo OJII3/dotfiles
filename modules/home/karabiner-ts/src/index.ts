@@ -38,6 +38,7 @@ writeToProfile("Default profile", [
 			map("left_control").to("left_control").toIfAlone("escape"),
 		])
 		.condition(ifApp("Minecraft").unless()),
+
 	// ---------------------------------------------------------------------
 	layer("japanese_kana", "Utility Layer")
 		.configKey((v) => v.toIfAlone("fn"), true) // toggle IME to Romaji
@@ -50,9 +51,10 @@ writeToProfile("Default profile", [
 			map("k").to("up_arrow"),
 			map("l").to("right_arrow"),
 		]),
+
 	//---------------------------------------------------------------------
 	layer("japanese_eisuu", "super")
-		.configKey((v) => v.toIfAlone("spacebar", "left_option"), true)
+		// .configKey((v) => v.toIfAlone("spacebar", "left_option"), true)
 		.manipulators([
 			// focus window
 			map("h").to$(yabai + "-m window --focus west"),
@@ -78,16 +80,19 @@ writeToProfile("Default profile", [
 			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(killLast),
 			map("f", "shift").to$(
-				yabai + "-m window --toggle float --grid 4:4:1:1:2:2",
+				`${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
 			),
 			map("w").to$(
-				yabai +
-					"-m window --toggle float;" +
-					yabai +
-					"-m window --grid 1:1:0:0:1:1",
+				`${yabai}-m window --toggle float; ${yabai}-m window --grid 1:1:0:0:1:1`,
 			),
+
+			// Utilities -------------------------------------------------
+			map("m").to("up_arrow", "command"), // Mission Control (default)
+			map("n").to("down_arrow", "command"), // Notification Center (not a default, can be set in Settings)
+
 			// launch  applications -------------------------------------
 			map("return_or_enter").to$("/usr/bin/open -a kitty ~"),
+			map("spacebar").to("spacebar", "left_option"),
 			map("g").to$(
 				"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
 			),
@@ -96,8 +101,24 @@ writeToProfile("Default profile", [
 			),
 			map("i").toApp("System Settings"),
 			map("e").toApp("Finder"),
-			map("m").to("up_arrow", "command"), // Mission Control (default)
-			map("n").to("down_arrow", "command"), // Notification Center (not a default, can be set in Settings)
+
+			// Genral Key Complements & Replacements ------------------------
+			map("1").to("`"),
+			map("2").to("`", "shift"),
+
+			// for Minecraft
+			map("a")
+				.to("f13")
+				.condition(ifApp(/Minecraft*/)),
+			map("s")
+				.to("f14")
+				.condition(ifApp(/Minecraft*/)),
+			map("d")
+				.to("f15")
+				.condition(ifApp(/Minecraft*/)),
+			map("f")
+				.to("f16")
+				.condition(ifApp(/Minecraft*/)),
 		]),
 
 	// Application specific mappings -------------------------------------
@@ -110,7 +131,7 @@ writeToProfile("Default profile", [
 		.condition(ifApp("Chrome")),
 
 	// for Minecraft
-	duoLayer("e", "f").manipulators([map("q").to("f13"), map("w").to("f14")]),
+	// duoLayer("e", "f").manipulators([map("q").to("f13"), map("w").to("f14")]),
 
 	rule("Conditions", ifApp("^com.apple.finder$")).manipulators([
 		map(0).to(1).condition(ifVar("vi-mode"), ifVar("stop").unless()),
