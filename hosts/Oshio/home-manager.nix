@@ -1,14 +1,14 @@
 { ... }: {
   imports = [
-    ../../modules/home-manager/im
-    ../../modules/home-manager/neovim
-    ../../modules/home-manager/zsh
+    ../../modules/home/im
+    ../../modules/home/neovim
+    ../../modules/home/zsh
 
-    ../../modules/home-manager/desktop/theme.nix
-    ../../modules/home-manager/dev.nix
-    ../../modules/home-manager/direnv.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/kdewallet.nix
-    ../../modules/home-manager/network.nix
+    ../../modules/home/desktop/theme.nix
+    ../../modules/home/dev.nix
+    ../../modules/home/direnv.nix
+    ../../modules/home/git.nix
+    ../../modules/home/kdewallet.nix
+    ../../modules/home/network.nix
   ];
 }

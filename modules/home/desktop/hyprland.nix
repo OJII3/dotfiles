@@ -1,22 +1,23 @@
 { inputs, pkgs, ... }: {
   home.packages = with pkgs;
     [
-      hyprpaper
-      hypridle
-      hyprlock
-      hyprpicker
-      hyprpolkitagent
       anyrun
       brightnessctl
       grim
-      # kdePackages.plasma-workspace # xembedsniproxy
-      networkmanagerapplet
+      hypridle
+      hyprlock
+      hyprpaper
+      hyprpicker
+      hyprpolkitagent
       libnotify
+      networkmanagerapplet
+      overskride
       playerctl
       slurp
       swaynotificationcenter
       wl-clipboard
       wlogout
+      inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
     ];
 
   wayland.windowManager.hyprland =
@@ -31,8 +32,7 @@
         ${builtins.readFile ./config/hypr/hyprland/rules.conf}
       ''; # not load env, because it's loaded by uwsm
       plugins = [
-        # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-        # inputs.hyprland-plugins.packages.${pkgs.system}.hyprebars
+        pkgs.hyprlandPlugins.hyprbars
       ];
     };
 

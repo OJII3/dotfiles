@@ -2,7 +2,6 @@
   qt.enable = true;
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
-    # parsec-bin
     blender
     bottles
     cloudflared
@@ -15,13 +14,13 @@
     hyprpicker
     inkscape-with-extensions
     jetbrains-toolbox
-    kdePackages.kdeconnect-kde
     kdePackages.wrapQtAppsHook
     libreoffice-qt
     mpv
     nautilus
     nautilus-python
     ocs-url
+    parsec-bin
     qtrvsim
     realvnc-vnc-viewer
     slack

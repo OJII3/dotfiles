@@ -8,13 +8,12 @@
     Arial,
     sans-serif;
   font-size: 16px;
-  font-weight: bold;
 }
 
 window#waybar {
-  background-color: rgba(2, 2, 2, 1);
-  border-bottom: 6px solid rgba(2, 2, 2, 1);
-  border-top: 6px solid rgba(2, 2, 2, 1);
+  background-color: rgba(2, 2, 2, 0.8);
+  /* border-bottom: 6px solid rgba(2, 2, 2, 1); */
+  /* border-top: 6px solid rgba(2, 2, 2, 1); */
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;

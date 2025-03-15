@@ -43,6 +43,7 @@ return {
 			"eslint",
 			"graphql",
 			"html",
+      "hyprls",
 			"jsonls",
 			"jsonls",
 			"lemminx",

@@ -7,7 +7,7 @@ Config(
   x: Fraction(0.5),
 
   // The vertical position, works the same as `x`
-  y: Absolute(0),
+  y: Absolute(16),
 
   // The width of the runner
   width: Absolute(800),
@@ -31,7 +31,7 @@ Config(
   close_on_click: false,
 
   // Show search results immediately when Anyrun starts
-  show_results_immediately: false,
+  show_results_immediately: true,
 
   // Limit amount of entries shown in total
   max_entries: None,
@@ -42,5 +42,6 @@ Config(
     "libapplications.so",
     "libshell.so",
     "libtranslate.so",
+    "libwebsearch.so",
   ],
 )
