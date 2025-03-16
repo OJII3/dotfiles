@@ -108,17 +108,10 @@ writeToProfile("Default profile", [
 
 			// for Minecraft
 			map("a")
-				.to("f13")
-				.condition(ifApp(/Minecraft*/)),
-			map("s")
-				.to("f14")
-				.condition(ifApp(/Minecraft*/)),
-			map("d")
-				.to("f15")
-				.condition(ifApp(/Minecraft*/)),
-			map("f")
-				.to("f16")
-				.condition(ifApp(/Minecraft*/)),
+				.to("f13"),
+			map("s").to("f14"),
+			map("d").to("f15"),
+			map("f").to("f16"),
 		]),
 
 	// Application specific mappings -------------------------------------
