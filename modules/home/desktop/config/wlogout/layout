@@ -1,4 +1,16 @@
 {
+    "label" : "shutdown",
+    "action" : "uwsm stop && systemctl poweroff",
+    "text" : "Poweroff",
+    "keybind" : "s"
+}
+{
+    "label" : "reboot",
+    "action" : "uwsm stop && systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
     "label" : "lock",
     "action" : "loginctl lock-session",
     "text" : "Lock",
@@ -17,20 +29,8 @@
     "keybind" : "e"
 }
 {
-    "label" : "shutdown",
-    "action" : "systemctl poweroff || loginctl poweroff",
-    "text" : "Poweroff",
-    "keybind" : "s"
-}
-{
     "label" : "suspend",
     "action" : "systemctl suspend || loginctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
-}
-{
-    "label" : "reboot",
-    "action" : "systemctl reboot || loginctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
 }
