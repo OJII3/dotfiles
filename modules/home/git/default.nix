@@ -42,6 +42,7 @@
     "git c" = "git commit -m";
     "git co" = "git checkout";
     "git d" = "git diff";
+    "git f" = "git fetch";
     "git g" = "serie";
     "git h" = "git push";
     "git l" = "git log";
