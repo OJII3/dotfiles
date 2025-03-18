@@ -1,36 +1,36 @@
 {
+    "label" : "shutdown",
+    "action" : "uwsm stop && systemctl poweroff",
+    "text" : "1.Poweroff",
+    "keybind" : "1"
+}
+{
+    "label" : "reboot",
+    "action" : "uwsm stop && systemctl reboot",
+    "text" : "2.Reboot",
+    "keybind" : "2"
+}
+{
     "label" : "lock",
     "action" : "loginctl lock-session",
-    "text" : "Lock",
-    "keybind" : "l"
-}
-{
-    "label" : "hibernate",
-    "action" : "systemctl hibernate || loginctl hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}
-{
-    "label" : "logout",
-    "action" : "loginctl terminate-user $USER",
-    "text" : "Logout",
-    "keybind" : "e"
-}
-{
-    "label" : "shutdown",
-    "action" : "systemctl poweroff || loginctl poweroff",
-    "text" : "Poweroff",
-    "keybind" : "s"
+    "text" : "3.Lock",
+    "keybind" : "3"
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend || loginctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
+    "text" : "4.Suspend",
+    "keybind" : "4"
 }
 {
-    "label" : "reboot",
-    "action" : "systemctl reboot || loginctl reboot",
-    "text" : "Reboot",
-    "keybind" : "r"
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+    "text" : "5.Logout",
+    "keybind" : "5"
+}
+{
+    "label" : "hibernate",
+    "action" : "systemctl hibernate || loginctl hibernate",
+    "text" : "6.Hibernate",
+    "keybind" : "6"
 }
