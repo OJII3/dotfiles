@@ -14,6 +14,7 @@
       "minecraft"
       "obs"
       "parsec"
+      "spaceid"
       "unity-hub"
       "visual-studio-code"
       "wireshark"
