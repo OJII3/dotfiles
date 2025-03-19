@@ -48,10 +48,11 @@
     "git l" = "git log";
     "git m" = "git merge";
     "git p" = "git pull";
+    "git repo" = "gh repo";
     "git s" = "git status";
     "git t" = "git tag";
     "git w" = "git switch";
-    "git repo" = "gh repo";
+    "git wc" = "git switch -c";
     "git pr" = "gh pr";
     "git release" = "gh release";
   };

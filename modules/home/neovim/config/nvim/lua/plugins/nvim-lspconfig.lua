@@ -43,7 +43,7 @@ return {
 			"eslint",
 			"graphql",
 			"html",
-      "hyprls",
+			"hyprls",
 			"jsonls",
 			"jsonls",
 			"lemminx",
@@ -95,7 +95,7 @@ return {
 				}
 			elseif server_name == "clangd" then
 				opts = {
-					cmd = { "clangd", "--background-index", "--enable-config" },
+					cmd = { "clangd", "--offset-encoding=utf-8" },
 				}
 			elseif server_name == "eslint" then
 				opts.on_attach = function(client, bufnr)
