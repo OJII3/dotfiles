@@ -55,6 +55,9 @@
     "git wc" = "git switch -c";
     "git pr" = "gh pr";
     "git release" = "gh release";
+    "gh pr c" = "gh pr create";
+    "gh pr m" = "gh pr merge";
+    "gh pr v" = "gh pr view";
   };
 
   home.file.".tigrc".source = ./.tigrc;

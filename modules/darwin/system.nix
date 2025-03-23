@@ -4,7 +4,7 @@
   system.startup.chime = false;
   system.defaults = {
     NSGlobalDomain.AppleShowAllExtensions = true;
-    NSGlobalDomain."com.apple.trackpad.scaling" = 2.5;
+    NSGlobalDomain."com.apple.trackpad.scaling" = 10.0;
     controlcenter = {
       BatteryShowPercentage = true;
     };
@@ -21,6 +21,12 @@
       orientation = "bottom";
       wvous-bl-corner = 7;
       wvous-br-corner = 1;
+    };
+    CustomUserPreferences = {
+      "com.apple.screencapture" = {
+        location = "~/Pictures/Schreenshots";
+        type = "png";
+      };
     };
   };
 }

@@ -3,7 +3,6 @@
     ../../modules/home/git
     ../../modules/home/neovim
     ../../modules/home/zsh
-    ../../modules/home/karabiner-ts
 
     ../../modules/home/assets.nix
     ../../modules/home/browser.nix

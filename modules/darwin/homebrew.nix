@@ -11,6 +11,7 @@
       "ghostty"
       "jetbrains-toolbox"
       "karabiner-elements"
+      "logi-options+"
       "minecraft"
       "obs"
       "parsec"

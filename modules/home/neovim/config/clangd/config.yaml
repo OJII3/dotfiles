@@ -5,6 +5,5 @@ CompileFlags:
   Add:
     - -xc++
     - -Wall
-    - I"/opt/homebrew/include/c++/14/aarch64-apple-darwin24/"
-  Remove: [-W*]
+    - std=gnu++20
   Compiler: g++

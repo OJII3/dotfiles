@@ -34,7 +34,8 @@ writeToProfile("Default profile", [
 	// Smart Control without Capslock -------------------------------------
 	rule("Smart Capslock")
 		.manipulators([
-			map("caps_lock").to("left_command"),
+			map("caps_lock").to("left_control"),
+			map("caps_lock", "??").to("left_control"),
 			map("left_control").to("left_control").toIfAlone("escape"),
 		])
 		.condition(ifApp("Minecraft").unless()),
@@ -71,11 +72,13 @@ writeToProfile("Default profile", [
 			map("2").to("2", "control"),
 			map("3").to("3", "control"),
 			map("4").to("4", "control"),
+			map("5").to("5", "control"),
 			// move window to space
 			map("1", "shift").to$(yabai + "-m window --space 1"),
 			map("2", "shift").to$(yabai + "-m window --space 2"),
 			map("3", "shift").to$(yabai + "-m window --space 3"),
 			map("4", "shift").to$(yabai + "-m window --space 4"),
+			map("5", "shift").to$(yabai + "-m window --space 5"),
 			// other window operations -------------------------------------
 			map("tab").to$(yabai + "-m window --focus recent"),
 			map("q").to$(killLast),
@@ -107,8 +110,7 @@ writeToProfile("Default profile", [
 			map("2").to("`", "shift"),
 
 			// for Minecraft
-			map("a")
-				.to("f13"),
+			map("a").to("f13"),
 			map("s").to("f14"),
 			map("d").to("f15"),
 			map("f").to("f16"),
