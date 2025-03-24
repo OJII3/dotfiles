@@ -53,11 +53,11 @@
     "git t" = "git tag";
     "git w" = "git switch";
     "git wc" = "git switch -c";
+    "git pc" = "gh pr create";
+    "git pm" = "gh pr merge";
     "git pr" = "gh pr";
+    "git pv" = "gh pr view";
     "git release" = "gh release";
-    "gh pr c" = "gh pr create";
-    "gh pr m" = "gh pr merge";
-    "gh pr v" = "gh pr view";
   };
 
   home.file.".tigrc".source = ./.tigrc;
