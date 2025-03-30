@@ -16,6 +16,7 @@
       }
       # { remap."Space" = [ "Shift_L" "Space" ]; }
       { remap."CapsLock" = [ "Ctrl_L" "Esc" ]; }
+      { remap."Alt_R" = [ "Ctrl_R" "Henkan" ]; }
     ];
     config.keymap = [
       # {
