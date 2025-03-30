@@ -15,6 +15,7 @@
       "minecraft"
       "obs"
       "parsec"
+      "scroll-reverser"
       "spaceid"
       "unity-hub"
       "visual-studio-code"
