@@ -108,7 +108,7 @@
           "mute": "󰖁",
           "default": ["", "", ""]
         },
-        "exec": "pw-volume status"
+        "exec": "helvum"
     },
     "custom/power": {
         "format" : "⏻ ",

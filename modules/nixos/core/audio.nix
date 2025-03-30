@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   # Enable sound with pipewire.
   # hardware.pulseaudio.enable = false;
   services.pipewire = {
@@ -16,4 +16,8 @@
   programs.noisetorch = {
     enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    helvum
+  ];
 }
