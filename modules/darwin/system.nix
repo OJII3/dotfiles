@@ -1,10 +1,21 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    gnumake
+    clang-tools
+    python311
+  ];
+
   security.pam.services.sudo_local.touchIdAuth = true;
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.startup.chime = false;
   system.defaults = {
-    NSGlobalDomain.AppleShowAllExtensions = true;
-    NSGlobalDomain."com.apple.trackpad.scaling" = 10.0;
+    NSGlobalDomain = {
+      AppleShowAllExtensions = true;
+      "com.apple.trackpad.scaling" = 10.0;
+      "com.apple.swipescrolldirection" = true; # Natural scrolling
+    };
     controlcenter = {
       BatteryShowPercentage = true;
     };

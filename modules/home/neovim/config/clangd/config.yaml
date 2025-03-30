@@ -3,7 +3,6 @@ If:
   PathMatch: .*\.cpp
 CompileFlags:
   Add:
-    - -xc++
     - -Wall
-    - std=gnu++20
-  Compiler: g++
+    - stdlib=glibc++
+  Compiler: ~/.nix-profile/bin/g++

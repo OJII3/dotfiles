@@ -77,14 +77,21 @@ writeToProfile("Default profile", [
 		map("w", "left_option").to$(
 			`${yabai}-m window --toggle float; ${yabai}-m window --grid 1:1:0:0:1:1`,
 		),
+
+		// System operations -------------------------------------
+		map("m", "left_option").to("↑", "command"), // Mission Control (Default)
+		map("n", "left_option").to("↓", "command"), // Notification Center (not Default)
+
+		// Launch applications -------------------------------------
+		map("i", "left_option").toApp("System Settings"),
+		map("e", "left_option").toApp("Finder"),
 		map("return_or_enter", "left_option").to$("/usr/bin/open -a kitty ~"),
-		map("spacebar", "left_option").to("spacebar", "left_option"),
 		map("g", "left_option").to$(
 			"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
 		),
-
-		map("i", "left_option").toApp("System Settings"),
-		map("e", "left_option").toApp("Finder"),
+		map("o", "left_option").to$(
+			"$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --ProfileDirectory=Default && sleep 1",
+		),
 	]),
 
 	// Application specific mappings -------------------------------------

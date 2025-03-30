@@ -95,7 +95,7 @@ return {
 				}
 			elseif server_name == "clangd" then
 				opts = {
-					cmd = { "clangd", "--offset-encoding=utf-8" },
+					cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" },
 				}
 			elseif server_name == "eslint" then
 				opts.on_attach = function(client, bufnr)
