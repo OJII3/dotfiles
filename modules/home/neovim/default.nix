@@ -14,6 +14,7 @@
       gcc
       tree-sitter
       # lsp, formatter, linter
+      astro-language-server
       bash-language-server
       biome
       clang-tools
