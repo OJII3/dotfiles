@@ -52,7 +52,7 @@
     "git s" = "git status";
     "git t" = "git tag";
     "git w" = "git switch";
-    "git wc" = "git switch -c";
+    "git w-" = "git switch -c";
     "git pc" = "gh pr create";
     "git pm" = "gh pr merge";
     "git pr" = "gh pr";
