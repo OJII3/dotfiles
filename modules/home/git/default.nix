@@ -43,6 +43,7 @@
     "git co" = "git checkout";
     "git d" = "git diff";
     "git f" = "git fetch";
+    "git fp" = "git fetch --prune";
     "git g" = "serie";
     "git h" = "git push";
     "git l" = "git log";
