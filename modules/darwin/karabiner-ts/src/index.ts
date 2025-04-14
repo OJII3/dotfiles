@@ -21,7 +21,7 @@ writeToProfile("Default profile", [
 	layer("japanese_kana", "Utility Layer")
 		.configKey((v) => v.toIfAlone("fn"), true) // toggle IME to Romaji
 		.manipulators([
-			map("1").to("`"),
+			map("0").to("keypad_0"),
 			map("1", "shift").to("`", "shift"),
 			map(".").to("keypad_period"),
 			map("h").to("left_arrow"),

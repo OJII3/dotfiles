@@ -43,6 +43,7 @@
     "git co" = "git checkout";
     "git d" = "git diff";
     "git f" = "git fetch";
+    "git fp" = "git fetch --prune";
     "git g" = "serie";
     "git h" = "git push";
     "git l" = "git log";
@@ -52,7 +53,7 @@
     "git s" = "git status";
     "git t" = "git tag";
     "git w" = "git switch";
-    "git wc" = "git switch -c";
+    "git w-" = "git switch -c";
     "git pc" = "gh pr create";
     "git pm" = "gh pr merge";
     "git pr" = "gh pr";
