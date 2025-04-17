@@ -49,6 +49,9 @@ return {
 				})
 				vim.api.nvim_create_autocmd({ "BufEnter" }, {
 					callback = function()
+						if vim.bo.filetype == "neo-tree" or vim.bo.filetype == "alpha" then
+							return
+						end
 						image:clear()
 					end,
 					pattern = { "*" },
