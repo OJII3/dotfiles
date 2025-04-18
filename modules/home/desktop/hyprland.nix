@@ -17,7 +17,6 @@
       swaynotificationcenter
       wl-clipboard
       wlogout
-      inputs.hyprswitch.packages.${pkgs.system}.hyprswitch
     ];
 
   wayland.windowManager.hyprland =
