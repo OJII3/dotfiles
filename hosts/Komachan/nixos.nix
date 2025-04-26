@@ -22,9 +22,15 @@
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
-      #     efiSysMountPoint = "/boot";
+      efiSysMountPoint = "/boot";
     };
-    systemd-boot.enable = true;
+    systemd-boot.enable = false;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      useOSProber = true;
+      efiSupport = true;
+    };
   };
   boot.kernelParams = [
     "amd_iommmu=on"
