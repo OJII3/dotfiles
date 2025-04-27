@@ -2,7 +2,7 @@
   homebrew = {
     enable = true;
     masApps = {
-      # "KDE Connect" = 1580245991;
+      "KDE Connect" = 1580245991;
     };
     casks = [
       "blender"
