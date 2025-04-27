@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -7,12 +7,12 @@
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
-      # tree-sitter
       imagemagick
       deno
       gnumake
       gcc
       tree-sitter
+      inputs.mcp-hub.packages."${system}".default
       # lsp, formatter, linter
       astro-language-server
       bash-language-server
