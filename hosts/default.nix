@@ -56,6 +56,7 @@ let
     };
 in
 {
+  # NixOS ========================================================================
   nixos = {
     Renchon = mkNixosSystem {
       system = "x86_64-linux";
@@ -79,6 +80,7 @@ in
     };
   };
 
+  # Home Manager ====================================================================
   home-manager = {
     "ojii3@Renchon" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
@@ -92,11 +94,11 @@ in
       overlays = [ ];
       modules = [ ./Komachan/home-manager.nix ];
     };
-    "ojii3@Dagashiya" = mkHomeManagerConfiguration {
+    "ojii3@Himeko" = mkHomeManagerConfiguration {
       system = "aarch64-darwin";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./Dagashiya/home-manager.nix ];
+      modules = [ ./Himeko/home-manager.nix ];
     };
     "ojii3@Oshio" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
@@ -106,12 +108,13 @@ in
     };
   };
 
+  # MacOS ==========================================================================
   nix-darwin = {
-    "Dagashiya" = mkDarwinSystem {
+    "Himeko" = mkDarwinSystem {
       system = "aarch64-darwin";
-      hostname = "Dagashiya";
+      hostname = "Himeko";
       username = "ojii3";
-      modules = [ ./Dagashiya/darwin.nix ];
+      modules = [ ./Himeko/darwin.nix ];
     };
   };
 }
