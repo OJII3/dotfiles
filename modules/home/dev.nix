@@ -32,15 +32,15 @@
     # languages
     bun
     cmake
-    dotnet-sdk
-    gcc
-    gnumake
+    # dotnet-sdk
+    # gcc
+    # gnumake
     go
-    meson
+    # meson
     mise
     python311
-    rustup
-    typst
+    # rustup
+    # typst
     uv
   ];
 }

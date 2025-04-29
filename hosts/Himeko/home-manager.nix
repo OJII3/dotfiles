@@ -1,10 +1,10 @@
 { ... }: {
   imports = [
+    ../../modules/home
     ../../modules/home/git
     ../../modules/home/neovim
     ../../modules/home/zsh
 
-    ../../modules/home/assets.nix
     ../../modules/home/browser.nix
     ../../modules/home/dev.nix
     ../../modules/home/direnv.nix

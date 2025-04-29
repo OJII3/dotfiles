@@ -1,5 +1,6 @@
 { inputs, pkgs, ... }: {
   imports = [
+    ../../modules/home
     ../../modules/home/git
     ../../modules/home/im
     ../../modules/home/neovim
@@ -8,12 +9,11 @@
     ../../modules/home/zsh
 
     ../../modules/home/apps.nix
-    ../../modules/home/assets.nix
     ../../modules/home/browser.nix
     ../../modules/home/dev.nix
     ../../modules/home/direnv.nix
-    ../../modules/home/kdewallet.nix
     ../../modules/home/network.nix
+    ../../modules/home/kdewallet.nix
     ../../modules/home/bitwarden.nix
   ];
 
