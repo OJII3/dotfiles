@@ -70,7 +70,7 @@ in
       system = "x86_64-linux";
       hostname = "Komachan";
       username = "ojii3";
-      modules = [ ./Komachan/nixos.nix ];
+      modules = [ ./Lingsha/nixos.nix ];
     };
     Oshio = mkNixosSystem {
       system = "aarch64-linux";
@@ -88,11 +88,11 @@ in
       overlays = [ ];
       modules = [ ./Renchon/home-manager.nix ];
     };
-    "ojii3@Komachan" = mkHomeManagerConfiguration {
+    "ojii3@Lingsha" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./Komachan/home-manager.nix ];
+      modules = [ ./Lingsha/home-manager.nix ];
     };
     "ojii3@Cipher" = mkHomeManagerConfiguration {
       system = "x86_64-linux";

@@ -14,6 +14,7 @@
     ../../modules/home/direnv.nix
     ../../modules/home/kdewallet.nix
     ../../modules/home/network.nix
+    ../../modules/home/bitwarden.nix
   ];
 
   # laptop specific config
