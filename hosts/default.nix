@@ -94,6 +94,12 @@ in
       overlays = [ ];
       modules = [ ./Komachan/home-manager.nix ];
     };
+    "ojii3@Cipher" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Cipher/home-manager.nix ];
+    };
     "ojii3@Himeko" = mkHomeManagerConfiguration {
       system = "aarch64-darwin";
       username = "ojii3";
