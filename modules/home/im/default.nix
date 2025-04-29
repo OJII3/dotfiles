@@ -9,10 +9,10 @@
     ];
   };
 
-  # home.file.".config/fcitx5" = {
-  #   source = ./dotfiles/.config/fcitx5;
-  #   recursive = true;
-  # };
+  home.file.".config/fcitx5/profile" = {
+    source = ./config/fcitx5/profile;
+  };
+
   home.packages = with pkgs; [
     skkDictionaries.l
     skktools
