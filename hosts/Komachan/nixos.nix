@@ -24,10 +24,10 @@
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot";
     };
-    systemd-boot.enable = false;
+    systemd-boot.enable = true;
     grub = {
-      enable = true;
-      devices = [ "nodev" ];
+      enable = false;
+      device = "nodev";
       useOSProber = true;
       efiSupport = true;
     };
