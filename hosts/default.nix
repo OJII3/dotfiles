@@ -66,9 +66,9 @@ in
         ./Renchon/nixos.nix
       ];
     };
-    Komachan = mkNixosSystem {
+    Lingsha = mkNixosSystem {
       system = "x86_64-linux";
-      hostname = "Komachan";
+      hostname = "Lingsha";
       username = "ojii3";
       modules = [ ./Lingsha/nixos.nix ];
     };
