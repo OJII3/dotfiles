@@ -4,8 +4,8 @@ return {
 	dependencies = {
 		{ "MunifTanjim/nui.nvim" },
 	},
-	lazy = false,
 	opts = {
+    processor = "magick_rock",
 		integrations = {
 			markdown = {
 				enabled = false,
@@ -21,4 +21,5 @@ return {
 			},
 		},
 	},
+	lazy = false,
 }

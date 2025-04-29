@@ -7,6 +7,7 @@
 
     extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
     extraPackages = with pkgs; [
+      # utilities or installation tools
       imagemagick
       deno
       gnumake
