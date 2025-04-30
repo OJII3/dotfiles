@@ -1,8 +1,8 @@
 { ... }: {
   # Assets such as images
-  home.file.".dotassets" = {
+  home.file.".assets" = {
     source = ../../assets;
-    target = ".assets";
+    recursive = true;
   };
 
   xdg.userDirs.createDirectories = true;

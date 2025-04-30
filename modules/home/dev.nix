@@ -25,9 +25,9 @@
     pdftk
 
     # sdk, toolchain
-    google-cloud-sdk
-    google-cloud-sql-proxy
-    terraform
+    # google-cloud-sdk
+    # google-cloud-sql-proxy
+    # terraform
 
     # languages
     bun
@@ -41,7 +41,7 @@
     python311
     # rustup
     # typst
-    uv
+    # uv
   ];
 }
     
