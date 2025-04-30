@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ ... }: {
   imports = [
     ../../modules/home
     ../../modules/home/git
