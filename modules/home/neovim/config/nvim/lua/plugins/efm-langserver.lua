@@ -1,12 +1,12 @@
 return {
 	"mattn/efm-langserver",
 	dependencies = {
-		-- { "neovim/nvim-lspconfig" },
+		{ "neovim/nvim-lspconfig" }, -- for backward compatibility
 		{ "creativenull/efmls-configs-nvim" },
 	},
 	config = function()
-		local nvim_lsp_efm = require("lspconfig").efm
-		local languages = require("efmls-configs.defaults").languages()
+		local nvim_lsp_efm = vim.lsp.efm
+		-- local languages = require("efmls-configs.defaults").languages()
 
 		local stylua = require("efmls-configs.formatters.stylua")
 		local clang_format = require("efmls-configs.formatters.clang_format")
@@ -48,7 +48,7 @@ return {
 			rootMarkers = { "CMakeLists.txt" },
 		}
 
-		nvim_lsp_efm.setup({
+		vim.lsp.config("efm",{
 			init_options = {
 				documentFormatting = true,
 				codeAction = true,
@@ -78,7 +78,7 @@ return {
 			},
 			settings = {
 				rootMarkers = { ".git/" },
-				languages = vim.tbl_extend("force", languages, {
+				languages = {
 					astro = { prettier, biome },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
@@ -109,7 +109,7 @@ return {
 							formatStdin = true,
 						},
 					},
-				}),
+				},
 			},
 		})
 
