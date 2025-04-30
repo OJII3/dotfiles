@@ -7,7 +7,8 @@
     enable = true;
     wifi = {
       macAddress = "random";
-      scanRandMacAddress = true;
+      scanRandMacAddress = false;
+      powersave = false;
     };
   };
 
