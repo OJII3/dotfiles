@@ -9,6 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/core
+      ../../modules/nixos/core/suspend/thinkpad-e14-amd.nix
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/tuigreet.nix
     ]
