@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs;
     [
       anyrun
@@ -31,7 +31,7 @@
         ${builtins.readFile ./config/hypr/hyprland/rules.conf}
       ''; # not load env, because it's loaded by uwsm
       plugins = [
-        pkgs.hyprlandPlugins.hyprbars
+        # pkgs.hyprlandPlugins.hyprbars
       ];
     };
 
