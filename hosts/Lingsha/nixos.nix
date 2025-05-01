@@ -6,16 +6,17 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/core
-      ../../modules/nixos/core/suspend/thinkpad-e14-amd.nix
+      ../../modules/nixos/core/power/amd.nix
+      ../../modules/nixos/core/power/laptop.nix
+      ../../modules/nixos/core/suspend
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/tuigreet.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       lenovo-thinkpad-e14-amd
-      common-pc-laptop # includes power management
+      common-pc-laptop
     ]);
 
   # Bootloader.
@@ -27,6 +28,7 @@
     };
     systemd-boot.enable = true;
     grub = {
+      # grub no worky
       enable = false;
       device = "nodev";
       useOSProber = true;
