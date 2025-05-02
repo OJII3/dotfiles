@@ -3,6 +3,7 @@
     # utilities
     bat
     bottom
+    byobu
     httpie
     ripgrep
     yazi
