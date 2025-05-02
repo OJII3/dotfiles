@@ -106,11 +106,11 @@ in
       overlays = [ ];
       modules = [ ./Himeko/home-manager.nix ];
     };
-    "ojii3@Oshio" = mkHomeManagerConfiguration {
+    "ojii3@Welt" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./Oshio/home-manager.nix ];
+      modules = [ ./Welt/home-manager.nix ];
     };
   };
 
