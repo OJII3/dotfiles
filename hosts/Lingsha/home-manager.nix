@@ -9,12 +9,13 @@
     ../../modules/home/zsh
 
     ../../modules/home/apps.nix
+    ../../modules/home/bitwarden.nix
     ../../modules/home/browser.nix
     ../../modules/home/dev.nix
     ../../modules/home/direnv.nix
-    ../../modules/home/network.nix
+    ../../modules/home/gpg/linux-desktop.nix
     ../../modules/home/kdewallet.nix
-    ../../modules/home/bitwarden.nix
+    ../../modules/home/network.nix
   ];
 
   # laptop specific config

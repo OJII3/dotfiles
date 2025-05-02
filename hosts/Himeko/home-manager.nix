@@ -4,6 +4,7 @@
     ../../modules/home/git
     ../../modules/home/neovim
     ../../modules/home/zsh
+    ../../modules/home/gpg
 
     ../../modules/home/browser.nix
     ../../modules/home/dev.nix
@@ -12,7 +13,4 @@
   ];
 
   programs.kitty.enable = true;
-  programs.gpg = {
-    enable = true;
-  };
 }

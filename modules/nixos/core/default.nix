@@ -8,7 +8,7 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./gpg.nix
+    # ./gpg.nix
     ./i18n.nix
     ./kdewallet.nix
     ./network.nix
@@ -24,7 +24,7 @@
     isNormalUser = true;
     description = "ojii3";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" "uucp" ];
   };
 
   # Allow unfree packages
