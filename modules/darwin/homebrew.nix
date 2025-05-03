@@ -5,6 +5,7 @@
       # "KDE Connect" = 1580245991;
     };
     casks = [
+      "bitwarden"
       "blender"
       "blockbench"
       "discord"
