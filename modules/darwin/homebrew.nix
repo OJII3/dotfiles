@@ -2,7 +2,7 @@
   homebrew = {
     enable = true;
     masApps = {
-      "KDE Connect" = 1580245991;
+      # "KDE Connect" = 1580245991;
     };
     casks = [
       "blender"
@@ -19,6 +19,7 @@
       "spaceid"
       "unity-hub"
       "visual-studio-code"
+      "wezterm"
       "wireshark"
     ];
     onActivation = {
