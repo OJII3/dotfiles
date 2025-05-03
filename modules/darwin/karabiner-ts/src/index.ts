@@ -8,8 +8,7 @@ writeToProfile("Default profile", [
 	// ---------------------------------------------------------------------
 	rule("Smart Control & CapsLock")
 		.manipulators([
-			// for Blender, which heavily uses normal Option- keybinds
-			map("caps_lock", "??").to("right_option"),
+			map("caps_lock", "??").to("fn"),
 			// for Vim
 			map("left_control")
 				.to("left_control")
@@ -34,28 +33,28 @@ writeToProfile("Default profile", [
 	rule("Right Command").manipulators([map("right_command").toIfAlone("fn")]),
 
 	// Additional Option key near the thumb
-	layer("japanese_eisuu", "Alt")
+	layer("japanese_eisuu", "Utility Layer")
 		.configKey((v) => v.to("left_option"), true)
 		.configKey((v) => v.toIfAlone("`"), true) // missing key on Mac's JP keyboard
 		.manipulators([]),
 	rule("~").manipulators([map("japanese_eisuu", "shift").to("`", "shift")]), // missing key on Mac's JP keyboard
 
-	rule("Swap Command and Option").manipulators([
-		map("left_option", "??").to("left_command"),
-		map("left_command", "??").to("left_option"),
+	rule("Left Option to Right Option").manipulators([
+		// You can use the left option key as a right option key (normal option key)
+		map("left_option", "??").to("right_option"),
 	]),
 
 	rule("Alt").manipulators([
 		// focus window
-		map("h", "left_option").to$(yabai + "-m window --focus west"),
-		map("j", "left_option").to$(yabai + "-m window --focus south"),
-		map("k", "left_option").to$(yabai + "-m window --focus north"),
-		map("l", "left_option").to$(yabai + "-m window --focus east"),
+		map("h", "left_option").to$(`${yabai} -m window --focus west`),
+		map("j", "left_option").to$(`${yabai} -m window --focus south`),
+		map("k", "left_option").to$(`${yabai} -m window --focus north`),
+		map("l", "left_option").to$(`${yabai} -m window --focus east`),
 		// move wndow
-		map("h", "left_option", "shift").to$(yabai + "-m window --warp west"),
-		map("j", "left_option", "shift").to$(yabai + "-m window --warp south"),
-		map("k", "left_option", "shift").to$(yabai + "-m window --warp north"),
-		map("l", "left_option", "shift").to$(yabai + "-m window --warp east"),
+		map("h", "left_option", "shift").to$(`${yabai} -m window --warp west`),
+		map("j", "left_option", "shift").to$(`${yabai} -m window --warp south`),
+		map("k", "left_option", "shift").to$(`${yabai} -m window --warp north`),
+		map("l", "left_option", "shift").to$(`${yabai} -m window --warp east`),
 		// focus space
 		map("1", "left_option").to("1", "control"),
 		map("2", "left_option").to("2", "control"),
@@ -63,19 +62,19 @@ writeToProfile("Default profile", [
 		map("4", "left_option").to("4", "control"),
 		map("5", "left_option").to("5", "control"),
 		// move window to space
-		map("1", "left_option", "shift").to$(yabai + "-m window --space 1"),
-		map("2", "left_option", "shift").to$(yabai + "-m window --space 2"),
-		map("3", "left_option", "shift").to$(yabai + "-m window --space 3"),
-		map("4", "left_option", "shift").to$(yabai + "-m window --space 4"),
-		map("5", "left_option", "shift").to$(yabai + "-m window --space 5"),
+		map("1", "left_option", "shift").to$(`${yabai} -m window --space 1`),
+		map("2", "left_option", "shift").to$(`${yabai} -m window --space 2`),
+		map("3", "left_option", "shift").to$(`${yabai} -m window --space 3`),
+		map("4", "left_option", "shift").to$(`${yabai} -m window --space 4`),
+		map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
 		// other window operations -------------------------------------
-		map("tab", "left_option").to$(yabai + "-m window --focus recent"),
+		map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
 		map("q", "left_option").to$(closeWindow),
 		map("f", "left_option", "shift").to$(
 			`${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
 		),
 		map("w", "left_option").to$(
-			`${yabai}-m window --toggle float; ${yabai}-m window --grid 1:1:0:0:1:1`,
+			`${yabai} -m window --toggle float; ${yabai} -m window --grid 1:1:0:0:1:1`,
 		),
 
 		// System operations -------------------------------------
@@ -98,6 +97,7 @@ writeToProfile("Default profile", [
 	rule("chrome")
 		.manipulators([
 			map("w", "control").to("w", "command"),
+			map("t", "control").to("t", "command"),
 			map("t", "control").to("t", "command"),
 			map("l", "control").to("l", "command"),
 		])
