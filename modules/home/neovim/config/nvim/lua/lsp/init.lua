@@ -25,6 +25,7 @@ local lsp_names = {
 	"mdx_analyzer",
 	"pyright",
 	"pyright",
+	-- "rust_analyzer",
 	"stylelint_lsp",
 	"tailwindcss",
 	"taplo",

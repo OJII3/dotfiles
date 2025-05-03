@@ -5,13 +5,18 @@
     withNodeJs = true;
     defaultEditor = true;
 
-    extraLuaPackages = ps: [ ps.magick ps.tiktoken_core ];
+    extraLuaPackages = ps: [
+      ps.magick
+      ps.tiktoken_core
+    ];
     extraPackages = with pkgs; [
       # utilities or installation tools
       imagemagick
       deno
       gnumake
       gcc
+      rustc
+      cargo
       tree-sitter
       inputs.mcp-hub.packages."${system}".default
       # lsp, formatter, linter
