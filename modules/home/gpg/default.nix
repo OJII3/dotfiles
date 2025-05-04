@@ -4,4 +4,8 @@
     enable = true;
     enableSshSupport = true;
   };
+
+  programs.zsh.initExtra = ''
+    export GPG_TTY=$(tty)
+  '';
 }
