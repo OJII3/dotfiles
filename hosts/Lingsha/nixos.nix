@@ -8,58 +8,52 @@
     [
       ./hardware-configuration.nix
       ../../modules/nixos/core
-      ../../modules/nixos/core/power/amd.nix
+      ../../modules/nixos/core/boot/systemd-boot.nix
+      ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/tuigreet.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
-      lenovo-thinkpad-e14-amd
+      # lenovo-thinkpad-e14-amd
       common-pc-laptop
     ]);
 
   # Bootloader.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    systemd-boot.enable = true;
-    grub = {
-      # grub no worky
-      enable = false;
-      device = "nodev";
-      useOSProber = true;
-      efiSupport = true;
-    };
-  };
+
+  # Hardware Specific Options
   boot.kernelParams = [
     "amd_iommmu=on"
     "mem_sleep_default=deep"
+    "acpi_backlight=native"
+    "thinkpad_acpi.fan_control=1"
   ];
-
-  # graphics
-  hardware.graphics = {
-    extraPackages = [ pkgs.amdvlk ];
-    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  boot.extraModprobeConfig = ''
+    options rtw89pci disable_aspm_l1=y
+    options rtw89pci disable_aspm_l1ss=y
+  '';
+  services.tlp.settings = {
+    RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
+    RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+    RADEON_DPM_STATE_ON_AC = "performance";
+    RADEON_DPM_STATE_ON_BAT = "battery";
   };
+  hardware.amdgpu.amdvlk.enable = true;
+  hardware.amdgpu.opencl.enable = true;
+  hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
+  services.tlp.settings = {
+    WIFI_PWR_ON_BAT = "off";
+  };
 
   # system packages
-  environment.systemPackages = with pkgs; [
-    glxinfo
-    vulkan-tools
-    vulkan-headers
+  environment.systemPackages = [
     # nur.repos.ataraxiasjel.waydroid-script # nur
   ];
 
 
-  # services.cloudflared = {
-  #   enable = true;
-  #   group = "cloudflared";
-  # };
   services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
