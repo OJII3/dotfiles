@@ -17,13 +17,13 @@ return {
 		local rustfmt = require("efmls-configs.formatters.rustfmt")
 		local yamllint = require("efmls-configs.linters.yamllint")
 		-- local cspell = require("efmls-configs.linters.cspell")
-		local stylelint_linter = require("efmls-configs.linters.stylelint")
+		-- local stylelint_linter = require("efmls-configs.linters.stylelint")
 		-- local stylelint_formatter = require("efmls-configs.formatters.stylelint")
 		-- TypeScript, JavaScript
 		-- local eslint_linter = require("efmls-configs.linters.eslint")
 		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
-		local biome = require("efmls-configs.formatters.biome")
+		-- local biome = require("efmls-configs.formatters.biome")
 		-- Python
 		local ruff = require("efmls-configs.formatters.ruff")
 		local black = require("efmls-configs.formatters.black")
@@ -48,7 +48,7 @@ return {
 			rootMarkers = { "CMakeLists.txt" },
 		}
 
-		vim.lsp.config("efm",{
+		vim.lsp.config("efm", {
 			init_options = {
 				documentFormatting = true,
 				codeAction = true,
@@ -79,23 +79,23 @@ return {
 			settings = {
 				rootMarkers = { ".git/" },
 				languages = {
-					astro = { prettier, biome },
+					astro = { prettier },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
 					cpp = { clang_format, clang_tidy },
-					css = { prettier, stylelint_linter },
+					css = { prettier },
 					haskell = { formulu },
-					javascript = { biome, prettier },
-					javascriptreact = { biome, prettier },
-					json = { prettier, biome },
+					javascript = { prettier },
+					javascriptreact = { prettier },
+					json = { prettier },
 					latex = { latexindent },
 					lua = { stylua },
 					markdown = { textlint },
 					python = { ruff, black, isort, autopep8, flake8, mypy },
 					rust = { rustfmt },
 					sh = { shellcheck },
-					typescript = { prettier, biome },
-					typescriptreact = { prettier, biome },
+					typescript = { prettier },
+					typescriptreact = { prettier },
 					typst = { typstyle },
 					yaml = { yamllint },
 					nix = {

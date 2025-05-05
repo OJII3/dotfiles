@@ -38,7 +38,6 @@
       # eslint
       nodePackages.prettier
       pyright
-      python311Packages.debugpy
       ruff
       rust-analyzer
       shellcheck
@@ -55,7 +54,8 @@
       yaml-language-server
       yamlfmt
       yamllint
-      # dap
+      # debugger
+      python311Packages.debugpy
     ];
   };
 

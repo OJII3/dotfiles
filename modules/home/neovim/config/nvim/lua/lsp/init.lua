@@ -25,7 +25,8 @@ local lsp_names = {
 	"mdx_analyzer",
 	"pyright",
 	"pyright",
-	-- "rust_analyzer",
+	-- "rust_analyzer", -- rustaceanvim will handle this
+	"roslyn_ls",
 	"stylelint_lsp",
 	"tailwindcss",
 	"taplo",
@@ -38,51 +39,49 @@ local lsp_names = {
 }
 
 for _, server_name in ipairs(lsp_names) do
-	local capabilities = require("blink.cmp").get_lsp_capabilities()
 	local opts = {
-		capabilities = capabilities,
+		capabilities = require("blink.cmp").get_lsp_capabilities(),
 	}
-	if server_name == "denols" then
-		-- INFO: Neccessary for avoiding conflict with other js severs
-		opts = {
-			root_dir = function(bufnr, callback)
-				local found_dirs = vim.fs.find({
-					"deno.json",
-					"deno.jsonc",
-					"deps.ts",
-				}, {
-					upward = true,
-					path = vim.fs.dirname(vim.fs.normalize(vim.api.nvim_buf_get_name(bufnr))),
-				})
-				if #found_dirs > 0 then
-					callback(vim.fs.dirname(found_dirs[1]))
-				end
-			end,
-			init_options = {
-				lint = true,
-				unstable = true,
-				suggest = {
-					imports = {
-						hosts = {
-							["https://deno.land"] = true,
-							["https://cdn.nest.land"] = true,
-							["https://crux.land"] = true,
-						},
+	if server_name == "biome" then
+		opts.root_dir = function(_, callback)
+			local root_dir = vim.fs.root(0, { "biome.json", "biome.jsonc" })
+			if vim.fs.root then
+				callback(root_dir)
+			end
+		end
+	elseif server_name == "denols" then
+		opts.root_dir = function(_, callback)
+			local root_dir = vim.fs.root(0, {
+				"deno.json",
+				"deno.jsonc",
+				"deps.ts",
+			})
+			if root_dir then
+				callback(root_dir)
+			end
+		end
+		opts.init_options = {
+			lint = true,
+			unstable = true,
+			suggest = {
+				imports = {
+					hosts = {
+						["https://deno.land"] = true,
+						["https://cdn.nest.land"] = true,
+						["https://crux.land"] = true,
 					},
 				},
 			},
 		}
 	elseif server_name == "clangd" then
-		opts = {
-			cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" },
-		}
-	elseif server_name == "eslint" then
-		opts.on_attach = function(client, bufnr)
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				buffer = bufnr,
-				command = "EslintFixAll",
-			})
-		end
+		opts.cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" }
+	-- elseif server_name == "eslint" then
+	-- 	opts.on_attach = function(client, bufnr)
+	-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+	-- 			buffer = bufnr,
+	-- 			command = "EslintFixAll",
+	-- 		})
+	-- 	end
 	elseif server_name == "stylelint_lsp" then
 		opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
 	elseif server_name == "jsonls" then

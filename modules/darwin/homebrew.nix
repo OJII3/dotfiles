@@ -4,6 +4,9 @@
     masApps = {
       # "KDE Connect" = 1580245991;
     };
+    brews = [
+      "gcc"
+    ];
     casks = [
       "bitwarden"
       "blender"
