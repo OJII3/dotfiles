@@ -26,10 +26,10 @@
   };
 
   # dns
-  services.avahi = {
-    enable = true;
-    openFirewall = true;
-  };
+  # services.avahi = {
+  #   enable = true;
+  #   openFirewall = true;
+  # };
 
   # vpn & device syncing
   services.tailscale = {
