@@ -37,7 +37,7 @@
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       ${builtins.readFile ./scripts/ghq-fzf.sh}
 
-      export GEMINI_API_KEY=$(QT_QPA_PLATFORM=offscreen ${pkgs.libsForQt5.kwallet}/bin/kwallet-query -l -f GEMINI_API_KEY kdewallet)
+      export GEMINI_API_KEY="$(<${config.sops.secrets.gemini_api_key.path})"
     '';
   };
 

@@ -1,21 +1,22 @@
 { ... }: {
   imports = [
     ../../modules/home
-    ../../modules/home/git
-    ../../modules/home/im
-    ../../modules/home/neovim
-    ../../modules/home/terminal
-    ../../modules/home/desktop
-    ../../modules/home/zsh
-
     ../../modules/home/apps.nix
     ../../modules/home/bitwarden.nix
     ../../modules/home/browser.nix
+    ../../modules/home/cloudflare-warp.nix
+    ../../modules/home/desktop
     ../../modules/home/dev.nix
     ../../modules/home/direnv.nix
+    ../../modules/home/git
     ../../modules/home/gpg/linux-desktop.nix
+    ../../modules/home/im
     ../../modules/home/kdewallet.nix
+    ../../modules/home/neovim
     ../../modules/home/network.nix
+    ../../modules/home/sops.nix
+    ../../modules/home/terminal
+    ../../modules/home/zsh
   ];
 
   # laptop specific config

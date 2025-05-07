@@ -23,6 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mcp-hub.url = "github:ravitemer/mcp-hub";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = inputs: {

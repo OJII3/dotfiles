@@ -47,6 +47,13 @@
   services.tlp.settings = {
     WIFI_PWR_ON_BAT = "off";
   };
+  services.fprintd = {
+    enable = true;
+    tod = {
+      enable = true;
+      driver = pkgs.libfprint-2-tod1-goodix-550a;
+    };
+  };
 
   # system packages
   environment.systemPackages = [
@@ -54,7 +61,6 @@
   ];
 
 
-  services.fprintd.enable = true;
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
 

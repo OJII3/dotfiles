@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     canta-theme
   ];
@@ -15,9 +15,5 @@
     enable = true;
     withUWSM = true;
     # package = inputs.hyprland.packages.${pkgs.system}.hyprland; # from flakes
-  };
-
-  programs.gnupg.agent = {
-    pinentryPackage = pkgs.pinentry-qt;
   };
 }
