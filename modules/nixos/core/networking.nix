@@ -1,4 +1,4 @@
-{ hostname, ... }: {
+{ hostname, pkgs, ... }: {
   # basic configuration
   programs.mtr.enable = true; # ping x traceroute
 
@@ -10,6 +10,7 @@
       scanRandMacAddress = false;
       powersave = false;
     };
+    dns = "systemd-resolved";
   };
 
   networking.firewall = {
@@ -25,11 +26,15 @@
     ];
   };
 
-  # dns
-  # services.avahi = {
-  #   enable = true;
-  #   openFirewall = true;
-  # };
+  services.resolved = {
+    enable = true;
+    dnsovertls = "opportunistic";
+  };
+
+  services.cloudflare-warp = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # vpn & device syncing
   services.tailscale = {
