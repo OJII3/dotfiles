@@ -5,6 +5,7 @@
     blender
     bottles
     cloudflared
+    code-cursor
     discord
     evince
     figma-linux
