@@ -35,10 +35,13 @@
     options rtw89pci disable_aspm_l1ss=y
   '';
   services.tlp.settings = {
-    RADEON_DPM_PERF_LEVEL_ON_AC = "auto";
-    RADEON_DPM_PERF_LEVEL_ON_BAT = "low";
+    RADEON_DPM_PERF_LEVEL_ON_AC = "high"; # dynamic power management, default: auto
+    RADEON_DPM_PERF_LEVEL_ON_BAT = "auto"; # dynamic power management, default: auto
     RADEON_DPM_STATE_ON_AC = "performance";
     RADEON_DPM_STATE_ON_BAT = "battery";
+    AMDGPU_ABM_LEVEL_ON_BAT = 3; # adaptive backlight, default: 1
+    USB_DENYLIST = "32c2:0066 ";
+    RUNTIME_PM_DISABLE = "02:00.0"; # permanently disable wwan device power management
   };
   hardware.amdgpu.amdvlk.enable = true;
   hardware.amdgpu.opencl.enable = true;
