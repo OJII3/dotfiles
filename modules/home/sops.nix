@@ -11,4 +11,9 @@
     defaultSopsFormat = "json";
     secrets.gemini_api_key = { };
   };
+
+  programs.zsh.initExtra = ''
+    export GEMINI_API_KEY="$(<${config.sops.secrets.gemini_api_key.path})"
+  '';
 }
+

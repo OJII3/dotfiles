@@ -36,8 +36,6 @@
     initExtra = ''
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       ${builtins.readFile ./scripts/ghq-fzf.sh}
-
-      export GEMINI_API_KEY="$(<${config.sops.secrets.gemini_api_key.path})"
     '';
   };
 
