@@ -1,9 +1,11 @@
 ---
 keys:
   - &ojii3_lingsha age14a30ds5y88xxh2vupvtxqhhw3ffwq4ef7j9jz24lp5unm0mlgvnsjapdrp
+  - &ojii3_welt age158j98y76xdhvhp7nltuufms26xr8d9qfa25f2ffj2yd3dxt8fseq75aadz
 
 creation_rules:
   - path_regex: assets/secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
           - *ojii3_lingsha
+          - *ojii3_welt
