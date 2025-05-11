@@ -12,6 +12,7 @@
       ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
+      ../../modules/nixos/desktop/sunshine.nix
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/tuigreet.nix
     ]
@@ -57,12 +58,12 @@
       driver = pkgs.libfprint-2-tod1-goodix-550a;
     };
   };
-
-  # system packages
-  environment.systemPackages = [
-    # nur.repos.ataraxiasjel.waydroid-script # nur
-  ];
-
+  services.wrappers.sunshine = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_admin+p";
+    source = "${pkgs.sunshine}/bin/sunshine";
+  };
 
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;

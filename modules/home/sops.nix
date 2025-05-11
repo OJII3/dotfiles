@@ -7,7 +7,7 @@
   sops = {
     defaultSopsFile = ../../assets/secrets/secrets.json;
     defaultSopsFormat = "json";
-    gnupg.home = config.home.homeDirectory;
+    gnupg.home = "${config.home.homeDirectory}/.gnupg";
     gnupg.sshKeyPaths = [ ];
     secrets.gemini_api_key = { };
     secrets.google_search_api_key = { };
