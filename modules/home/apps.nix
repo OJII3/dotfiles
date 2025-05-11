@@ -17,6 +17,7 @@
     jetbrains-toolbox
     kdePackages.wrapQtAppsHook
     libreoffice-qt
+    moonlight-qt
     mpv
     nautilus
     nautilus-python
