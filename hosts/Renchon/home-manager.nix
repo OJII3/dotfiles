@@ -1,20 +1,21 @@
 { pkgs, ... }: {
   imports = [
     ../../modules/home
-    ../../modules/home/git
-    ../../modules/home/im
-    ../../modules/home/neovim
-    ../../modules/home/terminal
-    ../../modules/home/zsh
-
     ../../modules/home/apps.nix
     ../../modules/home/browser.nix
-    ../../modules/home/dev.nix
-    ../../modules/home/direnv.nix
     ../../modules/home/desktop/hyprland.nix
     ../../modules/home/desktop/theme.nix
+    ../../modules/home/dev.nix
+    ../../modules/home/direnv.nix
+    ../../modules/home/git
+    ../../modules/home/gpg
+    ../../modules/home/sops.nix
+    ../../modules/home/im
     ../../modules/home/kdewallet.nix
+    ../../modules/home/neovim
     ../../modules/home/network.nix
+    ../../modules/home/terminal
+    ../../modules/home/zsh
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''
