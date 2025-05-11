@@ -7,7 +7,7 @@
   sops = {
     defaultSopsFile = ../../assets/secrets/secrets.json;
     defaultSopsFormat = "json";
-    gnupg.home = if pkgs.system == "aarch64-darwin" then "/Users/${username}/.gnupg" else "/home/${username}/.gnupg";
+    gnupg.home = config.home.homeDirectory;
     gnupg.sshKeyPaths = [ ];
     secrets.gemini_api_key = { };
     secrets.google_search_api_key = { };
