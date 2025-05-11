@@ -18,4 +18,9 @@
     ../../modules/home/terminal
     ../../modules/home/zsh
   ];
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    monitor=HDMI-A-2,1920x1080@60,auto,1
+    $mod = ALT_L
+  '';
 }
