@@ -72,6 +72,14 @@ in
       username = "ojii3";
       modules = [ ./Lingsha/nixos.nix ];
     };
+    Cipher = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "Cipher";
+      username = "ojii3";
+      modules = [
+        ./Cipher/nixos.nix
+      ];
+    };
   };
 
   # Home Manager ====================================================================
