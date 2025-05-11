@@ -1,10 +1,12 @@
 { ... }: {
   imports = [
     ../../modules/home
-    ../../modules/home/desktop
+    ../../modules/home/apps.nix
     ../../modules/home/bitwarden.nix
-    ../../modules/home/dev.nix
+    ../../modules/home/browser.nix
     ../../modules/home/cloudflare-warp.nix
+    ../../modules/home/desktop
+    ../../modules/home/dev.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
     ../../modules/home/gpg/linux-desktop.nix

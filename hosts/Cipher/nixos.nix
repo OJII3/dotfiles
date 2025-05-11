@@ -9,9 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/core
-      ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/tuigreet.nix
       ../../modules/nixos/desktop/sunshine.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
@@ -25,9 +23,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-
   # graphics
   services.xserver.videoDrivers = [ "intel" ];
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "uwsm start -- hyprland-uwsm.desktop";
+        user = "ojii3";
+      };
+      default_session = initial_session;
+    };
+  };
 
   # system packages
   # environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
