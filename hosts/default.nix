@@ -58,12 +58,12 @@ in
 {
   # NixOS ========================================================================
   nixos = {
-    Renchon = mkNixosSystem {
+    Bronya = mkNixosSystem {
       system = "x86_64-linux";
-      hostname = "Renchon";
+      hostname = "Bronya";
       username = "ojii3";
       modules = [
-        ./Renchon/nixos.nix
+        ./Bronya/nixos.nix
       ];
     };
     Lingsha = mkNixosSystem {
@@ -72,21 +72,15 @@ in
       username = "ojii3";
       modules = [ ./Lingsha/nixos.nix ];
     };
-    Oshio = mkNixosSystem {
-      system = "aarch64-linux";
-      hostname = "Oshio";
-      username = "ojii3";
-      modules = [ ./Oshio/nixos.nix ];
-    };
   };
 
   # Home Manager ====================================================================
   home-manager = {
-    "ojii3@Renchon" = mkHomeManagerConfiguration {
+    "ojii3@Bronya" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./Renchon/home-manager.nix ];
+      modules = [ ./Bronya/home-manager.nix ];
     };
     "ojii3@Lingsha" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
