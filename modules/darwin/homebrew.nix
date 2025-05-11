@@ -23,6 +23,7 @@
       "spaceid"
       "unity-hub"
       "visual-studio-code"
+      "warp"
       "wezterm"
       "wireshark"
     ];
