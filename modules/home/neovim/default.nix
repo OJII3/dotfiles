@@ -55,7 +55,6 @@
       yamlfmt
       yamllint
       # debugger
-      python311Packages.debugpy
     ];
   };
 
