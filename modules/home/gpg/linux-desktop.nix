@@ -3,5 +3,5 @@
     ./.
   ];
 
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-all;
+  services.gpg-agent.pinentryPackage = pkgs.pinentry-qt;
 }
