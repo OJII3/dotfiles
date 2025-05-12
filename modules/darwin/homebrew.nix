@@ -17,6 +17,7 @@
       "karabiner-elements"
       "logi-options+"
       "minecraft"
+      "moonlight"
       "obs"
       "parsec"
       "scroll-reverser"
