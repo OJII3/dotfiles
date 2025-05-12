@@ -6,15 +6,16 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
-      ../../modules/nixos/desktop/sunshine.nix
       ../../modules/nixos/desktop
+      ../../modules/nixos/desktop/sunshine.nix
       ../../modules/nixos/desktop/tuigreet.nix
+      ../../modules/nixos/desktop/waydroid.nix
+      ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       # lenovo-thinkpad-e14-amd
@@ -58,20 +59,9 @@
       driver = pkgs.libfprint-2-tod1-goodix-550a;
     };
   };
-  services.wrappers.sunshine = {
-    owner = "root";
-    group = "root";
-    capabilities = "cap_sys_admin+p";
-    source = "${pkgs.sunshine}/bin/sunshine";
-  };
 
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
-
-  # Others
-  virtualisation = {
-    waydroid.enable = true;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
