@@ -14,6 +14,12 @@
     secrets.google_search_engine_id = { };
   };
 
+systemd.user.services.sops-nix = {
+  Install = {
+    WantedBy = [ "default.target" ];
+  };
+};
+
   programs.zsh.initExtra = ''
     export GEMINI_API_KEY="$(<${config.sops.secrets.gemini_api_key.path})"
     export GOOGLE_SEARCH_API_KEY="$(<${config.sops.secrets.google_search_api_key.path})"
