@@ -28,6 +28,7 @@
     slack
     unityhub
     vlc
+    warp-terminal
     wineWowPackages.staging
   ];
 }
