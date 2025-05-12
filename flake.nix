@@ -24,11 +24,16 @@
     };
     mcp-hub.url = "github:ravitemer/mcp-hub";
     sops-nix.url = "github:Mic92/sops-nix";
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
     nixosConfigurations = (import ./hosts inputs).nixos;
     homeConfigurations = (import ./hosts inputs).home-manager;
     darwinConfigurations = (import ./hosts inputs).nix-darwin;
+    nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droid;
   };
 }
