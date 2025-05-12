@@ -9,6 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/nixos/core
+      ../../modules/nixos/core/k3s.nix
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
     ]
