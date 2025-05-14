@@ -54,6 +54,17 @@ let
         inherit inputs hostname username;
       };
     };
+
+  mkNixOnDroidConfiguration =
+    { system, modules }:
+    inputs.nix-on-droid.lib.nixOnDroidConfiguration {
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+      modules = modules ++ [ 
+      ];
+    };
 in
 {
   # NixOS ========================================================================
@@ -123,6 +134,13 @@ in
       hostname = "Himeko";
       username = "ojii3";
       modules = [ ./Himeko/darwin.nix ];
+    };
+  };
+
+  nix-on-droid = {
+    "SilverWolf" = mkNixOnDroidConfiguration {
+      system = "aarch64-linux";
+      modules = [ ./SilverWolf/nix-on-droid.nix ];
     };
   };
 }
