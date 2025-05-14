@@ -26,6 +26,9 @@
 
   # graphics
   services.xserver.videoDrivers = [ "intel" ];
+
+
+  # Auto Login
   services.greetd = {
     enable = true;
     settings = rec {
