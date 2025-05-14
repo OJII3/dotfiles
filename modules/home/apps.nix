@@ -3,7 +3,6 @@
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
     blender
-    bottles
     cloudflared
     code-cursor
     discord
