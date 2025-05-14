@@ -16,6 +16,7 @@
     ../../modules/home/network.nix
     ../../modules/home/sops.nix
     ../../modules/home/terminal
+    ../../modules/home/unityhub.nix
     ../../modules/home/zsh
   ];
 

@@ -13,7 +13,6 @@
     hunspell
     hyprpicker
     inkscape-with-extensions
-    jetbrains-toolbox
     kdePackages.wrapQtAppsHook
     libreoffice-qt
     moonlight-qt
@@ -25,7 +24,6 @@
     qtrvsim
     realvnc-vnc-viewer
     slack
-    unityhub
     vlc
     warp-terminal
     wineWowPackages.staging
