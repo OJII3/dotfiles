@@ -2,6 +2,7 @@
 let
   extra-path = with pkgs; [
     # Add any extra binaries you want accessible to Rider here
+    dotnet-sdk
   ];
 
   extra-lib = with pkgs;[
