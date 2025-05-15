@@ -6,13 +6,12 @@
 {
   imports =
     [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       ../../modules/nixos/core
       ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/tuigreet.nix
       ../../modules/nixos/desktop/sunshine.nix
+      ../../modules/nixos/desktop/waydroid.nix
+      ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
@@ -36,13 +35,13 @@
     open = false;
     nvidiaSettings = true;
     prime = {
-      sync.enable = true;
-      offload.enable = false;
-      # offload = {
-      # offload and sync cannot be enabled at the same time
-      # enable = true;
-      # enableOffloadCmd = true;
-      # };
+      # sync.enable = true;
+      # offload.enable = false;
+      offload = {
+        # offload and sync cannot be enabled at the same time
+        enable = true;
+        enableOffloadCmd = true;
+      };
       # to check, command `sudo lshw -c diplay`
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
@@ -51,8 +50,21 @@
   };
 
 
-  # system packages
-  # environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
+  # Wake on LAN
+  networking.interfaces.enp4s0.wakeOnLan.enable = true;
+
+  # Auto Login
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "uwsm start -- hyprland-uwsm.desktop";
+        user = "ojii3";
+      };
+      default_session = initial_session;
+    };
+  };
+
 
 
   # This value determines the NixOS release from which the default
