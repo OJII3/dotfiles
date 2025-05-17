@@ -1,6 +1,7 @@
 { hostname, pkgs, ... }: {
   # basic configuration
   programs.mtr.enable = true; # ping x traceroute
+  programs.wireshark.enable = true;
 
   networking.hostName = hostname;
   networking.networkmanager = {

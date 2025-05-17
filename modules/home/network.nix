@@ -1,8 +1,9 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    wireshark
+    # wireshark
     whois
     traceroute
+    tcpdump
   ];
 }
 
