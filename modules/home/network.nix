@@ -4,6 +4,8 @@
     whois
     traceroute
     tcpdump
+    wakeonlan
+    ethtool
   ];
 }
 
