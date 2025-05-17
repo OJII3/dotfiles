@@ -12,6 +12,7 @@
     ../../modules/home/gpg/linux-desktop.nix
     ../../modules/home/im
     ../../modules/home/kdewallet.nix
+    ../../modules/home/kdeconnect.nix
     ../../modules/home/neovim
     ../../modules/home/network.nix
     ../../modules/home/sops.nix
