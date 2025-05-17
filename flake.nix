@@ -28,6 +28,7 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
 
   outputs = inputs: {

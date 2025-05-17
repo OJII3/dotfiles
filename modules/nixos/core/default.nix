@@ -8,7 +8,6 @@
   imports = [
     ./audio.nix
     ./bluetooth.nix
-    ./fan.nix
     ./i18n.nix
     ./kdewallet.nix
     ./networking.nix

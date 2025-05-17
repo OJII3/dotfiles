@@ -62,7 +62,7 @@ let
         inherit system;
         config = { allowUnfree = true; };
       };
-      modules = modules ++ [ 
+      modules = modules ++ [
       ];
     };
 in
@@ -89,6 +89,7 @@ in
       username = "ojii3";
       modules = [
         ./Cipher/nixos.nix
+        inputs.proxmox-nixos.nixosModules.proxmox-ve
       ];
     };
   };

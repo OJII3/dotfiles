@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/nixos/core
       ../../modules/nixos/core/k3s.nix
+      ../../modules/nixos/core/proxmox.nix
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
     ]
@@ -39,10 +40,6 @@
       default_session = initial_session;
     };
   };
-
-  # system packages
-  # environment.systemPackages = with pkgs; [ glxinfo vulkan-tools ];
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

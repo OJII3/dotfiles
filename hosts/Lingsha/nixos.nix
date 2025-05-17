@@ -9,6 +9,7 @@
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/cloudflare-warp.nix
+      ../../modules/nixos/core/fan.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
       ../../modules/nixos/desktop
