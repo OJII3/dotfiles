@@ -2,17 +2,20 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   imports =
     [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      # ../../modules/nixos/core/k3s.nix
       ../../modules/nixos/core
-      ../../modules/nixos/core/k3s.nix
       ../../modules/nixos/core/proxmox.nix
+      ../../modules/nixos/core/boot/systemd-boot.nix
+
       ../../modules/nixos/desktop
+      ../../modules/nixos/desktop/greetd/autologin.nix
       ../../modules/nixos/desktop/sunshine.nix
+
+      ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
       common-cpu-intel
@@ -20,26 +23,12 @@
     ]);
 
 
-  # Bootloader.
+  # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # graphics
   services.xserver.videoDrivers = [ "intel" ];
 
-
-  # Auto Login
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "uwsm start -- hyprland-uwsm.desktop";
-        user = "ojii3";
-      };
-      default_session = initial_session;
-    };
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

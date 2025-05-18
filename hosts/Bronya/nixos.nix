@@ -7,10 +7,14 @@
   imports =
     [
       ../../modules/nixos/core
+      ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/virtualisation.nix
+      ../../modules/nixos/core/networking/networkmanager.nix
+
       ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/sunshine.nix
-      ../../modules/nixos/desktop/waydroid.nix
+      ../../modules/nixos/desktop
+      ../../modules/nixos/desktop/greetd/autologin.nix
+
       ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
@@ -20,10 +24,8 @@
     ]);
 
 
-  # Bootloader.
+  # Karnel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
 
   # graphics
@@ -52,19 +54,6 @@
 
   # Wake on LAN
   networking.interfaces.enp4s0.wakeOnLan.enable = true;
-
-  # Auto Login
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "uwsm start -- hyprland-uwsm.desktop";
-        user = "ojii3";
-      };
-      default_session = initial_session;
-    };
-  };
-
 
 
   # This value determines the NixOS release from which the default

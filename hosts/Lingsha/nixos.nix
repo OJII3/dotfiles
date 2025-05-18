@@ -10,12 +10,15 @@
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/fan.nix
+      ../../modules/nixos/core/networking/networkmanager.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
+
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
-      ../../modules/nixos/desktop/tuigreet.nix
+      ../../modules/nixos/desktop/greetd/tuigreet.nix
       ../../modules/nixos/desktop/waydroid.nix
+
       ./hardware-configuration.nix
     ]
     ++ (with inputs.nixos-hardware.nixosModules; [
@@ -23,8 +26,9 @@
       common-pc-laptop
     ]);
 
-  # Bootloader.
+  # Karnel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
+
 
   # Hardware Specific Options
   boot.kernelParams = [

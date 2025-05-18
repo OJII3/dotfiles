@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  hostname = "Oshio";
+  hostname = "Welt";
   user = "ojii3";
 in
 {
