@@ -13,6 +13,7 @@
     ../../modules/home/kdeconnect.nix
     ../../modules/home/kdewallet.nix
     ../../modules/home/neovim
+    ../../modules/home/im
     ../../modules/home/network.nix
     ../../modules/home/sops.nix
     ../../modules/home/terminal
