@@ -11,6 +11,7 @@
       "bitwarden"
       "blender"
       "blockbench"
+      "chatgpt"
       "discord"
       "ghostty"
       "jetbrains-toolbox"
