@@ -69,6 +69,38 @@
     internalIPs = [ "192.168.20.0/24" ];
   };
 
+
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    openFirewall = true;
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "cipher";
+        "netbios name" = "cipher";
+        "security" = "user";
+        #"use sendfile" = "yes";
+        #"max protocol" = "smb2";
+        # note: localhost is the ipv6 localhost ::1
+        "hosts allow" = "0.0.0.0";
+        # "hosts deny" = "0.0.0.0/0";
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+      "private" = {
+        "path" = "/mnt/Shared/Private";
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "ojii3";
+        "force group" = "WORKGROUP";
+      };
+    };
+  };
+
   services.kea.dhcp4 = {
     enable = true;
     settings = {
