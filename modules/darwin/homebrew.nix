@@ -12,6 +12,7 @@
       "blender"
       "blockbench"
       "chatgpt"
+      "cloudflare-warp"
       "discord"
       "ghostty"
       "jetbrains-toolbox"
