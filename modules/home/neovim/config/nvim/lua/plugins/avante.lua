@@ -8,7 +8,7 @@ return {
 		-- provider = "gemini",
 		-- auto_suggestions_provider = "copilot",
 		copilot = {
-			model = "claude-3.7-sonnet",
+			model = "claude-sonnet-4",
 		},
 		gemini = {
 			model = "gemini-2.5-flash-preview-04-17",
