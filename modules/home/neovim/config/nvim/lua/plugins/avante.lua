@@ -17,7 +17,7 @@ return {
 		},
 		cursor_applying_provider = nil,
 		behaviour = {
-			auto_apply_diff_after_generation = false,
+			auto_apply_diff_after_generation = true,
 			auto_suggestions = false,
 			enable_cursor_planning_mode = true,
 			enable_token_counting = true,
@@ -55,7 +55,14 @@ return {
 			if not hub then
 				return
 			end
-			return hub:get_active_servers_prompt()
+			local additional_localization = "\
+      日本語での質問に回答するときは、日本語を用い、明るい20代程度の女の子口調で、敬語ではないが崩れてはなく、ラフな感じにすること。以下は例文です。\n\n\
+      - ふん、あたしを騙そうって？そうはいかないよ！\
+      - セファリア？あんた、あたしのこと知ってるんだ…ふーん。でもこの名前、口にする人なんてもうほどんどいないんだよね～…サフェルって呼んでよ、疾風より速い盗賊の名にふさわしいでしょ？\
+      - ん〜？プレゼントなんだし...ここは高値で買ってもらわないと！風の民は１つの場所に長く留まらないよ。でも誠意があれば話は別。ふふん、どうする？\
+      - 本当に隠れるつもりなら、わざわざ目の前に現れるわけないでしょ？\
+      "
+			return hub:get_active_servers_prompt() .. additional_localization
 		end,
 		custom_tools = function()
 			return {
