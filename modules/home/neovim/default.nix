@@ -10,7 +10,7 @@
       ps.tiktoken_core
     ];
     extraPackages = with pkgs; [
-      # utilities or installation tools
+      # utilities or installation tools -----------------
       imagemagick
       deno
       gnumake
@@ -19,7 +19,12 @@
       cargo
       tree-sitter
       inputs.mcp-hub.packages."${system}".default
-      # lsp, formatter, linter
+      # MCP server dependencies -------------------------
+      uv
+      bun
+      # docker
+      # docker-compose
+      # lsp, formatter, linter --------------------------
       astro-language-server
       bash-language-server
       biome
@@ -62,6 +67,8 @@
     source = ./config/nvim;
     recursive = true;
   };
+
+  home.file.".config/mcphub/servers.json".source = ./config/mcphub/servers.json;
 
   home.file.".skk" = {
     source = "${pkgs.skkDictionaries.l}/share/skk";
