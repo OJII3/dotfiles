@@ -20,7 +20,7 @@ systemd.user.services.sops-nix = {
   };
 };
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     export GEMINI_API_KEY="$(<${config.sops.secrets.gemini_api_key.path})"
     export GOOGLE_SEARCH_API_KEY="$(<${config.sops.secrets.google_search_api_key.path})"
     export GOOGLE_SEARCH_ENGINE_ID="$(<${config.sops.secrets.google_search_engine_id.path})"

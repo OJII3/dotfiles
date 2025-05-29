@@ -2,7 +2,7 @@
   imports = [ ./. ];
   services.gpg-agent.pinentryPackage = pkgs.pinentry-tty;
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     alias pinentry=${pkgs.pinentry-tty}/bin/pinentry
   '';
 }
