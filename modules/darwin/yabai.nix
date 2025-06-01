@@ -1,12 +1,12 @@
 {
   services.jankyborders = {
-    enable = true;
+    enable = false;
     active_color = "gradient(top_left=0x039393ff,bottom_right=0xf992b3ff)";
     inactive_color = "0x00000000";
   };
 
   services.yabai = {
-    enable = true;
+    enable = false;
     enableScriptingAddition = true;
     config = {
       layout = "bsp";

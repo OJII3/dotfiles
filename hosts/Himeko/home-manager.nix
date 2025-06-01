@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
     ../../modules/home
-    ../../modules/home/browser.nix
     ../../modules/home/dev.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
