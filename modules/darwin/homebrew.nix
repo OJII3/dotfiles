@@ -3,6 +3,10 @@
     enable = true;
     masApps = {
       # "KDE Connect" = 1580245991;
+      "xiaomi-interconnectivity" = 6673908449;
+      # "tailscale" = 1475387142;
+      "%E5%B4%A9%E5%A3%8A3rd" = 1172809651;
+
     };
     brews = [
       "gcc"
@@ -15,6 +19,7 @@
       "cloudflare-warp"
       "discord"
       "ghostty"
+      "google-chrome"
       "jetbrains-toolbox"
       "karabiner-elements"
       "logi-options+"
