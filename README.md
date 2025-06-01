@@ -1,44 +1,31 @@
 # dotfiles
 
-## NixOS
+## Hosts
 
-When adding a new host, 
+- **Bronya**: Desktop with Gen 13th Core i5 & Nvidia RTX 3060
+    - `nixos`
+    - `home-manager`
+- **Cipher**: GMKtec G3 Plus
+    - `nixos`
+    - `home-manager`
+- **Himeko**: MacBook Pro M2
+    - `nix-darwin`
+    - `home-manager`
+- **Lingsha**: Thinkpad E14 Gen 6
+    - `nixos`
+    - `home-manager`
+- **SilverWolf**: Xiaomi Pad 6s Pro
+    - `nix-on-droid`
+- **Welt**: Raspberry Pi 4B
+    - Ubuntu
+    - `home-manager`
 
-- Clone dotfiles. `nix run nixpkgs#git clone https://github.com/ojii3/dotfiles`
-- Copy `/etc/nixos/hardware-configuration.nix` into `hosts/<hostname>/` dir.
-- Create `./nixos/<hostname>/nixos.nix` from other host's config, and edit it.
-
-```bash
-sudo nixos-rebuild switch --flake .#<hostname>
-```
-
-## Home Manager
-
-```bash
-home-manager switch --flake .#<username>@<hostname>
-```
-
-## Without Nix
-
-Old dotfiles are in `home`, but it's gradually being moved to `home-manager`.
-
-## Apps & Tools
+### Apps & Tools
 
 - Hyprland
-  - Waybar
-  - Anyrun (launcher)
 - Neovim
-  - Lazy.nvim (plugin manager)
-  - Mason.nvim (lsp manager, if not nix exist)
-  - Image.nvim (image viewr for Kitty Graphic Protocol)
 - Zsh
-  - Starship
-  - fzf (for extended history search)
-  - yazi (tui filer with graphical preview)
-- tdf
-  - In-terminal PDF Viewer (works with Kitty Graphic Protocol)
-- Bottles (wine manager)
 - Fcitx5
-  - skk
-- Kitty | Ghostty (terminal which has own image protocol)
+- Kitty
+- proxmox-nixos
 
