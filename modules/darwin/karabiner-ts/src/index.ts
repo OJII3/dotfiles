@@ -44,15 +44,15 @@ writeToProfile("Default profile", [
 
   rule("Alt").manipulators([
     // focus window
-    map("h", "left_option").to$(`${yabai} -m window --focus west`),
-    map("j", "left_option").to$(`${yabai} -m window --focus south`),
-    map("k", "left_option").to$(`${yabai} -m window --focus north`),
-    map("l", "left_option").to$(`${yabai} -m window --focus east`),
+    // map("h", "left_option").to$(`${yabai} -m window --focus west`),
+    // map("j", "left_option").to$(`${yabai} -m window --focus south`),
+    // map("k", "left_option").to$(`${yabai} -m window --focus north`),
+    // map("l", "left_option").to$(`${yabai} -m window --focus east`),
     // move wndow
-    map("h", "left_option", "shift").to$(`${yabai} -m window --warp west`),
-    map("j", "left_option", "shift").to$(`${yabai} -m window --warp south`),
-    map("k", "left_option", "shift").to$(`${yabai} -m window --warp north`),
-    map("l", "left_option", "shift").to$(`${yabai} -m window --warp east`),
+    // map("h", "left_option", "shift").to$(`${yabai} -m window --warp west`),
+    // map("j", "left_option", "shift").to$(`${yabai} -m window --warp south`),
+    // map("k", "left_option", "shift").to$(`${yabai} -m window --warp north`),
+    // map("l", "left_option", "shift").to$(`${yabai} -m window --warp east`),
     // focus space
     map("1", "left_option").to("1", "control"),
     map("2", "left_option").to("2", "control"),
@@ -60,11 +60,11 @@ writeToProfile("Default profile", [
     map("4", "left_option").to("4", "control"),
     map("5", "left_option").to("5", "control"),
     // move window to space
-    map("1", "left_option", "shift").to$(`${yabai} -m window --space 1`),
-    map("2", "left_option", "shift").to$(`${yabai} -m window --space 2`),
-    map("3", "left_option", "shift").to$(`${yabai} -m window --space 3`),
-    map("4", "left_option", "shift").to$(`${yabai} -m window --space 4`),
-    map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
+    // map("1", "left_option", "shift").to$(`${yabai} -m window --space 1`),
+    // map("2", "left_option", "shift").to$(`${yabai} -m window --space 2`),
+    // map("3", "left_option", "shift").to$(`${yabai} -m window --space 3`),
+    // map("4", "left_option", "shift").to$(`${yabai} -m window --space 4`),
+    // map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
     // other window operations -------------------------------------
     map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
     map("q", "left_option").to$(closeWindow),
@@ -84,10 +84,10 @@ writeToProfile("Default profile", [
     map("e", "left_option").toApp("Finder"),
     map("return_or_enter", "left_option").to$("/usr/bin/open -a kitty ~"),
     map("g", "left_option").to$(
-      "$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
+      "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
     ),
     map("o", "left_option").to$(
-      "$HOME/Applications/Home\\ Manager\\ Apps/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --profile-directory=Default && sleep 1",
+      "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --profile-directory=Default && sleep 1",
     ),
   ]),
 
