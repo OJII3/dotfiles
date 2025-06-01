@@ -23,5 +23,6 @@
   # laptop specific config
   wayland.windowManager.hyprland.extraConfig = ''
     exec-once = hypridle
+    exec-once = sunshine
   '';
 }
