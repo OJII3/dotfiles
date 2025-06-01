@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [
     ../../modules/home
     ../../modules/home/apps.nix

@@ -115,14 +115,18 @@
         "on-click": "wlogout",
     },
     "mpris": {
-      "format": "{player_icon} {dynamic}",
-      "format-paused": "{status_icon} {dynamic}",
+      "format": "{status_icon} {dynamic}",
+      "dynamic-order": ["title", "artist", "position", "length"],
+      "title-len": 30,
+      "artist-len": 20,
       "player-icons": {
         "default": " ",
         "mpv": " "
       },
       "status-icons": {
-        "paused": " "
+        "playing": " ",
+        "paused": " ",
+        "stopped": " "
       },
     }
 }

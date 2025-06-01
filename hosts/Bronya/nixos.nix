@@ -12,8 +12,8 @@
       ../../modules/nixos/core/networking/networkmanager.nix
 
       ../../modules/nixos/desktop
-      ../../modules/nixos/desktop
       ../../modules/nixos/desktop/greetd/autologin.nix
+      ../../modules/nixos/desktop/sunshine.nix
 
       ./hardware-configuration.nix
     ]

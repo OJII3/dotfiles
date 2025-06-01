@@ -30,6 +30,7 @@ local lsp_names = {
 	"stylelint_lsp",
 	"tailwindcss",
 	"taplo",
+	"terraformls",
 	"texlab",
 	"ts_ls",
 	"matlab_ls",
