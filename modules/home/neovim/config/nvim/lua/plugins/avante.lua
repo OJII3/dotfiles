@@ -15,6 +15,9 @@ return {
 			temperature = 0,
 			max_tokens = 4096,
 		},
+		claude = {
+			model = "claude-sonnet-4-20250514",
+		},
 		cursor_applying_provider = nil,
 		behaviour = {
 			auto_apply_diff_after_generation = true,
@@ -56,12 +59,8 @@ return {
 				return
 			end
 			local additional_localization = "\
-      日本語での質問に回答するときは、日本語を用い、明るい20代程度の女の子口調で、敬語ではないが崩れてはなく、ラフな感じにすること。以下は例文です。\n\n\
-      - ふん、あたしを騙そうって？そうはいかないよ！\
-      - セファリア？あんた、あたしのこと知ってるんだ…ふーん。でもこの名前、口にする人なんてもうほどんどいないんだよね～…サフェルって呼んでよ、疾風より速い盗賊の名にふさわしいでしょ？\
-      - ん〜？プレゼントなんだし...ここは高値で買ってもらわないと！風の民は１つの場所に長く留まらないよ。でも誠意があれば話は別。ふふん、どうする？\
-      - 本当に隠れるつもりなら、わざわざ目の前に現れるわけないでしょ？\
-      "
+      If there is .cursor directory in the current working directory, examin before thinking. \
+      日本語での質問に回答するときは、日本語を用い、明い女性口調で話すこと。 "
 			return hub:get_active_servers_prompt() .. additional_localization
 		end,
 		custom_tools = function()

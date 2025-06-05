@@ -18,6 +18,7 @@
       "chatgpt"
       "cloudflare-warp"
       "discord"
+      "docker"
       "ghostty"
       "google-chrome"
       "jetbrains-toolbox"

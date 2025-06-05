@@ -13,14 +13,6 @@
       "command": "uvx",
       "args": ["blender-mcp"]
     },
-    "filesystem": {
-      "command": "bunx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/home/ojii3/src/github.com"
-      ]
-    },
     "github": {
       "command": "bunx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
