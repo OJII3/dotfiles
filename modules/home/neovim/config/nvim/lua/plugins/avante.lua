@@ -16,9 +16,9 @@ return {
 				temperature = 0,
 				max_tokens = 4096,
 			},
-		},
-		claude = {
-			model = "claude-sonnet-4-20250514",
+			claude = {
+				model = "claude-sonnet-4-20250514",
+			},
 		},
 		cursor_applying_provider = nil,
 		behaviour = {
