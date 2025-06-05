@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   # Simply install just the packages
   environment.packages = with pkgs; [
@@ -7,6 +7,9 @@
     git
     unar
     imagemagick
+    unixtools.ping
+    gh
+    curl
 
     # Some common stuff that people expect to have
     #procps
@@ -15,8 +18,8 @@
     #findutils
     #utillinux
     #tzdata
-    #hostname
-    #man
+    hostname
+    man
     #gnugrep
     #gnupg
     #gnused
@@ -24,19 +27,8 @@
     #bzip2
     #gzip
     #xz
-    #zip
-    #unzip
+    zip
   ];
-
-  home-manager.config =
-    {
-      home.stateVersion = "24.11";
-      nixpkgs.config.allowUnfree = true;
-
-      imports = [
-
-      ];
-    };
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc
   environment.etcBackupExtension = ".bak";

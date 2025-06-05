@@ -62,8 +62,7 @@ let
         inherit system;
         config = { allowUnfree = true; };
       };
-      modules = modules ++ [
-      ];
+      inherit modules;
     };
 in
 {

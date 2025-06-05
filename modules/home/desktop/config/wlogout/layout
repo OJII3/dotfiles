@@ -1,12 +1,12 @@
 {
     "label" : "shutdown",
-    "action" : "uwsm stop & sleep 1 && systemctl poweroff",
+    "action" : "systemctl poweroff",
     "text" : "1.Poweroff",
     "keybind" : "1"
 }
 {
     "label" : "reboot",
-    "action" : "uwsm stop & sleep 1 && systemctl reboot",
+    "action" : "systemctl reboot",
     "text" : "2.Reboot",
     "keybind" : "2"
 }

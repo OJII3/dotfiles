@@ -7,13 +7,15 @@ return {
 		provider = "copilot",
 		-- provider = "gemini",
 		-- auto_suggestions_provider = "copilot",
-		copilot = {
-			model = "claude-sonnet-4",
-		},
-		gemini = {
-			model = "gemini-2.5-flash-preview-04-17",
-			temperature = 0,
-			max_tokens = 4096,
+		providers = {
+			copilot = {
+				model = "claude-sonnet-4",
+			},
+			gemini = {
+				model = "gemini-2.5-flash-preview-04-17",
+				temperature = 0,
+				max_tokens = 4096,
+			},
 		},
 		claude = {
 			model = "claude-sonnet-4-20250514",
