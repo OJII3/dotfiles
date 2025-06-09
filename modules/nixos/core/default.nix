@@ -23,7 +23,7 @@
     isNormalUser = true;
     description = "ojii3";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" "uucp" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" "uucp" "input" ];
   };
 
   # Allow unfree packages
