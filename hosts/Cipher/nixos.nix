@@ -6,10 +6,8 @@
 {
   imports =
     [
-      # ../../modules/nixos/core/k3s.nix
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
-      ../../modules/nixos/core/k3s/server.nix
       ../../modules/nixos/core/networking
       ../../modules/nixos/core/proxmox.nix
 
