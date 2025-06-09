@@ -50,10 +50,9 @@
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking = {
     wireless.enable = true;
-    wireless.secretsFile = "/run/secrets/wireless.conf";
-    wireless.networks."aterm-44cbf4-a" = {
-      pskRaw = "ext:psk_home";
-    };
+    wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
+    wireless.networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
+    wireless.networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
   };
 
   # create bridge for mini dhcp server
@@ -123,7 +122,7 @@
         "create mask" = "0644";
         "directory mask" = "0755";
         "force user" = "ojii3";
-        # "force group" = "WORKGROUP";
+        "force group" = "WORKGROUP";
       };
     };
   };
