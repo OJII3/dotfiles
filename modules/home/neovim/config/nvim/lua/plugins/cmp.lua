@@ -50,6 +50,7 @@ return {
 			menu = { border = "single" },
 		},
 		signature = {
+			enabled = true,
 			window = { border = "single" },
 		},
 
