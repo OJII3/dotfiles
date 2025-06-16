@@ -19,6 +19,7 @@
       "cloudflare-warp"
       "discord"
       "docker"
+      "firefox"
       "ghostty"
       "google-chrome"
       "jetbrains-toolbox"
