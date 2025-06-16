@@ -35,8 +35,6 @@
       ];
     };
 
-
-
   home.file.".config/uwsm/env".source = config/uwsm/env;
   # home.file."config/uwsm/env-hyprland".source = config/uwsm/env-hyprland;
   home.file.".config/hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
