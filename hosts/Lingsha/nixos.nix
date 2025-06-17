@@ -64,6 +64,18 @@
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
 
+  systemd.services.hibernate-recovery = {
+    description = "Hibernate Recovery";
+    wantedBy = [ "hibernate.target" ];
+
+    script = ''
+      #!/bin/sh
+
+      modprobe -r rtw89_8852ce
+      modprobe rtw89_8852ce
+    '';
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
