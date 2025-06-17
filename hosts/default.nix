@@ -80,7 +80,10 @@ in
       system = "x86_64-linux";
       hostname = "Lingsha";
       username = "ojii3";
-      modules = [ ./Lingsha/nixos.nix ];
+      modules = [
+        ./Lingsha/nixos.nix
+        inputs.proxmox-nixos.nixosModules.proxmox-ve
+      ];
     };
     Cipher = mkNixosSystem {
       system = "x86_64-linux";
