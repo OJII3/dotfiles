@@ -1,4 +1,4 @@
-@define-color cc-bg rgba(46, 46, 46, 0.7);
+@define-color cc-bg rgba(38, 38, 46, 0.9);
 @define-color noti-border-color rgba(255, 255, 255, 0.15);
 @define-color noti-bg rgba(48, 48, 48, 0.8);
 @define-color noti-bg-opaque rgb(48, 48, 48);
@@ -11,6 +11,7 @@
 @define-color text-color rgb(255, 255, 255);
 @define-color text-color-disabled rgb(150, 150, 150);
 @define-color bg-selected rgb(0, 128, 255);
+
 .notification-row {
   outline: none;
 }
@@ -48,9 +49,9 @@
 
 .notification-row .notification-background .notification {
   /* The actual notification */
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid @noti-border-color;
-  padding: 0;
+  padding: 4px;
   transition: background 0.15s ease-in-out;
   background: @noti-bg;
 }
@@ -364,7 +365,6 @@
   /* The Control Center which contains the old notifications + widgets */
   background: @cc-bg;
   color: @text-color;
-  border-radius: 12px;
 }
 
 .control-center .control-center-list-placeholder {
@@ -418,6 +418,7 @@
   color: @text-color;
   margin: 8px;
   font-size: 1.5rem;
+  font-family: Orbitron;
 }
 
 .widget-title > button {
@@ -427,7 +428,7 @@
   background: @noti-bg;
   border: 1px solid @noti-border-color;
   box-shadow: none;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .widget-title > button:hover {
