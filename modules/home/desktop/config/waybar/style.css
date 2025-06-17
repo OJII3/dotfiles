@@ -17,7 +17,7 @@ window#waybar {
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
-  padding: 2px 0;
+  padding: 2px;
 }
 
 window#waybar.hidden {
@@ -327,4 +327,12 @@ label:focus {
 
 #privacy-item.audio-out {
   background-color: #0069d4;
+}
+
+#custom-power {
+  padding-left: 8px;
+}
+
+#custom-notification {
+  padding-right: 8px;
 }

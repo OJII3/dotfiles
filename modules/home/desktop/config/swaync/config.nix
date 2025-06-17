@@ -16,6 +16,13 @@
       notification-icon-size = 64;
       notification-body-image-height = 100;
       notification-body-image-width = 200;
+      widgets = [ "inhibitors" "title" "dnd" "notifiations" "mpris" ];
+      widget-config = {
+        mpris = {
+          image-size = 96;
+          image-radius = 12;
+        };
+      };
     };
     style = builtins.readFile ./style.css;
   };
