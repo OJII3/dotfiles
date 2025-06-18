@@ -127,7 +127,19 @@
     };
   };
 
-
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "9979507e-fc6a-4418-9bbf-06e7bd5305db" = {
+        credentialsFile = "/home/ojii3/.cloudflared/9979507e-fc6a-4418-9bbf-06e7bd5305db.json";
+        certificateFile = "/home/ojii3/.cloudflared/cert.pem";
+        ingress."cipher.ojii3.dev" = "https://localhost:8006";
+        default = "http_status:404";
+        originRequest.noTLSVerify = true;
+        warp-routing.enabled = true;
+      };
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
