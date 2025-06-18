@@ -24,6 +24,7 @@
       jetbrains-mono
       hackgen-nf-font
       nerd-fonts._0xproto
+      orbitron
     ];
     fontDir.enable = true;
     fontconfig = {

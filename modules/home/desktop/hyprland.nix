@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  imports = [
+    ./config/swaync/config.nix
+  ];
   home.packages = with pkgs;
     [
       anyrun
@@ -35,8 +38,6 @@
       ];
     };
 
-
-
   home.file.".config/uwsm/env".source = config/uwsm/env;
   # home.file."config/uwsm/env-hyprland".source = config/uwsm/env-hyprland;
   home.file.".config/hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
@@ -72,10 +73,13 @@
   services.swaync = {
     enable = true;
   };
+  # home.file.".config/swaync" = {
+  #   source = ./config/swaync;
+  #   recursive = true;
+  # };
 
   xdg.portal.enable = true;
   # xdg.portal.extraPortals = with pkgs; [
   #   xdg-desktop-portal-gtk
   # ];
 }
-
