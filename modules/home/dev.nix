@@ -18,6 +18,7 @@
     tree
 
     # cli apps
+    claude-code
     fastfetch
     nyancat
     tdf
