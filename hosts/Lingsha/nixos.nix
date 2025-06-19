@@ -16,7 +16,6 @@ in
       # ../../modules/nixos/core/networking/networkmanager.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
-      ../../modules/nixos/core/proxmox.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
@@ -116,13 +115,13 @@ in
     };
   };
 
-  systemd.network.netdevs."vmbr0".netdevConfig = {
-    Name = "vmbr0";
+  systemd.network.netdevs."br0".netdevConfig = {
+    Name = "br0";
     Kind = "bridge";
   };
 
-  systemd.network.networks."00-vmbr0" = {
-    matchConfig.Name = "vmbr0";
+  systemd.network.networks."00-br0" = {
+    matchConfig.Name = "br0";
     networkConfig = {
       Address = "192.168.111.1/24";
       DHCPServer = "yes";
@@ -135,28 +134,19 @@ in
 
   systemd.network.networks."20-enp1s0" = {
     matchConfig.Name = "enp1s0";
-    networkConfig = { Bridge = "vmbr0"; };
-  };
-
-  systemd.network.networks."30-tap0" = {
-    matchConfig.Name = "tap*";
-    networkConfig = { Bridge = "vmbr0"; };
+    networkConfig = { Bridge = "br0"; };
   };
 
   # nat via wlp1s0
   networking.nat = {
     enable = true;
     externalInterface = "wlp2s0";
-    internalInterfaces = [ "vmbr0" ];
+    internalInterfaces = [ "br0" ];
   };
 
   # open firewall for dhcp and dns
   networking.firewall.allowedUDPPorts = [ 53 67 ];
   networking.firewall.allowedTCPPorts = [ 53 ];
-
-  services.proxmox-ve = {
-    ipAddress = "192.168.111.1";
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
