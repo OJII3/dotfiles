@@ -3,9 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { inputs, pkgs, ... }:
-let
-  wirelessConf = builtins.fromTOML (builtins.readFile /etc/nixos/wireless.conf);
-in
 {
   imports =
     [
