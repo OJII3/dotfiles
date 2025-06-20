@@ -9,6 +9,7 @@
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/networking
+      ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/core/proxmox.nix
 
       ../../modules/nixos/desktop
