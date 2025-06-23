@@ -1,6 +1,6 @@
 {
   services.jankyborders = {
-    enable = false;
+    enable = true;
     active_color = "gradient(top_left=0x039393ff,bottom_right=0xf992b3ff)";
     inactive_color = "0x00000000";
   };
@@ -16,7 +16,9 @@
         inner.horizontal = 8;
         inner.vertical = 8;
       };
+      enable-normalization-opposite-orientation-for-nested-containers = true;
       mode.main.binding = {
+        # basic window management
         alt-h = "focus left";
         alt-j = "focus down";
         alt-k = "focus up";
@@ -25,6 +27,7 @@
         alt-shift-j = "move down";
         alt-shift-k = "move up";
         alt-shift-l = "move right";
+        # basic workspace management
         alt-1 = "workspace 1";
         alt-2 = "workspace 2";
         alt-3 = "workspace 3";
@@ -39,7 +42,25 @@
         alt-shift-5 = "move-node-to-workspace 5";
         alt-shift-6 = "move-node-to-workspace 6";
         alt-shift-7 = "move-node-to-workspace 7";
+        # other window management
+        alt-tab = "workspace-back-and-forth";
+        alt-f = "fullscreen";
+        alt-shift-f = "layout floating tiling";
+        alt-r = "mode resize";
+        alt-q = "close --quit-if-last-window";
+        # launching applications
+        # misc
+        cmd-h = [ ]; # disable hide application
+      };
+      mode.resize.binding = {
+        enter = "mode main";
+        esc = "mode main";
+        h = "resize width -50";
+        j = "resize height +50";
+        k = "resize height -50";
+        l = "resize width +50";
       };
     };
   };
 }
+

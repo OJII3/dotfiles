@@ -29,10 +29,16 @@
     };
     dock = {
       autohide = true;
-      show-recents = false;
+      expose-group-apps = true;
       orientation = "bottom";
+      show-recents = false;
       wvous-bl-corner = 7;
       wvous-br-corner = 1;
+      persistent-apps = [
+        { app = "/Applications/Safari.app"; }
+        { app = "/Applications/Affinity Designer 2.app/"; }
+        { app = "/Applications/Affinity Photo 2.app/"; }
+      ];
     };
     CustomUserPreferences = {
       "com.apple.screencapture" = {

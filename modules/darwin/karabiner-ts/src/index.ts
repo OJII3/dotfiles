@@ -67,7 +67,7 @@ writeToProfile("Default profile", [
     // map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
     // other window operations -------------------------------------
     // map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
-    map("q", "left_option").to$(closeWindow),
+    // map("q", "left_option").to$(closeWindow),
     // map("f", "left_option", "shift").to$(
     //   `${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
     // ),
