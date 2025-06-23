@@ -4,7 +4,7 @@
     ../../modules/darwin/homebrew.nix
     ../../modules/darwin/networking.nix
     ../../modules/darwin/system.nix
-    ../../modules/darwin/yabai.nix
+    ../../modules/darwin/window.nix
   ];
 
   # List packages installed in system profile. To search by name, run:

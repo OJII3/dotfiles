@@ -54,11 +54,11 @@ writeToProfile("Default profile", [
     // map("k", "left_option", "shift").to$(`${yabai} -m window --warp north`),
     // map("l", "left_option", "shift").to$(`${yabai} -m window --warp east`),
     // focus space
-    map("1", "left_option").to("1", "control"),
-    map("2", "left_option").to("2", "control"),
-    map("3", "left_option").to("3", "control"),
-    map("4", "left_option").to("4", "control"),
-    map("5", "left_option").to("5", "control"),
+    // map("1", "left_option").to("1", "control"),
+    // map("2", "left_option").to("2", "control"),
+    // map("3", "left_option").to("3", "control"),
+    // map("4", "left_option").to("4", "control"),
+    // map("5", "left_option").to("5", "control"),
     // move window to space
     // map("1", "left_option", "shift").to$(`${yabai} -m window --space 1`),
     // map("2", "left_option", "shift").to$(`${yabai} -m window --space 2`),
@@ -66,14 +66,14 @@ writeToProfile("Default profile", [
     // map("4", "left_option", "shift").to$(`${yabai} -m window --space 4`),
     // map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
     // other window operations -------------------------------------
-    map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
+    // map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
     map("q", "left_option").to$(closeWindow),
-    map("f", "left_option", "shift").to$(
-      `${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
-    ),
-    map("w", "left_option").to$(
-      `${yabai} -m window --toggle float; ${yabai} -m window --grid 1:1:0:0:1:1`,
-    ),
+    // map("f", "left_option", "shift").to$(
+    //   `${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
+    // ),
+    // map("w", "left_option").to$(
+    //   `${yabai} -m window --toggle float; ${yabai} -m window --grid 1:1:0:0:1:1`,
+    // ),
 
     // System operations -------------------------------------
     map("m", "left_option").to("↑", "command"), // Mission Control (Default)
