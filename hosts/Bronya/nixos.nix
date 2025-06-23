@@ -9,7 +9,7 @@
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/virtualisation.nix
-      ../../modules/nixos/core/networking/networkmanager.nix
+      ../../modules/nixos/core/proxmox.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/greetd/autologin.nix
@@ -51,10 +51,67 @@
     # package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-
   # Wake on LAN
   networking.interfaces.enp4s0.wakeOnLan.enable = true;
 
+
+  # networking
+  networking.useNetworkd = true;
+  networking.networkmanager.enable = false;
+  networking.interfaces."wlo0" = {
+    ipv4.addresses = [{
+      address = "192.168.0.99";
+      prefixLength = 24;
+    }];
+  };
+  networking.defaultGateway = {
+    interface = "wlo0";
+    address = "192.168.0.1";
+  };
+  networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
+  networking = {
+    wireless.enable = true;
+    wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
+    wireless.networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
+    wireless.networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
+  };
+
+  # bridges for proxmox-nixos
+  systemd.network.netdevs."vmbr0".netdevConfig = {
+    Name = "vmbr0";
+    Kind = "bridge";
+  };
+  systemd.network.networks."00-vmbr0" = {
+    matchConfig.Name = "vmbr0";
+    networkConfig = {
+      Address = "10.42.1.1/24";
+      DHCPServer = "yes";
+    };
+    dhcpServerConfig = {
+      PoolOffset = 100;
+      PoolSize = 100;
+    };
+  };
+  systemd.network.networks."30-tap0" = {
+    matchConfig.Name = "tap*";
+    networkConfig = { Bridge = "vmbr0"; };
+  };
+
+  # nat via wlo0
+  networking.nat = {
+    enable = true;
+    externalInterface = "wlo0";
+    internalInterfaces = [ "vmbr0" ];
+  };
+
+  # open firewall for dhcp and dns
+  networking.firewall.allowedUDPPorts = [ 53 67 ];
+  networking.firewall.allowedTCPPorts = [ 53 ];
+
+
+  services.proxmox-ve = {
+    ipAddress = "192.168.1.100";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
