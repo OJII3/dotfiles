@@ -74,6 +74,7 @@ in
       username = "ojii3";
       modules = [
         ./Bronya/nixos.nix
+        inputs.proxmox-nixos.nixosModules.proxmox-ve
       ];
     };
     Lingsha = mkNixosSystem {
@@ -82,7 +83,6 @@ in
       username = "ojii3";
       modules = [
         ./Lingsha/nixos.nix
-        inputs.proxmox-nixos.nixosModules.proxmox-ve
       ];
     };
     Cipher = mkNixosSystem {
