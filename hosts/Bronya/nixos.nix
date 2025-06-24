@@ -110,7 +110,7 @@
 
 
   services.proxmox-ve = {
-    ipAddress = "192.168.1.99";
+    ipAddress = "192.168.0.99";
   };
 
   # This value determines the NixOS release from which the default
