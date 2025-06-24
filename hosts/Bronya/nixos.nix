@@ -58,14 +58,14 @@
   # networking
   networking.useNetworkd = true;
   networking.networkmanager.enable = false;
-  networking.interfaces."wlo0" = {
+  networking.interfaces."wlo1" = {
     ipv4.addresses = [{
       address = "192.168.0.99";
       prefixLength = 24;
     }];
   };
   networking.defaultGateway = {
-    interface = "wlo0";
+    interface = "wlo1";
     address = "192.168.0.1";
   };
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
@@ -81,36 +81,35 @@
     Name = "vmbr0";
     Kind = "bridge";
   };
-  systemd.network.networks."00-vmbr0" = {
-    matchConfig.Name = "vmbr0";
-    networkConfig = {
-      Address = "10.42.1.1/24";
-      DHCPServer = "yes";
-    };
-    dhcpServerConfig = {
-      PoolOffset = 100;
-      PoolSize = 100;
-    };
-  };
-  systemd.network.networks."30-tap0" = {
-    matchConfig.Name = "tap*";
+  systemd.network.networks."00-lan0" = {
+    matchConfig.Name = "enp4s0";
     networkConfig = { Bridge = "vmbr0"; };
   };
-
-  # nat via wlo0
-  networking.nat = {
-    enable = true;
-    externalInterface = "wlo0";
-    internalInterfaces = [ "vmbr0" ];
+  systemd.network.networks."10-vmbr0" =
+    {
+      matchConfig.Name = "vmbr0";
+      networkConfig = {
+        Address = "10.42.0.2/24";
+        Gateway = "10.42.0.1";
+      };
+    };
+  systemd.network.networks."20-lan-bridge" = {
+    matchConfig.Name = "vmbr0";
+    networkConfig = {
+      IPv6AcceptRA = true;
+      DHCP = "ipv4";
+    };
+    linkConfig.RequiredForOnline = "routable";
   };
+  # systemd.network.networks."30-tap0" = {
+  #   matchConfig.Name = "tap*";
+  #   networkConfig = { Bridge = "vmbr0"; };
+  # };
 
   # open firewall for dhcp and dns
-  networking.firewall.allowedUDPPorts = [ 53 67 ];
-  networking.firewall.allowedTCPPorts = [ 53 ];
-
-
   services.proxmox-ve = {
-    ipAddress = "192.168.1.100";
+    ipAddress = "10.42.0.2";
+    bridges = [ "vmbr0" ];
   };
 
   # This value determines the NixOS release from which the default
@@ -121,3 +120,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
+
