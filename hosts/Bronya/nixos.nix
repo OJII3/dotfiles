@@ -58,14 +58,14 @@
   # networking
   networking.useNetworkd = true;
   networking.networkmanager.enable = false;
-  networking.interfaces."wlo0" = {
+  networking.interfaces."wlo1" = {
     ipv4.addresses = [{
       address = "192.168.0.99";
       prefixLength = 24;
     }];
   };
   networking.defaultGateway = {
-    interface = "wlo0";
+    interface = "wlo1";
     address = "192.168.0.1";
   };
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
@@ -97,10 +97,10 @@
     networkConfig = { Bridge = "vmbr0"; };
   };
 
-  # nat via wlo0
+  # nat via wlo1
   networking.nat = {
     enable = true;
-    externalInterface = "wlo0";
+    externalInterface = "wlo1";
     internalInterfaces = [ "vmbr0" ];
   };
 
