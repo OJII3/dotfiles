@@ -1,7 +1,7 @@
 {
   services.jankyborders = {
     enable = true;
-    active_color = "gradient(top_left=0xFFFFA500,bottom_right=0xFF1C6293)";
+    active_color = "0xFFFFA500";
     inactive_color = "0x00000000";
   };
 
