@@ -16,6 +16,7 @@
     unar
     lzip
     tree
+    zellij
 
     # cli apps
     claude-code
