@@ -26,6 +26,7 @@
         "t" = "tig status";
         "v" = "nvim";
         "ya" = "yazi";
+        "z" = "zellij";
       };
     };
 

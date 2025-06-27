@@ -9,6 +9,7 @@
     ../../modules/home/sops.nix
     ../../modules/home/terminal/config.nix
     ../../modules/home/zsh
+    ../../modules/home/ai/claude.nix
   ];
 
   programs.kitty.enable = true;
