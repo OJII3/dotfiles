@@ -81,6 +81,7 @@ return {
 			"rename_dir",
 			"delete_dir",
 			"bash",
+      "python",
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

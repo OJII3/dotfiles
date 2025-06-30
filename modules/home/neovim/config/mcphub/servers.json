@@ -20,5 +20,23 @@
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${YOUR_TOKEN}"
       }
     }
+    "git": {
+      "command": "uv",
+      "args": [
+        "tool",
+        "run",
+        "mcp-server-git"
+      ]
+    },
+    "playwright": {
+      "command": "bunx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "mcp-deepwiki": {
+      "command": "bunx",
+      "args": ["-y", "mcp-deepwiki@latest"]
+    }
   }
 }
