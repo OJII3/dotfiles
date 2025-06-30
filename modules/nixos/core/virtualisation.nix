@@ -9,4 +9,8 @@
     };
     # virtualbox.host.enable = true;
   };
+
+  users.users.ojii3 = {
+    extraGroups = [ "docker" ];
+  };
 }

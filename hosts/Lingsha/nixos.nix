@@ -10,9 +10,9 @@
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/fan.nix
-      # ../../modules/nixos/core/networking/networkmanager.nix
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
+      ../../modules/nixos/core/virtualisation.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
