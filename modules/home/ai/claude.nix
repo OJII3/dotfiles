@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     claude-code
     gomi
+    terminal-notifier
   ];
   # Claude Code設定ファイル
   home.file.".claude/settings.json".text = builtins.toJSON {
@@ -20,6 +21,7 @@
         "Bash(find *)"
         "Bash(grep *)"
         "Bash(gomi *)"
+        "Bash(terminal-notifier *)"
         "Read(~/.zshrc)"
         "Read(~/.bashrc)"
         "Read(~/.vimrc)"
@@ -65,7 +67,7 @@
         "Write(/bin/*)"
         "Write(/sbin/*)"
       ];
-      preferredNotifChannel = "iterm2_with_bell";
+      preferredNotifChannel = "macos";
     };
 
     env = {
@@ -81,5 +83,41 @@
     # co-authored-by署名を含める
     includeCoAuthoredBy = true;
   };
+
+  home.file.".claude/CLAUDE.md".text = ''
+    # Claude Code 使用指示
+
+    ## macOS通知について
+    このシステムではmacOS通知が有効になっています。以下のような場面で通知を送ってください：
+
+    ### 通知を送るタイミング
+    - 長時間のタスク（5分以上）が完了した時
+    - エラーが発生して修正が必要な時
+    - ユーザーの確認や入力が必要な時
+    - 重要な処理が完了した時（ビルド、テスト、デプロイなど）
+    - 複数のファイルを変更した後
+
+    ### 通知の送り方
+    ```bash
+    terminal-notifier -title "Claude Code" -message "タスクが完了しました" -sound default
+    ```
+
+    ### 通知例
+    ```bash
+    # タスク完了時
+    terminal-notifier -title "Claude Code" -message "コードの修正が完了しました。確認をお願いします。" -sound default
+
+    # エラー発生時
+    terminal-notifier -title "Claude Code" -message "エラーが発生しました。修正が必要です。" -sound default
+
+    # 長時間タスク完了時
+    terminal-notifier -title "Claude Code" -message "ビルドが完了しました（所要時間: 8分）" -sound default
+    ```
+
+    ## 一般的な指示
+    - コードの変更は段階的に行い、各段階で動作確認を推奨します
+    - 重要な変更の前には必ずバックアップの確認を行ってください(gitの利用を推奨)
+    - エラーログは詳細に確認し、根本原因を特定してください
+  '';
 }
 
