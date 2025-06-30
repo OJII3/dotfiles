@@ -18,6 +18,7 @@
       playerctl
       slurp
       swaynotificationcenter
+      tailscale-systray
       wl-clipboard
       wlogout
     ];
