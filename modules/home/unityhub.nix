@@ -30,10 +30,9 @@ let
   });
 in
 {
-
-  home.packages = with pkgs; [
-    unityhub
+  home.packages = [
     rider
+    (pkgs.callPackage ../packages/custom-unityhub.nix {})
   ];
 
   home.file.".local/share/JetBrains/Toolbox/apps/rider" = {

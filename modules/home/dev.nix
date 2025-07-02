@@ -41,7 +41,7 @@
     go
     # meson
     mise
-    python311
+    python3Full
     # rustup
     # typst
     # uv

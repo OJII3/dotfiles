@@ -78,6 +78,7 @@
   #   source = ./config/swaync;
   #   recursive = true;
   # };
+  services.swayosd.enable = true;
 
   xdg.portal.enable = true;
   # xdg.portal.extraPortals = with pkgs; [
