@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ../../modules/home
+    ../../modules/home/ai/claude.nix
     ../../modules/home/apps.nix
     ../../modules/home/bitwarden.nix
     ../../modules/home/browser.nix
