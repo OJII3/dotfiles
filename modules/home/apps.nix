@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     blender
     cloudflared
-    code-cursor
     discord
     evince
     figma-linux
