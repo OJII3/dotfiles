@@ -33,7 +33,6 @@
     # terraform
 
     # languages
-    bun
     cmake
     # dotnet-sdk
     # gcc
