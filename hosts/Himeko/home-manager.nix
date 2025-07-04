@@ -2,6 +2,7 @@
   imports = [
     ../../modules/home
     ../../modules/home/dev.nix
+    ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
     ../../modules/home/gpg
