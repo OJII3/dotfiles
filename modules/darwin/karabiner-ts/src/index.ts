@@ -82,7 +82,7 @@ writeToProfile("Default profile", [
     // Launch applications -------------------------------------
     map("i", "left_option").toApp("System Settings"),
     map("e", "left_option").toApp("Finder"),
-    map("return_or_enter", "left_option").to$("/usr/bin/open -a kitty ~"),
+    // map("return_or_enter", "left_option").to$("/usr/bin/open -a kitty ~"),
     map("g", "left_option").to$(
       "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1",
     ),

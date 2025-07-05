@@ -17,6 +17,7 @@
         inner.horizontal = 8;
         inner.vertical = 8;
       };
+      # FIXME: still not working
       enable-normalization-opposite-orientation-for-nested-containers = true;
       mode.main.binding = {
         # basic window management
@@ -50,6 +51,14 @@
         alt-r = "mode resize";
         alt-q = "close --quit-if-last-window";
         # launching applications
+        alt-enter = "exec-and-forget /usr/bin/open -a kitty ~";
+        # alt-enter = ''
+        #   exec-and-forget osascript -e '
+        #     tell application "Kitty" 
+        #       do script
+        #       activate
+        #     end tell'
+        # '';
         # misc
         cmd-h = [ ]; # disable hide application
       };
