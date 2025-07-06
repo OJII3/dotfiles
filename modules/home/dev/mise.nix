@@ -6,7 +6,7 @@
       tools = {
         bun = "latest";
       };
-      plugins = {
+      alias = {
         node = "https://github.com/asdf-vm/asdf-nodejs";
       };
     };
