@@ -8,7 +8,6 @@
     ../../modules/home/cloudflare-warp.nix
     ../../modules/home/desktop
     ../../modules/home/dev.nix
-    ../../modules/home/dev/android.nix
     ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
