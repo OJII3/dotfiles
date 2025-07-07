@@ -20,6 +20,7 @@
       "discord"
       "docker"
       "firefox"
+      "figma"
       "ghostty"
       "google-chrome"
       "jetbrains-toolbox"
