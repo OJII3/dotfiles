@@ -3,7 +3,6 @@
     vim
     git
     gnumake
-    clang-tools
     python311
   ];
 

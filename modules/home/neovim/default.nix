@@ -28,7 +28,9 @@
       astro-language-server
       bash-language-server
       biome
-      clang-tools
+      (clang-tools.override {
+        enableLibcxx = true;
+      })
       cmake-language-server
       matlab-language-server
       dockerfile-language-server-nodejs
