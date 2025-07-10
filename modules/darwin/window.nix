@@ -52,6 +52,7 @@
         alt-q = "close --quit-if-last-window";
         # launching applications
         alt-enter = "exec-and-forget /usr/bin/open -a kitty ~";
+        alt-g = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --args --kiosk && sleep 1";
         # alt-enter = ''
         #   exec-and-forget osascript -e '
         #     tell application "Kitty" 
