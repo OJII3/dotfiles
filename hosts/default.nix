@@ -119,7 +119,7 @@ in
     "ojii3@Himeko" = mkHomeManagerConfiguration {
       system = "aarch64-darwin";
       username = "ojii3";
-      overlays = [ ];
+      overlays = [ inputs.brew-nix.overlays.default ];
       modules = [ ./Himeko/home-manager.nix ];
     };
     "ojii3@Welt" = mkHomeManagerConfiguration {
@@ -136,7 +136,10 @@ in
       system = "aarch64-darwin";
       hostname = "Himeko";
       username = "ojii3";
-      modules = [ ./Himeko/darwin.nix ];
+      modules = [
+        inputs.brew-nix.darwinModules.default
+        ./Himeko/darwin.nix
+      ];
     };
   };
 

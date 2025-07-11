@@ -29,6 +29,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs.brew-api.follows = "brew-api";
+    };
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
   };
 
   outputs = inputs: {

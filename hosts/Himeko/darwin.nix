@@ -5,7 +5,6 @@
     ../../modules/darwin/karabiner.nix
     ../../modules/darwin/networking.nix
     ../../modules/darwin/system.nix
-    ../../modules/darwin/window.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
