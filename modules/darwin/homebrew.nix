@@ -30,11 +30,9 @@
       "obs"
       "parsec"
       "scroll-reverser"
-      "spaceid"
       "steam"
       "unity-hub"
       "visual-studio-code"
-      "warp"
       "wezterm"
       "wireshark"
     ];
