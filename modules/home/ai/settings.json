@@ -1,0 +1,111 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(git status)",
+      "Bash(git diff)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git pull)",
+      "Bash(npm run lint*)",
+      "Bash(bun run lint*)",
+      "Bash(pnpm run lint*)",
+      "Bash(npm run check*)",
+      "Bash(bun run check*)",
+      "Bash(pnpm run check*)",
+      "Bash(npm run test*)",
+      "Bash(bun run test*)",
+      "Bash(pnpm run test*)",
+      "Bash(gomi -rf *)",
+      "Bash(terminal-notifier *)",
+      "Read(~/.zshrc)",
+      "Read(~/.bashrc)",
+      "Read(~/.vimrc)",
+      "Read(~/.config/*)",
+      "Read(package.json)",
+      "Read(tsconfig.json)",
+      "Read(*.md)",
+      "Read(*.txt)",
+      "Read(*.json)",
+      "Read(*.yml)",
+      "Read(*.yaml)",
+      "Read(*.toml)",
+      "Read(Cargo.toml)",
+      "Read(pyproject.toml)",
+      "Read(requirements.txt)",
+      "Read(Dockerfile)",
+      "Read(docker-compose.yml)",
+      "Read(.env*)",
+      "Read(*.nix)",
+      "Write(*.md)",
+      "Write(*.txt)",
+      "Write(*.json)",
+      "Write(*.js)",
+      "Write(*.ts)",
+      "Write(*.tsx)",
+      "Write(*.jsx)",
+      "Write(*.py)",
+      "Write(*.rs)",
+      "Write(*.go)",
+      "Write(*.java)",
+      "Write(*.cpp)",
+      "Write(*.c)",
+      "Write(*.h)",
+      "Write(*.nix)",
+      "Edit(docs/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Write(/etc/*)",
+      "Write(/usr/*)",
+      "Write(/bin/*)",
+      "Write(/sbin/*)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_AUTOUPDATER": "1"
+  },
+  "cleanupPeriodDays": 7,
+  "includeCoAuthoredBy": true,
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Mr.Claude' -message '確認して～！' -sound default"
+          },
+          {
+            "type": "command"
+            "command": "notify-send 'Mr.Claude' '確認して～！' --icon=dialog-information"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Mr.Claude' -message 'お疲れ様でした！' -sound default"
+          },
+          {
+            "type": "command",
+            "command": "notify-send 'Mr.Claude' 'お疲れ様でした！' --icon=dialog-information"
+          }
+        ]
+      }
+    ]
+  }
+}
