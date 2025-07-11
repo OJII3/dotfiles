@@ -24,7 +24,6 @@
       "ghostty"
       "google-chrome"
       "jetbrains-toolbox"
-      "karabiner-elements"
       "logi-options+"
       "minecraft"
       "moonlight"

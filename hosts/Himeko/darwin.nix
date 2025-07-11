@@ -2,6 +2,7 @@
   imports = [
     ../../modules/darwin/fonts.nix
     ../../modules/darwin/homebrew.nix
+    ../../modules/darwin/karabiner.nix
     ../../modules/darwin/networking.nix
     ../../modules/darwin/system.nix
     ../../modules/darwin/window.nix
