@@ -3,7 +3,6 @@
     ../../modules/home
     ../../modules/home/darwin/aerospace
     ../../modules/home/darwin/jankyborders
-    ../../modules/home/darwin/goku
     ../../modules/home/ai/claude.nix
     ../../modules/home/dev.nix
     ../../modules/home/dev/mise.nix
