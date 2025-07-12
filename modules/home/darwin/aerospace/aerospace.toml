@@ -90,6 +90,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-enter = 'exec-and-forget /usr/bin/open -a kitty ~'
     alt-g = 'exec-and-forget ~/Applications/Home\ Manager\ Apps/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --kiosk && sleep 1'
     alt-o = 'exec-and-forget ~/Applications/Home\ Manager\ Apps/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory=Default && sleep 1'
+    alt-i = 'exec-and-forget /usr/bin/open -a /System/Applications/System\ Settings.app'
+    alt-e = 'exec-and-forget /usr/bin/open ~' # Finder
     cmd-h = [] # Disable macOS "Hide application" feature
 
     alt-q = 'close'
