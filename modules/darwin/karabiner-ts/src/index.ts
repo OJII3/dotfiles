@@ -1,5 +1,4 @@
 import { ifApp, ifVar, layer, map, rule, writeToProfile } from "karabiner.ts";
-import { closeWindow, yabai } from "./commands";
 
 // ! Change '--dry-run' to your Karabiner-Elements Profile name.
 // (--dry-run print the config json into console)
@@ -18,17 +17,25 @@ writeToProfile("Default profile", [
   layer("japanese_kana", "Utility Layer")
     .configKey((v) => v.toIfAlone("fn"), true) // toggle IME to Romaji
     .manipulators([
-      map("0").to("keypad_0"),
-      map("1", "shift").to("`", "shift"),
-      map(".").to("keypad_period"),
       map("h").to("left_arrow"),
       map("j").to("down_arrow"),
       map("k").to("up_arrow"),
       map("l").to("right_arrow"),
+      map("f").toPointingButton("button1"), // left click
+      // map("0").to("keypad_0"),
+      // map("1", "shift").to("`", "shift"),
+      // map(".").to("keypad_period"),
+      // map("h").to("left_arrow"),
+      // map("j").to("down_arrow"),
+      // map("k").to("up_arrow"),
+      // map("l").to("right_arrow"),
     ]),
 
   // Make IME toggle key near the thumb
   rule("Right Command").manipulators([map("right_command").toIfAlone("fn")]),
+  rule("Additional Backspae").manipulators([
+    map("international3").to("delete_or_backspace"),
+  ]),
 
   // Additional Option key near the thumb
   layer("japanese_eisuu", "Utility Layer")
@@ -43,38 +50,6 @@ writeToProfile("Default profile", [
   ]),
 
   rule("Alt").manipulators([
-    // focus window
-    // map("h", "left_option").to$(`${yabai} -m window --focus west`),
-    // map("j", "left_option").to$(`${yabai} -m window --focus south`),
-    // map("k", "left_option").to$(`${yabai} -m window --focus north`),
-    // map("l", "left_option").to$(`${yabai} -m window --focus east`),
-    // move wndow
-    // map("h", "left_option", "shift").to$(`${yabai} -m window --warp west`),
-    // map("j", "left_option", "shift").to$(`${yabai} -m window --warp south`),
-    // map("k", "left_option", "shift").to$(`${yabai} -m window --warp north`),
-    // map("l", "left_option", "shift").to$(`${yabai} -m window --warp east`),
-    // focus space
-    // map("1", "left_option").to("1", "control"),
-    // map("2", "left_option").to("2", "control"),
-    // map("3", "left_option").to("3", "control"),
-    // map("4", "left_option").to("4", "control"),
-    // map("5", "left_option").to("5", "control"),
-    // move window to space
-    // map("1", "left_option", "shift").to$(`${yabai} -m window --space 1`),
-    // map("2", "left_option", "shift").to$(`${yabai} -m window --space 2`),
-    // map("3", "left_option", "shift").to$(`${yabai} -m window --space 3`),
-    // map("4", "left_option", "shift").to$(`${yabai} -m window --space 4`),
-    // map("5", "left_option", "shift").to$(`${yabai} -m window --space 5`),
-    // other window operations -------------------------------------
-    // map("tab", "left_option").to$(`${yabai}-m window --focus recent`),
-    // map("q", "left_option").to$(closeWindow),
-    // map("f", "left_option", "shift").to$(
-    //   `${yabai}-m window --toggle float --grid 4:4:1:1:2:2`,
-    // ),
-    // map("w", "left_option").to$(
-    //   `${yabai} -m window --toggle float; ${yabai} -m window --grid 1:1:0:0:1:1`,
-    // ),
-
     // System operations -------------------------------------
     map("m", "left_option").to("↑", "command"), // Mission Control (Default)
     map("n", "left_option").to("↓", "command"), // Notification Center (not Default)
