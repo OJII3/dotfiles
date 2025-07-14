@@ -3,6 +3,7 @@
     ../../modules/home
     ../../modules/home/darwin/aerospace
     ../../modules/home/darwin/jankyborders
+    ../../modules/home/darwin/kdeconnect
     ../../modules/home/ai/claude.nix
     ../../modules/home/dev
     ../../modules/home/dev/mise.nix
