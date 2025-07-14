@@ -3,8 +3,7 @@
     # utilities
     bat
     bottom
-    byobu
-    httpie
+    # httpie
     ripgrep
     yazi
     tmux
@@ -23,8 +22,7 @@
     fastfetch
     nyancat
     tdf
-    libsixel
-    online-judge-tools
+    # libsixel
     pdftk
 
     # sdk, toolchain
@@ -37,9 +35,8 @@
     # dotnet-sdk
     # gcc
     # gnumake
-    go
+    # go
     # meson
-    mise
     python3Full
     # rustup
     # typst

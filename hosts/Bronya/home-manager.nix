@@ -2,17 +2,18 @@
   imports = [
     ../../modules/home
     ../../modules/home/apps.nix
-    ../../modules/home/browser.nix
     ../../modules/home/bitwarden.nix
+    ../../modules/home/browser.nix
     ../../modules/home/desktop/hyprland.nix
     ../../modules/home/desktop/theme.nix
-    ../../modules/home/dev.nix
+    ../../modules/home/dev
+    ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
     ../../modules/home/gpg/linux-desktop.nix
     ../../modules/home/im
-    ../../modules/home/kdewallet.nix
     ../../modules/home/kdeconnect.nix
+    ../../modules/home/kdewallet.nix
     ../../modules/home/neovim
     ../../modules/home/network.nix
     ../../modules/home/sops.nix

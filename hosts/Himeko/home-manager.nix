@@ -4,7 +4,7 @@
     ../../modules/home/darwin/aerospace
     ../../modules/home/darwin/jankyborders
     ../../modules/home/ai/claude.nix
-    ../../modules/home/dev.nix
+    ../../modules/home/dev
     ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
