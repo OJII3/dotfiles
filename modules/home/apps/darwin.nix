@@ -5,6 +5,8 @@
 
   home.packages = with pkgs; [
     scroll-reverser
+    utm
+    appcleaner
   ];
 
   programs = {

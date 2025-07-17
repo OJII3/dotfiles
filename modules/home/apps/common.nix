@@ -5,7 +5,10 @@
     # ghostty # broken on darwin
     jetbrains-toolbox
     slack
-    vscode
-    wezterm
   ];
+
+  programs = {
+    vscode.enable = true;
+  };
 }
+

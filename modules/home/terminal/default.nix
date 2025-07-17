@@ -1,8 +1,5 @@
-{ ... }: {
-  imports = [
-    ./config.nix
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    hackgen-nf-font
   ];
-  programs.kitty.enable = true;
-  programs.ghostty.enable = true;
-  programs.wezterm.enable = true; # better then kitty for SSH
 }

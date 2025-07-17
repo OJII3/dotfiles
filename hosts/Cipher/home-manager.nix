@@ -18,7 +18,7 @@
     ../../modules/home/neovim
     ../../modules/home/network.nix
     ../../modules/home/sops.nix
-    ../../modules/home/terminal
+    ../../modules/home/terminal/kitty
     ../../modules/home/zsh
   ];
 
