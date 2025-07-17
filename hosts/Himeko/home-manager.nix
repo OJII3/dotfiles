@@ -1,10 +1,11 @@
 { pkgs, ... }: {
   imports = [
     ../../modules/home
+    ../../modules/home/ai/claude.nix
+    ../../modules/home/apps/darwin.nix
     ../../modules/home/darwin/aerospace
     ../../modules/home/darwin/jankyborders
     ../../modules/home/darwin/kdeconnect
-    ../../modules/home/ai/claude.nix
     ../../modules/home/dev
     ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix

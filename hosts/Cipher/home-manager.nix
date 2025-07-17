@@ -2,7 +2,7 @@
   imports = [
     ../../modules/home
     ../../modules/home/ai/claude.nix
-    ../../modules/home/apps.nix
+    ../../modules/home/apps/linux.nix
     ../../modules/home/bitwarden.nix
     ../../modules/home/browser.nix
     ../../modules/home/cloudflare-warp.nix

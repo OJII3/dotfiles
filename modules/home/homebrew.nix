@@ -1,21 +1,21 @@
 { pkgs, ... }: {
   home.packages = with pkgs.brewCasks; [
-    blender
+    # blender
     blockbench
     chatgpt
     # cloudflare-warp
-    discord
+    # discord
     # docker
     figma
     firefox
     ghostty
-    (google-chrome.overrideAttrs (oldAttrs: {
-      src = pkgs.fetchurl {
-        url = builtins.head oldAttrs.src.urls;
-        hash = "sha256-iHEQ5wNcj7SLL2tVFR4sTZ7bB5m/TkmbhOAvMp10ao0=";
-      };
-    }))
-    jetbrains-toolbox
+    # (google-chrome.overrideAttrs (oldAttrs: {
+    #   src = pkgs.fetchurl {
+    #     url = builtins.head oldAttrs.src.urls;
+    #     hash = "sha256-iHEQ5wNcj7SLL2tVFR4sTZ7bB5m/TkmbhOAvMp10ao0=";
+    #   };
+    # }))
+    # jetbrains-toolbox
     (minecraft.overrideAttrs (oldAttrs: {
       src = pkgs.fetchurl {
         url = builtins.head oldAttrs.src.urls;
@@ -30,7 +30,7 @@
     #     hash = "sha256-nge8K8JaLeWAhvyYB8Vgs3X+Ca9QXJT3PsKz8hLK5Sg=";
     #   };
     # }))
-    scroll-reverser
+    # scroll-reverser
     # steam
     (unity-hub.overrideAttrs (oldAttrs: {
       src = pkgs.fetchurl {
@@ -38,8 +38,8 @@
         hash = "sha256-jLiBOoRRe7fNzF0RNfCtqPQAEmzdNm2zdhrxsht/Gkc=";
       };
     }))
-    visual-studio-code
-    wezterm
+    # visual-studio-code
+    # wezterm
     # wireshark
   ];
 }

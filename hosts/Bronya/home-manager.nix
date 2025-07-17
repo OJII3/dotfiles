@@ -1,7 +1,7 @@
 { ... }: {
   imports = [
     ../../modules/home
-    ../../modules/home/apps.nix
+    ../../modules/home/apps/linux.nix
     ../../modules/home/bitwarden.nix
     ../../modules/home/browser.nix
     ../../modules/home/desktop/hyprland.nix
