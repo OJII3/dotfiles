@@ -4,7 +4,6 @@
     ../../modules/home/ai/claude.nix
     ../../modules/home/apps/linux.nix
     ../../modules/home/bitwarden.nix
-    ../../modules/home/browser.nix
     ../../modules/home/cloudflare-warp.nix
     ../../modules/home/desktop
     ../../modules/home/dev

@@ -18,7 +18,6 @@
     zellij
 
     # cli apps
-    claude-code
     fastfetch
     nyancat
     tdf

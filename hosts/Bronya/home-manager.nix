@@ -3,7 +3,6 @@
     ../../modules/home
     ../../modules/home/apps/linux.nix
     ../../modules/home/bitwarden.nix
-    ../../modules/home/browser.nix
     ../../modules/home/desktop/hyprland.nix
     ../../modules/home/desktop/theme.nix
     ../../modules/home/dev

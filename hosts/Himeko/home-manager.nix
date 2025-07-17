@@ -11,7 +11,6 @@
     ../../modules/home/direnv.nix
     ../../modules/home/git
     ../../modules/home/gpg
-    ../../modules/home/homebrew.nix
     ../../modules/home/neovim
     ../../modules/home/sops.nix
     ../../modules/home/terminal/kitty
