@@ -9,7 +9,7 @@
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/virtualisation.nix
-      ../../modules/nixos/core/proxmox.nix
+      ../../modules/nixos/core/networking/networkmanager.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/greetd/autologin.nix
@@ -48,60 +48,6 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
-  };
-
-  # basic networking
-  networking.useNetworkd = true;
-  networking.networkmanager.enable = false;
-  systemd.network.networks."10-wlo1" = {
-    matchConfig.Name = "wlo1";
-    networkConfig = {
-      Address = "192.168.0.99/24";
-      Gateway = "192.168.0.1";
-    };
-  };
-  networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
-  networking = {
-    wireless.enable = true;
-    wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
-    wireless.networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
-    wireless.networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
-  };
-
-  # bridges for proxmox-nixos
-  systemd.network.netdevs."vmbr0".netdevConfig = {
-    Name = "vmbr0";
-    Kind = "bridge";
-  };
-  systemd.network.networks."00-lan0" = {
-    matchConfig.Name = "enp4s0";
-    networkConfig = { Bridge = "vmbr0"; };
-  };
-  systemd.network.networks."10-vmbr0" =
-    {
-      matchConfig.Name = "vmbr0";
-      networkConfig = {
-        Address = "10.42.0.2/24";
-        Gateway = "10.42.0.1";
-      };
-    };
-  systemd.network.networks."20-lan-bridge" = {
-    matchConfig.Name = "vmbr0";
-    networkConfig = {
-      IPv6AcceptRA = true;
-      DHCP = "ipv4";
-    };
-    linkConfig.RequiredForOnline = "routable";
-  };
-  # systemd.network.networks."30-tap0" = {
-  #   matchConfig.Name = "tap*";
-  #   networkConfig = { Bridge = "vmbr0"; };
-  # };
-
-  # open firewall for dhcp and dns
-  services.proxmox-ve = {
-    ipAddress = "10.42.0.2";
-    bridges = [ "vmbr0" ];
   };
 
   # This value determines the NixOS release from which the default
