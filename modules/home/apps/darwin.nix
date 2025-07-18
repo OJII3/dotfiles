@@ -10,6 +10,7 @@
     utm
   ] ++
   (with pkgs.brewCasks; [
+    bleunlock
     blockbench
     chatgpt
     # cloudflare-warp
