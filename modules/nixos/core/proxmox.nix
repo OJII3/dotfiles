@@ -8,7 +8,7 @@
   };
 
   nix.settings = {
-    substituters = [
+    extra-substituters = [
       "https://cache.saumon.network/proxmox-nixos"
     ];
     trusted-public-keys = [

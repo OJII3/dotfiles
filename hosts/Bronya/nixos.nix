@@ -48,25 +48,17 @@
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
-    # package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
-  # Wake on LAN
-  networking.interfaces.enp4s0.wakeOnLan.enable = true;
-
-
-  # networking
+  # basic networking
   networking.useNetworkd = true;
   networking.networkmanager.enable = false;
-  networking.interfaces."wlo1" = {
-    ipv4.addresses = [{
-      address = "192.168.0.99";
-      prefixLength = 24;
-    }];
-  };
-  networking.defaultGateway = {
-    interface = "wlo1";
-    address = "192.168.0.1";
+  systemd.network.networks."10-wlo1" = {
+    matchConfig.Name = "wlo1";
+    networkConfig = {
+      Address = "192.168.0.99/24";
+      Gateway = "192.168.0.1";
+    };
   };
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking = {
