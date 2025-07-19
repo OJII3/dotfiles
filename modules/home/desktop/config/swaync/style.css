@@ -476,9 +476,8 @@
 }
 
 .widget-mpris .widget-mpris-player {
-  padding: 8px;
   padding: 16px;
-  margin: 16px 20px;
+  margin: 16px 4px;
   background-color: @mpris-album-art-overlay;
   border-radius: 12px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
@@ -513,6 +512,7 @@
 
 .widget-mpris > box > button {
   /* Change player side buttons */
+  display: none;
 }
 
 .widget-mpris > box > button:disabled {
