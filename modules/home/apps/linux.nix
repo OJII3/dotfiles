@@ -14,6 +14,7 @@ in
   qt.enable = true;
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
+    bottles
     cloudflared
     evince
     figma-linux

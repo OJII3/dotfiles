@@ -74,7 +74,6 @@ in
       username = "ojii3";
       modules = [
         ./Bronya/nixos.nix
-        inputs.proxmox-nixos.nixosModules.proxmox-ve
       ];
     };
     Lingsha = mkNixosSystem {
