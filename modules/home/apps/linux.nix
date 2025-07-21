@@ -26,6 +26,7 @@ in
     nautilus
     nautilus-python
     ocs-url
+    overskride
     parsec-bin
     vlc
     warp-terminal
@@ -44,10 +45,6 @@ in
 
   home.file.".local/share/applications/org.kde.plasma.browser_integration.desktop" = {
     source = "${pkgs.kdePackages.plasma-browser-integration}/share/applications/org.kde.plasma.browser_integration.desktop";
-  };
-
-  home.file.".config/discord/settings.json".text = builtins.toJSON {
-    "SKIP_HOST_UPDATE" = true;
   };
 }
 

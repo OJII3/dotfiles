@@ -1,6 +1,14 @@
 {
   imports = [
-    ./hyprland.nix
+    ./anyrun
+    ./hypr
+    ./hyprland
+    ./swaync
     ./theme.nix
+    ./uwsm
+    ./waybar
+    ./wlogout
   ];
+
+  xdg.portal.enable = true;
 }
