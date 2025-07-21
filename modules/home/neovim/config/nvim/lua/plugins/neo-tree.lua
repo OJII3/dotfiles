@@ -6,9 +6,10 @@ return {
 			{ "<space>e", "<cmd>silent! Neotree toggle reveal=true<CR>", mode = "n" },
 		},
 		dependencies = {
-	{ "nvim-lua/plenary.nvim" },
+			{ "nvim-lua/plenary.nvim" },
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "MunifTanjim/nui.nvim" },
+			{ "3rd/image.nvim", enabled = os.getenv("TERM") == "xterm-kitty" or os.getenv("TERM") == "xterm-ghostty" },
 			{
 				"s1n7ax/nvim-window-picker",
 				version = "2.*",
