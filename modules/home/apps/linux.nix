@@ -1,10 +1,6 @@
 { pkgs, ... }:
 let
-  isChromeAvailable = pkgs.system == "x86_64-linux";
-  commandLineArgs = [
-    "--ozone-platform-hint=auto"
-    "--enable-wayland-ime"
-  ];
+  chromeArgs = [ "--ozone-platform-hint=auto" "--enable-wayland-ime" ];
 in
 {
   imports = [
@@ -37,15 +33,8 @@ in
   ];
 
   programs = {
-    firefox.enable = true;
-    google-chrome = {
-      enable = isChromeAvailable;
-      inherit commandLineArgs;
-    };
-    chromium = {
-      enable = !isChromeAvailable;
-      inherit commandLineArgs;
-    };
+    google-chrome.commandLineArgs = chromeArgs;
+    chromium.commandLineArgs = chromeArgs;
   };
 
   # Partialy Support Plasma Browser Integration
@@ -55,6 +44,10 @@ in
 
   home.file.".local/share/applications/org.kde.plasma.browser_integration.desktop" = {
     source = "${pkgs.kdePackages.plasma-browser-integration}/share/applications/org.kde.plasma.browser_integration.desktop";
+  };
+
+  home.file.".config/discord/settings.json".text = builtins.toJSON {
+    "SKIP_HOST_UPDATE" = true;
   };
 }
 
