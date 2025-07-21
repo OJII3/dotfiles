@@ -32,7 +32,9 @@ writeToProfile("Default profile", [
     ]),
 
   // Make IME toggle key near the thumb
-  rule("Right Command").manipulators([map("right_command").toIfAlone("fn")]),
+  rule("Right Command").manipulators([
+    map("right_command").toIfAlone("fn").to("right_command"),
+  ]),
   rule("Additional Backspae").manipulators([
     map("international3").to("delete_or_backspace"),
   ]),
