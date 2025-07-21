@@ -214,6 +214,11 @@
                   {
                     "key_code": "fn"
                   }
+                ],
+                "to": [
+                  {
+                    "key_code": "right_command"
+                  }
                 ]
               }
             ]
