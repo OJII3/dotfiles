@@ -22,3 +22,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 		end
 	end,
 })
+
+-- Hyprlang LSP
+vim.filetype.add({
+	pattern = { [".*/hypr.*/.*%.conf"] = "hyprlang" },
+})
