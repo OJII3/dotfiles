@@ -10,7 +10,7 @@ in
   qt.enable = true;
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
-    bottles
+    (bottles.override { removeWarningPopup = true; })
     cloudflared
     evince
     figma-linux

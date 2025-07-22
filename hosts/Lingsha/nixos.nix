@@ -13,6 +13,7 @@
       ../../modules/nixos/core/power/laptop.nix
       ../../modules/nixos/core/suspend
       ../../modules/nixos/core/virtualisation.nix
+      ../../modules/nixos/core/networking/networkmanager.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/sunshine.nix
@@ -73,77 +74,6 @@
       modprobe rtw89_8852ce
     '';
   };
-
-  networking.useNetworkd = true;
-  networking.networkmanager.enable = false;
-  networking.wireless = {
-    enable = true;
-    userControlled.enable = true;
-    secretsFile = "/etc/nixos/wireless.conf";
-    networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
-    networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
-    networks."Kafka" = { pskRaw = "ext:psk_kafka"; };
-    networks."tuatnet" = {
-      hidden = true;
-      auth = ''
-        key_mgmt=WPA-EAP
-        eap=PEAP
-        phase2="auth=MSCHAPV2"
-        identity="s245158v"
-        password=ext:psk_tuat
-      '';
-    };
-    networks."eduroam" = {
-      hidden = true;
-      auth = ''
-        key_mgmt=WPA-EAP
-        eap=PEAP
-        phase2="auth=MSCHAPV2"
-        identity="s245158v@eduroam.tuat.ac.jp"
-        password=ext:psk_tuat
-      '';
-    };
-  };
-
-  systemd.network.networks."10-wlp2s0" = {
-    matchConfig.Name = "wlp2s0";
-    networkConfig = {
-      DHCP = "ipv4";
-    };
-  };
-
-  systemd.network.netdevs."br0".netdevConfig = {
-    Name = "br0";
-    Kind = "bridge";
-  };
-
-  systemd.network.networks."00-br0" = {
-    matchConfig.Name = "br0";
-    networkConfig = {
-      Address = "192.168.111.1/24";
-      DHCPServer = "yes";
-    };
-    dhcpServerConfig = {
-      PoolOffset = 100;
-      PoolSize = 100;
-    };
-  };
-
-  systemd.network.networks."20-enp1s0" = {
-    matchConfig.Name = "enp1s0";
-    networkConfig = { Bridge = "br0"; };
-  };
-
-  # nat via wlp1s0
-  networking.nat = {
-    enable = true;
-    externalInterface = "wlp2s0";
-    internalInterfaces = [ "br0" ];
-  };
-
-  # open firewall for dhcp and dns
-  networking.firewall.allowedUDPPorts = [ 53 67 ];
-  networking.firewall.allowedTCPPorts = [ 53 ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
