@@ -23,6 +23,7 @@
         ${builtins.readFile ./general.conf}
         ${builtins.readFile ./keybinds.conf}
         ${builtins.readFile ./rules.conf}
+        ${builtins.readFile ./plugins.conf}
       ''; # not load env, because it's loaded by uwsm
       plugins = [
         pkgs.hyprlandPlugins.hyprbars
