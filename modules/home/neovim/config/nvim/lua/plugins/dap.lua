@@ -1,113 +1,54 @@
 return {
 	{
-		"mxsdev/nvim-dap-vscode-js",
-		event = "VeryLazy",
-	},
-	{
-		"mfussenegger/nvim-dap",
+		"rcarriga/nvim-dap-ui",
+		-- dependencies = {
+		-- 	"mfussenegger/nvim-dap",
+		-- 	"nvim-neotest/nvim-nio",
+		-- 	"theHamsta/nvim-dap-virtual-text",
+		-- },
 		config = function()
-			local dap = require("dap")
-			vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DapBreakpointTextHl" })
-			vim.fn.sign_define("DapStopped", { text = "", texthl = "DapStoppedTextHl" })
-
-			require("dap-vscode-js").setup({
-				debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
-				adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
-			})
-
-			for _, language in ipairs({ "typescript", "javascript", "typescriptreact" }) do
-				dap.configurations[language] = {
-					{
-						type = "pwa-node",
-						request = "launch",
-						name = "Launch file",
-						program = "${file}",
-						cwd = "${workspaceFolder}",
-					},
-					{
-						type = "pwa-node",
-						request = "attach",
-						name = "Attach",
-						processId = require("dap.utils").pick_process,
-						cwd = "${workspaceFolder}",
-					},
-					{
-						type = "pwa-node",
-						request = "launch",
-						name = "Debug Jest Tests",
-						-- trace = true, -- include debugger info
-						runtimeExecutable = "node",
-						runtimeArgs = {
-							"./node_modules/jest/bin/jest.js",
-							"--runInBand",
-						},
-						rootPath = "${workspaceFolder}",
-						cwd = "${workspaceFolder}",
-						console = "integratedTerminal",
-						internalConsoleOptions = "neverOpen",
-					},
-				}
-			end
+			local dap, dapui = require("dap"), require("dapui")
 
 			dap.adapters = {
-				codelldb = {
+				lldb = {
 					type = "server",
 					port = "${port}",
 					executable = {
-						-- Masonはここにデバッガを入れてくれる
-						command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
-						-- ポートを自動的に割り振ってくれる
+						command = "lldb",
 						args = { "--port", "${port}" },
 					},
 				},
-				python = {
-					type = "executable",
-					command = vim.fn.stdpath("data") .. "/mason/bin/debugpy",
-					-- args = { "-m", "debugpy.adapter" },
-				},
 			}
 			dap.configurations = {
-				cpp = {
-					{
-						name = "Launch file",
-						type = "codelldb",
-						request = "launch",
-						program = function()
-							return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/a.out", "file")
-						end,
-						cwd = "${workspaceFolder}",
-						stopOnEntry = false,
-					},
-				},
-				python = {
-					{
-						type = "python",
-						request = "launch",
-						name = "Launch file",
-						program = "${file}",
-						pythonPath = function()
-							return "python"
-						end,
-					},
-				},
+				cpp = {},
 			}
-			dap.configurations.c = dap.configurations.cpp
+
+			require("dap.ext.vscode")._load_json()
+
+			dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+			dap.listeners.before.event_terminated["dapui_config"] = dapui.close
+			dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+			dapui.setup()
+			require("nvim-dap-virtual-text").setup({})
 		end,
-		event = "VeryLazy",
 		keys = {
-			{ "<F5>", "<cmd>lua require'dap'.continue()<CR>" },
-			{ "<F10>", "<cmd>lua require'dap'.step_over()<CR>" },
-			{ "<F11>", "<cmd>lua require'dap'.step_into()<CR>" },
-			{ "<F12>", "<cmd>lua require'dap'.step_out()<CR>" },
-			{ "<Leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>" },
-			{ "<Leader>B", "<cmd>lua require'dap'.set_breakpoint()<CR>" },
-			{ "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>" },
-			{ "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>" },
-			{ "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>" },
-			{ "<Leader>dh", "<cmd>lua require'dap.ui.widgets'.hover()<CR>" },
-			{ "<Leader>dp", "<cmd>lua require'dap.ui.widgets'.preview()<CR>" },
-			{ "<Leader>df", "<cmd>lua require'dap.ui.widgets'.centered_float(require'dap.ui.widgets'.frames)<CR>" },
-			{ "<Leader>ds", "<cmd>lua require'dap.ui.widgets'.centered_float(require'dap.ui.widgets'.scopes)<CR>" },
+			{ "<F5>", "<cmd>lua require('dap').continue()<CR>", desc = "Continue" },
+			{ "<F10>", "<cmd>lua require('dap').step_over()<CR>", desc = "Step Over" },
+			{ "<F11>", "<cmd>lua require('dap').step_into()<CR>", desc = "Step Into" },
+			{ "<F12>", "<cmd>lua require('dap').step_out()<CR>", desc = "Step Out" },
+			{ "<Leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle Breakpoint" },
+			{
+				"<Leader>dB",
+				"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+				desc = "Set Conditional Breakpoint",
+			},
+			{ "<F7>", "<cmd>lua require('dapui').toggle()<CR>", desc = "Toggle DAP UI" },
+			{ "<Leader>dr", "<cmd>lua require('dap').repl.open()<CR>", desc = "Open REPL" },
+			{ "<Leader>dl", "<cmd>lua require('dap').run_last()<CR>", desc = "Run Last Debug Session" },
 		},
 	},
+	{ "mfussenegger/nvim-dap", lazy = true },
+	{ "nvim-neotest/nvim-dap-virtual-text", lazy = true },
+	{ "nvim-neotest/nvim-nio", lazy = true },
 }
