@@ -49,6 +49,6 @@ return {
 		},
 	},
 	{ "mfussenegger/nvim-dap", lazy = true },
-	{ "nvim-neotest/nvim-dap-virtual-text", lazy = true },
+	{ "theHamsta/nvim-dap-virtual-text", lazy = true },
 	{ "nvim-neotest/nvim-nio", lazy = true },
 }
