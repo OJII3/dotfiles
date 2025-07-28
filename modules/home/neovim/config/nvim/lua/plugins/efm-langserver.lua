@@ -23,7 +23,7 @@ return {
 		-- local eslint_linter = require("efmls-configs.linters.eslint")
 		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
-		-- local biome = require("efmls-configs.formatters.biome")
+		local biome = require("efmls-configs.formatters.biome")
 		-- Python
 		local ruff = require("efmls-configs.formatters.ruff")
 		local black = require("efmls-configs.formatters.black")
@@ -37,11 +37,15 @@ return {
 		local typstyle = require("efmls-configs.formatters.typstyle")
 
 		-- customized or manually installed linters/formatters
-		-- local biome = {
-		-- 	formatCommand = string.format("%s %s", "node_modules/.bin/biome", "check --apply --stdin-file-path '${INPUT}'"),
-		-- 	formatStdin = true,
-		-- 	roootMarkers = { "biome.json", "biome.jsonc" },
-		-- }
+		local biome = {
+			formatCommand = string.format(
+				"%s %s",
+				"node_modules/.bin/biome",
+				"check --write --unsafe --stdin-file-path '${INPUT}'"
+			),
+			formatStdin = true,
+			roootMarkers = { "biome.json", "biome.jsonc" },
+		}
 		local cmake_format = {
 			formatCommand = "cmake-format ${--line-width:100} -",
 			formatStdin = true,
@@ -95,7 +99,7 @@ return {
 					rust = { rustfmt },
 					sh = { shellcheck },
 					typescript = { prettier },
-					typescriptreact = { prettier },
+					typescriptreact = { prettier, biome },
 					typst = { typstyle },
 					yaml = { yamllint },
 					nix = {
