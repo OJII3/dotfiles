@@ -15,7 +15,7 @@ after-startup-command = []
 start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
-enable-normalization-flatten-containers = true
+enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
@@ -125,7 +125,6 @@ automatically-unhide-macos-hidden-apps = false
     alt-6 = 'workspace 6'
     alt-7 = 'workspace 7'
     alt-8 = 'workspace 8'
-    alt-9 = 'workspace 9'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
