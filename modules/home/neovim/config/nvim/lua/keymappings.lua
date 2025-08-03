@@ -1,5 +1,5 @@
 -- builtin
-vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
+-- vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 -- vim.keymap.set("i", "", "<ESC>", { noremap = true, silent = true }) -- while using skkeleton
 vim.keymap.set("n", "j", "gj", { noremap = true, silent = true })
 vim.keymap.set("n", "k", "gk", { noremap = true, silent = true })
@@ -7,24 +7,25 @@ vim.keymap.set("v", "j", "gj", { noremap = true, silent = true })
 vim.keymap.set("v", "k", "gk", { noremap = true, silent = true })
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true })
 vim.keymap.set("t", "<C-[>", "<C-\\><C-n>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-h>", "<C-w>h", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-j>", "<C-w>j", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-k>", "<C-w>k", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-l>", "<C-w>l", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.keymap.set("n", "g<C-y>", "mzggyG`z", { noremap = true, silent = true })
 
--- Emacs-like keybindings in insert mode and command mode
-vim.keymap.set("i", "<C-e>", "<C-o>$", { noremap = true, silent = true }) -- End of line
-vim.keymap.set("i", "<C-a>", "<C-o>^", { noremap = true, silent = true }) -- Beginning of line
-vim.keymap.set("i", "<C-f>", "<Right>", { noremap = true, silent = true }) -- Forward one character
-vim.keymap.set("i", "<C-b>", "<Left>", { noremap = true, silent = true }) -- Back one character
-vim.keymap.set("i", "<C-n>", "<Down>", { noremap = true, silent = true }) -- Next line
-vim.keymap.set("i", "<C-p>", "<Up>", { noremap = true, silent = true }) -- Previous line
-vim.keymap.set("i", "<M-f>", "<C-o>w", { noremap = true, silent = true }) -- Forward one word
-vim.keymap.set("i", "<M-b>", "<C-o>b", { noremap = true, silent = true }) -- Back one word
-vim.keymap.set("i", "<C-d>", "<Delete>", { noremap = true, silent = true }) -- Delete forward
-vim.keymap.set("i", "<C-h>", "<BS>", { noremap = true, silent = true }) -- Delete backward
+-- Normal mode emacs bindings
+vim.keymap.set("i", "<C-e>", "<C-o>$", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-a>", "<C-o>^", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-f>", "<Right>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-b>", "<Left>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-n>", "<Down>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-p>", "<Up>", { noremap = true, silent = true })
+vim.keymap.set("i", "<M-f>", "<C-o>w", { noremap = true, silent = true })
+vim.keymap.set("i", "<M-b>", "<C-o>b", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-d>", "<Delete>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-h>", "<BS>", { noremap = true, silent = true })
 
 -- Command mode emacs bindings
 vim.keymap.set("c", "<C-e>", "<End>", { noremap = true })
