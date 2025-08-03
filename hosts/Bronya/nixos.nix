@@ -26,7 +26,7 @@
 
   # Karnel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-
+  networking.interfaces."enp4s0".wakeOnLan.enable = true;
 
   # graphics
   services.xserver.videoDrivers = [ "nvidia" ];
