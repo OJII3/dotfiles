@@ -1,14 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 let
   chromeAvailable = pkgs.system == "x86_64-linux" || pkgs.system == "aarch64-darwin";
 in
 {
   home.packages = with pkgs; [
     # ghostty # broken on darwin
-    blender
+    pkgs-stable.blender
     discord
     jetbrains-toolbox
     slack
+    postman
   ];
 
   programs = {
