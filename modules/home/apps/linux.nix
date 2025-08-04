@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 let
   chromeArgs = [ "--ozone-platform-hint=auto" "--enable-wayland-ime" ];
 in
@@ -27,7 +27,7 @@ in
     nautilus-python
     ocs-url
     overskride
-    parsec-bin
+    # pkgs-stable.parsec-bin
     vlc
     warp-terminal
     wineWowPackages.staging
