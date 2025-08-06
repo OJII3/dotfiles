@@ -19,6 +19,9 @@ return {
 			claude = {
 				model = "claude-sonnet-4-20250514",
 			},
+			morph = {
+				model = "auto",
+			},
 		},
 		cursor_applying_provider = nil,
 		behaviour = {
@@ -26,6 +29,7 @@ return {
 			auto_suggestions = false,
 			enable_cursor_planning_mode = true,
 			enable_token_counting = true,
+			enable_fastapply = true,
 			minimize_diff = true,
 			support_paste_from_clipboard = true,
 		},
