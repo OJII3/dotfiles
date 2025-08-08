@@ -21,12 +21,13 @@
     ghostty
     moonlight
     obs
-    (minecraft.overrideAttrs (oldAttrs: {
-      src = pkgs.fetchurl {
-        url = builtins.head oldAttrs.src.urls;
-        hash = "sha256-gsWdmzKFAX4tbRsDX1OUFcH+tQ14daTwNMwprycye0g=";
-      };
-    }))
+    pngpaste
+    # (minecraft.overrideAttrs (oldAttrs: {
+    #   src = pkgs.fetchurl {
+    #     url = builtins.head oldAttrs.src.urls;
+    #     hash = "sha256-gsWdmzKFAX4tbRsDX1OUFcH+tQ14daTwNMwprycye0g=";
+    #   };
+    # }))
     # (parsec.overrideAttrs (oldAtters: {
     #   src = pkgs.fetchurl {
     #     url = builtins.head oldAtters.src.urls;
