@@ -10,6 +10,7 @@ in
     jetbrains-toolbox
     slack
     postman
+    code-cursor
   ];
 
   programs = {

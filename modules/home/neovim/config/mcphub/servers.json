@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "Figma Dev Mode MCP": {
+    "figma": {
       "url": "http://127.0.0.1:3845/mcp"
     },
     "blender": {
