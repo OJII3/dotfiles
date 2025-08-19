@@ -16,7 +16,7 @@ modmap:
       Henkan:
         held: Alt_R
         alone: Space
-      Alt_R: FN
+      Alt_R: Henkan
       Katakana: Henkan
 
 keymap:
@@ -31,6 +31,10 @@ keymap:
       SUPER-f: Ctrl-f
       SUPER-z: Ctrl-z
       SUPER-SHIFT-z: Ctrl-SHIFT-z
+      Ctrl-b: left
+      Ctrl-F: right
+      Ctrl-p: up
+      Ctrl-n: down
 
   - name: Line Move
     application:
@@ -39,3 +43,12 @@ keymap:
       SUPER-a: Ctrl-a
       CONTROL-a: home
       CONTROL-e: end
+
+  - name: Mac Like Chrome
+    application:
+      only: google-chrome
+    remap:
+      SUPER-t: Ctrl-t
+      SUPER-l: Ctrl-l
+      SUPER-w: Ctrl-w
+      SUPER-SHIFT-t: Ctrl-SHIFT-t
