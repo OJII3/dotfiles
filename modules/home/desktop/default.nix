@@ -8,6 +8,7 @@
     ./uwsm
     ./waybar
     ./wlogout
+    ./xremap
   ];
 
   xdg.portal.enable = true;

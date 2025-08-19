@@ -3,7 +3,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    xremap.url = "github:xremap/nix-flake";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     mcp-hub.url = "github:ravitemer/mcp-hub";
     sops-nix.url = "github:Mic92/sops-nix";

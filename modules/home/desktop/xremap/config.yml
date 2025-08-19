@@ -1,0 +1,41 @@
+---
+keypress_delay_ms: 20
+
+modmap:
+  - name: General
+    remap:
+      CapsLock:
+        held: Ctrl_L
+        alone: Esc
+      Muhenkan:
+        held: Alt_R
+        alone: Space
+      Space:
+        held: Alt_R
+        alone: Space
+      Henkan:
+        held: Alt_R
+        alone: Space
+      Alt_R: FN
+      Katakana: Henkan
+
+keymap:
+  - name: Mac Like SUPER
+    application:
+      not: [org.wezfurlong.wezterm, kitty]
+    remap:
+      SUPER-c: Ctrl-c
+      SUPER-x: Ctrl-x
+      SUPER-v: Ctrl-v
+      SUPER-s: Ctrl-s
+      SUPER-f: Ctrl-f
+      SUPER-z: Ctrl-z
+      SUPER-SHIFT-z: Ctrl-SHIFT-z
+
+  - name: Line Move
+    application:
+      not: [org.wezfurlong.wezterm, code-url-handler, kitty]
+    remap:
+      SUPER-a: Ctrl-a
+      CONTROL-a: home
+      CONTROL-e: end
