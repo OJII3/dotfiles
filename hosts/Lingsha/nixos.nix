@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports =
     [
@@ -21,11 +21,7 @@
       ../../modules/nixos/desktop/waydroid.nix
 
       ./hardware-configuration.nix
-    ]
-    ++ (with inputs.nixos-hardware.nixosModules; [
-      # lenovo-thinkpad-e14-amd
-      common-pc-laptop
-    ]);
+    ];
 
   # Karnel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
@@ -42,22 +38,10 @@
     options rtw89pci disable_aspm_l1=y
     options rtw89pci disable_aspm_l1ss=y
   '';
-  services.tlp.settings = {
-    RADEON_DPM_PERF_LEVEL_ON_AC = "high"; # dynamic power management, default: auto
-    RADEON_DPM_PERF_LEVEL_ON_BAT = "auto"; # dynamic power management, default: auto
-    RADEON_DPM_STATE_ON_AC = "performance";
-    RADEON_DPM_STATE_ON_BAT = "battery";
-    AMDGPU_ABM_LEVEL_ON_BAT = 3; # adaptive backlight, default: 1
-    USB_DENYLIST = "32c2:0066 ";
-    RUNTIME_PM_DISABLE = "02:00.0"; # permanently disable wwan device power management
-  };
   hardware.amdgpu.amdvlk.enable = true;
   hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.tlp.settings = {
-    WIFI_PWR_ON_BAT = "off";
-  };
   services.fprintd = {
     enable = true;
   };
@@ -65,15 +49,15 @@
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
 
-  systemd.services.hibernate-recovery = {
-    description = "Hibernate Recovery";
-    wantedBy = [ "hibernate.target" ];
-    script = ''
-      !/bin/sh
-      modprobe -r rtw89_8852ce
-      modprobe rtw89_8852ce
-    '';
-  };
+  # systemd.services.hibernate-recovery = {
+  #   description = "Hibernate Recovery";
+  #   wantedBy = [ "hibernate.target" ];
+  #   script = ''
+  #     !/bin/sh
+  #     modprobe -r rtw89_8852ce
+  #     modprobe rtw89_8852ce
+  #   '';
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
