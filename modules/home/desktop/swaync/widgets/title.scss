@@ -1,0 +1,13 @@
+.widget-title {
+  & > label {
+    margin-right: $margin;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  & > button {
+    margin-left: $margin;
+    border-radius: var(--border-radius);
+    font-family: Orbitron, sans-serif;
+  }
+}
