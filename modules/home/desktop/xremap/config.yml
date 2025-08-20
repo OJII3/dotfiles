@@ -7,23 +7,29 @@ modmap:
       CapsLock:
         held: Ctrl_L
         alone: Esc
+        alone_timeout_millis: 500
       Muhenkan:
         held: Alt_R
         alone: Space
+        alone_timeout_millis: 500
       Space:
         held: Alt_R
         alone: Space
+        alone_timeout_millis: 500
       Henkan:
         held: Alt_R
         alone: Space
+        alone_timeout_millis: 500
       Alt_R: Henkan
       Katakana: Henkan
+      Hiragana: Henkan
 
 keymap:
-  - name: Mac Like SUPER
+  - name: Mac Like General
     application:
       not: [org.wezfurlong.wezterm, kitty]
     remap:
+      SUPER-a: Ctrl-a
       SUPER-c: Ctrl-c
       SUPER-x: Ctrl-x
       SUPER-v: Ctrl-v
@@ -35,18 +41,12 @@ keymap:
       Ctrl-F: right
       Ctrl-p: up
       Ctrl-n: down
-
-  - name: Line Move
-    application:
-      not: [org.wezfurlong.wezterm, code-url-handler, kitty]
-    remap:
-      SUPER-a: Ctrl-a
-      CONTROL-a: home
-      CONTROL-e: end
+      Ctrl-a: home
+      Ctrl-e: end
 
   - name: Mac Like Chrome
     application:
-      only: google-chrome
+      only: [google-chrome]
     remap:
       SUPER-t: Ctrl-t
       SUPER-l: Ctrl-l
