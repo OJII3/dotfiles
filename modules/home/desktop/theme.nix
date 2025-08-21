@@ -7,7 +7,7 @@
     };
     cursorTheme = {
       name = "miku-cursor-linux";
-      size = 42;
+      size = 36;
     };
     iconTheme = {
       # package = pkgs.tau-hydrogen;

@@ -11,6 +11,7 @@
       slurp
       tailscale-systray
       wl-clipboard
+      rose-pine-hyprcursor
     ];
 
   wayland.windowManager.hyprland =

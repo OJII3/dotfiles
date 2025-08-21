@@ -1,0 +1,325 @@
+/* @define-color foreground rgb(255, 14, 130); */
+/* @define-color background rgb(25, 0, 46); */
+/* @define-color background-alpha rgba(25, 0, 46, 0.8); */
+/* @define-color accent rgba(255, 14, 130, 0.8); */
+/* @define-color current-line rgb(36, 0, 65); */
+/* @define-color comment rgb(144, 0, 72); */
+/**/
+/* @define-color aux-blue rgb(57, 158, 230); */
+/* @define-color aux-yellow rgb(255, 215, 0); */
+/* @define-color aux-red rgb(215, 0, 64); */
+/* @define-color aux-orange rgb(255, 69, 0); */
+
+:root {
+  --foreground: rgba(245, 249, 255);
+  --background: #333333aa;
+  --background-alpha: #333333aa;
+  --accent: #7ff3fbff;
+  --current-line: #333333cc;
+  --radius-box: 8px;
+
+  --aux-blue: rgb(57, 158, 230);
+  --aux-yellow: rgb(255, 215, 0);
+  --aux-red: rgb(215, 0, 64);
+  --aux-orange: rgb(255, 69, 0);
+}
+
+* {
+  color: var(--foreground);
+  font-size: 15px;
+  font-family:
+    Noto Sans CJK JP,
+    sans-serif;
+}
+
+.notification-row {
+  transition: all 200ms ease;
+  outline: none;
+  margin-bottom: 4px;
+  margin-right: 13px;
+  margin-top: 4px;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background: transparent;
+  outline: none;
+}
+
+.notification-row:focus .notification,
+.notification-row:hover .notification {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--accent);
+  background: var(--current-line);
+}
+
+.control-center .notification {
+  box-shadow: none;
+}
+
+.control-center .notification-row {
+  opacity: 1;
+  margin: -5px;
+}
+
+.notification {
+  transition: all 200ms ease;
+  background: var(--background-alpha);
+  border-radius: var(--radius-box);
+  margin: 12px 7px 0px 7px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.8);
+  padding: 0;
+}
+
+.low {
+}
+.normal {
+}
+.critical {
+  border-color: var(--aux-red);
+}
+
+.notification-content {
+  background: transparent;
+  padding: 4px 12px;
+  border-radius: 16px;
+  min-height: 48px;
+}
+
+.close-button {
+  background: var(--current-line);
+  color: var(--foreground);
+  text-shadow: none;
+  padding: 2px;
+  border-radius: 100%;
+  margin-top: 10px;
+  margin-right: 5px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: var(--accent);
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  /* background: var(--current-line); */
+  /* border: 1px solid var(--accent); */
+  color: var(--foreground);
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: var(--current-line);
+}
+
+.notification-default-action {
+  border-radius: var(--radius-box);
+}
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 8px;
+  border-right: 1px solid var(--accent);
+}
+
+.image {
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: var(--foreground);
+  border-radius: 8px;
+}
+
+.summary {
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent;
+  color: var(--foreground);
+  text-shadow: none;
+  font-family: Orbitron, sans-serif;
+}
+
+.time {
+  font-size: 12px;
+  font-weight: bold;
+  background: transparent;
+  color: var(--foreground);
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 15px;
+  font-weight: normal;
+  background: transparent;
+  color: var(--foreground);
+  text-shadow: none;
+}
+
+/* The "Notifications" and "Do Not Disturb" text widget */
+.top-action-title {
+  color: var(--foreground);
+  text-shadow: none;
+  font-size: 1.5rem;
+  font-family: Orbitron, sans-serif;
+}
+
+.control-center-clear-all {
+  color: var(--foreground);
+  text-shadow: none;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: none;
+  border-radius: var(--radius-box);
+  font-family: Orbitron, sans-serif;
+  font-weight: bold;
+}
+
+.control-center-clear-all:hover {
+  background: var(--background);
+}
+
+.control-center-dnd {
+  border-radius: 8px;
+  background: var(--background);
+  border: 1px solid var(--accent);
+  box-shadow: none;
+}
+
+.control-center-dnd:checked {
+  background: var(--accent);
+}
+
+.control-center-dnd slider {
+  background: var(--background);
+  border-radius: 8px;
+}
+
+.control-center {
+  background: var(--background-alpha);
+  background-clip: border-box;
+  padding: 4px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  color: var(--foreground);
+  border-left: 2px solid var(--accent);
+  border-radius: 0;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: transparent;
+}
+
+/*** Widgets ***/
+
+/* Title widget */
+.widget-title {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+.widget-title > button {
+  font-size: initial;
+  color: var(--foreground);
+  text-shadow: none;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: none;
+  border-radius: var(--radius-box);
+}
+.widget-title > button:hover {
+  background: var(--background);
+}
+
+/* DND widget */
+.widget-dnd {
+  margin: 8px;
+  font-size: 1.1rem;
+}
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 8px;
+  background: var(--background);
+  border: 1px solid var(--accent);
+  box-shadow: none;
+}
+.widget-dnd > switch:checked {
+  background: var(--accent);
+}
+.widget-dnd > switch slider {
+  background: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--foreground);
+}
+
+/* Label widget */
+.widget-label {
+  margin: 8px;
+}
+.widget-label > label {
+  font-size: 1.1rem;
+}
+
+/* Mpris widget */
+.widget-mpris {
+  /* The parent to all players */
+}
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
+  background-color: var(--background);
+  border-radius: 8px;
+  border: 2px solid var(--accent);
+  color: var(--foreground);
+}
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.widget-mpris-subtitle {
+  font-size: 1.1rem;
+}
+
+/*
+Changed the colors of the original source file
+Lastly modified on 8/5/2025 by Dimitrios Psaroudakis
+*/

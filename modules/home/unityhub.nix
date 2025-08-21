@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, pkgs-stable, ... }:
 let
   extra-path = with pkgs; [
     # Add any extra binaries you want accessible to Rider here
@@ -32,7 +32,8 @@ in
 {
   home.packages = [
     rider
-    (pkgs.callPackage ../packages/custom-unityhub.nix {})
+    pkgs-stable.unityhub
+    # (pkgs.callPackage ../packages/custom-unityhub.nix {})
   ];
 
   home.file.".local/share/JetBrains/Toolbox/apps/rider" = {

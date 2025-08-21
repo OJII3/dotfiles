@@ -1,11 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/ErikReider/SwayNotificationCenter/refs/heads/main/src/configSchema.json",
   "control-center-layer": "top",
-  "control-center-margin-bottom": 10,
-  "control-center-margin-left": 10,
-  "control-center-margin-right": 10,
-  "control-center-margin-top": 10,
-  "cssPriority": "highest",
+  "control-center-margin-bottom": 0,
+  "control-center-margin-left": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-top": 0,
   "ignoreMouse": true,
   "layer": "overlay",
   "layer-shell": true,
@@ -16,7 +15,7 @@
   "notification-icon-size": 64,
   "notification-inline-replies": false,
   "positionY": "top",
-  "widgets": ["inhibitors", "title", "menubar", "mpris", "dnd", "notifiations"],
+  "widgets": ["inhibitors", "title", "menubar", "dnd", "notifiations"],
   "widget-config": {
     "mpris": {
       "image-size": 96,
