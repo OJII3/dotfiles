@@ -17,10 +17,4 @@
     enable = true;
     withUWSM = true;
   };
-
-  hardware.uinput.enable = true;
-  boot.kernelModules = [ "uinput" ];
-  services.udev.extraRules = ''
-    KERNEL=="uinput", GROUP="input", TAG+="uaccess"
-  '';
 }
