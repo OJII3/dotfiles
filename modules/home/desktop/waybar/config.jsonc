@@ -4,14 +4,25 @@
   "height": 32,
   "spacing": 10,
   "margin-bottom": 0,
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
   "modules-left": ["custom/power", "hyprland/workspaces", "hyprland/window"],
   "modules-center": ["mpris"],
   "modules-right": ["tray", "wireplumber", "backlight", "battery", "clock", "custom/notification"],
   "hyprland/workspaces": {
-    "format": "{icon}",
+      "format": "{icon}:{windows}",
+      "format-window-separator": " ",
+      "workspace-taskbar": {
+          "enable": true,
+          "update-active-window": true,
+          "format": "{icon}",
+          "icon-size": 16
+      }
   },
   "hyprland/window": {
-    "separate-outputs": true,
+    "format": "{class}",
+    "separate-outputs": true
   },
   "tray": {
     // "icon-size": 21,
@@ -87,6 +98,16 @@
       "paused": " ",
       "stopped": " "
     },
+  },
+  "bluetooth": {
+    "format": "",
+    "format-connected": " {num_connections}",
+    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "overskride"
   },
   "custom/power": {
     "format" : "󱄅",

@@ -12,6 +12,10 @@
   background: transparent;
 }
 
+#window {
+  padding: 4rem;
+}
+
 #match.activatable {
   border-radius: 8px;
   padding: 0.3rem 0.9rem;
@@ -32,9 +36,8 @@
 }
 
 #match:selected,
-#match:hover,
-#plugin:hover {
-  background: #ded1d1;
+#match:hover {
+  background: #cecbe6;
 }
 
 #entry {
@@ -61,7 +64,8 @@ list > #plugin:hover {
 
 box#main {
   background: #eeeeee;
-  box-shadow: #000 0 0 32px;
+  box-shadow: #666 0 0 24px;
   border-radius: 12px;
   padding: 0.3rem;
+  margin: 4rem;
 }

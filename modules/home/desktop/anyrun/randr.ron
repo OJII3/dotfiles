@@ -1,5 +1,5 @@
 //<Anyrun config dir>/randr.ron
 Config(
-  prefix: ":dp",
+  prefix: ":dp ",
   max_entries: 5, 
 )

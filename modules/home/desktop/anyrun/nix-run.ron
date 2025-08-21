@@ -1,0 +1,9 @@
+// <Anyrun config dir>/nix-run.ron
+Config(
+  prefix: ":nr ",
+  // Whether or not to allow unfree packages
+  allow_unfree: true,
+  // Nixpkgs channel to get the package list from
+  channel: "nixpkgs-unstable",
+  max_entries: 8,
+)

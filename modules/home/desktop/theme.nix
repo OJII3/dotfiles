@@ -1,9 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-stable, ... }: {
+  home.packages = [
+    pkgs-stable.colloid-icon-theme
+    pkgs-stable.colloid-gtk-theme
+  ];
+
   gtk = {
     enable = true;
     theme = {
       package = pkgs.canta-theme;
-      name = "Canta-dark";
+      name = "Colloid";
     };
     cursorTheme = {
       name = "miku-cursor-linux";
@@ -11,7 +16,7 @@
     };
     iconTheme = {
       # package = pkgs.tau-hydrogen;
-      name = "Canta";
+      name = "Colloid";
     };
   };
 

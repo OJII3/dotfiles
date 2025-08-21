@@ -69,6 +69,7 @@
   border-radius: var(--radius-box);
   margin: 12px 7px 0px 7px;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--accent);
   padding: 0;
 }
 
@@ -82,7 +83,7 @@
 
 .notification-content {
   background: transparent;
-  padding: 4px 12px;
+  padding: 8px 12px;
   border-radius: 16px;
   min-height: 48px;
 }
@@ -183,6 +184,7 @@
   background: transparent;
   color: var(--foreground);
   text-shadow: none;
+  margin-top: 4px;
 }
 
 /* The "Notifications" and "Do Not Disturb" text widget */
