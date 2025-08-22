@@ -6,7 +6,7 @@
 " Source your .vimrc
 source ~/.vimrc
 
-set clipboard=unnamed
+set clipboard+=unnamed
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
@@ -53,5 +53,3 @@ nmap :w <Action>(SaveAll)<Action>(ReformatCode)
 nmap <leader>g <Action>(ShowIntentionActions)
 nmap <leader>h <Action>(ShowQuickDocInfo)
 nmap <leader>o <Action>(OpenType)
-
-set clipboard^=ideaput
