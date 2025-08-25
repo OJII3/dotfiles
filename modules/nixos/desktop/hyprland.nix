@@ -30,7 +30,7 @@
             space = "overload(meta, space)";
             muhenkan = "overload(meta, space)";
             henkan = "overload(meta, space)";
-            rightalt = "overload(rightalt, henkan)";
+            rightalt = "overload(rightalt, hiragana_katakana)";
           };
         };
       };

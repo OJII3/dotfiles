@@ -43,22 +43,11 @@
   hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.fprintd = {
-    enable = true;
-  };
-
+  services.fprintd = { enable = true; };
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
 
-  # systemd.services.hibernate-recovery = {
-  #   description = "Hibernate Recovery";
-  #   wantedBy = [ "hibernate.target" ];
-  #   script = ''
-  #     !/bin/sh
-  #     modprobe -r rtw89_8852ce
-  #     modprobe rtw89_8852ce
-  #   '';
-  # };
+  services.sunshine.settings.output_name = 1; # HDMI-A-1
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
