@@ -23,4 +23,8 @@
   ];
 
   services.hypridle.enable = true;
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    exec-once = waydroid session start
+  '';
 }
