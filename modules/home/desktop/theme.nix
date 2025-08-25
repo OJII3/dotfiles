@@ -1,13 +1,8 @@
 { pkgs, pkgs-stable, ... }: {
-  home.packages = [
-    pkgs-stable.colloid-icon-theme
-    pkgs-stable.colloid-gtk-theme
-  ];
-
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.canta-theme;
+      package = pkgs-stable.colloid-gtk-theme;
       name = "Colloid";
     };
     cursorTheme = {
@@ -15,13 +10,14 @@
       size = 36;
     };
     iconTheme = {
-      # package = pkgs.tau-hydrogen;
+      package = pkgs-stable.colloid-icon-theme;
       name = "Colloid";
     };
   };
 
   qt = {
     enable = true;
+    style.package = pkgs-stable.colloid-kde;
     style.name = "kvantum";
   };
 

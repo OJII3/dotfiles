@@ -18,6 +18,8 @@
     withUWSM = true;
   };
 
+  qt.style = "kvantum";
+
   services.keyd = {
     enable = true;
     keyboards = {
@@ -28,6 +30,7 @@
             space = "overload(meta, space)";
             muhenkan = "overload(meta, space)";
             henkan = "overload(meta, space)";
+            rightalt = "overload(rightalt, henkan)";
           };
         };
       };
