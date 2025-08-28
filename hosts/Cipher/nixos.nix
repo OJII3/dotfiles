@@ -32,22 +32,41 @@
 
   # proxomox-ve host ip
   services.proxmox-ve = {
-    ipAddress = "192.168.0.100";
+    ipAddress = "192.168.8.20";
   };
+  services.proxmox-ve.bridges = [ "vmbr0" ];
+  systemd.network.networks."10-lan" = {
+    matchConfig.Name = [ "enp3s0" ];
+    networkConfig = {
+      Bridge = "vmbr0";
+    };
+  };
+  systemd.network.netdevs."vmbr0" = {
+    netdevConfig = {
+      Name = "vmbr0";
+      Kind = "bridge";
+    };
+  };
+  systemd.network.networks."10-lan-bridge" = {
+    matchConfig.Name = "vmbr0";
+    networkConfig = {
+      IPv6AcceptRA = true;
+      # DHCP = "ipv4";
+    };
+    addresses = [{ Address = "192.168.8.20/24"; }];
+    gateway = ["192.168.8.1"];
+    dns = [ "8.8.8.8" "1.1.1.1" ];
+    linkConfig.RequiredForOnline = "routable";
+  };
+
 
   # usual network settings
   networking.useNetworkd = true;
   networking.networkmanager.enable = false;
-  networking.interfaces."wlp1s0" = {
-    ipv4.addresses = [{
-      address = "192.168.0.100";
-      prefixLength = 24;
-    }];
-  };
-  networking.defaultGateway = {
-    interface = "wlp1s0";
-    address = "192.168.0.1";
-  };
+  # networking.defaultGateway = {
+  #   interface = "enp3s0";
+  #   address = "192.168.8.0";
+  # };
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking = {
     wireless.enable = true;
@@ -55,46 +74,6 @@
     wireless.networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
     wireless.networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
   };
-
-  # create bridge for mini dhcp server
-  systemd.network.netdevs."br0".netdevConfig = {
-    Name = "br0";
-    Kind = "bridge";
-  };
-  systemd.network.networks."00-br0" = {
-    matchConfig.Name = "br0";
-    networkConfig = {
-      Address = "10.42.0.1/24";
-      DHCPServer = "yes";
-    };
-    dhcpServerConfig = {
-      PoolOffset = 100;
-      PoolSize = 100;
-    };
-  };
-
-  # enp3s0 to br0
-  systemd.network.networks."20-enp3s0" = {
-    matchConfig.Name = "enp3s0";
-    networkConfig = { Bridge = "br0"; };
-  };
-
-  # vm taps to br0
-  systemd.network.networks."30-tap0" = {
-    matchConfig.Name = "tap*";
-    networkConfig = { Bridge = "br0"; };
-  };
-
-  # nat via wlp1s0
-  networking.nat = {
-    enable = true;
-    externalInterface = "wlp1s0";
-    internalInterfaces = [ "br0" ];
-  };
-
-  # open firewall for dhcp and dns
-  networking.firewall.allowedUDPPorts = [ 53 67 ];
-  networking.firewall.allowedTCPPorts = [ 53 ];
 
   # samba
   services.samba = {
@@ -150,3 +129,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
+
