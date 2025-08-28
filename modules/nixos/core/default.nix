@@ -10,7 +10,6 @@
     ./bluetooth.nix
     ./i18n.nix
     ./kdewallet.nix
-    ./networking
     ./security.nix
     ./services.nix
     ./ssh.nix

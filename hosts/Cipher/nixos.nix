@@ -8,13 +8,15 @@
     [
       ../../modules/nixos/core
       ../../modules/nixos/core/boot/systemd-boot.nix
-      ../../modules/nixos/core/networking
+      ../../modules/nixos/core/networking/base.nix
       ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/core/proxmox.nix
 
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/greetd/autologin.nix
       ../../modules/nixos/desktop/sunshine.nix
+
+      ../../modules/nixos/server/adguard.nix
 
       ./hardware-configuration.nix
     ]
@@ -35,6 +37,9 @@
     ipAddress = "192.168.8.20";
   };
   services.proxmox-ve.bridges = [ "vmbr0" ];
+
+  # networking
+  networking.useNetworkd = true;
   systemd.network.networks."10-lan" = {
     matchConfig.Name = [ "enp3s0" ];
     networkConfig = {
@@ -54,20 +59,11 @@
       # DHCP = "ipv4";
     };
     addresses = [{ Address = "192.168.8.20/24"; }];
-    gateway = ["192.168.8.1"];
+    gateway = [ "192.168.8.1" ];
     dns = [ "8.8.8.8" "1.1.1.1" ];
     linkConfig.RequiredForOnline = "routable";
   };
 
-
-  # usual network settings
-  networking.useNetworkd = true;
-  networking.networkmanager.enable = false;
-  # networking.defaultGateway = {
-  #   interface = "enp3s0";
-  #   address = "192.168.8.0";
-  # };
-  networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking = {
     wireless.enable = true;
     wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******

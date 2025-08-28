@@ -7,6 +7,7 @@
   imports =
     [
       ../../modules/nixos/core
+      ../../modules/nixos/core/networking
       ../../modules/nixos/core/boot/systemd-boot.nix
       ../../modules/nixos/core/cloudflare-warp.nix
       ../../modules/nixos/core/power/laptop.nix
