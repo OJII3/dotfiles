@@ -54,6 +54,8 @@
       # DHCP = "ipv4";
     };
     addresses = [{ Address = "192.168.8.20/24"; }];
+    gateway = ["192.168.8.1"];
+    dns = [ "8.8.8.8" "1.1.1.1" ];
     linkConfig.RequiredForOnline = "routable";
   };
 
@@ -61,6 +63,10 @@
   # usual network settings
   networking.useNetworkd = true;
   networking.networkmanager.enable = false;
+  # networking.defaultGateway = {
+  #   interface = "enp3s0";
+  #   address = "192.168.8.0";
+  # };
   networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   networking = {
     wireless.enable = true;
