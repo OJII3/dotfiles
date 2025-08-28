@@ -5,7 +5,7 @@ in
 {
   home.packages = with pkgs; [
     # ghostty # broken on darwin
-    pkgs-stable.blender
+    blender
     discord
     jetbrains-toolbox
     slack
