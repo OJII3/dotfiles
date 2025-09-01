@@ -20,6 +20,7 @@ in
     hyprpicker
     inkscape-with-extensions
     kdePackages.wrapQtAppsHook
+    krita
     libreoffice-qt
     moonlight-qt
     mpv
