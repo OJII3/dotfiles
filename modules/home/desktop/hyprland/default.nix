@@ -35,6 +35,14 @@
     recursive = true;
   };
 
+  services.hyprpolkitagent = {
+    enable = true;
+  };
+  systemd.user.services.hyprpolkitagent = {
+    Unit.After = [ "graphical-session.target" ];
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   systemd.user.targets.hyprland-session = {
     Unit = {
       Description = "Hyprland compositor session";
