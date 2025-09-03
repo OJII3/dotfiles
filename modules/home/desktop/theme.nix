@@ -3,7 +3,7 @@
     enable = true;
     theme = {
       package = pkgs-stable.colloid-gtk-theme;
-      name = "Colloid";
+      name = "Colloid-Dark";
     };
     cursorTheme = {
       name = "miku-cursor-linux";
@@ -11,7 +11,7 @@
     };
     iconTheme = {
       package = pkgs-stable.colloid-icon-theme;
-      name = "Colloid";
+      name = "Colloid-Dark";
     };
   };
 
