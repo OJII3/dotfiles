@@ -7,6 +7,7 @@
     lshw
     usbutils
     nix-index
+    comma
   ];
   environment.pathsToLink = [ "/share/zsh" ];
 

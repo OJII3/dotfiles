@@ -15,7 +15,7 @@
       ../../modules/nixos/desktop
       ../../modules/nixos/desktop/greetd/autologin.nix
       ../../modules/nixos/desktop/peripheral/keyboard.nix
-      ../../modules/nixos/desktop/peripheral/weylus.nix
+      # ../../modules/nixos/desktop/peripheral/weylus.nix
       ../../modules/nixos/desktop/sunshine.nix
       ../../modules/nixos/desktop/waydroid.nix
 
@@ -38,7 +38,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
+    open = true;
     nvidiaSettings = true;
     prime = {
       # sync.enable = true;
