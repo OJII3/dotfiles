@@ -19,7 +19,6 @@
       ../../modules/nixos/desktop/sunshine.nix
       ../../modules/nixos/desktop/greetd/tuigreet.nix
       ../../modules/nixos/desktop/waydroid.nix
-      ../../modules/nixos/desktop/peripheral/clight.nix
       ../../modules/nixos/desktop/peripheral/keyboard.nix
 
       ./hardware-configuration.nix
