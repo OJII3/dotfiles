@@ -17,7 +17,10 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = "*",
 	callback = function()
-		if string.match(vim.fn.getcwd(), "github.com/OJII3/procon", 1) then
+		if
+			string.match(vim.fn.getcwd(), "github.com/OJII3/procon", 1)
+			or string.match(vim.fn.getcwd(), "github.com/ojii3/procon", 1)
+		then
 			vim.cmd("Copilot disable")
 		end
 	end,
