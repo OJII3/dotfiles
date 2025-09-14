@@ -13,7 +13,6 @@
     # cloudflare-warp
     # docker
     # wireshark
-    bleunlock
     blockbench
     chatgpt
     figma
@@ -38,7 +37,7 @@
     (unity-hub.overrideAttrs (oldAttrs: {
       src = pkgs.fetchurl {
         url = builtins.head oldAttrs.src.urls;
-        hash = "sha256-vzZTeIfPkz5pryC5FSTyzzASpDRgzmYYd8wBaMJE0Co=";
+        hash = "sha256-1SrVqyGjgOko2rpNsCR0ZL6+7Xbgu2M8itSJeQ8+0Ic=";
       };
     }))
   ]);
