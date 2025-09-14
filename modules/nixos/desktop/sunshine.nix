@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.sunshine = {
     enable = true;
     openFirewall = true;
@@ -10,4 +11,3 @@
     wantedBy = [ "graphical.target" ];
   };
 }
-

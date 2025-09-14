@@ -4,29 +4,27 @@
 
 { pkgs, ... }:
 {
-  imports =
-    [
-      ../../modules/nixos/core
-      ../../modules/nixos/core/networking
-      ../../modules/nixos/core/boot/systemd-boot.nix
-      ../../modules/nixos/core/cloudflare-warp.nix
-      ../../modules/nixos/core/power/laptop.nix
-      ../../modules/nixos/core/suspend
-      ../../modules/nixos/core/virtualisation.nix
-      ../../modules/nixos/core/networking/networkmanager.nix
+  imports = [
+    ../../modules/nixos/core
+    ../../modules/nixos/core/networking
+    ../../modules/nixos/core/boot/systemd-boot.nix
+    ../../modules/nixos/core/cloudflare-warp.nix
+    ../../modules/nixos/core/power/laptop.nix
+    ../../modules/nixos/core/suspend
+    ../../modules/nixos/core/virtualisation.nix
+    ../../modules/nixos/core/networking/networkmanager.nix
 
-      ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/sunshine.nix
-      ../../modules/nixos/desktop/greetd/tuigreet.nix
-      ../../modules/nixos/desktop/waydroid.nix
-      ../../modules/nixos/desktop/peripheral/keyboard.nix
+    ../../modules/nixos/desktop
+    ../../modules/nixos/desktop/sunshine.nix
+    ../../modules/nixos/desktop/greetd/tuigreet.nix
+    ../../modules/nixos/desktop/waydroid.nix
+    ../../modules/nixos/desktop/peripheral/keyboard.nix
 
-      ./hardware-configuration.nix
-    ];
+    ./hardware-configuration.nix
+  ];
 
   # Karnel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-
 
   # Hardware Specific Options
   boot.kernelParams = [
@@ -43,7 +41,9 @@
   hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.fprintd = { enable = true; };
+  services.fprintd = {
+    enable = true;
+  };
   security.pam.services.hyprlock.fprintAuth = true;
   security.pam.services.login.fprintAuth = true;
 
@@ -57,5 +57,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-
-

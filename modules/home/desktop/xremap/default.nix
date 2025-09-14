@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   systemd.user.services.xremap = {
     Unit = {
       Description = "XRemap Service";

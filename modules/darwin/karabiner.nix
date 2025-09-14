@@ -95,8 +95,11 @@ in
       managedBy = "services.karabiner-elements.enable";
     };
 
-    environment.userLaunchAgents."org.pqrs.karabiner.agent.karabiner_grabber.plist".source = "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.agent.karabiner_grabber.plist";
-    environment.userLaunchAgents."org.pqrs.karabiner.agent.karabiner_observer.plist".source = "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.agent.karabiner_observer.plist";
-    environment.userLaunchAgents."org.pqrs.karabiner.karabiner_console_user_server.plist".source = "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.karabiner_console_user_server.plist";
+    environment.userLaunchAgents."org.pqrs.karabiner.agent.karabiner_grabber.plist".source =
+      "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.agent.karabiner_grabber.plist";
+    environment.userLaunchAgents."org.pqrs.karabiner.agent.karabiner_observer.plist".source =
+      "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.agent.karabiner_observer.plist";
+    environment.userLaunchAgents."org.pqrs.karabiner.karabiner_console_user_server.plist".source =
+      "${cfg.package}/Library/LaunchAgents/org.pqrs.karabiner.karabiner_console_user_server.plist";
   };
 }

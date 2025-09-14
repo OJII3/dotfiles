@@ -1,4 +1,5 @@
-{ pkgs, pkgs-stable, ... }: {
+{ pkgs, pkgs-stable, ... }:
+{
   gtk = {
     enable = true;
     theme = {
@@ -25,4 +26,3 @@
     enable = true;
   };
 }
-

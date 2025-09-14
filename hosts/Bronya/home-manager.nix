@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ../../modules/home
     ../../modules/home/apps/linux.nix
@@ -32,4 +33,3 @@
     # export LIBVA_DRIVER_NAME=nvidia
   '';
 }
-

@@ -1,11 +1,16 @@
-{ pkgs, lib, pkgs-stable, ... }:
+{
+  pkgs,
+  lib,
+  pkgs-stable,
+  ...
+}:
 let
   extra-path = with pkgs; [
     # Add any extra binaries you want accessible to Rider here
     dotnet-sdk
   ];
 
-  extra-lib = with pkgs;[
+  extra-lib = with pkgs; [
     # Add any extra libraries you want accessible to Rider here
   ];
 
@@ -26,7 +31,8 @@ let
       shopt -s extglob
       ln -s $out/rider/!(bin) $out/
       shopt -u extglob
-    '' + attrs.postInstall or "";
+    ''
+    + attrs.postInstall or "";
   });
 in
 {

@@ -1,7 +1,12 @@
 inputs:
 let
   mkNixosSystem =
-    { system, hostname, username, modules }:
+    {
+      system,
+      hostname,
+      username,
+      modules,
+    }:
     inputs.nixpkgs.lib.nixosSystem {
       inherit system modules;
       specialArgs = {
@@ -10,7 +15,12 @@ let
     };
 
   mkHomeManagerConfiguration =
-    { system, username, overlays, modules }:
+    {
+      system,
+      username,
+      overlays,
+      modules,
+    }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
         inherit system overlays;
@@ -31,8 +41,7 @@ let
         {
           home = {
             inherit username;
-            homeDirectory =
-              "${if system == "aarch64-darwin" then "/Users" else "/home"}/${username}";
+            homeDirectory = "${if system == "aarch64-darwin" then "/Users" else "/home"}/${username}";
             stateVersion = "24.11";
           };
           programs.home-manager.enable = true;
@@ -41,7 +50,12 @@ let
     };
 
   mkDarwinSystem =
-    { system, hostname, username, modules }:
+    {
+      system,
+      hostname,
+      username,
+      modules,
+    }:
     inputs.nix-darwin.lib.darwinSystem {
       inherit system;
       modules = modules ++ [
@@ -60,7 +74,9 @@ let
     inputs.nix-on-droid.lib.nixOnDroidConfiguration {
       pkgs = import inputs.nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+        };
       };
       inherit modules;
     };
@@ -149,4 +165,3 @@ in
     };
   };
 }
-

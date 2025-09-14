@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   home.packages = with pkgs; [
     rink
   ];
@@ -19,4 +20,3 @@
     }
   ];
 }
-

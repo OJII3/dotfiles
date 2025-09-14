@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     wireshark
     whois
@@ -8,4 +9,3 @@
     ethtool
   ];
 }
-

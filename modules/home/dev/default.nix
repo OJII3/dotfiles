@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     # utilities
     bat
@@ -42,4 +43,3 @@
     # uv
   ];
 }
-    
