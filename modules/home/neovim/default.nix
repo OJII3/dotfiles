@@ -40,8 +40,7 @@
       hyprls
       lua-language-server
       nil
-      nixpkgs-fmt
-      nixpkgs-lint
+      nixfmt
       # eslint
       nodePackages.prettier
       pyright

@@ -23,7 +23,8 @@ return {
 		-- local eslint_linter = require("efmls-configs.linters.eslint")
 		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
-		local biome = require("efmls-configs.formatters.biome")
+		-- local biome = require("efmls-configs.formatters.biome")
+		local nixfmt = require("efmls-configs.formatters.nixfmt")
 		-- Python
 		local ruff = require("efmls-configs.formatters.ruff")
 		local black = require("efmls-configs.formatters.black")
@@ -71,6 +72,7 @@ return {
 				"latex",
 				"lua",
 				"markdown",
+				"nix",
 				"python",
 				"rust",
 				"sh",
@@ -78,7 +80,6 @@ return {
 				"typescriptreact",
 				"typst",
 				"yaml",
-				"nix",
 			},
 			settings = {
 				rootMarkers = { ".git/" },
@@ -95,6 +96,7 @@ return {
 					latex = { latexindent },
 					lua = { stylua },
 					markdown = { textlint },
+					nix = { nixfmt },
 					python = { ruff, black, isort, autopep8, flake8, mypy },
 					rust = { rustfmt },
 					sh = { shellcheck },
@@ -102,17 +104,6 @@ return {
 					typescriptreact = { prettier, biome },
 					typst = { typstyle },
 					yaml = { yamllint },
-					nix = {
-						{
-							lintCommand = "nix-linter",
-							lintFormats = {
-								"%f:%l:%c: %m",
-							},
-							lintStdin = true,
-							formatCommand = "nixpkgs-fmt",
-							formatStdin = true,
-						},
-					},
 				},
 			},
 		})
