@@ -19,6 +19,7 @@
     ../../modules/nixos/desktop/greetd/tuigreet.nix
     ../../modules/nixos/desktop/waydroid.nix
     ../../modules/nixos/desktop/peripheral/keyboard.nix
+    ../../modules/nixos/desktop/peripheral/vr.nix
 
     ./hardware-configuration.nix
   ];

@@ -24,7 +24,6 @@ in
     inkscape-with-extensions
     kdePackages.wrapQtAppsHook
     krita
-    immersed
     libreoffice-qt
     moonlight-qt
     mpv
