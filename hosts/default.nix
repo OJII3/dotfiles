@@ -90,6 +90,7 @@ in
       username = "ojii3";
       modules = [
         ./Bronya/nixos.nix
+        inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
       ];
     };
     Lingsha = mkNixosSystem {
@@ -98,6 +99,7 @@ in
       username = "ojii3";
       modules = [
         ./Lingsha/nixos.nix
+        inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
       ];
     };
     Cipher = mkNixosSystem {
