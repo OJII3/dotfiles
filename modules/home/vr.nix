@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   xdg.configFile."openvr/openvrpaths.vrpath".text = ''
     {
       "config" :
