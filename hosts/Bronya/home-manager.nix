@@ -19,6 +19,7 @@
     ../../modules/home/sops.nix
     ../../modules/home/terminal/kitty
     ../../modules/home/unityhub.nix
+    ../../modules/home/vr.nix
     ../../modules/home/zsh
   ];
 

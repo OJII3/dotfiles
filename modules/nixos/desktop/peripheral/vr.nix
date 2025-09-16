@@ -2,8 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
     wlx-overlay-s
-    immersed
   ];
+  programs.immersed.enable = true;
 
   # openxr
   services.monado = {
