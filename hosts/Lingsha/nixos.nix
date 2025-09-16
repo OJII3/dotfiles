@@ -34,6 +34,10 @@
     "acpi_backlight=native"
     "thinkpad_acpi.fan_control=1"
   ];
+  boot.extraModulePackages = with pkgs; [
+    linuxKernel.packages.linux_zen.v4l2loopback
+  ];
+  boot.kernelModules = [ "v4l2loopback" ];
   boot.extraModprobeConfig = ''
     options rtw89pci disable_aspm_l1=y
     options rtw89pci disable_aspm_l1ss=y
