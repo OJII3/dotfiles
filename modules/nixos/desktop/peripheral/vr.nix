@@ -23,4 +23,6 @@
       vaapiVdpau
     ];
   };
+
+  boot.extraModulePackages = [ pkgs.linuxKernel.packages.linux_zen.v4l2loopback ];
 }
