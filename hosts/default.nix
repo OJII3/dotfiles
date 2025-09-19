@@ -93,6 +93,15 @@ in
         inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
       ];
     };
+    Cyrene = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "Cyrene";
+      username = "ojii3";
+      modules = [
+        inputs.nixos-wsl.nixosModules.default
+        ./Cyrene/nixos-wsl.nix
+      ];
+    };
     Lingsha = mkNixosSystem {
       system = "x86_64-linux";
       hostname = "Lingsha";
@@ -120,6 +129,12 @@ in
       username = "ojii3";
       overlays = [ ];
       modules = [ ./Bronya/home-manager.nix ];
+    };
+    "ojii3@Cyrene" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Cyrene/home-manager.nix ];
     };
     "ojii3@Lingsha" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
