@@ -12,11 +12,12 @@
       ../../modules/nixos/core/virtualisation.nix
       ../../modules/nixos/core/proxmox.nix
 
-      ../../modules/nixos/desktop
-      ../../modules/nixos/desktop/greetd/autologin.nix
-      ../../modules/nixos/desktop/sunshine.nix
+      # ../../modules/nixos/desktop
+      # ../../modules/nixos/desktop/greetd/autologin.nix
+      # ../../modules/nixos/desktop/sunshine.nix
 
       ../../modules/nixos/server/adguard.nix
+      ../../modules/nixos/server/autologin.nix
 
       ./hardware-configuration.nix
     ]
@@ -42,6 +43,12 @@
   networking.useNetworkd = true;
   systemd.network.networks."10-lan" = {
     matchConfig.Name = [ "enp3s0" ];
+    networkConfig = {
+      Bridge = "vmbr0";
+    };
+  };
+  systemd.network.networks."20-lan" = {
+    matchConfig.Name = [ "tap*" ];
     networkConfig = {
       Bridge = "vmbr0";
     };
