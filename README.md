@@ -2,8 +2,11 @@
 
 ## Hosts
 
-- **Bronya**: Desktop with Gen 13th Core i5 & Nvidia RTX 3060
+- **Bronya**: Desktop with Gen 13th Core i5 & Nvidia RTX 3060 (Currently Decommissioned)
     - `nixos`
+    - `home-manager`
+- **Cyrene**: Desktop with Gen 13th Core i5 & Nvidia RTX 3060
+    - `nixos-wsl`
     - `home-manager`
 - **Cipher**: GMKtec G3 Plus
     - `nixos`
@@ -11,7 +14,7 @@
 - **Himeko**: MacBook Pro M2
     - `nix-darwin`
     - `home-manager`
-- **Lingsha**: Thinkpad E14 Gen 6
+- **Lingsha**: Thinkpad E14 Gen 6 (Dual Boot)
     - `nixos`
     - `home-manager`
 - **SilverWolf**: Xiaomi Pad 6s Pro
