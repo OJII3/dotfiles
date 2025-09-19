@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     tig
     delta
@@ -15,28 +16,47 @@
       "**/.mypy_cache"
       "**/.ruff_cache"
       ".direnv"
-      ".DS_Store"
+      "**/.DS_Store"
     ];
     extraConfig = {
-      push = { autoSetupRemote = true; };
-      pull = { rebase = false; };
-      init = { defaultBranch = "main"; };
-      user = { signingKey = "37547FAD690A6133"; };
-      commit = { gpgSign = true; };
-      ghq = { root = "~/src"; };
+      push = {
+        autoSetupRemote = true;
+      };
+      pull = {
+        rebase = false;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      user = {
+        signingKey = "37547FAD690A6133";
+      };
+      commit = {
+        gpgSign = true;
+      };
+      ghq = {
+        root = "~/src";
+      };
       # credential.helper = "${pkgs.ksshaskpass}/bin/ksshaskpass";
     };
   };
 
   programs.gh = {
     enable = true;
-    extensions = with pkgs; [ gh-markdown-preview gh-dash gh-copilot ];
+    extensions = with pkgs; [
+      gh-markdown-preview
+      gh-dash
+      gh-copilot
+    ];
     settings = {
       editor = "nvim";
     };
   };
 
   programs.zsh.zsh-abbr.abbreviations = {
+    # g = git is defined in zsh config
+    "gh pr c" = "gh pr create";
+    "gh pr m" = "gh pr merge";
     "git a" = "git add";
     "git b" = "git branch";
     "git c" = "git commit -m";
@@ -49,18 +69,16 @@
     "git l" = "git log";
     "git m" = "git merge";
     "git p" = "git pull";
-    "git repo" = "gh repo";
-    "git s" = "git status";
-    "git t" = "git tag";
-    "git w" = "git switch";
-    "git w-" = "git switch -c";
     "git pc" = "gh pr create";
     "git pm" = "gh pr merge";
     "git pr" = "gh pr";
     "git pv" = "gh pr view";
     "git release" = "gh release";
-    "gh pr c" = "gh pr create";
-    "gh pr m" = "gh pr merge";
+    "git repo" = "gh repo";
+    "git s" = "git status";
+    "git switch c" = "git switch -c";
+    "git t" = "git tag";
+    "git w" = "git switch";
   };
 
   home.file.".tigrc".source = ./.tigrc;

@@ -1,4 +1,5 @@
-{ inputs, ... }: {
+{ inputs, ... }:
+{
   nixpkgs.overlays = [
     inputs.proxmox-nixos.overlays."x86_64-linux"
   ];
@@ -16,4 +17,3 @@
     ];
   };
 }
-

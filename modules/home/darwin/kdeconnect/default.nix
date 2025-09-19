@@ -15,11 +15,11 @@ let
 
     installPhase = ''
       runHook preInstall
-      
+
       mkdir -p $out/Applications
       mkdir -p $out/bin
       cp -r "KDE Connect.app" $out/Applications/
-      
+
       runHook postInstall
     '';
 

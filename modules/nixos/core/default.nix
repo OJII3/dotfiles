@@ -22,7 +22,17 @@
     isNormalUser = true;
     description = "ojii3";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" "storage" "vboxusers" "wireshark" "dialout" "sys" "uucp" "input" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "storage"
+      "vboxusers"
+      "wireshark"
+      "dialout"
+      "sys"
+      "uucp"
+      "input"
+    ];
   };
 
   # Allow unfree packages
@@ -32,7 +42,10 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
     gc = {
       automatic = true;
@@ -41,4 +54,3 @@
     };
   };
 }
-

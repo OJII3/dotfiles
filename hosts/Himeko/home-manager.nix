@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ ... }:
+{
   imports = [
     ../../modules/home
     ../../modules/home/ai/claude.nix

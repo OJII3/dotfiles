@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.fwupd = {
     enable = true;
   };

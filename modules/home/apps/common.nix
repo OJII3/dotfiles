@@ -10,6 +10,7 @@ in
     jetbrains-toolbox
     slack
     postman
+    immersed
   ];
 
   programs = {
@@ -19,4 +20,3 @@ in
     firefox.enable = true;
   };
 }
-

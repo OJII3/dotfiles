@@ -1,4 +1,12 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}:
+let
+  clangdir = if pkgs.stdenv.isDarwin then "Library/Preferences/clangd" else ".config/clangd";
+in
+{
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -40,8 +48,7 @@
       hyprls
       lua-language-server
       nil
-      nixpkgs-fmt
-      nixpkgs-lint
+      nixfmt
       # eslint
       nodePackages.prettier
       pyright
@@ -67,22 +74,18 @@
   };
 
   home.file.".config/nvim" = {
-    source = ./config/nvim;
+    source = ./nvim;
     recursive = true;
   };
+  home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
 
-  home.file.".config/mcphub/servers.json".source = ./config/mcphub/servers.json;
-
+  # for skkeleton
   home.file.".skk" = {
     source = "${pkgs.skkDictionaries.l}/share/skk";
     recursive = true;
   };
 
-  home.file.".clang-tidy".source = ./config/.clang-tidy;
-  home.file.".clang-format".source = ./config/.clang-format;
-  home.file.".config/clangd/config.yaml".source = ./config/clangd/config.yaml;
-  home.file."Library/Preferences/clangd/config.yaml".source = ./config/clangd/config.yaml;
-
-  home.file.".ideavimrc".source = ./config/.ideavimrc;
+  home.file.".clang-tidy".source = ./.clang-tidy;
+  home.file.".clang-format".source = ./.clang-format;
+  home.file."${clangdir}/config.yaml".source = ./clangd/config.yaml;
 }
-

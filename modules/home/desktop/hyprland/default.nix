@@ -1,35 +1,34 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs;
-    [
-      brightnessctl
-      grim
-      hyprpicker
-      hyprpolkitagent
-      libnotify
-      networkmanagerapplet
-      playerctl
-      slurp
-      tailscale-systray
-      wl-clipboard
-      rose-pine-hyprcursor
-    ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    brightnessctl
+    grim
+    hyprpicker
+    hyprpolkitagent
+    libnotify
+    networkmanagerapplet
+    playerctl
+    slurp
+    tailscale-systray
+    wl-clipboard
+    rose-pine-hyprcursor
+  ];
 
-  wayland.windowManager.hyprland =
-    {
-      enable = true;
-      systemd.enable = false; # for uwsm
-      extraConfig = ''
-        ${builtins.readFile ./devices.conf}
-        ${builtins.readFile ./execs.conf}
-        ${builtins.readFile ./general.conf}
-        ${builtins.readFile ./keybinds.conf}
-        ${builtins.readFile ./rules.conf}
-        ${builtins.readFile ./plugins.conf}
-      '';
-      plugins = [
-        pkgs.hyprlandPlugins.hyprbars
-      ];
-    };
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = false; # for uwsm
+    extraConfig = ''
+      ${builtins.readFile ./devices.conf}
+      ${builtins.readFile ./execs.conf}
+      ${builtins.readFile ./general.conf}
+      ${builtins.readFile ./keybinds.conf}
+      ${builtins.readFile ./rules.conf}
+      ${builtins.readFile ./plugins.conf}
+    '';
+    plugins = [
+      pkgs.hyprlandPlugins.hyprbars
+    ];
+  };
   home.file.".config/hypr/hyprland/scripts" = {
     source = ./scripts;
     recursive = true;

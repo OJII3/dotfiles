@@ -4,28 +4,22 @@
 
 { inputs, pkgs, ... }:
 {
-  imports =
-    [
-      ../../modules/nixos/core
-      ../../modules/nixos/core/boot/systemd-boot.nix
-      ../../modules/nixos/core/networking/base.nix
-      ../../modules/nixos/core/virtualisation.nix
-      ../../modules/nixos/core/proxmox.nix
+  imports = [
+    ../../modules/nixos/core
+    ../../modules/nixos/core/boot/systemd-boot.nix
+    ../../modules/nixos/core/networking/base.nix
+    ../../modules/nixos/core/virtualisation.nix
+    ../../modules/nixos/core/proxmox.nix
 
-      # ../../modules/nixos/desktop
-      # ../../modules/nixos/desktop/greetd/autologin.nix
-      # ../../modules/nixos/desktop/sunshine.nix
+    ../../modules/nixos/server/adguard.nix
+    ../../modules/nixos/server/autologin.nix
 
-      ../../modules/nixos/server/adguard.nix
-      ../../modules/nixos/server/autologin.nix
-
-      ./hardware-configuration.nix
-    ]
-    ++ (with inputs.nixos-hardware.nixosModules; [
-      common-cpu-intel
-      common-pc-ssd
-    ]);
-
+    ./hardware-configuration.nix
+  ]
+  ++ (with inputs.nixos-hardware.nixosModules; [
+    common-cpu-intel
+    common-pc-ssd
+  ]);
 
   # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
@@ -67,15 +61,22 @@
     };
     addresses = [{ Address = "192.168.8.20/24"; }];
     gateway = [ "192.168.8.1" ];
-    dns = [ "8.8.8.8" "1.1.1.1" ];
+    dns = [
+      "8.8.8.8"
+      "1.1.1.1"
+    ];
     linkConfig.RequiredForOnline = "routable";
   };
 
   networking = {
     wireless.enable = true;
     wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
-    wireless.networks."aterm-44cbf4-a" = { pskRaw = "ext:psk_home"; };
-    wireless.networks."aterm-44cbf4-g" = { pskRaw = "ext:psk_home"; };
+    wireless.networks."aterm-44cbf4-a" = {
+      pskRaw = "ext:psk_home";
+    };
+    wireless.networks."aterm-44cbf4-g" = {
+      pskRaw = "ext:psk_home";
+    };
   };
 
   # samba
@@ -132,4 +133,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-

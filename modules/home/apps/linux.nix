@@ -1,6 +1,9 @@
 { pkgs, pkgs-stable, ... }:
 let
-  chromeArgs = [ "--ozone-platform-hint=auto" "--enable-wayland-ime" ];
+  chromeArgs = [
+    "--ozone-platform-hint=auto"
+    "--enable-wayland-ime"
+  ];
 in
 {
   imports = [
@@ -48,4 +51,3 @@ in
     source = "${pkgs.kdePackages.plasma-browser-integration}/share/applications/org.kde.plasma.browser_integration.desktop";
   };
 }
-

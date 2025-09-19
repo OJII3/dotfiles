@@ -30,4 +30,3 @@
     export MORPH_API_KEY="$(<${config.sops.secrets.morph_api_key.path})"
   '';
 }
-

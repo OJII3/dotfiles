@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ../../modules/darwin/fonts.nix
     ../../modules/darwin/homebrew.nix
@@ -18,4 +19,3 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 }
-

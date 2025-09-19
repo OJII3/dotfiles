@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -10,6 +11,9 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.startup.chime = false;
+  system.keyboard = {
+    enableKeyMapping = true;
+  };
   system.defaults = {
     NSGlobalDomain = {
       AppleShowAllExtensions = true;
@@ -18,6 +22,8 @@
     };
     controlcenter = {
       BatteryShowPercentage = true;
+      Bluetooth = true;
+      Display = true;
     };
     finder = {
       AppleShowAllFiles = true;
@@ -37,13 +43,13 @@
         { app = "/Applications/Safari.app"; }
         { app = "/Applications/Affinity Designer 2.app/"; }
         { app = "/Applications/Affinity Photo 2.app/"; }
+        { app = "~/Applications/Home Manager Apps/kitty.app"; }
       ];
     };
-    CustomUserPreferences = {
-      "com.apple.screencapture" = {
-        location = "~/Pictures/Schreenshots";
-        type = "png";
-      };
+    screencapture = {
+      location = "~/Pictures/Screenshots";
+      type = "png";
     };
+    # universalaccess.mouseDriverCursorSize = 2.0;
   };
 }
