@@ -1,0 +1,36 @@
+---
+name: perforce
+
+services:
+  p4d:
+    image: sourcegraph/helix-p4d:2023.1
+    container_name: p4d
+    restart: unless-stopped
+    environment:
+      # デフォルト値は helix-docker の README に準拠
+      # 初回ブート時に設定がハードコードされるから、最初に決め切るのがコツ
+      P4USER: ${P4USER:-admin}
+      P4PASSWD: ${P4PASSWD:-change-me-49ers}
+      # 平文なら "1666"。SSL なら "ssl:1666" にして、下の volume も有効化
+      P4PORT: ${P4PORT:-1666}
+      # SSL を使うときだけ有効（cloudflared は tcp でプロキシするのでどちらでもOK）
+      # P4SSLDIR: /ssl
+    volumes:
+      - helix_data:/p4
+      # - ./ssl:/ssl:ro    # ← SSL有効時にアンコメント。事前に鍵/証明書を配置
+    ports:
+      - "1666:1666"
+    healthcheck:
+      # このイメージは p4 クライアントが無い前提もあるので TCP 存活をシンプルに確認
+      test: ["CMD-SHELL", "nc -z localhost 1666 || /bin/false"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    labels:
+      # compose2nix の systemd 拡張（起動順・WantedBy）
+      - "compose2nix.systemd.after=network-online.target"
+      - "compose2nix.systemd.wantedBy=multi-user.target"
+
+volumes:
+  helix_data:
+    driver: local

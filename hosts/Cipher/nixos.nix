@@ -2,17 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
 {
   imports = [
     ../../modules/nixos/core
     ../../modules/nixos/core/boot/systemd-boot.nix
     ../../modules/nixos/core/networking/base.nix
     ../../modules/nixos/core/virtualisation.nix
-    ../../modules/nixos/core/proxmox.nix
+    # ../../modules/nixos/core/proxmox.nix
+    ../../modules/nixos/core/sops.nix
 
     ../../modules/nixos/server/adguard.nix
     ../../modules/nixos/server/autologin.nix
+    ../../modules/nixos/server/p4/perforce-compose.nix
 
     ./hardware-configuration.nix
   ]
@@ -28,10 +30,10 @@
   services.xserver.videoDrivers = [ "intel" ];
 
   # proxomox-ve host ip
-  services.proxmox-ve = {
-    ipAddress = "192.168.8.20";
-  };
-  services.proxmox-ve.bridges = [ "vmbr0" ];
+  # services.proxmox-ve = {
+  #   ipAddress = "192.168.8.20";
+  # };
+  # services.proxmox-ve.bridges = [ "vmbr0" ];
 
   # networking
   networking.useNetworkd = true;
@@ -114,14 +116,19 @@
   services.cloudflared = {
     enable = true;
     tunnels = {
-      "9979507e-fc6a-4418-9bbf-06e7bd5305db" = {
-        credentialsFile = "/home/ojii3/.cloudflared/9979507e-fc6a-4418-9bbf-06e7bd5305db.json";
-        certificateFile = "/home/ojii3/.cloudflared/cert.pem";
-        ingress."cipher.ojii3.dev" = "https://localhost:8006";
-        default = "http_status:404";
-        originRequest.noTLSVerify = true;
-        warp-routing.enabled = true;
-      };
+      # "9979507e-fc6a-4418-9bbf-06e7bd5305db" = {
+      #   credentialsFile = "/home/ojii3/.cloudflared/9979507e-fc6a-4418-9bbf-06e7bd5305db.json";
+      #   certificateFile = "/home/ojii3/.cloudflared/cert.pem";
+      #   ingress."cipher.ojii3.dev" = "https://localhost:8006";
+      #   default = "http_status:404";
+      #   originRequest.noTLSVerify = true;
+      #   warp-routing.enabled = true;
+      # };
+      # "c0c11e26-b958-4d94-8697-91e49d0b50bf" = {
+      #   credentialsFile =
+      #     config.sops.secrets."cloudflared_creds_perforce".path;
+      #   default = "http_status:404";
+      # };
     };
   };
 
@@ -133,3 +140,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
+
