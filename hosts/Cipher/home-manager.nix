@@ -11,15 +11,16 @@
     ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
     ../../modules/home/git
-    ../../modules/home/gpg/console.nix
     ../../modules/home/im
-    ../../modules/home/server/kdeconnect.nix
+
     ../../modules/home/kdewallet.nix
     ../../modules/home/neovim
     ../../modules/home/network.nix
     ../../modules/home/sops.nix
-    # ../../modules/home/terminal/kitty
     ../../modules/home/zsh
+
+    ../../modules/home/server/kdeconnect.nix
+    ../../modules/home/server/gpg.nix
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''
