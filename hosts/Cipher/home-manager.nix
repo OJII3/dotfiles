@@ -13,7 +13,7 @@
     ../../modules/home/git
     ../../modules/home/gpg/console.nix
     ../../modules/home/im
-    ../../modules/home/kdeconnect.nix
+    ../../modules/home/server/kdeconnect.nix
     ../../modules/home/kdewallet.nix
     ../../modules/home/neovim
     ../../modules/home/network.nix
