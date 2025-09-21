@@ -3,7 +3,6 @@
   home.packages =
     with pkgs;
     [
-      claude-code
       gomi
     ]
     ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [

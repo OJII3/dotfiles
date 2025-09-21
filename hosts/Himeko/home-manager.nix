@@ -2,7 +2,7 @@
 {
   imports = [
     ../../modules/home
-    ../../modules/home/ai/claude.nix
+    ../../modules/home/ai/codex
     ../../modules/home/apps/darwin.nix
     ../../modules/home/darwin/aerospace
     ../../modules/home/darwin/jankyborders
