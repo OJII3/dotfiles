@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    nix-index
+    comma
+
     # utilities
     bat
     bottom
@@ -14,16 +17,11 @@
     unzip
     zip
     unar
-    lzip
     tree
     zellij
 
     # cli apps
-    fastfetch
-    nyancat
     tdf
-    # libsixel
-    pdftk
 
     # sdk, toolchain
     # google-cloud-sdk
@@ -38,8 +36,5 @@
     # go
     # meson
     python3Full
-    # rustup
-    # typst
-    # uv
   ];
 }
