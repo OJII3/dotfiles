@@ -1,0 +1,8 @@
+[user]
+    name = OJII3
+    email = 84656786+OJII3@users.noreply.github.com
+[core]
+    autocrlf = true
+    excludesfile = C:/Users/ojii3/.gitignore_global
+[gpg]
+    program = 'C:/Program Files (x86)/GnuPG/bin/gpg.exe'
