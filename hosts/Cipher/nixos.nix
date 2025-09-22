@@ -2,7 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, pkgs, config, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ../../modules/nixos/core
@@ -14,7 +18,7 @@
 
     ../../modules/nixos/server/adguard.nix
     ../../modules/nixos/server/autologin.nix
-    ../../modules/nixos/server/p4/perforce-compose.nix
+    ../../modules/nixos/server/nextcloud
 
     ./hardware-configuration.nix
   ]
@@ -61,7 +65,7 @@
       IPv6AcceptRA = true;
       # DHCP = "ipv4";
     };
-    addresses = [{ Address = "192.168.8.20/24"; }];
+    addresses = [ { Address = "192.168.8.20/24"; } ];
     gateway = [ "192.168.8.1" ];
     dns = [
       "8.8.8.8"
@@ -140,4 +144,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-

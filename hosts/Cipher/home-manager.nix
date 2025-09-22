@@ -4,9 +4,7 @@
     ../../modules/home
     ../../modules/home/ai/codex
     ../../modules/home/apps/linux.nix
-    # ../../modules/home/bitwarden.nix
     ../../modules/home/cloudflare-warp.nix
-    # ../../modules/home/desktop
     ../../modules/home/dev
     ../../modules/home/dev/mise.nix
     ../../modules/home/direnv.nix
