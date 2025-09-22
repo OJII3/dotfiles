@@ -1,1 +1,0 @@
-C:/Users/ojii3/ghq/github.com/OJII3/dotfiles/windows/powershell/profile.ps1

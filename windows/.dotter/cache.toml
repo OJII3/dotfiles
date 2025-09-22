@@ -1,6 +1,6 @@
 [symlinks]
 "git/.gitconfig" = "C:\\Users\\ojii3/.gitconfig"
 "git/.gitignore_global" = "C:\\Users\\ojii3/.gitignore_global"
-"powershell/profile.ps1" = "Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"powershell/profile.ps1" = "C:\\Users\\ojii3/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 
 [templates]

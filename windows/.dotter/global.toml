@@ -4,7 +4,7 @@
 depends = []
 
 [default.files]
-"powershell/profile.ps1" = "Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 "git/.gitconfig" = "~/.gitconfig"
 "git/.gitignore_global" = "~/.gitignore_global"
 
