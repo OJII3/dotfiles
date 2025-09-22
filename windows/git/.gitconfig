@@ -9,3 +9,9 @@
     program = "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
 [commit]
     gpgsign = true
+[init]
+    defaultBranch = main
+[pull]
+    rebase = true
+[push]
+    autoSetupRemote = true
