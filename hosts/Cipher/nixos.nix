@@ -19,6 +19,7 @@
     ../../modules/nixos/server/adguard.nix
     ../../modules/nixos/server/autologin.nix
     ../../modules/nixos/server/nextcloud
+    ../../modules/nixos/server/lfs
 
     ./hardware-configuration.nix
   ]
@@ -82,57 +83,6 @@
     };
     wireless.networks."aterm-44cbf4-g" = {
       pskRaw = "ext:psk_home";
-    };
-  };
-
-  # samba
-  services.samba = {
-    enable = true;
-    securityType = "user";
-    openFirewall = true;
-    settings = {
-      global = {
-        "workgroup" = "WORKGROUP";
-        "server string" = "cipher";
-        "netbios name" = "cipher";
-        "security" = "user";
-        "use sendfile" = "yes";
-        #"max protocol" = "smb2";
-        # note: localhost is the ipv6 localhost ::1
-        "hosts allow" = "*";
-        # "hosts deny" = "0.0.0.0/0";
-        "guest account" = "nobody";
-        "map to guest" = "bad user";
-      };
-      "Private" = {
-        "path" = "/home/ojii3/Shared";
-        "browseable" = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "ojii3";
-        "force group" = "WORKGROUP";
-      };
-    };
-  };
-
-  services.cloudflared = {
-    enable = true;
-    tunnels = {
-      # "9979507e-fc6a-4418-9bbf-06e7bd5305db" = {
-      #   credentialsFile = "/home/ojii3/.cloudflared/9979507e-fc6a-4418-9bbf-06e7bd5305db.json";
-      #   certificateFile = "/home/ojii3/.cloudflared/cert.pem";
-      #   ingress."cipher.ojii3.dev" = "https://localhost:8006";
-      #   default = "http_status:404";
-      #   originRequest.noTLSVerify = true;
-      #   warp-routing.enabled = true;
-      # };
-      # "c0c11e26-b958-4d94-8697-91e49d0b50bf" = {
-      #   credentialsFile =
-      #     config.sops.secrets."cloudflared_creds_perforce".path;
-      #   default = "http_status:404";
-      # };
     };
   };
 

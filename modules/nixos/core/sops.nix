@@ -9,5 +9,6 @@
     gnupg.sshKeyPaths = [ ];
     secrets."cloudflared_creds_nextcloud" = { };
     secrets."nextcloud_admin_pass" = { };
+    secrets."docker_env_lfs" = { };
   };
 }

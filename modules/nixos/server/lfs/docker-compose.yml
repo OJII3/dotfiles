@@ -1,25 +1,27 @@
 services:
   lfs:
-    image: lfs-test-server:latest
+    image: ghcr.io/tuatmcc/lfs-server:sha-8ca8421
     container_name: lfs-server
     environment:
       - LFS_ADMINUSER=admin
       - LFS_ADMINPASS=secret
-      - LFS_HOST=0.0.0.0
-      - LFS_PORT=8080
-    volumes:
-      - lfs-data:/data
-    ports:
-      - "8080:8080"
+      - LFS_SCHEME=http
+      - LFS_LISTEN=http://localhost:8080
     restart: unless-stopped
+    ports:
+      - 9999:8080
 
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
-    command: tunnel --no-autoupdate run
+    command:
+      - tunnel
+      - --no-autoupdate
+      - run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     restart: unless-stopped
 
-volumes:
-  lfs-data:
+networks:
+  default:
+    driver: bridge
