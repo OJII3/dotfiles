@@ -1,6 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  home.file.".codex.toml".text = ''
+  home.packages = with pkgs; [
+    codex
+  ];
+  home.file.".codex/config.toml".text = ''
     [profiles.full_auto]
     approval_policy = "on-request"
     sandbox_mode    = "workspace-write"
