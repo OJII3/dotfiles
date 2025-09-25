@@ -20,3 +20,5 @@ ealias g 'git'
 # Install-Module -Name PSFzf
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
+
+Set-PSReadLineOption -BellStyle None -EditMode Emacs
