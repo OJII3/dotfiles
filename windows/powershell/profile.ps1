@@ -11,14 +11,52 @@ Set-PSReadLineKeyHandler -Chord Ctrl+] -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
+function Ensure-Module {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Name,
+        [string]$Repository = 'PSGallery',
+        [switch]$ForceImport
+    )
+
+    if (-not (Get-Module -ListAvailable -Name $Name)) {
+        try {
+            Write-Host "Installing PowerShell module '$Name' from $Repository..." -ForegroundColor Yellow
+            Install-Module -Name $Name -Repository $Repository -Scope CurrentUser -Force -Confirm:$false -ErrorAction Stop
+        }
+        catch {
+            Write-Warning "Failed to install module '$Name': $_"
+            return $false
+        }
+    }
+
+    try {
+        if ($ForceImport) {
+            Import-Module -Name $Name -Force -ErrorAction Stop
+        }
+        else {
+            Import-Module -Name $Name -ErrorAction Stop
+        }
+        return $true
+    }
+    catch {
+        Write-Warning "Failed to import module '$Name': $_"
+        return $false
+    }
+}
+
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
-Import-Module -Name Microsoft.WinGet.CommandNotFound
+$commandNotFoundModuleLoaded = Ensure-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport
 #f45873b3-b655-43a6-b217-97c00aa0db58
 
-Import-Module Abbr
-ealias g 'git'
+$abbrModuleLoaded = Ensure-Module -Name 'Abbr' -ForceImport
+if ($abbrModuleLoaded) {
+    ealias g 'git'
+}
 
 # Install-Module -Name PSFzf
-Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
+$psFzfModuleLoaded = Ensure-Module -Name 'PSFzf' -ForceImport
+if ($psFzfModuleLoaded) {
+    Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
+}
 

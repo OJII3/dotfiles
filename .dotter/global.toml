@@ -1,0 +1,14 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+"windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"windows/git/.gitconfig" = "~/.gitconfig"
+"windows/git/.gitignore_global" = "~/.gitignore_global"
+
+[default.variables]
+
+[settings]
+default_target_type = "automatic"
