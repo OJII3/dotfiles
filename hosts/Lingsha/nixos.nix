@@ -5,21 +5,21 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/nixos/core
-    ../../modules/nixos/core/networking
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/cloudflare-warp.nix
-    ../../modules/nixos/core/power/laptop.nix
-    ../../modules/nixos/core/suspend
-    ../../modules/nixos/core/virtualisation.nix
-    ../../modules/nixos/core/networking/networkmanager.nix
+    ../../includes/nixos/core
+    ../../includes/nixos/core/networking
+    ../../includes/nixos/core/boot/systemd-boot.nix
+    ../../includes/nixos/core/cloudflare-warp.nix
+    ../../includes/nixos/core/power/laptop.nix
+    ../../includes/nixos/core/suspend
+    ../../includes/nixos/core/virtualisation.nix
+    ../../includes/nixos/core/networking/networkmanager.nix
 
-    ../../modules/nixos/desktop
-    ../../modules/nixos/desktop/sunshine.nix
-    ../../modules/nixos/desktop/greetd/tuigreet.nix
-    ../../modules/nixos/desktop/waydroid.nix
-    ../../modules/nixos/desktop/peripheral/keyboard.nix
-    ../../modules/nixos/desktop/peripheral/vr.nix
+    ../../includes/nixos/desktop
+    ../../includes/nixos/desktop/sunshine.nix
+    ../../includes/nixos/desktop/greetd/tuigreet.nix
+    ../../includes/nixos/desktop/waydroid.nix
+    ../../includes/nixos/desktop/peripheral/keyboard.nix
+    ../../includes/nixos/desktop/peripheral/vr.nix
 
     ./hardware-configuration.nix
   ];

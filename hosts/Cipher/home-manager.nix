@@ -1,24 +1,24 @@
 { ... }:
 {
   imports = [
-    ../../modules/home
-    ../../modules/home/ai/codex
-    ../../modules/home/apps/linux.nix
-    ../../modules/home/cloudflare-warp.nix
-    ../../modules/home/dev
-    ../../modules/home/dev/mise.nix
-    ../../modules/home/direnv.nix
-    ../../modules/home/git
-    ../../modules/home/im
+    ../../includes/home
+    ../../includes/home/ai/codex
+    ../../includes/home/apps/linux.nix
+    ../../includes/home/cloudflare-warp.nix
+    ../../includes/home/dev
+    ../../includes/home/dev/mise.nix
+    ../../includes/home/direnv.nix
+    ../../includes/home/git
+    ../../includes/home/im
 
-    ../../modules/home/kdewallet.nix
-    ../../modules/home/neovim
-    ../../modules/home/network.nix
-    ../../modules/home/sops.nix
-    ../../modules/home/zsh
+    ../../includes/home/kdewallet.nix
+    ../../includes/home/neovim
+    ../../includes/home/network.nix
+    ../../includes/home/sops.nix
+    ../../includes/home/zsh
 
-    ../../modules/home/server/kdeconnect.nix
-    ../../modules/home/server/gpg.nix
+    ../../includes/home/server/kdeconnect.nix
+    ../../includes/home/server/gpg.nix
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''

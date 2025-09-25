@@ -1,26 +1,26 @@
 { ... }:
 {
   imports = [
-    ../../modules/home
-    ../../modules/home/apps/linux.nix
-    ../../modules/home/bitwarden.nix
-    ../../modules/home/desktop
-    ../../modules/home/desktop/hyprland/default-monitors.nix
-    ../../modules/home/dev
-    ../../modules/home/dev/mise.nix
-    ../../modules/home/direnv.nix
-    ../../modules/home/git
-    ../../modules/home/gpg/linux-desktop.nix
-    ../../modules/home/im
-    ../../modules/home/kdeconnect.nix
-    ../../modules/home/kdewallet.nix
-    ../../modules/home/neovim
-    ../../modules/home/network.nix
-    ../../modules/home/sops.nix
-    ../../modules/home/terminal/kitty
-    ../../modules/home/unityhub.nix
-    ../../modules/home/vr.nix
-    ../../modules/home/zsh
+    ../../includes/home
+    ../../includes/home/apps/linux.nix
+    ../../includes/home/bitwarden.nix
+    ../../includes/home/desktop
+    ../../includes/home/desktop/hyprland/default-monitors.nix
+    ../../includes/home/dev
+    ../../includes/home/dev/mise.nix
+    ../../includes/home/direnv.nix
+    ../../includes/home/git
+    ../../includes/home/gpg/linux-desktop.nix
+    ../../includes/home/im
+    ../../includes/home/kdeconnect.nix
+    ../../includes/home/kdewallet.nix
+    ../../includes/home/neovim
+    ../../includes/home/network.nix
+    ../../includes/home/sops.nix
+    ../../includes/home/terminal/kitty
+    ../../includes/home/unityhub.nix
+    ../../includes/home/vr.nix
+    ../../includes/home/zsh
   ];
 
   wayland.windowManager.hyprland.extraConfig = ''

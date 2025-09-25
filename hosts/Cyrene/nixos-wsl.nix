@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/nixos/core/tools.nix
+    ../../includes/nixos/core/tools.nix
   ];
   users.users.ojii3 = {
     isNormalUser = true;

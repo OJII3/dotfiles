@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../../modules/core
+    ../../includes/core
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
     raspberry-pi-4

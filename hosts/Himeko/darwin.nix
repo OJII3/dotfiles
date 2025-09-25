@@ -1,12 +1,12 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ../../modules/darwin/fonts.nix
-    ../../modules/darwin/homebrew.nix
-    # ../../modules/darwin/karabiner.nix
-    ../../modules/darwin/networking.nix
-    ../../modules/darwin/system.nix
-    ../../modules/darwin/homebrew.nix
+    ../../includes/darwin/fonts.nix
+    ../../includes/darwin/homebrew.nix
+    # ../../includes/darwin/karabiner.nix
+    ../../includes/darwin/networking.nix
+    ../../includes/darwin/system.nix
+    ../../includes/darwin/homebrew.nix
   ];
 
   # List packages installed in system profile. To search by name, run:

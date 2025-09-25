@@ -9,17 +9,17 @@
 }:
 {
   imports = [
-    ../../modules/nixos/core
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/networking/base.nix
-    ../../modules/nixos/core/virtualisation.nix
-    # ../../modules/nixos/core/proxmox.nix
-    ../../modules/nixos/core/sops.nix
+    ../../includes/nixos/core
+    ../../includes/nixos/core/boot/systemd-boot.nix
+    ../../includes/nixos/core/networking/base.nix
+    ../../includes/nixos/core/virtualisation.nix
+    # ../../includes/nixos/core/proxmox.nix
+    ../../includes/nixos/core/sops.nix
 
-    ../../modules/nixos/server/adguard.nix
-    ../../modules/nixos/server/autologin.nix
-    ../../modules/nixos/server/nextcloud
-    ../../modules/nixos/server/lfs
+    ../../includes/nixos/server/adguard.nix
+    ../../includes/nixos/server/autologin.nix
+    ../../includes/nixos/server/nextcloud
+    ../../includes/nixos/server/lfs
 
     ./hardware-configuration.nix
   ]

@@ -5,19 +5,19 @@
 { inputs, pkgs, ... }:
 {
   imports = [
-    ../../modules/nixos/core
-    ../../modules/nixos/core/networking
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/virtualisation.nix
-    ../../modules/nixos/core/networking/networkmanager.nix
+    ../../includes/nixos/core
+    ../../includes/nixos/core/networking
+    ../../includes/nixos/core/boot/systemd-boot.nix
+    ../../includes/nixos/core/virtualisation.nix
+    ../../includes/nixos/core/networking/networkmanager.nix
 
-    ../../modules/nixos/desktop
-    ../../modules/nixos/desktop/greetd/autologin.nix
-    ../../modules/nixos/desktop/peripheral/keyboard.nix
-    ../../modules/nixos/desktop/peripheral/vr.nix
-    # ../../modules/nixos/desktop/peripheral/weylus.nix
-    ../../modules/nixos/desktop/sunshine.nix
-    ../../modules/nixos/desktop/waydroid.nix
+    ../../includes/nixos/desktop
+    ../../includes/nixos/desktop/greetd/autologin.nix
+    ../../includes/nixos/desktop/peripheral/keyboard.nix
+    ../../includes/nixos/desktop/peripheral/vr.nix
+    # ../../includes/nixos/desktop/peripheral/weylus.nix
+    ../../includes/nixos/desktop/sunshine.nix
+    ../../includes/nixos/desktop/waydroid.nix
 
     ./hardware-configuration.nix
   ]
