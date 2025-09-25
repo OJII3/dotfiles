@@ -1,4 +1,5 @@
 Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
+Set-PSReadLineOption -BellStyle None -EditMode Emacs
 
 function ghqfzf {
     $repo = $(ghq list | fzf)
@@ -21,4 +22,3 @@ ealias g 'git'
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 
-Set-PSReadLineOption -BellStyle None -EditMode Emacs
