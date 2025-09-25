@@ -11,7 +11,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+] -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
-function Ensure-Module {
+function Request-Module {
     param(
         [Parameter(Mandatory = $true)]
         [string]$Name,
@@ -46,17 +46,16 @@ function Ensure-Module {
 }
 
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
-$commandNotFoundModuleLoaded = Ensure-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport
+Request-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
 #f45873b3-b655-43a6-b217-97c00aa0db58
 
-$abbrModuleLoaded = Ensure-Module -Name 'Abbr' -ForceImport
+$abbrModuleLoaded = Request-Module -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
 }
 
 # Install-Module -Name PSFzf
-$psFzfModuleLoaded = Ensure-Module -Name 'PSFzf' -ForceImport
+$psFzfModuleLoaded = Request-Module -Name 'PSFzf' -ForceImport
 if ($psFzfModuleLoaded) {
     Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 }
-
