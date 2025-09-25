@@ -4,9 +4,12 @@
 depends = []
 
 [default.files]
-"windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
-"windows/git/.gitconfig" = "~/.gitconfig"
-"windows/git/.gitignore_global" = "~/.gitignore_global"
+"includes/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"includes/windows/git/.gitconfig" = "~/.gitconfig"
+"includes/windows/git/.gitignore_global" = "~/.gitignore_global"
+
+"includes/home/vim/.ideavimrc" = "~/.ideavimrc"
+"includes/home/git/.tigrc" = "~/.tigrc"
 
 [default.variables]
 
