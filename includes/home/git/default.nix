@@ -23,7 +23,7 @@
         autoSetupRemote = true;
       };
       pull = {
-        rebase = false;
+        rebase = true;
       };
       init = {
         defaultBranch = "main";
@@ -55,6 +55,7 @@
 
   programs.zsh.zsh-abbr.abbreviations = {
     # g = git is defined in zsh config
+    "gh p" = "gh pr";
     "gh pr c" = "gh pr create";
     "gh pr m" = "gh pr merge";
     "git a" = "git add";
