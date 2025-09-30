@@ -19,7 +19,6 @@
     ../../includes/nixos/server/adguard.nix
     ../../includes/nixos/server/autologin.nix
     ../../includes/nixos/server/nextcloud
-    ../../includes/nixos/server/lfs
 
     ./hardware-configuration.nix
   ]
