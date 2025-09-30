@@ -1,0 +1,7 @@
+# Winget package IDs to install. One package per line.
+# Lines beginning with # or blank lines are ignored.
+
+Microsoft.PowerShell
+Git.Git
+GitHub.cli
+OpenAI.Codex
