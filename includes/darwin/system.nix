@@ -22,8 +22,9 @@
     };
     controlcenter = {
       BatteryShowPercentage = true;
-      Bluetooth = true;
+      Bluetooth = false;
       Display = true;
+      Sound = true;
     };
     finder = {
       AppleShowAllFiles = true;
@@ -41,9 +42,8 @@
       wvous-br-corner = 1;
       persistent-apps = [
         { app = "/Applications/Safari.app"; }
-        { app = "/Applications/Affinity Designer 2.app/"; }
-        { app = "/Applications/Affinity Photo 2.app/"; }
-        { app = "~/Applications/Home Manager Apps/kitty.app"; }
+        # { app = "/Applications/Affinity Designer 2.app/"; }
+        # { app = "/Applications/Affinity Photo 2.app/"; }
       ];
     };
     screencapture = {
