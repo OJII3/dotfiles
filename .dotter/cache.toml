@@ -1,6 +1,7 @@
 [symlinks]
 "includes/home/git/.tigrc" = "C:\\Users\\ojii3/.tigrc"
 "includes/home/vim/.ideavimrc" = "C:\\Users\\ojii3/.ideavimrc"
+"includes/windows/autohotkey/default.ahk" = "C:\\Users\\ojii3/.config/autohotkey/default.ahk"
 "includes/windows/git/.gitconfig" = "C:\\Users\\ojii3/.gitconfig"
 "includes/windows/git/.gitignore_global" = "C:\\Users\\ojii3/.gitignore_global"
 "includes/windows/powershell/profile.ps1" = "C:\\Users\\ojii3/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"

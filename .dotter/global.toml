@@ -7,6 +7,7 @@ depends = []
 "includes/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 "includes/windows/git/.gitconfig" = "~/.gitconfig"
 "includes/windows/git/.gitignore_global" = "~/.gitignore_global"
+"includes/windows/autohotkey/default.ahk" = "~/.config/autohotkey/default.ahk"
 
 "includes/home/vim/.ideavimrc" = "~/.ideavimrc"
 "includes/home/git/.tigrc" = "~/.tigrc"

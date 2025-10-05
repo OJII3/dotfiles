@@ -52,6 +52,7 @@ Request-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
 $abbrModuleLoaded = Request-Module -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
+    ealias t 'tig status'
 }
 
 # Install-Module -Name PSFzf
