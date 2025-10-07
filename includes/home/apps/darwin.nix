@@ -7,19 +7,20 @@
   home.packages =
     with pkgs;
     [
-      appcleaner
-      scroll-reverser
+      # appcleaner
+      # scroll-reverser
       terminal-notifier
+      raycast
     ]
     ++ (with pkgs.brewCasks; [
 
-      blockbench
-      chatgpt
-      figma
-      firefox
-      ghostty
-      moonlight
-      obs
+      # blockbench
+      # chatgpt
+      # figma
+      # firefox
+      # ghostty
+      # moonlight
+      # obs
       pngpaste
 
       (unity-hub.overrideAttrs (oldAttrs: {

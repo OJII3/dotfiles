@@ -1,0 +1,4 @@
+{ ... }:
+{
+  nix.enable = true;
+}

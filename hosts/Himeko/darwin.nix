@@ -1,10 +1,12 @@
 { pkgs, inputs, ... }:
 {
   imports = [
+    ../../includes/darwin/core/sops.nix
     ../../includes/darwin/fonts.nix
-    # ../../includes/darwin/karabiner.nix
     ../../includes/darwin/networking.nix
     ../../includes/darwin/system.nix
+
+    ../../includes/darwin/server/github-runners.nix
   ];
 
   # List packages installed in system profile. To search by name, run:

@@ -10,13 +10,13 @@ in
     jetbrains-toolbox
     slack
     postman
-    immersed
+    # immersed
   ];
 
   programs = {
-    vscode.enable = true;
-    google-chrome.enable = chromeAvailable;
-    chromium.enable = !chromeAvailable;
-    firefox.enable = true;
+    # vscode.enable = true;
+    # google-chrome.enable = chromeAvailable;
+    # chromium.enable = !chromeAvailable;
+    # firefox.enable = true;
   };
 }
