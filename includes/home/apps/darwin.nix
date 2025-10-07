@@ -25,7 +25,7 @@
       (unity-hub.overrideAttrs (oldAttrs: {
         src = pkgs.fetchurl {
           url = builtins.head oldAttrs.src.urls;
-          hash = "sha256-1SrVqyGjgOko2rpNsCR0ZL6+7Xbgu2M8itSJeQ8+0Ic=";
+          hash = "sha256-fiF5NxZLzNv/x4e83HV/OI2UrgFY6jL4YPExU53SWok=";
         };
       }))
     ]);
