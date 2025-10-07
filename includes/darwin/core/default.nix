@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
-  nix.enable = true;
+  nix.enable = lib.mkForce true;
 }
