@@ -35,6 +35,6 @@
     # gnumake
     # go
     # meson
-    python3Full
+    python312
   ];
 }

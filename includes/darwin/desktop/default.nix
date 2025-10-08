@@ -9,11 +9,12 @@
     vim
     git
     gnumake
-    python311
+    python312
   ];
 
-  system.primaryUser = "ojii3";
   security.pam.services.sudo_local.touchIdAuth = true;
+
+  system.primaryUser = "ojii3";
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
   system.startup.chime = false;
   system.keyboard = {
@@ -40,14 +41,16 @@
     };
     dock = {
       autohide = true;
-      expose-group-apps = true;
+      expose-group-apps = false;
       orientation = "bottom";
       show-recents = false;
       wvous-bl-corner = 7;
       wvous-br-corner = 1;
       persistent-apps = [
+        { app = "/System/Applications/System Settings.app"; }
         { app = "/Applications/Safari.app"; }
-        { app = "/Applications/Affinity Designer 2.app/"; }
+        { app = "/Applications/ChatGPT.app"; }
+        # { app = "/Applications/Affinity Designer 2.app/"; }
         { app = "/Applications/Affinity Photo 2.app/"; }
       ];
     };

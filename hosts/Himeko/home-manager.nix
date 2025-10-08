@@ -6,7 +6,6 @@
     ../../includes/home/apps/darwin.nix
     ../../includes/home/darwin/aerospace
     ../../includes/home/darwin/jankyborders
-    # ../../includes/home/darwin/kdeconnect
     ../../includes/home/darwin/skhd
     ../../includes/home/dev
     ../../includes/home/dev/mise.nix

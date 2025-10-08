@@ -1,6 +1,6 @@
 {
   services.jankyborders = {
-    enable = true;
+    # enable = true;
     settings = {
       style = "round";
       hidpi = "off";
