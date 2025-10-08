@@ -11,6 +11,5 @@
       "ltspice"
       "visual-studio-code"
     ];
-    greedyCasks = [ ];
   };
 }

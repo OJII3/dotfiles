@@ -6,16 +6,10 @@
     ../../includes/darwin/fonts.nix
     ../../includes/darwin/networking.nix
     ../../includes/darwin/system.nix
-
-    ../../includes/darwin/server/github-runners.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.pathsToLink = [
-    "/share/zsh"
-  ];
-
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
