@@ -5,7 +5,7 @@
       enable = true;
       rootless = {
         enable = false;
-        setSocketVariable = true;
+        setSocketVariable = false;
       };
     };
     # virtualbox.host.enable = true;
