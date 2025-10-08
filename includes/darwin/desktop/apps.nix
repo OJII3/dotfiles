@@ -1,4 +1,5 @@
 {
+  imports = [ ./. ];
   homebrew = {
     enable = true;
     onActivation.upgrade = true;

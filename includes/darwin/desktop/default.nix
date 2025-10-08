@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  username,
+  ...
+}:
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -23,7 +28,7 @@
     controlcenter = {
       BatteryShowPercentage = true;
       Bluetooth = false;
-      Display = true;
+      Display = false;
       Sound = true;
     };
     finder = {
@@ -42,12 +47,12 @@
       wvous-br-corner = 1;
       persistent-apps = [
         { app = "/Applications/Safari.app"; }
-        # { app = "/Applications/Affinity Designer 2.app/"; }
-        # { app = "/Applications/Affinity Photo 2.app/"; }
+        { app = "/Applications/Affinity Designer 2.app/"; }
+        { app = "/Applications/Affinity Photo 2.app/"; }
       ];
     };
     screencapture = {
-      location = "~/Pictures/Screenshots";
+      location = "/Users/${username}/Pictures/Screenshots";
       type = "png";
     };
     # universalaccess.mouseDriverCursorSize = 2.0;

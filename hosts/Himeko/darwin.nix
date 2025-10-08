@@ -2,10 +2,9 @@
 {
   imports = [
     ../../includes/darwin/core/sops.nix
+    ../../includes/darwin/core/fonts.nix
+    ../../includes/darwin/core/networking.nix
     ../../includes/darwin/desktop/apps.nix
-    ../../includes/darwin/fonts.nix
-    ../../includes/darwin/networking.nix
-    ../../includes/darwin/system.nix
   ];
 
   # List packages installed in system profile. To search by name, run:
