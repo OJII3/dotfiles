@@ -1,5 +1,6 @@
 { pkgs, pkgs-stable, ... }:
 let
+  chromeAvailable = pkgs.system == "x86_64-linux" || pkgs.system == "aarch64-darwin";
   chromeArgs = [
     "--ozone-platform-hint=auto"
     "--enable-wayland-ime"
@@ -38,6 +39,10 @@ in
   ];
 
   programs = {
+    vscode.enable = true;
+    google-chrome.enable = chromeAvailable;
+    chromium.enable = !chromeAvailable;
+    firefox.enable = true;
     google-chrome.commandLineArgs = chromeArgs;
     chromium.commandLineArgs = chromeArgs;
   };

@@ -2,6 +2,7 @@
 {
   imports = [
     ../../includes/darwin/core/sops.nix
+    ../../includes/darwin/desktop/apps.nix
     ../../includes/darwin/fonts.nix
     ../../includes/darwin/networking.nix
     ../../includes/darwin/system.nix
