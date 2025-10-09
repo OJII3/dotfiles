@@ -5,7 +5,6 @@
     onActivation.upgrade = true;
     onActivation.autoUpdate = false;
     casks = [
-      "bitwarden"
       "chatgpt"
       "firefox"
       "ghostty"
