@@ -10,6 +10,7 @@
       "ghostty"
       "logi-options+"
       "ltspice"
+      "scroll-reverser"
       "visual-studio-code"
     ];
   };
