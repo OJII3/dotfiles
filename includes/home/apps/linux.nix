@@ -32,7 +32,7 @@ in
     nautilus-python
     ocs-url
     overskride
-    # pkgs-stable.parsec-bin
+    pkgs-stable.blender
     vlc
     warp-terminal
     wineWowPackages.staging
