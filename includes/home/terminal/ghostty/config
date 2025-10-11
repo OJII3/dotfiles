@@ -8,7 +8,7 @@ theme = tokyonight
 title = "Ghostty"
 background-opacity = 0.85
 unfocused-split-opacity = 0.85
-window-decoration = false
+window-decoration = true
 
 keybind = ctrl+shift+enter=new_split:auto
 keybind = ctrl+shift+[=goto_split:previous
