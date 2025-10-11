@@ -1,8 +1,8 @@
 shell-integration = zsh
 
-font-family = "Udev Gothic NF"
+font-family = "UDEV Gothic 35NF"
 font-family = "HackGen Console NF"
-font-size = 12
+font-size = 14
 
 theme = tokyonight
 title = "Ghostty"
