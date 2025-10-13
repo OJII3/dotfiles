@@ -6,9 +6,11 @@
     "Thunderbolt Bridge"
     "Wi-Fi"
   ];
-  services.tailscale = {
-    enable = true;
-    overrideLocalDns = true;
+  homebrew.masApps = {
+    tailscale = 1475387142;
+  };
+  environment.shellAliases = {
+    tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
   };
   services.openssh.enable = true;
 }
