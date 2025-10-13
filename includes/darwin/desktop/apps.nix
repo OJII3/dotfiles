@@ -15,6 +15,7 @@
       "logi-options+"
       "ltspice"
       "scroll-reverser"
+      "steam"
       "visual-studio-code"
     ];
   };

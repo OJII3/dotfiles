@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 {
   imports = [ ./. ];
   networking.knownNetworkServices = [
