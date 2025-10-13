@@ -14,8 +14,9 @@
     ../../includes/home/gpg
     ../../includes/home/neovim
     ../../includes/home/sops.nix
-    ../../includes/home/terminal/kitty
     ../../includes/home/terminal/ghostty
+    ../../includes/home/terminal/kitty
+    ../../includes/home/vim
     ../../includes/home/zsh
   ];
 
