@@ -18,5 +18,8 @@
       "steam"
       "visual-studio-code"
     ];
+    masApps = {
+      "bitwarden" = 1352778147;
+    };
   };
 }
