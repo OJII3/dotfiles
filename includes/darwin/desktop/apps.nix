@@ -17,6 +17,7 @@
       "scroll-reverser"
       "steam"
       "visual-studio-code"
+      "wacom-tablet"
     ];
     masApps = {
       "bitwarden" = 1352778147;
