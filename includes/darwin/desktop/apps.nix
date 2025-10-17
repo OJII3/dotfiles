@@ -8,6 +8,7 @@
       cleanup = "uninstall";
     };
     casks = [
+      "SpaceId"
       "chatgpt"
       "firefox"
       "fork"
@@ -17,7 +18,7 @@
       "scroll-reverser"
       "steam"
       "visual-studio-code"
-      # "wacom-tablet"
+      # "wacom-tablet" older version of driver is unavailable from brew
     ];
     masApps = {
       "bitwarden" = 1352778147;
