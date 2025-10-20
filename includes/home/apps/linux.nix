@@ -15,6 +15,7 @@ in
   programs.obs-studio.enable = true;
   home.packages = with pkgs; [
     (bottles.override { removeWarningPopup = true; })
+    discord
     cloudflared
     evince
     figma-linux

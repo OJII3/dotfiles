@@ -10,6 +10,7 @@
     casks = [
       "SpaceId"
       "chatgpt"
+      "discord"
       "firefox"
       "fork"
       "ghostty"

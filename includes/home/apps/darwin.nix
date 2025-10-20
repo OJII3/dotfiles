@@ -1,3 +1,6 @@
+# Most Apps and Services are declared in nix-darwin configuration
+# This is because permissions are linked to binaries in nix directory,
+# which means if hash changes, permissions need to be re-granted.
 { pkgs, ... }:
 {
   imports = [
@@ -7,20 +10,11 @@
   home.packages =
     with pkgs;
     [
-      # appcleaner
-      # scroll-reverser
       terminal-notifier
       raycast
+      voicevox-engine
     ]
     ++ (with pkgs.brewCasks; [
-
-      # blockbench
-      # chatgpt
-      # figma
-      # firefox
-      # ghostty
-      # moonlight
-      # obs
       pngpaste
 
       (unity-hub.overrideAttrs (oldAttrs: {
