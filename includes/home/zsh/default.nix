@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 {
   programs.zsh = {
     enable = true;
@@ -28,6 +33,9 @@
         "v" = "nvim";
         "ya" = "yazi";
         "z" = "zellij";
+      }
+      // lib.optionalAttrs pkgs.stdenv.isDarwin {
+        "brew s" = "/opt/homebrew/bin/brew search";
       };
     };
 
