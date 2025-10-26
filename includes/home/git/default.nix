@@ -12,27 +12,25 @@
     settings = {
       user.email = "84656786+OJII3@users.noreply.github.com";
       user.name = "ojii3";
-      extraConfig = {
-        push = {
-          autoSetupRemote = true;
-        };
-        pull = {
-          rebase = false;
-        };
-        init = {
-          defaultBranch = "main";
-        };
-        user = {
-          signingKey = "37547FAD690A6133";
-        };
-        commit = {
-          gpgSign = true;
-        };
-        ghq = {
-          root = "~/src";
-        };
-        # credential.helper = "${pkgs.ksshaskpass}/bin/ksshaskpass";
+      push = {
+        autoSetupRemote = true;
       };
+      pull = {
+        rebase = false;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+      user = {
+        signingKey = "37547FAD690A6133";
+      };
+      commit = {
+        gpgSign = true;
+      };
+      ghq = {
+        root = "~/src";
+      };
+      # credential.helper = "${pkgs.ksshaskpass}/bin/ksshaskpass";
     };
     ignores = [
       "**/__pycache__"
