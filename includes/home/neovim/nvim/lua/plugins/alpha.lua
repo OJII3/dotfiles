@@ -20,9 +20,9 @@ return {
 		if term == "xterm-kitty" or term == "xterm-ghostty" then
 			local api = require("image")
 			local image = api.from_file(vim.fn.expand("$HOME/.assets/images/Bronie_Haxxor_Bunny_M.png"), {
-				x = math.floor(vim.api.nvim_win_get_width(0) / 2) - 50,
+				x = math.floor(vim.api.nvim_win_get_width(0) / 2) - 40,
 				y = 10,
-				width = 100,
+				width = 80,
 			})
 			if image ~= nil then
 				-- dashboard.section.buttons.val = {}
@@ -42,18 +42,20 @@ return {
 
 				vim.api.nvim_create_autocmd({ "User" }, {
 					callback = function()
-						image:render()
+						vim.defer_fn(function()
+							image:render()
+						end, 100)
 					end,
 					pattern = "AlphaReady",
 				})
-				vim.api.nvim_create_autocmd({ "BufEnter" }, {
+				vim.api.nvim_create_autocmd({ "BufLeave" }, {
+					buffer = vim.api.nvim_get_current_buf(),
 					callback = function()
-						if vim.bo.filetype == "neo-tree" or vim.bo.filetype == "alpha" then
-							return
+						local current_ft = vim.bo.filetype
+						if current_ft == "alpha" then
+							image:clear()
 						end
-						image:clear()
 					end,
-					pattern = { "*" },
 				})
 
 				-- dashboard.config.opts.noautocmd = true

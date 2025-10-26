@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    codex
+    # codex
 
     # for local mcp servers
     bun
