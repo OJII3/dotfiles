@@ -22,7 +22,7 @@
       # "wacom-tablet" older version of driver is unavailable from brew
     ];
     masApps = {
-      "bitwarden" = 1352778147;
+      # "bitwarden" = 1352778147;
     };
   };
 }
