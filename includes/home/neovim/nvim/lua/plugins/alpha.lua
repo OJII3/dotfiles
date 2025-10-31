@@ -21,24 +21,12 @@ return {
 			local api = require("image")
 			local image = api.from_file(vim.fn.expand("$HOME/.assets/images/Bronie_Haxxor_Bunny_M.png"), {
 				x = math.floor(vim.api.nvim_win_get_width(0) / 2) - 40,
-				y = 10,
+				y = 4,
 				width = 80,
 			})
 			if image ~= nil then
 				-- dashboard.section.buttons.val = {}
-				dashboard.section.header.val = {
-					[[        .;        ;.                                                                    ]],
-					[[      .,l,'.      ;l;.                                           ;;;                    ]],
-					[[     ;odl;,,'     ;bcc:                                                                 ]],
-					[[     cddl;,;:,.   ;bccc.    :l.:'',.   :'''l.  .:''':. ox;   .dx.dx, ox:odxc'ldxxl.     ]],
-					[[     cccl;,;:;,.  ;llll.    :d     b .c     ;..c     ;:.kk.  dO' kO; xO:  ;OO'  oOc     ]],
-					[[     cccl; .;;;;, ;llll.    :l     d.;d.....d.c'      d .kx lO:  kO; xO,  'OO.  cOl     ]],
-					[[     lccl;  .;;;;;;looo.    :l     d..c       ';     .l  ;OdOo   kO; xO,  'OO.  cOl     ]],
-					[[     llll,    ,:;:;ldoo.    :l     d  '':..:'  ''...''    cdo    dx, x0'  .00.  :0l     ]],
-					[[     clll;     '::;ldoo.                                                                ]],
-					[[      .co;      .:;dl,                                                                  ]],
-					[[        .;        ;'                                                                    ]],
-				}
+				dashboard.section.header.val = {}
 
 				vim.api.nvim_create_autocmd({ "User" }, {
 					callback = function()
