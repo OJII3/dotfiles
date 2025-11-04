@@ -12,7 +12,6 @@
     [
       terminal-notifier
       raycast
-      voicevox-engine
     ]
     ++ (with pkgs.brewCasks; [
       pngpaste
