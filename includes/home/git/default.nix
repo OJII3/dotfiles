@@ -56,8 +56,9 @@
   programs.zsh.zsh-abbr.abbreviations = {
     # g = git is defined in zsh config
     "gh p" = "gh pr";
-    "gh pr c" = "gh pr create";
-    "gh pr m" = "gh pr merge";
+    "gh pc" = "gh pr create";
+    "gh pm" = "gh pr merge";
+    "gh pv" = "gh pr merge";
     "git a" = "git add";
     "git b" = "git branch";
     "git c" = "git commit -m";
@@ -72,8 +73,6 @@
     "git p" = "git pull";
     "git pc" = "gh pr create";
     "git pm" = "gh pr merge";
-    "git pr" = "gh pr";
-    "git pv" = "gh pr view";
     "git release" = "gh release";
     "git repo" = "gh repo";
     "git s" = "git status";
