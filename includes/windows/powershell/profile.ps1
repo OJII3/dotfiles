@@ -52,7 +52,20 @@ Request-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
 $abbrModuleLoaded = Request-Module -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
+    ealias gb 'git branch'
+    ealias gco 'git commit -m'
+    ealias gf 'git fetch'
+    ealias gfp 'git fetch --prune'
+    ealias glg 'git log --oneline --graph --decorate'
+    ealias gph 'git push'
+    ealias gpl 'git pull'
+    ealias gw 'git switch'
+    ealias gwc 'git switch -c'
+
     ealias t 'tig status'
+    ealias ghpc 'gh pr create'
+    ealias ghpm 'gh pr merge'
+    ealias ghpv 'gh pr view'
 }
 
 # Install-Module -Name PSFzf
