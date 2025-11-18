@@ -9,6 +9,7 @@
     };
     casks = [
       "SpaceId"
+      "obs"
       "chatgpt"
       "discord"
       "firefox"

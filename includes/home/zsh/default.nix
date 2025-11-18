@@ -23,13 +23,11 @@
     zsh-abbr = {
       enable = true;
       abbreviations = {
-        "g" = "git";
         "ksh" = "kitten ssh";
         "l" = "ls";
         "la" = "ls -a";
         "ll" = "ls -l";
         "se" = "serie";
-        "t" = "tig status";
         "v" = "nvim";
         "ya" = "yazi";
         "z" = "zellij";

@@ -55,10 +55,28 @@
 
   programs.zsh.zsh-abbr.abbreviations = {
     # g = git is defined in zsh config
+    "g" = "git";
+    "gb" = "git branch";
+    "gcmt" = "git commit -m";
+    "gco" = "git checkout";
+    "gf" = "git fetch";
+    "gfp" = "git fetch --prune";
+    "glg" = "git log --online --graph --decorate";
+    "gph" = "git push";
+    "gpl" = "git pull";
+    "gw" = "git switch";
+    "gwc" = "git switch -c";
+
+    "ghpc" = "gh pr create";
+    "ghpm" = "gh pr merge";
+    "ghpv" = "gh pr view";
+
+    "t" = "tig status";
+
     "gh p" = "gh pr";
     "gh pr c" = "gh pr create";
     "gh pr m" = "gh pr merge";
-    "gh pr v" = "gh pr merge";
+    "gh pr v" = "gh pr view";
     "git a" = "git add";
     "git b" = "git branch";
     "git c" = "git commit -m";
