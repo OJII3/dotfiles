@@ -6,3 +6,4 @@ Git.Git
 GitHub.cli
 OpenAI.Codex
 AutoHotkey.AutoHotkey
+wez.wezterm

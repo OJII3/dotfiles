@@ -4,6 +4,9 @@
 depends = []
 
 [default.files]
+"assets/images/honkai_everyone.png" = { target = "~/.assets/images/honkai_everyone.png", type = "symbolic" }
+"assets/images/silver_wolf.png" = { target = "~/.assets/images/silver_wolf.png", type = "symbolic" }
+
 "includes/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 "includes/windows/git/.gitconfig" = "~/.gitconfig"
 "includes/windows/git/.gitignore_global" = "~/.gitignore_global"
@@ -11,6 +14,11 @@ depends = []
 
 "includes/home/vim/.ideavimrc" = "~/.ideavimrc"
 "includes/home/git/.tigrc" = "~/.tigrc"
+
+"includes/home/terminal/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
+"includes/home/terminal/wezterm/keybindings.lua" = "~/.config/wezterm/keybindings.lua"
+"includes/windows/wezterm/keybindings.lua" = "~/.config/wezterm/local/keybindings.lua"
+"includes/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
 
 [default.variables]
 

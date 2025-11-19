@@ -1,9 +1,15 @@
 [symlinks]
+"assets/images/honkai_everyone.png" = "C:\\Users\\ojii3/.assets/images/honkai_everyone.png"
+"assets/images/silver_wolf.png" = "C:\\Users\\ojii3/.assets/images/silver_wolf.png"
 "includes/home/git/.tigrc" = "C:\\Users\\ojii3/.tigrc"
+"includes/home/terminal/wezterm/keybindings.lua" = "C:\\Users\\ojii3/.config/wezterm/keybindings.lua"
+"includes/home/terminal/wezterm/wezterm.lua" = "C:\\Users\\ojii3/.config/wezterm/wezterm.lua"
 "includes/home/vim/.ideavimrc" = "C:\\Users\\ojii3/.ideavimrc"
 "includes/windows/autohotkey/default.ahk" = "C:\\Users\\ojii3/.config/autohotkey/default.ahk"
 "includes/windows/git/.gitconfig" = "C:\\Users\\ojii3/.gitconfig"
 "includes/windows/git/.gitignore_global" = "C:\\Users\\ojii3/.gitignore_global"
 "includes/windows/powershell/profile.ps1" = "C:\\Users\\ojii3/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"includes/windows/wezterm/images.lua" = "C:\\Users\\ojii3/.config/wezterm/local/images.lua"
+"includes/windows/wezterm/keybindings.lua" = "C:\\Users\\ojii3/.config/wezterm/local/keybindings.lua"
 
 [templates]
