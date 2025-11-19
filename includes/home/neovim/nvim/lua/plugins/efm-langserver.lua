@@ -84,7 +84,7 @@ return {
 			settings = {
 				rootMarkers = { ".git/" },
 				languages = {
-					astro = { prettier },
+					astro = { biome, prettier },
 					c = { clang_format, clang_tidy },
 					cmake = { cmake_lint, cmake_format },
 					cpp = { clang_format, clang_tidy },
