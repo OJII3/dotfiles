@@ -7,18 +7,19 @@
     # utilities
     bat
     bottom
-    # httpie
-    ripgrep
-    yazi
-    tmux
-    imagemagick
+    fastfetch
+    ffmpeg
     htop
+    imagemagick
     patchelf
-    unzip
-    zip
-    unar
+    ripgrep
+    tmux
     tree
+    unar
+    unzip
+    yazi
     zellij
+    zip
 
     # cli apps
     tdf
