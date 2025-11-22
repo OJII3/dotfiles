@@ -49,6 +49,7 @@ function Request-Module {
 Request-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
 #f45873b3-b655-43a6-b217-97c00aa0db58
 
+# Abbr
 $abbrModuleLoaded = Request-Module -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
@@ -68,8 +69,10 @@ if ($abbrModuleLoaded) {
     ealias ghpv 'gh pr view'
 }
 
-# Install-Module -Name PSFzf
+# PSFzf
 $psFzfModuleLoaded = Request-Module -Name 'PSFzf' -ForceImport
 if ($psFzfModuleLoaded) {
     Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 }
+
+Request-Module -Name 'posh-git' -ForceImport > $null
