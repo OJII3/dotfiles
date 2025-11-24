@@ -1,8 +1,7 @@
-{ lib, ... }:
+{ ... }:
 {
-  nix.enable = lib.mkForce true;
+  nix.enable = false;
   environment.pathsToLink = [
     "/share/zsh"
   ];
-
 }

@@ -50,7 +50,6 @@
         { app = "/System/Applications/System Settings.app"; }
         { app = "/Applications/Safari.app"; }
         { app = "/Applications/ChatGPT.app"; }
-        # { app = "/Applications/Affinity Designer 2.app/"; }
         { app = "/Applications/Affinity Photo 2.app/"; }
       ];
     };

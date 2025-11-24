@@ -18,8 +18,10 @@
       "logi-options+"
       "ltspice"
       "obs"
+      "raycast"
       "scroll-reverser"
       "steam"
+      "unity-hub"
       "visual-studio-code"
     ];
     masApps = {
