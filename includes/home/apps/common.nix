@@ -4,5 +4,6 @@
     jetbrains-toolbox
     slack
     postman
+    logisim-evolution
   ];
 }

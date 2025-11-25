@@ -8,6 +8,7 @@
       cleanup = "uninstall";
     };
     casks = [
+      "Affinity"
       "Figma"
       "SpaceId"
       "chatgpt"
