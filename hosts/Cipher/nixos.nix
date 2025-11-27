@@ -20,7 +20,7 @@
     ../../includes/nixos/server/autologin.nix
     ../../includes/nixos/server/nextcloud
 
-    ./hardware-configuration.nix
+    # ./hardware-configuration.nix
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
     common-cpu-intel
@@ -31,41 +31,17 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
 
   # graphics
-  services.xserver.videoDrivers = [ "intel" ];
-
-  # proxomox-ve host ip
-  # services.proxmox-ve = {
-  #   ipAddress = "192.168.8.20";
-  # };
-  # services.proxmox-ve.bridges = [ "vmbr0" ];
+  # services.xserver.videoDrivers = [ "intel" ];
 
   # networking
   networking.useNetworkd = true;
   systemd.network.networks."10-lan" = {
-    matchConfig.Name = [ "enp3s0" ];
-    networkConfig = {
-      Bridge = "vmbr0";
-    };
-  };
-  systemd.network.networks."20-lan" = {
-    matchConfig.Name = [ "tap*" ];
-    networkConfig = {
-      Bridge = "vmbr0";
-    };
-  };
-  systemd.network.netdevs."vmbr0" = {
-    netdevConfig = {
-      Name = "vmbr0";
-      Kind = "bridge";
-    };
-  };
-  systemd.network.networks."10-lan-bridge" = {
-    matchConfig.Name = "vmbr0";
+    matchConfig.Name = "eth0";
     networkConfig = {
       IPv6AcceptRA = true;
       # DHCP = "ipv4";
     };
-    addresses = [ { Address = "192.168.8.20/24"; } ];
+    addresses = [ { Address = "192.168.8.30/24"; } ];
     gateway = [ "192.168.8.1" ];
     dns = [
       "8.8.8.8"
@@ -75,7 +51,7 @@
   };
 
   networking = {
-    wireless.enable = true;
+    wireless.enable = false;
     wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
     wireless.networks."aterm-44cbf4-a" = {
       pskRaw = "ext:psk_home";
@@ -84,6 +60,18 @@
       pskRaw = "ext:psk_home";
     };
   };
+
+  # proxmox lxc settings
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 2;
+  };
+  proxmoxLXC = {
+    enable = true;
+    manageNetwork = false;
+    privileged = true;
+  };
+  services.fstrim.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
