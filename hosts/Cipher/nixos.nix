@@ -10,7 +10,7 @@
 {
   imports = [
     ../../includes/nixos/core
-    ../../includes/nixos/core/boot/systemd-boot.nix
+    # ../../includes/nixos/core/boot/systemd-boot.nix
     ../../includes/nixos/core/networking/base.nix
     ../../includes/nixos/core/virtualisation.nix
     # ../../includes/nixos/core/proxmox.nix
