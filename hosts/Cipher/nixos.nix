@@ -68,7 +68,7 @@
   };
   proxmoxLXC = {
     enable = true;
-    manageNetwork = false;
+    manageNetwork = true;
     privileged = true;
   };
   services.fstrim.enable = false;
