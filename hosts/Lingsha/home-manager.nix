@@ -14,7 +14,7 @@
     ../../includes/home/git
     ../../includes/home/gpg/linux-desktop.nix
     ../../includes/home/im
-    ../../includes/home/kdewallet.nix
+    # ../../includes/home/kdewallet.nix
     ../../includes/home/neovim
     ../../includes/home/network.nix
     ../../includes/home/sops.nix
