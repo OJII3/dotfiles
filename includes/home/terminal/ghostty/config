@@ -4,7 +4,7 @@ font-family = "UDEV Gothic 35NF"
 font-family = "HackGen Console NF"
 font-size = 14
 
-theme = tokyonight
+theme = TokyoNight
 title = "Ghostty"
 background-opacity = 0.85
 unfocused-split-opacity = 0.85
