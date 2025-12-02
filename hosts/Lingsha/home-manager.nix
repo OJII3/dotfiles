@@ -3,11 +3,11 @@
   imports = [
     ../../includes/home
     ../../includes/home/ai/codex
-    ../../includes/home/apps/linux.nix
+    # ../../includes/home/apps/linux.nix
     ../../includes/home/bitwarden.nix
     ../../includes/home/cloudflare-warp.nix
-    ../../includes/home/desktop
-    ../../includes/home/desktop/hyprland/default-monitors.nix
+    ../../includes/home/desktop/theme.nix
+    # ../../includes/home/desktop/hyprland/default-monitors.nix
     ../../includes/home/dev
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
@@ -18,14 +18,15 @@
     ../../includes/home/neovim
     ../../includes/home/network.nix
     ../../includes/home/sops.nix
-    ../../includes/home/terminal/kitty
-    ../../includes/home/unityhub.nix
+    # ../../includes/home/terminal/kitty
+    # ../../includes/home/unityhub.nix
     ../../includes/home/zsh
   ];
 
-  services.hypridle.enable = true;
+  # services.hypridle.enable = true;
 
-  wayland.windowManager.hyprland.extraConfig = ''
-    exec-once = waydroid session start
-  '';
+  home.file.".config/ghostty" = {
+    source = ./.;
+    recursive = true;
+  };
 }
