@@ -31,7 +31,6 @@ in
     mpv
     nautilus
     nautilus-python
-    ocs-url
     overskride
     pkgs-stable.blender
     vlc

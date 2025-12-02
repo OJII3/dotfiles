@@ -1,5 +1,9 @@
 { pkgs, pkgs-stable, ... }:
 {
+  home.packages = with pkgs; [
+    ocs-url
+  ];
+
   gtk = {
     enable = true;
     theme = {
