@@ -24,6 +24,7 @@
   ];
 
   # services.hypridle.enable = true;
+  targets.genericLinux.enable = true;
 
   home.file.".config/ghostty" = {
     source = ./.;
