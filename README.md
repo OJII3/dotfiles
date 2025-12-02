@@ -8,19 +8,19 @@
 - **Cyrene**: Desktop with Gen 13th Core i5 & Nvidia RTX 3060
     - `nixos-wsl`
     - `home-manager`
-- **Cipher**: GMKtec G3 Plus
+- **Cipher**: Proxmox Virtual Environment
     - `nixos`
     - `home-manager`
 - **Himeko**: MacBook Pro M2
     - `nix-darwin`
     - `home-manager`
-- **Lingsha**: Thinkpad E14 Gen 6 (Dual Boot)
-    - `nixos`
+- **Lingsha**: Thinkpad E14 Gen 6
+    - Ubuntu 22.04
     - `home-manager`
 - **SilverWolf**: Xiaomi Pad 6s Pro
     - `nix-on-droid`
 - **Welt**: Raspberry Pi 4B
-    - Ubuntu
+    - Raspberry Pi OS
     - `home-manager`
 
 ### Apps & Tools
