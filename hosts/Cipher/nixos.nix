@@ -43,10 +43,6 @@
     };
     addresses = [ { Address = "192.168.8.30/24"; } ];
     gateway = [ "192.168.8.1" ];
-    dns = [
-      "8.8.8.8"
-      "1.1.1.1"
-    ];
     linkConfig.RequiredForOnline = "routable";
   };
 
