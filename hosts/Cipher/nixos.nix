@@ -16,9 +16,9 @@
     # ../../includes/nixos/core/proxmox.nix
     ../../includes/nixos/core/sops.nix
 
-    ../../includes/nixos/server/adguard.nix
+    # ../../includes/nixos/server/adguard.nix
     ../../includes/nixos/server/autologin.nix
-    ../../includes/nixos/server/nextcloud
+    # ../../includes/nixos/server/nextcloud
 
     # ./hardware-configuration.nix
   ]
