@@ -33,6 +33,12 @@ return {
 			minimize_diff = true,
 			support_paste_from_clipboard = true,
 		},
+		acp_providers = {
+			["gemini-cli"] = {
+				command = "bunx @google/gemini-cli",
+				args = { "--experimental-acp" },
+			},
+		},
 		file_selector = {
 			provider = "telescope",
 			provider_opts = {},
@@ -98,6 +104,7 @@ return {
 		"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
 		"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
 		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+		"stevearc/dressing.nvim", -- for input provider dressing
 		"zbirenbaum/copilot.lua", -- for providers='copilot'
 		{
 			-- Make sure to set this up properly if you have lazy=true
