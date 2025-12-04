@@ -12,7 +12,6 @@
     hunspell
     inkscape-with-extensions
     krita
-    libreoffice-qt
     moonlight-qt
     mpv
     pkgs-stable.blender
