@@ -23,12 +23,11 @@
     - Raspberry Pi OS
     - `home-manager`
 
-### Apps & Tools
+### Favorite Apps & Tools
 
 - Hyprland
 - Neovim
 - Zsh
-- Fcitx5
-- Kitty
-- proxmox-nixos
+- SKK
+- Ghostty
 
