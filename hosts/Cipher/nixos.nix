@@ -63,7 +63,7 @@
     "net.ipv4.ip_forward" = 1;
     "net.ipv6.conf.all.forwarding" = 2;
   };
-  systemd.surpressedSystemUnits = [
+  systemd.suppressedSystemUnits = [
     "sys-kernel-debug.mount"
   ];
   proxmoxLXC = {
