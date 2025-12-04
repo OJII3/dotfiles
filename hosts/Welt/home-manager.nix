@@ -2,7 +2,7 @@
 {
   imports = [
     ../../includes/home
-    ../../includes/home/dev.nix
+    ../../includes/home/dev
     ../../includes/home/direnv.nix
     ../../includes/home/git
     ../../includes/home/gpg/console.nix

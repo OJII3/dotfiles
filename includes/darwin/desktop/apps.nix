@@ -8,11 +8,11 @@
       cleanup = "uninstall";
     };
     casks = [
-      "Affinity"
-      "Figma"
       "SpaceId"
+      "affinity"
       "chatgpt"
       "discord"
+      "figma"
       "firefox"
       "fork"
       "ghostty"
@@ -21,6 +21,7 @@
       "obs"
       "raycast"
       "scroll-reverser"
+      "slack"
       "steam"
       "unity-hub"
       "visual-studio-code"

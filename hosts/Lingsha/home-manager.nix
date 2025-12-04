@@ -21,14 +21,6 @@
 
   targets.genericLinux.enable = true;
 
-  home.packages = with pkgs; [
-    discord
-    jetbrains-toolbox
-    logisim-evolution
-    pkgs-stable.blender
-    slack
-  ];
-
   programs = {
     vscode.enable = true;
   };

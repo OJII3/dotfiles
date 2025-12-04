@@ -2,8 +2,8 @@
 {
   imports = [
     ../../includes/home
-    ../../includes/home/ai/codex
     ../../includes/home/dev
+    ../../includes/home/dev/ai/codex
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
