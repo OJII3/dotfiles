@@ -2,7 +2,7 @@
 {
   imports = [
     ../../includes/home
-    ../../includes/home/apps/linux.nix
+    ../../includes/home/apps/linux/hyprland.nix
     ../../includes/home/bitwarden.nix
     ../../includes/home/desktop
     ../../includes/home/desktop/hyprland/default-monitors.nix

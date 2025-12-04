@@ -3,8 +3,6 @@
   imports = [
     ../../includes/home
     ../../includes/home/ai/codex
-    ../../includes/home/apps/linux.nix
-    ../../includes/home/cloudflare-warp.nix
     ../../includes/home/dev
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
@@ -20,8 +18,4 @@
     ../../includes/home/server/kdeconnect.nix
     ../../includes/home/server/gpg.nix
   ];
-
-  wayland.windowManager.hyprland.extraConfig = ''
-    monitor=HDMI-A-2,1920x1080@60,auto,1
-  '';
 }
