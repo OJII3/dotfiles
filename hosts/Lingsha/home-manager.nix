@@ -1,12 +1,12 @@
-{ pkgs, pkgs-stable, ... }:
+{ ... }:
 {
   imports = [
     ../../includes/home
-    ../../includes/home/ai/codex
     ../../includes/home/apps/linux/ubuntu.nix
     ../../includes/home/bitwarden.nix
     ../../includes/home/desktop/theme.nix
     ../../includes/home/dev
+    ../../includes/home/dev/ai/codex
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
@@ -20,8 +20,4 @@
   ];
 
   targets.genericLinux.enable = true;
-
-  programs = {
-    vscode.enable = true;
-  };
 }
