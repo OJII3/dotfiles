@@ -20,7 +20,6 @@
 
   programs = {
     obs-studio.enable = true;
-    vscode.enable = true;
     google-chrome.enable = pkgs.system == "x86_64-linux";
     firefox.enable = true;
     google-chrome.commandLineArgs = [
