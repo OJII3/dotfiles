@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-xr.url = "github:nix-community/nixpkgs-xr";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";

@@ -1,7 +1,7 @@
 { pkgs, pkgs-stable, ... }:
 {
   home.packages = with pkgs; [
-    ocs-url
+    ocs-url # For installing icon themes from .ocf files
   ];
 
   gtk = {
@@ -22,8 +22,8 @@
 
   qt = {
     enable = true;
-    style.package = pkgs-stable.colloid-kde;
-    style.name = "kvantum";
+    style.package = pkgs.kdePackages.qt6gtk2;
+    style.name = "gtk2";
   };
 
   services.darkman = {

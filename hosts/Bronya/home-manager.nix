@@ -18,7 +18,6 @@
     ../../includes/home/network.nix
     ../../includes/home/sops.nix
     ../../includes/home/terminal/kitty
-    ../../includes/home/unityhub.nix
     ../../includes/home/vr.nix
     ../../includes/home/zsh
   ];
