@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "general": {
+    "previewFeatures": true,
+    "vimMode": false,
+    "sessionRetention": {
+      "enabled": true,
+      "maxAge": "1w"
+    }
+  },
+  "context": {
+    "fileName": ["AGENTS.md"]
+  },
+  "ui": {
+    "showStatusInTitle": true,
+    "showMemoryUsage": true,
+    "showModelInfoInChat": true
+  },
+  "telemetry": {
+    "enabled": false
+  },
+  "tools": {
+    "autoAccept": true,
+    "enableHooks": true
+  },
+  "mcpServers": {
+    "figma": {
+      "command": "bunx",
+      "args": ["mcp-remote", "https://127.0.0.1:3845/mcp"]
+    },
+    "github": {
+      "command": "bunx",
+      "args": ["mcp-remote", "https://api.githubcopilot.com/mcp/"]
+    },
+    "git": {
+      "command": "uv",
+      "args": ["tool", "run", "mcp-server-git"]
+    },
+    "playwright": {
+      "command": "bunx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "mcp-deepwiki": {
+      "command": "bunx",
+      "args": ["-y", "mcp-deepwiki@latest"]
+    },
+    "voicevox": {
+      "command": "bunx",
+      "args": ["@t09tanaka/mcp-simple-voicevox"]
+    }
+  }
+}

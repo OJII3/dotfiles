@@ -86,7 +86,7 @@
             "command": "terminal-notifier -title 'Mr.Claude' -message '確認して～！' -sound default"
           },
           {
-            "type": "command"
+            "type": "command",
             "command": "notify-send 'Mr.Claude' '確認して～！' --icon=dialog-information"
           }
         ]

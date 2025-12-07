@@ -1,11 +1,10 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../.
+  ];
   home.packages = with pkgs; [
-    # codex
-
-    # for local mcp servers
-    bun
-    uv
+    codex
   ];
   # home.file.".codex/config.toml".text = ''
   #   [profiles.full_auto]

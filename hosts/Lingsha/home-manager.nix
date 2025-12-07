@@ -5,8 +5,10 @@
     ../../includes/home/apps/linux/ubuntu.nix
     ../../includes/home/bitwarden.nix
     ../../includes/home/desktop/theme.nix
+    ../../includes/home/desktop/keyd
     ../../includes/home/dev
     ../../includes/home/dev/ai/codex
+    ../../includes/home/dev/ai/gemini
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
