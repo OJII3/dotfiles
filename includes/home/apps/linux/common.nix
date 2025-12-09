@@ -20,7 +20,7 @@
 
   programs = {
     obs-studio.enable = true;
-    google-chrome.enable = pkgs.system == "x86_64-linux";
+    google-chrome.enable = pkgs.stdenv.hostPlatform.system == "x86_64-linux";
     firefox.enable = true;
     google-chrome.commandLineArgs = [
       "--ozone-platform-hint=auto"

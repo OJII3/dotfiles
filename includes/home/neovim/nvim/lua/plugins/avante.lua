@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		provider = "gemini-cli",
+		provider = "copilot",
 		-- provider = "gemini",
 		-- auto_suggestions_provider = "copilot",
 		providers = {
@@ -21,8 +21,8 @@ return {
 		cursor_applying_provider = nil,
 		dual_boost = {
 			enabled = true,
-			first_provider = "gemini-cli",
-			second_provider = "copilot",
+			first_provider = "copilot",
+			second_provider = "codex",
 			prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
 		},
 		behaviour = {
@@ -35,13 +35,13 @@ return {
 			support_paste_from_clipboard = true,
 		},
 		acp_providers = {
-			["gemini-cli"] = {
-				command = "gemini",
-				args = { "--experimental-acp" },
-				env = {
-					NODE_NO_WARNINGS = "1",
-				},
-			},
+			-- ["gemini-cli"] = {
+			-- 	command = "gemini",
+			-- 	args = { "--experimental-acp" },
+			-- 	env = {
+			-- 		NODE_NO_WARNINGS = "1",
+			-- 	},
+			-- },
 			["codex"] = {
 				command = "codex-acp",
 				env = {

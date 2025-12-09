@@ -29,6 +29,7 @@ in
       inputs.mcp-hub.packages."${system}".default
       # ACP
       gemini-cli-bin
+      codex-acp
       # codex-acp
       # MCP server dependencies -------------------------
       uv
