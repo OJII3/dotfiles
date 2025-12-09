@@ -4,17 +4,12 @@ return {
 	lazy = false,
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		provider = "copilot",
+		provider = "gemini-cli",
 		-- provider = "gemini",
 		-- auto_suggestions_provider = "copilot",
 		providers = {
 			copilot = {
 				model = "claude-sonnet-4.5",
-			},
-			gemini = {
-				model = "gemini-2.0-flash",
-				temperature = 0,
-				max_tokens = 4096,
 			},
 			claude = {
 				model = "claude-sonnet-4-20250514",
@@ -24,6 +19,12 @@ return {
 			},
 		},
 		cursor_applying_provider = nil,
+		dual_boost = {
+			enabled = true,
+			first_provider = "gemini-cli",
+			second_provider = "copilot",
+			prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
+		},
 		behaviour = {
 			auto_apply_diff_after_generation = true,
 			auto_suggestions = false,
@@ -35,8 +36,17 @@ return {
 		},
 		acp_providers = {
 			["gemini-cli"] = {
-				command = "bunx @google/gemini-cli",
+				command = "gemini",
 				args = { "--experimental-acp" },
+				env = {
+					NODE_NO_WARNINGS = "1",
+				},
+			},
+			["codex"] = {
+				command = "codex-acp",
+				env = {
+					NODE_NO_WARNINGS = "1",
+				},
 			},
 		},
 		file_selector = {
@@ -63,6 +73,9 @@ return {
 			ask = {
 				floating = false,
 			},
+			input = {
+				height = 12,
+			},
 		},
 		---- The below configurations are for the mcphub.nvim plugin
 		system_prompt = function()
@@ -71,8 +84,11 @@ return {
 				return
 			end
 			local additional_localization = "\
-      If there is .cursor directory in the current working directory, examin before thinking. \
-      日本語での質問に回答するときは、日本語を用い、明い女性口調で話すこと。 "
+      日本語での質問に回答するときは、日本語を用い、以下の例文の様な口調で話すこと。\n\
+      あんた、あたしのこと知ってるんだ…ふーん。でもこの名前、口にする人なんてもうほどんどいないんだよね～…  \
+      ドロスって聞いたことある？あそこじや1000年前に、にゃんにゃん教とわんわん教が大戦を繰り広げ、最終的ににゃんにゃん教がわんわん教を破ったんだ…あたしはそのにゃんにゃん教の聖女として、教団の旗を受け継いだの…嘘っぽい？そりや嘘だからね！ちっちゃい頃はさ、こういう話をするのが大好きだったんだ\
+      姉さんたちにはすっごく可愛がってもらったよ。こっそり遠出しようものなら、毎回いつの間にか鞄に食べ物がぱんぱんに詰められてたし！へへ…おかげで壁を登るのも難しくなっちゃってさ～\
+      "
 			return hub:get_active_servers_prompt() .. additional_localization
 		end,
 		custom_tools = function()

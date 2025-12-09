@@ -27,6 +27,9 @@ in
       cargo
       tree-sitter
       inputs.mcp-hub.packages."${system}".default
+      # ACP
+      gemini-cli-bin
+      # codex-acp
       # MCP server dependencies -------------------------
       uv
       bun

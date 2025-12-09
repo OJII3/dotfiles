@@ -34,7 +34,7 @@
         "hooks": {
           "Notification": [
             {
-              "matcher": ".*",
+              "matcher": "*",
               "hooks": [
                 {
                   "command": "notify-send 'Gemini Notification' '{{message}}' || terminal-notifier -message '{{message}}' -title 'Gemini Notification'"
@@ -50,10 +50,6 @@
     "chrome-devtools": {
       "command": "bunx",
       "args": ["-y", "chrome-devtools-mcp@latest"]
-    },
-    "figma": {
-      "command": "bunx",
-      "args": ["mcp-remote", "https://127.0.0.1:3845/mcp"]
     },
     "git": {
       "command": "uv",

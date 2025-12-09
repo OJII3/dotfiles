@@ -15,7 +15,6 @@ opt.hidden = true
 opt.hlsearch = true
 opt.ignorecase = true
 opt.inccommand = "split"
-opt.laststatus = 2
 opt.laststatus = 3
 opt.list = true
 opt.mouse = "a"
