@@ -14,7 +14,9 @@
     }
   },
   "context": {
-    "fileName": ["AGENTS.md"]
+    "fileName": [
+      "AGENTS.md"
+    ]
   },
   "ui": {
     "showStatusInTitle": true,
@@ -29,43 +31,42 @@
     "enableHooks": true
   },
   "hooks": {
-    "Notification": [
-      {
-        "hooks": {
-          "Notification": [
-            {
-              "matcher": "*",
-              "hooks": [
-                {
-                  "command": "notify-send 'Gemini Notification' '{{message}}' || terminal-notifier -message '{{message}}' -title 'Gemini Notification'"
-                }
-              ]
-            }
-          ]
-        }
-      }
-    ]
+    "Notification": []
   },
   "mcpServers": {
     "chrome-devtools": {
       "command": "bunx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
     },
     "git": {
       "command": "uv",
-      "args": ["tool", "run", "mcp-server-git"]
+      "args": [
+        "tool",
+        "run",
+        "mcp-server-git"
+      ]
     },
     "playwright": {
       "command": "bunx",
-      "args": ["@playwright/mcp@latest"]
+      "args": [
+        "@playwright/mcp@latest"
+      ]
     },
     "mcp-deepwiki": {
       "command": "bunx",
-      "args": ["-y", "mcp-deepwiki@latest"]
+      "args": [
+        "-y",
+        "mcp-deepwiki@latest"
+      ]
     },
     "voicevox": {
       "command": "bunx",
-      "args": ["@t09tanaka/mcp-simple-voicevox"]
+      "args": [
+        "@t09tanaka/mcp-simple-voicevox"
+      ]
     }
   }
 }

@@ -20,6 +20,8 @@ depends = []
 "includes/windows/wezterm/keybindings.lua" = "~/.config/wezterm/local/keybindings.lua"
 "includes/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
 
+"includes/home/dev/ai/gemini/settings.json" = "~/.gemini/settings.json"
+
 [default.variables]
 
 [settings]
