@@ -6,6 +6,7 @@
       gomi
       bun
       uv
+      (callPackage ../../../packages/gwq.nix { })
     ]
     ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
       terminal-notifier
