@@ -84,10 +84,9 @@ in
   home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
 
   # for skkeleton
-  home.file.".skk" = {
-    source = "${pkgs.skkDictionaries.l}/share/skk";
-    recursive = true;
-  };
+  home.file.".skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+  home.file.".skk/SKK-JISYO.propernoun".source =
+    "${pkgs.skkDictionaries.propernoun}/share/skk/SKK-JISYO.propernoun";
 
   home.file.".clang-tidy".source = ./.clang-tidy;
   home.file.".clang-format".source = ./.clang-format;
