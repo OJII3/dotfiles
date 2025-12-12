@@ -14,9 +14,7 @@
     }
   },
   "context": {
-    "fileName": [
-      "AGENTS.md"
-    ]
+    "fileName": ["AGENTS.md"]
   },
   "ui": {
     "showStatusInTitle": true,
@@ -27,46 +25,68 @@
     "enabled": false
   },
   "tools": {
+    "enableHooks": true,
     "autoAccept": true,
-    "enableHooks": true
+    "allowed": [
+      "run_shell_command(notify-send)",
+      "run_shell_command(terminal-notifier)",
+      "run_shell_command(open raycast://confetti)",
+      "run_shell_command(head)",
+      "run_shell_command(tail)",
+      "run_shell_command(file)",
+      "run_shell_command(bun check)",
+      "run_shell_command(bun typecheck)",
+      "run_shell_command(bun format)",
+      "run_shell_command(bun lint)",
+      "run_shell_command(bun test)",
+      "run_shell_command(git status)",
+      "run_shell_command(git diff)"
+    ]
   },
   "hooks": {
-    "Notification": []
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "run_shell_command",
+            "command": "notify-send",
+            "args": ["Gemini", "{{message}}"]
+          },
+          {
+            "type": "run_shell_command",
+            "command": "terminal-notifier",
+            "args": ["-title", "Gemini", "-message", "{{message}}"]
+          },
+          {
+            "type": "run_shell_command",
+            "command": "open",
+            "args": ["raycast://confetti"]
+          }
+        ]
+      }
+    ]
   },
   "mcpServers": {
     "chrome-devtools": {
       "command": "bunx",
-      "args": [
-        "-y",
-        "chrome-devtools-mcp@latest"
-      ]
+      "args": ["-y", "chrome-devtools-mcp@latest"]
     },
     "git": {
       "command": "uv",
-      "args": [
-        "tool",
-        "run",
-        "mcp-server-git"
-      ]
+      "args": ["tool", "run", "mcp-server-git"]
     },
     "playwright": {
       "command": "bunx",
-      "args": [
-        "@playwright/mcp@latest"
-      ]
+      "args": ["@playwright/mcp@latest"]
     },
     "mcp-deepwiki": {
       "command": "bunx",
-      "args": [
-        "-y",
-        "mcp-deepwiki@latest"
-      ]
+      "args": ["-y", "mcp-deepwiki@latest"]
     },
     "voicevox": {
       "command": "bunx",
-      "args": [
-        "@t09tanaka/mcp-simple-voicevox"
-      ]
+      "args": ["@t09tanaka/mcp-simple-voicevox"]
     }
   }
 }

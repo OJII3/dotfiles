@@ -7,13 +7,6 @@
       "command": "uvx",
       "args": ["blender-mcp"]
     },
-    "github": {
-      "command": "bunx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${YOUR_TOKEN}"
-      }
-    },
     "git": {
       "command": "uv",
       "args": ["tool", "run", "mcp-server-git"]
@@ -25,6 +18,6 @@
     "mcp-deepwiki": {
       "command": "bunx",
       "args": ["-y", "mcp-deepwiki@latest"]
-    }
+    },
   }
 }
