@@ -16,6 +16,7 @@
     mpv
     pkgs-stable.blender
     vlc
+    voicevox
   ];
 
   programs = {
