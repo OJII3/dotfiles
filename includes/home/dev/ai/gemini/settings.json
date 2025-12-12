@@ -46,22 +46,62 @@
   "hooks": {
     "Notification": [
       {
-        "matcher": "",
+        "matcher": "Stop",
         "hooks": [
           {
-            "type": "run_shell_command",
+            "type": "command",
             "command": "notify-send",
             "args": ["Gemini", "{{message}}"]
           },
           {
-            "type": "run_shell_command",
-            "command": "terminal-notifier",
-            "args": ["-title", "Gemini", "-message", "{{message}}"]
-          },
-          {
-            "type": "run_shell_command",
+            "type": "command",
             "command": "open",
             "args": ["raycast://confetti"]
+          },
+          {
+            "type": "command",
+            "command": "aplay",
+            "args": ["~/.assets/kiritan_completed.wav"]
+          }
+        ]
+      },
+      {
+        "matcher": "AfterAgent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send",
+            "args": ["Gemini", "{{message}}"]
+          },
+          {
+            "type": "command",
+            "command": "open",
+            "args": ["raycast://confetti"]
+          },
+          {
+            "type": "command",
+            "command": "aplay",
+            "args": ["~/.assets/sounds/kiritan_completed.wav"]
+          }
+        ]
+      },
+      {
+        "matcher": "ToolPermission",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send",
+            "args": ["Gemini", "{{message}}"]
+          },
+          {
+            "type": "command",
+            "command": "open",
+            "args": ["raycast://confetti"]
+          },
+          {
+            "type": "command",
+            "command": "aplay",
+            "args": ["~/.assets/sounds/kiritan_permission_requested.wav"]
           }
         ]
       }
@@ -71,10 +111,6 @@
     "chrome-devtools": {
       "command": "bunx",
       "args": ["-y", "chrome-devtools-mcp@latest"]
-    },
-    "git": {
-      "command": "uv",
-      "args": ["tool", "run", "mcp-server-git"]
     },
     "playwright": {
       "command": "bunx",
