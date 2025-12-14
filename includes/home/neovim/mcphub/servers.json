@@ -18,6 +18,6 @@
     "mcp-deepwiki": {
       "command": "bunx",
       "args": ["-y", "mcp-deepwiki@latest"]
-    },
+    }
   }
 }

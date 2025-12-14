@@ -43,8 +43,14 @@
       "run_shell_command(git status)",
       "run_shell_command(grep)",
       "run_shell_command(head)",
+      "run_shell_command(ls)",
       "run_shell_command(notify-send)",
       "run_shell_command(open raycast://confetti)",
+      "run_shell_command(pnpm check)",
+      "run_shell_command(pnpm format)",
+      "run_shell_command(pnpm lint)",
+      "run_shell_command(pnpm test)",
+      "run_shell_command(pnpm typecheck)",
       "run_shell_command(rg)",
       "run_shell_command(tail)",
       "run_shell_command(terminal-notifier)"
@@ -95,7 +101,7 @@
         ]
       },
       {
-        "matcher": "ToolPermission",
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
