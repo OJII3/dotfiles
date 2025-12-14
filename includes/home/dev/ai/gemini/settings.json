@@ -28,6 +28,8 @@
     "enableHooks": true,
     "autoAccept": true,
     "allowed": [
+      "google_web_search",
+      "run_shell_command(aplay)",
       "run_shell_command(bun check)",
       "run_shell_command(bun format)",
       "run_shell_command(bun lint)",
@@ -57,16 +59,26 @@
             "type": "command",
             "command": "notify-send",
             "args": ["Gemini", "{{message}}"]
-          },
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
           {
             "type": "command",
             "command": "open",
             "args": ["raycast://confetti"]
-          },
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
           {
             "type": "command",
             "command": "aplay",
-            "args": ["~/.assets/sounds/kiritan_completed.wav"]
+            "args": ["~/.assets/sounds/kiritan_task_completed.wav"]
           }
         ]
       }
@@ -79,12 +91,22 @@
             "type": "command",
             "command": "notify-send",
             "args": ["Gemini", "{{message}}"]
-          },
+          }
+        ]
+      },
+      {
+        "matcher": "ToolPermission",
+        "hooks": [
           {
             "type": "command",
             "command": "open",
             "args": ["raycast://confetti"]
-          },
+          }
+        ]
+      },
+      {
+        "matcher": "ToolPermission",
+        "hooks": [
           {
             "type": "command",
             "command": "aplay",
@@ -106,6 +128,13 @@
     "mcp-deepwiki": {
       "command": "bunx",
       "args": ["-y", "mcp-deepwiki@latest"]
+    },
+    "context7": {
+      "httpUrl": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "$CONTEXT7_API_KEY",
+        "Accept": "application/json, text/event-stream"
+      }
     },
     "voicevox": {
       "command": "bunx",
