@@ -28,45 +28,30 @@
     "enableHooks": true,
     "autoAccept": true,
     "allowed": [
-      "run_shell_command(notify-send)",
-      "run_shell_command(terminal-notifier)",
-      "run_shell_command(open raycast://confetti)",
-      "run_shell_command(head)",
-      "run_shell_command(tail)",
-      "run_shell_command(file)",
       "run_shell_command(bun check)",
-      "run_shell_command(bun typecheck)",
       "run_shell_command(bun format)",
       "run_shell_command(bun lint)",
       "run_shell_command(bun test)",
+      "run_shell_command(bun typecheck)",
+      "run_shell_command(file)",
+      "run_shell_command(find)",
+      "run_shell_command(git diff)",
+      "run_shell_command(git fetch)",
+      "run_shell_command(git log)",
       "run_shell_command(git status)",
-      "run_shell_command(git diff)"
+      "run_shell_command(grep)",
+      "run_shell_command(head)",
+      "run_shell_command(notify-send)",
+      "run_shell_command(open raycast://confetti)",
+      "run_shell_command(rg)",
+      "run_shell_command(tail)",
+      "run_shell_command(terminal-notifier)"
     ]
   },
   "hooks": {
-    "Notification": [
+    "AfterAgent": [
       {
-        "matcher": "Stop",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "notify-send",
-            "args": ["Gemini", "{{message}}"]
-          },
-          {
-            "type": "command",
-            "command": "open",
-            "args": ["raycast://confetti"]
-          },
-          {
-            "type": "command",
-            "command": "aplay",
-            "args": ["~/.assets/kiritan_completed.wav"]
-          }
-        ]
-      },
-      {
-        "matcher": "AfterAgent",
+        "matcher": "*",
         "hooks": [
           {
             "type": "command",
@@ -84,7 +69,9 @@
             "args": ["~/.assets/sounds/kiritan_completed.wav"]
           }
         ]
-      },
+      }
+    ],
+    "Notification": [
       {
         "matcher": "ToolPermission",
         "hooks": [
