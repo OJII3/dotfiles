@@ -44,6 +44,8 @@
       "run_shell_command(grep)",
       "run_shell_command(head)",
       "run_shell_command(ls)",
+      "run_shell_command(mkdir)",
+      "run_shell_command(mv)",
       "run_shell_command(notify-send)",
       "run_shell_command(open raycast://confetti)",
       "run_shell_command(pnpm check)",
