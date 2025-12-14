@@ -5,7 +5,7 @@ return {
 		editing_text = "Editing Text...",
 		file_explorer_text = "Browsing Files...",
 		reading_text = "Reading Documents...",
-		workspace_text = "Working on Projects...",
+		workspace_text = "ねおびむ♡を使っています...",
 	},
 	event = "BufReadPost",
 }
