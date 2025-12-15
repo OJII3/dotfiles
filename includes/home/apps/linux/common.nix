@@ -14,6 +14,7 @@
     krita
     moonlight-qt
     mpv
+    obsidian
     pkgs-stable.blender
     vlc
     voicevox
