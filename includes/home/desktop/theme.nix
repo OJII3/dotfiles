@@ -22,8 +22,6 @@
 
   qt = {
     enable = true;
-    style.package = pkgs.kdePackages.qt6gtk2;
-    style.name = "gtk2";
   };
 
   services.darkman = {

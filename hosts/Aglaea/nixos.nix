@@ -46,13 +46,6 @@
   hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  # services.fprintd = {
-  #  enable = true;
-  # };
-  # security.pam.services.hyprlock.fprintAuth = true;
-  # security.pam.services.login.fprintAuth = true;
-
-  services.sunshine.settings.output_name = 1; # HDMI-A-1
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
