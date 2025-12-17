@@ -12,10 +12,9 @@
     ../../includes/nixos/core/networking/networkmanager.nix
 
     ../../includes/nixos/desktop
+    ../../includes/nixos/desktop/fonts.nix
     ../../includes/nixos/desktop/greetd/autologin.nix
     ../../includes/nixos/desktop/peripheral/keyboard.nix
-    ../../includes/nixos/desktop/peripheral/vr.nix
-    # ../../includes/nixos/desktop/peripheral/weylus.nix
     ../../includes/nixos/desktop/sunshine.nix
     ../../includes/nixos/desktop/waydroid.nix
 

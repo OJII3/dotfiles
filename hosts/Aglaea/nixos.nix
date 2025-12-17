@@ -15,12 +15,13 @@
     ../../includes/nixos/core/networking/networkmanager.nix
 
     # ../../includes/nixos/desktop
-    # ../../includes/nixos/desktop/sunshine.nix
-    # ../../includes/nixos/desktop/greetd/tuigreet.nix
-    ../../includes/nixos/desktop/waydroid.nix
+    ../../includes/nixos/desktop/sunshine.nix
+    ../../includes/nixos/desktop/bitwarden.nix
+    ../../includes/nixos/desktop/fonts.nix
     ../../includes/nixos/desktop/keyd.nix
     ../../includes/nixos/desktop/peripheral/keyboard.nix
     ../../includes/nixos/desktop/peripheral/vr.nix
+    ../../includes/nixos/desktop/waydroid.nix
 
     ./hardware-configuration.nix
   ];

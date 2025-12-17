@@ -15,6 +15,7 @@
     ../../includes/nixos/core/networking/networkmanager.nix
 
     ../../includes/nixos/desktop
+    ../../includes/nixos/desktop/fonts.nix
     ../../includes/nixos/desktop/sunshine.nix
     ../../includes/nixos/desktop/greetd/tuigreet.nix
     ../../includes/nixos/desktop/waydroid.nix
