@@ -8,20 +8,25 @@
     ../../includes/nixos/core
     ../../includes/nixos/core/networking
     ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/cloudflare-warp.nix
-    ../../includes/nixos/core/power/laptop.nix
-    ../../includes/nixos/core/suspend
+    # ../../includes/nixos/core/cloudflare-warp.nix
+    # ../../includes/nixos/core/power/laptop.nix
+    # ../../includes/nixos/core/suspend
     ../../includes/nixos/core/virtualisation.nix
     ../../includes/nixos/core/networking/networkmanager.nix
 
-    ../../includes/nixos/desktop
-    ../../includes/nixos/desktop/sunshine.nix
-    ../../includes/nixos/desktop/greetd/tuigreet.nix
+    # ../../includes/nixos/desktop
+    # ../../includes/nixos/desktop/sunshine.nix
+    # ../../includes/nixos/desktop/greetd/tuigreet.nix
     ../../includes/nixos/desktop/waydroid.nix
+    ../../includes/nixos/desktop/keyd.nix
     ../../includes/nixos/desktop/peripheral/keyboard.nix
+    ../../includes/nixos/desktop/peripheral/vr.nix
 
     ./hardware-configuration.nix
   ];
+
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Karnel.
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
@@ -37,18 +42,14 @@
     linuxKernel.packages.linux_zen.v4l2loopback
   ];
   boot.kernelModules = [ "v4l2loopback" ];
-  boot.extraModprobeConfig = ''
-    options rtw89pci disable_aspm_l1=y
-    options rtw89pci disable_aspm_l1ss=y
-  '';
   hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.initrd.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.fprintd = {
-    enable = true;
-  };
-  security.pam.services.hyprlock.fprintAuth = true;
-  security.pam.services.login.fprintAuth = true;
+  # services.fprintd = {
+  #  enable = true;
+  # };
+  # security.pam.services.hyprlock.fprintAuth = true;
+  # security.pam.services.login.fprintAuth = true;
 
   services.sunshine.settings.output_name = 1; # HDMI-A-1
 

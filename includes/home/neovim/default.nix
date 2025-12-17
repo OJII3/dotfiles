@@ -22,6 +22,8 @@ in
       imagemagick
       deno
       gnumake
+      cmake
+      python3
       gcc
       rustc
       cargo

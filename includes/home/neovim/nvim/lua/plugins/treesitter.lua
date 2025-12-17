@@ -1,14 +1,9 @@
 return {
+	-- { "nvim-treesitter/nvim-treesitter-textobjects" },
+	-- { "nvim-treesitter/nvim-tree-docs" },
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			{ "nvim-treesitter/nvim-tree-docs" },
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
-		},
 		build = ":TSUpdate",
-		config = function(_, opts)
-			require("nvim-treesitter.configs").setup(opts)
-		end,
 		opts = {
 			auto_install = true,
 			sync_install = false,

@@ -84,6 +84,15 @@ in
 {
   # NixOS ========================================================================
   nixos = {
+    Aglaea = mkNixosSystem {
+      system = "x86_64-linux";
+      hostname = "Aglaea";
+      username = "ojii3";
+      modules = [
+        ./Aglaea/nixos.nix
+        inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
+      ];
+    };
     Bronya = mkNixosSystem {
       system = "x86_64-linux";
       hostname = "Bronya";
@@ -124,6 +133,12 @@ in
 
   # Home Manager ====================================================================
   home-manager = {
+    "ojii3@Aglaea" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Aglaea/home-manager.nix ];
+    };
     "ojii3@Bronya" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";

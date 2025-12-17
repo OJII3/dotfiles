@@ -18,6 +18,7 @@
     pkgs-stable.blender
     vlc
     voicevox
+    unityhub
   ];
 
   programs = {

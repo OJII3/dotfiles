@@ -1,5 +1,16 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../anyrun
+    ../hypr
+    ../hyprland
+    ../swaync
+    ../theme.nix
+    ../uwsm
+    ../waybar
+    ../wlogout
+  ];
+
   home.packages = with pkgs; [
     brightnessctl
     grim
@@ -53,4 +64,5 @@
   };
 
   services.swayosd.enable = true;
+  xdg.portal.enable = true;
 }

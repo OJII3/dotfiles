@@ -4,7 +4,7 @@
     ../../includes/home
     ../../includes/home/apps/linux/hyprland.nix
     ../../includes/home/bitwarden.nix
-    ../../includes/home/desktop
+    ../../includes/home/desktop/hyprland
     ../../includes/home/desktop/hyprland/default-monitors.nix
     ../../includes/home/dev
     ../../includes/home/dev/mise.nix
