@@ -36,5 +36,4 @@
     enable = true;
     openFirewall = true;
   };
-  programs.kdeconnect.enable = true;
 }
