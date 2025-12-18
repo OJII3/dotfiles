@@ -38,6 +38,8 @@
       url = "github:BatteredBunny/brew-api";
       flake = false;
     };
+    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
+    nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
   };
 
   outputs = inputs: {

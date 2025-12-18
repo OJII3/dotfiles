@@ -19,9 +19,15 @@
     ];
     allowedUDPPortRanges = [
       {
+        # KDE Connect
         from = 1714;
         to = 1764;
-      } # KDE Connect
+      }
+      {
+        # ROS 2
+        from = 1;
+        to = 65535;
+      }
     ];
   };
 

@@ -19,5 +19,7 @@
     ../../includes/home/sops.nix
     ../../includes/home/terminal/ghostty
     ../../includes/home/zsh
+
+    ../../includes/home/ros2
   ];
 }

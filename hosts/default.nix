@@ -30,6 +30,10 @@ let
       };
       extraSpecialArgs = {
         inherit inputs username;
+        pkgs-ros = import inputs.nixpkgs-ros {
+          inherit system;
+          overlays = [ inputs.nix-ros-overlay.overlays.default ];
+        };
         pkgs-stable = import inputs.nixpkgs-stable {
           inherit system overlays;
           config = {

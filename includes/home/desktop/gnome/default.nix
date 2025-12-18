@@ -4,6 +4,7 @@
     ../../gpg/gnome.nix
   ];
 
+  xdg.enable = true;
   programs.gnome-shell = {
     enable = true;
     extensions =
