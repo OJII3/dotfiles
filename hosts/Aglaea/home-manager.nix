@@ -14,7 +14,6 @@
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
-    ../../includes/home/helix.nix
     ../../includes/home/im
     ../../includes/home/neovim
     ../../includes/home/network.nix
