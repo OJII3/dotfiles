@@ -28,7 +28,7 @@ in
       rustc
       cargo
       tree-sitter
-      inputs.mcp-hub.packages."${system}".default
+      inputs.mcp-hub.packages."${pkgs.stdenv.hostPlatform.system}".default
       # ACP
       gemini-cli-bin
       codex-acp
