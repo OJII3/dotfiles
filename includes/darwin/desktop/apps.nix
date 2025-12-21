@@ -12,6 +12,7 @@
       "affinity"
       "chatgpt"
       "discord"
+      "docker-desktop"
       "figma"
       "firefox"
       "fork"
@@ -28,6 +29,7 @@
     ];
     masApps = {
       # "bitwarden" = 1352778147;
+      Tailscale = 1475387142;
     };
   };
 }
