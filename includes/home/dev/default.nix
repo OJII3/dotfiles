@@ -20,6 +20,7 @@
     yazi
     zellij
     zip
+    ni
 
     # cli apps
     tdf
