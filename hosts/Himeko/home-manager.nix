@@ -4,6 +4,7 @@
     ../../includes/home
     ../../includes/home/apps/darwin.nix
     ../../includes/home/dev
+    ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/ai/gemini
     ../../includes/home/dev/mise.nix
