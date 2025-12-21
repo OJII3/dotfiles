@@ -11,6 +11,7 @@
     ../../includes/home/direnv.nix
     ../../includes/home/git
     ../../includes/home/gpg
+    ../../includes/home/helix.nix
     ../../includes/home/neovim
     ../../includes/home/sops.nix
     ../../includes/home/terminal/ghostty

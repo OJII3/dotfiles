@@ -12,7 +12,7 @@
       {
         name = "nix";
         auto-format = true;
-        formatter.command = "${pkgs.nixpkgs}/bin/nixfmt";
+        formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixfmt";
       }
     ];
     extraPackages = with pkgs; [
