@@ -11,7 +11,8 @@
       name = "Colloid-Dark";
     };
     cursorTheme = {
-      name = "miku-cursor-linux";
+      package = pkgs.afterglow-cursors-recolored;
+      name = "Afterglow-Recolored-Catppuccin-Pink";
       size = 36;
     };
     iconTheme = {
