@@ -83,11 +83,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Mr.Claude' -message '確認して～！' -sound default"
-          },
-          {
-            "type": "command",
-            "command": "notify-send 'Mr.Claude' '確認して～！' --icon=dialog-information"
+            "command": "./notify.sh 'Mr.Claude' '確認して～！'"
           }
         ]
       }
@@ -98,11 +94,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title 'Mr.Claude' -message 'お疲れ様でした！' -sound default"
-          },
-          {
-            "type": "command",
-            "command": "notify-send 'Mr.Claude' 'お疲れ様でした！' --icon=dialog-information"
+            "command": "./notify.sh 'Mr.Claude' 'お疲れ様でした！'"
           }
         ]
       }

@@ -10,7 +10,6 @@
   home.packages =
     with pkgs;
     [
-      terminal-notifier
     ]
     ++ (with pkgs.brewCasks; [
       pngpaste

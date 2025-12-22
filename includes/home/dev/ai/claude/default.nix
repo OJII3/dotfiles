@@ -9,4 +9,8 @@
   # Claude Code設定ファイル
   home.file.".claude/settings.json".source = ./settings.json;
   home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
+  home.file.".claude/notify.sh" = {
+    source = ./notify.sh;
+    executable = true;
+  };
 }
