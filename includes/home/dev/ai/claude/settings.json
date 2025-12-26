@@ -1,5 +1,13 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "permissions": {
+    "defaultMode": "plan",
     "allow": [
       "Bash(ls :*)",
       "Bash(find :*)",
@@ -21,39 +29,7 @@
       "Bash(pnpm run test:*)",
       "Bash(gomi -rf :*)",
       "Bash(terminal-notifier :*)",
-      "Read(~/.zshrc)",
-      "Read(~/.bashrc)",
-      "Read(~/.vimrc)",
-      "Read(~/.config/*)",
-      "Read(package.json)",
-      "Read(tsconfig.json)",
-      "Read(*.md)",
-      "Read(*.txt)",
-      "Read(*.json)",
-      "Read(*.yml)",
-      "Read(*.yaml)",
-      "Read(*.toml)",
-      "Read(Cargo.toml)",
-      "Read(pyproject.toml)",
-      "Read(requirements.txt)",
-      "Read(Dockerfile)",
-      "Read(docker-compose.yml)",
-      "Read(*.nix)",
-      "Write(*.md)",
-      "Write(*.txt)",
-      "Write(*.json)",
-      "Write(*.js)",
-      "Write(*.ts)",
-      "Write(*.tsx)",
-      "Write(*.jsx)",
-      "Write(*.py)",
-      "Write(*.rs)",
-      "Write(*.go)",
-      "Write(*.java)",
-      "Write(*.cpp)",
-      "Write(*.c)",
-      "Write(*.h)",
-      "Write(*.nix)",
+      "Bash(notify-send :*)",
       "Edit(docs/**)"
     ],
     "deny": [
@@ -67,14 +43,9 @@
       "Write(/sbin/*)"
     ]
   },
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "DISABLE_TELEMETRY": "1",
-    "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_AUTOUPDATER": "1"
-  },
+  "alwaysThinkingEnabled": true,
   "cleanupPeriodDays": 7,
-  "includeCoAuthoredBy": true,
+  "includeCoAuthoredBy": false,
   "hooks": {
     "Notification": [
       {

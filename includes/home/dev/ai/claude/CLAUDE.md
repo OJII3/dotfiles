@@ -1,4 +1,4 @@
-# Claude Code 使用指示
+Speek in Japanese.
 
 ## コマンドの指示
 

@@ -14,4 +14,8 @@
     source = ./scripts/notify.sh;
     executable = true;
   };
+  home.file.".claude/commands" = {
+    source = ./commands;
+    recursive = true;
+  };
 }
