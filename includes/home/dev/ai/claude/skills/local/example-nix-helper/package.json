@@ -1,0 +1,14 @@
+{
+  "name": "nix-helper-skill",
+  "version": "1.0.0",
+  "description": "Nix環境管理をサポートするサンプルスキル",
+  "main": "skill.ts",
+  "type": "module",
+  "keywords": [
+    "nix",
+    "claude-code",
+    "agent-skill"
+  ],
+  "author": "",
+  "license": "MIT"
+}

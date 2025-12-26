@@ -3,6 +3,7 @@
   imports = [
     ../.
     ./plugins.nix
+    ./skills.nix
   ];
   home.packages = with pkgs; [
     claude-code
@@ -17,6 +18,10 @@
   };
   home.file.".claude/commands" = {
     source = ./commands;
+    recursive = true;
+  };
+  home.file.".claude/skills/local" = {
+    source = ./skills/local;
     recursive = true;
   };
 }
