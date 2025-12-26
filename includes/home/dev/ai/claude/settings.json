@@ -34,6 +34,7 @@
       "Bash(notify-send:*)",
       "Bash(open raycast://confetti)",
       "Edit(docs/**)",
+      "Edit(/tmp/**)",
       "WebFetch(domain:github.com)",
       "WebSearch"
     ],
