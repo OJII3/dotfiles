@@ -53,7 +53,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/notify.sh 'Mr.Claude' '確認して～！'"
+            "command": "$HOME/.claude/scripts/notify.sh 'Mr.Claude' '確認して～！'"
           }
         ]
       }
@@ -64,7 +64,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/notify.sh 'Mr.Claude' 'お疲れ様でした！'"
+            "command": "$HOME/.claude/scripts/notify.sh 'Mr.Claude' 'お疲れ様でした！'"
           }
         ]
       }

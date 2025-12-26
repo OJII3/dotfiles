@@ -2,6 +2,7 @@
 {
   imports = [
     ../.
+    ./plugins.nix
   ];
   home.packages = with pkgs; [
     claude-code
