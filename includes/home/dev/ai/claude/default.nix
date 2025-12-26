@@ -6,11 +6,12 @@
   home.packages = with pkgs; [
     claude-code
   ];
+
   # Claude Code設定ファイル
   home.file.".claude/settings.json".source = ./settings.json;
   home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
-  home.file.".claude/notify.sh" = {
-    source = ./notify.sh;
+  home.file.".claude/scripts/notify.sh" = {
+    source = ./scripts/notify.sh;
     executable = true;
   };
 }
