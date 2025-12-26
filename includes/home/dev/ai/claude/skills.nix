@@ -13,6 +13,15 @@ let
     #     sha256 = "sha256-hash";
     #   };
     # }
+    {
+      name = "notebooklm";
+      src = pkgs.fetchFromGitHub {
+        owner = "PleasePrompto";
+        repo = "notebooklm-skill";
+        rev = "v1.3.0";
+        sha256 = "sha256-oOkKuDvKuU8UylYZehT2lyERXla5H81oVddTg3ej2pQ=";
+      };
+    }
   ];
 
   # スキルディレクトリの作成
