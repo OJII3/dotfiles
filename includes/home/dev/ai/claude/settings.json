@@ -12,6 +12,7 @@
       "Bash(grep:*)",
       "Bash(ls:*)",
       "Bash(rg:*)",
+      "Bash(cd:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git checkout:*)",
@@ -35,6 +36,7 @@
       "Bash(open raycast://confetti)",
       "Edit(docs/**)",
       "Edit(/tmp/**)",
+      "Read(/tmp/**)",
       "WebFetch(domain:github.com)",
       "WebSearch"
     ],
