@@ -1,23 +1,12 @@
 { pkgs, ... }:
-let
-  # claude-code を nodejs が使えるようにラップ
-  claude-code-with-nodejs = pkgs.symlinkJoin {
-    name = "claude-code";
-    paths = [ pkgs.claude-code ];
-    nativeBuildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/claude \
-        --prefix PATH : ${pkgs.nodejs-slim}/bin
-    '';
-  };
-in
 {
   imports = [
     ../.
     ./plugins.nix
+    ./skills.nix
   ];
-  home.packages = [
-    claude-code-with-nodejs
+  home.packages = with pkgs; [
+    claude-code
   ];
 
   # Claude Code設定ファイル
@@ -29,6 +18,10 @@ in
   };
   home.file.".claude/commands" = {
     source = ./commands;
+    recursive = true;
+  };
+  home.file.".claude/skills/local" = {
+    source = ./skills/local;
     recursive = true;
   };
 }
