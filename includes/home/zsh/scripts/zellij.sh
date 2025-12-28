@@ -11,14 +11,3 @@ z() {
   fi
   zellij
 }
-
-# x: 縦に3分割してclaudeを起動
-x() {
-  if [ -z "$ZELLIJ" ]; then
-    echo "Zellij session required. Run 'z' first."
-    return 1
-  fi
-  zellij run --direction right -- claude
-  zellij run --direction right -- claude
-  claude
-}
