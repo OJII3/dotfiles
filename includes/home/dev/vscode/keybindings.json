@@ -1,0 +1,83 @@
+[
+  {
+    "key": "ctrl+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.explorer.fileView.focus",
+    "when": "extension == 'asvetliakov.vscode-neovim' && extensionStatus == 'activated'"
+  },
+  {
+    "key": "[ g",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "] g",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "g d",
+    "command": "editor.action.goToDeclaration",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "g r",
+    "command": "editor.action.goToReferences",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "explorer.newFolder",
+    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "markdown.showPreviewToSide",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+shift+f",
+    "command": "editor.action.formatDocument"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "workbench.action.terminal.paste",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "when": "vim.active",
+    "command": "noop"
+  },
+  {
+    "key": "ctrl+j",
+    "when": "!vim.active",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "editor.action.marker.next"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "editor.action.marker.prev"
+  }
+]

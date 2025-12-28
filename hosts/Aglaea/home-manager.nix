@@ -11,6 +11,7 @@
     ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/ai/gemini
+    ../../includes/home/dev/vscode
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
