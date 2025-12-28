@@ -30,7 +30,6 @@
         "se" = "serie";
         "v" = "nvim";
         "ya" = "yazi";
-        "z" = "zellij";
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
         "brew s" = "/opt/homebrew/bin/brew search";
@@ -45,6 +44,7 @@
     initContent = ''
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
       ${builtins.readFile ./scripts/ghq-fzf.sh}
+      ${builtins.readFile ./scripts/claude-split.sh}
     '';
   };
 
