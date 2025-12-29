@@ -57,7 +57,7 @@ case "$OS" in
             exit 1
         fi
         # Trigger confetti effect in Raycast
-        open raycast://confetti
+        open -g raycast://confetti
         ;;
     Linux)
         # Linux
