@@ -8,6 +8,7 @@
   },
   "permissions": {
     "allow": [
+      "Bash(cat:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
