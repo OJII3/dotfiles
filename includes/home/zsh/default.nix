@@ -5,12 +5,14 @@
   ...
 }:
 {
+
   programs.zsh = {
     enable = true;
+
     autocd = true;
     defaultKeymap = "emacs";
+    dotDir = "${config.xdg.configHome}/zsh";
     enableCompletion = true;
-
     autosuggestion.enable = true;
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
