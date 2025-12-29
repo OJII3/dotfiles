@@ -67,6 +67,7 @@ case "$OS" in
             echo "Error: notify-send not found" >&2
             exit 1
         fi
+        confetti
         ;;
     *)
         echo "Error: Unsupported OS: $OS" >&2

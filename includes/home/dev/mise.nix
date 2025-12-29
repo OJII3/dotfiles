@@ -7,7 +7,7 @@
       # tools = {
       #   bun = "latest";
       # };
-      alias = {
+      "tool_alias" = {
         node = "https://github.com/asdf-vm/asdf-nodejs";
       };
       settings = {

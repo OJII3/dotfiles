@@ -40,6 +40,7 @@
     };
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
+    confetti.url = "github:ojii3/confetti";
   };
 
   outputs = inputs: {

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     ../../gpg/gnome.nix
@@ -18,6 +18,7 @@
         { package = ext.gsconnect; }
         { package = ext.kimpanel; }
         { package = ext.tailscale-status; }
+        { package = inputs.confetti.packages.${pkgs.system}.gnome-extension; }
       ];
   };
 
