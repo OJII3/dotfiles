@@ -20,7 +20,7 @@
         { package = ext.tailscale-status; }
         { package = ext.color-picker; }
         { package = ext.claude-code-usage-indicator; }
-        { package = inputs.confetti.packages.${pkgs.system}.gnome-extension; }
+        { package = inputs.confetti.packages.${pkgs.stdenv.hostPlatform.system}.gnome-extension; }
       ];
   };
 
