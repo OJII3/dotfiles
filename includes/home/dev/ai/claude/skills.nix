@@ -24,6 +24,16 @@ let
         sha256 = "sha256-oOkKuDvKuU8UylYZehT2lyERXla5H81oVddTg3ej2pQ=";
       };
     }
+    {
+      name = "playwright";
+      src = pkgs.fetchFromGitHub {
+        owner = "lackeyjb";
+        repo = "playwright-skill";
+        rev = "v4.1.0";
+        sha256 = "sha256-77VxY7ik7UtLVHcLeDS2dfnoaf+zkYB6FMScP63rF9w=";
+      };
+      baseDir = "skills/playwright-skill";
+    }
   ];
 
   # スキルディレクトリの作成
