@@ -17,8 +17,4 @@
     source = ./scripts/notify.sh;
     executable = true;
   };
-  home.file.".claude/skills/local" = {
-    source = ./skills/local;
-    recursive = true;
-  };
 }

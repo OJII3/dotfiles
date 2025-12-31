@@ -12,6 +12,8 @@ let
     #     rev = "commit-hash-or-tag";
     #     sha256 = "sha256-hash";
     #   };
+    #   # オプショナル: リポジトリのルートにスキルがない場合、サブディレクトリを指定
+    #   # baseDir = "path/to/skill";
     # }
     {
       name = "notebooklm";
@@ -29,7 +31,7 @@ let
     map (skill: {
       name = ".claude/skills/${skill.name}";
       value = {
-        source = skill.src;
+        source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
         recursive = true;
       };
     }) skills
