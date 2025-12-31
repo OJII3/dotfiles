@@ -32,6 +32,7 @@
         "se" = "serie";
         "v" = "nvim";
         "ya" = "yazi";
+        "ns" = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
         "brew s" = "/opt/homebrew/bin/brew search";
@@ -55,4 +56,30 @@
   ];
 
   programs.starship.enable = true;
+  programs.nix-your-shell.enable = true;
+  programs.nix-search-tv = {
+    enable = true;
+    settings = {
+      indexes = [
+        "nixpkgs"
+        "home-manager"
+      ]
+      ++ (
+        if pkgs.stdenv.isDarwin then
+          [
+            "darwin"
+          ]
+        else
+          [
+            "nixos"
+          ]
+      );
+
+      experimental = {
+        render_docs_indexes = {
+          nvf = "https://notashelf.github.io/nvf/options.html";
+        };
+      };
+    };
+  };
 }
