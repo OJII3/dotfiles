@@ -34,6 +34,86 @@ let
       };
       baseDir = "skills/playwright-skill";
     }
+    {
+      name = "pdf";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/pdf";
+    }
+    {
+      name = "webapp-testing";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/webapp-testing";
+    }
+    {
+      name = "frontend-design";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/frontend-design";
+    }
+    {
+      name = "mcp-builder";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/mcp-builder";
+    }
+    {
+      name = "pptx";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/pptx";
+    }
+    {
+      name = "docx";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/docx";
+    }
+    {
+      name = "doc-coauthoring";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/doc-coauthoring";
+    }
+    {
+      name = "xlsx";
+      src = pkgs.fetchFromGitHub {
+        owner = "anthropics";
+        repo = "skills";
+        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+      };
+      baseDir = "skills/xlsx";
+    }
   ];
 
   # スキルディレクトリの作成
