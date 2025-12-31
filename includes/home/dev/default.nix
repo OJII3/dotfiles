@@ -8,6 +8,7 @@
     bat
     bottom
     fastfetch
+    fd
     ffmpeg
     htop
     imagemagick
@@ -24,6 +25,7 @@
 
     # cli apps
     tdf
+    # television
 
     # sdk, toolchain
     # google-cloud-sdk
@@ -39,4 +41,31 @@
     # meson
     python312
   ];
+
+  programs.television = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      ui = {
+        use_nerd_font_icons = true;
+      };
+    };
+  };
+  programs.nix-search-tv = {
+    enable = true;
+    enableTelevisionIntegration = true;
+    settings = {
+      indexes = [
+        "nixpkgs"
+        "home-manager"
+        "nixos"
+      ];
+
+      experimental = {
+        render_docs_indexes = {
+          nvf = "https://notashelf.github.io/nvf/options.html";
+        };
+      };
+    };
+  };
 }
