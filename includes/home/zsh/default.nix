@@ -20,6 +20,7 @@
     shellAliases = {
       ls = "ls --color=auto";
       ip = "ip -c";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
 
     zsh-abbr = {
@@ -32,7 +33,6 @@
         "se" = "serie";
         "v" = "nvim";
         "ya" = "yazi";
-        "ns" = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       }
       // lib.optionalAttrs pkgs.stdenv.isDarwin {
         "brew s" = "/opt/homebrew/bin/brew search";
