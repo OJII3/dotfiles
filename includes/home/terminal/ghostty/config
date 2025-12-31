@@ -1,5 +1,9 @@
 shell-integration = zsh
 
+# セッション復元の設定
+window-save-state = always
+quit-after-last-window-closed = true
+
 font-family = "UDEV Gothic 35NF"
 font-family = "HackGen Console NF"
 font-size = 14
