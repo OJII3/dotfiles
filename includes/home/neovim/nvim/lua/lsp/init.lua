@@ -23,8 +23,7 @@ local lsp_names = {
 	"nil_ls",
 	"lua_ls",
 	"mdx_analyzer",
-	"pyright",
-	"pyright",
+	"ty",
 	-- "rust_analyzer", -- rustaceanvim will handle this
 	"roslyn_ls",
 	"stylelint_lsp",

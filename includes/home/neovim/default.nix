@@ -57,7 +57,7 @@ in
       nixfmt
       # eslint
       nodePackages.prettier
-      pyright
+      ty
       ruff
       rust-analyzer
       shellcheck
