@@ -42,6 +42,7 @@
     python312
   ];
 
+  programs.nix-your-shell.enable = true;
   programs.television = {
     enable = true;
     enableZshIntegration = true;
