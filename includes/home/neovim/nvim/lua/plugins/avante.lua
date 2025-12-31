@@ -47,6 +47,12 @@ return {
 					NODE_NO_WARNINGS = "1",
 				},
 			},
+			["claude-code"] = {
+				command = "claude-code-acp",
+				env = {
+					NODE_NO_WARNINGS = "1",
+				},
+			},
 		},
 		file_selector = {
 			provider = "telescope",
