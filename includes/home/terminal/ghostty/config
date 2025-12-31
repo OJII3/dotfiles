@@ -1,18 +1,17 @@
-shell-integration = zsh
-
-# セッション復元の設定
-window-save-state = always
-quit-after-last-window-closed = true
-
 font-family = "UDEV Gothic 35NF"
 font-family = "HackGen Console NF"
 font-size = 14
 
-theme = TokyoNight
-title = "Ghostty"
 background-opacity = 0.85
+maximize = true
+quit-after-last-window-closed = true
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+theme = TokyoNight
+title = "{username}@{hostname}"
 unfocused-split-opacity = 0.85
-window-decoration = true
+window-decoration = auto
+window-save-state = always
 
 keybind = ctrl+shift+enter=new_split:auto
 keybind = ctrl+shift+[=goto_split:previous
