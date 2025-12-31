@@ -5,9 +5,10 @@
     ./plugins.nix
     ./skills.nix
   ];
-  home.packages = with pkgs; [
-    claude-code
-  ];
+  programs.claude-code = {
+    enable = true;
+    commandsDir = ./commands;
+  };
 
   # Claude Code設定ファイル
   home.file.".claude/settings.json".source = ./settings.json;
@@ -15,10 +16,6 @@
   home.file.".claude/scripts/notify.sh" = {
     source = ./scripts/notify.sh;
     executable = true;
-  };
-  home.file.".claude/commands" = {
-    source = ./commands;
-    recursive = true;
   };
   home.file.".claude/skills/local" = {
     source = ./skills/local;
