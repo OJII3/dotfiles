@@ -18,6 +18,7 @@
         { package = ext.gsconnect; }
         { package = ext.kimpanel; }
         { package = ext.tailscale-status; }
+        { package = ext.color-picker; }
         { package = inputs.confetti.packages.${pkgs.system}.gnome-extension; }
       ];
   };
