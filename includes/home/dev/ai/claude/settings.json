@@ -9,6 +9,7 @@
   "permissions": {
     "allow": [
       "Bash(cat:*)",
+      "Bash(echo:*)",
       "Bash(find:*)",
       "Bash(grep:*)",
       "Bash(ls:*)",
@@ -81,7 +82,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh 'Mr.Claude' '確認して～！'"
+            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '🔔 {}'"
           }
         ]
       }
@@ -92,7 +93,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh 'Mr.Claude' 'お疲れ様でした！'"
+            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '✨ {}'"
           }
         ]
       }

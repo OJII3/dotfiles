@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Usage: notify.sh <title> <message>
+# Usage: notify.sh <message>
 # Sends desktop notifications using terminal-notifier on macOS or notify-send on Linux
+# Title is automatically set to repository and branch name
 
-if [ $# -lt 2 ]; then
-    echo "Usage: $0 <title> <message>" >&2
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <message>" >&2
     exit 1
 fi
 
-TITLE="$1"
-MESSAGE="$2"
+MESSAGE="$1"
 
 # Get repository information
 get_repo_info() {
@@ -42,7 +42,7 @@ get_repo_info() {
     fi
 }
 
-REPO_INFO=$(get_repo_info)
+TITLE=$(get_repo_info)
 
 # Detect OS
 OS=$(uname -s)
@@ -51,7 +51,7 @@ case "$OS" in
     Darwin)
         # macOS
         if command -v terminal-notifier >/dev/null 2>&1; then
-            terminal-notifier -title "$TITLE" -message "$MESSAGE" -subtitle "$REPO_INFO 📦"
+            terminal-notifier -title "$TITLE 📦" -message "$MESSAGE"
         else
             echo "Error: terminal-notifier not found" >&2
             exit 1
@@ -62,7 +62,7 @@ case "$OS" in
     Linux)
         # Linux
         if command -v notify-send >/dev/null 2>&1; then
-            notify-send "$TITLE" "$MESSAGE\n$REPO_INFO 📦"
+            notify-send "$TITLE 📦" "$MESSAGE"
         else
             echo "Error: notify-send not found" >&2
             exit 1
