@@ -21,5 +21,9 @@
     ../../includes/home/zsh
   ];
 
-  targets.genericLinux.enable = true;
+  targets.genericLinux = {
+    enable = true;
+    gpu = true;
+    nvidia = true;
+  };
 }
