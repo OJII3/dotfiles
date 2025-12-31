@@ -3,6 +3,9 @@
   imports = [
     ../../gpg/gnome.nix
   ];
+  home.packages = with pkgs; [
+    gnome-randr
+  ];
 
   xdg.enable = true;
   programs.gnome-shell = {
