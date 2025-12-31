@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
 let
+  # 共通ソースの定義
+  anthropics-skills-src = pkgs.fetchFromGitHub {
+    owner = "anthropics";
+    repo = "skills";
+    rev = "69c0b1a0674149f27b61b2635f935524b6add202";
+    sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
+  };
+
   # Agent Skills の定義
   skills = [
     # 例: スキルを追加する場合
@@ -36,82 +44,42 @@ let
     }
     {
       name = "pdf";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/pdf";
     }
     {
       name = "webapp-testing";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/webapp-testing";
     }
     {
       name = "frontend-design";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/frontend-design";
     }
     {
       name = "mcp-builder";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/mcp-builder";
     }
     {
       name = "pptx";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/pptx";
     }
     {
       name = "docx";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/docx";
     }
     {
       name = "doc-coauthoring";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/doc-coauthoring";
     }
     {
       name = "xlsx";
-      src = pkgs.fetchFromGitHub {
-        owner = "anthropics";
-        repo = "skills";
-        rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-        sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-      };
+      src = anthropics-skills-src;
       baseDir = "skills/xlsx";
     }
   ];
