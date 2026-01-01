@@ -37,6 +37,30 @@
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
       toggle-maximized = [ "<Super>m" ];
+      switch-to-workspace-1 = [ "<Super>1" ];
+      switch-to-workspace-2 = [ "<Super>2" ];
+      switch-to-workspace-3 = [ "<Super>3" ];
+      switch-to-workspace-4 = [ "<Super>4" ];
+    };
+    # Super+1-4 をワークスペース移動に使うため、Dockのアプリ切り替えを無効化
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+      # Super+m をウィンドウ最大化に使うため、メッセージトレイから除外
+      toggle-message-tray = [ "<Super>v" ];
+    };
+    # Super+Enter でターミナル (ghostty) を起動
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "Launch Terminal";
+      command = "ghostty";
+      binding = "<Super>Return";
     };
   };
 }
