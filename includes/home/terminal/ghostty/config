@@ -8,7 +8,6 @@ quit-after-last-window-closed = true
 shell-integration = zsh
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
 theme = TokyoNight
-title = "{username}@{hostname}"
 unfocused-split-opacity = 0.85
 window-decoration = auto
 window-save-state = always
