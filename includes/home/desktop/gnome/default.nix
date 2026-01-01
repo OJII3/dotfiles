@@ -5,6 +5,7 @@
   ];
   home.packages = with pkgs; [
     gnome-randr
+    vicinae
   ];
 
   xdg.enable = true;
@@ -23,6 +24,7 @@
         { package = ext.tailscale-status; }
         { package = ext.color-picker; }
         { package = ext.claude-code-usage-indicator; }
+        { package = ext.vicinae; }
         { package = inputs.confetti.packages.${pkgs.stdenv.hostPlatform.system}.gnome-extension; }
       ];
   };
@@ -41,6 +43,8 @@
       switch-to-workspace-2 = [ "<Super>2" ];
       switch-to-workspace-3 = [ "<Super>3" ];
       switch-to-workspace-4 = [ "<Super>4" ];
+      # Alt+Space をランチャーに使うため、ウィンドウメニューを無効化
+      activate-window-menu = [ ];
     };
     # Super+1-4 をワークスペース移動に使うため、Dockのアプリ切り替えを無効化
     "org/gnome/shell/keybindings" = {
@@ -51,16 +55,24 @@
       # Super+m をウィンドウ最大化に使うため、メッセージトレイから除外
       toggle-message-tray = [ "<Super>v" ];
     };
-    # Super+Enter でターミナル (ghostty) を起動
+    # カスタムキーバインド
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
     };
+    # Super+Enter でターミナル (ghostty) を起動
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       name = "Launch Terminal";
       command = "ghostty";
       binding = "<Super>Return";
+    };
+    # Alt+Space でランチャー (vicinae) を起動
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      name = "Launch Vicinae";
+      command = "vicinae";
+      binding = "<Alt>space";
     };
   };
 }
