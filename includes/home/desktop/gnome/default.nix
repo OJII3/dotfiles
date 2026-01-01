@@ -32,7 +32,7 @@
       picture-uri = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
       picture-uri-dark = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
       picture-options = "scaled";
-      primary-color = "#000000";
+      primary-color = "#94aada";
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
