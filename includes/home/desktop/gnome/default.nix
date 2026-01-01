@@ -2,10 +2,10 @@
 {
   imports = [
     ../../gpg/gnome.nix
+    ../vicinae
   ];
   home.packages = with pkgs; [
     gnome-randr
-    vicinae
   ];
 
   xdg.enable = true;
@@ -71,7 +71,7 @@
     # Alt+Space でランチャー (vicinae) を起動
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "Launch Vicinae";
-      command = "vicinae";
+      command = "vicinae toggle";
       binding = "<Alt>space";
     };
   };
