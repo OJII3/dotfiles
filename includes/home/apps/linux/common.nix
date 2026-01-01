@@ -23,11 +23,20 @@
 
   programs = {
     obs-studio.enable = true;
-    google-chrome.enable = pkgs.stdenv.hostPlatform.system == "x86_64-linux";
     firefox.enable = true;
-    google-chrome.commandLineArgs = [
-      "--ozone-platform-hint=auto"
-      "--enable-wayland-ime"
-    ];
+    google-chrome = {
+      enable = pkgs.stdenv.hostPlatform.system == "x86_64-linux";
+      commandLineArgs = [
+        "--ozone-platform-hint=auto"
+        "--enable-wayland-ime"
+      ];
+    };
+    vivaldi = {
+      enable = true;
+      commandLineArgs = [
+        "--ozone-platform-hint=auto"
+        "--enable-wayland-ime"
+      ];
+    };
   };
 }
