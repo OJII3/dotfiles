@@ -31,6 +31,9 @@
   };
 
   dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      clock-show-weekday = true;
+    };
     "org/gnome/desktop/background" = {
       picture-uri = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
       picture-uri-dark = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
