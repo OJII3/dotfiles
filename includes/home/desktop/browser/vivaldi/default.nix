@@ -2,6 +2,7 @@
 let
   vivaldiSettingsFile = ./vivaldi-settings.json;
   vivaldiBookmarksFile = ./Bookmarks;
+  vivaldiThemesDir = ./themes;
 
   # Find the Vivaldi profile directory (Profile 1 or Default)
   findProfileScript = ''
@@ -20,6 +21,7 @@ in
   # Store settings in a known location for the activation script
   home.file.".config/vivaldi-dotfiles/vivaldi-settings.json".source = vivaldiSettingsFile;
   home.file.".config/vivaldi-dotfiles/Bookmarks".source = vivaldiBookmarksFile;
+  home.file.".config/vivaldi-dotfiles/themes".source = vivaldiThemesDir;
 
   home.activation.vivaldiConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     PROFILE_DIR=$(${findProfileScript})
@@ -61,6 +63,14 @@ in
       fi
       cp "$DOTFILES_DIR/Bookmarks" "$BOOKMARKS_FILE"
       echo "Vivaldi bookmarks restored."
+    fi
+
+    # Copy theme images
+    THUMBNAILS_DIR="$PROFILE_DIR/VivaldiThumbnails"
+    if [ -d "$DOTFILES_DIR/themes" ]; then
+      mkdir -p "$THUMBNAILS_DIR"
+      cp -n "$DOTFILES_DIR/themes"/* "$THUMBNAILS_DIR/" 2>/dev/null || true
+      echo "Vivaldi theme images copied."
     fi
   '';
 }

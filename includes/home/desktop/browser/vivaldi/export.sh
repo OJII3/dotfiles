@@ -40,4 +40,19 @@ echo "Exported: vivaldi-settings.json"
 cp "$PROFILE_DIR/Bookmarks" "$SCRIPT_DIR/Bookmarks"
 echo "Exported: Bookmarks"
 
+# Export theme images (user themes only)
+mkdir -p "$SCRIPT_DIR/themes"
+THUMBNAILS_DIR="$PROFILE_DIR/VivaldiThumbnails"
+
+# Extract image filenames from user themes
+IMAGE_FILES=$(jq -r '.vivaldi.themes.user[]?.backgroundImage // empty' "$PROFILE_DIR/Preferences" | \
+  grep -oE '[A-Z0-9]+\.(jpg|png|webp)' || true)
+
+for img in $IMAGE_FILES; do
+  if [ -f "$THUMBNAILS_DIR/$img" ]; then
+    cp "$THUMBNAILS_DIR/$img" "$SCRIPT_DIR/themes/"
+    echo "Exported theme image: $img"
+  fi
+done
+
 echo "Done! Don't forget to commit the changes."
