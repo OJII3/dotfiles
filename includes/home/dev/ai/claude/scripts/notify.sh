@@ -13,6 +13,7 @@ fi
 NOTIFICATION_TITLE="$1"
 DURATION="${2:-10}"  # Default to 10 seconds
 DURATION_MS=$((DURATION * 1000))  # Convert to milliseconds for notify-send
+ICON_PATH="$HOME/.assets/images/cipher_icon.png"
 
 # Get repository information
 get_repo_info() {
@@ -65,7 +66,6 @@ case "$OS" in
     Linux)
         # Linux
         if command -v notify-send >/dev/null 2>&1; then
-            ICON_PATH="$HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.png"
             notify-send -t "$DURATION_MS" "$NOTIFICATION_TITLE" "$REPO_INFO" --hint=string:image-path:"$ICON_PATH"
         else
             echo "Error: notify-send not found" >&2
