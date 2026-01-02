@@ -14,7 +14,6 @@
     krita
     moonlight-qt
     mpv
-    obsidian
     pkgs-stable.blender
     vlc
     voicevox
@@ -23,7 +22,6 @@
 
   programs = {
     obs-studio.enable = true;
-    firefox.enable = true;
     google-chrome = {
       enable = pkgs.stdenv.hostPlatform.system == "x86_64-linux";
       commandLineArgs = [

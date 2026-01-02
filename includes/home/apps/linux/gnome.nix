@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
   imports = [ ./common.nix ];
-  home.packages = with pkgs; [
-  ];
+  programs.firefox.enable = true;
 }
