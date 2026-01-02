@@ -10,7 +10,7 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-MESSAGE="$1"
+NOTIFICATION_TITLE="$1"
 DURATION="${2:-10}"  # Default to 10 seconds
 DURATION_MS=$((DURATION * 1000))  # Convert to milliseconds for notify-send
 
@@ -45,7 +45,7 @@ get_repo_info() {
     fi
 }
 
-TITLE=$(get_repo_info)
+REPO_INFO=$(get_repo_info)
 
 # Detect OS
 OS=$(uname -s)
@@ -54,7 +54,7 @@ case "$OS" in
     Darwin)
         # macOS
         if command -v terminal-notifier >/dev/null 2>&1; then
-            terminal-notifier -title "$TITLE 📦" -message "$MESSAGE" -timeout "$DURATION"
+            terminal-notifier -title "$NOTIFICATION_TITLE" -message "$REPO_INFO" -timeout "$DURATION"
         else
             echo "Error: terminal-notifier not found" >&2
             exit 1
@@ -65,12 +65,14 @@ case "$OS" in
     Linux)
         # Linux
         if command -v notify-send >/dev/null 2>&1; then
-            notify-send -t "$DURATION_MS" "$TITLE 📦" "$MESSAGE"
+            ICON_PATH="$HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.png"
+            notify-send -t "$DURATION_MS" "$NOTIFICATION_TITLE" "$REPO_INFO" --hint=string:image-path:"$ICON_PATH"
         else
             echo "Error: notify-send not found" >&2
             exit 1
         fi
-        confetti
+        # Trigger confetti if available
+        command -v confetti >/dev/null 2>&1 && confetti
         ;;
     *)
         echo "Error: Unsupported OS: $OS" >&2

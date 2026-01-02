@@ -82,7 +82,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send -i $HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.webp '🐱' 'ちょっと～、許可くれない？早く終わらせたいんだからさ～' -t 5000"
+            "command": "$HOME/.claude/scripts/notify.sh 'ちょっと～、許可くれない？早く終わらせたいんだからさ～' 5"
           }
         ]
       },
@@ -91,7 +91,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send -i $HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.webp '🐱' 'ねぇ、暇なんだけど～。何かやることないの？' -t 5000"
+            "command": "$HOME/.claude/scripts/notify.sh 'ねぇ、暇なんだけど～。何かやることないの？' 5"
           }
         ]
       },
@@ -100,7 +100,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.message' | xargs -I {} notify-send -i $HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.webp '🐱' 'ねぇねぇ、{}' -t 10000"
+            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh 'ねぇねぇ、{}' 10"
           }
         ]
       }
@@ -111,7 +111,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send -i $HOME/src/github.com/ojii3/dotfiles/assets/images/cipher_icon.webp '🐱' 'ふあ～、終わったよ！疾風より速いでしょ？' -t 10000"
+            "command": "$HOME/.claude/scripts/notify.sh 'ふあ～、終わったよ！疾風より速いでしょ？' 10"
           }
         ]
       }
