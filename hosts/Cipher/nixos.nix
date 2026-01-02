@@ -36,12 +36,12 @@
   # networking
   networking.useNetworkd = true;
   systemd.network.networks."10-lan" = {
-    matchConfig.Name = "eth0";
+    matchConfig.Name = "enp3s0";
     networkConfig = {
       IPv6AcceptRA = true;
       # DHCP = "ipv4";
     };
-    addresses = [ { Address = "192.168.8.10/24"; } ];
+    addresses = [ { Address = "192.168.8.2/24"; } ];
     gateway = [ "192.168.8.1" ];
     linkConfig.RequiredForOnline = "routable";
   };
