@@ -10,18 +10,17 @@
 {
   imports = [
     ../../includes/nixos/core
-    # ../../includes/nixos/core/boot/systemd-boot.nix
+    ../../includes/nixos/core/boot/systemd-boot.nix
     ../../includes/nixos/core/networking/base.nix
-    # ../../includes/nixos/core/networking/dns.nix
+    ../../includes/nixos/core/networking/dns.nix
     ../../includes/nixos/core/virtualisation.nix
     # ../../includes/nixos/core/proxmox.nix
     ../../includes/nixos/core/sops.nix
 
-    # ../../includes/nixos/server/adguard.nix
+    ../../includes/nixos/server/adguard.nix
     ../../includes/nixos/server/autologin.nix
-    # ../../includes/nixos/server/nextcloud
 
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
     common-cpu-intel
@@ -42,7 +41,7 @@
       IPv6AcceptRA = true;
       # DHCP = "ipv4";
     };
-    addresses = [ { Address = "192.168.8.30/24"; } ];
+    addresses = [ { Address = "192.168.8.10/24"; } ];
     gateway = [ "192.168.8.1" ];
     linkConfig.RequiredForOnline = "routable";
   };
@@ -57,21 +56,6 @@
       pskRaw = "ext:psk_home";
     };
   };
-
-  # proxmox lxc settings
-  boot.kernel.sysctl = {
-    "net.ipv4.ip_forward" = 1;
-    "net.ipv6.conf.all.forwarding" = 2;
-  };
-  systemd.suppressedSystemUnits = [
-    "sys-kernel-debug.mount"
-  ];
-  proxmoxLXC = {
-    enable = true;
-    manageNetwork = false;
-    privileged = true;
-  };
-  services.fstrim.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
