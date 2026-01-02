@@ -131,7 +131,6 @@ in
       username = "ojii3";
       modules = [
         ./Cipher/nixos.nix
-        "${inputs.nixpkgs}/nixos/modules/virtualisation/proxmox-lxc.nix"
       ];
     };
   };
