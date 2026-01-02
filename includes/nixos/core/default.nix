@@ -14,6 +14,7 @@
     ./services.nix
     ./ssh.nix
     ./tools.nix
+    ./uinput.nix
   ];
 
   #services.flatpak.enable = true;

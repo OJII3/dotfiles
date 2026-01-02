@@ -41,6 +41,8 @@
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
+    enhanced-touchpad.url = "github:ojii3/enhanced-touchpad";
+    # enhanced-touchpad.url = "path:/home/ojii3/src/github.com/ojii3/enhanced-touchpad";  # For local development
   };
 
   outputs = inputs: {
