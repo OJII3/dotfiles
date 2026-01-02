@@ -5,6 +5,7 @@
     ./plugins.nix
     ./skills.nix
   ];
+  programs.jq.enable = true;
   programs.claude-code = {
     enable = true;
     commandsDir = ./commands;

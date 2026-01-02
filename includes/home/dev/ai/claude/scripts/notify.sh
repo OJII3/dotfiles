@@ -1,15 +1,18 @@
 #!/bin/sh
 
-# Usage: notify.sh <message>
+# Usage: notify.sh <message> [duration_in_seconds]
 # Sends desktop notifications using terminal-notifier on macOS or notify-send on Linux
 # Title is automatically set to repository and branch name
+# Duration defaults to 10 seconds if not specified
 
 if [ $# -lt 1 ]; then
-    echo "Usage: $0 <message>" >&2
+    echo "Usage: $0 <message> [duration_in_seconds]" >&2
     exit 1
 fi
 
 MESSAGE="$1"
+DURATION="${2:-10}"  # Default to 10 seconds
+DURATION_MS=$((DURATION * 1000))  # Convert to milliseconds for notify-send
 
 # Get repository information
 get_repo_info() {
@@ -51,7 +54,7 @@ case "$OS" in
     Darwin)
         # macOS
         if command -v terminal-notifier >/dev/null 2>&1; then
-            terminal-notifier -title "$TITLE 📦" -message "$MESSAGE"
+            terminal-notifier -title "$TITLE 📦" -message "$MESSAGE" -timeout "$DURATION"
         else
             echo "Error: terminal-notifier not found" >&2
             exit 1
@@ -62,7 +65,7 @@ case "$OS" in
     Linux)
         # Linux
         if command -v notify-send >/dev/null 2>&1; then
-            notify-send "$TITLE 📦" "$MESSAGE"
+            notify-send -t "$DURATION_MS" "$TITLE 📦" "$MESSAGE"
         else
             echo "Error: notify-send not found" >&2
             exit 1
