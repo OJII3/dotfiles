@@ -82,7 +82,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '🔔 {}'"
+            "command": "jq -r '.input.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '🔔 {}'"
           }
         ]
       }
@@ -93,7 +93,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '✨ {}'"
+            "command": "jq -r '.input.message' | xargs -I {} $HOME/.claude/scripts/notify.sh '✨ {}'"
           }
         ]
       }
