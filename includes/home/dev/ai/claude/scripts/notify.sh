@@ -80,4 +80,7 @@ case "$OS" in
         ;;
 esac
 
+# Suppress default Claude Code notification
+echo '{"suppressDefaultNotification": true}'
+
 
