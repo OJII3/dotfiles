@@ -1,142 +1,620 @@
 {
+  "default_search_provider": {
+    "guid": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_image": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_private": "485bf7d3-0215-45af-87dc-538868000005",
+    "guid_search_field": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_search_field_private": "485bf7d3-0215-45af-87dc-538868000005",
+    "guid_speeddials": "485bf7d3-0215-45af-87dc-538868000001",
+    "guid_speeddials_private": "485bf7d3-0215-45af-87dc-538868000005"
+  },
+  "default_search_provider_data": {
+    "image_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "featured_by_policy": false,
+      "id": "10",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "g",
+      "last_modified": "13411750704121445",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih39TWhCdDlzUzZkNlRjdEZ6ekRjSHZUcVVnUFhrPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}",
+      "usage_count": 0
+    },
+    "mirrored_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "featured_by_policy": false,
+      "id": "10",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "g",
+      "last_modified": "13411750704121445",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih39TWhCdDlzUzZkNlRjdEZ6ekRjSHZUcVVnUFhrPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}",
+      "usage_count": 0
+    },
+    "private_search_field_template_url_data": {
+      "alternate_urls": [],
+      "contextual_search_url": "",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico",
+      "featured_by_policy": false,
+      "id": "8",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "",
+      "image_url_post_params": "",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "s",
+      "last_modified": "0",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih33NWEvYlQ1Y244YlJ6RDdqU1pSclBGQ1BicnZzPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 5,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Startpage",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.startpage.com/suggestions?q={searchTerms}&segment=startpage.vivaldi&partner=vivaldi&format=opensearch",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000005",
+      "url": "https://www.startpage.com/do/search?q={searchTerms}&segment=startpage.vivaldi",
+      "usage_count": 0
+    },
+    "private_template_url_data": {
+      "alternate_urls": [],
+      "contextual_search_url": "",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico",
+      "featured_by_policy": false,
+      "id": "8",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "",
+      "image_url_post_params": "",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "s",
+      "last_modified": "0",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih33NWEvYlQ1Y244YlJ6RDdqU1pSclBGQ1BicnZzPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 5,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Startpage",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.startpage.com/suggestions?q={searchTerms}&segment=startpage.vivaldi&partner=vivaldi&format=opensearch",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000005",
+      "url": "https://www.startpage.com/do/search?q={searchTerms}&segment=startpage.vivaldi",
+      "usage_count": 0
+    },
+    "search_field_emplate_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "featured_by_policy": false,
+      "id": "10",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "g",
+      "last_modified": "13411750704121445",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih39TWhCdDlzUzZkNlRjdEZ6ekRjSHZUcVVnUFhrPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}",
+      "usage_count": 0
+    },
+    "speeddials_private_template_url_data": {
+      "alternate_urls": [],
+      "contextual_search_url": "",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.startpage.com/sp/cdn/favicons/favicon--default.ico",
+      "featured_by_policy": false,
+      "id": "8",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "",
+      "image_url_post_params": "",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "s",
+      "last_modified": "0",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih33NWEvYlQ1Y244YlJ6RDdqU1pSclBGQ1BicnZzPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 5,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Startpage",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.startpage.com/suggestions?q={searchTerms}&segment=startpage.vivaldi&partner=vivaldi&format=opensearch",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000005",
+      "url": "https://www.startpage.com/do/search?q={searchTerms}&segment=startpage.vivaldi",
+      "usage_count": 0
+    },
+    "speeddials_template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "featured_by_policy": false,
+      "id": "10",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "g",
+      "last_modified": "13411750704121445",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih39TWhCdDlzUzZkNlRjdEZ6ekRjSHZUcVVnUFhrPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}",
+      "usage_count": 0
+    },
+    "template_url_data": {
+      "alternate_urls": [
+        "https://www.google.com/#q={searchTerms}",
+        "https://www.google.com/search#q={searchTerms}",
+        "https://www.google.com/webhp#q={searchTerms}",
+        "https://www.google.com/s#q={searchTerms}",
+        "https://www.google.com/s?q={searchTerms}"
+      ],
+      "contextual_search_url": "{google:baseURL}_/contextualsearch?{google:contextualSearchVersion}{google:contextualSearchContextData}",
+      "created_from_play_api": false,
+      "date_created": "0",
+      "doodle_url": "",
+      "enforced_by_policy": false,
+      "favicon_url": "https://www.google.com/images/branding/product/ico/googleg_lodp.ico",
+      "featured_by_policy": false,
+      "id": "10",
+      "image_search_branding_label": "",
+      "image_translate_source_language_param_key": "",
+      "image_translate_target_language_param_key": "",
+      "image_translate_url": "",
+      "image_url": "{google:baseSearchByImageURL}upload",
+      "image_url_post_params": "encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight},processed_image_dimensions={google:processedImageDimensions}",
+      "input_encodings": [
+        ""
+      ],
+      "is_active": 0,
+      "keyword": "g",
+      "last_modified": "13411750704121445",
+      "last_visited": "0",
+      "logo_url": "",
+      "new_tab_url": "",
+      "originating_url": "",
+      "policy_origin": 0,
+      "position": "Ih39TWhCdDlzUzZkNlRjdEZ6ekRjSHZUcVVnUFhrPQ==",
+      "preconnect_to_search_url": false,
+      "prefetch_likely_navigations": false,
+      "prepopulate_id": 1,
+      "safe_for_autoreplace": true,
+      "search_intent_params": [],
+      "search_url_post_params": "",
+      "short_name": "Google",
+      "starter_pack_id": 0,
+      "suggestions_url": "https://www.google.com/complete/search?client=chrome&q={searchTerms}",
+      "suggestions_url_post_params": "",
+      "synced_guid": "485bf7d3-0215-45af-87dc-538868000001",
+      "url": "{google:baseURL}search?q={searchTerms}&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}",
+      "usage_count": 0
+    }
+  },
+  "intl": {
+    "accept_languages": "en-US,en,ja",
+    "selected_languages": "en-US,en,ja"
+  },
   "vivaldi": {
     "actions": [
       {
         "COMMAND_ADD_BOOKMARK": {
-          "shortcuts": ["ctrl+d"]
+          "shortcuts": [
+            "ctrl+d"
+          ]
         },
         "COMMAND_APPEND_SELECTION_TO_NOTE": {
           "shortcuts": []
         },
         "COMMAND_BREAKMODE_TOGGLE": {
-          "shortcuts": ["ctrl+."]
+          "shortcuts": [
+            "ctrl+."
+          ]
         },
         "COMMAND_CALENDAR_CREATE_EVENT": {
-          "shortcuts": ["c"]
+          "shortcuts": [
+            "c"
+          ]
         },
         "COMMAND_CALENDAR_GOTO_DATE": {
-          "shortcuts": ["g"]
+          "shortcuts": [
+            "g"
+          ]
         },
         "COMMAND_CALENDAR_REFRESH": {
-          "shortcuts": ["r"]
+          "shortcuts": [
+            "r"
+          ]
         },
         "COMMAND_CALENDAR_SEARCH": {
-          "shortcuts": ["/"]
+          "shortcuts": [
+            "/"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_AGENDA": {
-          "shortcuts": ["a"]
+          "shortcuts": [
+            "a"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_DAY": {
-          "shortcuts": ["d"]
+          "shortcuts": [
+            "d"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_MONTH": {
-          "shortcuts": ["m"]
+          "shortcuts": [
+            "m"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_MULTIWEEK": {
-          "shortcuts": ["n"]
+          "shortcuts": [
+            "n"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_WEEK": {
-          "shortcuts": ["w"]
+          "shortcuts": [
+            "w"
+          ]
         },
         "COMMAND_CALENDAR_VIEWMODE_YEAR": {
-          "shortcuts": ["y"]
+          "shortcuts": [
+            "y"
+          ]
         },
         "COMMAND_CALENDAR_VIEW_NEXT_PERIOD": {
-          "shortcuts": ["k", "pagedown"]
+          "shortcuts": [
+            "k",
+            "pagedown"
+          ]
         },
         "COMMAND_CALENDAR_VIEW_PREVIOUS_PERIOD": {
-          "shortcuts": ["j", "pageup"]
+          "shortcuts": [
+            "j",
+            "pageup"
+          ]
         },
         "COMMAND_CALENDAR_VIEW_TODAY": {
-          "shortcuts": ["t", "home"]
+          "shortcuts": [
+            "t",
+            "home"
+          ]
         },
         "COMMAND_CALENDAR_VIEW_ZOOM_IN": {
-          "shortcuts": ["alt+pageup"]
+          "shortcuts": [
+            "alt+pageup"
+          ]
         },
         "COMMAND_CALENDAR_VIEW_ZOOM_OUT": {
-          "shortcuts": ["alt+pagedown"]
+          "shortcuts": [
+            "alt+pagedown"
+          ]
         },
         "COMMAND_CLIPBOARD_COPY": {
-          "shortcuts": ["ctrl+c"]
+          "shortcuts": [
+            "ctrl+c"
+          ]
         },
         "COMMAND_CLIPBOARD_CUT": {
-          "shortcuts": ["ctrl+x"]
+          "shortcuts": [
+            "ctrl+x"
+          ]
         },
         "COMMAND_CLIPBOARD_PASTE": {
-          "shortcuts": ["ctrl+v"]
+          "shortcuts": [
+            "ctrl+v"
+          ]
         },
         "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT": {
           "shortcuts": []
         },
         "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT_OR_PASTE_AND_GO": {
-          "shortcuts": ["ctrl+shift+v"]
+          "shortcuts": [
+            "ctrl+shift+v"
+          ]
         },
         "COMMAND_CLIPBOARD_REDO": {
-          "shortcuts": ["ctrl+y"]
+          "shortcuts": [
+            "ctrl+y"
+          ]
         },
         "COMMAND_CLIPBOARD_SELECT_ALL": {
-          "shortcuts": ["ctrl+a"]
+          "shortcuts": [
+            "ctrl+a"
+          ]
         },
         "COMMAND_CLIPBOARD_UNDO": {
-          "shortcuts": ["ctrl+z"]
+          "shortcuts": [
+            "ctrl+z"
+          ]
         },
         "COMMAND_CLOSE_TAB": {
-          "gestures": ["20"],
-          "shortcuts": ["ctrl+w", "ctrl+f4"]
+          "gestures": [
+            "20"
+          ],
+          "shortcuts": [
+            "ctrl+w",
+            "ctrl+f4"
+          ]
         },
         "COMMAND_CLOSE_WINDOW": {
-          "shortcuts": ["ctrl+shift+w"]
+          "shortcuts": [
+            "ctrl+shift+w"
+          ]
         },
         "COMMAND_COPY_SELECTION_TO_NOTE": {
-          "shortcuts": ["ctrl+shift+c"]
+          "shortcuts": [
+            "ctrl+shift+c"
+          ]
         },
         "COMMAND_DEVELOPER_TOOLS": {
-          "shortcuts": ["ctrl+shift+i", "f12"]
+          "shortcuts": [
+            "ctrl+shift+i",
+            "f12"
+          ]
         },
         "COMMAND_DEVTOOLS_CONSOLE": {
-          "shortcuts": ["ctrl+shift+j"]
+          "shortcuts": [
+            "ctrl+shift+j"
+          ]
         },
         "COMMAND_DEVTOOLS_INSPECTOR": {
           "shortcuts": []
         },
         "COMMAND_DISBAND_TILE_GROUP": {
-          "shortcuts": ["ctrl+f6"]
+          "shortcuts": [
+            "ctrl+f6"
+          ]
         },
         "COMMAND_EXIT": {
-          "shortcuts": ["ctrl+q"]
+          "shortcuts": [
+            "ctrl+q"
+          ]
         },
         "COMMAND_FIND_IN_PAGE": {
-          "shortcuts": ["ctrl+f", "."]
+          "shortcuts": [
+            "ctrl+f",
+            "."
+          ]
         },
         "COMMAND_FIND_NEXT_IN_PAGE": {
-          "shortcuts": ["f3", "ctrl+g"]
+          "shortcuts": [
+            "f3",
+            "ctrl+g"
+          ]
         },
         "COMMAND_FIND_PREVIOUS_IN_PAGE": {
-          "shortcuts": ["shift+f3", "ctrl+shift+g"]
+          "shortcuts": [
+            "shift+f3",
+            "ctrl+shift+g"
+          ]
         },
         "COMMAND_FOCUS_ADDRESSFIELD": {
-          "shortcuts": ["f8", "ctrl+l"]
+          "shortcuts": [
+            "f8",
+            "ctrl+l"
+          ]
         },
         "COMMAND_FOCUS_MAINMENU": {
-          "shortcuts": ["f10"]
+          "shortcuts": [
+            "f10"
+          ]
         },
         "COMMAND_FOCUS_NEXT": {
-          "shortcuts": ["f6", "ctrl+shift+]"]
+          "shortcuts": [
+            "f6",
+            "ctrl+shift+]"
+          ]
         },
         "COMMAND_FOCUS_PANEL": {
-          "shortcuts": ["f7"]
+          "shortcuts": [
+            "f7"
+          ]
         },
         "COMMAND_FOCUS_PREVIOUS": {
-          "shortcuts": ["shift+f6", "ctrl+shift+["]
+          "shortcuts": [
+            "shift+f6",
+            "ctrl+shift+["
+          ]
         },
         "COMMAND_FOCUS_SEARCHFIELD": {
-          "shortcuts": ["ctrl+k"]
+          "shortcuts": [
+            "ctrl+k"
+          ]
         },
         "COMMAND_FOCUS_WEBVIEW": {
-          "shortcuts": ["f9"]
+          "shortcuts": [
+            "f9"
+          ]
         },
         "COMMAND_FULLSCREEN": {
-          "shortcuts": ["f11"]
+          "shortcuts": [
+            "f11"
+          ]
         },
         "COMMAND_GO_TO_PARENT_DIRECTORY": {
           "shortcuts": []
@@ -151,58 +629,94 @@
           "shortcuts": []
         },
         "COMMAND_MAIL_COMPOSE_NEW_MESSAGE": {
-          "shortcuts": ["n"]
+          "shortcuts": [
+            "n"
+          ]
         },
         "COMMAND_MAIL_DELETE_PERMANENTLY": {
-          "shortcuts": ["shift+del"]
+          "shortcuts": [
+            "shift+del"
+          ]
         },
         "COMMAND_MAIL_ENABLE_SENDER_VIEW": {
-          "shortcuts": ["e"]
+          "shortcuts": [
+            "e"
+          ]
         },
         "COMMAND_MAIL_ENABLE_THREADED_VIEW": {
-          "shortcuts": ["t"]
+          "shortcuts": [
+            "t"
+          ]
         },
         "COMMAND_MAIL_FORWARD": {
-          "shortcuts": ["f"]
+          "shortcuts": [
+            "f"
+          ]
         },
         "COMMAND_MAIL_LABEL_FLAG": {
-          "shortcuts": ["l"]
+          "shortcuts": [
+            "l"
+          ]
         },
         "COMMAND_MAIL_MARK_JUNK": {
-          "shortcuts": ["j"]
+          "shortcuts": [
+            "j"
+          ]
         },
         "COMMAND_MAIL_MARK_NOT_JUNK": {
-          "shortcuts": ["shift+j"]
+          "shortcuts": [
+            "shift+j"
+          ]
         },
         "COMMAND_MAIL_MARK_READ": {
-          "shortcuts": ["k"]
+          "shortcuts": [
+            "k"
+          ]
         },
         "COMMAND_MAIL_MARK_READ_AND_GOTO_NEXT_UNREAD": {
-          "shortcuts": ["g"]
+          "shortcuts": [
+            "g"
+          ]
         },
         "COMMAND_MAIL_MARK_THREAD_READ": {
-          "shortcuts": ["m"]
+          "shortcuts": [
+            "m"
+          ]
         },
         "COMMAND_MAIL_MARK_THREAD_UNREAD": {
-          "shortcuts": ["shift+m"]
+          "shortcuts": [
+            "shift+m"
+          ]
         },
         "COMMAND_MAIL_MARK_UNREAD": {
-          "shortcuts": ["shift+k"]
+          "shortcuts": [
+            "shift+k"
+          ]
         },
         "COMMAND_MAIL_QUEUE_MESSAGE": {
-          "shortcuts": ["ctrl+shift+enter"]
+          "shortcuts": [
+            "ctrl+shift+enter"
+          ]
         },
         "COMMAND_MAIL_REPLY": {
-          "shortcuts": ["r"]
+          "shortcuts": [
+            "r"
+          ]
         },
         "COMMAND_MAIL_REPLY_ALL": {
-          "shortcuts": ["shift+r"]
+          "shortcuts": [
+            "shift+r"
+          ]
         },
         "COMMAND_MAIL_REPLY_LIST": {
-          "shortcuts": ["shift+l"]
+          "shortcuts": [
+            "shift+l"
+          ]
         },
         "COMMAND_MAIL_SEND_MESSAGE": {
-          "shortcuts": ["ctrl+enter"]
+          "shortcuts": [
+            "ctrl+enter"
+          ]
         },
         "COMMAND_MAIL_SHOW_MAIL_INFO": {
           "shortcuts": []
@@ -218,209 +732,391 @@
           "shortcuts": []
         },
         "COMMAND_MAIN_TOGGLE_UI": {
-          "shortcuts": ["ctrl+f11"]
+          "shortcuts": [
+            "ctrl+f11"
+          ]
         },
         "COMMAND_MAIN_ZOOM_DOUBLE": {
-          "shortcuts": ["8", "numpad8"]
+          "shortcuts": [
+            "8",
+            "numpad8"
+          ]
         },
         "COMMAND_MAIN_ZOOM_HALF": {
-          "shortcuts": ["7", "numpad7"]
+          "shortcuts": [
+            "7",
+            "numpad7"
+          ]
         },
         "COMMAND_MAIN_ZOOM_IN": {
-          "shortcuts": ["0", "numpad0", "+", "ctrl++", "ctrl+="]
+          "shortcuts": [
+            "0",
+            "numpad0",
+            "+",
+            "ctrl++",
+            "ctrl+="
+          ]
         },
         "COMMAND_MAIN_ZOOM_OUT": {
-          "shortcuts": ["9", "numpad9", "-", "ctrl+-"]
+          "shortcuts": [
+            "9",
+            "numpad9",
+            "-",
+            "ctrl+-"
+          ]
         },
         "COMMAND_MAIN_ZOOM_RESET": {
-          "shortcuts": ["ctrl+0", "ctrl+numpad0", "6", "numpad6", "*", "ctrl+*"]
+          "shortcuts": [
+            "ctrl+0",
+            "ctrl+numpad0",
+            "6",
+            "numpad6",
+            "*",
+            "ctrl+*"
+          ]
         },
         "COMMAND_NEW_BACKGROUND_TAB": {
-          "gestures": ["26"]
+          "gestures": [
+            "26"
+          ]
         },
         "COMMAND_NEW_BACKGROUND_TAB_LINK": {
-          "gestures": ["e26"]
+          "gestures": [
+            "e26"
+          ]
         },
         "COMMAND_NEW_PRIVATE_WINDOW": {
-          "shortcuts": ["ctrl+shift+n"]
+          "shortcuts": [
+            "ctrl+shift+n"
+          ]
         },
         "COMMAND_NEW_TAB": {
-          "gestures": ["2"],
-          "shortcuts": ["ctrl+t"]
+          "gestures": [
+            "2"
+          ],
+          "shortcuts": [
+            "ctrl+t"
+          ]
         },
         "COMMAND_NEW_TAB_LINK": {
-          "gestures": ["e2"]
+          "gestures": [
+            "e2"
+          ]
         },
         "COMMAND_NEW_TAB_OUTSIDE_GROUP": {
           "shortcuts": []
         },
         "COMMAND_NEW_WINDOW": {
-          "shortcuts": ["ctrl+n"]
+          "shortcuts": [
+            "ctrl+n"
+          ]
         },
         "COMMAND_OPEN_PAGE": {
-          "shortcuts": ["ctrl+o"]
+          "shortcuts": [
+            "ctrl+o"
+          ]
         },
         "COMMAND_PAGE_BACK": {
-          "gestures": ["4"],
-          "shortcuts": ["alt+left", "ctrl+left", "backspace", "z"]
+          "gestures": [
+            "4"
+          ],
+          "shortcuts": [
+            "alt+left",
+            "ctrl+left",
+            "backspace",
+            "z"
+          ]
         },
         "COMMAND_PAGE_FAST_FORWARD": {
-          "gestures": ["06"]
+          "gestures": [
+            "06"
+          ]
         },
         "COMMAND_PAGE_FORWARD": {
-          "gestures": ["0"],
-          "shortcuts": ["alt+right", "ctrl+right", "x"]
+          "gestures": [
+            "0"
+          ],
+          "shortcuts": [
+            "alt+right",
+            "ctrl+right",
+            "x"
+          ]
         },
         "COMMAND_PAGE_REFRESH": {
-          "gestures": ["62"],
-          "shortcuts": ["ctrl+r", "f5"]
+          "gestures": [
+            "62"
+          ],
+          "shortcuts": [
+            "ctrl+r",
+            "f5"
+          ]
         },
         "COMMAND_PAGE_RELOAD_NOCACHE": {
-          "shortcuts": ["ctrl+shift+r", "ctrl+f5"]
+          "shortcuts": [
+            "ctrl+shift+r",
+            "ctrl+f5"
+          ]
         },
         "COMMAND_PAGE_REWIND": {
-          "gestures": ["42"]
+          "gestures": [
+            "42"
+          ]
         },
         "COMMAND_PRINT_PAGE": {
-          "shortcuts": ["ctrl+p"]
+          "shortcuts": [
+            "ctrl+p"
+          ]
         },
         "COMMAND_READERVIEW_TOGGLE": {
           "shortcuts": []
         },
         "COMMAND_SAVE_PAGE": {
-          "shortcuts": ["ctrl+s"]
+          "shortcuts": [
+            "ctrl+s"
+          ]
         },
         "COMMAND_SHOW_BOOKMARKS": {},
         "COMMAND_SHOW_BOOKMARK_BAR": {
-          "shortcuts": ["ctrl+shift+b"]
+          "shortcuts": [
+            "ctrl+shift+b"
+          ]
         },
         "COMMAND_SHOW_CLEAR_PRIVATE_DATA": {
-          "shortcuts": ["ctrl+shift+del"]
+          "shortcuts": [
+            "ctrl+shift+del"
+          ]
         },
         "COMMAND_SHOW_DOWNLOADS_PANEL": {
-          "shortcuts": ["ctrl+shift+d", "ctrl+j"]
+          "shortcuts": [
+            "ctrl+shift+d",
+            "ctrl+j"
+          ]
         },
         "COMMAND_SHOW_EXTENSIONS": {
-          "shortcuts": ["ctrl+shift+e"]
+          "shortcuts": [
+            "ctrl+shift+e"
+          ]
         },
         "COMMAND_SHOW_HELP": {
-          "shortcuts": ["f1"]
+          "shortcuts": [
+            "f1"
+          ]
         },
         "COMMAND_SHOW_HISTORY": {
-          "shortcuts": ["ctrl+h"]
+          "shortcuts": [
+            "ctrl+h"
+          ]
         },
         "COMMAND_SHOW_HISTORY_PANEL": {
-          "shortcuts": ["ctrl+shift+h"]
+          "shortcuts": [
+            "ctrl+shift+h"
+          ]
         },
         "COMMAND_SHOW_HOMEPAGE": {
-          "shortcuts": ["alt+home"]
+          "shortcuts": [
+            "alt+home"
+          ]
         },
         "COMMAND_SHOW_KEYBOARDSHORTCUTS": {
-          "shortcuts": ["ctrl+f1"]
+          "shortcuts": [
+            "ctrl+f1"
+          ]
         },
         "COMMAND_SHOW_MAIL_PANEL": {
-          "shortcuts": ["ctrl+shift+m"]
+          "shortcuts": [
+            "ctrl+shift+m"
+          ]
         },
         "COMMAND_SHOW_NEXT_PANEL": {
-          "shortcuts": ["alt+f7"]
+          "shortcuts": [
+            "alt+f7"
+          ]
         },
         "COMMAND_SHOW_NOTES_PANEL": {
-          "shortcuts": ["ctrl+shift+o"]
+          "shortcuts": [
+            "ctrl+shift+o"
+          ]
         },
         "COMMAND_SHOW_PREVIOUS_PANEL": {
-          "shortcuts": ["alt+shift+f7"]
+          "shortcuts": [
+            "alt+shift+f7"
+          ]
         },
         "COMMAND_SHOW_QUICK_COMMANDS": {
-          "shortcuts": ["ctrl+e", "f2"]
+          "shortcuts": [
+            "ctrl+e",
+            "f2"
+          ]
         },
         "COMMAND_SHOW_SETTINGS": {
-          "shortcuts": ["ctrl+f12"]
+          "shortcuts": [
+            "ctrl+f12"
+          ]
         },
         "COMMAND_SHOW_TAB_BUTTON_POPOUT": {
-          "shortcuts": ["ctrl+shift+a"]
+          "shortcuts": [
+            "ctrl+shift+a"
+          ]
         },
         "COMMAND_SHOW_WORKSPACE_MENU": {
           "shortcuts": []
         },
         "COMMAND_SPATNAV_DOWN": {
-          "shortcuts": ["shift+down", "s"]
+          "shortcuts": [
+            "shift+down",
+            "s"
+          ]
         },
         "COMMAND_SPATNAV_LEFT": {
-          "shortcuts": ["shift+left", "a"]
+          "shortcuts": [
+            "shift+left",
+            "a"
+          ]
         },
         "COMMAND_SPATNAV_RIGHT": {
-          "shortcuts": ["shift+right", "d"]
+          "shortcuts": [
+            "shift+right",
+            "d"
+          ]
         },
         "COMMAND_SPATNAV_UP": {
-          "shortcuts": ["shift+up", "w"]
+          "shortcuts": [
+            "shift+up",
+            "w"
+          ]
         },
         "COMMAND_STOP_PAGE": {
-          "gestures": ["6"],
-          "shortcuts": ["esc"]
+          "gestures": [
+            "6"
+          ],
+          "shortcuts": [
+            "esc"
+          ]
         },
         "COMMAND_TAB_MOVE_BACKWARD": {
-          "shortcuts": ["ctrl+shift+pageup"]
+          "shortcuts": [
+            "ctrl+shift+pageup"
+          ]
         },
         "COMMAND_TAB_MOVE_FORWARD": {
-          "shortcuts": ["ctrl+shift+pagedown"]
+          "shortcuts": [
+            "ctrl+shift+pagedown"
+          ]
         },
         "COMMAND_TAB_REOPEN_RECENTLY_CLOSED": {
-          "gestures": ["60"],
-          "shortcuts": ["ctrl+shift+t", "ctrl+z"]
+          "gestures": [
+            "60"
+          ],
+          "shortcuts": [
+            "ctrl+shift+t",
+            "ctrl+z"
+          ]
         },
         "COMMAND_TAB_STACK_TILE_GRID": {
-          "shortcuts": ["ctrl+f7"]
+          "shortcuts": [
+            "ctrl+f7"
+          ]
         },
         "COMMAND_TAB_STACK_TILE_HORIZONTAL": {
-          "shortcuts": ["ctrl+f8"]
+          "shortcuts": [
+            "ctrl+f8"
+          ]
         },
         "COMMAND_TAB_STACK_TILE_VERTICAL": {
-          "shortcuts": ["ctrl+f9", "ctrl+shift+enter"]
+          "shortcuts": [
+            "ctrl+f9",
+            "ctrl+shift+enter"
+          ]
         },
         "COMMAND_TAB_SWITCH_1": {
-          "shortcuts": ["ctrl+1", "ctrl+numpad1"]
+          "shortcuts": [
+            "ctrl+1",
+            "ctrl+numpad1"
+          ]
         },
         "COMMAND_TAB_SWITCH_2": {
-          "shortcuts": ["ctrl+2", "ctrl+numpad2"]
+          "shortcuts": [
+            "ctrl+2",
+            "ctrl+numpad2"
+          ]
         },
         "COMMAND_TAB_SWITCH_3": {
-          "shortcuts": ["ctrl+3", "ctrl+numpad3"]
+          "shortcuts": [
+            "ctrl+3",
+            "ctrl+numpad3"
+          ]
         },
         "COMMAND_TAB_SWITCH_4": {
-          "shortcuts": ["ctrl+4", "ctrl+numpad4"]
+          "shortcuts": [
+            "ctrl+4",
+            "ctrl+numpad4"
+          ]
         },
         "COMMAND_TAB_SWITCH_5": {
-          "shortcuts": ["ctrl+5", "ctrl+numpad5"]
+          "shortcuts": [
+            "ctrl+5",
+            "ctrl+numpad5"
+          ]
         },
         "COMMAND_TAB_SWITCH_6": {
-          "shortcuts": ["ctrl+6", "ctrl+numpad6"]
+          "shortcuts": [
+            "ctrl+6",
+            "ctrl+numpad6"
+          ]
         },
         "COMMAND_TAB_SWITCH_7": {
-          "shortcuts": ["ctrl+7", "ctrl+numpad7"]
+          "shortcuts": [
+            "ctrl+7",
+            "ctrl+numpad7"
+          ]
         },
         "COMMAND_TAB_SWITCH_8": {
-          "shortcuts": ["ctrl+8", "ctrl+numpad8"]
+          "shortcuts": [
+            "ctrl+8",
+            "ctrl+numpad8"
+          ]
         },
         "COMMAND_TAB_SWITCH_BACK_HISTORY": {
-          "shortcuts": ["3", "numpad3"]
+          "shortcuts": [
+            "3",
+            "numpad3"
+          ]
         },
         "COMMAND_TAB_SWITCH_BACK_ORDER": {
-          "shortcuts": ["ctrl+pageup", "1", "numpad1"]
+          "shortcuts": [
+            "ctrl+pageup",
+            "1",
+            "numpad1"
+          ]
         },
         "COMMAND_TAB_SWITCH_BACK_SETTING": {
-          "shortcuts": ["ctrl+shift+tab"]
+          "shortcuts": [
+            "ctrl+shift+tab"
+          ]
         },
         "COMMAND_TAB_SWITCH_FORWARD_HISTORY": {
-          "shortcuts": ["4", "numpad4"]
+          "shortcuts": [
+            "4",
+            "numpad4"
+          ]
         },
         "COMMAND_TAB_SWITCH_FORWARD_ORDER": {
-          "shortcuts": ["ctrl+pagedown", "2", "numpad2"]
+          "shortcuts": [
+            "ctrl+pagedown",
+            "2",
+            "numpad2"
+          ]
         },
         "COMMAND_TAB_SWITCH_FORWARD_SETTING": {
-          "shortcuts": ["ctrl+tab"]
+          "shortcuts": [
+            "ctrl+tab"
+          ]
         },
         "COMMAND_TAB_SWITCH_LAST": {
-          "shortcuts": ["ctrl+9", "ctrl+numpad9"]
+          "shortcuts": [
+            "ctrl+9",
+            "ctrl+numpad9"
+          ]
         },
         "COMMAND_TAB_THUMBNAIL": {
           "shortcuts": []
@@ -429,13 +1125,19 @@
           "shortcuts": []
         },
         "COMMAND_TAB_VIEW_PAGE_SOURCE": {
-          "shortcuts": ["ctrl+u"]
+          "shortcuts": [
+            "ctrl+u"
+          ]
         },
         "COMMAND_TASK_MANAGER": {
-          "shortcuts": ["shift+esc"]
+          "shortcuts": [
+            "shift+esc"
+          ]
         },
         "COMMAND_TOGGLE_FOOTER": {
-          "shortcuts": ["ctrl+shift+s"]
+          "shortcuts": [
+            "ctrl+shift+s"
+          ]
         },
         "COMMAND_TOGGLE_FORCE_DARK_MODE": {
           "shortcuts": []
@@ -447,68 +1149,116 @@
           "shortcuts": []
         },
         "COMMAND_TOGGLE_PANEL": {
-          "shortcuts": ["f4"]
+          "shortcuts": [
+            "f4"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_1": {
-          "shortcuts": ["ctrl+shift+1"]
+          "shortcuts": [
+            "ctrl+shift+1"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_10": {
           "shortcuts": []
         },
         "COMMAND_WORKSPACE_SWITCH_2": {
-          "shortcuts": ["ctrl+shift+2"]
+          "shortcuts": [
+            "ctrl+shift+2"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_3": {
-          "shortcuts": ["ctrl+shift+3"]
+          "shortcuts": [
+            "ctrl+shift+3"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_4": {
-          "shortcuts": ["ctrl+shift+4"]
+          "shortcuts": [
+            "ctrl+shift+4"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_5": {
-          "shortcuts": ["ctrl+shift+5"]
+          "shortcuts": [
+            "ctrl+shift+5"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_6": {
-          "shortcuts": ["ctrl+shift+6"]
+          "shortcuts": [
+            "ctrl+shift+6"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_7": {
-          "shortcuts": ["ctrl+shift+7"]
+          "shortcuts": [
+            "ctrl+shift+7"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_8": {
-          "shortcuts": ["ctrl+shift+8"]
+          "shortcuts": [
+            "ctrl+shift+8"
+          ]
         },
         "COMMAND_WORKSPACE_SWITCH_9": {
-          "shortcuts": ["ctrl+shift+9"]
+          "shortcuts": [
+            "ctrl+shift+9"
+          ]
         }
       }
     ],
-    "toolbars": {
-      "navigation": [
-        "PanelToggle",
-        "PanelWidthSpacer",
-        "Back",
-        "Forward",
-        "Reload",
-        "AddressField",
-        "PanelDownloads",
-        "Spacer",
-        "Extensions",
-        "VPNButton",
-        "UpdateButton",
-        "ShareVivaldi",
-        "AccountButton"
-      ],
-      "panel": [
-        "PanelHistory",
-        "PanelNotes",
-        "PanelTranslate",
-        "PanelWindow",
-        "Divider",
-        "PanelMail",
-        "PanelCalendar",
-        "PanelTasks",
-        "PanelFeeds",
-        "PanelWeb",
-        "FlexibleSpacer"
+    "address_bar": {
+      "extensions": {
+        "render_in_dropdown": true,
+        "show_all_toggle": true
+      },
+      "search": {
+        "hidden_direct_match_providers": [
+          21
+        ]
+      },
+      "show_full_url": false,
+      "show_qr_generator": false,
+      "show_search_suggestions_warning": 61
+    },
+    "appearance": {
+      "density": true,
+      "disable_title_bar": true
+    },
+    "dashboard": {
+      "columns": 4,
+      "enabled": false,
+      "widgets": [
+        {
+          "background": "semi-transparent",
+          "groupPath": "Bookmarks/Home",
+          "id": "60774ea8-8e91-4735-9add-a532abc45945",
+          "locationId": 0,
+          "position": {
+            "height": 1,
+            "left": 0,
+            "top": 0,
+            "width": 1
+          },
+          "precipitationUnit": "mm",
+          "size": "regular",
+          "speeddialGroupUUID": "e5c019f8-c8a4-403c-99c8-d3502d7d09b3",
+          "temperatureUnit": "celsius",
+          "type": "weather",
+          "view": "WEEK",
+          "windspeedUnit": "ms"
+        },
+        {
+          "background": "semi-transparent",
+          "groupPath": "Bookmarks/Home",
+          "id": "7a805b6d-bdf7-4137-aa1e-853f84b33c10",
+          "period": 30,
+          "position": {
+            "height": 1,
+            "left": 1,
+            "top": 0,
+            "width": 1
+          },
+          "size": "regular",
+          "speeddialGroupUUID": "e5c019f8-c8a4-403c-99c8-d3502d7d09b3",
+          "type": "privacy-stats"
+        }
       ]
     },
     "panels": {
@@ -552,6 +1302,38 @@
         "barVisible": false,
         "contentVisible": false,
         "width": 0
+      }
+    },
+    "startpage": {
+      "navigation": 2,
+      "navigation_shorcuts": false,
+      "speed_dial": {
+        "add_button_visible": false,
+        "controls_visible": false,
+        "delete_visible": false,
+        "favicon_visible": false,
+        "group_settings": {
+          "6": {
+            "position": "below",
+            "search": true
+          }
+        }
+      }
+    },
+    "status_bar": {
+      "display": 1,
+      "minimized": 0
+    },
+    "tabs": {
+      "bar": {
+        "position": 1
+      },
+      "counter_detection": false,
+      "cycle_by_recent_order": false,
+      "minimize": false,
+      "never_close_last": false,
+      "visual_switch": {
+        "enable": false
       }
     },
     "theme": {
@@ -1054,53 +1836,35 @@
         }
       ]
     },
-    "tabs": {
-      "bar": {
-        "position": 1
-      },
-      "counter_detection": false,
-      "cycle_by_recent_order": false,
-      "minimize": false,
-      "never_close_last": false,
-      "visual_switch": {
-        "enable": false
-      }
-    },
-    "appearance": {
-      "density": true,
-      "disable_title_bar": true
-    },
-    "startpage": {
-      "navigation": 2,
-      "navigation_shorcuts": false,
-      "speed_dial": {
-        "add_button_visible": false,
-        "controls_visible": false,
-        "delete_visible": false,
-        "favicon_visible": false,
-        "group_settings": {
-          "6": {
-            "position": "below",
-            "search": true
-          }
-        }
-      }
-    },
-    "address_bar": {
-      "extensions": {
-        "render_in_dropdown": true,
-        "show_all_toggle": true
-      },
-      "search": {
-        "hidden_direct_match_providers": [21]
-      },
-      "show_full_url": false,
-      "show_qr_generator": false,
-      "show_search_suggestions_warning": 61
-    },
-    "status_bar": {
-      "display": 1,
-      "minimized": 0
+    "toolbars": {
+      "navigation": [
+        "PanelToggle",
+        "PanelWidthSpacer",
+        "Back",
+        "Forward",
+        "Reload",
+        "AddressField",
+        "PanelDownloads",
+        "Spacer",
+        "Extensions",
+        "VPNButton",
+        "UpdateButton",
+        "ShareVivaldi",
+        "AccountButton"
+      ],
+      "panel": [
+        "PanelHistory",
+        "PanelNotes",
+        "PanelTranslate",
+        "PanelWindow",
+        "Divider",
+        "PanelMail",
+        "PanelCalendar",
+        "PanelTasks",
+        "PanelFeeds",
+        "PanelWeb",
+        "FlexibleSpacer"
+      ]
     }
   }
 }

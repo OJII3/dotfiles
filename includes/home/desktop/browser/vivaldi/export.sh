@@ -20,17 +20,21 @@ echo "Exporting from: $PROFILE_DIR"
 
 # Export settings (selected keys only)
 jq '{
+  default_search_provider: .default_search_provider,
+  default_search_provider_data: .default_search_provider_data,
+  intl: .intl,
   vivaldi: {
     actions: .vivaldi.actions,
-    toolbars: .vivaldi.toolbars,
+    address_bar: .vivaldi.address_bar,
+    appearance: .vivaldi.appearance,
+    dashboard: .vivaldi.dashboard,
     panels: .vivaldi.panels,
+    startpage: .vivaldi.startpage,
+    status_bar: .vivaldi.status_bar,
+    tabs: .vivaldi.tabs,
     theme: .vivaldi.theme,
     themes: .vivaldi.themes,
-    tabs: .vivaldi.tabs,
-    appearance: .vivaldi.appearance,
-    startpage: .vivaldi.startpage,
-    address_bar: .vivaldi.address_bar,
-    status_bar: .vivaldi.status_bar
+    toolbars: .vivaldi.toolbars
   }
 }' "$PROFILE_DIR/Preferences" > "$SCRIPT_DIR/vivaldi-settings.json"
 
