@@ -1,0 +1,1106 @@
+{
+  "vivaldi": {
+    "actions": [
+      {
+        "COMMAND_ADD_BOOKMARK": {
+          "shortcuts": ["ctrl+d"]
+        },
+        "COMMAND_APPEND_SELECTION_TO_NOTE": {
+          "shortcuts": []
+        },
+        "COMMAND_BREAKMODE_TOGGLE": {
+          "shortcuts": ["ctrl+."]
+        },
+        "COMMAND_CALENDAR_CREATE_EVENT": {
+          "shortcuts": ["c"]
+        },
+        "COMMAND_CALENDAR_GOTO_DATE": {
+          "shortcuts": ["g"]
+        },
+        "COMMAND_CALENDAR_REFRESH": {
+          "shortcuts": ["r"]
+        },
+        "COMMAND_CALENDAR_SEARCH": {
+          "shortcuts": ["/"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_AGENDA": {
+          "shortcuts": ["a"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_DAY": {
+          "shortcuts": ["d"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_MONTH": {
+          "shortcuts": ["m"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_MULTIWEEK": {
+          "shortcuts": ["n"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_WEEK": {
+          "shortcuts": ["w"]
+        },
+        "COMMAND_CALENDAR_VIEWMODE_YEAR": {
+          "shortcuts": ["y"]
+        },
+        "COMMAND_CALENDAR_VIEW_NEXT_PERIOD": {
+          "shortcuts": ["k", "pagedown"]
+        },
+        "COMMAND_CALENDAR_VIEW_PREVIOUS_PERIOD": {
+          "shortcuts": ["j", "pageup"]
+        },
+        "COMMAND_CALENDAR_VIEW_TODAY": {
+          "shortcuts": ["t", "home"]
+        },
+        "COMMAND_CALENDAR_VIEW_ZOOM_IN": {
+          "shortcuts": ["alt+pageup"]
+        },
+        "COMMAND_CALENDAR_VIEW_ZOOM_OUT": {
+          "shortcuts": ["alt+pagedown"]
+        },
+        "COMMAND_CLIPBOARD_COPY": {
+          "shortcuts": ["ctrl+c"]
+        },
+        "COMMAND_CLIPBOARD_CUT": {
+          "shortcuts": ["ctrl+x"]
+        },
+        "COMMAND_CLIPBOARD_PASTE": {
+          "shortcuts": ["ctrl+v"]
+        },
+        "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT": {
+          "shortcuts": []
+        },
+        "COMMAND_CLIPBOARD_PASTE_AS_PLAIN_TEXT_OR_PASTE_AND_GO": {
+          "shortcuts": ["ctrl+shift+v"]
+        },
+        "COMMAND_CLIPBOARD_REDO": {
+          "shortcuts": ["ctrl+y"]
+        },
+        "COMMAND_CLIPBOARD_SELECT_ALL": {
+          "shortcuts": ["ctrl+a"]
+        },
+        "COMMAND_CLIPBOARD_UNDO": {
+          "shortcuts": ["ctrl+z"]
+        },
+        "COMMAND_CLOSE_TAB": {
+          "gestures": ["20"],
+          "shortcuts": ["ctrl+w", "ctrl+f4"]
+        },
+        "COMMAND_CLOSE_WINDOW": {
+          "shortcuts": ["ctrl+shift+w"]
+        },
+        "COMMAND_COPY_SELECTION_TO_NOTE": {
+          "shortcuts": ["ctrl+shift+c"]
+        },
+        "COMMAND_DEVELOPER_TOOLS": {
+          "shortcuts": ["ctrl+shift+i", "f12"]
+        },
+        "COMMAND_DEVTOOLS_CONSOLE": {
+          "shortcuts": ["ctrl+shift+j"]
+        },
+        "COMMAND_DEVTOOLS_INSPECTOR": {
+          "shortcuts": []
+        },
+        "COMMAND_DISBAND_TILE_GROUP": {
+          "shortcuts": ["ctrl+f6"]
+        },
+        "COMMAND_EXIT": {
+          "shortcuts": ["ctrl+q"]
+        },
+        "COMMAND_FIND_IN_PAGE": {
+          "shortcuts": ["ctrl+f", "."]
+        },
+        "COMMAND_FIND_NEXT_IN_PAGE": {
+          "shortcuts": ["f3", "ctrl+g"]
+        },
+        "COMMAND_FIND_PREVIOUS_IN_PAGE": {
+          "shortcuts": ["shift+f3", "ctrl+shift+g"]
+        },
+        "COMMAND_FOCUS_ADDRESSFIELD": {
+          "shortcuts": ["f8", "ctrl+l"]
+        },
+        "COMMAND_FOCUS_MAINMENU": {
+          "shortcuts": ["f10"]
+        },
+        "COMMAND_FOCUS_NEXT": {
+          "shortcuts": ["f6", "ctrl+shift+]"]
+        },
+        "COMMAND_FOCUS_PANEL": {
+          "shortcuts": ["f7"]
+        },
+        "COMMAND_FOCUS_PREVIOUS": {
+          "shortcuts": ["shift+f6", "ctrl+shift+["]
+        },
+        "COMMAND_FOCUS_SEARCHFIELD": {
+          "shortcuts": ["ctrl+k"]
+        },
+        "COMMAND_FOCUS_WEBVIEW": {
+          "shortcuts": ["f9"]
+        },
+        "COMMAND_FULLSCREEN": {
+          "shortcuts": ["f11"]
+        },
+        "COMMAND_GO_TO_PARENT_DIRECTORY": {
+          "shortcuts": []
+        },
+        "COMMAND_HIBERNATE_INACTIVE_WORKSPACES": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIL_COMPOSER_CHOOSE_ATTACHMENTS": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIL_COMPOSER_DELETE_DRAFT": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIL_COMPOSE_NEW_MESSAGE": {
+          "shortcuts": ["n"]
+        },
+        "COMMAND_MAIL_DELETE_PERMANENTLY": {
+          "shortcuts": ["shift+del"]
+        },
+        "COMMAND_MAIL_ENABLE_SENDER_VIEW": {
+          "shortcuts": ["e"]
+        },
+        "COMMAND_MAIL_ENABLE_THREADED_VIEW": {
+          "shortcuts": ["t"]
+        },
+        "COMMAND_MAIL_FORWARD": {
+          "shortcuts": ["f"]
+        },
+        "COMMAND_MAIL_LABEL_FLAG": {
+          "shortcuts": ["l"]
+        },
+        "COMMAND_MAIL_MARK_JUNK": {
+          "shortcuts": ["j"]
+        },
+        "COMMAND_MAIL_MARK_NOT_JUNK": {
+          "shortcuts": ["shift+j"]
+        },
+        "COMMAND_MAIL_MARK_READ": {
+          "shortcuts": ["k"]
+        },
+        "COMMAND_MAIL_MARK_READ_AND_GOTO_NEXT_UNREAD": {
+          "shortcuts": ["g"]
+        },
+        "COMMAND_MAIL_MARK_THREAD_READ": {
+          "shortcuts": ["m"]
+        },
+        "COMMAND_MAIL_MARK_THREAD_UNREAD": {
+          "shortcuts": ["shift+m"]
+        },
+        "COMMAND_MAIL_MARK_UNREAD": {
+          "shortcuts": ["shift+k"]
+        },
+        "COMMAND_MAIL_QUEUE_MESSAGE": {
+          "shortcuts": ["ctrl+shift+enter"]
+        },
+        "COMMAND_MAIL_REPLY": {
+          "shortcuts": ["r"]
+        },
+        "COMMAND_MAIL_REPLY_ALL": {
+          "shortcuts": ["shift+r"]
+        },
+        "COMMAND_MAIL_REPLY_LIST": {
+          "shortcuts": ["shift+l"]
+        },
+        "COMMAND_MAIL_SEND_MESSAGE": {
+          "shortcuts": ["ctrl+enter"]
+        },
+        "COMMAND_MAIL_SHOW_MAIL_INFO": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIL_SHOW_QUICK_REPLY": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIN_TOGGLE_ADDRESS_BAR": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIN_TOGGLE_PANEL_TOGGLE": {},
+        "COMMAND_MAIN_TOGGLE_TAB_BAR": {
+          "shortcuts": []
+        },
+        "COMMAND_MAIN_TOGGLE_UI": {
+          "shortcuts": ["ctrl+f11"]
+        },
+        "COMMAND_MAIN_ZOOM_DOUBLE": {
+          "shortcuts": ["8", "numpad8"]
+        },
+        "COMMAND_MAIN_ZOOM_HALF": {
+          "shortcuts": ["7", "numpad7"]
+        },
+        "COMMAND_MAIN_ZOOM_IN": {
+          "shortcuts": ["0", "numpad0", "+", "ctrl++", "ctrl+="]
+        },
+        "COMMAND_MAIN_ZOOM_OUT": {
+          "shortcuts": ["9", "numpad9", "-", "ctrl+-"]
+        },
+        "COMMAND_MAIN_ZOOM_RESET": {
+          "shortcuts": ["ctrl+0", "ctrl+numpad0", "6", "numpad6", "*", "ctrl+*"]
+        },
+        "COMMAND_NEW_BACKGROUND_TAB": {
+          "gestures": ["26"]
+        },
+        "COMMAND_NEW_BACKGROUND_TAB_LINK": {
+          "gestures": ["e26"]
+        },
+        "COMMAND_NEW_PRIVATE_WINDOW": {
+          "shortcuts": ["ctrl+shift+n"]
+        },
+        "COMMAND_NEW_TAB": {
+          "gestures": ["2"],
+          "shortcuts": ["ctrl+t"]
+        },
+        "COMMAND_NEW_TAB_LINK": {
+          "gestures": ["e2"]
+        },
+        "COMMAND_NEW_TAB_OUTSIDE_GROUP": {
+          "shortcuts": []
+        },
+        "COMMAND_NEW_WINDOW": {
+          "shortcuts": ["ctrl+n"]
+        },
+        "COMMAND_OPEN_PAGE": {
+          "shortcuts": ["ctrl+o"]
+        },
+        "COMMAND_PAGE_BACK": {
+          "gestures": ["4"],
+          "shortcuts": ["alt+left", "ctrl+left", "backspace", "z"]
+        },
+        "COMMAND_PAGE_FAST_FORWARD": {
+          "gestures": ["06"]
+        },
+        "COMMAND_PAGE_FORWARD": {
+          "gestures": ["0"],
+          "shortcuts": ["alt+right", "ctrl+right", "x"]
+        },
+        "COMMAND_PAGE_REFRESH": {
+          "gestures": ["62"],
+          "shortcuts": ["ctrl+r", "f5"]
+        },
+        "COMMAND_PAGE_RELOAD_NOCACHE": {
+          "shortcuts": ["ctrl+shift+r", "ctrl+f5"]
+        },
+        "COMMAND_PAGE_REWIND": {
+          "gestures": ["42"]
+        },
+        "COMMAND_PRINT_PAGE": {
+          "shortcuts": ["ctrl+p"]
+        },
+        "COMMAND_READERVIEW_TOGGLE": {
+          "shortcuts": []
+        },
+        "COMMAND_SAVE_PAGE": {
+          "shortcuts": ["ctrl+s"]
+        },
+        "COMMAND_SHOW_BOOKMARKS": {},
+        "COMMAND_SHOW_BOOKMARK_BAR": {
+          "shortcuts": ["ctrl+shift+b"]
+        },
+        "COMMAND_SHOW_CLEAR_PRIVATE_DATA": {
+          "shortcuts": ["ctrl+shift+del"]
+        },
+        "COMMAND_SHOW_DOWNLOADS_PANEL": {
+          "shortcuts": ["ctrl+shift+d", "ctrl+j"]
+        },
+        "COMMAND_SHOW_EXTENSIONS": {
+          "shortcuts": ["ctrl+shift+e"]
+        },
+        "COMMAND_SHOW_HELP": {
+          "shortcuts": ["f1"]
+        },
+        "COMMAND_SHOW_HISTORY": {
+          "shortcuts": ["ctrl+h"]
+        },
+        "COMMAND_SHOW_HISTORY_PANEL": {
+          "shortcuts": ["ctrl+shift+h"]
+        },
+        "COMMAND_SHOW_HOMEPAGE": {
+          "shortcuts": ["alt+home"]
+        },
+        "COMMAND_SHOW_KEYBOARDSHORTCUTS": {
+          "shortcuts": ["ctrl+f1"]
+        },
+        "COMMAND_SHOW_MAIL_PANEL": {
+          "shortcuts": ["ctrl+shift+m"]
+        },
+        "COMMAND_SHOW_NEXT_PANEL": {
+          "shortcuts": ["alt+f7"]
+        },
+        "COMMAND_SHOW_NOTES_PANEL": {
+          "shortcuts": ["ctrl+shift+o"]
+        },
+        "COMMAND_SHOW_PREVIOUS_PANEL": {
+          "shortcuts": ["alt+shift+f7"]
+        },
+        "COMMAND_SHOW_QUICK_COMMANDS": {
+          "shortcuts": ["ctrl+e", "f2"]
+        },
+        "COMMAND_SHOW_SETTINGS": {
+          "shortcuts": ["ctrl+f12"]
+        },
+        "COMMAND_SHOW_TAB_BUTTON_POPOUT": {
+          "shortcuts": ["ctrl+shift+a"]
+        },
+        "COMMAND_SHOW_WORKSPACE_MENU": {
+          "shortcuts": []
+        },
+        "COMMAND_SPATNAV_DOWN": {
+          "shortcuts": ["shift+down", "s"]
+        },
+        "COMMAND_SPATNAV_LEFT": {
+          "shortcuts": ["shift+left", "a"]
+        },
+        "COMMAND_SPATNAV_RIGHT": {
+          "shortcuts": ["shift+right", "d"]
+        },
+        "COMMAND_SPATNAV_UP": {
+          "shortcuts": ["shift+up", "w"]
+        },
+        "COMMAND_STOP_PAGE": {
+          "gestures": ["6"],
+          "shortcuts": ["esc"]
+        },
+        "COMMAND_TAB_MOVE_BACKWARD": {
+          "shortcuts": ["ctrl+shift+pageup"]
+        },
+        "COMMAND_TAB_MOVE_FORWARD": {
+          "shortcuts": ["ctrl+shift+pagedown"]
+        },
+        "COMMAND_TAB_REOPEN_RECENTLY_CLOSED": {
+          "gestures": ["60"],
+          "shortcuts": ["ctrl+shift+t", "ctrl+z"]
+        },
+        "COMMAND_TAB_STACK_TILE_GRID": {
+          "shortcuts": ["ctrl+f7"]
+        },
+        "COMMAND_TAB_STACK_TILE_HORIZONTAL": {
+          "shortcuts": ["ctrl+f8"]
+        },
+        "COMMAND_TAB_STACK_TILE_VERTICAL": {
+          "shortcuts": ["ctrl+f9", "ctrl+shift+enter"]
+        },
+        "COMMAND_TAB_SWITCH_1": {
+          "shortcuts": ["ctrl+1", "ctrl+numpad1"]
+        },
+        "COMMAND_TAB_SWITCH_2": {
+          "shortcuts": ["ctrl+2", "ctrl+numpad2"]
+        },
+        "COMMAND_TAB_SWITCH_3": {
+          "shortcuts": ["ctrl+3", "ctrl+numpad3"]
+        },
+        "COMMAND_TAB_SWITCH_4": {
+          "shortcuts": ["ctrl+4", "ctrl+numpad4"]
+        },
+        "COMMAND_TAB_SWITCH_5": {
+          "shortcuts": ["ctrl+5", "ctrl+numpad5"]
+        },
+        "COMMAND_TAB_SWITCH_6": {
+          "shortcuts": ["ctrl+6", "ctrl+numpad6"]
+        },
+        "COMMAND_TAB_SWITCH_7": {
+          "shortcuts": ["ctrl+7", "ctrl+numpad7"]
+        },
+        "COMMAND_TAB_SWITCH_8": {
+          "shortcuts": ["ctrl+8", "ctrl+numpad8"]
+        },
+        "COMMAND_TAB_SWITCH_BACK_HISTORY": {
+          "shortcuts": ["3", "numpad3"]
+        },
+        "COMMAND_TAB_SWITCH_BACK_ORDER": {
+          "shortcuts": ["ctrl+pageup", "1", "numpad1"]
+        },
+        "COMMAND_TAB_SWITCH_BACK_SETTING": {
+          "shortcuts": ["ctrl+shift+tab"]
+        },
+        "COMMAND_TAB_SWITCH_FORWARD_HISTORY": {
+          "shortcuts": ["4", "numpad4"]
+        },
+        "COMMAND_TAB_SWITCH_FORWARD_ORDER": {
+          "shortcuts": ["ctrl+pagedown", "2", "numpad2"]
+        },
+        "COMMAND_TAB_SWITCH_FORWARD_SETTING": {
+          "shortcuts": ["ctrl+tab"]
+        },
+        "COMMAND_TAB_SWITCH_LAST": {
+          "shortcuts": ["ctrl+9", "ctrl+numpad9"]
+        },
+        "COMMAND_TAB_THUMBNAIL": {
+          "shortcuts": []
+        },
+        "COMMAND_TAB_TRANSLATE_PAGE": {
+          "shortcuts": []
+        },
+        "COMMAND_TAB_VIEW_PAGE_SOURCE": {
+          "shortcuts": ["ctrl+u"]
+        },
+        "COMMAND_TASK_MANAGER": {
+          "shortcuts": ["shift+esc"]
+        },
+        "COMMAND_TOGGLE_FOOTER": {
+          "shortcuts": ["ctrl+shift+s"]
+        },
+        "COMMAND_TOGGLE_FORCE_DARK_MODE": {
+          "shortcuts": []
+        },
+        "COMMAND_TOGGLE_IMAGES": {
+          "shortcuts": []
+        },
+        "COMMAND_TOGGLE_MENU_POSITION": {
+          "shortcuts": []
+        },
+        "COMMAND_TOGGLE_PANEL": {
+          "shortcuts": ["f4"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_1": {
+          "shortcuts": ["ctrl+shift+1"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_10": {
+          "shortcuts": []
+        },
+        "COMMAND_WORKSPACE_SWITCH_2": {
+          "shortcuts": ["ctrl+shift+2"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_3": {
+          "shortcuts": ["ctrl+shift+3"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_4": {
+          "shortcuts": ["ctrl+shift+4"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_5": {
+          "shortcuts": ["ctrl+shift+5"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_6": {
+          "shortcuts": ["ctrl+shift+6"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_7": {
+          "shortcuts": ["ctrl+shift+7"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_8": {
+          "shortcuts": ["ctrl+shift+8"]
+        },
+        "COMMAND_WORKSPACE_SWITCH_9": {
+          "shortcuts": ["ctrl+shift+9"]
+        }
+      }
+    ],
+    "toolbars": {
+      "navigation": [
+        "PanelToggle",
+        "PanelWidthSpacer",
+        "Back",
+        "Forward",
+        "Reload",
+        "AddressField",
+        "PanelDownloads",
+        "Spacer",
+        "Extensions",
+        "VPNButton",
+        "UpdateButton",
+        "ShareVivaldi",
+        "AccountButton"
+      ],
+      "panel": [
+        "PanelHistory",
+        "PanelNotes",
+        "PanelTranslate",
+        "PanelWindow",
+        "Divider",
+        "PanelMail",
+        "PanelCalendar",
+        "PanelTasks",
+        "PanelFeeds",
+        "PanelWeb",
+        "FlexibleSpacer"
+      ]
+    },
+    "panels": {
+      "as_overlay": {
+        "enabled": false
+      },
+      "position": 1,
+      "show_close_button": true,
+      "show_toggle": false,
+      "web": {
+        "elements": [],
+        "removed_elements": [
+          {
+            "faviconUrl": "https://help.vivaldi.com/",
+            "faviconUrlValid": true,
+            "id": "WEBPANEL_ckmam0bsw00002y5xoafpww5i",
+            "mobileMode": true,
+            "title": "",
+            "url": "https://help.vivaldi.com/",
+            "zoom": 1
+          },
+          {
+            "faviconUrl": "data:image/png;base64,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",
+            "id": "WEBPANEL_949d4873-deed-4168-b306-92d1848687a5",
+            "mobileMode": true,
+            "title": "",
+            "url": "https://social.vivaldi.net/",
+            "zoom": 1
+          },
+          {
+            "faviconUrl": "data:image/png;base64,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",
+            "id": "WEBPANEL_ckn7fhhqx0000hc2roo8jshm4",
+            "mobileMode": true,
+            "title": "",
+            "url": "https://wikipedia.org",
+            "zoom": 1
+          }
+        ]
+      },
+      "window_defaults": {
+        "barVisible": false,
+        "contentVisible": false,
+        "width": 0
+      }
+    },
+    "theme": {
+      "dim_blurred": false,
+      "schedule": {
+        "o_s": {
+          "dark": "Vivaldi2",
+          "light": "5be87f4e-f088-4445-ab0a-429edd238d31"
+        }
+      },
+      "simple_scrollbar": true
+    },
+    "themes": {
+      "system": [
+        {
+          "accentFromPage": true,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.85,
+          "backgroundImage": "/resources/theme/vivaldi/background.webp",
+          "backgroundPosition": "stretch",
+          "blur": 8,
+          "colorAccentBg": "#ef3939",
+          "colorBg": "#f7f7f7",
+          "colorFg": "#2f2d2d",
+          "colorHighlightBg": "#2c78f2",
+          "colorWindowBg": "#f7f7f7",
+          "contrast": 0,
+          "dimBlurred": false,
+          "engineVersion": 1,
+          "id": "Vivaldi1",
+          "name": "Vivaldi",
+          "preferSystemAccent": false,
+          "radius": 14,
+          "simpleScrollbar": true,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1
+        },
+        {
+          "accentFromPage": false,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 1,
+          "backgroundImage": "",
+          "backgroundPosition": "stretch",
+          "blur": 0,
+          "colorAccentBg": "#4b4c53",
+          "colorBg": "#2e2f37",
+          "colorFg": "#d3d9e3",
+          "colorHighlightBg": "#6590fd",
+          "colorWindowBg": "#1D1E21",
+          "contrast": 0,
+          "dimBlurred": false,
+          "engineVersion": 1,
+          "id": "Vivaldi2",
+          "name": "Dark",
+          "preferSystemAccent": false,
+          "radius": 14,
+          "simpleScrollbar": true,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1
+        },
+        {
+          "accentFromPage": true,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.85,
+          "backgroundImage": "/resources/bg-paint.webp",
+          "backgroundPosition": "stretch",
+          "blur": 8,
+          "colorAccentBg": "#ff7452",
+          "colorBg": "#f7f7f7",
+          "colorFg": "#585555",
+          "colorHighlightBg": "#1ab5d1",
+          "colorWindowBg": "#f7f7f7",
+          "contrast": 0,
+          "dimBlurred": false,
+          "engineVersion": 1,
+          "id": "Vivaldi10",
+          "name": "Paint",
+          "preferSystemAccent": false,
+          "radius": 6,
+          "simpleScrollbar": true,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1
+        },
+        {
+          "accentFromPage": true,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.85,
+          "backgroundImage": "chrome://vivaldi-data/local-image/EX3JAA4ZCCN4MPE4SM4SSZXH4Y4IZAAB.jpg",
+          "backgroundPosition": "stretch",
+          "blur": 8,
+          "colorAccentBg": "#9e769a",
+          "colorBg": "#f7f7f7",
+          "colorFg": "#5d4b5a",
+          "colorHighlightBg": "#9e769a",
+          "colorWindowBg": "#f7f7f7",
+          "contrast": 0,
+          "dimBlurred": false,
+          "engineVersion": 1,
+          "id": "Vivaldi4",
+          "name": "Soft Pink",
+          "preferSystemAccent": false,
+          "radius": 14,
+          "simpleScrollbar": true,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1
+        },
+        {
+          "accentFromPage": true,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.8,
+          "backgroundImage": "/resources/bg_alt_4.webp",
+          "backgroundPosition": "stretch",
+          "blur": 10,
+          "colorAccentBg": "#29b2a4",
+          "colorBg": "#f1efea",
+          "colorFg": "#192419",
+          "colorHighlightBg": "#e9780e",
+          "colorWindowBg": "#f1efea",
+          "contrast": 1,
+          "engineVersion": 1,
+          "id": "Vivaldi7",
+          "name": "Beach",
+          "preferSystemAccent": false,
+          "radius": 5,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        },
+        {
+          "accentFromPage": false,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 1.0,
+          "backgroundImage": "",
+          "backgroundPosition": "stretch",
+          "blur": 0,
+          "buttons": {
+            "Back": "/resources/theme/vivaldi/Back.svg",
+            "BreakMode": "/resources/theme/vivaldi/BreakMode.svg",
+            "CalendarStatus": "/resources/theme/vivaldi/CalendarStatus.svg",
+            "CaptureImages": "/resources/theme/vivaldi/CaptureImages.svg",
+            "Clock": "/resources/theme/vivaldi/Clock.svg",
+            "DownloadButton": "/resources/theme/vivaldi/DownloadButton.svg",
+            "Extensions": "/resources/theme/vivaldi/Extensions.svg",
+            "FastForward": "/resources/theme/vivaldi/FastForward.svg",
+            "Forward": "/resources/theme/vivaldi/Forward.svg",
+            "Home": "/resources/theme/vivaldi/Home.svg",
+            "ImagesToggle": "/resources/theme/vivaldi/ImagesToggle.svg",
+            "MailBack": "/resources/theme/vivaldi/MailBack.svg",
+            "MailCompose": "/resources/theme/vivaldi/MailCompose.svg",
+            "MailForward": "/resources/theme/vivaldi/MailForward.svg",
+            "MailMsgArchive": "/resources/theme/vivaldi/MailMsgArchive.svg",
+            "MailMsgArchiveRestore": "/resources/theme/vivaldi/MailMsgArchiveRestore.svg",
+            "MailMsgAttach": "/resources/theme/vivaldi/MailMsgAttach.svg",
+            "MailMsgDiscard": "/resources/theme/vivaldi/MailMsgDiscard.svg",
+            "MailMsgEdit": "/resources/theme/vivaldi/MailMsgEdit.svg",
+            "MailMsgFlag": "/resources/theme/vivaldi/MailMsgFlag.svg",
+            "MailMsgForward": "/resources/theme/vivaldi/MailMsgForward.svg",
+            "MailMsgLabel": "/resources/theme/vivaldi/MailMsgLabel.svg",
+            "MailMsgMove": "/resources/theme/vivaldi/MailMsgMove.svg",
+            "MailMsgReply": "/resources/theme/vivaldi/MailMsgReply.svg",
+            "MailMsgReplyToAll": "/resources/theme/vivaldi/MailMsgReplyToAll.svg",
+            "MailMsgSend": "/resources/theme/vivaldi/MailMsgSend.svg",
+            "MailMsgShowHeaders": "/resources/theme/vivaldi/MailMsgShowHeaders.svg",
+            "MailMsgSpam": "/resources/theme/vivaldi/MailMsgSpam.svg",
+            "MailMsgSpamRestore": "/resources/theme/vivaldi/MailMsgSpamRestore.svg",
+            "MailMsgStatusRead": "/resources/theme/vivaldi/MailMsgStatusRead.svg",
+            "MailMsgStatusUnread": "/resources/theme/vivaldi/MailMsgStatusUnread.svg",
+            "MailMsgTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "MailMsgTrashRestore": "/resources/theme/vivaldi/MailMsgTrashRestore.svg",
+            "MailReload": "/resources/theme/vivaldi/MailReload.svg",
+            "MailRenderingMethod": "/resources/theme/vivaldi/MailRenderingMethod.svg",
+            "MailRenderingMethodText": "/resources/theme/vivaldi/MailRenderingMethodText.svg",
+            "MailStatus": "/resources/theme/vivaldi/MailStatus.svg",
+            "MailViewLayout": "/resources/theme/vivaldi/MailViewLayout.svg",
+            "MailViewThreading": "/resources/theme/vivaldi/MailViewThreading.svg",
+            "PageActions": "/resources/theme/vivaldi/PageActions.svg",
+            "PanelBookmarks": "/resources/theme/vivaldi/PanelBookmarks.svg",
+            "PanelCalendar": "/resources/theme/vivaldi/PanelCalendar.svg",
+            "PanelContacts": "/resources/theme/vivaldi/PanelContacts.svg",
+            "PanelDownloads": "/resources/theme/vivaldi/PanelDownloads.svg",
+            "PanelFeeds": "/resources/theme/vivaldi/PanelFeeds.svg",
+            "PanelHistory": "/resources/theme/vivaldi/PanelHistory.svg",
+            "PanelMail": "/resources/theme/vivaldi/PanelMail.svg",
+            "PanelNotes": "/resources/theme/vivaldi/PanelNotes.svg",
+            "PanelReadingList": "/resources/theme/vivaldi/PanelReadingList.svg",
+            "PanelSession": "/resources/theme/vivaldi/PanelSession.svg",
+            "PanelTasks": "/resources/theme/vivaldi/PanelTasks.svg",
+            "PanelToggle": "/resources/theme/vivaldi/PanelToggle.svg",
+            "PanelTranslate": "/resources/theme/vivaldi/PanelTranslate.svg",
+            "PanelWeb": "/resources/theme/vivaldi/PanelWeb.svg",
+            "PanelWindow": "/resources/theme/vivaldi/PanelWindow.svg",
+            "Proxy": "/resources/theme/vivaldi/Proxy.svg",
+            "ReadingList": "/resources/theme/vivaldi/ReadingList.svg",
+            "Reload": "/resources/theme/vivaldi/Reload.svg",
+            "Rewind": "/resources/theme/vivaldi/Rewind.svg",
+            "SearchField": "/resources/theme/vivaldi/SearchField.svg",
+            "Settings": "/resources/theme/vivaldi/Settings.svg",
+            "Stop": "/resources/theme/vivaldi/Stop.svg",
+            "SyncStatus": "/resources/theme/vivaldi/SyncStatus.svg",
+            "SyncedTabs": "/resources/theme/vivaldi/SyncStatus.svg",
+            "TabsTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "TilingToggle": "/resources/theme/vivaldi/TilingToggle.svg",
+            "UpdateButton": "/resources/theme/vivaldi/UpdateButton.svg",
+            "WorkspaceButton": "/resources/theme/vivaldi/WorkspaceButton.svg"
+          },
+          "colorAccentBg": "#cccccc",
+          "colorBg": "#f6f6f6",
+          "colorFg": "#333333",
+          "colorHighlightBg": "#4c70f0",
+          "colorWindowBg": "#edeef2",
+          "contrast": 1,
+          "engineVersion": 1,
+          "id": "Vivaldi5",
+          "name": "Subtle",
+          "preferSystemAccent": true,
+          "radius": 4,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        },
+        {
+          "accentFromPage": false,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.75,
+          "backgroundImage": "",
+          "backgroundPosition": "stretch",
+          "blur": 0,
+          "buttons": {
+            "Back": "/resources/theme/vivaldi/Back.svg",
+            "BreakMode": "/resources/theme/vivaldi/BreakMode.svg",
+            "CalendarStatus": "/resources/theme/vivaldi/CalendarStatus.svg",
+            "CaptureImages": "/resources/theme/vivaldi/CaptureImages.svg",
+            "Clock": "/resources/theme/vivaldi/Clock.svg",
+            "DownloadButton": "/resources/theme/vivaldi/DownloadButton.svg",
+            "Extensions": "/resources/theme/vivaldi/Extensions.svg",
+            "FastForward": "/resources/theme/vivaldi/FastForward.svg",
+            "Forward": "/resources/theme/vivaldi/Forward.svg",
+            "Home": "/resources/theme/vivaldi/Home.svg",
+            "ImagesToggle": "/resources/theme/vivaldi/ImagesToggle.svg",
+            "MailBack": "/resources/theme/vivaldi/MailBack.svg",
+            "MailCompose": "/resources/theme/vivaldi/MailCompose.svg",
+            "MailForward": "/resources/theme/vivaldi/MailForward.svg",
+            "MailMsgArchive": "/resources/theme/vivaldi/MailMsgArchive.svg",
+            "MailMsgArchiveRestore": "/resources/theme/vivaldi/MailMsgArchiveRestore.svg",
+            "MailMsgAttach": "/resources/theme/vivaldi/MailMsgAttach.svg",
+            "MailMsgDiscard": "/resources/theme/vivaldi/MailMsgDiscard.svg",
+            "MailMsgEdit": "/resources/theme/vivaldi/MailMsgEdit.svg",
+            "MailMsgFlag": "/resources/theme/vivaldi/MailMsgFlag.svg",
+            "MailMsgForward": "/resources/theme/vivaldi/MailMsgForward.svg",
+            "MailMsgLabel": "/resources/theme/vivaldi/MailMsgLabel.svg",
+            "MailMsgMove": "/resources/theme/vivaldi/MailMsgMove.svg",
+            "MailMsgReply": "/resources/theme/vivaldi/MailMsgReply.svg",
+            "MailMsgReplyToAll": "/resources/theme/vivaldi/MailMsgReplyToAll.svg",
+            "MailMsgSend": "/resources/theme/vivaldi/MailMsgSend.svg",
+            "MailMsgShowHeaders": "/resources/theme/vivaldi/MailMsgShowHeaders.svg",
+            "MailMsgSpam": "/resources/theme/vivaldi/MailMsgSpam.svg",
+            "MailMsgSpamRestore": "/resources/theme/vivaldi/MailMsgSpamRestore.svg",
+            "MailMsgStatusRead": "/resources/theme/vivaldi/MailMsgStatusRead.svg",
+            "MailMsgStatusUnread": "/resources/theme/vivaldi/MailMsgStatusUnread.svg",
+            "MailMsgTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "MailMsgTrashRestore": "/resources/theme/vivaldi/MailMsgTrashRestore.svg",
+            "MailReload": "/resources/theme/vivaldi/MailReload.svg",
+            "MailRenderingMethod": "/resources/theme/vivaldi/MailRenderingMethod.svg",
+            "MailRenderingMethodText": "/resources/theme/vivaldi/MailRenderingMethodText.svg",
+            "MailStatus": "/resources/theme/vivaldi/MailStatus.svg",
+            "MailViewLayout": "/resources/theme/vivaldi/MailViewLayout.svg",
+            "MailViewThreading": "/resources/theme/vivaldi/MailViewThreading.svg",
+            "PageActions": "/resources/theme/vivaldi/PageActions.svg",
+            "PanelBookmarks": "/resources/theme/vivaldi/PanelBookmarks.svg",
+            "PanelCalendar": "/resources/theme/vivaldi/PanelCalendar.svg",
+            "PanelContacts": "/resources/theme/vivaldi/PanelContacts.svg",
+            "PanelDownloads": "/resources/theme/vivaldi/PanelDownloads.svg",
+            "PanelFeeds": "/resources/theme/vivaldi/PanelFeeds.svg",
+            "PanelHistory": "/resources/theme/vivaldi/PanelHistory.svg",
+            "PanelMail": "/resources/theme/vivaldi/PanelMail.svg",
+            "PanelNotes": "/resources/theme/vivaldi/PanelNotes.svg",
+            "PanelReadingList": "/resources/theme/vivaldi/PanelReadingList.svg",
+            "PanelSession": "/resources/theme/vivaldi/PanelSession.svg",
+            "PanelTasks": "/resources/theme/vivaldi/PanelTasks.svg",
+            "PanelToggle": "/resources/theme/vivaldi/PanelToggle.svg",
+            "PanelTranslate": "/resources/theme/vivaldi/PanelTranslate.svg",
+            "PanelWeb": "/resources/theme/vivaldi/PanelWeb.svg",
+            "PanelWindow": "/resources/theme/vivaldi/PanelWindow.svg",
+            "Proxy": "/resources/theme/vivaldi/Proxy.svg",
+            "ReadingList": "/resources/theme/vivaldi/ReadingList.svg",
+            "Reload": "/resources/theme/vivaldi/Reload.svg",
+            "Rewind": "/resources/theme/vivaldi/Rewind.svg",
+            "SearchField": "/resources/theme/vivaldi/SearchField.svg",
+            "Settings": "/resources/theme/vivaldi/Settings.svg",
+            "Stop": "/resources/theme/vivaldi/Stop.svg",
+            "SyncStatus": "/resources/theme/vivaldi/SyncStatus.svg",
+            "SyncedTabs": "/resources/theme/vivaldi/SyncStatus.svg",
+            "TabsTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "TilingToggle": "/resources/theme/vivaldi/TilingToggle.svg",
+            "UpdateButton": "/resources/theme/vivaldi/UpdateButton.svg",
+            "WorkspaceButton": "/resources/theme/vivaldi/WorkspaceButton.svg"
+          },
+          "colorAccentBg": "#404040",
+          "colorBg": "#2f2f2f",
+          "colorFg": "#dbdbdb",
+          "colorHighlightBg": "#579c8e",
+          "colorWindowBg": "#1D1E21",
+          "contrast": 2,
+          "engineVersion": 1,
+          "id": "Vivaldi3x",
+          "name": "Issuna",
+          "preferSystemAccent": false,
+          "radius": 4,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        },
+        {
+          "accentFromPage": true,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.75,
+          "backgroundImage": "/resources/bg_martin-martz-7it4_acM-0M-unsplash.webp",
+          "backgroundPosition": "stretch",
+          "blur": 10,
+          "buttons": {
+            "Back": "/resources/theme/vivaldi/Back.svg",
+            "BreakMode": "/resources/theme/vivaldi/BreakMode.svg",
+            "CalendarStatus": "/resources/theme/vivaldi/CalendarStatus.svg",
+            "CaptureImages": "/resources/theme/vivaldi/CaptureImages.svg",
+            "Clock": "/resources/theme/vivaldi/Clock.svg",
+            "DownloadButton": "/resources/theme/vivaldi/DownloadButton.svg",
+            "Extensions": "/resources/theme/vivaldi/Extensions.svg",
+            "FastForward": "/resources/theme/vivaldi/FastForward.svg",
+            "Forward": "/resources/theme/vivaldi/Forward.svg",
+            "Home": "/resources/theme/vivaldi/Home.svg",
+            "ImagesToggle": "/resources/theme/vivaldi/ImagesToggle.svg",
+            "MailBack": "/resources/theme/vivaldi/MailBack.svg",
+            "MailCompose": "/resources/theme/vivaldi/MailCompose.svg",
+            "MailForward": "/resources/theme/vivaldi/MailForward.svg",
+            "MailMsgArchive": "/resources/theme/vivaldi/MailMsgArchive.svg",
+            "MailMsgArchiveRestore": "/resources/theme/vivaldi/MailMsgArchiveRestore.svg",
+            "MailMsgAttach": "/resources/theme/vivaldi/MailMsgAttach.svg",
+            "MailMsgDiscard": "/resources/theme/vivaldi/MailMsgDiscard.svg",
+            "MailMsgEdit": "/resources/theme/vivaldi/MailMsgEdit.svg",
+            "MailMsgFlag": "/resources/theme/vivaldi/MailMsgFlag.svg",
+            "MailMsgForward": "/resources/theme/vivaldi/MailMsgForward.svg",
+            "MailMsgLabel": "/resources/theme/vivaldi/MailMsgLabel.svg",
+            "MailMsgMove": "/resources/theme/vivaldi/MailMsgMove.svg",
+            "MailMsgReply": "/resources/theme/vivaldi/MailMsgReply.svg",
+            "MailMsgReplyToAll": "/resources/theme/vivaldi/MailMsgReplyToAll.svg",
+            "MailMsgSend": "/resources/theme/vivaldi/MailMsgSend.svg",
+            "MailMsgShowHeaders": "/resources/theme/vivaldi/MailMsgShowHeaders.svg",
+            "MailMsgSpam": "/resources/theme/vivaldi/MailMsgSpam.svg",
+            "MailMsgSpamRestore": "/resources/theme/vivaldi/MailMsgSpamRestore.svg",
+            "MailMsgStatusRead": "/resources/theme/vivaldi/MailMsgStatusRead.svg",
+            "MailMsgStatusUnread": "/resources/theme/vivaldi/MailMsgStatusUnread.svg",
+            "MailMsgTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "MailMsgTrashRestore": "/resources/theme/vivaldi/MailMsgTrashRestore.svg",
+            "MailReload": "/resources/theme/vivaldi/MailReload.svg",
+            "MailRenderingMethod": "/resources/theme/vivaldi/MailRenderingMethod.svg",
+            "MailRenderingMethodText": "/resources/theme/vivaldi/MailRenderingMethodText.svg",
+            "MailStatus": "/resources/theme/vivaldi/MailStatus.svg",
+            "MailViewLayout": "/resources/theme/vivaldi/MailViewLayout.svg",
+            "MailViewThreading": "/resources/theme/vivaldi/MailViewThreading.svg",
+            "PageActions": "/resources/theme/vivaldi/PageActions.svg",
+            "PanelBookmarks": "/resources/theme/vivaldi/PanelBookmarks.svg",
+            "PanelCalendar": "/resources/theme/vivaldi/PanelCalendar.svg",
+            "PanelContacts": "/resources/theme/vivaldi/PanelContacts.svg",
+            "PanelDownloads": "/resources/theme/vivaldi/PanelDownloads.svg",
+            "PanelFeeds": "/resources/theme/vivaldi/PanelFeeds.svg",
+            "PanelHistory": "/resources/theme/vivaldi/PanelHistory.svg",
+            "PanelMail": "/resources/theme/vivaldi/PanelMail.svg",
+            "PanelNotes": "/resources/theme/vivaldi/PanelNotes.svg",
+            "PanelReadingList": "/resources/theme/vivaldi/PanelReadingList.svg",
+            "PanelSession": "/resources/theme/vivaldi/PanelSession.svg",
+            "PanelTasks": "/resources/theme/vivaldi/PanelTasks.svg",
+            "PanelToggle": "/resources/theme/vivaldi/PanelToggle.svg",
+            "PanelTranslate": "/resources/theme/vivaldi/PanelTranslate.svg",
+            "PanelWeb": "/resources/theme/vivaldi/PanelWeb.svg",
+            "PanelWindow": "/resources/theme/vivaldi/PanelWindow.svg",
+            "Proxy": "/resources/theme/vivaldi/Proxy.svg",
+            "ReadingList": "/resources/theme/vivaldi/ReadingList.svg",
+            "Reload": "/resources/theme/vivaldi/Reload.svg",
+            "Rewind": "/resources/theme/vivaldi/Rewind.svg",
+            "SearchField": "/resources/theme/vivaldi/SearchField.svg",
+            "Settings": "/resources/theme/vivaldi/Settings.svg",
+            "Stop": "/resources/theme/vivaldi/Stop.svg",
+            "SyncStatus": "/resources/theme/vivaldi/SyncStatus.svg",
+            "SyncedTabs": "/resources/theme/vivaldi/SyncStatus.svg",
+            "TabsTrash": "/resources/theme/vivaldi/MailMsgTrash.svg",
+            "TilingToggle": "/resources/theme/vivaldi/TilingToggle.svg",
+            "UpdateButton": "/resources/theme/vivaldi/UpdateButton.svg",
+            "WorkspaceButton": "/resources/theme/vivaldi/WorkspaceButton.svg"
+          },
+          "colorAccentBg": "#e95421",
+          "colorBg": "#403c3a",
+          "colorFg": "#d5cbc8",
+          "colorHighlightBg": "#ff8142",
+          "colorWindowBg": "#41403b",
+          "contrast": 0,
+          "engineVersion": 1,
+          "id": "Vivaldi3",
+          "name": "Human",
+          "preferSystemAccent": false,
+          "radius": 4,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        },
+        {
+          "accentFromPage": false,
+          "accentOnWindow": true,
+          "accentSaturationLimit": 1,
+          "alpha": 0.95,
+          "backgroundImage": "/resources/bg_geometric_1.webp",
+          "backgroundPosition": "stretch",
+          "blur": 10,
+          "colorAccentBg": "#7F5FEC",
+          "colorBg": "#f6f6f6",
+          "colorFg": "#333333",
+          "colorHighlightBg": "#7F5FEC",
+          "colorWindowBg": "#7F5FEC",
+          "contrast": 3,
+          "engineVersion": 1,
+          "id": "Vivaldi8",
+          "name": "Purple Rain",
+          "preferSystemAccent": false,
+          "radius": 4,
+          "transparencyTabBar": true,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        },
+        {
+          "accentFromPage": false,
+          "accentOnWindow": false,
+          "accentSaturationLimit": 1,
+          "alpha": 1.0,
+          "backgroundImage": "",
+          "backgroundPosition": "stretch",
+          "blur": 0,
+          "colorAccentBg": "#404076",
+          "colorBg": "#23234f",
+          "colorFg": "#c0c0f1",
+          "colorHighlightBg": "#5f79fd",
+          "colorWindowBg": "#1b1a42",
+          "contrast": 2,
+          "engineVersion": 1,
+          "id": "Vivaldi9",
+          "name": "Private",
+          "preferSystemAccent": false,
+          "radius": 4,
+          "transparencyTabBar": false,
+          "transparencyTabs": false,
+          "url": "",
+          "version": 1.0
+        }
+      ],
+      "user": [
+        {
+          "accentFromPage": false,
+          "accentOnWindow": false,
+          "accentSaturationLimit": 1,
+          "alpha": 0.84,
+          "backgroundImage": "chrome://vivaldi-data/thumbnail/V2J55PBNEHPS7WELEM2VDURT5MZBNO4O.jpg",
+          "backgroundPosition": "stretch",
+          "blur": 2,
+          "colorAccentBg": "#f3afd7",
+          "colorBg": "#f0cbe3",
+          "colorFg": "#a17fb8",
+          "colorHighlightBg": "#d88af5",
+          "colorWindowBg": "#f7f7f7",
+          "contrast": -10,
+          "dimBlurred": false,
+          "engineVersion": 1,
+          "id": "5be87f4e-f088-4445-ab0a-429edd238d31",
+          "name": "Honkai Impact 3rd - Herrscher of Human Ego ; Elysia Theme ! ♡",
+          "preferSystemAccent": false,
+          "radius": 14,
+          "simpleScrollbar": true,
+          "transparencyTabBar": true,
+          "transparencyTabs": false,
+          "url": "https://themes.vivaldi.net/themes/r6Elrj1OlRk/status.json",
+          "version": 1
+        }
+      ]
+    },
+    "tabs": {
+      "bar": {
+        "position": 1
+      },
+      "counter_detection": false,
+      "cycle_by_recent_order": false,
+      "minimize": false,
+      "never_close_last": false,
+      "visual_switch": {
+        "enable": false
+      }
+    },
+    "appearance": {
+      "density": true,
+      "disable_title_bar": true
+    },
+    "startpage": {
+      "navigation": 2,
+      "navigation_shorcuts": false,
+      "speed_dial": {
+        "add_button_visible": false,
+        "controls_visible": false,
+        "delete_visible": false,
+        "favicon_visible": false,
+        "group_settings": {
+          "6": {
+            "position": "below",
+            "search": true
+          }
+        }
+      }
+    },
+    "address_bar": {
+      "extensions": {
+        "render_in_dropdown": true,
+        "show_all_toggle": true
+      },
+      "search": {
+        "hidden_direct_match_providers": [21]
+      },
+      "show_full_url": false,
+      "show_qr_generator": false,
+      "show_search_suggestions_warning": 61
+    },
+    "status_bar": {
+      "display": 1,
+      "minimized": 0
+    }
+  }
+}

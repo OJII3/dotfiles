@@ -4,8 +4,9 @@
     ../../includes/home
     ../../includes/home/apps/linux/common.nix
     ../../includes/home/bitwarden.nix
-    ../../includes/home/desktop/theme.nix
+    ../../includes/home/desktop/browser/vivaldi
     ../../includes/home/desktop/keyd
+    ../../includes/home/desktop/theme.nix
     ../../includes/home/dev
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/ai/gemini
@@ -23,7 +24,8 @@
 
   targets.genericLinux = {
     enable = true;
-    gpu = true;
-    nvidia = true;
+    gpu = {
+      enable = true;
+    };
   };
 }

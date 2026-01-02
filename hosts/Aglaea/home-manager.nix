@@ -7,6 +7,7 @@
     ../../includes/home/desktop/gnome
     ../../includes/home/desktop/keyd
     ../../includes/home/desktop/theme.nix
+    ../../includes/home/desktop/browser/vivaldi
     ../../includes/home/dev
     ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
