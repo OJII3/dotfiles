@@ -94,15 +94,6 @@
             "command": "$HOME/.claude/scripts/notify.sh 'ねぇ、暇なんだけど～。何かやることないの？' 5"
           }
         ]
-      },
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.message' | xargs -I {} $HOME/.claude/scripts/notify.sh 'ねぇねぇ、{}' 10"
-          }
-        ]
       }
     ],
     "Stop": [
