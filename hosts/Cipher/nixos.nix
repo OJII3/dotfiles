@@ -12,9 +12,7 @@
     ../../includes/nixos/core
     ../../includes/nixos/core/boot/systemd-boot.nix
     ../../includes/nixos/core/networking/base.nix
-    ../../includes/nixos/core/virtualisation.nix
-    # ../../includes/nixos/core/proxmox.nix
-    ../../includes/nixos/core/sops.nix
+    # ../../includes/nixos/core/virtualisation.nix
 
     ../../includes/nixos/server/adguard.nix
     ../../includes/nixos/server/autologin.nix
@@ -43,17 +41,6 @@
     addresses = [ { Address = "192.168.8.2/24"; } ];
     gateway = [ "192.168.8.1" ];
     linkConfig.RequiredForOnline = "routable";
-  };
-
-  networking = {
-    wireless.enable = false;
-    wireless.secretsFile = "/etc/nixos/wireless.conf"; # psk_home=******
-    wireless.networks."aterm-44cbf4-a" = {
-      pskRaw = "ext:psk_home";
-    };
-    wireless.networks."aterm-44cbf4-g" = {
-      pskRaw = "ext:psk_home";
-    };
   };
 
   # This value determines the NixOS release from which the default
