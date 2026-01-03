@@ -1,15 +1,14 @@
 { ... }:
 {
   imports = [
+    # ../../includes/home/dev/ai/claude
     ../../includes/home
     ../../includes/home/dev
-    # ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/mise.nix
     ../../includes/home/dev/vscode
     ../../includes/home/direnv.nix
     ../../includes/home/git
-    ../../includes/home/im
     ../../includes/home/kdewallet.nix
     ../../includes/home/neovim
     ../../includes/home/network.nix

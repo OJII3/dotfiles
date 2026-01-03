@@ -13,7 +13,7 @@
     ../../includes/home/direnv.nix
     ../../includes/home/git
     ../../includes/home/gpg/linux-desktop.nix
-    ../../includes/home/im
+    ../../includes/home/desktop/fcitx5
     ../../includes/home/neovim
     ../../includes/home/network.nix
     ../../includes/home/sops.nix

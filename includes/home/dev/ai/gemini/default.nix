@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ../.
+    ../common.nix
   ];
   home.packages = with pkgs; [
     gemini-cli-bin

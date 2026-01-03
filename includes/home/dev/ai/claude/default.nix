@@ -1,6 +1,6 @@
 {
   imports = [
-    ../.
+    ../common.nix
     ./commands.nix
     ./plugins.nix
     ./skills.nix

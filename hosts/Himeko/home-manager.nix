@@ -7,6 +7,7 @@
     ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/ai/gemini
+    ../../includes/home/dev/jetbrains
     ../../includes/home/dev/mise.nix
     ../../includes/home/direnv.nix
     ../../includes/home/git
@@ -15,7 +16,6 @@
     ../../includes/home/sops.nix
     ../../includes/home/terminal/ghostty
     ../../includes/home/terminal/kitty
-    ../../includes/home/vim
     ../../includes/home/zsh
   ];
 
