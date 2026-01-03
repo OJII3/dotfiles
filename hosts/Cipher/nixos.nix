@@ -9,12 +9,11 @@
 }:
 {
   imports = [
+    # ../../includes/nixos/core/virtualisation.nix
     ../../includes/nixos/core
     ../../includes/nixos/core/boot/systemd-boot.nix
     ../../includes/nixos/core/networking/base.nix
-    # ../../includes/nixos/core/virtualisation.nix
-
-    ../../includes/nixos/server/adguard.nix
+    ../../includes/nixos/server/adguard-home
     ../../includes/nixos/server/autologin.nix
 
     ./hardware-configuration.nix
