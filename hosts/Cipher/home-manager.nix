@@ -9,7 +9,7 @@
     ../../includes/home/dev/vscode
     ../../includes/home/direnv.nix
     ../../includes/home/git
-    ../../includes/home/kdewallet.nix
+    ../../includes/home/gnome-keyring.nix
     ../../includes/home/neovim
     ../../includes/home/network.nix
     ../../includes/home/server/gpg.nix
