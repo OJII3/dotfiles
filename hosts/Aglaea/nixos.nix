@@ -8,19 +8,16 @@
     ../../includes/nixos/core
     ../../includes/nixos/core/networking
     ../../includes/nixos/core/boot/systemd-boot.nix
-    # ../../includes/nixos/core/cloudflare-warp.nix
-    # ../../includes/nixos/core/power/laptop.nix
-    # ../../includes/nixos/core/suspend
     ../../includes/nixos/core/virtualisation.nix
     ../../includes/nixos/core/networking/networkmanager.nix
 
-    # ../../includes/nixos/desktop
-    ../../includes/nixos/desktop/sunshine.nix
     ../../includes/nixos/desktop/bitwarden.nix
     ../../includes/nixos/desktop/fonts.nix
     ../../includes/nixos/desktop/keyd.nix
     ../../includes/nixos/desktop/peripheral/keyboard.nix
     ../../includes/nixos/desktop/peripheral/vr.nix
+    ../../includes/nixos/desktop/steam.nix
+    ../../includes/nixos/desktop/sunshine.nix
     ../../includes/nixos/desktop/waydroid.nix
 
     ./hardware-configuration.nix
