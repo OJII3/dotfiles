@@ -2,7 +2,6 @@
   imports = [
     ../common.nix
     ./commands.nix
-    ./plugins.nix
     ./skills.nix
   ];
   programs.jq.enable = true;

@@ -1,9 +1,9 @@
 { ... }:
 {
   imports = [
-    # ../../includes/home/dev/ai/claude
     ../../includes/home
     ../../includes/home/dev
+    ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/codex
     ../../includes/home/dev/mise.nix
     ../../includes/home/dev/vscode
