@@ -11,7 +11,7 @@
     ../../includes/nixos/core/cloudflare-warp.nix
     ../../includes/nixos/core/power/laptop.nix
     ../../includes/nixos/core/suspend
-    ../../includes/nixos/core/virtualisation.nix
+    ../../includes/nixos/core/virtualisation/podman.nix
     ../../includes/nixos/core/networking/networkmanager.nix
 
     ../../includes/nixos/desktop

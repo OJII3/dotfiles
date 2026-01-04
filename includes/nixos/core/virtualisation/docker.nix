@@ -8,7 +8,8 @@
         setSocketVariable = false;
       };
     };
-    # virtualbox.host.enable = true;
+    # dockerと併用する場合はpodmanのdockerCompatを無効化
+    podman.dockerCompat = false;
   };
 
   users.users.ojii3 = {

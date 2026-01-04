@@ -8,7 +8,7 @@
     ../../includes/nixos/core
     ../../includes/nixos/core/networking
     ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/virtualisation.nix
+    ../../includes/nixos/core/virtualisation/podman.nix
     ../../includes/nixos/core/networking/networkmanager.nix
 
     ../../includes/nixos/desktop
