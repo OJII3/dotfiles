@@ -42,7 +42,6 @@ let
         };
       };
       modules = modules ++ [
-        inputs.enhanced-touchpad.homeManagerModules.default
         {
           home = {
             inherit username;

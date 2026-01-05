@@ -8,6 +8,7 @@
     gnome-randr
   ];
 
+  xdg.autostart.enable = true;
   xdg.enable = true;
   programs.gnome-shell = {
     enable = true;
