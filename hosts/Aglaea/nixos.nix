@@ -6,10 +6,10 @@
 {
   imports = [
     ../../includes/nixos/core
-    ../../includes/nixos/core/networking
     ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/virtualisation.nix
+    ../../includes/nixos/core/networking
     ../../includes/nixos/core/networking/networkmanager.nix
+    ../../includes/nixos/core/virtualisation/podman.nix
 
     ../../includes/nixos/desktop/bitwarden.nix
     ../../includes/nixos/desktop/fonts.nix
