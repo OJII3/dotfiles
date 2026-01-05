@@ -3,7 +3,6 @@
   imports = [
     ../../gpg/gnome.nix
     ../vicinae
-    ../touchpad
   ];
   home.packages = with pkgs; [
     gnome-randr
