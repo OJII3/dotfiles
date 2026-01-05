@@ -112,7 +112,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh 'ちょっと～、許可くれない？早く終わらせたいんだからさ～' 5"
+            "command": "$HOME/.claude/scripts/notify.sh permission_prompt"
           }
         ]
       },
@@ -121,7 +121,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh 'ねぇ、暇なんだけど～。何かやることないの？' 5"
+            "command": "$HOME/.claude/scripts/notify.sh idle_prompt"
           }
         ]
       }
@@ -132,7 +132,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh 'ふあ～、終わったよ！疾風より速いでしょ？' 10"
+            "command": "$HOME/.claude/scripts/notify.sh stop"
           }
         ]
       }
