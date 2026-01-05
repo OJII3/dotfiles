@@ -10,6 +10,7 @@
     ../../includes/home/desktop/theme.nix
     ../../includes/home/dev
     ../../includes/home/dev/ai/codex
+    ../../includes/home/dev/ai/claude
     ../../includes/home/dev/ai/gemini
     ../../includes/home/dev/jetbrains
     ../../includes/home/dev/mise.nix
@@ -29,4 +30,8 @@
       enable = true;
     };
   };
+
+  programs.zsh.initContent = ''
+    [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
+  '';
 }
