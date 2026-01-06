@@ -7,11 +7,7 @@
     ./common.nix
   ];
 
-  home.packages =
-    with pkgs;
-    [
-    ]
-    ++ (with pkgs.brewCasks; [
-      pngpaste
-    ]);
+  home.packages = with pkgs; [
+    pngpaste
+  ];
 }

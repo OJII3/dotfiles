@@ -29,7 +29,8 @@
     ];
     masApps = {
       # "bitwarden" = 1352778147;
-      Tailscale = 1475387142;
+      tailscale = 1475387142;
+      cloudflare-one-agent = 6443476492;
     };
   };
 }
