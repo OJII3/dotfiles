@@ -6,7 +6,7 @@
 
     # utilities
     bat
-    bottom
+    btop
     fastfetch
     fd
     ffmpeg
