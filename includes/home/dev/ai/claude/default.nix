@@ -3,6 +3,7 @@
     ../common.nix
     ./commands.nix
     ./skills.nix
+    ./ssh-client.nix
   ];
   programs.jq.enable = true;
   programs.claude-code = {

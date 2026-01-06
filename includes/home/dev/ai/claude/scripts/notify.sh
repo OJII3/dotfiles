@@ -1,38 +1,59 @@
 #!/bin/sh
 
-# Usage: notify.sh <message> [duration_in_seconds]
-# Sends desktop notifications using terminal-notifier on macOS or notify-send on Linux
-# Title is automatically set to repository and branch name
-# Duration defaults to 10 seconds if not specified
+# notify.sh
+# Claude Code フック用通知スクリプト
+# Usage: notify.sh <event_type>
+#   event_type: permission_prompt | idle_prompt | stop
+#
+# リモート転送ポート: 19999 (固定)
 
-if [ $# -lt 1 ]; then
-    echo "Usage: $0 <message> [duration_in_seconds]" >&2
-    exit 1
-fi
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 
-NOTIFICATION_TITLE="$1"
-DURATION="${2:-10}"  # Default to 10 seconds
-DURATION_MS=$((DURATION * 1000))  # Convert to milliseconds for notify-send
-ICON_PATH="$HOME/.assets/images/cipher_icon.png"
+# イベントタイプごとのメッセージと表示時間
+get_message() {
+    case "$1" in
+        permission_prompt)
+            echo "ちょっと～、許可くれない？早く終わらせたいんだからさ～"
+            ;;
+        idle_prompt)
+            echo "ねぇ、暇なんだけど～。何かやることないの？"
+            ;;
+        stop)
+            echo "ふあ～、終わったよ！疾風より速いでしょ？"
+            ;;
+        *)
+            echo "$1"
+            ;;
+    esac
+}
 
-# Get repository information
+get_duration() {
+    case "$1" in
+        permission_prompt|idle_prompt)
+            echo "5"
+            ;;
+        stop)
+            echo "10"
+            ;;
+        *)
+            echo "10"
+            ;;
+    esac
+}
+
+# リポジトリ情報を取得
 get_repo_info() {
-    # Check if current directory is a git repository
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-        # Get repository name from git remote
         REMOTE_URL=$(git remote get-url origin 2>/dev/null)
 
         if [ -n "$REMOTE_URL" ]; then
-            # Extract repo name from URL (supports both HTTPS and SSH formats)
             REPO_NAME=$(echo "$REMOTE_URL" | sed -E 's#.*/([^/]+?)(\.git)?$#\1#')
         fi
 
-        # Fallback to directory name if no git remote
         if [ -z "$REPO_NAME" ]; then
             REPO_NAME=$(basename "$PWD")
         fi
 
-        # Get current branch name
         BRANCH_NAME=$(git branch --show-current 2>/dev/null)
 
         if [ -n "$BRANCH_NAME" ]; then
@@ -41,46 +62,51 @@ get_repo_info() {
             echo "$REPO_NAME"
         fi
     else
-        # Not a git repository, use directory name
         basename "$PWD"
     fi
 }
 
-REPO_INFO=$(get_repo_info)
+# リモート（SSH元）に通知を送信
+# SSH RemoteForward が設定されていれば転送、なければ単に失敗（エラーは無視）
+send_to_remote() {
+    PORT="19999"
+    echo "${1}|${2}|${3}" | nc -w 1 localhost "$PORT" 2>/dev/null &
+}
 
-# Detect OS
-OS=$(uname -s)
-
-case "$OS" in
-    Darwin)
-        # macOS
-        if command -v terminal-notifier >/dev/null 2>&1; then
-            terminal-notifier -title "$NOTIFICATION_TITLE" -message "$REPO_INFO" -timeout "$DURATION"
-        else
-            echo "Error: terminal-notifier not found" >&2
-            exit 1
-        fi
-        # Trigger confetti effect in Raycast
-        open -g raycast://confetti
-        ;;
-    Linux)
-        # Linux
-        if command -v notify-send >/dev/null 2>&1; then
-            notify-send -t "$DURATION_MS" "$NOTIFICATION_TITLE" "$REPO_INFO" --hint=string:image-path:"$ICON_PATH"
-        else
-            echo "Error: notify-send not found" >&2
-            exit 1
-        fi
-        # Trigger confetti if available
-        command -v confetti >/dev/null 2>&1 && confetti
-        ;;
-    *)
-        echo "Error: Unsupported OS: $OS" >&2
+# メイン処理
+main() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: $0 <event_type>" >&2
+        echo "  event_type: permission_prompt | idle_prompt | stop" >&2
         exit 1
-        ;;
-esac
+    fi
 
-# Suppress default Claude Code notification
-echo '{"suppressDefaultNotification": true}'
+    EVENT_TYPE="$1"
+    MESSAGE=$(get_message "$EVENT_TYPE")
+    DURATION=$(get_duration "$EVENT_TYPE")
+    REPO_INFO=$(get_repo_info)
 
+    # リモートに通知を送信（非同期）
+    send_to_remote "$MESSAGE" "$REPO_INFO" "$DURATION"
 
+    # OS を検出して適切なスクリプトを実行
+    OS=$(uname -s)
+
+    case "$OS" in
+        Darwin)
+            "$SCRIPT_DIR/notify-darwin.sh" "$MESSAGE" "$REPO_INFO" "$DURATION"
+            ;;
+        Linux)
+            "$SCRIPT_DIR/notify-linux.sh" "$MESSAGE" "$REPO_INFO" "$DURATION"
+            ;;
+        *)
+            echo "Error: Unsupported OS: $OS" >&2
+            exit 1
+            ;;
+    esac
+
+    # Claude Code のデフォルト通知を抑制
+    echo '{"suppressDefaultNotification": true}'
+}
+
+main "$@"
