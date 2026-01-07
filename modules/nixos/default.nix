@@ -16,7 +16,7 @@ in
     ./core
     ./desktop
     ./server
-    # ./hardware  # TODO: Create hardware module
+    ./hardware
   ];
 
   options.my = {
