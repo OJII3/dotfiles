@@ -1,21 +1,17 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{
-  inputs,
-  pkgs,
-  ...
-}:
+# Cipher - Home Server
+# AdGuard Home DNS, static IP, headless autologin
+#
+{ inputs, pkgs, ... }:
 {
   imports = [
-    ../../modules/nixos/core/virtualisation/podman.nix
-    ../../modules/nixos/core
+    # Main module with options
+    ../../modules/nixos
+
+    # Not yet optionized
     ../../modules/nixos/core/boot/systemd-boot.nix
     ../../modules/nixos/core/networking/base.nix
+    ../../modules/nixos/core/virtualisation/podman.nix
     ../../modules/nixos/server/gnome-keyring.nix
-    ../../modules/nixos/server/adguard-home
-    ../../modules/nixos/server/autologin.nix
 
     ./hardware-configuration.nix
   ]
@@ -24,30 +20,42 @@
     common-pc-ssd
   ]);
 
+  # ===== Options-based configuration =====
+  my = {
+    core = {
+      enable = true;
+      audio.enable = false;      # Headless server
+      bluetooth.enable = false;  # No Bluetooth needed
+      ssh.enable = true;
+    };
+
+    server = {
+      enable = true;
+      autologin.enable = true;
+      adguardHome.enable = true;
+    };
+
+    hardware = {
+      gpu = "intel";
+    };
+  };
+
+  # ===== Host-specific configuration =====
+
   # Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-  # graphics
-  # services.xserver.videoDrivers = [ "intel" ];
-
-  # networking
+  # Static IP networking
   networking.useNetworkd = true;
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enp3s0";
     networkConfig = {
       IPv6AcceptRA = true;
-      # DHCP = "ipv4";
     };
     addresses = [ { Address = "192.168.8.2/24"; } ];
     gateway = [ "192.168.8.1" ];
     linkConfig.RequiredForOnline = "routable";
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 }
