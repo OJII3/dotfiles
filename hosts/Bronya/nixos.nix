@@ -8,8 +8,6 @@
 
     # Not yet optionized
     ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/networking
-    ../../modules/nixos/core/networking/networkmanager.nix
     ../../modules/nixos/core/virtualisation/podman.nix
     ../../modules/nixos/desktop/greetd/autologin.nix
     ../../modules/nixos/desktop/peripheral/keyboard.nix
@@ -25,6 +23,11 @@
   # ===== Options-based configuration =====
   my = {
     core.enable = true;
+
+    networking = {
+      networkManager.enable = true;
+      firewall.ros2.enable = true;
+    };
 
     desktop = {
       enable = true;       # Enables Hyprland

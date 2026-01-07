@@ -8,9 +8,6 @@
 
     # Not yet optionized
     ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/networking
-    ../../modules/nixos/core/networking/networkmanager.nix
-    ../../modules/nixos/core/cloudflare-warp.nix
     ../../modules/nixos/core/power/laptop.nix
     ../../modules/nixos/core/suspend
     ../../modules/nixos/core/virtualisation/podman.nix
@@ -23,6 +20,12 @@
   # ===== Options-based configuration =====
   my = {
     core.enable = true;
+
+    networking = {
+      networkManager.enable = true;
+      firewall.ros2.enable = true;
+      warp.enable = true;
+    };
 
     desktop = {
       enable = true;       # Enables Hyprland

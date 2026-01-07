@@ -17,6 +17,7 @@ in
     ./desktop
     ./server
     ./hardware
+    ./networking
   ];
 
   options.my = {

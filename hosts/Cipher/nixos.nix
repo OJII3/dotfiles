@@ -9,7 +9,6 @@
 
     # Not yet optionized
     ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/networking/base.nix
     ../../modules/nixos/core/virtualisation/podman.nix
     ../../modules/nixos/server/gnome-keyring.nix
 
@@ -27,6 +26,11 @@
       audio.enable = false;      # Headless server
       bluetooth.enable = false;  # No Bluetooth needed
       ssh.enable = true;
+    };
+
+    networking = {
+      # Server uses systemd-networkd, not NetworkManager
+      networkManager.enable = false;
     };
 
     server = {
