@@ -1,13 +1,3 @@
-{ ... }:
-{
-  services.sunshine = {
-    enable = true;
-    openFirewall = true;
-    autoStart = true;
-    capSysAdmin = true;
-  };
-
-  systemd.user.services.sunshine = {
-    wantedBy = [ "graphical.target" ];
-  };
-}
+# Sunshine configuration has been moved to ./default.nix
+# Controlled by: my.desktop.sunshine.enable
+{ ... }: { }

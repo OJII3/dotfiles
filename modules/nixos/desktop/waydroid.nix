@@ -1,7 +1,3 @@
-{ pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    waydroid-helper
-  ];
-  virtualisation.waydroid.enable = true;
-}
+# Waydroid configuration has been moved to ./default.nix
+# Controlled by: my.desktop.waydroid.enable
+{ ... }: { }

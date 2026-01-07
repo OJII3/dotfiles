@@ -1,17 +1,3 @@
-{
-  services.keyd = {
-    enable = true;
-    keyboards = {
-      "*" = {
-        settings = {
-          main = {
-            capslock = "overload(control, esc)";
-            space = "overload(meta, space)";
-            muhenkan = "overload(meta, space)";
-            rightalt = "overload(rightalt, hiragana_katakana)";
-          };
-        };
-      };
-    };
-  };
-}
+# keyd configuration has been moved to ./default.nix
+# Controlled by: my.desktop.keyd.enable
+{ ... }: { }
