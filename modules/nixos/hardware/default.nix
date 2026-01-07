@@ -65,6 +65,24 @@ in
 
     laptop = {
       enable = lib.mkEnableOption "laptop power management";
+
+      power = {
+        tuned = {
+          enable = lib.mkEnableOption "tuned power management" // {
+            default = true;
+          };
+        };
+        batteryProfile = lib.mkEnableOption "laptop battery power profile";
+      };
+
+      suspend = {
+        enable = lib.mkEnableOption "suspend/hibernate configuration";
+        hibernateDelay = lib.mkOption {
+          type = lib.types.str;
+          default = "600s";
+          description = "Delay before hibernate after suspend";
+        };
+      };
     };
   };
 
@@ -124,10 +142,37 @@ in
       })
     ]))
 
-    # Laptop power management
+    # Laptop power management - base
     (lib.mkIf cfg.laptop.enable {
-      # Import power management from core
-      # This can be expanded with TLP, auto-cpufreq, etc.
+      services.upower.enable = true;
+    })
+
+    # Laptop power management - tuned
+    (lib.mkIf (cfg.laptop.enable && cfg.laptop.power.tuned.enable) {
+      services.tuned = {
+        enable = true;
+        settings.dynamic_tuning = true;
+        ppdSupport = true;
+      };
+    })
+
+    # Laptop power management - battery profile
+    (lib.mkIf (cfg.laptop.enable && cfg.laptop.power.batteryProfile) {
+      services.tuned.ppdSettings.battery = {
+        balanced = "laptop-battery-powersave";
+      };
+    })
+
+    # Laptop suspend/hibernate
+    (lib.mkIf (cfg.laptop.enable && cfg.laptop.suspend.enable) {
+      systemd.sleep.extraConfig = ''
+        AllowSuspend=yes
+        AllowHibernation=yes
+        AllowHybridSleep=yes
+        AllowSuspendThenHibernate=yes
+        HibernateDelaySec=${cfg.laptop.suspend.hibernateDelay}
+        SuspendState=mem
+      '';
     })
   ];
 }

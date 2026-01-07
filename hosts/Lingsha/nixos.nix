@@ -6,20 +6,16 @@
     # Main module with options
     ../../modules/nixos
 
-    # Not yet optionized
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/power/laptop.nix
-    ../../modules/nixos/core/suspend
-    ../../modules/nixos/core/virtualisation/podman.nix
-    ../../modules/nixos/desktop/greetd/tuigreet.nix
-    ../../modules/nixos/desktop/peripheral/keyboard.nix
-
     ./hardware-configuration.nix
   ];
 
   # ===== Options-based configuration =====
   my = {
-    core.enable = true;
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
 
     networking = {
       networkManager.enable = true;
@@ -28,16 +24,26 @@
     };
 
     desktop = {
-      enable = true;       # Enables Hyprland
+      enable = true;
+      hyprland.enable = true;
       fonts.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      greetd = {
+        enable = true;
+        greeter = "tuigreet";
+      };
     };
 
     hardware = {
       gpu = "amd";
       thinkpad.enable = true;
-      laptop.enable = true;
+      laptop = {
+        enable = true;
+        power.batteryProfile = true;
+        suspend.enable = true;
+      };
     };
   };
 

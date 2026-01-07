@@ -6,12 +6,6 @@
     # Main module with options
     ../../modules/nixos
 
-    # Not yet optionized
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/virtualisation/podman.nix
-    ../../modules/nixos/desktop/greetd/autologin.nix
-    ../../modules/nixos/desktop/peripheral/keyboard.nix
-
     ./hardware-configuration.nix
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
@@ -22,7 +16,11 @@
 
   # ===== Options-based configuration =====
   my = {
-    core.enable = true;
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
 
     networking = {
       networkManager.enable = true;
@@ -30,10 +28,16 @@
     };
 
     desktop = {
-      enable = true;       # Enables Hyprland
+      enable = true;
+      hyprland.enable = true;
       fonts.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      greetd = {
+        enable = true;
+        greeter = "autologin";
+      };
     };
 
     hardware = {

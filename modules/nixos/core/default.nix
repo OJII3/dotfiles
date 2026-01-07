@@ -75,6 +75,44 @@ in
         description = "Extra groups for the user";
       };
     };
+
+    virtualisation = {
+      podman = {
+        enable = lib.mkEnableOption "Podman container runtime";
+        dockerCompat = lib.mkEnableOption "Docker CLI compatibility (podman-docker)" // {
+          default = true;
+        };
+      };
+
+      docker = {
+        enable = lib.mkEnableOption "Docker container runtime";
+        rootless = {
+          enable = lib.mkEnableOption "rootless Docker mode";
+        };
+      };
+    };
+
+    boot = {
+      loader = lib.mkOption {
+        type = lib.types.enum [ "systemd-boot" "grub" "none" ];
+        default = "none";
+        description = "Boot loader type: systemd-boot, grub, or none (manual configuration)";
+      };
+
+      efi = {
+        mountPoint = lib.mkOption {
+          type = lib.types.str;
+          default = "/boot";
+          description = "EFI system partition mount point";
+        };
+      };
+
+      grub = {
+        useOSProber = lib.mkEnableOption "OS prober for dual-boot detection" // {
+          default = true;
+        };
+      };
+    };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
@@ -139,6 +177,60 @@ in
     # SSH
     (lib.mkIf cfg.ssh.enable {
       services.openssh.enable = true;
+    })
+
+    # Podman
+    (lib.mkIf cfg.virtualisation.podman.enable {
+      virtualisation.podman = {
+        enable = true;
+        dockerCompat = cfg.virtualisation.podman.dockerCompat;
+        defaultNetwork.settings.dns_enabled = true;
+      };
+    })
+
+    # Docker
+    (lib.mkIf cfg.virtualisation.docker.enable {
+      virtualisation.docker = {
+        enable = true;
+        rootless = {
+          enable = cfg.virtualisation.docker.rootless.enable;
+          setSocketVariable = cfg.virtualisation.docker.rootless.enable;
+        };
+      };
+      # Disable podman dockerCompat when using Docker
+      virtualisation.podman.dockerCompat = lib.mkForce false;
+
+      # Add user to docker group for non-rootless mode
+      users.users.${cfg.user.name}.extraGroups =
+        lib.mkIf (!cfg.virtualisation.docker.rootless.enable) [ "docker" ];
+    })
+
+    # Boot - systemd-boot
+    (lib.mkIf (cfg.boot.loader == "systemd-boot") {
+      boot.loader = {
+        efi = {
+          canTouchEfiVariables = true;
+          efiSysMountPoint = cfg.boot.efi.mountPoint;
+        };
+        systemd-boot.enable = true;
+      };
+    })
+
+    # Boot - GRUB
+    (lib.mkIf (cfg.boot.loader == "grub") {
+      boot.loader = {
+        efi = {
+          canTouchEfiVariables = true;
+          efiSysMountPoint = cfg.boot.efi.mountPoint;
+        };
+        systemd-boot.enable = false;
+        grub = {
+          enable = true;
+          device = "nodev";
+          useOSProber = cfg.boot.grub.useOSProber;
+          efiSupport = true;
+        };
+      };
     })
   ]);
 }

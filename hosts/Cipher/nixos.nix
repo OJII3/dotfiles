@@ -7,11 +7,6 @@
     # Main module with options
     ../../modules/nixos
 
-    # Not yet optionized
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/virtualisation/podman.nix
-    ../../modules/nixos/server/gnome-keyring.nix
-
     ./hardware-configuration.nix
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
@@ -23,9 +18,11 @@
   my = {
     core = {
       enable = true;
+      boot.loader = "systemd-boot";
       audio.enable = false;      # Headless server
       bluetooth.enable = false;  # No Bluetooth needed
       ssh.enable = true;
+      virtualisation.podman.enable = true;
     };
 
     networking = {
@@ -37,6 +34,7 @@
       enable = true;
       autologin.enable = true;
       adguardHome.enable = true;
+      gnomeKeyring.enable = true;
     };
 
     hardware = {

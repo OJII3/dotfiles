@@ -58,6 +58,38 @@ in
         enable = lib.mkEnableOption "VR support (Monado, etc.)";
       };
     };
+
+    greetd = {
+      enable = lib.mkEnableOption "greetd login manager";
+
+      greeter = lib.mkOption {
+        type = lib.types.enum [ "autologin" "tuigreet" ];
+        default = "tuigreet";
+        description = "Greeter type: autologin (direct login) or tuigreet (TUI greeter)";
+      };
+
+      user = lib.mkOption {
+        type = lib.types.str;
+        default = "ojii3";
+        description = "User to log in as";
+      };
+
+      sessionCommand = lib.mkOption {
+        type = lib.types.str;
+        default = "uwsm start -- hyprland-uwsm.desktop";
+        description = "Session command to run after login";
+      };
+    };
+
+    peripheral = {
+      keyboard = {
+        enable = lib.mkEnableOption "Keychron keyboard udev rules for VIA";
+      };
+    };
+
+    bitwarden = {
+      enable = lib.mkEnableOption "Bitwarden desktop password manager";
+    };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
@@ -192,6 +224,55 @@ in
         enable32Bit = true;
         extraPackages = [ pkgs.libva ];
       };
+    })
+
+    # greetd - autologin
+    (lib.mkIf (cfg.greetd.enable && cfg.greetd.greeter == "autologin") {
+      services.greetd = {
+        enable = true;
+        settings = rec {
+          initial_session = {
+            command = cfg.greetd.sessionCommand;
+            user = cfg.greetd.user;
+          };
+          default_session = initial_session;
+        };
+      };
+    })
+
+    # greetd - tuigreet
+    (lib.mkIf (cfg.greetd.enable && cfg.greetd.greeter == "tuigreet") {
+      services.greetd = {
+        enable = true;
+        settings = {
+          default_session = {
+            command = "${pkgs.tuigreet}/bin/tuigreet --time --user-menu --remember --remember-session --theme border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red --cmd ${cfg.greetd.sessionCommand}";
+            user = cfg.greetd.user;
+          };
+        };
+      };
+      systemd.services.greetd.serviceConfig = {
+        Type = "idle";
+        StandardInput = "tty";
+        StandardOutput = "tty";
+        StandardError = "journal";
+        TTYReset = true;
+        TTYVHangup = true;
+        TTYVTDisallocate = true;
+      };
+    })
+
+    # Peripheral - Keychron keyboard
+    (lib.mkIf cfg.peripheral.keyboard.enable {
+      services.udev.extraRules = ''
+        # Permit all Keychron (VID 3434) on hidraw for VIA
+        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+      '';
+    })
+
+    # Bitwarden
+    (lib.mkIf cfg.bitwarden.enable {
+      environment.systemPackages = [ pkgs.bitwarden-desktop ];
     })
   ]);
 }

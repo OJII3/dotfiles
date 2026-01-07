@@ -13,6 +13,9 @@
 ## コミット履歴
 
 ```
+xxxxxxx feat(nixos): add power, bitwarden, gnome-keyring options
+xxxxxxx feat(nixos): add boot and peripheral keyboard options
+xxxxxxx feat(nixos): add virtualisation and greetd options
 xxxxxxx feat(nixos/networking): add networking options module
 0318af2 refactor(hosts): migrate all hosts to options-based configuration
 4525a4a refactor(hosts/Cipher): migrate to options-based configuration
@@ -59,6 +62,13 @@ modules/nixos/
 | `user.name` | string | `"ojii3"` | ユーザー名 |
 | `user.shell` | package | `pkgs.zsh` | デフォルトシェル |
 | `user.extraGroups` | list | `[...]` | 追加グループ |
+| `virtualisation.podman.enable` | bool | `false` | Podman コンテナランタイム |
+| `virtualisation.podman.dockerCompat` | bool | `true` | Docker CLI 互換 (podman-docker) |
+| `virtualisation.docker.enable` | bool | `false` | Docker コンテナランタイム |
+| `virtualisation.docker.rootless.enable` | bool | `false` | ルートレス Docker |
+| `boot.loader` | enum | `"none"` | ブートローダー: `"systemd-boot"`, `"grub"`, `"none"` |
+| `boot.efi.mountPoint` | string | `"/boot"` | EFI パーティションマウントポイント |
+| `boot.grub.useOSProber` | bool | `true` | GRUB OS prober (デュアルブート検出) |
 
 ### my.desktop
 
@@ -74,6 +84,12 @@ modules/nixos/
 | `gaming.enable` | bool | `false` | ゲーミングサポート |
 | `gaming.steam.enable` | bool | `true` | Steam (gaming が有効時) |
 | `gaming.vr.enable` | bool | `false` | VR サポート (Monado) |
+| `greetd.enable` | bool | `false` | greetd ログインマネージャー |
+| `greetd.greeter` | enum | `"tuigreet"` | グリーター種類: `"autologin"`, `"tuigreet"` |
+| `greetd.user` | string | `"ojii3"` | ログインユーザー |
+| `greetd.sessionCommand` | string | `"uwsm start..."` | セッション起動コマンド |
+| `peripheral.keyboard.enable` | bool | `false` | Keychron キーボード udev ルール (VIA用) |
+| `bitwarden.enable` | bool | `false` | Bitwarden Desktop パスワードマネージャー |
 
 ### my.hardware
 
@@ -88,6 +104,10 @@ modules/nixos/
 | `nvidia.open` | bool | `true` | オープンソース NVIDIA カーネルモジュール |
 | `thinkpad.enable` | bool | `false` | ThinkPad 固有設定 (thinkfan) |
 | `laptop.enable` | bool | `false` | ラップトップ電源管理 |
+| `laptop.power.tuned.enable` | bool | `true` | tuned 電源管理 (laptop有効時) |
+| `laptop.power.batteryProfile` | bool | `false` | バッテリー省電力プロファイル |
+| `laptop.suspend.enable` | bool | `false` | サスペンド/ハイバネート設定 |
+| `laptop.suspend.hibernateDelay` | string | `"600s"` | ハイバネート遅延時間 |
 
 ### my.networking
 
@@ -113,6 +133,7 @@ modules/nixos/
 | `autologin.user` | string | `"ojii3"` | 自動ログインユーザー |
 | `autologin.shell` | string | `"zsh"` | ログイン時のシェル |
 | `adguardHome.enable` | bool | `false` | AdGuard Home DNS |
+| `gnomeKeyring.enable` | bool | `false` | GNOME Keyring (ヘッドレス/非GUI サーバー用) |
 
 ## 使用例
 
@@ -124,17 +145,17 @@ modules/nixos/
 {
   imports = [
     ../../modules/nixos
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/virtualisation/podman.nix
     ./hardware-configuration.nix
   ];
 
   my = {
     core = {
       enable = true;
+      boot.loader = "systemd-boot";
       audio.enable = false;      # ヘッドレスサーバー
       bluetooth.enable = false;
       ssh.enable = true;
+      virtualisation.podman.enable = true;
     };
 
     networking = {
@@ -146,6 +167,7 @@ modules/nixos/
       enable = true;
       autologin.enable = true;
       adguardHome.enable = true;  # resolved は自動無効化
+      gnomeKeyring.enable = true;
     };
 
     hardware.gpu = "intel";
@@ -167,13 +189,15 @@ modules/nixos/
 {
   imports = [
     ../../modules/nixos
-    ../../modules/nixos/core/boot/systemd-boot.nix
-    ../../modules/nixos/core/virtualisation/podman.nix
     ./hardware-configuration.nix
   ];
 
   my = {
-    core.enable = true;
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
 
     networking = {
       networkManager.enable = true;
@@ -186,6 +210,8 @@ modules/nixos/
       keyd.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      bitwarden.enable = true;
       gaming = {
         enable = true;
         vr.enable = true;
@@ -214,11 +240,15 @@ modules/nixos/
 {
   imports = [
     ../../modules/nixos
-    # ... その他の未オプション化モジュール
+    ./hardware-configuration.nix
   ];
 
   my = {
-    core.enable = true;
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
 
     networking = {
       networkManager.enable = true;
@@ -228,15 +258,25 @@ modules/nixos/
 
     desktop = {
       enable = true;
+      hyprland.enable = true;
       fonts.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      greetd = {
+        enable = true;
+        greeter = "tuigreet";
+      };
     };
 
     hardware = {
       gpu = "amd";
       thinkpad.enable = true;
-      laptop.enable = true;
+      laptop = {
+        enable = true;
+        power.batteryProfile = true;
+        suspend.enable = true;
+      };
     };
   };
 
@@ -249,14 +289,15 @@ modules/nixos/
 
 ### 未オプション化のモジュール
 
-- [ ] `core/boot/` - systemd-boot, grub
+- [x] ~~`core/boot/` - systemd-boot, grub~~ → `my.core.boot.*`
 - [x] ~~`core/networking/` - base, dns, networkmanager~~ → `my.networking.*`
-- [ ] `core/virtualisation/` - podman, docker
-- [ ] `core/power/` - laptop power management
-- [ ] `desktop/greetd/` - tuigreet, autologin
-- [ ] `desktop/bitwarden.nix`
-- [ ] `desktop/peripheral/keyboard.nix`
-- [ ] `server/gnome-keyring.nix`
+- [x] ~~`core/virtualisation/` - podman, docker~~ → `my.core.virtualisation.*`
+- [x] ~~`core/power/` - laptop power management~~ → `my.hardware.laptop.power.*`
+- [x] ~~`core/suspend/` - suspend/hibernate~~ → `my.hardware.laptop.suspend.*`
+- [x] ~~`desktop/greetd/` - tuigreet, autologin~~ → `my.desktop.greetd.*`
+- [x] ~~`desktop/bitwarden.nix`~~ → `my.desktop.bitwarden.enable`
+- [x] ~~`desktop/peripheral/keyboard.nix`~~ → `my.desktop.peripheral.keyboard.enable`
+- [x] ~~`server/gnome-keyring.nix`~~ → `my.server.gnomeKeyring.enable`
 
 ### ホスト移行状況
 
@@ -269,23 +310,22 @@ modules/nixos/
 
 ### 設計改善案
 
-1. **Boot オプション追加**
+1. ~~**Boot オプション追加**~~ ✅ 実装済み
    ```nix
-   my.boot = {
-     loader = "systemd-boot" | "grub";
-     kernel = "zen" | "latest" | "lts";
+   my.core.boot = {
+     loader = "systemd-boot" | "grub" | "none";
    };
    ```
 
-2. **Virtualisation オプション追加**
+2. ~~**Virtualisation オプション追加**~~ ✅ 実装済み
    ```nix
-   my.virtualisation = {
+   my.core.virtualisation = {
      podman.enable = true;
      docker.enable = false;
    };
    ```
 
-3. **Greetd オプション追加**
+3. ~~**Greetd オプション追加**~~ ✅ 実装済み
    ```nix
    my.desktop.greetd = {
      enable = true;

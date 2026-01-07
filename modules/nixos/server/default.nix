@@ -34,6 +34,10 @@ in
     adguardHome = {
       enable = lib.mkEnableOption "AdGuard Home DNS server";
     };
+
+    gnomeKeyring = {
+      enable = lib.mkEnableOption "GNOME Keyring for headless/non-GUI servers";
+    };
   };
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
@@ -58,6 +62,23 @@ in
         openFirewall = true;
       };
       services.resolved.enable = false;
+    })
+
+    # GNOME Keyring (for headless/non-GUI servers)
+    (lib.mkIf cfg.gnomeKeyring.enable {
+      environment.systemPackages = with pkgs; [
+        gnome-keyring
+        libsecret
+      ];
+
+      # Auto-unlock gnome-keyring via PAM (non-GUI compatible)
+      security.pam.services.login.enableGnomeKeyring = true;
+
+      # Enable keyring access for SSH and sudo
+      security.pam.services.sshd.enableGnomeKeyring = true;
+
+      # D-Bus secret service support
+      services.dbus.packages = [ pkgs.gnome-keyring ];
     })
   ]);
 }
