@@ -1,3 +1,5 @@
+# Welt - Raspberry Pi 4
+#
 { inputs, pkgs, ... }:
 let
   hostname = "Welt";
@@ -5,11 +7,26 @@ let
 in
 {
   imports = [
-    ../../modules/nixos/core
+    # Main module with options
+    ../../modules/nixos
   ]
   ++ (with inputs.nixos-hardware.nixosModules; [
     raspberry-pi-4
   ]);
+
+  # ===== Options-based configuration =====
+  my = {
+    core = {
+      enable = true;
+      audio.enable = false;      # Pi doesn't need PipeWire
+      bluetooth.enable = false;  # Disable for now
+      ssh.enable = true;
+    };
+
+    # Desktop options not used - custom Hyprland setup below
+  };
+
+  # ===== Host-specific configuration =====
 
   fileSystems = {
     "/" = {

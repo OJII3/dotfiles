@@ -1,33 +1,52 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+# Aglaea - Desktop (AMD GPU, GNOME, ThinkPad)
+#
 { pkgs, ... }:
 {
   imports = [
-    ../../modules/nixos/core
+    # Main module with options
+    ../../modules/nixos
+
+    # Not yet optionized
     ../../modules/nixos/core/boot/systemd-boot.nix
     ../../modules/nixos/core/networking
     ../../modules/nixos/core/networking/networkmanager.nix
     ../../modules/nixos/core/virtualisation/podman.nix
-
     ../../modules/nixos/desktop/bitwarden.nix
-    ../../modules/nixos/desktop/fonts.nix
-    ../../modules/nixos/desktop/keyd.nix
     ../../modules/nixos/desktop/peripheral/keyboard.nix
-    ../../modules/nixos/desktop/peripheral/vr.nix
-    ../../modules/nixos/desktop/steam.nix
-    ../../modules/nixos/desktop/sunshine.nix
-    ../../modules/nixos/desktop/waydroid.nix
 
     ./hardware-configuration.nix
   ];
 
+  # ===== Options-based configuration =====
+  my = {
+    core.enable = true;
+
+    desktop = {
+      enable = true;
+      fonts.enable = true;
+      keyd.enable = true;
+      sunshine.enable = true;
+      waydroid.enable = true;
+      gaming = {
+        enable = true;
+        vr.enable = true;
+      };
+    };
+
+    hardware = {
+      gpu = "amd";
+      thinkpad.enable = true;
+    };
+  };
+
+  # ===== Desktop Environment (not yet optionized) =====
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Karnel.
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
+  # ===== Host-specific configuration =====
+
+  # Kernel
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   # Hardware Specific Options
   boot.kernelParams = [
@@ -40,19 +59,6 @@
     linuxKernel.packages.linux_zen.v4l2loopback
   ];
   boot.kernelModules = [ "v4l2loopback" ];
-  hardware.amdgpu.opencl.enable = true;
-  hardware.amdgpu.initrd.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  services.thinkfan = {
-    enable = true;
-    smartSupport = true;
-  };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 }
