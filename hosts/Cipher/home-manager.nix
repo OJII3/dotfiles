@@ -1,21 +1,21 @@
 { ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/dev
-    ../../includes/home/dev/ai/claude
-    ../../includes/home/dev/ai/codex
-    ../../includes/home/dev/mise.nix
-    ../../includes/home/dev/vscode
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/gnome-keyring.nix
-    ../../includes/home/neovim
-    ../../includes/home/network.nix
-    ../../includes/home/server/gpg.nix
-    ../../includes/home/server/kdeconnect.nix
-    ../../includes/home/sops.nix
-    ../../includes/home/terminal/ghostty
-    ../../includes/home/zsh
+    ../../modules/home
+    ../../modules/home/dev
+    ../../modules/home/dev/ai/claude
+    ../../modules/home/dev/ai/codex
+    ../../modules/home/dev/mise.nix
+    ../../modules/home/dev/vscode
+    ../../modules/home/direnv.nix
+    ../../modules/home/git
+    ../../modules/home/gnome-keyring.nix
+    ../../modules/home/neovim
+    ../../modules/home/network.nix
+    ../../modules/home/server/gpg.nix
+    ../../modules/home/server/kdeconnect.nix
+    ../../modules/home/sops.nix
+    ../../modules/home/terminal/ghostty
+    ../../modules/home/zsh
   ];
 }

@@ -1,22 +1,22 @@
 { ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/apps/darwin.nix
-    ../../includes/home/dev
-    ../../includes/home/dev/ai/claude
-    ../../includes/home/dev/ai/codex
-    ../../includes/home/dev/ai/gemini
-    ../../includes/home/dev/jetbrains
-    ../../includes/home/dev/mise.nix
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/gpg
-    ../../includes/home/neovim
-    ../../includes/home/sops.nix
-    ../../includes/home/terminal/ghostty
-    ../../includes/home/terminal/kitty
-    ../../includes/home/zsh
+    ../../modules/home
+    ../../modules/home/apps/darwin.nix
+    ../../modules/home/dev
+    ../../modules/home/dev/ai/claude
+    ../../modules/home/dev/ai/codex
+    ../../modules/home/dev/ai/gemini
+    ../../modules/home/dev/jetbrains
+    ../../modules/home/dev/mise.nix
+    ../../modules/home/direnv.nix
+    ../../modules/home/git
+    ../../modules/home/gpg
+    ../../modules/home/neovim
+    ../../modules/home/sops.nix
+    ../../modules/home/terminal/ghostty
+    ../../modules/home/terminal/kitty
+    ../../modules/home/zsh
   ];
 
   programs.zsh.initContent = ''

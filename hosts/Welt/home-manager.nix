@@ -1,15 +1,15 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/dev
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/gpg/console.nix
-    ../../includes/home/kdewallet.nix
-    ../../includes/home/neovim
-    ../../includes/home/network.nix
-    ../../includes/home/zsh
+    ../../modules/home
+    ../../modules/home/dev
+    ../../modules/home/direnv.nix
+    ../../modules/home/git
+    ../../modules/home/gpg/console.nix
+    ../../modules/home/kdewallet.nix
+    ../../modules/home/neovim
+    ../../modules/home/network.nix
+    ../../modules/home/zsh
   ];
 
   home.packages = with pkgs; [

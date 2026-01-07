@@ -5,20 +5,20 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../includes/nixos/core
-    ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/networking
-    ../../includes/nixos/core/networking/networkmanager.nix
-    ../../includes/nixos/core/virtualisation/podman.nix
+    ../../modules/nixos/core
+    ../../modules/nixos/core/boot/systemd-boot.nix
+    ../../modules/nixos/core/networking
+    ../../modules/nixos/core/networking/networkmanager.nix
+    ../../modules/nixos/core/virtualisation/podman.nix
 
-    ../../includes/nixos/desktop/bitwarden.nix
-    ../../includes/nixos/desktop/fonts.nix
-    ../../includes/nixos/desktop/keyd.nix
-    ../../includes/nixos/desktop/peripheral/keyboard.nix
-    ../../includes/nixos/desktop/peripheral/vr.nix
-    ../../includes/nixos/desktop/steam.nix
-    ../../includes/nixos/desktop/sunshine.nix
-    ../../includes/nixos/desktop/waydroid.nix
+    ../../modules/nixos/desktop/bitwarden.nix
+    ../../modules/nixos/desktop/fonts.nix
+    ../../modules/nixos/desktop/keyd.nix
+    ../../modules/nixos/desktop/peripheral/keyboard.nix
+    ../../modules/nixos/desktop/peripheral/vr.nix
+    ../../modules/nixos/desktop/steam.nix
+    ../../modules/nixos/desktop/sunshine.nix
+    ../../modules/nixos/desktop/waydroid.nix
 
     ./hardware-configuration.nix
   ];

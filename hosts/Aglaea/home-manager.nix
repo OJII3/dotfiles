@@ -1,28 +1,28 @@
 { ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/apps/linux/gnome.nix
-    ../../includes/home/bitwarden.nix
-    ../../includes/home/desktop/browser/vivaldi
-    ../../includes/home/desktop/fcitx5
-    ../../includes/home/desktop/gnome
-    ../../includes/home/desktop/keyd
-    ../../includes/home/desktop/theme.nix
-    ../../includes/home/dev
-    ../../includes/home/dev/ai/claude
-    ../../includes/home/dev/ai/codex
-    ../../includes/home/dev/ai/gemini
-    ../../includes/home/dev/jetbrains
-    ../../includes/home/dev/mise.nix
-    ../../includes/home/dev/vscode
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/neovim
-    ../../includes/home/network.nix
-    ../../includes/home/ros2 # ros2
-    ../../includes/home/sops.nix
-    ../../includes/home/terminal/ghostty
-    ../../includes/home/zsh
+    ../../modules/home
+    ../../modules/home/apps/linux/gnome.nix
+    ../../modules/home/bitwarden.nix
+    ../../modules/home/desktop/browser/vivaldi
+    ../../modules/home/desktop/fcitx5
+    ../../modules/home/desktop/gnome
+    ../../modules/home/desktop/keyd
+    ../../modules/home/desktop/theme.nix
+    ../../modules/home/dev
+    ../../modules/home/dev/ai/claude
+    ../../modules/home/dev/ai/codex
+    ../../modules/home/dev/ai/gemini
+    ../../modules/home/dev/jetbrains
+    ../../modules/home/dev/mise.nix
+    ../../modules/home/dev/vscode
+    ../../modules/home/direnv.nix
+    ../../modules/home/git
+    ../../modules/home/neovim
+    ../../modules/home/network.nix
+    ../../modules/home/ros2 # ros2
+    ../../modules/home/sops.nix
+    ../../modules/home/terminal/ghostty
+    ../../modules/home/zsh
   ];
 }

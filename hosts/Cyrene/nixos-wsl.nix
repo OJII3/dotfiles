@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   imports = [
-    ../../includes/nixos/core/tools.nix
-    ../../includes/nixos/desktop/fonts.nix
+    ../../modules/nixos/core/tools.nix
+    ../../modules/nixos/desktop/fonts.nix
   ];
   users.users.ojii3 = {
     isNormalUser = true;

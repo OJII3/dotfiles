@@ -9,13 +9,13 @@
 }:
 {
   imports = [
-    ../../includes/nixos/core/virtualisation/podman.nix
-    ../../includes/nixos/core
-    ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/networking/base.nix
-    ../../includes/nixos/server/gnome-keyring.nix
-    ../../includes/nixos/server/adguard-home
-    ../../includes/nixos/server/autologin.nix
+    ../../modules/nixos/core/virtualisation/podman.nix
+    ../../modules/nixos/core
+    ../../modules/nixos/core/boot/systemd-boot.nix
+    ../../modules/nixos/core/networking/base.nix
+    ../../modules/nixos/server/gnome-keyring.nix
+    ../../modules/nixos/server/adguard-home
+    ../../modules/nixos/server/autologin.nix
 
     ./hardware-configuration.nix
   ]
