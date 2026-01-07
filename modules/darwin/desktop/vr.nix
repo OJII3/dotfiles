@@ -1,15 +1,22 @@
-{ username, ... }:
+# VR development configuration
+# Applied when my.darwin.desktop.vr.enable is true
+{ config, lib, username, ... }:
+let
+  cfg = config.my.darwin.desktop;
+in
 {
-  homebrew = {
-    taps = [
-      "Oculus-VR/tap"
-    ];
-    brews = [
-      "meta-xr-simulator"
-    ];
-  };
+  config = lib.mkIf (cfg.enable && cfg.vr.enable) {
+    homebrew = {
+      taps = [
+        "Oculus-VR/tap"
+      ];
+      brews = [
+        "meta-xr-simulator"
+      ];
+    };
 
-  environment.variables = {
-    XR_RUNTIME_JSON = "/Users/${username}/Libraray/MetaXR/MetaXRSimulator/71.0.0/meta_xr_simulator.json";
+    environment.variables = {
+      XR_RUNTIME_JSON = "/Users/${username}/Library/MetaXR/MetaXRSimulator/71.0.0/meta_xr_simulator.json";
+    };
   };
 }

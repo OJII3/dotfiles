@@ -1,16 +1,20 @@
-{ pkgs, inputs, ... }:
+{ ... }:
 {
-  imports = [
-    ../../modules/darwin/core/fonts.nix
-    ../../modules/darwin/core/networking.nix
-    ../../modules/darwin/core/sops.nix
-    ../../modules/darwin/desktop/apps.nix
-    ../../modules/darwin/desktop/vr.nix
-  ];
+  imports = [ ../../modules/darwin ];
 
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
+  my.darwin = {
+    core = {
+      enable = true;
+      fonts.enable = true;
+      networking.enable = true;
+      sops.enable = true;
+    };
+    desktop = {
+      enable = true;
+      apps.enable = true;
+      vr.enable = true;
+    };
+  };
+
   system.stateVersion = 6;
 }

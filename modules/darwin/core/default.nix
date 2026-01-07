@@ -1,7 +1,19 @@
-{ ... }:
+# nix-darwin Core modules
+# System base configuration with customizable options.
+#
+# Options are defined in ./options.nix
+# Config implementations are split into separate files for maintainability.
+#
+{ config, lib, ... }:
+let
+  cfg = config.my.darwin.core;
+in
 {
-  nix.enable = false;
-  environment.pathsToLink = [
-    "/share/zsh"
+  imports = [
+    ./options.nix
+    ./base.nix
+    ./fonts.nix
+    ./networking.nix
+    ./sops.nix
   ];
 }
