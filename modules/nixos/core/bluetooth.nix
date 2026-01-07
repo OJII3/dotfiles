@@ -1,12 +1,3 @@
-{ ... }:
-{
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-      };
-    };
-  };
-}
+# Bluetooth configuration has been moved to ./default.nix
+# Controlled by: my.core.bluetooth.enable
+{ ... }: { }

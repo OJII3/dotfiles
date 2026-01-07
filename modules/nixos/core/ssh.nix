@@ -1,7 +1,3 @@
-{ ... }:
-{
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-  };
-}
+# SSH configuration has been moved to ./default.nix
+# Controlled by: my.core.ssh.enable
+{ ... }: { }
