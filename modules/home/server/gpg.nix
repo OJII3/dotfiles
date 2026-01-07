@@ -1,14 +1,4 @@
-{ pkgs, ... }:
-{
-  programs.gpg.enable = true;
-  services.gpg-agent = {
-    sshKeys = [ "F99ACACA591A7E19F2199D390F92B2F1474C0D0E" ];
-    enable = true;
-    enableSshSupport = true;
-    pinentry.package = pkgs.pinentry-tty;
-  };
-
-  programs.zsh.initContent = ''
-    alias pinentry=${pkgs.pinentry-tty}/bin/pinentry
-  '';
-}
+# Legacy file - removed
+# GPG is now controlled via my.home.gpg options
+{ ... }:
+{ }

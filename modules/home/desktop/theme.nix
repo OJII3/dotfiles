@@ -1,31 +1,36 @@
-{ pkgs, pkgs-stable, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
+let
+  cfg = config.my.home.desktop;
+in
 {
-  home.packages = with pkgs; [
-    ocs-url # For installing icon themes from .ocf files
-  ];
+  config = lib.mkIf cfg.theme.enable {
+    home.packages = with pkgs; [
+      ocs-url
+    ];
 
-  gtk = {
-    enable = true;
-    theme = {
-      package = pkgs-stable.colloid-gtk-theme;
-      name = "Colloid-Dark";
+    gtk = {
+      enable = true;
+      theme = {
+        package = pkgs-stable.colloid-gtk-theme;
+        name = "Colloid-Dark";
+      };
+      cursorTheme = {
+        package = pkgs.afterglow-cursors-recolored;
+        name = "Afterglow-Recolored-Catppuccin-Pink";
+        size = 36;
+      };
+      iconTheme = {
+        package = pkgs-stable.colloid-icon-theme;
+        name = "Colloid-Dark";
+      };
     };
-    cursorTheme = {
-      package = pkgs.afterglow-cursors-recolored;
-      name = "Afterglow-Recolored-Catppuccin-Pink";
-      size = 36;
-    };
-    iconTheme = {
-      package = pkgs-stable.colloid-icon-theme;
-      name = "Colloid-Dark";
-    };
-  };
 
-  qt = {
-    enable = true;
-  };
+    qt = {
+      enable = true;
+    };
 
-  services.darkman = {
-    enable = true;
+    services.darkman = {
+      enable = true;
+    };
   };
 }

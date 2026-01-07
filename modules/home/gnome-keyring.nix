@@ -1,23 +1,26 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home;
+in
 {
-  home.packages = with pkgs; [
-    gnome-keyring
-    libsecret
-  ];
-
-  # gnome-keyringデーモンをユーザーセッションで起動
-  services.gnome-keyring = {
-    enable = true;
-    components = [
-      "secrets"
-      "pkcs11"
+  config = lib.mkIf cfg.gnomeKeyring.enable {
+    home.packages = with pkgs; [
+      gnome-keyring
+      libsecret
     ];
-  };
 
-  # 非GUI環境でも起動するようにdefault.targetに変更
-  systemd.user.services.gnome-keyring = {
-    Install = {
-      WantedBy = [ "default.target" ];
+    services.gnome-keyring = {
+      enable = true;
+      components = [
+        "secrets"
+        "pkcs11"
+      ];
+    };
+
+    systemd.user.services.gnome-keyring = {
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
     };
   };
 }

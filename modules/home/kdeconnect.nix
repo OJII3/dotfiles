@@ -1,6 +1,11 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  cfg = config.my.home;
+in
 {
-  services.kdeconnect = {
-    enable = true;
+  config = lib.mkIf cfg.kdeconnect.enable {
+    services.kdeconnect = {
+      enable = true;
+    };
   };
 }

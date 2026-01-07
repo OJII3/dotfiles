@@ -1,9 +1,13 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home.terminal;
+in
 {
-  imports = [ ../default.nix ];
-  programs.ghostty.enable = !pkgs.stdenv.isDarwin;
-  home.file.".config/ghostty/config".source = ./config;
-  home.packages = with pkgs; [
-    udev-gothic-nf
-  ];
+  config = lib.mkIf cfg.ghostty.enable {
+    programs.ghostty.enable = !pkgs.stdenv.isDarwin;
+    home.file.".config/ghostty/config".source = ./config;
+    home.packages = with pkgs; [
+      udev-gothic-nf
+    ];
+  };
 }

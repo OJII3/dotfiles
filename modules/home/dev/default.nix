@@ -1,44 +1,54 @@
-{ pkgs, ... }:
+# Home Manager Dev modules
+# Development tools configuration with customizable options.
+#
+# Options are defined in ./options.nix
+#
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home.dev;
+in
 {
-  home.packages = with pkgs; [
-    nix-index
-    comma
-
-    # utilities
-    bat
-    btop
-    fastfetch
-    fd
-    ffmpeg
-    htop
-    imagemagick
-    patchelf
-    ripgrep
-    tmux
-    tree
-    unar
-    unzip
-    yazi
-    zellij
-    zip
-    ni
-
-    # cli apps
-    tdf
-    # television
-
-    # sdk, toolchain
-    # google-cloud-sdk
-    # google-cloud-sql-proxy
-    # terraform
-
-    # languages
-    cmake
-    # dotnet-sdk
-    # gcc
-    # gnumake
-    # go
-    # meson
-    # python312
+  imports = [
+    ./options.nix
+    ./ai/common.nix
+    ./ai/claude
+    ./ai/codex
+    ./ai/gemini
+    ./jetbrains
+    ./mise.nix
+    ./vscode
   ];
+
+  # Base dev configuration
+  config = lib.mkIf cfg.enable {
+    home.packages = with pkgs; [
+      nix-index
+      comma
+
+      # utilities
+      bat
+      btop
+      fastfetch
+      fd
+      ffmpeg
+      htop
+      imagemagick
+      patchelf
+      ripgrep
+      tmux
+      tree
+      unar
+      unzip
+      yazi
+      zellij
+      zip
+      ni
+
+      # cli apps
+      tdf
+
+      # languages
+      cmake
+    ];
+  };
 }

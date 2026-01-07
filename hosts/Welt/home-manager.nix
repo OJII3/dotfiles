@@ -2,15 +2,26 @@
 {
   imports = [
     ../../modules/home
-    ../../modules/home/dev
-    ../../modules/home/direnv.nix
-    ../../modules/home/git
-    ../../modules/home/gpg/console.nix
-    ../../modules/home/kdewallet.nix
-    ../../modules/home/neovim
-    ../../modules/home/network.nix
-    ../../modules/home/zsh
   ];
+
+  my.home = {
+    # Shell & Editor
+    zsh.enable = true;
+    neovim.enable = true;
+    git.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "tty";
+    };
+    direnv.enable = true;
+
+    # Development
+    dev.enable = true;
+
+    # Other
+    network.enable = true;
+    kdewallet.enable = true;
+  };
 
   home.packages = with pkgs; [
     toybox

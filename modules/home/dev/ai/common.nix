@@ -1,17 +1,22 @@
-{ pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home.dev.ai;
+in
 {
-  home.packages =
-    with pkgs;
-    [
-      gomi
-      bun
-      uv
-      (callPackage ../../../packages/gwq.nix { })
-    ]
-    ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
-      terminal-notifier
-    ]
-    ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
-      libnotify
-    ];
+  config = lib.mkIf cfg.enable {
+    home.packages =
+      with pkgs;
+      [
+        gomi
+        bun
+        uv
+        (callPackage ../../../packages/gwq.nix { })
+      ]
+      ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
+        terminal-notifier
+      ]
+      ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
+        libnotify
+      ];
+  };
 }

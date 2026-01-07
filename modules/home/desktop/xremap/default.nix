@@ -1,17 +1,22 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home.desktop;
+in
 {
-  systemd.user.services.xremap = {
-    Unit = {
-      Description = "XRemap Service";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      Type = "simple";
-      ExecStart = "${pkgs.xremap}/bin/xremap ${./config.yml}";
-      Restart = "on-failure";
-      RestartSec = 5;
+  config = lib.mkIf cfg.xremap.enable {
+    systemd.user.services.xremap = {
+      Unit = {
+        Description = "XRemap Service";
+      };
+      Install = {
+        WantedBy = [ "default.target" ];
+      };
+      Service = {
+        Type = "simple";
+        ExecStart = "${pkgs.xremap}/bin/xremap ${./config.yml}";
+        Restart = "on-failure";
+        RestartSec = 5;
+      };
     };
   };
 }

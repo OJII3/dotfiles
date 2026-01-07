@@ -1,9 +1,4 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [
-    jetbrains-toolbox
-    slack
-    postman
-    logisim-evolution
-  ];
-}
+# Legacy file - removed
+# Common apps are now part of base dev packages or my.home.apps.linux.common
+{ ... }:
+{ }

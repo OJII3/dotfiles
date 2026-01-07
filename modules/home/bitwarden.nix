@@ -1,6 +1,11 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.home;
+in
 {
-  home.packages = with pkgs; [
-    bitwarden-desktop
-  ];
+  config = lib.mkIf cfg.bitwarden.enable {
+    home.packages = with pkgs; [
+      bitwarden-desktop
+    ];
+  };
 }

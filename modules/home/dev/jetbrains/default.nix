@@ -1,3 +1,9 @@
+{ config, lib, ... }:
+let
+  cfg = config.my.home.dev;
+in
 {
-  home.file.".ideavimrc".source = ./.ideavimrc;
+  config = lib.mkIf cfg.jetbrains.enable {
+    home.file.".ideavimrc".source = ./.ideavimrc;
+  };
 }

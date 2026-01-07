@@ -1,9 +1,6 @@
-{ pkgs, ... }:
+# Legacy file - console mode is now controlled via my.home.gpg.console option
+# This file is kept for backwards compatibility but can be removed
+{ ... }:
 {
-  imports = [ ./. ];
-  services.gpg-agent.pinentry.package = pkgs.pinentry-tty;
-
-  programs.zsh.initContent = ''
-    alias pinentry=${pkgs.pinentry-tty}/bin/pinentry
-  '';
+  # Configuration moved to ./default.nix with gpg.console option
 }

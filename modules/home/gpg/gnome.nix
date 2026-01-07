@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-{
-  imports = [
-    ./.
-  ];
-
-  services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
-}
+# Legacy file - removed
+# GPG pinentry is now controlled via my.home.gpg.pinentryPackage option
+{ ... }:
+{ }

@@ -2,22 +2,40 @@
 {
   imports = [
     ../../modules/home
-    ../../modules/home/apps/darwin.nix
-    ../../modules/home/dev
-    ../../modules/home/dev/ai/claude
-    ../../modules/home/dev/ai/codex
-    ../../modules/home/dev/ai/gemini
-    ../../modules/home/dev/jetbrains
-    ../../modules/home/dev/mise.nix
-    ../../modules/home/direnv.nix
-    ../../modules/home/git
-    ../../modules/home/gpg
-    ../../modules/home/neovim
-    ../../modules/home/sops.nix
-    ../../modules/home/terminal/ghostty
-    ../../modules/home/terminal/kitty
-    ../../modules/home/zsh
   ];
+
+  my.home = {
+    # Shell & Editor
+    zsh.enable = true;
+    neovim.enable = true;
+    git.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "tty";
+    };
+    direnv.enable = true;
+    sops.enable = true;
+
+    # Terminal
+    terminal = {
+      enable = true;
+      ghostty.enable = true;
+      kitty.enable = true;
+    };
+
+    # Development
+    dev = {
+      enable = true;
+      jetbrains.enable = true;
+      mise.enable = true;
+      ai = {
+        enable = true;
+        claude.enable = true;
+        codex.enable = true;
+        gemini.enable = true;
+      };
+    };
+  };
 
   programs.zsh.initContent = ''
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

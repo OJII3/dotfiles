@@ -1,10 +1,12 @@
 {
   pkgs,
   pkgs-ros,
+  config,
+  lib,
   ...
 }:
-
 let
+  cfg = config.my.home;
   rosDistro = "humble";
   pname = "ros2humble-unityhub";
   version = pkgs.unityhub.version;
@@ -46,5 +48,7 @@ let
   };
 in
 {
-  home.packages = [ ros2unityhub ];
+  config = lib.mkIf cfg.ros2.enable {
+    home.packages = [ ros2unityhub ];
+  };
 }

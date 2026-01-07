@@ -1,6 +1,12 @@
+{ config, lib, ... }:
+let
+  cfg = config.my.home.desktop;
+in
 {
-  programs.wlogout = {
-    enable = true;
+  config = lib.mkIf cfg.wlogout.enable {
+    programs.wlogout = {
+      enable = true;
+    };
+    home.file.".config/wlogout/layout".source = ./layout;
   };
-  home.file.".config/wlogout/layout".source = ./layout;
 }
