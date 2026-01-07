@@ -1,12 +1,12 @@
 # Base desktop configuration
 # Applied when my.darwin.desktop.enable is true
-{ config, lib, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 let
   cfg = config.my.darwin.desktop;
 in
 {
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with config.nixpkgs.hostPlatform.pkgs; [
+    environment.systemPackages = with pkgs; [
       vim
       git
       gnumake
