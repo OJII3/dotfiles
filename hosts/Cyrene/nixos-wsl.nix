@@ -4,26 +4,25 @@
 { pkgs, ... }:
 {
   imports = [
-    # WSL doesn't use the full module system
-    # Only import specific needed modules
-    ../../modules/nixos/core/tools.nix
-    ../../modules/nixos/desktop/fonts.nix
+    ../../modules/nixos
   ];
 
-  # ===== User configuration =====
-  users.users.ojii3 = {
-    isNormalUser = true;
-    description = "ojii3";
-    shell = pkgs.zsh;
-    extraGroups = [
-      "wheel"
-      "storage"
-    ];
+  # ===== Options-based configuration =====
+  my = {
+    core = {
+      enable = true;
+      audio.enable = false;      # WSL doesn't need audio
+      bluetooth.enable = false;  # WSL doesn't need Bluetooth
+      ssh.enable = false;        # Use Windows SSH
+    };
+
+    desktop = {
+      enable = true;
+      fonts.enable = true;
+    };
   };
 
   # ===== WSL-specific configuration =====
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     vim
     git

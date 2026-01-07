@@ -33,20 +33,47 @@ f563fb4 feat(nixos/desktop): convert to options-based module
 modules/nixos/
 ├── default.nix      # エントリポイント (全モジュールをインポート)
 ├── core/
-│   ├── default.nix  # my.core.* オプション定義
-│   ├── boot/        # まだオプション化していない
-│   ├── virtualisation/  # まだオプション化していない
+│   ├── default.nix  # my.core.* オプション定義 + config
 │   └── ...
 ├── desktop/
-│   ├── default.nix  # my.desktop.* オプション定義
-│   ├── greetd/      # まだオプション化していない
-│   └── ...
+│   ├── default.nix  # エントリポイント (imports + base config)
+│   ├── options.nix  # my.desktop.* オプション定義
+│   ├── hyprland.nix # Hyprland config 実装
+│   ├── fonts.nix    # フォント config 実装
+│   ├── gaming.nix   # ゲーミング config 実装
+│   ├── greetd.nix   # greetd config 実装
+│   └── ...          # 各機能の config 実装
 ├── hardware/
 │   └── default.nix  # my.hardware.* オプション定義
 ├── networking/
-│   └── default.nix  # my.networking.* オプション定義 (NEW)
+│   └── default.nix  # my.networking.* オプション定義
 └── server/
     └── default.nix  # my.server.* オプション定義
+```
+
+### ファイル分割パターン (desktop/ の例)
+
+大きくなった default.nix を分割するために以下のパターンを採用:
+
+1. **options.nix** - 全オプション定義を集約
+2. **機能別ファイル** - 各機能の config 実装を分離
+3. **default.nix** - imports + base config のみ
+
+```nix
+# desktop/default.nix
+{ config, lib, ... }:
+{
+  imports = [
+    ./options.nix      # オプション定義
+    ./hyprland.nix     # config 実装
+    ./fonts.nix
+    ./gaming.nix
+    ...
+  ];
+
+  # Base config (小さいもののみ)
+  config = lib.mkIf cfg.enable { ... };
+}
 ```
 
 ## 使用可能なオプション

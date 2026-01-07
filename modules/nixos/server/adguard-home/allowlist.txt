@@ -1,2 +1,0 @@
-analytics.google.com
-*.hoyoverse.com

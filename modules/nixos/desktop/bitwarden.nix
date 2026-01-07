@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+# Bitwarden desktop password manager
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.my.desktop;
+in
 {
-  environment.systemPackages = with pkgs; [
-    bitwarden-desktop
-  ];
+  config = lib.mkIf (cfg.enable && cfg.bitwarden.enable) {
+    environment.systemPackages = [ pkgs.bitwarden-desktop ];
+  };
 }
