@@ -1,12 +1,3 @@
-{ ... }: {
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "zsh";
-        user = "ojii3";
-      };
-      default_session = initial_session;
-    };
-  };
-}
+# Autologin configuration has been moved to ./default.nix
+# Controlled by: my.server.autologin.enable
+{ ... }: { }

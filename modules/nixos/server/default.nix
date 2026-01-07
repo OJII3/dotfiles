@@ -1,17 +1,63 @@
 # NixOS Server modules
-# Options for server-specific configurations
+# Server-specific configuration with customizable options.
 #
-{ config, lib, pkgs, ... }:
+# Options:
+#   my.server.enable          - Enable server configuration
+#   my.server.autologin.enable - Enable auto-login via greetd
+#   my.server.autologin.user  - User for auto-login
+#   my.server.adguardHome.enable - Enable AdGuard Home DNS
+#
+{ config, lib, pkgs, username ? "ojii3", ... }:
 let
   cfg = config.my.server;
 in
 {
   options.my.server = {
-    # Server options will be added here
-    # For now, this is a placeholder to allow imports to work
+    enable = lib.mkEnableOption "server configuration";
+
+    autologin = {
+      enable = lib.mkEnableOption "auto-login via greetd";
+
+      user = lib.mkOption {
+        type = lib.types.str;
+        default = username;
+        description = "User for auto-login";
+      };
+
+      shell = lib.mkOption {
+        type = lib.types.str;
+        default = "zsh";
+        description = "Shell to start on login";
+      };
+    };
+
+    adguardHome = {
+      enable = lib.mkEnableOption "AdGuard Home DNS server";
+    };
   };
 
-  config = {
-    # Server-specific configurations will be added here
-  };
+  config = lib.mkIf cfg.enable (lib.mkMerge [
+    # Auto-login
+    (lib.mkIf cfg.autologin.enable {
+      services.greetd = {
+        enable = true;
+        settings = rec {
+          initial_session = {
+            command = cfg.autologin.shell;
+            user = cfg.autologin.user;
+          };
+          default_session = initial_session;
+        };
+      };
+    })
+
+    # AdGuard Home
+    (lib.mkIf cfg.adguardHome.enable {
+      services.adguardhome = {
+        enable = true;
+        openFirewall = true;
+      };
+      services.resolved.enable = false;
+    })
+  ]);
 }
