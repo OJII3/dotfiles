@@ -22,6 +22,7 @@ modules/home/
 │   ├── default.nix
 │   ├── options.nix
 │   └── */           # ai, jetbrains, vscode, etc.
+├── apps/linux/      # Linux アプリ
 └── *.nix            # ルートレベルモジュール (zsh, neovim, git, etc.)
 ```
 
@@ -41,7 +42,10 @@ modules/home/
     zsh.enable = true;
     neovim.enable = true;
     git.enable = true;
-    gpg.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "gnome3";  # "tty", "qt", "gnome3"
+    };
     direnv.enable = true;
     sops.enable = true;
 
@@ -52,6 +56,7 @@ modules/home/
       waybar.enable = true;
       anyrun.enable = true;
       swaync.enable = true;
+      wlogout.enable = true;
       fcitx5.enable = true;
       theme.enable = true;
       browser.vivaldi.enable = true;
@@ -78,10 +83,19 @@ modules/home/
       };
     };
 
+    # Linux Apps
+    apps.linux = {
+      common.enable = true;    # 一般的なデスクトップアプリ
+      hyprland.enable = true;  # Hyprland 専用アプリ
+    };
+
     # Other
     bitwarden.enable = true;
     network.enable = true;
     kdewallet.enable = true;
+    kdeconnect.enable = true;
+    gnomeKeyring.enable = true;
+    vr.enable = true;
     ros2.enable = true;
   };
 }
@@ -97,13 +111,23 @@ modules/home/
 | `neovim.enable` | Neovim エディタ |
 | `git.enable` | Git 設定 |
 | `gpg.enable` | GPG 設定 |
-| `gpg.console` | コンソールモード (pinentry-tty) |
+| `gpg.pinentryPackage` | Pinentry タイプ: `"tty"`, `"qt"`, `"gnome3"` |
 | `direnv.enable` | Direnv 統合 |
 | `sops.enable` | Sops シークレット管理 |
 | `bitwarden.enable` | Bitwarden パスワードマネージャー |
 | `network.enable` | ネットワークユーティリティ |
 | `kdewallet.enable` | KDE wallet 統合 |
+| `kdeconnect.enable` | KDE Connect |
+| `gnomeKeyring.enable` | GNOME Keyring |
+| `vr.enable` | VR サポート (OpenComposite) |
 | `ros2.enable` | ROS2 ロボティクスフレームワーク |
+
+### Linux Apps (`my.home.apps.linux.*`)
+
+| オプション | 説明 |
+|-----------|------|
+| `common.enable` | 一般的な Linux デスクトップアプリ (Discord, Blender, VLC 等) |
+| `hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |
 
 ### Desktop (`my.home.desktop.*`)
 
