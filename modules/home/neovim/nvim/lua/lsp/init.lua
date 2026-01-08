@@ -20,7 +20,7 @@ local lsp_names = {
 	"jsonls",
 	"jsonls",
 	"lemminx",
-	"nil_ls",
+	-- "nil_ls",
 	"nixd",
 	"lua_ls",
 	"mdx_analyzer",
@@ -76,13 +76,6 @@ for _, server_name in ipairs(lsp_names) do
 		}
 	elseif server_name == "clangd" then
 		opts.cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" }
-	-- elseif server_name == "eslint" then
-	-- 	opts.on_attach = function(client, bufnr)
-	-- 		vim.api.nvim_create_autocmd("BufWritePre", {
-	-- 			buffer = bufnr,
-	-- 			command = "EslintFixAll",
-	-- 		})
-	-- 	end
 	elseif server_name == "stylelint_lsp" then
 		opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
 	elseif server_name == "jsonls" then
@@ -106,6 +99,25 @@ for _, server_name in ipairs(lsp_names) do
 		opts.settings = {
 			exportPdf = "onType",
 			formatterMode = "typstyle",
+		}
+	elseif server_name == "nixd" then
+		opts.settings = {
+			nixd = {
+				nixpkgs = {
+					expr = "import (builtins.getFlake(toString ./.)).inputs.nixpkgs { }",
+				},
+				options = {
+					nixos = {
+						expr = "let flake = builtins.getFlake(toString ./.); in flake.nixosConfigurations.Aglaea.options",
+					},
+					home_manager = {
+						expr = 'let flake = builtins.getFlake(toString ./.); in flake.homeConfigurations."ojii3@Cipher".options',
+					},
+					darwin = {
+						expr = "let flake = builtins.getFlake(toString ./.); in flake.darwinConfigurations.Himeko.options",
+					},
+				},
+			},
 		}
 	end
 	vim.lsp.config(server_name, opts)

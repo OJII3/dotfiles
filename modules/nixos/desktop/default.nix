@@ -21,8 +21,7 @@ in
     ./peripheral.nix
     ./sunshine.nix
     ./waydroid.nix
-    # Subdirectories
-    ./gnome
+    ./gnome.nix
   ];
 
   # Base desktop configuration
