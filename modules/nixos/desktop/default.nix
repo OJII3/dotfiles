@@ -6,7 +6,7 @@
 #
 { config, lib, ... }:
 let
-  cfg = config.my.desktop;
+  cfg = config.dot.desktop;
 in
 {
   imports = [

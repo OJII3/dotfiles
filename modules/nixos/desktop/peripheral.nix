@@ -1,7 +1,7 @@
 # Peripheral device configuration
 { config, lib, ... }:
 let
-  cfg = config.my.desktop;
+  cfg = config.dot.desktop;
 in
 {
   config = lib.mkIf cfg.enable (lib.mkMerge [

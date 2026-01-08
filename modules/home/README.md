@@ -2,21 +2,21 @@
 
 ## 概要
 
-Home Manager 用のモジュール。`my.home.*` 名前空間でオプションベースの設定を提供。
+Home Manager 用のモジュール。`dot.home.*` 名前空間でオプションベースの設定を提供。
 
 ## ディレクトリ構成
 
 ```
 modules/home/
 ├── default.nix      # エントリポイント
-├── options.nix      # my.home.* オプション定義
+├── options.nix      # dot.home.* オプション定義
 ├── darwin/
 │   ├── default.nix  # darwin エントリポイント
-│   ├── options.nix  # my.home.darwin.* オプション定義
+│   ├── options.nix  # dot.home.darwin.* オプション定義
 │   └── */           # aerospace, jankyborders, skhd
 ├── desktop/
 │   ├── default.nix  # desktop エントリポイント
-│   ├── options.nix  # my.home.desktop.* オプション定義
+│   ├── options.nix  # dot.home.desktop.* オプション定義
 │   └── */           # 各モジュール (hyprland, waybar, gnome, etc.)
 ├── terminal/
 │   ├── default.nix
@@ -32,7 +32,7 @@ modules/home/
 
 ## 使い方
 
-ホストの `home-manager.nix` で `my.home.*` オプションを設定:
+ホストの `home-manager.nix` で `dot.home.*` オプションを設定:
 
 ```nix
 { ... }:
@@ -41,7 +41,7 @@ modules/home/
     ../../modules/home
   ];
 
-  my.home = {
+  dot.home = {
     # Shell & Editor
     zsh.enable = true;
     neovim.enable = true;
@@ -115,7 +115,7 @@ modules/home/
 
 ## 利用可能なオプション
 
-### ルートレベル (`my.home.*`)
+### ルートレベル (`dot.home.*`)
 
 | オプション | 説明 |
 |-----------|------|
@@ -134,7 +134,7 @@ modules/home/
 | `vr.enable` | VR サポート (OpenComposite) |
 | `ros2.enable` | ROS2 ロボティクスフレームワーク |
 
-### Linux Apps (`my.home.apps.linux.*`)
+### Linux Apps (`dot.home.apps.linux.*`)
 
 | オプション | 説明 |
 |-----------|------|
@@ -142,7 +142,7 @@ modules/home/
 | `hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |
 | `gnome.enable` | GNOME 専用アプリ (Firefox 等) |
 
-### Desktop (`my.home.desktop.*`)
+### Desktop (`dot.home.desktop.*`)
 
 | オプション | 説明 |
 |-----------|------|
@@ -159,7 +159,7 @@ modules/home/
 | `theme.enable` | デスクトップテーマ |
 | `browser.vivaldi.enable` | Vivaldi ブラウザ |
 
-### Terminal (`my.home.terminal.*`)
+### Terminal (`dot.home.terminal.*`)
 
 | オプション | 説明 |
 |-----------|------|
@@ -168,7 +168,7 @@ modules/home/
 | `kitty.enable` | Kitty ターミナル |
 | `wezterm.enable` | WezTerm ターミナル |
 
-### Dev (`my.home.dev.*`)
+### Dev (`dot.home.dev.*`)
 
 | オプション | 説明 |
 |-----------|------|
@@ -181,7 +181,7 @@ modules/home/
 | `ai.codex.enable` | Codex |
 | `ai.gemini.enable` | Gemini |
 
-### Darwin (`my.home.darwin.*`)
+### Darwin (`dot.home.darwin.*`)
 
 | オプション | 説明 |
 |-----------|------|

@@ -1,4 +1,4 @@
-# Legacy file - console mode is now controlled via my.home.gpg.console option
+# Legacy file - console mode is now controlled via dot.home.gpg.console option
 # This file is kept for backwards compatibility but can be removed
 { ... }:
 {

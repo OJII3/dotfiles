@@ -1,7 +1,7 @@
 # Gaming configuration (Steam, VR)
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.desktop;
+  cfg = config.dot.desktop;
 in
 {
   config = lib.mkIf cfg.enable (lib.mkMerge [

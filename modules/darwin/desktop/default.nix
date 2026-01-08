@@ -6,7 +6,7 @@
 #
 { config, lib, ... }:
 let
-  cfg = config.my.darwin.desktop;
+  cfg = config.dot.darwin.desktop;
 in
 {
   imports = [

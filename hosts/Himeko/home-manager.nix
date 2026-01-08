@@ -4,7 +4,7 @@
     ../../modules/home
   ];
 
-  my.home = {
+  dot.home = {
     # Shell & Editor
     zsh.enable = true;
     neovim.enable = true;

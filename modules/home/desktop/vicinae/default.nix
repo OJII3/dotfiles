@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.desktop;
+  cfg = config.dot.home.desktop;
 in
 {
   # vicinae is used with gnome

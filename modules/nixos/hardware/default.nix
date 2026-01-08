@@ -2,17 +2,17 @@
 # Hardware-specific configuration with customizable options.
 #
 # Options:
-#   my.hardware.gpu           - GPU type: "amd", "nvidia", "intel", or null
-#   my.hardware.nvidia.*      - NVIDIA-specific options (Prime, etc.)
-#   my.hardware.thinkpad.enable - Enable ThinkPad-specific settings
-#   my.hardware.laptop.enable - Enable laptop power management
+#   dot.hardware.gpu           - GPU type: "amd", "nvidia", "intel", or null
+#   dot.hardware.nvidia.*      - NVIDIA-specific options (Prime, etc.)
+#   dot.hardware.thinkpad.enable - Enable ThinkPad-specific settings
+#   dot.hardware.laptop.enable - Enable laptop power management
 #
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.hardware;
+  cfg = config.dot.hardware;
 in
 {
-  options.my.hardware = {
+  options.dot.hardware = {
     gpu = lib.mkOption {
       type = lib.types.nullOr (lib.types.enum [ "amd" "nvidia" "intel" ]);
       default = null;

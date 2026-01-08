@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.dev.ai;
+  cfg = config.dot.home.dev.ai;
 in
 {
   imports = [

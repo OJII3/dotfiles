@@ -1,8 +1,8 @@
 # VR development configuration
-# Applied when my.darwin.desktop.vr.enable is true
+# Applied when dot.darwin.desktop.vr.enable is true
 { config, lib, username, ... }:
 let
-  cfg = config.my.darwin.desktop;
+  cfg = config.dot.darwin.desktop;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.vr.enable) {

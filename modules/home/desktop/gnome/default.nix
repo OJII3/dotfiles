@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 let
-  cfg = config.my.home.desktop;
+  cfg = config.dot.home.desktop;
 in
 {
   config = lib.mkIf cfg.gnome.enable {

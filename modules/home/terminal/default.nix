@@ -5,7 +5,7 @@
 #
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home.terminal;
+  cfg = config.dot.home.terminal;
 in
 {
   imports = [

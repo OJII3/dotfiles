@@ -2,17 +2,17 @@
 # Server-specific configuration with customizable options.
 #
 # Options:
-#   my.server.enable          - Enable server configuration
-#   my.server.autologin.enable - Enable auto-login via greetd
-#   my.server.autologin.user  - User for auto-login
-#   my.server.adguardHome.enable - Enable AdGuard Home DNS
+#   dot.server.enable          - Enable server configuration
+#   dot.server.autologin.enable - Enable auto-login via greetd
+#   dot.server.autologin.user  - User for auto-login
+#   dot.server.adguardHome.enable - Enable AdGuard Home DNS
 #
 { config, lib, pkgs, username ? "ojii3", ... }:
 let
-  cfg = config.my.server;
+  cfg = config.dot.server;
 in
 {
-  options.my.server = {
+  options.dot.server = {
     enable = lib.mkEnableOption "server configuration";
 
     autologin = {

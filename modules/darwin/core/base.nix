@@ -1,8 +1,8 @@
 # Base darwin configuration
-# Applied when my.darwin.core.enable is true
+# Applied when dot.darwin.core.enable is true
 { config, lib, inputs, ... }:
 let
-  cfg = config.my.darwin.core;
+  cfg = config.dot.darwin.core;
 in
 {
   config = lib.mkIf cfg.enable {

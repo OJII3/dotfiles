@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
 in
 {
   config = lib.mkIf cfg.vr.enable {

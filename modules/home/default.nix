@@ -1,8 +1,8 @@
 # Home Manager modules entry point
-# All modules are imported here and controlled via my.home.* options.
+# All modules are imported here and controlled via dot.home.* options.
 #
 # Usage example:
-#   my.home = {
+#   dot.home = {
 #     zsh.enable = true;
 #     neovim.enable = true;
 #     git.enable = true;

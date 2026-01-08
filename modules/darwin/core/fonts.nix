@@ -1,8 +1,8 @@
 # Fonts configuration
-# Applied when my.darwin.core.fonts.enable is true
+# Applied when dot.darwin.core.fonts.enable is true
 { config, lib, ... }:
 let
-  cfg = config.my.darwin.core;
+  cfg = config.dot.darwin.core;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.fonts.enable) {

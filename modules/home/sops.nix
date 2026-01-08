@@ -1,6 +1,6 @@
 { inputs, config, lib, ... }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
 in
 {
   imports = [

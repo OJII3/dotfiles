@@ -1,8 +1,8 @@
 # Base desktop configuration
-# Applied when my.darwin.desktop.enable is true
+# Applied when dot.darwin.desktop.enable is true
 { config, lib, pkgs, inputs, ... }:
 let
-  cfg = config.my.darwin.desktop;
+  cfg = config.dot.darwin.desktop;
 in
 {
   config = lib.mkIf cfg.enable {

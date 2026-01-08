@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
   clangdir = if pkgs.stdenv.isDarwin then "Library/Preferences/clangd" else ".config/clangd";
 in
 {

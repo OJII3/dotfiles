@@ -1,8 +1,8 @@
 # Darwin module options
-# All option definitions for my.home.darwin.*
+# All option definitions for dot.home.darwin.*
 { lib, ... }:
 {
-  options.my.home.darwin = {
+  options.dot.home.darwin = {
     aerospace = {
       enable = lib.mkEnableOption "Aerospace window manager";
     };

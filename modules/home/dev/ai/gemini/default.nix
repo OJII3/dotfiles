@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home.dev.ai;
+  cfg = config.dot.home.dev.ai;
 in
 {
   config = lib.mkIf cfg.gemini.enable {

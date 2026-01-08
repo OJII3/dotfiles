@@ -6,7 +6,7 @@
 #
 { config, lib, ... }:
 let
-  cfg = config.my.darwin.core;
+  cfg = config.dot.darwin.core;
 in
 {
   imports = [

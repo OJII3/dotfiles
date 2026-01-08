@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.dev;
+  cfg = config.dot.home.dev;
 in
 {
   config = lib.mkIf cfg.jetbrains.enable {

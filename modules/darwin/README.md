@@ -2,7 +2,7 @@
 
 ## 概要
 
-macOS (nix-darwin) 用のモジュール。`my.darwin.*` 名前空間でオプションベースの設定を提供。
+macOS (nix-darwin) 用のモジュール。`dot.darwin.*` 名前空間でオプションベースの設定を提供。
 
 ## ディレクトリ構成
 
@@ -11,14 +11,14 @@ modules/darwin/
 ├── default.nix      # エントリポイント
 ├── core/
 │   ├── default.nix  # core モジュールのエントリ
-│   ├── options.nix  # my.darwin.core.* オプション定義
+│   ├── options.nix  # dot.darwin.core.* オプション定義
 │   ├── base.nix     # 基本設定 (nix, pathsToLink)
 │   ├── fonts.nix    # フォント設定 (Homebrew casks)
 │   ├── networking.nix # ネットワーク設定 (Tailscale, SSH)
 │   └── sops.nix     # sops-nix 設定
 ├── desktop/
 │   ├── default.nix  # desktop モジュールのエントリ
-│   ├── options.nix  # my.darwin.desktop.* オプション定義
+│   ├── options.nix  # dot.darwin.desktop.* オプション定義
 │   ├── base.nix     # 基本設定 (system.defaults, Touch ID)
 │   ├── apps.nix     # Homebrew アプリ
 │   └── vr.nix       # VR 開発 (Meta XR Simulator)
@@ -33,7 +33,7 @@ modules/darwin/
 {
   imports = [ ../../modules/darwin ];
 
-  my.darwin = {
+  dot.darwin = {
     core = {
       enable = true;
       fonts.enable = true;
@@ -53,7 +53,7 @@ modules/darwin/
 
 ## 利用可能なオプション
 
-### my.darwin.core
+### dot.darwin.core
 
 | オプション | 説明 |
 |-----------|------|
@@ -62,7 +62,7 @@ modules/darwin/
 | `networking.enable` | ネットワーク設定 (Tailscale, SSH) |
 | `sops.enable` | sops-nix シークレット管理 |
 
-### my.darwin.desktop
+### dot.darwin.desktop
 
 | オプション | 説明 |
 |-----------|------|

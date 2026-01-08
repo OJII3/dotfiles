@@ -2,19 +2,19 @@
 # Network configuration with firewall, Tailscale, DNS, and NetworkManager.
 #
 # Options:
-#   my.networking.enable              - Enable networking configuration
-#   my.networking.firewall.enable     - Enable firewall
-#   my.networking.tailscale.enable    - Enable Tailscale VPN
-#   my.networking.dns.resolved.enable - Enable systemd-resolved with DoT
-#   my.networking.networkManager.enable - Enable NetworkManager
-#   my.networking.warp.enable         - Enable Cloudflare WARP
+#   dot.networking.enable              - Enable networking configuration
+#   dot.networking.firewall.enable     - Enable firewall
+#   dot.networking.tailscale.enable    - Enable Tailscale VPN
+#   dot.networking.dns.resolved.enable - Enable systemd-resolved with DoT
+#   dot.networking.networkManager.enable - Enable NetworkManager
+#   dot.networking.warp.enable         - Enable Cloudflare WARP
 #
 { config, lib, pkgs, hostname, ... }:
 let
-  cfg = config.my.networking;
+  cfg = config.dot.networking;
 in
 {
-  options.my.networking = {
+  options.dot.networking = {
     enable = lib.mkEnableOption "networking configuration" // {
       default = true;
     };

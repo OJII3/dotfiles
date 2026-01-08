@@ -2,15 +2,15 @@
 # Basic system configuration that most hosts will need.
 #
 # Options:
-#   my.core.enable        - Enable core configuration (default: true for backward compat)
-#   my.core.audio.enable  - Enable PipeWire audio
-#   my.core.bluetooth.enable - Enable Bluetooth
-#   my.core.ssh.enable    - Enable OpenSSH
-#   my.core.user.name     - Username (default: "ojii3")
+#   dot.core.enable        - Enable core configuration (default: true for backward compat)
+#   dot.core.audio.enable  - Enable PipeWire audio
+#   dot.core.bluetooth.enable - Enable Bluetooth
+#   dot.core.ssh.enable    - Enable OpenSSH
+#   dot.core.user.name     - Username (default: "ojii3")
 #
 { config, lib, pkgs, username ? "ojii3", ... }:
 let
-  cfg = config.my.core;
+  cfg = config.dot.core;
 in
 {
   imports = [
@@ -23,7 +23,7 @@ in
     ./uinput.nix
   ];
 
-  options.my.core = {
+  options.dot.core = {
     enable = lib.mkEnableOption "core NixOS configuration" // {
       default = true;  # Backward compatible: enabled by default
     };

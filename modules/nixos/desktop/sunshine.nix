@@ -1,7 +1,7 @@
 # Sunshine remote desktop configuration
 { config, lib, ... }:
 let
-  cfg = config.my.desktop;
+  cfg = config.dot.desktop;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.sunshine.enable) {

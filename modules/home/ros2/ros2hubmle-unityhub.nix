@@ -6,7 +6,7 @@
   ...
 }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
   rosDistro = "humble";
   pname = "ros2humble-unityhub";
   version = pkgs.unityhub.version;

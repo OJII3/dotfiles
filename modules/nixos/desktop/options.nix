@@ -1,8 +1,8 @@
 # Desktop module options
-# All option definitions for my.desktop.*
+# All option definitions for dot.desktop.*
 { lib, ... }:
 {
-  options.my.desktop = {
+  options.dot.desktop = {
     enable = lib.mkEnableOption "desktop environment";
 
     hyprland = {

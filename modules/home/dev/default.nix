@@ -5,7 +5,7 @@
 #
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home.dev;
+  cfg = config.dot.home.dev;
 in
 {
   imports = [

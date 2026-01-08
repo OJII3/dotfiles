@@ -1,7 +1,7 @@
 # Bitwarden desktop password manager
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.desktop;
+  cfg = config.dot.desktop;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.bitwarden.enable) {

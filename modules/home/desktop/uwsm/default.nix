@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.desktop;
+  cfg = config.dot.home.desktop;
 in
 {
   # uwsm is part of hyprland configuration

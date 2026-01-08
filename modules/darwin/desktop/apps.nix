@@ -1,8 +1,8 @@
 # Homebrew apps configuration
-# Applied when my.darwin.desktop.apps.enable is true
+# Applied when dot.darwin.desktop.apps.enable is true
 { config, lib, ... }:
 let
-  cfg = config.my.darwin.desktop;
+  cfg = config.dot.darwin.desktop;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.apps.enable) {

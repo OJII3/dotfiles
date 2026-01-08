@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home.desktop;
+  cfg = config.dot.home.desktop;
   vivaldiSettingsFile = ./vivaldi-settings.json;
   vivaldiBookmarksFile = ./Bookmarks;
   vivaldiThemesDir = ./themes;

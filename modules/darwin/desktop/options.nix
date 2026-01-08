@@ -1,8 +1,8 @@
 # Desktop module options
-# All option definitions for my.darwin.desktop.*
+# All option definitions for dot.darwin.desktop.*
 { lib, ... }:
 {
-  options.my.darwin.desktop = {
+  options.dot.darwin.desktop = {
     enable = lib.mkEnableOption "desktop environment configuration";
 
     apps = {

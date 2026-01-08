@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.apps.linux;
+  cfg = config.dot.home.apps.linux;
 in
 {
   config = lib.mkIf cfg.gnome.enable {

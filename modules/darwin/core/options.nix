@@ -1,8 +1,8 @@
 # Core module options
-# All option definitions for my.darwin.core.*
+# All option definitions for dot.darwin.core.*
 { lib, ... }:
 {
-  options.my.darwin.core = {
+  options.dot.darwin.core = {
     enable = lib.mkEnableOption "core darwin configuration";
 
     fonts = {

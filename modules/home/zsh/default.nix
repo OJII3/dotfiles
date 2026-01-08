@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
 in
 {
   config = lib.mkIf cfg.zsh.enable {

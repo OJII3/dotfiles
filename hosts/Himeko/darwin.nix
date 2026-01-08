@@ -2,7 +2,7 @@
 {
   imports = [ ../../modules/darwin ];
 
-  my.darwin = {
+  dot.darwin = {
     core = {
       enable = true;
       fonts.enable = true;

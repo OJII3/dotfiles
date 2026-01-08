@@ -1,10 +1,10 @@
 # NixOS modules entry point
-# This file defines the `my.*` option namespace for customizing NixOS configurations.
+# This file defines the `dot.*` option namespace for customizing NixOS configurations.
 #
 # Usage in host configuration:
 #   imports = [ ../../modules/nixos ];
-#   my.core.enable = true;
-#   my.desktop.enable = true;
+#   dot.core.enable = true;
+#   dot.desktop.enable = true;
 #
 { config, lib, pkgs, ... }:
 let
@@ -23,10 +23,10 @@ in
   options.my = {
     # Placeholder for future options
     # Each submodule (core, desktop, server, hardware) will define their own options
-    # under options.my.<module>.*
+    # under options.dot.<module>.*
   };
 
-  # Global config that applies when any my.* module is used
+  # Global config that applies when any dot.* module is used
   config = {
     # This section can be used for global defaults
   };

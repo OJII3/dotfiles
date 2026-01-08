@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my.home;
+  cfg = config.dot.home;
   pinentryPkg = {
     tty = pkgs.pinentry-tty;
     qt = pkgs.pinentry-qt;

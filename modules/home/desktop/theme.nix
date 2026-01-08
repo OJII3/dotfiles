@@ -1,6 +1,6 @@
 { config, lib, pkgs, pkgs-stable, ... }:
 let
-  cfg = config.my.home.desktop;
+  cfg = config.dot.home.desktop;
 in
 {
   config = lib.mkIf cfg.theme.enable {

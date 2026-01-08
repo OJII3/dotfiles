@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.my.home.terminal;
+  cfg = config.dot.home.terminal;
 in
 {
   config = lib.mkIf cfg.kitty.enable {

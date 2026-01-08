@@ -2,7 +2,7 @@
 
 ## 概要
 
-このディレクトリには、`my.*` 名前空間でカスタマイズ可能な NixOS モジュールが含まれています。
+このディレクトリには、`dot.*` 名前空間でカスタマイズ可能な NixOS モジュールが含まれています。
 従来の `imports` ベースの設定から、宣言的なオプションベースの設定への移行を進めています。
 
 ## ブランチ
@@ -33,22 +33,22 @@ f563fb4 feat(nixos/desktop): convert to options-based module
 modules/nixos/
 ├── default.nix      # エントリポイント (全モジュールをインポート)
 ├── core/
-│   ├── default.nix  # my.core.* オプション定義 + config
+│   ├── default.nix  # dot.core.* オプション定義 + config
 │   └── ...
 ├── desktop/
 │   ├── default.nix  # エントリポイント (imports + base config)
-│   ├── options.nix  # my.desktop.* オプション定義
+│   ├── options.nix  # dot.desktop.* オプション定義
 │   ├── hyprland.nix # Hyprland config 実装
 │   ├── fonts.nix    # フォント config 実装
 │   ├── gaming.nix   # ゲーミング config 実装
 │   ├── greetd.nix   # greetd config 実装
 │   └── ...          # 各機能の config 実装
 ├── hardware/
-│   └── default.nix  # my.hardware.* オプション定義
+│   └── default.nix  # dot.hardware.* オプション定義
 ├── networking/
-│   └── default.nix  # my.networking.* オプション定義
+│   └── default.nix  # dot.networking.* オプション定義
 └── server/
-    └── default.nix  # my.server.* オプション定義
+    └── default.nix  # dot.server.* オプション定義
 ```
 
 ### ファイル分割パターン (desktop/ の例)
@@ -78,7 +78,7 @@ modules/nixos/
 
 ## 使用可能なオプション
 
-### my.core
+### dot.core
 
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
@@ -97,7 +97,7 @@ modules/nixos/
 | `boot.efi.mountPoint` | string | `"/boot"` | EFI パーティションマウントポイント |
 | `boot.grub.useOSProber` | bool | `true` | GRUB OS prober (デュアルブート検出) |
 
-### my.desktop
+### dot.desktop
 
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
@@ -118,7 +118,7 @@ modules/nixos/
 | `peripheral.keyboard.enable` | bool | `false` | Keychron キーボード udev ルール (VIA用) |
 | `bitwarden.enable` | bool | `false` | Bitwarden Desktop パスワードマネージャー |
 
-### my.hardware
+### dot.hardware
 
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
@@ -136,7 +136,7 @@ modules/nixos/
 | `laptop.suspend.enable` | bool | `false` | サスペンド/ハイバネート設定 |
 | `laptop.suspend.hibernateDelay` | string | `"600s"` | ハイバネート遅延時間 |
 
-### my.networking
+### dot.networking
 
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
@@ -151,7 +151,7 @@ modules/nixos/
 | `networkManager.wifi.powersave` | bool | `false` | WiFi 省電力モード |
 | `warp.enable` | bool | `false` | Cloudflare WARP |
 
-### my.server
+### dot.server
 
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
@@ -316,15 +316,15 @@ modules/nixos/
 
 ### 未オプション化のモジュール
 
-- [x] ~~`core/boot/` - systemd-boot, grub~~ → `my.core.boot.*`
-- [x] ~~`core/networking/` - base, dns, networkmanager~~ → `my.networking.*`
-- [x] ~~`core/virtualisation/` - podman, docker~~ → `my.core.virtualisation.*`
-- [x] ~~`core/power/` - laptop power management~~ → `my.hardware.laptop.power.*`
-- [x] ~~`core/suspend/` - suspend/hibernate~~ → `my.hardware.laptop.suspend.*`
-- [x] ~~`desktop/greetd/` - tuigreet, autologin~~ → `my.desktop.greetd.*`
-- [x] ~~`desktop/bitwarden.nix`~~ → `my.desktop.bitwarden.enable`
-- [x] ~~`desktop/peripheral/keyboard.nix`~~ → `my.desktop.peripheral.keyboard.enable`
-- [x] ~~`server/gnome-keyring.nix`~~ → `my.server.gnomeKeyring.enable`
+- [x] ~~`core/boot/` - systemd-boot, grub~~ → `dot.core.boot.*`
+- [x] ~~`core/networking/` - base, dns, networkmanager~~ → `dot.networking.*`
+- [x] ~~`core/virtualisation/` - podman, docker~~ → `dot.core.virtualisation.*`
+- [x] ~~`core/power/` - laptop power management~~ → `dot.hardware.laptop.power.*`
+- [x] ~~`core/suspend/` - suspend/hibernate~~ → `dot.hardware.laptop.suspend.*`
+- [x] ~~`desktop/greetd/` - tuigreet, autologin~~ → `dot.desktop.greetd.*`
+- [x] ~~`desktop/bitwarden.nix`~~ → `dot.desktop.bitwarden.enable`
+- [x] ~~`desktop/peripheral/keyboard.nix`~~ → `dot.desktop.peripheral.keyboard.enable`
+- [x] ~~`server/gnome-keyring.nix`~~ → `dot.server.gnomeKeyring.enable`
 
 ### ホスト移行状況
 
@@ -332,21 +332,21 @@ modules/nixos/
 - [x] **Bronya** - デスクトップ (NVIDIA Prime, Hyprland) ✅
 - [x] **Cipher** - サーバー (Intel GPU, AdGuard Home) ✅
 - [x] **Lingsha** - ラップトップ (AMD GPU, ThinkPad, 指紋認証) ✅
-- [ ] **Welt** - Raspberry Pi 4 (部分移行: my.core のみ使用)
+- [ ] **Welt** - Raspberry Pi 4 (部分移行: dot.core のみ使用)
 - [ ] **Cyrene** - WSL (modules/nixos 未使用)
 
 ### 設計改善案
 
 1. ~~**Boot オプション追加**~~ ✅ 実装済み
    ```nix
-   my.core.boot = {
+   dot.core.boot = {
      loader = "systemd-boot" | "grub" | "none";
    };
    ```
 
 2. ~~**Virtualisation オプション追加**~~ ✅ 実装済み
    ```nix
-   my.core.virtualisation = {
+   dot.core.virtualisation = {
      podman.enable = true;
      docker.enable = false;
    };
@@ -354,7 +354,7 @@ modules/nixos/
 
 3. ~~**Greetd オプション追加**~~ ✅ 実装済み
    ```nix
-   my.desktop.greetd = {
+   dot.desktop.greetd = {
      enable = true;
      greeter = "tuigreet" | "autologin";
    };
@@ -385,7 +385,7 @@ sudo nixos-rebuild switch --flake .#Cipher
 
 ## メモ
 
-- `my.core.enable` はデフォルト `true` (後方互換性のため)
-- `my.desktop.*`, `my.server.*` はデフォルト `false`
+- `dot.core.enable` はデフォルト `true` (後方互換性のため)
+- `dot.desktop.*`, `dot.server.*` はデフォルト `false`
 - 空モジュール (例: `audio.nix`) は既存の imports を壊さないために残している
 - `lib.mkIf` と `lib.mkMerge` を使って条件付き設定を実現

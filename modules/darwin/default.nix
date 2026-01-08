@@ -1,10 +1,10 @@
 # nix-darwin modules entry point
-# This file defines the `my.darwin.*` option namespace for customizing macOS configurations.
+# This file defines the `dot.darwin.*` option namespace for customizing macOS configurations.
 #
 # Usage in host configuration:
 #   imports = [ ../../modules/darwin ];
-#   my.darwin.core.enable = true;
-#   my.darwin.desktop.enable = true;
+#   dot.darwin.core.enable = true;
+#   dot.darwin.desktop.enable = true;
 #
 { config, lib, ... }:
 {
@@ -13,9 +13,9 @@
     ./desktop
   ];
 
-  options.my.darwin = {
+  options.dot.darwin = {
     # Placeholder for future global darwin options
     # Each submodule (core, desktop) defines their own options
-    # under options.my.darwin.<module>.*
+    # under options.dot.darwin.<module>.*
   };
 }

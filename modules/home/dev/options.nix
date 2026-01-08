@@ -1,8 +1,8 @@
 # Dev module options
-# All option definitions for my.home.dev.*
+# All option definitions for dot.home.dev.*
 { lib, ... }:
 {
-  options.my.home.dev = {
+  options.dot.home.dev = {
     enable = lib.mkEnableOption "development tools";
 
     vscode = {

@@ -1,8 +1,8 @@
 # Home Manager module options
-# All option definitions for my.home.*
+# All option definitions for dot.home.*
 { lib, ... }:
 {
-  options.my.home = {
+  options.dot.home = {
     # Shell
     zsh = {
       enable = lib.mkEnableOption "Zsh shell configuration";

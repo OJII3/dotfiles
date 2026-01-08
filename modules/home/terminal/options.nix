@@ -1,8 +1,8 @@
 # Terminal module options
-# All option definitions for my.home.terminal.*
+# All option definitions for dot.home.terminal.*
 { lib, ... }:
 {
-  options.my.home.terminal = {
+  options.dot.home.terminal = {
     enable = lib.mkEnableOption "terminal emulators";
 
     kitty = {
