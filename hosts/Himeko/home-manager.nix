@@ -11,7 +11,7 @@
     git.enable = true;
     gpg = {
       enable = true;
-      pinentryPackage = "tty";
+      pinentryPackage = "mac";
     };
     direnv.enable = true;
     sops.enable = true;

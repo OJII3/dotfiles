@@ -26,8 +26,9 @@
           "tty"
           "qt"
           "gnome3"
+          "mac"
         ];
-        default = "gnome3";
+        default = "tty";
         description = "Pinentry package type: tty, qt, or gnome3";
       };
     };

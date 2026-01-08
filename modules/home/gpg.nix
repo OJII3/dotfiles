@@ -11,6 +11,7 @@ let
       tty = pkgs.pinentry-tty;
       qt = pkgs.pinentry-qt;
       gnome3 = pkgs.pinentry-gnome3;
+      mac = pkgs.pinentry_mac;
     }
     .${cfg.gpg.pinentryPackage};
 in
