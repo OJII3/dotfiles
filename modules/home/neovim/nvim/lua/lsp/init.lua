@@ -102,7 +102,7 @@ for _, server_name in ipairs(lsp_names) do
 		}
 	elseif server_name == "nixd" then
 		opts.settings = {
-			nixd = {
+			nix = {
 				nixpkgs = {
 					expr = "import (builtins.getFlake(toString ./.)).inputs.nixpkgs { }",
 				},
