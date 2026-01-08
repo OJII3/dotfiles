@@ -1,28 +1,56 @@
 { ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/apps/linux/common.nix
-    ../../includes/home/bitwarden.nix
-    ../../includes/home/desktop/browser/vivaldi
-    ../../includes/home/desktop/fcitx5
-    ../../includes/home/desktop/keyd
-    ../../includes/home/desktop/theme.nix
-    ../../includes/home/dev
-    ../../includes/home/dev/ai/codex
-    ../../includes/home/dev/ai/claude
-    ../../includes/home/dev/ai/gemini
-    ../../includes/home/dev/jetbrains
-    ../../includes/home/dev/mise.nix
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/gpg/linux-desktop.nix
-    ../../includes/home/neovim
-    ../../includes/home/network.nix
-    ../../includes/home/sops.nix
-    ../../includes/home/terminal/ghostty
-    ../../includes/home/zsh
+    ../../modules/home
   ];
+
+  dot.home = {
+    # Shell & Editor
+    zsh.enable = true;
+    neovim.enable = true;
+    git.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "qt";
+    };
+    direnv.enable = true;
+    sops.enable = true;
+
+    # Desktop
+    desktop = {
+      enable = true;
+      fcitx5.enable = true;
+      keyd.enable = true;
+      theme.enable = true;
+      browser.vivaldi.enable = true;
+    };
+
+    # Terminal
+    terminal = {
+      enable = true;
+      ghostty.enable = true;
+    };
+
+    # Development
+    dev = {
+      enable = true;
+      jetbrains.enable = true;
+      mise.enable = true;
+      ai = {
+        enable = true;
+        claude.enable = true;
+        codex.enable = true;
+        gemini.enable = true;
+      };
+    };
+
+    # Apps
+    apps.linux.common.enable = true;
+
+    # Other
+    bitwarden.enable = true;
+    network.enable = true;
+  };
 
   targets.genericLinux = {
     enable = true;

@@ -1,9 +1,0 @@
-{ ... }:
-{
-  # nix-darwin's font management does not work well
-  homebrew.casks = [
-    "font-udev-gothic-nf"
-    "font-noto-sans-cjk-jp"
-    "font-noto-serif-cjk-jp"
-  ];
-}

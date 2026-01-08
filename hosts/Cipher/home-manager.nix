@@ -1,21 +1,42 @@
 { ... }:
 {
   imports = [
-    ../../includes/home
-    ../../includes/home/dev
-    ../../includes/home/dev/ai/claude
-    ../../includes/home/dev/ai/codex
-    ../../includes/home/dev/mise.nix
-    ../../includes/home/dev/vscode
-    ../../includes/home/direnv.nix
-    ../../includes/home/git
-    ../../includes/home/gnome-keyring.nix
-    ../../includes/home/neovim
-    ../../includes/home/network.nix
-    ../../includes/home/server/gpg.nix
-    ../../includes/home/server/kdeconnect.nix
-    ../../includes/home/sops.nix
-    ../../includes/home/terminal/ghostty
-    ../../includes/home/zsh
+    ../../modules/home
   ];
+
+  dot.home = {
+    # Shell & Editor
+    zsh.enable = true;
+    neovim.enable = true;
+    git.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "tty";
+    };
+    direnv.enable = true;
+    sops.enable = true;
+
+    # Terminal
+    terminal = {
+      enable = true;
+      ghostty.enable = true;
+    };
+
+    # Development
+    dev = {
+      enable = true;
+      vscode.enable = true;
+      mise.enable = true;
+      ai = {
+        enable = true;
+        claude.enable = true;
+        codex.enable = true;
+      };
+    };
+
+    # Other
+    network.enable = true;
+    gnomeKeyring.enable = true;
+    kdeconnect.enable = true;
+  };
 }

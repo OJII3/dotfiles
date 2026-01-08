@@ -1,22 +1,10 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+# Bronya - Desktop (NVIDIA Prime, Hyprland)
+#
 { inputs, pkgs, ... }:
 {
   imports = [
-    ../../includes/nixos/core
-    ../../includes/nixos/core/networking
-    ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/virtualisation/podman.nix
-    ../../includes/nixos/core/networking/networkmanager.nix
-
-    ../../includes/nixos/desktop
-    ../../includes/nixos/desktop/fonts.nix
-    ../../includes/nixos/desktop/greetd/autologin.nix
-    ../../includes/nixos/desktop/peripheral/keyboard.nix
-    ../../includes/nixos/desktop/sunshine.nix
-    ../../includes/nixos/desktop/waydroid.nix
+    # Main module with options
+    ../../modules/nixos
 
     ./hardware-configuration.nix
   ]
@@ -26,37 +14,54 @@
     common-pc-ssd
   ]);
 
-  # Karnel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
-  networking.interfaces."enp4s0".wakeOnLan.enable = true;
+  # ===== Options-based configuration =====
+  dot = {
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
 
-  # graphics
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-    prime = {
-      # sync.enable = true;
-      # offload.enable = false;
-      offload = {
-        # offload and sync cannot be enabled at the same time
+    networking = {
+      networkManager.enable = true;
+      firewall.ros2.enable = true;
+    };
+
+    desktop = {
+      enable = true;
+      hyprland.enable = true;
+      fonts.enable = true;
+      sunshine.enable = true;
+      waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      greetd = {
         enable = true;
-        enableOffloadCmd = true;
+        greeter = "autologin";
       };
-      # to check, command `sudo lshw -c diplay`
-      intelBusId = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
+    };
+
+    hardware = {
+      gpu = "nvidia";
+      nvidia = {
+        open = true;
+        prime = {
+          enable = true;
+          offload.enable = true;
+          # sync.enable = false;  # offload and sync cannot be enabled at the same time
+          intelBusId = "PCI:0:2:0";
+          nvidiaBusId = "PCI:1:0:0";
+        };
+      };
     };
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  # ===== Host-specific configuration =====
+
+  # Kernel
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+
+  # Wake-on-LAN
+  networking.interfaces."enp4s0".wakeOnLan.enable = true;
+
+  system.stateVersion = "24.05";
 }

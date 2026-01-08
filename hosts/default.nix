@@ -115,15 +115,6 @@ in
         ./Cyrene/nixos-wsl.nix
       ];
     };
-    Lingsha = mkNixosSystem {
-      system = "x86_64-linux";
-      hostname = "Lingsha";
-      username = "ojii3";
-      modules = [
-        ./Lingsha/nixos.nix
-        inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
-      ];
-    };
     Cipher = mkNixosSystem {
       system = "x86_64-linux";
       hostname = "Cipher";

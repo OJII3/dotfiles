@@ -1,33 +1,55 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+# Aglaea - Desktop (AMD GPU, GNOME, ThinkPad)
+#
 { pkgs, ... }:
 {
   imports = [
-    ../../includes/nixos/core
-    ../../includes/nixos/core/boot/systemd-boot.nix
-    ../../includes/nixos/core/networking
-    ../../includes/nixos/core/networking/networkmanager.nix
-    ../../includes/nixos/core/virtualisation/podman.nix
-
-    ../../includes/nixos/desktop/bitwarden.nix
-    ../../includes/nixos/desktop/fonts.nix
-    ../../includes/nixos/desktop/keyd.nix
-    ../../includes/nixos/desktop/peripheral/keyboard.nix
-    ../../includes/nixos/desktop/peripheral/vr.nix
-    ../../includes/nixos/desktop/steam.nix
-    ../../includes/nixos/desktop/sunshine.nix
-    ../../includes/nixos/desktop/waydroid.nix
+    # Main module with options
+    ../../modules/nixos
 
     ./hardware-configuration.nix
   ];
 
+  # ===== Options-based configuration =====
+  dot = {
+    core = {
+      enable = true;
+      boot.loader = "systemd-boot";
+      virtualisation.podman.enable = true;
+    };
+
+    networking = {
+      networkManager.enable = true;
+      firewall.ros2.enable = true;
+    };
+
+    desktop = {
+      enable = true;
+      fonts.enable = true;
+      keyd.enable = true;
+      sunshine.enable = true;
+      waydroid.enable = true;
+      peripheral.keyboard.enable = true;
+      bitwarden.enable = true;
+      gaming = {
+        enable = true;
+        vr.enable = true;
+      };
+    };
+
+    hardware = {
+      gpu = "amd";
+      thinkpad.enable = true;
+    };
+  };
+
+  # ===== Desktop Environment (not yet optionized) =====
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
-  # Karnel.
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen; # for waydroid
+  # ===== Host-specific configuration =====
+
+  # Kernel
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   # Hardware Specific Options
   boot.kernelParams = [
@@ -40,19 +62,6 @@
     linuxKernel.packages.linux_zen.v4l2loopback
   ];
   boot.kernelModules = [ "v4l2loopback" ];
-  hardware.amdgpu.opencl.enable = true;
-  hardware.amdgpu.initrd.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
-  services.thinkfan = {
-    enable = true;
-    smartSupport = true;
-  };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05";
 }
