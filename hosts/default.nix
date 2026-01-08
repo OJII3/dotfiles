@@ -63,6 +63,7 @@ let
     inputs.nix-darwin.lib.darwinSystem {
       inherit system;
       modules = modules ++ [
+        inputs.mac-app-util.darwinModules.default
         {
           nix.enable = false;
           # stateVersion = "6";
@@ -160,7 +161,10 @@ in
     "ojii3@Himeko" = mkHomeManagerConfiguration {
       system = "aarch64-darwin";
       username = "ojii3";
-      overlays = [ inputs.brew-nix.overlays.default ];
+      overlays = [
+        inputs.mac-app-util.homeManagerModules.default
+        inputs.brew-nix.overlays.default
+      ];
       modules = [ ./Himeko/home-manager.nix ];
     };
     "ojii3@Welt" = mkHomeManagerConfiguration {
