@@ -20,7 +20,7 @@
     terminal = {
       enable = true;
       ghostty.enable = true;
-      kitty.enable = true;
+      kitty.enable = false;
     };
 
     # Development
@@ -35,6 +35,11 @@
         gemini.enable = true;
       };
     };
+
+    apps = {
+      common.enable = true;
+    };
+    darwin.apps.enable = true;
   };
 
   programs.zsh.initContent = ''

@@ -11,8 +11,8 @@
       enable = lib.mkEnableOption "JankyBorders window borders";
     };
 
-    skhd = {
-      enable = lib.mkEnableOption "skhd hotkey daemon";
+    apps = {
+      enable = lib.mkEnableOption "Common macOS applications";
     };
   };
 }

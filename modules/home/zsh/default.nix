@@ -67,16 +67,8 @@ in
           "nixpkgs"
           "home-manager"
         ]
-        ++ (
-          if pkgs.stdenv.isDarwin then
-            [
-              "darwin"
-            ]
-          else
-            [
-              "nixos"
-            ]
-        );
+        ++ lib.optionals pkgs.stdenv.isDarwin [ "darwin" ]
+        ++ lib.optionals pkgs.stdenv.isLinux [ "nixos" ];
 
         experimental = {
           render_docs_indexes = {

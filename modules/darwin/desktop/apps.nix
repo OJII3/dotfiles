@@ -16,9 +16,6 @@ in
       casks = [
         "SpaceId"
         "affinity"
-        "chatgpt"
-        "discord"
-        "docker-desktop"
         "figma"
         "firefox"
         "fork"
@@ -26,16 +23,18 @@ in
         "logi-options+"
         "ltspice"
         "obs"
-        "raycast"
         "scroll-reverser"
-        "slack"
         "steam"
         "unity-hub"
         "visual-studio-code"
+        # "chatgpt"
+        # "docker-desktop"
+        # "raycast"
+        # "slack"
       ];
       masApps = {
         tailscale = 1475387142;
-        cloudflare-one-agent = 6443476492;
+        # cloudflare-one-agent = 6443476492;
       };
     };
   };

@@ -9,6 +9,6 @@
     ./options.nix
     ./aerospace
     ./jankyborders
-    ./skhd
+    ./apps.nix
   ];
 }

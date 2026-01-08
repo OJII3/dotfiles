@@ -30,7 +30,7 @@
     ./direnv.nix
     ./git
     ./gnome-keyring.nix
-    ./gpg
+    ./gpg.nix
     ./kdeconnect.nix
     ./kdewallet.nix
     ./neovim
