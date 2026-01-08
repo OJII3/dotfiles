@@ -40,6 +40,8 @@
       common.enable = true;
     };
     darwin.apps.enable = true;
+
+    desktop.kanata.enable = true;
   };
 
   programs.zsh.initContent = ''

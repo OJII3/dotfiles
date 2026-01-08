@@ -41,6 +41,10 @@
       enable = lib.mkEnableOption "Xremap key remapping";
     };
 
+    kanata = {
+      enable = lib.mkEnableOption "Kanata key remapping (cross-platform)";
+    };
+
     theme = {
       enable = lib.mkEnableOption "Desktop theme configuration";
     };

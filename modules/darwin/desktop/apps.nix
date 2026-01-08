@@ -27,6 +27,7 @@ in
         "steam"
         "unity-hub"
         "visual-studio-code"
+        "karabiner-elements"
         # "chatgpt"
         # "docker-desktop"
         # "raycast"

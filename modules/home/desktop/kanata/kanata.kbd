@@ -1,0 +1,22 @@
+;; kanata configuration
+;; Control key as tap-hold: tap = Esc, hold = Control
+
+(defcfg
+  ;; macOS specific settings
+  process-unmapped-keys yes
+)
+
+(defsrc
+  lctl
+)
+
+(defvar
+    ;; 数値(時間)の単位: ms
+    tap-time    200
+    hold-time   200
+)
+
+(defalias
+    ;; 左手：Aキーを長押しでCtrl、短押しでesc
+    lctl (tap-hold-press $tap-time $hold-time lctl esc)
+)
