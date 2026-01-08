@@ -162,10 +162,12 @@ in
       system = "aarch64-darwin";
       username = "ojii3";
       overlays = [
-        inputs.mac-app-util.homeManagerModules.default
         inputs.brew-nix.overlays.default
       ];
-      modules = [ ./Himeko/home-manager.nix ];
+      modules = [
+        inputs.mac-app-util.homeManagerModules.default
+        ./Himeko/home-manager.nix
+      ];
     };
     "ojii3@Welt" = mkHomeManagerConfiguration {
       system = "aarch64-linux";
