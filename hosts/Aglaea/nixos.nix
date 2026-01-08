@@ -3,9 +3,7 @@
 { pkgs, ... }:
 {
   imports = [
-    # Main module with options
     ../../modules/nixos
-
     ./hardware-configuration.nix
   ];
 

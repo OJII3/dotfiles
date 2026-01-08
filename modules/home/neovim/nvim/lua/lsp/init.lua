@@ -21,6 +21,7 @@ local lsp_names = {
 	"jsonls",
 	"lemminx",
 	"nil_ls",
+	"nixd",
 	"lua_ls",
 	"mdx_analyzer",
 	"ty",

@@ -56,6 +56,7 @@ in
         hyprls
         lua-language-server
         nil
+        nixd
         nixfmt
         nodePackages.prettier
         ty
