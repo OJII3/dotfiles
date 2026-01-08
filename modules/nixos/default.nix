@@ -8,7 +8,7 @@
 #
 { config, lib, pkgs, ... }:
 let
-  cfg = config.my;
+  cfg = config.dot;
 in
 {
   # Import all submodules
@@ -20,7 +20,7 @@ in
     ./networking
   ];
 
-  options.my = {
+  options.dot = {
     # Placeholder for future options
     # Each submodule (core, desktop, server, hardware) will define their own options
     # under options.dot.<module>.*

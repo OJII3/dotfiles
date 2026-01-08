@@ -15,7 +15,7 @@ in
   ]);
 
   # ===== Options-based configuration =====
-  my = {
+  dot = {
     core = {
       enable = true;
       audio.enable = false;      # Pi doesn't need PipeWire

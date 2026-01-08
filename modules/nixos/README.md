@@ -175,7 +175,7 @@ modules/nixos/
     ./hardware-configuration.nix
   ];
 
-  my = {
+  dot = {
     core = {
       enable = true;
       boot.loader = "systemd-boot";
@@ -219,7 +219,7 @@ modules/nixos/
     ./hardware-configuration.nix
   ];
 
-  my = {
+  dot = {
     core = {
       enable = true;
       boot.loader = "systemd-boot";
@@ -270,7 +270,7 @@ modules/nixos/
     ./hardware-configuration.nix
   ];
 
-  my = {
+  dot = {
     core = {
       enable = true;
       boot.loader = "systemd-boot";

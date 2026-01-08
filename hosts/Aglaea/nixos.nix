@@ -10,7 +10,7 @@
   ];
 
   # ===== Options-based configuration =====
-  my = {
+  dot = {
     core = {
       enable = true;
       boot.loader = "systemd-boot";

@@ -8,7 +8,7 @@
   ];
 
   # ===== Options-based configuration =====
-  my = {
+  dot = {
     core = {
       enable = true;
       audio.enable = false;      # WSL doesn't need audio
