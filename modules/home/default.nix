@@ -17,7 +17,6 @@
     # Options
     ./options.nix
     # Subdirectories (have their own options.nix)
-    ./darwin
     ./desktop
     ./terminal
     ./dev

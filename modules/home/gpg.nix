@@ -1,11 +1,18 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.home;
-  pinentryPkg = {
-    tty = pkgs.pinentry-tty;
-    qt = pkgs.pinentry-qt;
-    gnome3 = pkgs.pinentry-gnome3;
-  }.${cfg.gpg.pinentryPackage};
+  pinentryPkg =
+    {
+      tty = pkgs.pinentry-tty;
+      qt = pkgs.pinentry-qt;
+      gnome3 = pkgs.pinentry-gnome3;
+    }
+    .${cfg.gpg.pinentryPackage};
 in
 {
   config = lib.mkIf cfg.gpg.enable {

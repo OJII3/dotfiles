@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.dot.home.darwin;
+  cfg = config.dot.home.desktop;
 in
 {
   config = lib.mkIf cfg.aerospace.enable {

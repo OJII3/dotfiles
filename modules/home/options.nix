@@ -22,7 +22,11 @@
     gpg = {
       enable = lib.mkEnableOption "GPG configuration";
       pinentryPackage = lib.mkOption {
-        type = lib.types.enum [ "tty" "qt" "gnome3" ];
+        type = lib.types.enum [
+          "tty"
+          "qt"
+          "gnome3"
+        ];
         default = "gnome3";
         description = "Pinentry package type: tty, qt, or gnome3";
       };
@@ -81,6 +85,10 @@
         gnome = {
           enable = lib.mkEnableOption "GNOME-specific apps";
         };
+      };
+      # macOS-specific apps
+      darwin = {
+        enable = lib.mkEnableOption "macOS-specific apps";
       };
     };
 

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.dot.home.darwin.apps;
+  cfg = config.dot.home.apps;
 in
 {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.darwin.enable {
     home.packages = with pkgs; [
       pngpaste
       chatgpt

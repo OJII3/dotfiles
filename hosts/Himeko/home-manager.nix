@@ -38,8 +38,8 @@
 
     apps = {
       common.enable = true;
+      darwin.enable = true;
     };
-    darwin.apps.enable = true;
 
     desktop.kanata.enable = true;
   };

@@ -54,5 +54,13 @@
         enable = lib.mkEnableOption "Vivaldi browser";
       };
     };
+
+    aerospace = {
+      enable = lib.mkEnableOption "Aerospace window manager";
+    };
+
+    jankyborders = {
+      enable = lib.mkEnableOption "JankyBorders window borders";
+    };
   };
 }

@@ -26,6 +26,8 @@ in
     ./waybar
     ./wlogout
     ./xremap
+    ./jankyborders.nix
+    ./aerospace
   ];
 
   # Base desktop configuration (if needed)
