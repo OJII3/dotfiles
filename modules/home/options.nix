@@ -64,8 +64,13 @@
       enable = lib.mkEnableOption "VR support (OpenComposite)";
     };
 
-    # Linux apps
+    # Apps
     apps = {
+      # Cross-platform (macOS & Linux)
+      common = {
+        enable = lib.mkEnableOption "Common cross-platform apps (JetBrains Toolbox, Slack, etc.)";
+      };
+      # Linux-specific
       linux = {
         common = {
           enable = lib.mkEnableOption "Common Linux desktop apps";

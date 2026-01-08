@@ -26,7 +26,9 @@ modules/home/
 │   ├── default.nix
 │   ├── options.nix
 │   └── */           # ai, jetbrains, vscode, etc.
-├── apps/linux/      # Linux アプリ
+├── apps/
+│   ├── common.nix   # クロスプラットフォームアプリ (macOS & Linux)
+│   └── linux/       # Linux 専用アプリ
 └── *.nix            # ルートレベルモジュール (zsh, neovim, git, etc.)
 ```
 
@@ -87,11 +89,14 @@ modules/home/
       };
     };
 
-    # Linux Apps
-    apps.linux = {
-      common.enable = true;    # 一般的なデスクトップアプリ
-      hyprland.enable = true;  # Hyprland 専用アプリ
-      gnome.enable = true;     # GNOME 専用アプリ
+    # Apps
+    apps = {
+      common.enable = true;    # クロスプラットフォームアプリ (JetBrains Toolbox, Slack 等)
+      linux = {
+        common.enable = true;    # 一般的な Linux デスクトップアプリ
+        hyprland.enable = true;  # Hyprland 専用アプリ
+        gnome.enable = true;     # GNOME 専用アプリ
+      };
     };
 
     # macOS (Darwin)
@@ -134,13 +139,14 @@ modules/home/
 | `vr.enable` | VR サポート (OpenComposite) |
 | `ros2.enable` | ROS2 ロボティクスフレームワーク |
 
-### Linux Apps (`dot.home.apps.linux.*`)
+### Apps (`dot.home.apps.*`)
 
 | オプション | 説明 |
 |-----------|------|
-| `common.enable` | 一般的な Linux デスクトップアプリ (Discord, Blender, VLC 等) |
-| `hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |
-| `gnome.enable` | GNOME 専用アプリ (Firefox 等) |
+| `common.enable` | クロスプラットフォームアプリ (JetBrains Toolbox, Slack, Postman 等) |
+| `linux.common.enable` | 一般的な Linux デスクトップアプリ (Discord, Blender, VLC 等) |
+| `linux.hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |
+| `linux.gnome.enable` | GNOME 専用アプリ (Firefox 等) |
 
 ### Desktop (`dot.home.desktop.*`)
 

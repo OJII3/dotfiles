@@ -22,6 +22,7 @@
     ./terminal
     ./dev
     # Root-level modules
+    ./apps/common.nix
     ./apps/linux/common.nix
     ./apps/linux/gnome.nix
     ./apps/linux/hyprland.nix
