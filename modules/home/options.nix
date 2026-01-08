@@ -73,6 +73,9 @@
         hyprland = {
           enable = lib.mkEnableOption "Hyprland-specific apps";
         };
+        gnome = {
+          enable = lib.mkEnableOption "GNOME-specific apps";
+        };
       };
     };
 

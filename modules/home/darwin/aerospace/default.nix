@@ -1,9 +1,9 @@
-{ lib, ... }:
+{ config, lib, ... }:
+let
+  cfg = config.my.home.darwin;
+in
 {
-  home.file.".config/aerospace/aerospace.toml".source = lib.mkForce ./aerospace.toml;
-  # programs.aerospace = {
-  #   enable = true;
-  #   launchd.enable = true;
-  #   launchd.keepAlive = true;
-  # };
+  config = lib.mkIf cfg.aerospace.enable {
+    home.file.".config/aerospace/aerospace.toml".source = lib.mkForce ./aerospace.toml;
+  };
 }

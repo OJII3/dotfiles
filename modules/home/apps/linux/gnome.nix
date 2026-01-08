@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ config, lib, ... }:
+let
+  cfg = config.my.home.apps.linux;
+in
 {
-  imports = [ ./common.nix ];
-  programs.firefox.enable = true;
+  config = lib.mkIf cfg.gnome.enable {
+    programs.firefox.enable = true;
+  };
 }

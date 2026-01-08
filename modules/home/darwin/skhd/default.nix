@@ -1,6 +1,12 @@
+{ config, lib, ... }:
+let
+  cfg = config.my.home.darwin;
+in
 {
-  services.skhd = {
-    enable = false;
-    config = builtins.readFile ./skhdrc;
+  config = lib.mkIf cfg.skhd.enable {
+    services.skhd = {
+      enable = true;
+      config = builtins.readFile ./skhdrc;
+    };
   };
 }

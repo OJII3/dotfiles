@@ -10,6 +10,10 @@ Home Manager 用のモジュール。`my.home.*` 名前空間でオプション�
 modules/home/
 ├── default.nix      # エントリポイント
 ├── options.nix      # my.home.* オプション定義
+├── darwin/
+│   ├── default.nix  # darwin エントリポイント
+│   ├── options.nix  # my.home.darwin.* オプション定義
+│   └── */           # aerospace, jankyborders, skhd
 ├── desktop/
 │   ├── default.nix  # desktop エントリポイント
 │   ├── options.nix  # my.home.desktop.* オプション定義
@@ -87,6 +91,14 @@ modules/home/
     apps.linux = {
       common.enable = true;    # 一般的なデスクトップアプリ
       hyprland.enable = true;  # Hyprland 専用アプリ
+      gnome.enable = true;     # GNOME 専用アプリ
+    };
+
+    # macOS (Darwin)
+    darwin = {
+      aerospace.enable = true;    # Aerospace window manager
+      jankyborders.enable = true; # JankyBorders
+      skhd.enable = true;         # skhd hotkeys
     };
 
     # Other
@@ -128,6 +140,7 @@ modules/home/
 |-----------|------|
 | `common.enable` | 一般的な Linux デスクトップアプリ (Discord, Blender, VLC 等) |
 | `hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |
+| `gnome.enable` | GNOME 専用アプリ (Firefox 等) |
 
 ### Desktop (`my.home.desktop.*`)
 
@@ -167,3 +180,11 @@ modules/home/
 | `ai.claude.enable` | Claude Code |
 | `ai.codex.enable` | Codex |
 | `ai.gemini.enable` | Gemini |
+
+### Darwin (`my.home.darwin.*`)
+
+| オプション | 説明 |
+|-----------|------|
+| `aerospace.enable` | Aerospace ウィンドウマネージャー |
+| `jankyborders.enable` | JankyBorders ウィンドウボーダー |
+| `skhd.enable` | skhd ホットキーデーモン |

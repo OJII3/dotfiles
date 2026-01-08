@@ -17,11 +17,13 @@
     # Options
     ./options.nix
     # Subdirectories (have their own options.nix)
+    ./darwin
     ./desktop
     ./terminal
     ./dev
     # Root-level modules
     ./apps/linux/common.nix
+    ./apps/linux/gnome.nix
     ./apps/linux/hyprland.nix
     ./bitwarden.nix
     ./direnv.nix
