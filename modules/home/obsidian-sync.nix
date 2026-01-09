@@ -32,7 +32,7 @@ in
       ".config/containers/systemd/obsidian-sync.pod".text = ''
         [Pod]
         PodName=obsidian-sync
-        ${lib.optionalString cfg.exposePort "PublishPort=127.0.0.1:5984:5984"}
+        ${lib.optionalString cfg.exposePort "PublishPort=0.0.0.0:5984:5984"}
       '';
 
       ".config/containers/systemd/couchdb.container".text = ''
