@@ -34,6 +34,7 @@
     ./kdewallet.nix
     ./neovim
     ./network.nix
+    ./obsidian.nix
     ./obsidian-sync.nix
     ./ros2
     ./sops.nix
