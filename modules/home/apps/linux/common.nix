@@ -1,4 +1,10 @@
-{ config, lib, pkgs, pkgs-stable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 let
   cfg = config.dot.home.apps.linux;
 in

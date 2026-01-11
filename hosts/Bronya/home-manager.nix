@@ -49,6 +49,7 @@
 
     # Apps
     apps.linux.hyprland.enable = true;
+    apps.linux.common.enable = true;
 
     # Other
     bitwarden.enable = true;
