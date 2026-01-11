@@ -32,7 +32,6 @@
       hyprland.enable = true;
       fonts.enable = true;
       sunshine.enable = true;
-      waydroid.enable = true;
       peripheral.keyboard.enable = true;
       greetd = {
         enable = true;

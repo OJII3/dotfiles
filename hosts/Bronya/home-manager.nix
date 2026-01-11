@@ -26,18 +26,25 @@
       wlogout.enable = true;
       fcitx5.enable = true;
       theme.enable = true;
+      browser.vivaldi.enable = true;
     };
 
     # Terminal
     terminal = {
       enable = true;
-      kitty.enable = true;
+      ghostty.enable = true;
     };
 
     # Development
     dev = {
       enable = true;
+      jetbrains.enable = true;
       mise.enable = true;
+      ai = {
+        enable = true;
+        claude.enable = true;
+        gemini.enable = true;
+      };
     };
 
     # Apps
@@ -48,14 +55,10 @@
     network.enable = true;
     kdeconnect.enable = true;
     kdewallet.enable = true;
+    obsidian.enable = true;
+    ros2.enable = true;
     vr.enable = true;
   };
-
-  # Host-specific Hyprland config
-  wayland.windowManager.hyprland.extraConfig = ''
-    exec-once = wayvnc 0.0.0.0
-    exec-once = sunshine
-  '';
 
   home.file.".config/uwsm/env".text = ''
     export GBM_BACKEND=nvidia-drm
