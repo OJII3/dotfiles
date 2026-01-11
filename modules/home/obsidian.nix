@@ -4,6 +4,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -43,24 +44,8 @@ let
     '';
   };
 
-  # HI3 Starfall theme (Honkai Impact 3rd inspired)
-  hi3-theme = pkgs.stdenvNoCC.mkDerivation {
-    pname = "obsidian-hi3-theme";
-    version = "1.0.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "OJII3";
-      repo = "obsidian-hi3-theme";
-      rev = "main";
-      sha256 = "sha256-1MayVE0/tk41Ll5X0CK6LHs/u2Junb2ZP7BoalDlQ9Q=";
-    };
-    installPhase = ''
-      runHook preInstall
-      mkdir -p $out
-      cp theme.css $out/theme.css
-      cp manifest.json $out/manifest.json
-      runHook postInstall
-    '';
-  };
+  # HI3 Starfall theme (from flake input)
+  hi3-theme = inputs.obsidian-hi3-theme.packages.${pkgs.system}.default;
 in
 {
   config = lib.mkIf cfg.enable {
