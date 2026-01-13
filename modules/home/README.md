@@ -82,9 +82,10 @@ modules/home/
       jetbrains.enable = true;
       mise.enable = true;
       ai = {
-        enable = true;
+        # enable = true; # ai.* を有効化していれば省略可
         claude.enable = true;
         codex.enable = true;
+        opencode.enable = true;
         gemini.enable = true;
       };
     };
@@ -185,6 +186,7 @@ modules/home/
 | `ai.enable` | AI アシスタント共通パッケージ |
 | `ai.claude.enable` | Claude Code |
 | `ai.codex.enable` | Codex |
+| `ai.opencode.enable` | OpenCode |
 | `ai.gemini.enable` | Gemini |
 
 ### Darwin (`dot.home.darwin.*`)

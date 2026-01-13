@@ -1,9 +1,15 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.dot.home.dev.ai;
+  anyAiEnabled =
+    cfg.enable
+    || cfg.claude.enable
+    || cfg.codex.enable
+    || cfg.opencode.enable
+    || cfg.gemini.enable;
 in
 {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf anyAiEnabled {
     home.packages =
       with pkgs;
       [

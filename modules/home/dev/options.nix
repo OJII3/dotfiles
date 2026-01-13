@@ -28,6 +28,10 @@
         enable = lib.mkEnableOption "Codex AI assistant";
       };
 
+      opencode = {
+        enable = lib.mkEnableOption "OpenCode AI assistant";
+      };
+
       gemini = {
         enable = lib.mkEnableOption "Gemini AI assistant";
       };
