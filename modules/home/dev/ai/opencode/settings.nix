@@ -2,21 +2,28 @@
   permission = {
     bash = {
       "*" = "ask";
-      "rm *" = "ask";
-      "git *" = "allow";
-      "cat *" = "allow";
-      "ls" = "allow";
-      "ls *" = "allow";
-      "mkdir *" = "allow";
-      "rg *" = "allow";
-      "nr *" = "allow";
       "bun *" = "allow";
+      "cat *" = "allow";
       "date *" = "allow";
+      "git *" = "allow";
       "gomi *" = "allow";
+      "ls *" = "allow";
+      "ls" = "allow";
+      "mkdir *" = "allow";
+      "nr *" = "allow";
+      "rg *" = "allow";
+      "rm *" = "ask";
     };
     read = {
       ".dev.vars" = "deny";
+      ".env" = "deny";
     };
+    todoread = "allow";
+    todowrite = "allow";
+    glob = "allow";
+    grep = "allow";
+    webfetch = "allow";
+    websearch = "allow";
     "context7_*" = "allow";
   };
 
@@ -31,9 +38,5 @@
       };
     };
   };
-
-  plugin = [
-    "opencode-gemini-auth@latest"
-    "@shun-shobon/opencode-caffeinate@latest"
-  ];
+  disabled_providers = [ "anthropic" ];
 }
