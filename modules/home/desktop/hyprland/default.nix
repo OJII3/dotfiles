@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.home.desktop;
 in
@@ -38,8 +43,14 @@ in
       recursive = true;
     };
 
-    services.hyprpolkitagent = {
-      enable = true;
+    services = {
+      hyprpolkitagent.enable = true;
+      hyprlauncher = {
+        enable = true;
+        settings = {
+
+        };
+      };
     };
     systemd.user.services.hyprpolkitagent = {
       Unit.After = [ "graphical-session.target" ];

@@ -48,6 +48,21 @@
       enable = lib.mkEnableOption "Bitwarden password manager";
     };
 
+    # Note-taking
+    obsidian = {
+      enable = lib.mkEnableOption "Obsidian note-taking app";
+      vaultName = lib.mkOption {
+        type = lib.types.str;
+        default = "OJII3Vault";
+        description = "Name of the Obsidian vault";
+      };
+      vaultPath = lib.mkOption {
+        type = lib.types.str;
+        default = "Documents/Obsidian/OJII3Vault";
+        description = "Path to the Obsidian vault relative to home directory";
+      };
+    };
+
     # Network
     network = {
       enable = lib.mkEnableOption "Network utilities";

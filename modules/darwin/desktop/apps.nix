@@ -28,6 +28,7 @@ in
         "unity-hub"
         "visual-studio-code"
         "karabiner-elements"
+        "obsidian"
         # "chatgpt"
         # "docker-desktop"
         # "raycast"

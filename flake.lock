@@ -1285,6 +1285,22 @@
     },
     "nixpkgs_14": {
       "locked": {
+        "lastModified": 1767995494,
+        "narHash": "sha256-2EwKigq/8Yfl0D1+BaqsF1qh40DxX+rDdDyw1razX/Q=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "45a1530683263666f42d1de4cdda328109d5a676",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_15": {
+      "locked": {
         "lastModified": 1766840161,
         "narHash": "sha256-Ss/LHpJJsng8vz1Pe33RSGIWUOcqM1fjrehjUkdrWio=",
         "owner": "NixOS",
@@ -1531,6 +1547,25 @@
         "type": "github"
       }
     },
+    "obsidian-hi3-theme": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_14"
+      },
+      "locked": {
+        "lastModified": 1768113061,
+        "narHash": "sha256-QdgT19bPWDtMdcVxzjsdzLc4acO2ZmXrjX68Fll3vgg=",
+        "owner": "OJII3",
+        "repo": "obsidian-hi3-theme",
+        "rev": "035af811085a811592ad3e01010206f0f5bdf658",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OJII3",
+        "ref": "v1.1.1",
+        "repo": "obsidian-hi3-theme",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1600,6 +1635,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
+        "obsidian-hi3-theme": "obsidian-hi3-theme",
         "proxmox-nixos": "proxmox-nixos",
         "sops-nix": "sops-nix"
       }
@@ -1643,7 +1679,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_14"
+        "nixpkgs": "nixpkgs_15"
       },
       "locked": {
         "lastModified": 1766894905,

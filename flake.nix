@@ -42,6 +42,7 @@
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
+    obsidian-hi3-theme.url = "github:OJII3/obsidian-hi3-theme/v1.1.1";
   };
 
   outputs = inputs: {

@@ -41,6 +41,8 @@
       darwin.enable = true;
     };
 
+    obsidian.enable = true;
+
     desktop.kanata.enable = true;
   };
 
