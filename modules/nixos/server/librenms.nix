@@ -7,7 +7,7 @@
 #   dot.server.librenms.port           - Port for web interface (default: 8080)
 #   dot.server.librenms.openFirewall   - Open firewall ports
 #
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   cfg = config.dot.server.librenms;
 in
@@ -49,8 +49,14 @@ in
       # nginx virtual host configuration
       nginx = {
         listen = [
-          { addr = "0.0.0.0"; port = cfg.port; }
-          { addr = "[::]"; port = cfg.port; }
+          {
+            addr = "0.0.0.0";
+            port = cfg.port;
+          }
+          {
+            addr = "[::]";
+            port = cfg.port;
+          }
         ];
       };
 
