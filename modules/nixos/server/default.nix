@@ -6,12 +6,19 @@
 #   dot.server.autologin.enable - Enable auto-login via greetd
 #   dot.server.autologin.user  - User for auto-login
 #   dot.server.adguardHome.enable - Enable AdGuard Home DNS
+#   dot.server.zabbix.enable   - Enable Zabbix monitoring server
+#   dot.server.librenms.enable - Enable LibreNMS network monitoring
 #
 { config, lib, pkgs, username ? "ojii3", ... }:
 let
   cfg = config.dot.server;
 in
 {
+  imports = [
+    ./zabbix.nix
+    ./librenms.nix
+  ];
+
   options.dot.server = {
     enable = lib.mkEnableOption "server configuration";
 
