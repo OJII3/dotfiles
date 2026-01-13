@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.home.dev.ai;
 in
@@ -7,5 +12,7 @@ in
     home.packages = with pkgs; [
       codex
     ];
+
+    home.file.".codex/AGENTS.md".source = ./AGENTS.md;
   };
 }
