@@ -1,7 +1,11 @@
-{ inputs, config, lib, ... }:
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.dot.home;
-  sopsSecrets = config.sops.secrets;
 in
 {
   imports = [
@@ -20,22 +24,6 @@ in
       secrets.anthropic_api_key = { };
       secrets.morph_api_key = { };
       secrets.context7_api_key = { };
-
-      # Obsidian Sync secrets
-      secrets.obsidian_sync_couchdb_password = lib.mkIf cfg.obsidianSync.enable { };
-      secrets.obsidian_sync_cloudflared_token = lib.mkIf cfg.obsidianSync.enable { };
-
-      # Obsidian Sync templates (generate env files from secrets)
-      templates."obsidian-sync-couchdb.env" = lib.mkIf cfg.obsidianSync.enable {
-        content = ''
-          COUCHDB_PASSWORD=${config.sops.placeholder.obsidian_sync_couchdb_password}
-        '';
-      };
-      templates."obsidian-sync-cloudflared.env" = lib.mkIf cfg.obsidianSync.enable {
-        content = ''
-          TUNNEL_TOKEN=${config.sops.placeholder.obsidian_sync_cloudflared_token}
-        '';
-      };
     };
 
     systemd.user.services.sops-nix = {

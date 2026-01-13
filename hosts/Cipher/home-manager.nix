@@ -38,8 +38,5 @@
     network.enable = true;
     gnomeKeyring.enable = true;
     kdeconnect.enable = true;
-    obsidianSync = {
-      enable = true;
-    };
   };
 }

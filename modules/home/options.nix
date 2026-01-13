@@ -112,39 +112,5 @@
     ros2 = {
       enable = lib.mkEnableOption "ROS2 robotics framework";
     };
-
-    # Obsidian Self-hosted LiveSync
-    obsidianSync = {
-      enable = lib.mkEnableOption "Obsidian Self-hosted LiveSync (CouchDB + Cloudflare Tunnel)";
-      couchdb = {
-        user = lib.mkOption {
-          type = lib.types.str;
-          default = "admin";
-          description = "CouchDB admin username";
-        };
-        dataDir = lib.mkOption {
-          type = lib.types.str;
-          default = "couchdb/data";
-          description = "CouchDB data directory relative to home";
-        };
-        memoryLimit = lib.mkOption {
-          type = lib.types.nullOr lib.types.str;
-          default = "512m";
-          description = "Memory limit for CouchDB container (e.g., '512m', '1g'). Set to null to disable.";
-        };
-      };
-      autoUpdate = {
-        enable = lib.mkOption {
-          type = lib.types.bool;
-          default = true;
-          description = "Enable automatic container updates via podman auto-update";
-        };
-      };
-      exposePort = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Expose CouchDB port 5984 to localhost for debugging";
-      };
-    };
   };
 }
