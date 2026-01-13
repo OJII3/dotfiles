@@ -1,78 +1,17 @@
 # NixOS Networking modules
 # Network configuration with firewall, Tailscale, DNS, and NetworkManager.
 #
-# Options:
-#   dot.networking.enable              - Enable networking configuration
-#   dot.networking.firewall.enable     - Enable firewall
-#   dot.networking.tailscale.enable    - Enable Tailscale VPN
-#   dot.networking.dns.resolved.enable - Enable systemd-resolved with DoT
-#   dot.networking.networkManager.enable - Enable NetworkManager
-#   dot.networking.warp.enable         - Enable Cloudflare WARP
+# Options: See ./options.nix
 #
-{ config, lib, pkgs, hostname, ... }:
+{ config, lib, hostname, ... }:
 let
   cfg = config.dot.networking;
 in
 {
-  options.dot.networking = {
-    enable = lib.mkEnableOption "networking configuration" // {
-      default = true;
-    };
-
-    firewall = {
-      enable = lib.mkEnableOption "firewall" // {
-        default = true;
-      };
-
-      kdeConnect = {
-        enable = lib.mkEnableOption "KDE Connect ports (1714-1764)" // {
-          default = true;
-        };
-      };
-
-      ros2 = {
-        enable = lib.mkEnableOption "ROS 2 UDP ports (all)" // {
-          default = false;  # Security: disabled by default
-        };
-      };
-    };
-
-    tailscale = {
-      enable = lib.mkEnableOption "Tailscale VPN" // {
-        default = true;
-      };
-    };
-
-    dns = {
-      resolved = {
-        enable = lib.mkEnableOption "systemd-resolved with DNS over TLS" // {
-          default = true;
-        };
-      };
-    };
-
-    networkManager = {
-      enable = lib.mkEnableOption "NetworkManager" // {
-        default = false;  # Servers typically use systemd-networkd
-      };
-
-      wifi = {
-        randomizeMac = lib.mkEnableOption "randomize WiFi MAC address" // {
-          default = true;
-        };
-
-        powersave = lib.mkEnableOption "WiFi power saving" // {
-          default = false;
-        };
-      };
-    };
-
-    warp = {
-      enable = lib.mkEnableOption "Cloudflare WARP" // {
-        default = false;
-      };
-    };
-  };
+  imports = [
+    ./options.nix
+    ./snmpd.nix
+  ];
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
     # Base configuration

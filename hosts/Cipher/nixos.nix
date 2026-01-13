@@ -19,8 +19,8 @@
     core = {
       enable = true;
       boot.loader = "systemd-boot";
-      audio.enable = false;      # Headless server
-      bluetooth.enable = false;  # No Bluetooth needed
+      audio.enable = false; # Headless server
+      bluetooth.enable = false; # No Bluetooth needed
       ssh.enable = true;
       virtualisation.podman.enable = true;
     };
@@ -28,6 +28,7 @@
     networking = {
       # Server uses systemd-networkd, not NetworkManager
       networkManager.enable = false;
+      snmpd.enable = true;
     };
 
     server = {
