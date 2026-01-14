@@ -63,7 +63,6 @@ let
     inputs.nix-darwin.lib.darwinSystem {
       inherit system;
       modules = modules ++ [
-        inputs.mac-app-util.darwinModules.default
         {
           nix.enable = false;
           # stateVersion = "6";
@@ -165,7 +164,6 @@ in
         inputs.brew-nix.overlays.default
       ];
       modules = [
-        inputs.mac-app-util.homeManagerModules.default
         ./Himeko/home-manager.nix
       ];
     };

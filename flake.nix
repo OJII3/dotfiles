@@ -38,7 +38,6 @@
       url = "github:BatteredBunny/brew-api";
       flake = false;
     };
-    mac-app-util.url = "github:hraban/mac-app-util";
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
