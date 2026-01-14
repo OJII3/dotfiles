@@ -15,8 +15,6 @@ in
       jetbrains-toolbox
       logisim-evolution
       postman
-      raycast
-      slack
     ];
 
     programs = {

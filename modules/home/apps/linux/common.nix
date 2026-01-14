@@ -21,9 +21,10 @@ in
       moonlight-qt
       mpv
       pkgs-stable.blender
+      slack
+      unityhub
       vlc
       voicevox
-      unityhub
     ];
 
     programs = {

@@ -11,7 +11,6 @@ in
   config = lib.mkIf cfg.darwin.enable {
     home.packages = with pkgs; [
       pngpaste
-      chatgpt
     ];
   };
 }
