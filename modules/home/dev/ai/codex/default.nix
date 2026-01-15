@@ -35,7 +35,7 @@ in
       # ~/.codex は writable のまま維持し、config.toml を symlink にしない
       # seed 優先の深い fill-missing でマージする
       ${pythonWithTomlkit}/bin/python ${./merge_codex_config.py} \
-        --seed '${seedPath}' \
+        --seed '${seedToml}' \
         --config '${codexConfigPath}'
     '';
   };
