@@ -6,16 +6,8 @@
 }:
 let
   cfg = config.dot.home.dev.ai;
-  tomlFormat = pkgs.formats.toml { };
-  seedToml = tomlFormat.generate "codex-seed.toml" {
-    approval_policy = "on-request";
-    sandbox_mode = "workspace-write";
-    features = {
-      web_search_request = true;
-    };
-  };
+  seedToml = ./config.toml;
   pythonWithTomlkit = pkgs.python3.withPackages (ps: [ ps.tomlkit ]);
-  seedPath = "${config.xdg.configHome}/codex/seed.toml";
   codexConfigPath = "${config.home.homeDirectory}/.codex/config.toml";
 in
 {
@@ -24,12 +16,17 @@ in
       bun
       pythonWithTomlkit
     ];
-    programs.zsh.shellAliases = {
-      codex = "bun x @openai/codex";
+    programs.zsh = {
+      shellAliases = {
+        codex = "bun x @openai/codex";
+      };
     };
 
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
-    xdg.configFile."codex/seed.toml".source = seedToml;
+    home.file.".codex/scripts" = {
+      source = ./scripts;
+      recursive = true;
+    };
 
     home.activation.codexSeedMerge = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       # ~/.codex は writable のまま維持し、config.toml を symlink にしない

@@ -47,7 +47,7 @@ get_repo_info() {
         REMOTE_URL=$(git remote get-url origin 2>/dev/null)
 
         if [ -n "$REMOTE_URL" ]; then
-            REPO_NAME=$(echo "$REMOTE_URL" | sed -E 's#.*/([^/]+?)(\.git)?$#\1#')
+            REPO_NAME=$(echo "$REMOTE_URL" | sed -E 's#.*/([^/]+)(\.git)?$#\1#')
         fi
 
         if [ -z "$REPO_NAME" ]; then
