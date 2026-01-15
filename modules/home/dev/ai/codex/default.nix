@@ -10,8 +10,11 @@ in
 {
   config = lib.mkIf cfg.codex.enable {
     home.packages = with pkgs; [
-      codex
+      bun
     ];
+    programs.zsh.shellAliases = {
+      codex = "bun x @openai/codex";
+    };
 
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
   };
