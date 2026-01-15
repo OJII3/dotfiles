@@ -16,10 +16,6 @@ inherit = "core"
 include_only = ["PATH","HOME","USER"]
 exclude = ["AWS_*","AZURE_*","*TOKEN*","*SECRET*","*KEY*"]
 
-[mcp_servers.arxiv]
-command = "uvx"
-args = ["arxiv-mcp-server"]
-
 [mcp_servers.context7]
 command = "bunx"
 args = ["-y", "@upstash/context7-mcp@latest"]
@@ -27,10 +23,6 @@ args = ["-y", "@upstash/context7-mcp@latest"]
 [mcp_servers.voicevox]
 command = "bunx"
 args = ["-y", "@t09tanaka/mcp-simple-voicevox"]
-
-[mcp_servers.figma]
-command = "bunx"
-args = ["-y", "mcp-remote", "http://127.0.0.1:3845/mcp"]
 
 [mcp_servers.devtools]
 command = "bunx"
