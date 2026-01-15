@@ -5,7 +5,16 @@ from pathlib import Path
 import tempfile
 
 from tomlkit import dumps, parse
-from tomlkit.items import InlineTable, Table
+from tomlkit.items import AoT, Array, InlineTable, Table
+
+
+def merge_arrays(seed_value, existing_value):
+    merged = []
+    for item in list(seed_value) + list(existing_value):
+        if any(item == seen for seen in merged):
+            continue
+        merged.append(item)
+    return merged
 
 
 def deep_fill_missing(seed, existing):
@@ -16,6 +25,9 @@ def deep_fill_missing(seed, existing):
         seed_value = seed[key]
         if isinstance(seed_value, (Table, InlineTable)) and isinstance(value, (Table, InlineTable)):
             deep_fill_missing(seed_value, value)
+            continue
+        if isinstance(seed_value, (Array, AoT, list)) and isinstance(value, (Array, AoT, list)):
+            seed[key] = merge_arrays(seed_value, value)
 
 
 def atomic_write(path: Path, content: str) -> None:
