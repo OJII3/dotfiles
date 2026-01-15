@@ -14,8 +14,8 @@ in
         cleanup = "uninstall";
       };
       casks = [
-        "SpaceId"
         "affinity"
+        "antigravity"
         "chatgpt"
         "discord"
         "figma"
@@ -30,6 +30,7 @@ in
         "raycast"
         "scroll-reverser"
         "slack"
+        "spaceid"
         "steam"
         "unity-hub"
         "visual-studio-code"
