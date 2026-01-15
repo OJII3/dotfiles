@@ -9,6 +9,8 @@ let
   seedToml = ./config.toml;
   pythonWithTomlkit = pkgs.python3.withPackages (ps: [ ps.tomlkit ]);
   codexConfigPath = "${config.home.homeDirectory}/.codex/config.toml";
+  codexCommand =
+    if pkgs.stdenv.isDarwin then "PATH=/usr/bin:$PATH bun x @openai/codex" else "bun x @openai/codex";
 in
 {
   config = lib.mkIf cfg.codex.enable {
@@ -18,7 +20,7 @@ in
     ];
     programs.zsh = {
       shellAliases = {
-        codex = "bun x @openai/codex";
+        codex = codexCommand;
       };
     };
 
