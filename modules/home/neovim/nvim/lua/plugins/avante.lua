@@ -3,9 +3,9 @@ return {
 	event = "VeryLazy",
 	version = false, -- set this if you want to always pull the latest change
 	opts = {
-		provider = "copilot",
+		provider = "codex",
 		-- provider = "gemini",
-		-- auto_suggestions_provider = "copilot",
+		auto_suggestions_provider = "codex",
 		providers = {
 			copilot = {
 				model = "claude-sonnet-4.5",
@@ -47,12 +47,12 @@ return {
 					NODE_NO_WARNINGS = "1",
 				},
 			},
-			["claude-code"] = {
-				command = "claude-code-acp",
-				env = {
-					NODE_NO_WARNINGS = "1",
-				},
-			},
+			-- ["claude-code"] = {
+			-- 	command = "claude-code-acp",
+			-- 	env = {
+			-- 		NODE_NO_WARNINGS = "1",
+			-- 	},
+			-- },
 		},
 		file_selector = {
 			provider = "telescope",
