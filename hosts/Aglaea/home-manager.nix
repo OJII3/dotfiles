@@ -43,6 +43,14 @@
       };
     };
 
+    app = {
+      common.enable = true;
+      linux = {
+        common.enable = true;
+        gnome.enable = true;
+      };
+    };
+
     # Other
     bitwarden.enable = true;
     network.enable = true;
