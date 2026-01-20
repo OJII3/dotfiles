@@ -43,7 +43,7 @@
       };
     };
 
-    app = {
+    apps = {
       common.enable = true;
       linux = {
         common.enable = true;
