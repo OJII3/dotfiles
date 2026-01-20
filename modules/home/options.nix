@@ -16,6 +16,13 @@
     # Version control
     git = {
       enable = lib.mkEnableOption "Git configuration";
+      tty = {
+        enable = lib.mkEnableOption {
+          type = lib.types.bool;
+          default = false;
+          description = "TTY-specific Git settings";
+        };
+      };
     };
 
     # GPG

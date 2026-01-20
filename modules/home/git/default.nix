@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.dot.home;
 in
@@ -26,11 +31,11 @@ in
           defaultBranch = "main";
         };
         user = {
-          signingKey = "37547FAD690A6133";
+          signingKey = if config.dot.home.git.tty.enable then "~/.ssh/id_ed25519.pub" else "37547FAD690A6133";
         };
-        commit = {
-          gpgSign = true;
-        };
+        commit.gpgSign = true;
+        tag.gpgSign = true;
+        gpg.format = lib.mkIf config.dot.home.git.tty.enable "ssh";
         ghq = {
           root = "~/src";
         };

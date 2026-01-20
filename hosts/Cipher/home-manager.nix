@@ -8,7 +8,10 @@
     # Shell & Editor
     zsh.enable = true;
     neovim.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      tty.enable = true;
+    };
     gpg = {
       enable = true;
       pinentryPackage = "tty";
