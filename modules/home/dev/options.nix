@@ -17,24 +17,5 @@
       enable = lib.mkEnableOption "mise version manager";
     };
 
-    ai = {
-      enable = lib.mkEnableOption "AI coding assistants (common packages)";
-
-      claude = {
-        enable = lib.mkEnableOption "Claude Code AI assistant";
-      };
-
-      codex = {
-        enable = lib.mkEnableOption "Codex AI assistant";
-      };
-
-      opencode = {
-        enable = lib.mkEnableOption "OpenCode AI assistant";
-      };
-
-      gemini = {
-        enable = lib.mkEnableOption "Gemini AI assistant";
-      };
-    };
   };
 }
