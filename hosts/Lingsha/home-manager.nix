@@ -34,11 +34,11 @@
     dev = {
       enable = true;
       mise.enable = true;
-      ai = {
-        enable = true;
-        codex.enable = true;
-        gemini.enable = true;
-      };
+    };
+
+    ai = {
+      codex.enable = true;
+      gemini.enable = true;
     };
 
     # Apps

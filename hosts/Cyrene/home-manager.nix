@@ -36,13 +36,13 @@
       enable = true;
       jetbrains.enable = true;
       mise.enable = true;
+    };
+
       ai = {
-        enable = true;
         claude.enable = true;
         codex.enable = true;
         gemini.enable = true;
       };
-    };
 
     # Apps
     apps.linux.common.enable = true;

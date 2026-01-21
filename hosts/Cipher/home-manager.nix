@@ -30,11 +30,12 @@
       enable = true;
       vscode.enable = true;
       mise.enable = true;
-      ai = {
-        enable = true;
-        claude.enable = true;
-        codex.enable = true;
-      };
+    };
+
+    ai = {
+      claude.enable = true;
+      codex.enable = true;
+      gemini.enable = true;
     };
 
     # Other

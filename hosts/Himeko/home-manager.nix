@@ -28,14 +28,14 @@
       enable = true;
       jetbrains.enable = true;
       mise.enable = true;
+    };
+
       ai = {
-        enable = true;
         claude.enable = true;
         codex.enable = true;
         gemini.enable = true;
         opencode.enable = true;
       };
-    };
 
     apps = {
       common.enable = true;
