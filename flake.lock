@@ -1,16 +1,21 @@
 {
   "nodes": {
-    "anthropic-skills": {
+    "anthropics-skills": {
       "flake": false,
       "locked": {
-        "path": "github.com/anthropic/skills/main",
-        "type": "path"
+        "lastModified": 1766254184,
+        "narHash": "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=",
+        "owner": "anthropics",
+        "repo": "skills",
+        "rev": "69c0b1a0674149f27b61b2635f935524b6add202",
+        "type": "github"
       },
       "original": {
-        "path": "github.com/anthropic/skills/main",
-        "type": "path"
-      },
-      "parent": []
+        "owner": "anthropics",
+        "ref": "main",
+        "repo": "skills",
+        "type": "github"
+      }
     },
     "aquamarine": {
       "inputs": {
@@ -1448,7 +1453,7 @@
     },
     "root": {
       "inputs": {
-        "anthropic-skills": "anthropic-skills",
+        "anthropics-skills": "anthropics-skills",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
         "confetti": "confetti",
