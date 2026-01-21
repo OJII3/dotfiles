@@ -22,10 +22,14 @@ modules/home/
 │   ├── default.nix
 │   ├── options.nix
 │   └── */           # ghostty, kitty, wezterm
+├── ai/
+│   ├── default.nix
+│   ├── options.nix
+│   └── */           # claude, codex, opencode, gemini
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # ai, jetbrains, vscode, etc.
+│   └── */           # jetbrains, vscode, etc.
 ├── apps/
 │   ├── common.nix   # クロスプラットフォームアプリ (macOS & Linux)
 │   └── linux/       # Linux 専用アプリ
@@ -81,13 +85,14 @@ modules/home/
       vscode.enable = true;
       jetbrains.enable = true;
       mise.enable = true;
-      ai = {
-        # enable = true; # ai.* を有効化していれば省略可
-        claude.enable = true;
-        codex.enable = true;
-        opencode.enable = true;
-        gemini.enable = true;
-      };
+    };
+
+    # AI
+    ai = {
+      claude.enable = true;
+      codex.enable = true;
+      opencode.enable = true;
+      gemini.enable = true;
     };
 
     # Apps
@@ -183,11 +188,15 @@ modules/home/
 | `vscode.enable` | VS Code |
 | `jetbrains.enable` | JetBrains IDE 設定 |
 | `mise.enable` | mise バージョンマネージャー |
-| `ai.enable` | AI アシスタント共通パッケージ |
-| `ai.claude.enable` | Claude Code |
-| `ai.codex.enable` | Codex |
-| `ai.opencode.enable` | OpenCode |
-| `ai.gemini.enable` | Gemini |
+
+### AI (`dot.home.ai.*`)
+
+| オプション | 説明 |
+|-----------|------|
+| `claude.enable` | Claude Code |
+| `codex.enable` | Codex |
+| `opencode.enable` | OpenCode |
+| `gemini.enable` | Gemini |
 
 ### Darwin (`dot.home.darwin.*`)
 

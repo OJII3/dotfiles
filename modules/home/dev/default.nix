@@ -10,11 +10,6 @@ in
 {
   imports = [
     ./options.nix
-    ./ai/common.nix
-    ./ai/claude
-    ./ai/codex
-    ./ai/opencode
-    ./ai/gemini
     ./jetbrains
     ./mise.nix
     ./vscode

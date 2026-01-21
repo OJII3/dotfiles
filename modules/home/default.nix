@@ -20,6 +20,7 @@
     ./desktop
     ./terminal
     ./dev
+    ./ai
     # Root-level modules
     ./apps/common.nix
     ./apps/linux/common.nix
