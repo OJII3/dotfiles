@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.home.ai;
   commonPackages =
@@ -19,7 +24,7 @@ in
 {
   config = lib.mkIf cfg.gemini.enable {
     home.packages = commonPackages ++ [
-      gemini-cli-bin
+      pkgs.gemini-cli-bin
     ];
 
     home.file.".gemini/settings.json".source = ./settings.json;

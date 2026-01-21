@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   cfg = config.dot.home.desktop;
 in
@@ -24,7 +30,6 @@ in
           { package = ext.kimpanel; }
           { package = ext.tailscale-status; }
           { package = ext.color-picker; }
-          { package = ext.claude-code-usage-indicator; }
           { package = ext.vicinae; }
           { package = inputs.confetti.packages.${pkgs.stdenv.hostPlatform.system}.gnome-extension; }
         ];

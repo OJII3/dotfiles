@@ -1,4 +1,10 @@
-{ config, lib, pkgs, pkgs-stable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 let
   cfg = config.dot.home.desktop;
 in
@@ -26,10 +32,6 @@ in
     };
 
     qt = {
-      enable = true;
-    };
-
-    services.darkman = {
       enable = true;
     };
   };
