@@ -1,5 +1,17 @@
 {
   "nodes": {
+    "anthropic-skills": {
+      "flake": false,
+      "locked": {
+        "path": "github.com/anthropic/skills/main",
+        "type": "path"
+      },
+      "original": {
+        "path": "github.com/anthropic/skills/main",
+        "type": "path"
+      },
+      "parent": []
+    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -1436,6 +1448,7 @@
     },
     "root": {
       "inputs": {
+        "anthropic-skills": "anthropic-skills",
         "brew-api": "brew-api",
         "brew-nix": "brew-nix",
         "confetti": "confetti",

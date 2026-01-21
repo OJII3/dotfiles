@@ -42,6 +42,10 @@
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
     obsidian-hi3-theme.url = "github:OJII3/obsidian-hi3-theme/v1.1.1";
+    anthropic-skills = {
+      url = "github.com/anthropic/skills/main";
+      flake = false;
+    };
   };
 
   outputs = inputs: {

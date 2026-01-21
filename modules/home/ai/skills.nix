@@ -85,7 +85,7 @@ let
   ];
 
   # スキルディレクトリの作成
-  mkSkillLinks = builtins.listToAttrs (
+  mkClaudeSkillLinks = builtins.listToAttrs (
     map (skill: {
       name = ".claude/skills/${skill.name}";
       value = {
@@ -94,7 +94,17 @@ let
       };
     }) skills
   );
+
+  mkCodexSkillLinks = builtins.listToAttrs (
+    map (skill: {
+      name = ".codex/skills/${skill.name}";
+      value = {
+        source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
+        recursive = true;
+      };
+    }) skills
+  );
 in
 {
-  home.file = mkSkillLinks;
+  home.file = mkClaudeSkillLinks // mkCodexSkillLinks;
 }
