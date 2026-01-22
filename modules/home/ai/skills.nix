@@ -1,6 +1,22 @@
 { inputs, pkgs, ... }:
 
 let
+  # ローカルスキルディレクトリ
+  localSkillsDir = ./skills;
+
+  # ローカルスキルの自動検出
+  # ./skills/<skill-name>/ に配置されたスキルを検出
+  localSkills =
+    let
+      dirExists = builtins.pathExists localSkillsDir;
+      entries = if dirExists then builtins.readDir localSkillsDir else { };
+      skillNames = builtins.attrNames (pkgs.lib.filterAttrs (name: type: type == "directory") entries);
+    in
+    map (name: {
+      inherit name;
+      src = localSkillsDir + "/${name}";
+    }) skillNames;
+
   # # 共通ソースの定義
   # anthropics-skills-src = pkgs.fetchFromGitHub {
   #   owner = "anthropics";
@@ -9,8 +25,8 @@ let
   #   sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
   # };
   #
-  # Agent Skills の定義
-  skills = [
+  # リモート Agent Skills の定義
+  remoteSkills = [
     # 例: スキルを追加する場合
     # {
     #   name = "example-skill";
@@ -84,6 +100,9 @@ let
     }
   ];
 
+  # ローカルスキルとリモートスキルを結合
+  allSkills = localSkills ++ remoteSkills;
+
   # スキルディレクトリの作成
   mkClaudeSkillLinks = builtins.listToAttrs (
     map (skill: {
@@ -92,7 +111,7 @@ let
         source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
         recursive = true;
       };
-    }) skills
+    }) allSkills
   );
 
   mkCodexSkillLinks = builtins.listToAttrs (
@@ -102,7 +121,7 @@ let
         source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
         recursive = true;
       };
-    }) skills
+    }) allSkills
   );
 in
 {
