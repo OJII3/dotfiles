@@ -7,14 +7,11 @@
 let
   cfg = config.dot.home.ai;
   seedToml = ./config.toml;
-  pythonWithTomlkit = pkgs.python3.withPackages (ps: [ ps.tomlkit ]);
   codexConfigPath = "${config.home.homeDirectory}/.codex/config.toml";
+  generateConfigScript = ./generate_config.sh;
 in
 {
   config = lib.mkIf cfg.codex.enable {
-    home.packages = [
-      pythonWithTomlkit
-    ];
     programs.zsh = {
       shellAliases = {
         codex = "bun x @openai/codex";
@@ -27,12 +24,12 @@ in
       recursive = true;
     };
 
-    home.activation.codexSeedMerge = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      # ~/.codex は writable のまま維持し、config.toml を symlink にしない
-      # seed 優先の深い fill-missing でマージする
-      ${pythonWithTomlkit}/bin/python ${./merge_codex_config.py} \
-        --seed '${seedToml}' \
-        --config '${codexConfigPath}'
+    home.activation.codexConfigGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      # ghq で管理されている全リポジトリを trusted として config.toml を生成
+      PATH="${config.home.profileDirectory}/bin:$PATH" \
+        ${pkgs.bash}/bin/bash ${generateConfigScript} \
+        '${seedToml}' \
+        '${codexConfigPath}'
     '';
   };
 }
