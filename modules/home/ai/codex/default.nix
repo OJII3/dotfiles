@@ -28,7 +28,9 @@ in
       # ghq で管理されている全リポジトリを trusted として config.toml を生成
       ${pkgs.bash}/bin/bash ${generateConfigScript} \
         '${seedToml}' \
-        '${codexConfigPath}'
+        '${codexConfigPath}' \
+        '${pkgs.ghq}/bin/ghq' \
+        '${pkgs.findutils}/bin/find'
     '';
   };
 }
