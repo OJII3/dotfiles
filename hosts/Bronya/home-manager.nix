@@ -67,5 +67,5 @@
     export __GLX_VENDOR_LIBRARY_NAME=nvidia
   '';
 
-  stateVersion = "24.11";
+  home.stateVersion = "24.11";
 }
