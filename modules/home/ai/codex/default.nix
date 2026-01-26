@@ -26,11 +26,10 @@ in
 
     home.activation.codexConfigGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       # ghq で管理されている全リポジトリを trusted として config.toml を生成
-      ${pkgs.bash}/bin/bash ${generateConfigScript} \
+      PATH="${config.home.profileDirectory}/bin:$PATH" \
+        ${pkgs.bash}/bin/bash ${generateConfigScript} \
         '${seedToml}' \
-        '${codexConfigPath}' \
-        '${pkgs.ghq}/bin/ghq' \
-        '${pkgs.findutils}/bin/find'
+        '${codexConfigPath}'
     '';
   };
 }

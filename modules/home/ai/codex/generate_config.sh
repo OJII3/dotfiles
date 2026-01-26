@@ -3,8 +3,6 @@ set -euo pipefail
 
 SEED_TOML="$1"
 CONFIG_PATH="$2"
-GHQ_BIN="$3"
-FIND_BIN="$4"
 
 mkdir -p "$(dirname "$CONFIG_PATH")"
 
@@ -12,7 +10,7 @@ mkdir -p "$(dirname "$CONFIG_PATH")"
 cat "$SEED_TOML" > "$CONFIG_PATH"
 
 # Add trusted repositories from ghq
-ghq_root="$("$GHQ_BIN" root 2>/dev/null || echo "")"
+ghq_root="$(ghq root 2>/dev/null || echo "")"
 if [[ -n "$ghq_root" && -d "$ghq_root" ]]; then
   echo "" >> "$CONFIG_PATH"
   echo "# Auto-generated trusted repositories from ghq" >> "$CONFIG_PATH"
@@ -24,7 +22,7 @@ if [[ -n "$ghq_root" && -d "$ghq_root" ]]; then
     echo "[projects.\"$escaped_path\"]" >> "$CONFIG_PATH"
     echo 'trust_level = "trusted"' >> "$CONFIG_PATH"
     echo "" >> "$CONFIG_PATH"
-  done < <("$FIND_BIN" "$ghq_root" -mindepth 3 -maxdepth 3 -type d 2>/dev/null | sort)
+  done < <(find "$ghq_root" -mindepth 3 -maxdepth 3 -type d 2>/dev/null | sort)
 fi
 
 chmod 600 "$CONFIG_PATH"
