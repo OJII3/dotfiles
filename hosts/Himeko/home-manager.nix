@@ -50,4 +50,7 @@
   programs.zsh.initContent = ''
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
+
+
+  stateVersion = "24.11";
 }

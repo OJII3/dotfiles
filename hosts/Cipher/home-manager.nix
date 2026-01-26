@@ -43,4 +43,7 @@
     gnomeKeyring.enable = true;
     kdeconnect.enable = true;
   };
+
+
+  stateVersion = "24.11";
 }

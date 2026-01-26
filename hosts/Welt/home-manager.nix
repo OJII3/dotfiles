@@ -26,4 +26,7 @@
   home.packages = with pkgs; [
     toybox
   ];
+
+
+  stateVersion = "24.11";
 }

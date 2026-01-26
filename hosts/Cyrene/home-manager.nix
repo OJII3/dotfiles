@@ -62,4 +62,7 @@
   programs.zsh.initContent = ''
     [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
   '';
+
+
+  stateVersion = "24.11";
 }

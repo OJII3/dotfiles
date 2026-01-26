@@ -57,4 +57,7 @@
     obsidian.enable = true;
     ros2.enable = true;
   };
+
+
+  stateVersion = "24.11";
 }
