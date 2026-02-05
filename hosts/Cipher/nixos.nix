@@ -36,11 +36,7 @@
       autologin.enable = true;
       adguardHome.enable = true;
       gnomeKeyring.enable = true;
-      # Zabbix disabled - replaced by LibreNMS
-      # zabbix = {
-      #   enable = true;
-      #   hostname = "zabbix.local";
-      # };
+      prometheus.enable = true;
       librenms = {
         enable = true;
         hostname = "librenms.local";
