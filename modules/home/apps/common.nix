@@ -15,6 +15,7 @@ in
       jetbrains-toolbox
       logisim-evolution
       postman
+      iperf3
     ];
 
     programs = {
