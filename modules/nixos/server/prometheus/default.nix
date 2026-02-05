@@ -11,6 +11,9 @@ in
     };
   };
   config = lib.mkIf cfg.prometheus.enable {
+    # Tailscale debug endpoint for metrics
+    services.tailscale.extraDaemonFlags = [ "--debug=localhost:41234" ];
+
     services = {
       prometheus = {
         enable = true;
@@ -29,6 +32,13 @@ in
             job_name = "node";
             static_configs = [
               { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
+            ];
+          }
+          {
+            job_name = "tailscale";
+            metrics_path = "/debug/metrics";
+            static_configs = [
+              { targets = [ "localhost:41234" ]; }
             ];
           }
         ];
