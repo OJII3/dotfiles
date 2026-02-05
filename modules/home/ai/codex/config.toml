@@ -1,9 +1,12 @@
 model_reasoning_effect = "medium"
 network_access = true
+approval_policy = "on-failure"
+sandbox_mode = "workspace_write"
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
 
 [features]
 web_search_request = true
+shell_snapshot = true
 
 [sandbox_workspace_write]
 network_access = true
@@ -12,9 +15,10 @@ network_access = true
 notifications = ["agent-turn-complete","approval-requested"]
 
 [shell_environment_policy]
-inherit = "core"
-include_only = ["PATH","HOME","USER"]
 exclude = ["AWS_*","AZURE_*","*TOKEN*","*SECRET*","*KEY*"]
+
+[analytics]
+enabled = false
 
 [mcp_servers.context7]
 command = "bunx"
