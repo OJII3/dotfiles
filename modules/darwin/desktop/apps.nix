@@ -27,6 +27,7 @@ in
         "ltspice"
         "obs"
         "obsidian"
+        "parsec"
         "raycast"
         "scroll-reverser"
         "slack"
