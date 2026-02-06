@@ -1,14 +1,14 @@
 [user]
     name = OJII3
     email = 84656786+OJII3@users.noreply.github.com
-    signingkey = 37547FAD690A6133
+    signingkey = ~/.ssh/id_ed25519.pub
 [core]
     autocrlf = true
     excludesfile = C:/Users/ojii3/.gitignore_global
-[gpg]
-    program = "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
 [commit]
     gpgsign = true
+[gpg]
+    format = "ssh"
 [init]
     defaultBranch = main
 [pull]
