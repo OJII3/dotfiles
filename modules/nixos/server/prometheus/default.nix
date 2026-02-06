@@ -1,6 +1,7 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
   cfg = config.dot.server;
+  metricsDir = "/var/lib/prometheus/node-exporter";
 in
 {
   options.dot.server.prometheus = {
@@ -11,8 +12,28 @@ in
     };
   };
   config = lib.mkIf cfg.prometheus.enable {
-    # Tailscale debug endpoint for metrics
-    services.tailscale.extraDaemonFlags = [ "--debug=localhost:41234" ];
+    # Periodically write Tailscale metrics for node_exporter textfile collector
+    systemd.services.tailscale-metrics = {
+      description = "Write Tailscale metrics to textfile for Prometheus";
+      after = [ "tailscaled.service" ];
+      requires = [ "tailscaled.service" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = "${pkgs.tailscale}/bin/tailscale metrics write ${metricsDir}/tailscale.prom";
+      };
+    };
+    systemd.timers.tailscale-metrics = {
+      description = "Periodically write Tailscale metrics";
+      wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "1min";
+        OnUnitActiveSec = "15s";
+        AccuracySec = "5s";
+      };
+    };
+    systemd.tmpfiles.rules = [
+      "d ${metricsDir} 0755 root root -"
+    ];
 
     services = {
       prometheus = {
@@ -34,22 +55,15 @@ in
               { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
             ];
           }
-          {
-            job_name = "tailscale";
-            metrics_path = "/debug/metrics";
-            static_configs = [
-              { targets = [ "localhost:41234" ]; }
-            ];
-          }
         ];
         exporters.node = {
           enable = true;
           enabledCollectors = [
+            "systemd"
             "textfile"
-            "cpu"
           ];
           extraFlags = [
-            "--collector.textfile.directory=/var/lib/prometheus/node-exporter"
+            "--collector.textfile.directory=${metricsDir}"
           ];
           openFirewall = true;
         };
