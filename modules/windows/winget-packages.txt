@@ -8,6 +8,6 @@ OpenAI.Codex
 AutoHotkey.AutoHotkey
 wez.wezterm
 junegunn.fzf
-Anthropic.ClaudeCode
 Starship.Starship
 x-motemen.ghq
+jdx.mise
