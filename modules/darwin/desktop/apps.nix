@@ -35,7 +35,6 @@ in
         "steam"
         "unity-hub"
         "visual-studio-code"
-        # "docker-desktop"
       ];
       masApps = {
         tailscale = 1475387142;
