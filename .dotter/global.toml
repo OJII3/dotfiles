@@ -7,20 +7,20 @@ depends = []
 "assets/images/honkai_everyone.png" = { target = "~/.assets/images/honkai_everyone.png", type = "symbolic" }
 "assets/images/silver_wolf.png" = { target = "~/.assets/images/silver_wolf.png", type = "symbolic" }
 
-"includes/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
-"includes/windows/git/.gitconfig" = "~/.gitconfig"
-"includes/windows/git/.gitignore_global" = "~/.gitignore_global"
-"includes/windows/autohotkey/default.ahk" = "~/.config/autohotkey/default.ahk"
+"modules/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"modules/windows/git/.gitconfig" = "~/.gitconfig"
+"modules/windows/git/.gitignore_global" = "~/.gitignore_global"
+"modules/windows/autohotkey/default.ahk" = "~/.config/autohotkey/default.ahk"
 
-"includes/home/vim/.ideavimrc" = "~/.ideavimrc"
-"includes/home/git/.tigrc" = "~/.tigrc"
+"modules/home/dev/jetbrains/.ideavimrc" = "~/.ideavimrc"
+"modules/home/git/.tigrc" = "~/.tigrc"
 
-"includes/home/terminal/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
-"includes/home/terminal/wezterm/keybindings.lua" = "~/.config/wezterm/keybindings.lua"
-"includes/windows/wezterm/keybindings.lua" = "~/.config/wezterm/local/keybindings.lua"
-"includes/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
+"modules/home/terminal/wezterm/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
+"modules/home/terminal/wezterm/keybindings.lua" = "~/.config/wezterm/keybindings.lua"
+"modules/windows/wezterm/keybindings.lua" = "~/.config/wezterm/local/keybindings.lua"
+"modules/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
 
-"includes/home/dev/ai/gemini/settings.json" = "~/.gemini/settings.json"
+"modules/home/ai/gemini/settings.json" = "~/.gemini/settings.json"
 
 [default.variables]
 

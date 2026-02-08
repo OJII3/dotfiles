@@ -7,3 +7,7 @@ GitHub.cli
 OpenAI.Codex
 AutoHotkey.AutoHotkey
 wez.wezterm
+junegunn.fzf
+Starship.Starship
+x-motemen.ghq
+jdx.mise

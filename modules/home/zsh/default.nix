@@ -38,7 +38,7 @@ in
           "ya" = "yazi";
         }
         // lib.optionalAttrs pkgs.stdenv.isDarwin {
-          "brew s" = "/opt/homebrew/bin/brew search";
+          "brew" = "/opt/homebrew/bin/brew";
         };
       };
 

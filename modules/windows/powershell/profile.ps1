@@ -1,4 +1,36 @@
-Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
+function Initialize-StarshipCached {
+    $starshipExe = 'C:\Program Files\starship\bin\starship.exe'
+    if (-not (Test-Path $starshipExe)) {
+        return
+    }
+
+    $cacheDir = Join-Path $env:LOCALAPPDATA 'starship'
+    $cacheFile = Join-Path $cacheDir 'init-powershell.ps1'
+
+    $cacheMissing = -not (Test-Path $cacheFile)
+    $cacheStale = $false
+    if (-not $cacheMissing) {
+        $cacheStale = (Get-Item $cacheFile).LastWriteTimeUtc -lt (Get-Item $starshipExe).LastWriteTimeUtc
+    }
+
+    try {
+        if ($cacheMissing -or $cacheStale) {
+            if (-not (Test-Path $cacheDir)) {
+                New-Item -Path $cacheDir -ItemType Directory -ErrorAction Stop | Out-Null
+            }
+
+            & $starshipExe init powershell --print-full-init | Set-Content -Path $cacheFile -Encoding UTF8 -ErrorAction Stop
+        }
+
+        . $cacheFile
+    }
+    catch {
+        # Cache write can fail in restricted environments; fall back to direct init.
+        Invoke-Expression (& $starshipExe init powershell --print-full-init | Out-String)
+    }
+}
+
+Initialize-StarshipCached
 Set-PSReadLineOption -BellStyle None -EditMode Emacs
 
 function ghqfzf {
@@ -11,24 +43,12 @@ Set-PSReadLineKeyHandler -Chord Ctrl+] -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
 
-function Request-Module {
+function Import-OptionalModule {
     param(
         [Parameter(Mandatory = $true)]
         [string]$Name,
-        [string]$Repository = 'PSGallery',
         [switch]$ForceImport
     )
-
-    if (-not (Get-Module -ListAvailable -Name $Name)) {
-        try {
-            Write-Host "Installing PowerShell module '$Name' from $Repository..." -ForegroundColor Yellow
-            Install-Module -Name $Name -Repository $Repository -Scope CurrentUser -Force -Confirm:$false -ErrorAction Stop
-        }
-        catch {
-            Write-Warning "Failed to install module '$Name': $_"
-            return $false
-        }
-    }
 
     try {
         if ($ForceImport) {
@@ -46,11 +66,11 @@ function Request-Module {
 }
 
 #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
-Request-Module -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
+Import-OptionalModule -Name 'Microsoft.WinGet.CommandNotFound' -ForceImport > $null
 #f45873b3-b655-43a6-b217-97c00aa0db58
 
 # Abbr
-$abbrModuleLoaded = Request-Module -Name 'Abbr' -ForceImport
+$abbrModuleLoaded = Import-OptionalModule -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
     ealias gb 'git branch'
@@ -70,9 +90,9 @@ if ($abbrModuleLoaded) {
 }
 
 # PSFzf
-$psFzfModuleLoaded = Request-Module -Name 'PSFzf' -ForceImport
+$psFzfModuleLoaded = Import-OptionalModule -Name 'PSFzf' -ForceImport
 if ($psFzfModuleLoaded) {
     Set-PsFzfOption -PSReadlineChordReverseHistory 'Ctrl+r'
 }
 
-Request-Module -Name 'posh-git' -ForceImport > $null
+Import-OptionalModule -Name 'posh-git' -ForceImport > $null
