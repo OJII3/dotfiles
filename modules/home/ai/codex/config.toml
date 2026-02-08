@@ -2,10 +2,10 @@ model_reasoning_effect = "medium"
 network_access = true
 approval_policy = "on-failure"
 sandbox_mode = "workspace-write"
+web_search = 'cached'
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
 
 [features]
-web_search_request = true
 shell_snapshot = true
 
 [sandbox_workspace_write]
@@ -23,10 +23,6 @@ enabled = false
 [mcp_servers.context7]
 command = "bunx"
 args = ["-y", "@upstash/context7-mcp@latest"]
-
-[mcp_servers.voicevox]
-command = "bunx"
-args = ["-y", "@t09tanaka/mcp-simple-voicevox"]
 
 [mcp_servers.devtools]
 command = "bunx"
