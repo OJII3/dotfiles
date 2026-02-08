@@ -30,6 +30,20 @@ function Initialize-StarshipCached {
     }
 }
 
+function Add-ToPathIfMissing {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$PathToAdd
+    )
+
+    $pathEntries = $env:PATH -split ';'
+    if ($pathEntries -notcontains $PathToAdd) {
+        $env:PATH = "$PathToAdd;$env:PATH"
+    }
+}
+
+Add-ToPathIfMissing -PathToAdd 'C:\Users\ojii3\.local\bin'
+
 Initialize-StarshipCached
 Set-PSReadLineOption -BellStyle None -EditMode Emacs
 
