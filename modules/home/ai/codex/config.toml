@@ -1,7 +1,7 @@
 model_reasoning_effect = "medium"
 network_access = true
 approval_policy = "on-failure"
-sandbox_mode = "workspace_write"
+sandbox_mode = "workspace-write"
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
 
 [features]
