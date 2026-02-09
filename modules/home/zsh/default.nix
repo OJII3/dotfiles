@@ -20,6 +20,10 @@ in
       historySubstringSearch.enable = true;
       syntaxHighlighting.enable = true;
 
+      sessionVariables = {
+        PATH = "$HOME/.local/bin:$PATH";
+      };
+
       shellAliases = {
         ls = "ls --color=auto";
         ip = "ip -c";

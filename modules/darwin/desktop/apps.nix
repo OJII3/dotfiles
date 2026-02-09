@@ -15,6 +15,7 @@ in
       };
       casks = [
         "affinity"
+        "mooonlight"
         "antigravity"
         "chatgpt"
         "discord"
