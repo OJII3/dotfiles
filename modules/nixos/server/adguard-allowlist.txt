@@ -1,1 +1,2 @@
 beacons5.gv2.com
+os.hoyoverse.com
