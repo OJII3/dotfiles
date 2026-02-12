@@ -54,7 +54,6 @@ in
       extensions = with pkgs; [
         gh-markdown-preview
         gh-dash
-        gh-copilot
       ];
       settings = {
         editor = "nvim";

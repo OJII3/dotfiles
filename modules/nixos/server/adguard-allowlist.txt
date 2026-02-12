@@ -1,0 +1,2 @@
+beacons5.gv2.com
+*.hoyoverse.com
