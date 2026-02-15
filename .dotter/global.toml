@@ -22,6 +22,8 @@ depends = []
 
 "modules/home/ai/gemini/settings.json" = "~/.gemini/settings.json"
 
+"modules/home/dev/vscode/keybindings.json" = "~/AppData/Roaming/Code/User/keybindings.json"
+
 "modules/windows/corvusskk/config.xml" = "~/AppData/Roaming/CorvusSKK/config.xml"
 
 [default.variables]
