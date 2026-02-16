@@ -1,6 +1,6 @@
 ---
 name: self-add-skill
-description: home-manager 管理環境で新しいスキルを追加するためのガイド。ユーザーが新しいスキルを作成したいとき、~/.claude/skills や ~/.codex/skills に直接作成する代わりに、dotfiles リポジトリ内の modules/home/ai/skills/ に作成し、home-manager switch で適用する必要がある環境向け。
+description: home-manager 管理環境で新しいスキルを追加するためのガイド。ユーザーが新しい▽ゆースキルを作成したいとき、~/.claude/skills や ~/.codex/skills に直接作成する代わりに、dotfiles リポジトリ内の modules/home/ai/skills/ に作成し、home-manager switch で適用する必要がある環境、つまりユーザー単位向け。dotfiles でない場合、基本的にプロジェクト単位で追加するため、このスキルは使用しない。
 ---
 
 このスキルは、home-manager 管理環境で新しいスキルを追加するための手順をガイドします。
