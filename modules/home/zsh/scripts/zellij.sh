@@ -1,13 +1,10 @@
 #!/bin/sh
-# z: zellijを起動（gitリポジトリルートならリポジトリ名をセッション名に）
+# z: zellijを起動（gitリポジトリ内ならリポジトリ名をセッション名に）
 z() {
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    root=$(git rev-parse --show-toplevel)
-    if [ "$PWD" = "$root" ]; then
-      repo_name=$(basename "$root")
-      zellij attach -c "$repo_name"
-      return
-    fi
+    repo_name=$(basename "$(git rev-parse --show-toplevel)")
+    zellij attach -c "$repo_name"
+  else
+    zellij
   fi
-  zellij
 }

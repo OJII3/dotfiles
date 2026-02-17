@@ -30,6 +30,7 @@
       enable = true;
       vscode.enable = true;
       mise.enable = true;
+      zellij.enable = true;
     };
 
     ai = {

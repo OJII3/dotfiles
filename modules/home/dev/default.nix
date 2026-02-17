@@ -13,6 +13,7 @@ in
     ./jetbrains
     ./mise.nix
     ./vscode
+    ./zellij
   ];
 
   # Base dev configuration
@@ -36,7 +37,6 @@ in
       unar
       unzip
       yazi
-      zellij
       zip
       ni
 
