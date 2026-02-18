@@ -9,7 +9,6 @@ in
 {
   imports = [
     ./commands.nix
-    ./ssh-client.nix
   ];
 
   config = lib.mkIf cfg.claude.enable {

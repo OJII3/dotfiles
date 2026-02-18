@@ -110,3 +110,5 @@ if ($psFzfModuleLoaded) {
 }
 
 Import-OptionalModule -Name 'posh-git' -ForceImport > $null
+
+(&mise activate pwsh) | Out-String | Invoke-Expression

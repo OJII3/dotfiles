@@ -10,6 +10,8 @@
     neovim.enable = true;
     git.enable = true;
     gpg.enable = true;
+    gpg.pinentryPackage = "gnome3";
+    gnomeKeyring.enable = true;
     direnv.enable = true;
     sops.enable = true;
 

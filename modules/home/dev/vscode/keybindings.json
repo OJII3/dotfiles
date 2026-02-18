@@ -1,71 +1,74 @@
+// Place your key bindings in this file to override the defaults
 [
   {
     "key": "ctrl+b",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "ctrl+n",
-    "command": "explorer.newFile",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    "key": "ctrl+b",
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "cursorLeft"
+  },
+  {
+    "key": "ctrl+f",
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "cursorRight"
   },
   {
     "key": "ctrl+e",
-    "command": "workbench.explorer.fileView.focus",
-    "when": "extension == 'asvetliakov.vscode-neovim' && extensionStatus == 'activated'"
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "cursorLineEnd"
   },
   {
-    "key": "[ g",
-    "command": "editor.action.marker.prev",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "] g",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "g d",
-    "command": "editor.action.goToDeclaration",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "g r",
-    "command": "editor.action.goToReferences",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "explorer.newFolder",
-    "when": "editorFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+    "key": "ctrl+a",
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "cursorLineStart"
   },
   {
     "key": "ctrl+shift+v",
+    "when": "editorFocus && editorLangId == 'markdown'",
     "command": "markdown.showPreviewToSide",
-    "when": "editorLangId == 'markdown'"
   },
   {
     "key": "alt+shift+f",
+    "when": "editorFocus",
     "command": "editor.action.formatDocument"
   },
   {
-    "key": "ctrl+shift+v",
-    "command": "workbench.action.terminal.paste",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+.",
-    "command": "editor.action.quickFix",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "ctrl+j",
-    "when": "vim.active",
+    "when": "editorFocus",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "when": "terminalFocus",
+    "command": "workbench.action.terminal.paste",
+  },
+  {
+    "key": "ctrl+e",
+    "when": "terminalFocus && vim.active",
     "command": "noop"
   },
   {
-    "key": "ctrl+j",
-    "when": "!vim.active",
+    "key": "ctrl+f",
+    "when": "terminalFocus && vim.active",
+    "command": "noop"
+  },
+  {
+    "key": "ctrl+p",
+    "when": "terminalFocus && vim.active",
+    "command": "noop"
+  },
+  {
+    "key": "ctrl+\\",
+    "when": "terminalFocus && vim.active && vim.mode == 'Normal'",
     "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "ctrl+.",
+    "when": "editorTextFocus && editorHasCodeActionsProvider && !editorReadonly",
+    "command": "editor.action.quickFix",
   },
   {
     "key": "ctrl+enter",
@@ -73,11 +76,83 @@
     "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
   },
   {
-    "key": "ctrl+down",
-    "command": "editor.action.marker.next"
+    "key": "ctrl+i",
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "acceptSelectedSuggestion"
   },
   {
-    "key": "ctrl+up",
-    "command": "editor.action.marker.prev"
+    "key": "ctrl+l",
+    "when": "editorFocus && vim.active && vim.mode == 'Insert'",
+    "command": "editor.action.accessibleViewAcceptInlineCompletion"
+  },
+  {
+    "key": "space e",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "space e",
+    "when": "explorerViewletFocus && vim.active && vim.mode == 'Normal'",
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+  {
+    "key": "] g",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "editor.action.marker.next",
+  },
+  {
+    "key": "[ g",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "editor.action.marker.prev",
+  },
+  {
+    "key": "a",
+    "when": "filesExplorerFocus && !inputFocus && vim.active",
+    "command": "explorer.newFile",
+  },
+  {
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus && vim.active",
+    "command": "deleteFile",
+  },
+  {
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus && vim.active",
+    "command": "renameFile",
+  },
+  {
+    "key": "y",
+    "when": "filesExplorerFocus && !inputFocus && vim.active",
+    "command": "filesExplorer.copy"
+  },
+  {
+    "key": "p",
+    "when": "filesExplorerFocus && !inputFocus && vim.active",
+    "command": "filesExplorer.paste"
+  },
+  {
+    "key": "shift+k",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "editor.action.showHover",
+  },
+  {
+    "key": "space f o",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+h",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "space a t",
+    "when": "editorFocus && vim.active && vim.mode == 'Normal'",
+    "command": "workbench.panel.chat.view.copilot.focus"
+  },
+  {
+    "key": "ctrl+\\",
+    "when": "chatInputHasFocus && vim.active",
+    "command": "workbench.action.focusActiveEditorGroup"
   }
 ]

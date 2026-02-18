@@ -17,5 +17,9 @@
       enable = lib.mkEnableOption "mise version manager";
     };
 
+    zellij = {
+      enable = lib.mkEnableOption "Zellij terminal multiplexer";
+    };
+
   };
 }
