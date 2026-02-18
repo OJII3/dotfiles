@@ -15,7 +15,6 @@ in
       };
       casks = [
         "affinity"
-        "mooonlight"
         "antigravity"
         "chatgpt"
         "discord"
@@ -26,6 +25,7 @@ in
         "karabiner-elements"
         "logi-options+"
         "ltspice"
+        "moonlight"
         "obs"
         "obsidian"
         "parsec"
