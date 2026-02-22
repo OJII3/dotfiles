@@ -21,7 +21,7 @@ in
       syntaxHighlighting.enable = true;
 
       sessionVariables = {
-        PATH = "$HOME/.local/bin:$PATH";
+        PATH = "$HOME/.local/bin:$HOME/.cache/.bun/bin:$PATH";
       };
 
       shellAliases = {

@@ -13,7 +13,17 @@
   freetype,
   dbus,
   glib,
-  xorg,
+  libx11,
+  libxext,
+  libxrender,
+  libxcb,
+  libxi,
+  libxcursor,
+  libxfixes,
+  libxrandr,
+  libxcomposite,
+  libxdamage,
+  libxtst,
   xcbutilcursor,
   xcbutilwm,
   xcbutilimage,
@@ -50,17 +60,17 @@ stdenv.mkDerivation rec {
     freetype
     dbus
     glib
-    xorg.libX11
-    xorg.libXext
-    xorg.libXrender
-    xorg.libxcb
-    xorg.libXi
-    xorg.libXcursor
-    xorg.libXfixes
-    xorg.libXrandr
-    xorg.libXcomposite
-    xorg.libXdamage
-    xorg.libXtst
+    libx11
+    libxext
+    libxrender
+    libxcb
+    libxi
+    libxcursor
+    libxfixes
+    libxrandr
+    libxcomposite
+    libxdamage
+    libxtst
     libxscrnsaver
     xcbutilcursor
     xcbutilwm

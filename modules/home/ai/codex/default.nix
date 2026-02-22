@@ -12,12 +12,6 @@ let
 in
 {
   config = lib.mkIf cfg.codex.enable {
-    programs.zsh = {
-      shellAliases = {
-        codex = "bun x @openai/codex";
-      };
-    };
-
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
     home.file.".codex/scripts" = {
       source = ./scripts;
