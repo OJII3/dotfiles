@@ -5,7 +5,7 @@ return {
 		{ "MunifTanjim/nui.nvim" },
 	},
 	opts = {
-    processor = "magick_rock",
+		processor = "magick_cli",
 		integrations = {
 			markdown = {
 				enabled = false,
