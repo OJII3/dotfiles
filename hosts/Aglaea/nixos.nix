@@ -18,6 +18,7 @@
     networking = {
       networkManager.enable = true;
       firewall.ros2.enable = true;
+      warp.enable = true;
     };
 
     desktop = {

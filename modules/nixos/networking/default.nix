@@ -11,6 +11,7 @@ in
   imports = [
     ./options.nix
     ./snmpd.nix
+    ./warp.nix
   ];
 
   config = lib.mkIf cfg.enable (lib.mkMerge [
@@ -72,12 +73,5 @@ in
       };
     })
 
-    # Cloudflare WARP
-    (lib.mkIf cfg.warp.enable {
-      services.cloudflare-warp = {
-        enable = true;
-        openFirewall = true;
-      };
-    })
   ]);
 }
