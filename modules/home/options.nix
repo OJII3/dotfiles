@@ -91,6 +91,11 @@
       enable = lib.mkEnableOption "VR support (OpenComposite)";
     };
 
+    # Blender build manager
+    blenderLauncher = {
+      enable = lib.mkEnableOption "Blender Launcher V2 build manager";
+    };
+
     # Apps
     apps = {
       # Cross-platform (macOS & Linux)
