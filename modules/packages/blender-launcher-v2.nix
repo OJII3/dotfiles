@@ -7,6 +7,7 @@
   zlib,
   libGL,
   libxkbcommon,
+  xkeyboard_config,
   wayland,
   fontconfig,
   freetype,
@@ -86,7 +87,8 @@ stdenv.mkDerivation rec {
       --replace-fail "Icon=blenderlauncher" "Icon=$out/share/icons/hicolor/128x128/apps/blenderlauncher.png"
 
     makeWrapper $out/lib/blender-launcher $out/bin/blender-launcher \
-      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeDependencies}"
+      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath runtimeDependencies}" \
+      --set XKB_CONFIG_ROOT "${xkeyboard_config}/share/X11/xkb"
 
     runHook postInstall
   '';
