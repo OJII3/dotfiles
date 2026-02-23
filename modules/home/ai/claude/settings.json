@@ -6,10 +6,6 @@
     "DISABLE_ERROR_REPORTING": "1",
     "DISABLE_AUTOUPDATER": "1"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bun x ccusage statusline"
-  },
   "permissions": {
     "allow": [
       "Bash",
