@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -16,6 +17,7 @@ in
     programs.claude-code = {
       enable = true;
       commandsDir = ./commands;
+      package = pkgs.claude-code-bin;
     };
 
     home.file.".claude/settings.json".source = ./settings.json;
