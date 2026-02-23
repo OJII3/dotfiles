@@ -55,6 +55,7 @@
 
     # Other
     bitwarden.enable = true;
+    blenderLauncher.enable = true;
     network.enable = true;
     obsidian.enable = true;
     ros2.enable = true;

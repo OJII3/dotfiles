@@ -1,6 +1,6 @@
 model_reasoning_effect = "medium"
 network_access = true
-approval_policy = "on-failure"
+approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = 'cached'
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
