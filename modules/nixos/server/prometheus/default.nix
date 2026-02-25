@@ -55,6 +55,22 @@ in
               { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
             ];
           }
+          {
+            job_name = "claude-code";
+            scrape_interval = "30s";
+            honor_timestamps = true;
+            static_configs = [
+              {
+                targets = [
+                  "Aglaea:9464"
+                  "Bronya:9464"
+                  "Cyrene:9464"
+                  "Cipher:9464"
+                  "Himeko:9464"
+                ];
+              }
+            ];
+          }
         ];
         exporters.node = {
           enable = true;
