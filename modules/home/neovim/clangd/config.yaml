@@ -4,5 +4,4 @@ If:
 CompileFlags:
   Add:
     - -Wall
-    - stdlib=glibc++
-  Compiler: ~/.nix-profile/bin/g++
+  Compiler: g++

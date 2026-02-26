@@ -17,7 +17,6 @@ in
       gimp
       hunspell
       inkscape-with-extensions
-      krita
       moonlight-qt
       mpv
       pkgs-stable.blender
