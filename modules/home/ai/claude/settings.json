@@ -52,38 +52,5 @@
     ]
   },
   "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 7,
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "permission_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh permission_prompt"
-          }
-        ]
-      },
-      {
-        "matcher": "idle_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh idle_prompt"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh stop"
-          }
-        ]
-      }
-    ]
-  }
+  "cleanupPeriodDays": 7
 }
