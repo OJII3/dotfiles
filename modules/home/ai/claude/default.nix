@@ -22,9 +22,5 @@ in
 
     home.file.".claude/settings.json".source = ./settings.json;
     home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
-    home.file.".claude/scripts" = {
-      source = ./scripts;
-      executable = true;
-    };
   };
 }
