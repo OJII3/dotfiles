@@ -50,6 +50,13 @@ in
             ];
           }
           {
+            job_name = "vicissitude";
+            honor_labels = true;
+            static_configs = [
+              { targets = [ "localhost:9091" ]; }
+            ];
+          }
+          {
             job_name = "node";
             static_configs = [
               { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
