@@ -96,6 +96,7 @@ in
         openFirewall = true;
         settings = {
           server.http_addr = "0.0.0.0";
+          security.secret_key = "grafana_monitoring_key";
         };
       };
     };
