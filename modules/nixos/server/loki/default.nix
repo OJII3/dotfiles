@@ -140,6 +140,8 @@ in
       }
     ];
 
+    systemd.services.promtail.serviceConfig.StateDirectory = "promtail";
+
     networking.firewall.allowedTCPPorts = [ 3100 ];
   };
 }
