@@ -100,6 +100,7 @@ in
             job_name = "vicissitude";
             journal = {
               max_age = "12h";
+              path = "/var/log/journal";
               labels = {
                 job = "vicissitude";
                 host = "Cipher";
@@ -140,7 +141,10 @@ in
       }
     ];
 
-    systemd.services.promtail.serviceConfig.StateDirectory = "promtail";
+    systemd.services.promtail.serviceConfig = {
+      StateDirectory = "promtail";
+      SupplementaryGroups = [ "systemd-journal" ];
+    };
 
     networking.firewall.allowedTCPPorts = [ 3100 ];
   };
