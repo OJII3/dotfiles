@@ -96,6 +96,38 @@ in
               }
             ];
           }
+          {
+            job_name = "vicissitude";
+            journal = {
+              max_age = "12h";
+              labels = {
+                job = "vicissitude";
+                host = "Cipher";
+              };
+            };
+            relabel_configs = [
+              {
+                source_labels = [ "__journal_container_tag" ];
+                regex = "vicissitude";
+                action = "keep";
+              }
+            ];
+            pipeline_stages = [
+              {
+                json.expressions = {
+                  level = "level";
+                  component = "component";
+                  message = "message";
+                };
+              }
+              {
+                labels = {
+                  level = null;
+                  component = null;
+                };
+              }
+            ];
+          }
         ];
       };
     };
