@@ -8,6 +8,7 @@
 #   dot.server.adguardHome.enable - Enable AdGuard Home DNS
 #   dot.server.zabbix.enable   - Enable Zabbix monitoring server
 #   dot.server.librenms.enable - Enable LibreNMS network monitoring
+#   dot.server.loki.enable     - Enable Loki log aggregation
 #
 {
   config,
@@ -24,6 +25,7 @@ in
     ./zabbix.nix
     ./librenms.nix
     ./prometheus
+    ./loki
   ];
 
   options.dot.server = {
