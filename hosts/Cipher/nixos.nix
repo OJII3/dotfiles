@@ -37,6 +37,7 @@
       adguardHome.enable = true;
       gnomeKeyring.enable = true;
       prometheus.enable = true;
+      loki.enable = true;
       librenms = {
         enable = true;
         hostname = "librenms.local";
