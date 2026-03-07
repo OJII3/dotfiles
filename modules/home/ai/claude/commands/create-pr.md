@@ -54,17 +54,14 @@ PR作成時の手順：
 
 テンプレートファイル: .github/PULL_REQUEST_TEMPLATE.md
 
-PRテンプレートを使用する際は、Readツールでテンプレートファイルを読み込み、その内容を一時ファイルに書き込んでから以下の手順でDraftのPRを作成してください：
+PRテンプレートを使用する際は、Readツールでテンプレートファイルを読み込み、その内容を一時ファイルに書き込んでから以下の手順でPRを作成してください：
 
 ```bash
 # PR作成コマンドを実行し、URLを変数に保存（自分自身をアサインに設定）
-PR_URL=$(gh pr create --body-file /tmp/pr-body.md --draft --assignee @me)
+PR_URL=$(gh pr create --body-file /tmp/pr-body.md --assignee @me)
 
 # URLからPR番号を抽出（URLの最後の数字部分）
 PR_NUMBER=$(echo $PR_URL | grep -o '[0-9]*$')
-
-# PRをブラウザで開く
-gh browse $PR_NUMBER
 ```
 
 ## 既存のPR説明文を更新する場合
