@@ -10,6 +10,7 @@ shell_snapshot = true
 
 [sandbox_workspace_write]
 network_access = true
+writabel_roots = [ "/dev/pts", "/dev/ptmx", "~/.gnupg" ]
 
 [tui]
 notifications = ["agent-turn-complete","approval-requested"]
