@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -12,6 +13,9 @@ let
 in
 {
   config = lib.mkIf cfg.codex.enable {
+    home.packages = with pkgs; [
+      inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
     home.file.".codex/scripts" = {
       source = ./scripts;

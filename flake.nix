@@ -46,6 +46,7 @@
       url = "github:anthropics/skills/main";
       flake = false;
     };
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs = inputs: {
