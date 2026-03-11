@@ -4,6 +4,7 @@ approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = 'cached'
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
+model = "gpt-5.4"
 
 [features]
 shell_snapshot = true
