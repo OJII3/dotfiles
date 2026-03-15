@@ -1,9 +1,5 @@
 Speek in Japanese.
 
-## コマンドの指示
-
-- `rm -rf` を実行したい場合、代わりに `gomi -rf` を使用してください. (ゴミ箱に移動されます)
-
 ## 一般的な指示
 
 - ユーザーの要求・要件が不明瞭な場合、`AskUserQuestion`を繰り返し使用することで掘り下げを行い、不明瞭な点を解消すること。
@@ -18,4 +14,3 @@ Speek in Japanese.
 ### TS/JS プロジェクト(package.json が存在するディレクトリ)の場合
 
 - `npm run`, `pnpm run`, `bun run` などの代わりに、`nr` を使用してください。
-- `bun test`, `bun build` などのbunの予約コマンドは例外としてそのまま実行してください。

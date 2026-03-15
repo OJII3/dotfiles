@@ -6,37 +6,15 @@
     "OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE": "cumulative",
     "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_AUTOUPDATER": "1"
+    "DISABLE_AUTOUPDATER": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "statusLine": {
+    "type": "command",
+    "statusLine": "bunx ccstatusline@latest"
   },
   "permissions": {
-    "allow": [
-      "Bash",
-      "Edit(docs/**)",
-      "Read(docs/**)",
-      "Edit(//tmp/**)",
-      "Read(//tmp/**)",
-      "Read(//nix/**)",
-      "Edit(**.bash)",
-      "Edit(**.css)",
-      "Edit(**.html)",
-      "Edit(**.js)",
-      "Edit(**.jsx)",
-      "Edit(**.lua)",
-      "Edit(**.md)",
-      "Edit(**.nix)",
-      "Edit(**.scss)",
-      "Edit(**.sh)",
-      "Edit(**.ts)",
-      "Edit(**.tsx)",
-      "Edit(**.zsh)",
-      "Edit(*.json)",
-      "Edit(*.jsonc)",
-      "Edit(*.toml)",
-      "Edit(*.yaml)",
-      "Edit(*.yml)",
-      "WebFetch",
-      "WebSearch"
-    ],
+    "allow": ["Bash", "Read", "Edit", "WebFetch", "WebSearch"],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(rmdir *)",
@@ -48,6 +26,7 @@
       "Edit(//usr/*)",
       "Edit(//bin/*)",
       "Edit(//sbin/*)",
+      "Read(/.env)",
       "Edit($HOME/config/**)"
     ]
   },
