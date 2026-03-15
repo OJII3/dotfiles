@@ -11,7 +11,7 @@
   },
   "statusLine": {
     "type": "command",
-    "statusLine": "bunx ccstatusline@latest"
+    "command": "bunx -y ccstatusline@latest"
   },
   "permissions": {
     "allow": ["Bash", "Read", "Edit", "WebFetch", "WebSearch"],
