@@ -20,6 +20,10 @@ in
       package = pkgs.claude-code-bin;
     };
 
+    programs.zsh.zsh-abbr.abbreviations = {
+      "c" = "claude";
+    };
+
     home.file.".local/bin/claude".source = "${config.programs.claude-code.package}/bin/claude";
     home.file.".claude/settings.json".source = ./settings.json;
     home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
