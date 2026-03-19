@@ -9,6 +9,7 @@
 #   dot.server.zabbix.enable   - Enable Zabbix monitoring server
 #   dot.server.librenms.enable - Enable LibreNMS network monitoring
 #   dot.server.loki.enable     - Enable Loki log aggregation
+#   dot.server.minecraft.enable - Enable Minecraft Java Edition server
 #
 {
   config,
@@ -26,6 +27,7 @@ in
     ./librenms.nix
     ./prometheus
     ./loki
+    ./minecraft.nix
   ];
 
   options.dot.server = {
