@@ -38,6 +38,7 @@
       gnomeKeyring.enable = true;
       prometheus.enable = true;
       loki.enable = true;
+      minecraft.enable = true;
       librenms = {
         enable = true;
         hostname = "librenms.local";
