@@ -36,7 +36,6 @@ in
         # ACP
         gemini-cli-bin
         codex-acp
-        claude-code-acp
         # MCP server dependencies -------------------------
         uv
         bun
