@@ -8,7 +8,13 @@
 #   dot.core.ssh.enable    - Enable OpenSSH
 #   dot.core.user.name     - Username (default: "ojii3")
 #
-{ config, lib, pkgs, username ? "ojii3", ... }:
+{
+  config,
+  lib,
+  pkgs,
+  username ? "ojii3",
+  ...
+}:
 let
   cfg = config.dot.core;
 in
@@ -25,7 +31,7 @@ in
 
   options.dot.core = {
     enable = lib.mkEnableOption "core NixOS configuration" // {
-      default = true;  # Backward compatible: enabled by default
+      default = true; # Backward compatible: enabled by default
     };
 
     audio = {
@@ -94,7 +100,11 @@ in
 
     boot = {
       loader = lib.mkOption {
-        type = lib.types.enum [ "systemd-boot" "grub" "none" ];
+        type = lib.types.enum [
+          "systemd-boot"
+          "grub"
+          "none"
+        ];
         default = "none";
         description = "Boot loader type: systemd-boot, grub, or none (manual configuration)";
       };
@@ -115,122 +125,123 @@ in
     };
   };
 
-  config = lib.mkIf cfg.enable (lib.mkMerge [
-    # Base configuration
-    {
-      # User account
-      users.users.${cfg.user.name} = {
-        isNormalUser = true;
-        description = cfg.user.name;
-        shell = cfg.user.shell;
-        extraGroups = cfg.user.extraGroups;
-      };
-
-      # Allow unfree packages
-      nixpkgs.config.allowUnfree = true;
-
-      # Nix settings
-      nix = {
-        settings = {
-          auto-optimise-store = true;
-          experimental-features = [
-            "nix-command"
-            "flakes"
-          ];
+  config = lib.mkIf cfg.enable (
+    lib.mkMerge [
+      # Base configuration
+      {
+        # User account
+        users.users.${cfg.user.name} = {
+          isNormalUser = true;
+          description = cfg.user.name;
+          shell = cfg.user.shell;
+          extraGroups = cfg.user.extraGroups;
         };
-        gc = {
-          automatic = true;
-          dates = "weekly";
-          options = "--delete-older-than 7d";
-        };
-      };
-    }
 
-    # Audio (PipeWire)
-    (lib.mkIf cfg.audio.enable {
-      services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        jack.enable = true;
-      };
+        # Allow unfree packages
+        nixpkgs.config.allowUnfree = true;
 
-      programs.noisetorch.enable = true;
-
-      environment.systemPackages = [ pkgs.helvum ];
-    })
-
-    # Bluetooth
-    (lib.mkIf cfg.bluetooth.enable {
-      hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = true;
-        settings = {
-          General = {
-            Experimental = true;
+        # Nix settings
+        nix = {
+          settings = {
+            auto-optimise-store = true;
+            experimental-features = [
+              "nix-command"
+              "flakes"
+            ];
+          };
+          gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 7d";
           };
         };
-      };
-    })
+      }
 
-    # SSH
-    (lib.mkIf cfg.ssh.enable {
-      services.openssh.enable = true;
-    })
-
-    # Podman
-    (lib.mkIf cfg.virtualisation.podman.enable {
-      virtualisation.podman = {
-        enable = true;
-        dockerCompat = cfg.virtualisation.podman.dockerCompat;
-        defaultNetwork.settings.dns_enabled = true;
-      };
-    })
-
-    # Docker
-    (lib.mkIf cfg.virtualisation.docker.enable {
-      virtualisation.docker = {
-        enable = true;
-        rootless = {
-          enable = cfg.virtualisation.docker.rootless.enable;
-          setSocketVariable = cfg.virtualisation.docker.rootless.enable;
-        };
-      };
-      # Disable podman dockerCompat when using Docker
-      virtualisation.podman.dockerCompat = lib.mkForce false;
-
-      # Add user to docker group for non-rootless mode
-      users.users.${cfg.user.name}.extraGroups =
-        lib.mkIf (!cfg.virtualisation.docker.rootless.enable) [ "docker" ];
-    })
-
-    # Boot - systemd-boot
-    (lib.mkIf (cfg.boot.loader == "systemd-boot") {
-      boot.loader = {
-        efi = {
-          canTouchEfiVariables = true;
-          efiSysMountPoint = cfg.boot.efi.mountPoint;
-        };
-        systemd-boot.enable = true;
-      };
-    })
-
-    # Boot - GRUB
-    (lib.mkIf (cfg.boot.loader == "grub") {
-      boot.loader = {
-        efi = {
-          canTouchEfiVariables = true;
-          efiSysMountPoint = cfg.boot.efi.mountPoint;
-        };
-        systemd-boot.enable = false;
-        grub = {
+      # Audio (PipeWire)
+      (lib.mkIf cfg.audio.enable {
+        services.pipewire = {
           enable = true;
-          device = "nodev";
-          useOSProber = cfg.boot.grub.useOSProber;
-          efiSupport = true;
+          alsa.enable = true;
+          alsa.support32Bit = true;
+          pulse.enable = true;
+          jack.enable = true;
         };
-      };
-    })
-  ]);
+
+        programs.noisetorch.enable = true;
+      })
+
+      # Bluetooth
+      (lib.mkIf cfg.bluetooth.enable {
+        hardware.bluetooth = {
+          enable = true;
+          powerOnBoot = true;
+          settings = {
+            General = {
+              Experimental = true;
+            };
+          };
+        };
+      })
+
+      # SSH
+      (lib.mkIf cfg.ssh.enable {
+        services.openssh.enable = true;
+      })
+
+      # Podman
+      (lib.mkIf cfg.virtualisation.podman.enable {
+        virtualisation.podman = {
+          enable = true;
+          dockerCompat = cfg.virtualisation.podman.dockerCompat;
+          defaultNetwork.settings.dns_enabled = true;
+        };
+      })
+
+      # Docker
+      (lib.mkIf cfg.virtualisation.docker.enable {
+        virtualisation.docker = {
+          enable = true;
+          rootless = {
+            enable = cfg.virtualisation.docker.rootless.enable;
+            setSocketVariable = cfg.virtualisation.docker.rootless.enable;
+          };
+        };
+        # Disable podman dockerCompat when using Docker
+        virtualisation.podman.dockerCompat = lib.mkForce false;
+
+        # Add user to docker group for non-rootless mode
+        users.users.${cfg.user.name}.extraGroups = lib.mkIf (!cfg.virtualisation.docker.rootless.enable) [
+          "docker"
+        ];
+      })
+
+      # Boot - systemd-boot
+      (lib.mkIf (cfg.boot.loader == "systemd-boot") {
+        boot.loader = {
+          efi = {
+            canTouchEfiVariables = true;
+            efiSysMountPoint = cfg.boot.efi.mountPoint;
+          };
+          systemd-boot.enable = true;
+        };
+      })
+
+      # Boot - GRUB
+      (lib.mkIf (cfg.boot.loader == "grub") {
+        boot.loader = {
+          efi = {
+            canTouchEfiVariables = true;
+            efiSysMountPoint = cfg.boot.efi.mountPoint;
+          };
+          systemd-boot.enable = false;
+          grub = {
+            enable = true;
+            device = "nodev";
+            useOSProber = cfg.boot.grub.useOSProber;
+            efiSupport = true;
+          };
+        };
+      })
+    ]
+  );
 }
