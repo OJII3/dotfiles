@@ -18,6 +18,7 @@ in
     ];
     programs.git = {
       enable = true;
+      signing.format = null;
       settings = {
         user.email = "84656786+OJII3@users.noreply.github.com";
         user.name = "ojii3";

@@ -20,6 +20,7 @@ in
         package = pkgs-stable.colloid-gtk-theme;
         name = "Colloid-Dark";
       };
+      gtk4.theme = null;
       cursorTheme = {
         package = pkgs.afterglow-cursors-recolored;
         name = "Afterglow-Recolored-Catppuccin-Pink";
