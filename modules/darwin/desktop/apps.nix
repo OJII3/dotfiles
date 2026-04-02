@@ -26,7 +26,7 @@ in
         "minecraft"
         "moonlight"
         "obs"
-        "ollama"
+        "ollama-app"
         "parsec"
         "raycast"
         "scroll-reverser"

@@ -161,6 +161,13 @@ in
       username = "ojii3";
       overlays = [
         inputs.brew-nix.overlays.default
+        (final: prev: {
+          direnv = prev.direnv.overrideAttrs (old: {
+            env = old.env // {
+              CGO_ENABLED = 1;
+            };
+          });
+        })
       ];
       modules = [
         ./Himeko/home-manager.nix
