@@ -21,7 +21,7 @@ See each directory's README for details:
 
 | Host | Type | Hardware | Configuration |
 |------|------|----------|---------------|
-| **Aglaea** | Desktop | ThinkCentre (AMD GPU) | NixOS + GNOME |
+| **Aglaea** | Desktop | ThinkPad E14 Gen 6 | NixOS + GNOME |
 | **Bronya** | Desktop | i5-13th + RTX 3060 | NixOS + Hyprland (decommissioned) |
 | **Cipher** | Server | GMKTec G3 | NixOS + AdGuard Home |
 | **Cyrene** | WSL | i5-13th + RTX 3060 | NixOS-WSL |
