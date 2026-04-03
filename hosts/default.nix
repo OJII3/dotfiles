@@ -161,11 +161,16 @@ in
       username = "ojii3";
       overlays = [
         inputs.brew-nix.overlays.default
+        # Workaround: direnv 2.37.1 uses -linkmode=external but CGO is disabled.
+        # Fixed upstream in nixpkgs#486452; remove this overlay after flake update.
         (final: prev: {
           direnv = prev.direnv.overrideAttrs (old: {
-            env = old.env // {
-              CGO_ENABLED = 1;
+            env = (old.env or { }) // {
+              CGO_ENABLED = 0;
             };
+            postPatch = (old.postPatch or "") + ''
+              substituteInPlace GNUmakefile --replace-fail " -linkmode=external" ""
+            '';
           });
         })
       ];
