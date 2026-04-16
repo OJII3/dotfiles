@@ -71,6 +71,10 @@
       };
     };
 
+    androidDev = {
+      enable = lib.mkEnableOption "Android development tools (adb, udev rules incl. Meta Quest)";
+    };
+
     bitwarden = {
       enable = lib.mkEnableOption "Bitwarden desktop password manager";
     };
