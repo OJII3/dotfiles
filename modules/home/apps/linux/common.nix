@@ -19,6 +19,7 @@ in
       inkscape-with-extensions
       moonlight-qt
       mpv
+      p7zip
       pkgs-stable.blender
       slack
       unityhub
