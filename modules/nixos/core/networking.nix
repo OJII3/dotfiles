@@ -25,6 +25,9 @@
     allowedUDPPorts = [
       7236
       7777
+      9000 # Unitree G1
+      9001 # Unitree G1
+      9009 # Unitree G1
     ]; # VNC
     allowedTCPPortRanges = [
       {

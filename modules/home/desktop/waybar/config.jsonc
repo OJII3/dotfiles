@@ -81,7 +81,7 @@
   "wireplumber": {
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 {volume}%",
-    "on-click": "helvum",
+    "on-click": "",
     "format-icons": ["", "", ""]
   },
   "mpris": {

@@ -88,7 +88,7 @@ $abbrModuleLoaded = Import-OptionalModule -Name 'Abbr' -ForceImport
 if ($abbrModuleLoaded) {
     ealias g 'git'
     ealias gb 'git branch'
-    ealias gcmt 'git commit -m'
+    ealias gcmt "git commit -m '"
     ealias gf 'git fetch'
     ealias gfp 'git fetch --prune'
     ealias glg 'git log --oneline --graph --decorate'
@@ -99,7 +99,7 @@ if ($abbrModuleLoaded) {
 
     ealias t 'tig status'
     ealias ghpc 'gh pr create'
-    ealias ghpm 'gh pr merge'
+    ealias ghpm 'gh pr merge -d'
     ealias ghpv 'gh pr view'
 }
 

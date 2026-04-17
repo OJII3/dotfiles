@@ -18,6 +18,7 @@ in
     ];
     programs.git = {
       enable = true;
+      signing.format = null;
       settings = {
         user.email = "84656786+OJII3@users.noreply.github.com";
         user.name = "ojii3";
@@ -63,7 +64,7 @@ in
     programs.zsh.zsh-abbr.abbreviations = {
       "g" = "git";
       "gb" = "git branch";
-      "gcmt" = "git commit -m";
+      "gt" = "git commit -m '";
       "gco" = "git checkout";
       "gf" = "git fetch";
       "gfp" = "git fetch --prune";
@@ -74,7 +75,7 @@ in
       "gwc" = "git switch -c";
 
       "ghpc" = "gh pr create";
-      "ghpm" = "gh pr merge";
+      "ghpm" = "gh pr merge -d";
       "ghpv" = "gh pr view";
 
       "t" = "tig status";
