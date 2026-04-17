@@ -11,6 +11,7 @@ in
 {
   imports = [
     ./options.nix
+    ./android-dev.nix
     ./bitwarden.nix
     ./flatpak.nix
     ./fonts.nix
