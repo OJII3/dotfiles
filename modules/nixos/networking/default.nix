@@ -44,6 +44,12 @@ in
           allowedUDPPortRanges = lib.mkMerge [
             (lib.mkIf cfg.firewall.kdeConnect.enable [
               {
+                from = 7400;
+                to = 7500;
+              }
+            ])
+            (lib.mkIf cfg.firewall.kdeConnect.enable [
+              {
                 from = 1714;
                 to = 1764;
               }
