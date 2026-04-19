@@ -144,6 +144,12 @@ in
       overlays = [ ];
       modules = [ ./Cyrene/home-manager.nix ];
     };
+    "ojii3@Feixiao" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Feixiao/home-manager.nix ];
+    };
     "ojii3@Lingsha" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
