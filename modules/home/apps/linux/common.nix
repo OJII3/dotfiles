@@ -27,6 +27,23 @@ in
       voicevox
     ];
 
+    # 非 NixOS (Ubuntu 等) では Nix store 内の Electron/Chromium アプリが
+    # SUID sandbox を使えない。AppArmor の unprivileged userns 制限を解除する
+    # 必要があるが、sysctl には root 権限が要るため activation で警告だけ出す。
+    home.activation.checkUnprivilegedUserns = lib.mkIf config.targets.genericLinux.enable (
+      lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+        val="$(cat /proc/sys/kernel/apparmor_restrict_unprivileged_userns 2>/dev/null || echo 0)"
+        if [ "$val" = "1" ]; then
+          echo ""
+          echo "[WARNING] kernel.apparmor_restrict_unprivileged_userns = 1"
+          echo "Electron/Chromium apps from Nix store will fail with SUID sandbox errors."
+          echo "Run the following to fix:"
+          echo "  echo 'kernel.apparmor_restrict_unprivileged_userns=0' | sudo tee /etc/sysctl.d/99-nix-userns.conf && sudo sysctl --system"
+          echo ""
+        fi
+      ''
+    );
+
     # Unity Hub の Android NDK インストール時、extractedPathRename で
     # android-ndk-<ver>/ の中身が NDK/ 直下に移動されるが、NDK 内部の 35+ 個
     # の絶対パス symlink は android-ndk-<ver>/... を指したまま壊れる。
