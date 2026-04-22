@@ -36,13 +36,14 @@
       enable = true;
       jetbrains.enable = true;
       mise.enable = true;
+      zellij.enable = true;
     };
 
-      ai = {
-        claude.enable = true;
-        codex.enable = true;
-        gemini.enable = true;
-      };
+    ai = {
+      claude.enable = true;
+      codex.enable = true;
+      gemini.enable = true;
+    };
 
     # Apps
     apps.linux.common.enable = true;
@@ -62,7 +63,6 @@
   programs.zsh.initContent = ''
     [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
   '';
-
 
   home.stateVersion = "24.11";
 }
