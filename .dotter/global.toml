@@ -23,6 +23,8 @@ depends = []
 
 "modules/home/ai/gemini/settings.json" = "~/.gemini/settings.json"
 
+"modules/home/ai/claude/settings.json" = "~/.claude/settings.json"
+"modules/home/ai/claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
 "modules/home/ai/skills/empirical-prompt-tuning" = { target = "~/.claude/skills/empirical-prompt-tuning", type = "symbolic" }
 
 "modules/home/dev/vscode/keybindings.json" = "~/AppData/Roaming/Code/User/keybindings.json"
