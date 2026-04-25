@@ -1,11 +1,23 @@
+;; CapsLock is remapped to LeftCtrl by the OS-level Scancode Map,
+;; so kanata sees lctl here. Tap = Esc, Hold = Ctrl.
+
+(defcfg
+  process-unmapped-keys yes
+)
+
 (defsrc
-  caps
+  lctl
+)
+
+(defvar
+  tap-time  200
+  hold-time 200
 )
 
 (defalias
-  cap-esc-ctl (tap-hold 200 200 esc lctl)
+  lctl (tap-hold-press $tap-time $hold-time esc lctl)
 )
 
 (deflayer base
-  @cap-esc-ctl
+  @lctl
 )
