@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 7,
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
     "OTEL_METRICS_EXPORTER": "prometheus",
@@ -9,12 +10,14 @@
     "DISABLE_AUTOUPDATER": "1",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bunx -y ccstatusline@latest"
-  },
   "permissions": {
-    "allow": ["Bash", "Read", "Edit", "WebFetch", "WebSearch"],
+    "allow": [
+      "Bash",
+      "Read",
+      "Edit",
+      "WebFetch",
+      "WebSearch"
+    ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(rmdir *)",
@@ -30,6 +33,10 @@
       "Edit($HOME/config/**)"
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest"
+  },
   "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 7
+  "skipAutoPermissionPrompt": true
 }
