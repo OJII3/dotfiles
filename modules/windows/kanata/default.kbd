@@ -1,5 +1,15 @@
-;; CapsLock is remapped to LeftCtrl by the OS-level Scancode Map,
-;; so kanata sees lctl here. Tap = Esc, Hold = Ctrl.
+;; NOTE: This machine has a kernel-level CapsLock -> LeftCtrl remap via
+;; the registry Scancode Map at:
+;;   HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout\Scancode Map
+;; That remap fires before kanata's LowLevelKeyboardHook, so the physical
+;; CapsLock key arrives here as `lctl`. Use `lctl` in defsrc, not `caps`.
+;;
+;; Verify with PowerShell:
+;;   Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout' |
+;;     Select-Object -ExpandProperty 'Scancode Map'
+;; Expected bytes for caps->lctrl: ... 02 00 00 00 1D 00 3A 00 00 00 00 00
+;;
+;; Behavior: tap = Esc, hold = LeftCtrl.
 
 (defcfg
   process-unmapped-keys yes
