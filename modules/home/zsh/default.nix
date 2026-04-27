@@ -21,7 +21,7 @@ in
       syntaxHighlighting.enable = true;
 
       sessionVariables = {
-        PATH = "$HOME/.local/bin:$PATH";
+        PATH = "$HOME/.local/bin:$HOME/.cache/.bun/bin:$PATH";
       };
 
       shellAliases = {
@@ -55,6 +55,7 @@ in
         zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
         ${builtins.readFile ./scripts/ghq-fzf.sh}
         ${builtins.readFile ./scripts/zellij.sh}
+        ${builtins.readFile ./scripts/tmux.sh}
       '';
     };
 

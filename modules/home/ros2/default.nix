@@ -4,7 +4,7 @@ let
 in
 {
   imports = [
-    ./ros2hubmle-unityhub.nix
+    # ./ros2hubmle-unityhub.nix
   ];
 
   # ros2 module is enabled via dot.home.ros2.enable

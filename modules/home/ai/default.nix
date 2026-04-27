@@ -40,5 +40,9 @@ in
           ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
             libnotify
           ];
+
+        programs.zsh.shellAliases = {
+          "rm" = "gomi";
+        };
       };
 }

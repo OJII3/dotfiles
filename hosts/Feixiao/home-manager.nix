@@ -9,16 +9,16 @@
     zsh.enable = true;
     neovim.enable = true;
     git.enable = true;
-    gpg.enable = true;
-    gpg.pinentryPackage = "gnome3";
-    gnomeKeyring.enable = true;
+    gpg = {
+      enable = true;
+      pinentryPackage = "qt";
+    };
     direnv.enable = true;
     sops.enable = true;
 
     # Desktop
     desktop = {
       enable = true;
-      gnome.enable = true;
       fcitx5.enable = true;
       keyd.enable = true;
       theme.enable = true;
@@ -34,9 +34,9 @@
     # Development
     dev = {
       enable = true;
-      vscode.enable = true;
       jetbrains.enable = true;
       mise.enable = true;
+      zellij.enable = true;
     };
 
     ai = {
@@ -45,22 +45,24 @@
       gemini.enable = true;
     };
 
-    apps = {
-      common.enable = true;
-      linux = {
-        common.enable = true;
-        gnome.enable = true;
-      };
-    };
+    # Apps
+    apps.linux.common.enable = true;
 
     # Other
     bitwarden.enable = true;
-    blenderLauncher.enable = true;
     network.enable = true;
-    obsidian.enable = true;
-    ros2.enable = true;
   };
 
+  targets.genericLinux = {
+    enable = true;
+    gpu = {
+      enable = true;
+    };
+  };
+
+  programs.zsh.initContent = ''
+    [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
+  '';
 
   home.stateVersion = "24.11";
 }

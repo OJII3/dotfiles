@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -16,13 +17,15 @@ in
     programs.claude-code = {
       enable = true;
       commandsDir = ./commands;
+      package = pkgs.claude-code-bin;
     };
 
+    programs.zsh.zsh-abbr.abbreviations = {
+      "c" = "claude";
+    };
+
+    home.file.".local/bin/claude".source = "${config.programs.claude-code.package}/bin/claude";
     home.file.".claude/settings.json".source = ./settings.json;
     home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
-    home.file.".claude/scripts" = {
-      source = ./scripts;
-      executable = true;
-    };
   };
 }

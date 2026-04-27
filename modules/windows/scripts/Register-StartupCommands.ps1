@@ -26,9 +26,9 @@ $startupRegistryPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
 
 $startupCommands = @(
     [pscustomobject]@{
-        Name    = 'AutoHotkeyDefault'
-        Command = 'ahk ~/.config/autohotokey/default.ahk'
-        Comment = 'Launch the primary AutoHotkey script.'
+        Name    = 'Kanata'
+        Command = '~/.local/bin/kanata.exe --cfg ~/.config/kanata/default.kbd'
+        Comment = 'Launch kanata keyboard remapper.'
     }
 )
 

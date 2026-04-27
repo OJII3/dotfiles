@@ -18,5 +18,5 @@
 
 (defalias
     ;; 左手：Aキーを長押しでCtrl、短押しでesc
-    lctl (tap-hold-press $tap-time $hold-time lctl esc)
+    lctl (tap-hold-press $tap-time $hold-time esc lctl)
 )

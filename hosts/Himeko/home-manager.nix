@@ -34,7 +34,6 @@
         claude.enable = true;
         codex.enable = true;
         gemini.enable = true;
-        opencode.enable = true;
       };
 
     apps = {

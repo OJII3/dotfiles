@@ -50,9 +50,32 @@ in
             ];
           }
           {
+            job_name = "vicissitude";
+            honor_labels = true;
+            static_configs = [
+              { targets = [ "localhost:9091" ]; }
+            ];
+          }
+          {
             job_name = "node";
             static_configs = [
               { targets = [ "localhost:${toString config.services.prometheus.exporters.node.port}" ]; }
+            ];
+          }
+          {
+            job_name = "claude-code";
+            scrape_interval = "30s";
+            honor_timestamps = true;
+            static_configs = [
+              {
+                targets = [
+                  "Aglaea:9464"
+                  "Bronya:9464"
+                  "Cyrene:9464"
+                  "Cipher:9464"
+                  "Himeko:9464"
+                ];
+              }
             ];
           }
         ];
@@ -73,6 +96,7 @@ in
         openFirewall = true;
         settings = {
           server.http_addr = "0.0.0.0";
+          security.secret_key = "grafana_monitoring_key";
         };
       };
     };

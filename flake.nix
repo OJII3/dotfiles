@@ -38,7 +38,7 @@
       url = "github:BatteredBunny/brew-api";
       flake = false;
     };
-    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
+    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
     obsidian-hi3-theme.url = "github:OJII3/obsidian-hi3-theme/v1.1.1";
@@ -46,6 +46,7 @@
       url = "github:anthropics/skills/main";
       flake = false;
     };
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
 
   outputs = inputs: {

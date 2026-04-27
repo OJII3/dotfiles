@@ -75,7 +75,7 @@ for _, server_name in ipairs(lsp_names) do
 			},
 		}
 	elseif server_name == "clangd" then
-		opts.cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" }
+		opts.cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config", "--query-driver=/nix/store/*/bin/*" }
 	elseif server_name == "stylelint_lsp" then
 		opts.filetypes = { "css", "scss", "less", "sass" } -- exclude javascript and typescript
 	elseif server_name == "jsonls" then

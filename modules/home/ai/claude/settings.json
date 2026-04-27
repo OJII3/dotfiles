@@ -1,41 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "cleanupPeriodDays": 7,
   "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "prometheus",
+    "OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE": "cumulative",
     "DISABLE_TELEMETRY": "1",
     "DISABLE_ERROR_REPORTING": "1",
-    "DISABLE_AUTOUPDATER": "1"
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "bun x ccusage statusline"
+    "DISABLE_AUTOUPDATER": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
     "allow": [
       "Bash",
-      "Edit(docs/**)",
-      "Read(docs/**)",
-      "Edit(//tmp/**)",
-      "Read(//tmp/**)",
-      "Read(//nix/**)",
-      "Edit(**.bash)",
-      "Edit(**.css)",
-      "Edit(**.html)",
-      "Edit(**.js)",
-      "Edit(**.jsx)",
-      "Edit(**.lua)",
-      "Edit(**.md)",
-      "Edit(**.nix)",
-      "Edit(**.scss)",
-      "Edit(**.sh)",
-      "Edit(**.ts)",
-      "Edit(**.tsx)",
-      "Edit(**.zsh)",
-      "Edit(*.json)",
-      "Edit(*.jsonc)",
-      "Edit(*.toml)",
-      "Edit(*.yaml)",
-      "Edit(*.yml)",
+      "Read",
+      "Edit",
       "WebFetch",
       "WebSearch"
     ],
@@ -50,42 +29,14 @@
       "Edit(//usr/*)",
       "Edit(//bin/*)",
       "Edit(//sbin/*)",
+      "Read(/.env)",
       "Edit($HOME/config/**)"
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bunx -y ccstatusline@latest"
+  },
   "alwaysThinkingEnabled": true,
-  "cleanupPeriodDays": 7,
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "permission_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh permission_prompt"
-          }
-        ]
-      },
-      {
-        "matcher": "idle_prompt",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh idle_prompt"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/scripts/notify.sh stop"
-          }
-        ]
-      }
-    ]
-  }
+  "skipAutoPermissionPrompt": true
 }

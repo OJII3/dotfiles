@@ -18,6 +18,7 @@
     networking = {
       networkManager.enable = true;
       firewall.ros2.enable = true;
+      warp.enable = true;
     };
 
     desktop = {
@@ -27,6 +28,7 @@
       sunshine.enable = true;
       waydroid.enable = true;
       peripheral.keyboard.enable = true;
+      androidDev.enable = true;
       bitwarden.enable = true;
       gaming = {
         enable = true;

@@ -8,9 +8,10 @@ depends = []
 "assets/images/silver_wolf.png" = { target = "~/.assets/images/silver_wolf.png", type = "symbolic" }
 
 "modules/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"modules/windows/powershell/scripts/zellij.ps1" = "~/Documents/PowerShell/Scripts/zellij.ps1"
 "modules/windows/git/.gitconfig" = "~/.gitconfig"
 "modules/windows/git/.gitignore_global" = "~/.gitignore_global"
-"modules/windows/autohotkey/default.ahk" = "~/.config/autohotkey/default.ahk"
+"modules/windows/kanata/default.kbd" = "~/.config/kanata/default.kbd"
 
 "modules/home/dev/jetbrains/.ideavimrc" = "~/.ideavimrc"
 "modules/home/git/.tigrc" = "~/.tigrc"
@@ -21,6 +22,10 @@ depends = []
 "modules/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
 
 "modules/home/ai/gemini/settings.json" = "~/.gemini/settings.json"
+
+"modules/home/ai/claude/settings.json" = "~/.claude/settings.json"
+"modules/home/ai/claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
+"modules/home/ai/skills/empirical-prompt-tuning" = { target = "~/.claude/skills/empirical-prompt-tuning", type = "symbolic" }
 
 "modules/home/dev/vscode/keybindings.json" = "~/AppData/Roaming/Code/User/keybindings.json"
 

@@ -1,15 +1,17 @@
 model_reasoning_effect = "medium"
 network_access = true
-approval_policy = "on-failure"
+approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 web_search = 'cached'
 notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
+model = "gpt-5.4"
 
 [features]
 shell_snapshot = true
 
 [sandbox_workspace_write]
 network_access = true
+writable_roots = [ "/dev/pts", "/dev/ptmx", "~/.gnupg" ]
 
 [tui]
 notifications = ["agent-turn-complete","approval-requested"]

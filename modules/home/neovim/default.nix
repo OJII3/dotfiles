@@ -36,7 +36,6 @@ in
         # ACP
         gemini-cli-bin
         codex-acp
-        claude-code-acp
         # MCP server dependencies -------------------------
         uv
         bun
@@ -58,7 +57,7 @@ in
         nil
         nixd
         nixfmt
-        nodePackages.prettier
+        prettier
         ty
         ruff
         rust-analyzer
