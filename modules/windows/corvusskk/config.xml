@@ -2,6 +2,7 @@
 <skk>
   <section name="dictionary">
     <list>
+      <row path="https://github.com/skk-dev/dict/raw/refs/heads/master/SKK-JISYO.L" enabled="1" />
       <row path="https://github.com/skk-dev/dict/raw/refs/heads/master/SKK-JISYO.propernoun" enabled="1" />
     </list>
   </section>
