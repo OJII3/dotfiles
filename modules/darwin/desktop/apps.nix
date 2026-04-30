@@ -14,7 +14,6 @@ in
         cleanup = "uninstall";
       };
       casks = [
-        "app-cleaner"
         "affinity"
         "chatgpt"
         "codex-app"
