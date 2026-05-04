@@ -15,8 +15,13 @@
   process-unmapped-keys yes
 )
 
+(deflocalkeys-winiov2
+  jpkana 241
+)
+
 (defsrc
   lctl
+  jpkana
 )
 
 (defvar
@@ -24,10 +29,16 @@
   hold-time 200
 )
 
+(deffakekeys
+  langmet lmet
+)
+
 (defalias
-  lctl (tap-hold-press $tap-time $hold-time esc lctl)
+  lctl   (tap-hold-press $tap-time $hold-time esc lctl)
+  langsw (macro (on-press-fakekey langmet press) 20 spc 20 (on-press-fakekey langmet release))
 )
 
 (deflayer base
   @lctl
+  @langsw
 )
