@@ -4,7 +4,7 @@
 Microsoft.PowerShell
 Git.Git
 GitHub.cli
-AutoHotkey.AutoHotkey
+SuperCuber.Dotter
 wez.wezterm
 junegunn.fzf
 Starship.Starship

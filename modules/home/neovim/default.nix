@@ -57,7 +57,7 @@ in
         nil
         nixd
         nixfmt
-        nodePackages.prettier
+        prettier
         ty
         ruff
         rust-analyzer

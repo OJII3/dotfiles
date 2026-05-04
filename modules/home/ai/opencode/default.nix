@@ -26,7 +26,7 @@ in
     home.packages = commonPackages;
     programs.opencode = {
       enable = true;
-      rules = ./AGENTS.md;
+      context = ./AGENTS.md;
       commands = {
         plan = ./commands/plan.md;
       };

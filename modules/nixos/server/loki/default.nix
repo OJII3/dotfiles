@@ -7,7 +7,7 @@ in
     enable = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = "Enable Loki log aggregation with Promtail.";
+      description = "Enable Loki log aggregation with Grafana Alloy.";
     };
   };
 
@@ -59,79 +59,81 @@ in
       };
     };
 
-    services.promtail = {
-      enable = true;
-      configuration = {
-        server = {
-          http_listen_port = 9080;
-          grpc_listen_port = 0;
-        };
+    services.alloy.enable = true;
 
-        positions = {
-          filename = "/var/lib/promtail/positions.yaml";
-        };
+    environment.etc."alloy/config.alloy".text = ''
+      loki.write "default" {
+        endpoint {
+          url = "http://localhost:3100/loki/api/v1/push"
+        }
+      }
 
-        clients = [
-          { url = "http://localhost:3100/loki/api/v1/push"; }
-        ];
+      loki.relabel "journal_system" {
+        forward_to = []
 
-        scrape_configs = [
-          {
-            job_name = "journal";
-            journal = {
-              max_age = "12h";
-              labels = {
-                job = "systemd-journal";
-                host = "Cipher";
-              };
-            };
-            relabel_configs = [
-              {
-                source_labels = [ "__journal__systemd_unit" ];
-                target_label = "unit";
-              }
-              {
-                source_labels = [ "__journal_priority_keyword" ];
-                target_label = "priority";
-              }
-            ];
+        rule {
+          source_labels = ["__journal__systemd_unit"]
+          target_label  = "unit"
+        }
+
+        rule {
+          source_labels = ["__journal_priority_keyword"]
+          target_label  = "priority"
+        }
+      }
+
+      loki.source.journal "system" {
+        max_age       = "12h"
+        relabel_rules = loki.relabel.journal_system.rules
+        forward_to    = [loki.write.default.receiver]
+
+        labels = {
+          job  = "systemd-journal",
+          host = "Cipher",
+        }
+      }
+
+      loki.relabel "journal_vicissitude" {
+        forward_to = []
+
+        rule {
+          source_labels = ["__journal_container_tag"]
+          regex         = "vicissitude"
+          action        = "keep"
+        }
+      }
+
+      loki.process "vicissitude" {
+        forward_to = [loki.write.default.receiver]
+
+        stage.json {
+          expressions = {
+            level     = "level",
+            component = "component",
+            message   = "message",
           }
-          {
-            job_name = "vicissitude";
-            journal = {
-              max_age = "12h";
-              path = "/var/log/journal";
-              labels = {
-                job = "vicissitude";
-                host = "Cipher";
-              };
-            };
-            relabel_configs = [
-              {
-                source_labels = [ "__journal_container_tag" ];
-                regex = "vicissitude";
-                action = "keep";
-              }
-            ];
-            pipeline_stages = [
-              {
-                json.expressions = {
-                  level = "level";
-                  component = "component";
-                  message = "message";
-                };
-              }
-              {
-                labels = {
-                  level = null;
-                  component = null;
-                };
-              }
-            ];
+        }
+
+        stage.labels {
+          values = {
+            level     = "",
+            component = "",
           }
-        ];
-      };
-    };
+        }
+      }
+
+      loki.source.journal "vicissitude" {
+        max_age       = "12h"
+        path          = "/var/log/journal"
+        relabel_rules = loki.relabel.journal_vicissitude.rules
+        forward_to    = [loki.process.vicissitude.receiver]
+
+        labels = {
+          job  = "vicissitude",
+          host = "Cipher",
+        }
+      }
+    '';
 
     services.grafana.provision.datasources.settings.datasources = [
       {
@@ -140,11 +142,6 @@ in
         url = "http://localhost:3100";
       }
     ];
-
-    systemd.services.promtail.serviceConfig = {
-      StateDirectory = "promtail";
-      SupplementaryGroups = [ "systemd-journal" ];
-    };
 
     networking.firewall.allowedTCPPorts = [ 3100 ];
   };

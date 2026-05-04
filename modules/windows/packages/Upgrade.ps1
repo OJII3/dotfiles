@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = 'Stop'
 
 if (-not $PSBoundParameters.ContainsKey('PackageListPath') -or [string]::IsNullOrWhiteSpace($PackageListPath)) {
-    $PackageListPath = Join-Path -Path (Split-Path -Path $PSScriptRoot -Parent) -ChildPath 'winget-packages.txt'
+    $PackageListPath = Join-Path -Path $PSScriptRoot -ChildPath 'winget.txt'
 }
 
 if (-not (Get-Command -Name 'winget' -ErrorAction SilentlyContinue)) {
@@ -23,22 +23,22 @@ $packages = Get-Content -LiteralPath $PackageListPath |
     Where-Object { $_ -and -not $_.StartsWith('#') }
 
 if (-not $packages) {
-    Write-Host 'No packages to install. Update the package list and rerun.' -ForegroundColor Yellow
+    Write-Host 'No packages to upgrade. Update the package list and rerun.' -ForegroundColor Yellow
     return
 }
 
 foreach ($packageId in $packages) {
-    Write-Host "Installing $packageId" -ForegroundColor Cyan
+    Write-Host "Checking $packageId" -ForegroundColor Cyan
 
     $listArgs = @('list', '--id', $packageId, '--exact')
     $listOutput = winget @listArgs 2>&1 | Out-String
-    if ($LASTEXITCODE -eq 0 -and $listOutput -match [Regex]::Escape($packageId)) {
-        Write-Host "  $packageId already installed, skipping." -ForegroundColor Yellow
+    if ($LASTEXITCODE -ne 0 -or -not ($listOutput -match [Regex]::Escape($packageId))) {
+        Write-Host "  $packageId is not installed via winget, skipping." -ForegroundColor Yellow
         continue
     }
 
-    $installArgs = @(
-        'install',
+    $upgradeArgs = @(
+        'upgrade',
         '--id', $packageId,
         '--exact',
         '--silent',
@@ -47,16 +47,16 @@ foreach ($packageId in $packages) {
         '--disable-interactivity'
     )
 
-    winget @installArgs
+    winget @upgradeArgs
     $exitCode = $LASTEXITCODE
 
     if ($exitCode -eq 0) {
-        Write-Host "  Installed $packageId" -ForegroundColor Green
+        Write-Host "  Upgraded $packageId" -ForegroundColor Green
     }
-    elseif ($exitCode -eq 0x8A15000F -or $exitCode -eq 0x8A15003B) {
-        Write-Host "  $packageId already installed (winget exit code $exitCode), skipping." -ForegroundColor Yellow
+    elseif ($exitCode -eq 0x8A150010) {
+        Write-Host "  No updates available for $packageId" -ForegroundColor DarkGray
     }
     else {
-        Write-Warning "  winget install failed for $packageId (exit code $exitCode)"
+        Write-Warning "  winget upgrade failed for $packageId (exit code $exitCode)"
     }
 }

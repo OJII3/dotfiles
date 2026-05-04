@@ -27,14 +27,13 @@
     dev = {
       enable = true;
       jetbrains.enable = true;
-      mise.enable = true;
+      mise.enable = false;
     };
 
       ai = {
         claude.enable = true;
         codex.enable = true;
         gemini.enable = true;
-        opencode.enable = true;
       };
 
     apps = {

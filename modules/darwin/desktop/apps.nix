@@ -15,7 +15,6 @@ in
       };
       casks = [
         "affinity"
-        "antigravity"
         "chatgpt"
         "codex-app"
         "discord"
@@ -23,10 +22,10 @@ in
         "firefox"
         "fork"
         "ghostty"
+        "logi-options+"
         "minecraft"
         "moonlight"
         "obs"
-        "ollama-app"
         "parsec"
         "raycast"
         "scroll-reverser"
