@@ -4,6 +4,7 @@
 Microsoft.PowerShell
 Git.Git
 GitHub.cli
+SuperCuber.Dotter
 wez.wezterm
 junegunn.fzf
 Starship.Starship

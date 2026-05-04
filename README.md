@@ -9,7 +9,8 @@ Declarative configuration management using the `dot.*` options namespace.
 modules/
 ├── nixos/    # NixOS modules (dot.core, dot.desktop, dot.hardware, dot.networking, dot.server)
 ├── darwin/   # nix-darwin modules (dot.darwin.core, dot.darwin.desktop)
-└── home/     # Home Manager modules (dot.home.*)
+├── home/     # Home Manager modules (dot.home.*)
+└── windows/  # Windows setup scripts and dotter-managed files
 ```
 
 See each directory's README for details:
@@ -62,6 +63,13 @@ darwin-rebuild switch --flake .#<hostname>
 
 # Home Manager
 home-manager switch --flake .#<username>@<hostname>
+```
+
+### Windows
+
+```powershell
+# Run once from an elevated PowerShell session.
+.\modules\windows\Setup.ps1
 ```
 
 ### Update Flake
