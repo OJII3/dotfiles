@@ -107,6 +107,7 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable("efm")
 
 		-- Format on save
 		local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})

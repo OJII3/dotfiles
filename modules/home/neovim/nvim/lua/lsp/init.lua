@@ -1,5 +1,3 @@
-vim.api.nvim_create_user_command("LspHealth", "checkhealth vim.lsp", { desc = "LSP Check Healh" })
-
 -- 設定したlspを保存する配列
 local lsp_names = {
 	"astro",
@@ -12,7 +10,6 @@ local lsp_names = {
 	"denols",
 	"docker_compose_language_service",
 	"dockerls",
-	"efm",
 	"eslint",
 	"graphql",
 	"html",
@@ -124,13 +121,6 @@ for _, server_name in ipairs(lsp_names) do
 	vim.lsp.enable(server_name)
 end
 
-local function on_list(options)
-	vim.fn.setqflist({}, " ", options)
-	vim.api.nvim_command("cfirst")
-end
-
-vim.lsp.buf.definition({ on_list = on_list })
-vim.lsp.buf.references(nil, { on_list = on_list })
 vim.diagnostic.config({
 	virtual_text = {
 		source = true,

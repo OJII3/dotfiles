@@ -6,5 +6,5 @@ if ok then
 	require("secrets")
 end
 require("plugin")
-require("lsp")
+vim.api.nvim_create_user_command("LspHealth", "checkhealth vim.lsp", { desc = "LSP Check Health" })
 require("keymappings")
