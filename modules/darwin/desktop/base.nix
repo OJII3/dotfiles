@@ -1,6 +1,12 @@
 # Base desktop configuration
 # Applied when dot.darwin.desktop.enable is true
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   cfg = config.dot.darwin.desktop;
 in
@@ -51,7 +57,6 @@ in
           { app = "/System/Applications/System Settings.app"; }
           { app = "/Applications/Safari.app"; }
           { app = "/Applications/ChatGPT.app"; }
-          { app = "/Applications/Affinity Photo 2.app/"; }
         ];
       };
       screencapture = {
