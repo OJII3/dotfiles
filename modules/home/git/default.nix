@@ -64,7 +64,7 @@ in
     programs.zsh.zsh-abbr.abbreviations = {
       "g" = "git";
       "gb" = "git branch";
-      "gt" = "git commit -m '";
+      "gt" = "git commit -m";
       "gco" = "git checkout";
       "gf" = "git fetch";
       "gfp" = "git fetch --prune";
