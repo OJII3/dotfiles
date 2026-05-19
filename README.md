@@ -17,6 +17,7 @@ See each directory's README for details:
 - [modules/nixos/README.md](modules/nixos/README.md)
 - [modules/darwin/README.md](modules/darwin/README.md)
 - [modules/home/README.md](modules/home/README.md)
+- [modules/home/ai/skills/README.md](modules/home/ai/skills/README.md)
 
 ## Hosts
 
