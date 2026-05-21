@@ -32,8 +32,8 @@ in
         "slack"
         "spaceid"
         "steam"
+        "telegram"
         "unity-hub"
-        "visual-studio-code"
       ];
       masApps = {
         tailscale = 1475387142;
