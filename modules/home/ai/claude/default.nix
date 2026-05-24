@@ -17,7 +17,7 @@ in
     programs.claude-code = {
       enable = true;
       commandsDir = ./commands;
-      package = pkgs.claude-code-bin;
+      package = pkgs.claude-code;
     };
 
     programs.zsh.zsh-abbr.abbreviations = {
