@@ -83,7 +83,7 @@ in
       source = ./nvim;
       recursive = true;
     };
-    home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
+    # home.file.".config/mcphub/servers.json".source = ./mcphub/servers.json;
 
     # for skkeleton
     home.file.".skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";

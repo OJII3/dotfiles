@@ -6,7 +6,6 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    mcp-hub.url = "github:ravitemer/mcp-hub";
     sops-nix.url = "github:Mic92/sops-nix";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprpolkitagent.url = "github:hyprwm/hyprpolkitagent";
