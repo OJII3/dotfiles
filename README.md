@@ -32,6 +32,11 @@ See each directory's README for details:
 | **Welt** | SBC | Raspberry Pi 4B | Raspberry Pi OS + Home Manager |
 | **SilverWolf** | Tablet | Xiaomi Pad 6s Pro | nix-on-droid |
 
+### State Versions
+
+Home Manager state versions are managed per host in `hosts/<Host>/home-manager.nix`.
+Raise them when adopting the new Home Manager release defaults for that host.
+
 ## Commands
 
 ### Check
@@ -98,4 +103,3 @@ nix flake update nixpkgs
 - **direnv** - Per-directory environment variables
 - **Tailscale** - Mesh VPN
 - **sops-nix** - Secrets management
-
