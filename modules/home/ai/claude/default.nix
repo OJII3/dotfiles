@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -17,7 +18,7 @@ in
     programs.claude-code = {
       enable = true;
       commandsDir = ./commands;
-      package = pkgs.claude-code;
+      package = inputs.claude-code-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
     programs.zsh.zsh-abbr.abbreviations = {

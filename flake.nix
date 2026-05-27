@@ -29,14 +29,6 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    brew-nix = {
-      url = "github:BatteredBunny/brew-nix";
-      inputs.brew-api.follows = "brew-api";
-    };
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
-    };
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
@@ -44,6 +36,10 @@
     anthropics-skills = {
       url = "github:anthropics/skills/main";
       flake = false;
+    };
+    claude-code-nix = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };

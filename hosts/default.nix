@@ -166,7 +166,6 @@ in
       system = "aarch64-darwin";
       username = "ojii3";
       overlays = [
-        inputs.brew-nix.overlays.default
         (final: prev: {
           direnv = prev.direnv.overrideAttrs (old: {
             doCheck = false;
@@ -192,7 +191,6 @@ in
       hostname = "Himeko";
       username = "ojii3";
       modules = [
-        inputs.brew-nix.darwinModules.default
         ./Himeko/darwin.nix
       ];
     };
