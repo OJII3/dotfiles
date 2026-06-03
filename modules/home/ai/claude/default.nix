@@ -9,15 +9,11 @@ let
   cfg = config.dot.home.ai;
 in
 {
-  imports = [
-    ./commands.nix
-  ];
 
   config = lib.mkIf cfg.claude.enable {
     programs.jq.enable = true;
     programs.claude-code = {
       enable = true;
-      commandsDir = ./commands;
       package = inputs.claude-code-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
