@@ -5,7 +5,6 @@ sandbox_mode = "workspace-write"
 web_search = 'cached'
 # Keep direnv-provided environment from the parent shell by avoiding login shell startup.
 allow_login_shell = false
-notify = ["bash", "-lc", "~/.codex/scripts/notify.sh stop"]
 
 [features]
 shell_snapshot = true

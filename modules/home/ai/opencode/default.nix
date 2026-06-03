@@ -9,7 +9,6 @@ let
   commonPackages =
     with pkgs;
     [
-      gomi
       bun
       uv
       (callPackage ../../../packages/gwq.nix { })
@@ -27,9 +26,6 @@ in
     programs.opencode = {
       enable = true;
       context = ./AGENTS.md;
-      commands = {
-        plan = ./commands/plan.md;
-      };
     };
   };
 }

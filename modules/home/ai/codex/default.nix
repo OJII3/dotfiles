@@ -13,14 +13,10 @@ let
 in
 {
   config = lib.mkIf cfg.codex.enable {
-    home.packages = with pkgs; [
+    home.packages = [
       inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
-    home.file.".codex/scripts" = {
-      source = ./scripts;
-      recursive = true;
-    };
 
     home.activation.codexConfigGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       # ghq で管理されている全リポジトリを trusted として config.toml を生成
