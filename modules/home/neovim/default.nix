@@ -54,6 +54,7 @@ in
         haskellPackages.lsp
         hyprls
         lua-language-server
+        marp-cli
         nil
         nixd
         nixfmt
