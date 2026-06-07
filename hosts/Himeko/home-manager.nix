@@ -33,7 +33,7 @@
       ai = {
         claude.enable = true;
         codex.enable = true;
-        gemini.enable = true;
+        agy.enable = true;
       };
 
     apps = {

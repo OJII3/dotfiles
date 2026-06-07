@@ -15,8 +15,8 @@
       enable = lib.mkEnableOption "OpenCode AI assistant";
     };
 
-    gemini = {
-      enable = lib.mkEnableOption "Gemini AI assistant";
+    agy = {
+      enable = lib.mkEnableOption "Antigravity AI assistant";
     };
   };
 }

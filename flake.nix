@@ -32,16 +32,13 @@
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
-    obsidian-hi3-theme.url = "github:OJII3/obsidian-hi3-theme/v1.1.1";
     anthropics-skills = {
       url = "github:anthropics/skills/main";
       flake = false;
     };
-    claude-code-nix = {
-      url = "github:sadjow/claude-code-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    claude-code-nix.url = "github:sadjow/claude-code-nix";
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
+    antigravity-nix.url = "github:jacopone/antigravity-nix";
   };
 
   outputs = inputs: {
