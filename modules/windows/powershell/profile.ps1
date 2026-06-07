@@ -99,7 +99,7 @@ if ($abbrModuleLoaded) {
 
     ealias t 'tig status'
     ealias ghpc 'gh pr create'
-    ealias ghpm 'gh pr merge -d'
+    ealias ghpm 'gh pr merge -ds'
     ealias ghpv 'gh pr view'
 }
 
