@@ -21,7 +21,7 @@ depends = []
 "modules/windows/wezterm/keybindings.lua" = "~/.config/wezterm/local/keybindings.lua"
 "modules/windows/wezterm/images.lua" = "~/.config/wezterm/local/images.lua"
 
-"modules/home/ai/gemini/settings.json" = "~/.gemini/settings.json"
+"modules/home/ai/agy/settings.json" = "~/.gemini/antigravity/settings.json"
 
 "modules/home/ai/claude/settings.json" = "~/.claude/settings.json"
 "modules/home/ai/claude/CLAUDE.md" = "~/.claude/CLAUDE.md"
