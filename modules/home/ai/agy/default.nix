@@ -28,7 +28,7 @@ in
       inputs.antigravity-nix.packages."${pkgs.stdenv.hostPlatform.system}".google-antigravity-cli
     ];
 
-    home.file.".gemini/antigravity-cli/settings.json".source = ./settings.json;
+    # home.file.".gemini/antigravity-cli/settings.json".source = ./settings.json;
     home.file.".gemini/antigravity-cli/AGENTS.md".source = ./AGENTS.md;
   };
 }
