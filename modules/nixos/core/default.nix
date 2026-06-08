@@ -200,7 +200,7 @@ in
       # Docker
       (lib.mkIf cfg.virtualisation.docker.enable {
         virtualisation.docker = {
-          enable = true;
+          enable = false;
           rootless = {
             enable = cfg.virtualisation.docker.rootless.enable;
             setSocketVariable = cfg.virtualisation.docker.rootless.enable;
