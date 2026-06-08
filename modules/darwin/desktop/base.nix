@@ -55,8 +55,6 @@ in
         wvous-br-corner = 1;
         persistent-apps = [
           { app = "/System/Applications/System Settings.app"; }
-          { app = "/Applications/Safari.app"; }
-          { app = "/Applications/ChatGPT.app"; }
         ];
       };
       screencapture = {
