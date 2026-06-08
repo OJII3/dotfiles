@@ -10,7 +10,6 @@
     wifi = {
       macAddress = "random";
       scanRandMacAddress = false;
-      powersave = false;
     };
     dns = "systemd-resolved";
   };
