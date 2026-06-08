@@ -11,7 +11,7 @@ in
 {
   config = lib.mkIf cfg.common.enable {
     home.packages = with pkgs; [
-      (bottles.override { removeWarningPopup = true; })
+      # (bottles.override { removeWarningPopup = true; })
       discord
       figma-linux
       gimp
