@@ -5,6 +5,9 @@
   imports = [
     ../../modules/nixos
     ./hardware-configuration.nix
+  ]
+  ++ [
+    ../../modules/nixos/core/fan.nix
   ];
 
   # ===== Options-based configuration =====
