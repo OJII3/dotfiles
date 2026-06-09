@@ -148,6 +148,9 @@ in
               "nix-command"
               "flakes"
             ];
+            trusted-substituters = [
+              "https://ros.cachix.org"
+            ];
           };
           gc = {
             automatic = true;
