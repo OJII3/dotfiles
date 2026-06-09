@@ -6,15 +6,13 @@
       default = true;
     };
 
+    kdeConnect = {
+      enable = lib.mkEnableOption "KDE Connect (opens firewall ports 1714-1764)";
+    };
+
     firewall = {
       enable = lib.mkEnableOption "firewall" // {
         default = true;
-      };
-
-      kdeConnect = {
-        enable = lib.mkEnableOption "KDE Connect ports (1714-1764)" // {
-          default = true;
-        };
       };
 
       ros2 = {

@@ -30,30 +30,21 @@ in
         programs.wireshark.enable = true;
       }
 
+      # KDE Connect
+      (lib.mkIf cfg.kdeConnect.enable {
+        programs.kdeconnect.enable = true;
+      })
+
       # Firewall
       (lib.mkIf cfg.firewall.enable {
         networking.firewall = {
           enable = true;
           trustedInterfaces = lib.mkIf cfg.tailscale.enable [ "tailscale0" ];
-          allowedTCPPortRanges = lib.mkIf cfg.firewall.kdeConnect.enable [
+          allowedUDPPortRanges = lib.mkIf cfg.firewall.ros2.enable [
             {
-              from = 1714;
-              to = 1764;
+              from = 1;
+              to = 65535;
             }
-          ];
-          allowedUDPPortRanges = lib.mkMerge [
-            (lib.mkIf cfg.firewall.kdeConnect.enable [
-              {
-                from = 7400;
-                to = 7500;
-              }
-            ])
-            (lib.mkIf cfg.firewall.ros2.enable [
-              {
-                from = 1;
-                to = 65535;
-              }
-            ])
           ];
         };
       })
