@@ -24,6 +24,7 @@
 
     networking = {
       networkManager.enable = true;
+      kdeConnect.enable = true;
       firewall.ros2.enable = true;
     };
 
