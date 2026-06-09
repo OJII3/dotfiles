@@ -48,12 +48,6 @@ in
                 to = 7500;
               }
             ])
-            (lib.mkIf cfg.firewall.kdeConnect.enable [
-              {
-                from = 1714;
-                to = 1764;
-              }
-            ])
             (lib.mkIf cfg.firewall.ros2.enable [
               {
                 from = 1;
@@ -93,7 +87,6 @@ in
           dns = lib.mkIf cfg.dns.resolved.enable "systemd-resolved";
         };
       })
-
     ]
   );
 }
