@@ -57,10 +57,10 @@
     bitwarden.enable = true;
     blenderLauncher.enable = true;
     network.enable = true;
+    kdeconnect.enable = true;
     obsidian.enable = true;
     ros2.enable = true;
   };
-
 
   home.stateVersion = "26.05";
 }
