@@ -40,10 +40,11 @@ in
         clock-show-weekday = true;
       };
       "org/gnome/desktop/background" = {
-        picture-uri = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
-        picture-uri-dark = "file:///home/ojii3/.assets/images/honkai3rd_efcs.png";
-        picture-options = "scaled";
-        primary-color = "#94aada";
+        picture-uri = "file:///home/ojii3/.assets/images/cho.jpg";
+        picture-uri-dark = "file:///home/ojii3/.assets/images/cho.jpg";
+        picture-options = "covered";
+        # picture-options = "scaled";
+        # primary-color = "#94aada";
       };
       "org/gnome/desktop/wm/keybindings" = {
         close = [ "<Super>q" ];
