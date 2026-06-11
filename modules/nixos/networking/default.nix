@@ -39,7 +39,6 @@ in
       (lib.mkIf cfg.firewall.enable {
         networking.firewall = {
           enable = true;
-          trustedInterfaces = lib.mkIf cfg.tailscale.enable [ "tailscale0" ];
           allowedUDPPortRanges = lib.mkIf cfg.firewall.ros2.enable [
             {
               from = 1;
