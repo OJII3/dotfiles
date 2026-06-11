@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -77,13 +78,13 @@ in
           "--enable-wayland-ime"
         ];
       };
-      vivaldi = {
+      codexDesktopLinux = {
         enable = true;
-        commandLineArgs = [
-          "--ozone-platform-hint=auto"
-          "--enable-wayland-ime"
-        ];
+        computerUseUi.enable = true;
+        remoteMobileControl.enable = true;
+        remoteControl.enable = true;
       };
     };
+
   };
 }

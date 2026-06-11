@@ -49,6 +49,7 @@ let
           };
           programs.home-manager.enable = true;
         }
+        inputs.codex-desktop-linux.homeManagerModules.default
       ];
     };
 
@@ -130,7 +131,9 @@ in
       system = "x86_64-linux";
       username = "ojii3";
       overlays = [ ];
-      modules = [ ./Aglaea/home-manager.nix ];
+      modules = [
+        ./Aglaea/home-manager.nix
+      ];
     };
     "ojii3@Bronya" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
