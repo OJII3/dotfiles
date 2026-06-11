@@ -21,7 +21,7 @@
     networking = {
       firewall.enable = false;
       networkManager.enable = true;
-      warp.enable = true;
+      warp.enable = false;
     };
 
     desktop = {
