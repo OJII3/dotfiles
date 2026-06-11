@@ -52,17 +52,15 @@
   # ===== Host-specific configuration =====
 
   # Kernel
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hardware Specific Options
   boot.kernelParams = [
+    "iommu=soft"
     "amd_iommmu=on"
     "mem_sleep_default=deep"
     "acpi_backlight=native"
     "thinkpad_acpi.fan_control=1"
-  ];
-  boot.extraModulePackages = with pkgs; [
-    linuxKernel.packages.linux_zen.v4l2loopback
   ];
   boot.kernelModules = [ "v4l2loopback" ];
 
