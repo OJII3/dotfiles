@@ -26,10 +26,6 @@ modules/nixos/
     └── default.nix zabbix.nix librenms.nix prometheus/ loki/ minecraft.nix
 ```
 
-> 注: `core/firmware.nix` `core/gpg.nix` `core/sops.nix` `core/proxmox.nix` は
-> 現状どのモジュールからも import されていない(未配線)。利用する場合は
-> 該当カテゴリの `default.nix` の imports へ追加し、オプションでゲートすること。
-
 ## 使用可能なオプション
 
 ### dot.core
