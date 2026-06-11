@@ -5,9 +5,6 @@
   imports = [
     ../../modules/nixos
     ./hardware-configuration.nix
-  ]
-  ++ [
-    ../../modules/nixos/core/fan.nix
   ];
 
   # ===== Options-based configuration =====
@@ -26,6 +23,7 @@
 
     desktop = {
       enable = true;
+      gnome.enable = true;
       fonts.enable = true;
       keyd.enable = true;
       sunshine.enable = true;
@@ -45,22 +43,17 @@
     };
   };
 
-  # ===== Desktop Environment (not yet optionized) =====
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # ===== Host-specific configuration =====
 
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hardware Specific Options
+  # (acpi_backlight / thinkpad_acpi.fan_control are provided by dot.hardware.thinkpad)
   boot.kernelParams = [
     "iommu=soft"
     "amd_iommmu=on"
     "mem_sleep_default=deep"
-    "acpi_backlight=native"
-    "thinkpad_acpi.fan_control=1"
   ];
   boot.kernelModules = [ "v4l2loopback" ];
 

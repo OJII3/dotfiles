@@ -9,6 +9,10 @@
       enable = lib.mkEnableOption "Hyprland compositor";
     };
 
+    gnome = {
+      enable = lib.mkEnableOption "GNOME desktop environment (GDM + GNOME Shell)";
+    };
+
     fonts = {
       enable = lib.mkEnableOption "custom fonts configuration";
     };
