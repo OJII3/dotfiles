@@ -53,7 +53,7 @@
     "amd_iommu=on"
     "iommu=pt"
     "split_lock_detect=off"
-    "acpilec_no_wakeup=1"
+    "acpi.ec_no_wakeup=1"
   ];
   boot.kernelModules = [ "v4l2loopback" ];
 
