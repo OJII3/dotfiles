@@ -36,17 +36,17 @@ in
       })
 
       # Firewall
-      (lib.mkIf cfg.firewall.enable {
+      {
         networking.firewall = {
-          enable = true;
-          allowedUDPPortRanges = lib.mkIf cfg.firewall.ros2.enable [
+          enable = cfg.firewall.enable;
+          allowedUDPPortRanges = lib.mkIf (cfg.firewall.enable && cfg.firewall.ros2.enable) [
             {
               from = 1;
               to = 65535;
             }
           ];
         };
-      })
+      }
 
       # Tailscale
       (lib.mkIf cfg.tailscale.enable {

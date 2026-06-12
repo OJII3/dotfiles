@@ -94,7 +94,7 @@ modules/nixos/
 | オプション | 型 | デフォルト | 説明 |
 |-----------|-----|---------|------|
 | `enable` | bool | `true` | ネットワーク設定 |
-| `firewall.enable` | bool | `true` | ファイアウォール |
+| `firewall.enable` | bool | `true` | NixOS ファイアウォールを有効化 |
 | `firewall.ros2.enable` | bool | `false` | ROS 2 UDP ポート (セキュリティ上デフォルト無効) |
 | `kdeConnect.enable` | bool | `false` | KDE Connect ポート (1714-1764) |
 | `tailscale.enable` | bool | `true` | Tailscale VPN |
