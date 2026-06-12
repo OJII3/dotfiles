@@ -65,6 +65,23 @@
     memoryPercent = 100;
   };
 
+  # Hibernate (S4): s2idle resume hangs in firmware on BIOS 1.17, so disk
+  # hibernation is the reliable sleep path. zram cannot hold a hibernation
+  # image, so a real swapfile on btrfs is required (created as NoCOW by the
+  # swap module via `btrfs filesystem mkswapfile`). RAM is 22GiB.
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 24 * 1024;
+    }
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/c544cc27-e5b6-4132-8442-4a397fb360ce";
+  # resume_offset is determined by the physical location of the swapfile.
+  # After the first rebuild creates it, obtain the value with:
+  #   sudo btrfs inspect-internal map-swapfile -r /var/lib/swapfile
+  # and add "resume_offset=<value>" to boot.kernelParams above.
+  # If the swapfile is ever recreated (e.g. size change), the offset changes.
+
   # VM tuning for zram-backed swap (fast, in-memory) and desktop responsiveness.
   boot.kernel.sysctl = {
     "vm.swappiness" = 180; # zram is cheap, prefer it over reclaiming caches
