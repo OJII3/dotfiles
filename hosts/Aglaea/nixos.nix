@@ -54,6 +54,11 @@
     "iommu=pt"
     "split_lock_detect=off"
     "acpi.ec_no_wakeup=1"
+    # Hibernate resume: physical offset of /var/lib/swapfile within the
+    # btrfs filesystem. Obtained via:
+    #   sudo btrfs inspect-internal map-swapfile -r /var/lib/swapfile
+    # Must be regenerated if the swapfile is ever recreated (e.g. size change).
+    "resume_offset=38869190"
   ];
   boot.kernelModules = [ "v4l2loopback" ];
 
@@ -64,6 +69,29 @@
     algorithm = "zstd";
     memoryPercent = 100;
   };
+
+  # Hibernate (S4): s2idle resume hangs in firmware on BIOS 1.17, so disk
+  # hibernation is the reliable sleep path. zram cannot hold a hibernation
+  # image, so a real swapfile on btrfs is required (created as NoCOW by the
+  # swap module via `btrfs filesystem mkswapfile`). RAM is 22GiB.
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 24 * 1024;
+    }
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/c544cc27-e5b6-4132-8442-4a397fb360ce";
+  # (resume_offset for this swapfile is set in boot.kernelParams above.)
+
+  # Redirect every suspend request to hibernate. GNOME's power menu, the lid
+  # switch, and idle auto-suspend all invoke systemd-suspend.service; pointing
+  # its ExecStart at `systemd-sleep hibernate` makes them all hibernate instead,
+  # avoiding the broken s2idle firmware path entirely. Drop this block once the
+  # BIOS suspend regression is fixed.
+  systemd.services.systemd-suspend.serviceConfig.ExecStart = [
+    ""
+    "${pkgs.systemd}/lib/systemd/systemd-sleep hibernate"
+  ];
 
   # VM tuning for zram-backed swap (fast, in-memory) and desktop responsiveness.
   boot.kernel.sysctl = {
