@@ -49,15 +49,11 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Hardware Specific Options
-  # (acpi_backlight / thinkpad_acpi.fan_control are provided by dot.hardware.thinkpad)
   boot.kernelParams = [
-    # Hardware IOMMU with passthrough mapping (minimal DMA overhead).
-    # Was previously "iommu=soft" (swiotlb bounce buffers, slow); the old
-    # "amd_iommmu=on" was a typo (3 m's) and never took effect.
     "amd_iommu=on"
     "iommu=pt"
-    # Avoid massive slowdowns in Proton/Windows games that trigger split-lock detection.
     "split_lock_detect=off"
+    "acpilec_no_wakeup=1"
   ];
   boot.kernelModules = [ "v4l2loopback" ];
 
