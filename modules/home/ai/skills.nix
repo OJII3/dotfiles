@@ -1,44 +1,45 @@
-{ inputs, pkgs, ... }:
-
+# Agent Skills のリンク管理
+#
+# 「skills/<name>/SKILL.md」形式で発見されるスキルを、有効化されたツールの
+# スキルディレクトリへ symlink する汎用エンジン。
+#
+# - enable 連動: cfg.<tool>.enable が true のツールにのみリンクする。
+# - 出し分け: 各スキルは tools = [ ... ] で対象ツールを限定できる(既定は全ツール)。
+# - superpowers のような複数スキルを内包するパックは自動展開する。
+#
+# 注: opencode / agy は skills/ 機構ではなく独自のプラグイン/拡張機構を持つため、
+#     skillDirs には含めず ./superpowers.nix 側で個別に対応する。
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
-  # ローカルスキルディレクトリ
-  localSkillsDir = ./skills;
+  cfg = config.dot.home.ai;
+  inherit (lib) filterAttrs attrNames listToAttrs filter elem mkMerge optionals;
 
-  # ローカルスキルの自動検出
-  # ./skills/<skill-name>/ に配置されたスキルを検出
-  localSkills =
-    let
-      dirExists = builtins.pathExists localSkillsDir;
-      entries = if dirExists then builtins.readDir localSkillsDir else { };
-      skillNames = builtins.attrNames (pkgs.lib.filterAttrs (name: type: type == "directory") entries);
-    in
+  # ツール → スキル配置ディレクトリ
+  skillDirs = {
+    claude = ".claude/skills";
+    codex = ".codex/skills";
+  };
+
+  # ディレクトリ直下のサブディレクトリ名一覧
+  subdirsOf = dir: attrNames (filterAttrs (_: type: type == "directory") (builtins.readDir dir));
+
+  # 内蔵スキル(./skills/<name>/)
+  localSkillsDir = ./skills;
+  localSkills = optionals (builtins.pathExists localSkillsDir) (
     map (name: {
       inherit name;
       src = localSkillsDir + "/${name}";
-    }) skillNames;
+    }) (subdirsOf localSkillsDir)
+  );
 
-  # # 共通ソースの定義
-  # anthropics-skills-src = pkgs.fetchFromGitHub {
-  #   owner = "anthropics";
-  #   repo = "skills";
-  #   rev = "69c0b1a0674149f27b61b2635f935524b6add202";
-  #   sha256 = "sha256-pllFZoWRdtLliz/5pLWks0V9nKFMzeWoRcmFgu2UWi8=";
-  # };
-  #
-  # リモート Agent Skills の定義
+  # 単体リモートスキル
   remoteSkills = [
-    # 例: スキルを追加する場合
-    # {
-    #   name = "example-skill";
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "owner-name";
-    #     repo = "repo-name";
-    #     rev = "commit-hash-or-tag";
-    #     sha256 = "sha256-hash";
-    #   };
-    #   # オプショナル: リポジトリのルートにスキルがない場合、サブディレクトリを指定
-    #   # baseDir = "path/to/skill";
-    # }
     {
       name = "notebooklm";
       src = pkgs.fetchFromGitHub {
@@ -100,30 +101,35 @@ let
     }
   ];
 
-  # ローカルスキルとリモートスキルを結合
-  allSkills = localSkills ++ remoteSkills;
+  # superpowers パック(skills/ 配下の複数スキルを自動展開)。
+  # hook / opencode plugin / gemini extension は ./superpowers.nix で対応する。
+  superpowersSkills = map (name: {
+    inherit name;
+    src = inputs.superpowers;
+    baseDir = "skills/${name}";
+  }) (subdirsOf (inputs.superpowers + "/skills"));
 
-  # スキルディレクトリの作成
-  mkClaudeSkillLinks = builtins.listToAttrs (
-    map (skill: {
-      name = ".claude/skills/${skill.name}";
-      value = {
-        source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
-        recursive = true;
-      };
-    }) allSkills
-  );
+  allSkills = localSkills ++ remoteSkills ++ superpowersSkills;
 
-  mkCodexSkillLinks = builtins.listToAttrs (
-    map (skill: {
-      name = ".codex/skills/${skill.name}";
-      value = {
-        source = if skill ? baseDir then "${skill.src}/${skill.baseDir}" else skill.src;
-        recursive = true;
-      };
-    }) allSkills
-  );
+  # スキル → 実ソースパス / 対象ツール
+  skillSource = skill: if skill ? baseDir then "${skill.src}/${skill.baseDir}" else "${skill.src}";
+  skillTools = skill: skill.tools or (attrNames skillDirs);
+
+  # 指定ツールのスキルディレクトリへのリンク群
+  linksFor =
+    tool:
+    listToAttrs (
+      map (skill: {
+        name = "${skillDirs.${tool}}/${skill.name}";
+        value = {
+          source = skillSource skill;
+          recursive = true;
+        };
+      }) (filter (skill: elem tool (skillTools skill)) allSkills)
+    );
+
+  enabledTools = filter (tool: cfg.${tool}.enable) (attrNames skillDirs);
 in
 {
-  home.file = mkClaudeSkillLinks // mkCodexSkillLinks;
+  home.file = mkMerge (map linksFor enabledTools);
 }

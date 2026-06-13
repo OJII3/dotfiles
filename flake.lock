@@ -1479,7 +1479,8 @@
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
         "proxmox-nixos": "proxmox-nixos",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "superpowers": "superpowers"
       }
     },
     "rosdistro": {
@@ -1550,6 +1551,23 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "superpowers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777932301,
+        "narHash": "sha256-3E3rO6hR87JUfS3XV1Eaoz6SDWOftleWvN9UPNFEMjw=",
+        "owner": "obra",
+        "repo": "superpowers",
+        "rev": "f2cbfbefebbfef77321e4c9abc9e949826bea9d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "obra",
+        "ref": "v5.1.0",
+        "repo": "superpowers",
         "type": "github"
       }
     },
