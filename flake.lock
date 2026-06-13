@@ -1163,6 +1163,22 @@
     },
     "nixpkgs_12": {
       "locked": {
+        "lastModified": 1781268102,
+        "narHash": "sha256-Zn5KTggEmUB3lXn/ccERNcBdddE6IaOFber9dWViWDg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "49a4bd0573c376468dd7996ddb6f9fa31d8c4d97",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_13": {
+      "locked": {
         "lastModified": 1775888245,
         "narHash": "sha256-nwASzrRDD1JBEu/o8ekKYEXm/oJW6EMCzCRdrwcLe90=",
         "owner": "NixOS",
@@ -1410,6 +1426,25 @@
         "type": "github"
       }
     },
+    "opencode": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_12"
+      },
+      "locked": {
+        "lastModified": 1781230767,
+        "narHash": "sha256-ppWpyi1iGmL5UF6FuERf7tnN9kRkphaiyN3IoHcFY6A=",
+        "owner": "sst",
+        "repo": "opencode",
+        "rev": "abda3515f444c4d28a98953d153c5a3e1892d3d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sst",
+        "ref": "v1.17.4",
+        "repo": "opencode",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1478,6 +1513,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
+        "opencode": "opencode",
         "proxmox-nixos": "proxmox-nixos",
         "sops-nix": "sops-nix",
         "superpowers": "superpowers"
@@ -1538,7 +1574,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_12"
+        "nixpkgs": "nixpkgs_13"
       },
       "locked": {
         "lastModified": 1777944972,
