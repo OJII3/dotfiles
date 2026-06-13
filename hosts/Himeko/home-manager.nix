@@ -30,11 +30,12 @@
       mise.enable = false;
     };
 
-      ai = {
-        claude.enable = true;
-        codex.enable = true;
-        agy.enable = true;
-      };
+    ai = {
+      claude.enable = true;
+      codex.enable = true;
+      agy.enable = true;
+      opencode.enable = true;
+    };
 
     apps = {
       common.enable = true;
@@ -49,7 +50,6 @@
   programs.zsh.initContent = ''
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
-
 
   home.stateVersion = "26.05";
 }
