@@ -41,5 +41,9 @@ in
       package = opencodePkg;
       context = ./AGENTS.md;
     };
+    home.file.".config/opencode/agents" = {
+      source = ./agents;
+      recursive = true;
+    };
   };
 }
