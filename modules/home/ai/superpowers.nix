@@ -20,7 +20,6 @@
 let
   cfg = config.dot.home.ai;
   src = inputs.superpowers;
-  homeDir = config.home.homeDirectory;
 in
 {
   config = lib.mkMerge [
@@ -30,11 +29,11 @@ in
       home.file.".claude/superpowers".source = src;
     })
 
-    # OpenCode: 安定パスへ symlink し、plugin としてそのパッケージを指定する。
-    # plugin 本体(.opencode/plugins/superpowers.js)が skills を自動登録する。
+    # OpenCode: 自動検出される plugin ディレクトリへエントリポイントを symlink する。
+    # plugin 本体が skills を自動登録するため、設定ファイルへの追記は不要。
     (lib.mkIf cfg.opencode.enable {
-      home.file.".config/opencode/superpowers".source = src;
-      programs.opencode.settings.plugin = [ "${homeDir}/.config/opencode/superpowers" ];
+      home.file.".config/opencode/plugins/superpowers.js".source =
+        src + "/.opencode/plugins/superpowers.js";
     })
 
     # Antigravity: gemini extension 機構で読み込む(GEMINI.md が using-superpowers を import)。
