@@ -11,7 +11,8 @@ in
 {
   config = lib.mkIf cfg.common.enable {
     home.packages = with pkgs; [
-      (bottles.override { removeWarningPopup = true; })
+      # TODO: openldap ビルド失敗のため一時的に無効化
+      # (bottles.override { removeWarningPopup = true; })
       discord
       figma-linux
       gimp
