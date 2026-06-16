@@ -13,10 +13,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,16 +32,22 @@
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
-    obsidian-hi3-theme.url = "github:OJII3/obsidian-hi3-theme/v1.1.1";
     anthropics-skills = {
       url = "github:anthropics/skills/main";
       flake = false;
     };
-    claude-code-nix = {
-      url = "github:sadjow/claude-code-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+    superpowers = {
+      url = "github:obra/superpowers/v5.1.0";
+      flake = false;
     };
+    # node_modules の FOD ハッシュが上流ピンの nixpkgs(bun バージョン)前提で
+    # 計算されているため follows させない。main(HEAD)は darwin 用ハッシュが
+    # 更新漏れしていることがあるためリリースタグに固定する。
+    opencode.url = "github:sst/opencode/v1.17.4";
+    claude-code-nix.url = "github:sadjow/claude-code-nix";
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
+    antigravity-nix.url = "github:jacopone/antigravity-nix";
+    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
   };
 
   outputs = inputs: {

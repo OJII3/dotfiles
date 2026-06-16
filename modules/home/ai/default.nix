@@ -16,14 +16,15 @@ in
   imports = [
     ./options.nix
     ./skills.nix
+    ./superpowers.nix
     ./claude
     ./codex
     ./opencode
-    ./gemini
+    ./agy
   ];
 
   config =
-    lib.mkIf (cfg.claude.enable || cfg.codex.enable || cfg.opencode.enable || cfg.gemini.enable)
+    lib.mkIf (cfg.claude.enable || cfg.codex.enable || cfg.opencode.enable || cfg.agy.enable)
       {
 
         home.packages =

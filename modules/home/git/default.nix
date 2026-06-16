@@ -75,7 +75,7 @@ in
       "gwc" = "git switch -c";
 
       "ghpc" = "gh pr create";
-      "ghpm" = "gh pr merge -d";
+      "ghpm" = "gh pr merge -ds";
       "ghpv" = "gh pr view";
 
       "t" = "tig status";

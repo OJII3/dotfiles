@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -22,12 +23,12 @@ let
     ];
 in
 {
-  config = lib.mkIf cfg.gemini.enable {
+  config = lib.mkIf cfg.agy.enable {
     home.packages = commonPackages ++ [
-      pkgs.gemini-cli-bin
+      inputs.antigravity-nix.packages."${pkgs.stdenv.hostPlatform.system}".google-antigravity-cli
     ];
 
-    home.file.".gemini/settings.json".source = ./settings.json;
-    home.file.".gemini/AGENTS.md".source = ./AGENTS.md;
+    # home.file.".gemini/antigravity-cli/settings.json".source = ./settings.json;
+    home.file.".gemini/antigravity-cli/AGENTS.md".source = ./AGENTS.md;
   };
 }

@@ -25,7 +25,7 @@ modules/home/
 ├── ai/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # claude, codex, opencode, gemini
+│   └── */           # claude, codex, opencode, antigravity
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
@@ -92,7 +92,7 @@ modules/home/
       claude.enable = true;
       codex.enable = true;
       opencode.enable = true;
-      gemini.enable = true;
+      agy.enable = true;
     };
 
     # Apps
@@ -196,7 +196,7 @@ modules/home/
 | `claude.enable` | Claude Code |
 | `codex.enable` | Codex |
 | `opencode.enable` | OpenCode |
-| `gemini.enable` | Gemini |
+| `agy.enable` | Antigravity |
 
 ### Darwin (`dot.home.darwin.*`)
 

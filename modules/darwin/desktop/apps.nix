@@ -26,6 +26,7 @@ in
         "minecraft"
         "moonlight"
         "obs"
+        "opencode-desktop"
         "parsec"
         "raycast"
         "scroll-reverser"

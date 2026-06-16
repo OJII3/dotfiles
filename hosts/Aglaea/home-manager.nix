@@ -22,7 +22,6 @@
       fcitx5.enable = true;
       keyd.enable = true;
       theme.enable = true;
-      browser.vivaldi.enable = true;
     };
 
     # Terminal
@@ -34,15 +33,15 @@
     # Development
     dev = {
       enable = true;
-      vscode.enable = true;
       jetbrains.enable = true;
       mise.enable = true;
     };
 
     ai = {
+      agy.enable = true;
       claude.enable = true;
       codex.enable = true;
-      gemini.enable = true;
+      opencode.enable = true;
     };
 
     apps = {
@@ -57,10 +56,7 @@
     bitwarden.enable = true;
     blenderLauncher.enable = true;
     network.enable = true;
-    obsidian.enable = true;
-    ros2.enable = true;
   };
 
-
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 }
