@@ -18,7 +18,15 @@
 }:
 let
   cfg = config.dot.home.ai;
-  inherit (lib) filterAttrs attrNames listToAttrs filter elem mkMerge optionals;
+  inherit (lib)
+    filterAttrs
+    attrNames
+    listToAttrs
+    filter
+    elem
+    mkMerge
+    optionals
+    ;
 
   # ツール → スキル配置ディレクトリ
   skillDirs = {

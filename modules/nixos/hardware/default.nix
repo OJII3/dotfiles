@@ -7,14 +7,25 @@
 #   dot.hardware.thinkpad.enable - Enable ThinkPad-specific settings
 #   dot.hardware.laptop.enable - Enable laptop power management
 #
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.hardware;
 in
 {
   options.dot.hardware = {
     gpu = lib.mkOption {
-      type = lib.types.nullOr (lib.types.enum [ "amd" "nvidia" "intel" ]);
+      type = lib.types.nullOr (
+        lib.types.enum [
+          "amd"
+          "nvidia"
+          "intel"
+        ]
+      );
       default = null;
       description = "GPU type for driver configuration";
     };
@@ -127,20 +138,22 @@ in
     })
 
     # ThinkPad
-    (lib.mkIf cfg.thinkpad.enable (lib.mkMerge [
-      {
-        boot.kernelParams = [
-          "acpi_backlight=native"
-          "thinkpad_acpi.fan_control=1"
-        ];
-      }
-      (lib.mkIf cfg.thinkpad.fanControl {
-        services.thinkfan = {
-          enable = true;
-          smartSupport = true;
-        };
-      })
-    ]))
+    (lib.mkIf cfg.thinkpad.enable (
+      lib.mkMerge [
+        {
+          boot.kernelParams = [
+            "acpi_backlight=native"
+            "thinkpad_acpi.fan_control=1"
+          ];
+        }
+        (lib.mkIf cfg.thinkpad.fanControl {
+          services.thinkfan = {
+            enable = true;
+            smartSupport = true;
+          };
+        })
+      ]
+    ))
 
     # Laptop power management - base
     (lib.mkIf cfg.laptop.enable {

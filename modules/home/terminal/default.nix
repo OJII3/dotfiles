@@ -3,7 +3,12 @@
 #
 # Options are defined in ./options.nix
 #
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.home.terminal;
 in

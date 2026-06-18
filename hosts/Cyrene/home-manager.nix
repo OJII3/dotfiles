@@ -38,11 +38,11 @@
       mise.enable = true;
     };
 
-      ai = {
-        claude.enable = true;
-        codex.enable = true;
-        agy.enable = true;
-      };
+    ai = {
+      claude.enable = true;
+      codex.enable = true;
+      agy.enable = true;
+    };
 
     # Apps
     apps.linux.common.enable = true;
@@ -62,7 +62,6 @@
   programs.zsh.initContent = ''
     [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
   '';
-
 
   home.stateVersion = "24.11";
 }

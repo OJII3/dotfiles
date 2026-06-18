@@ -18,8 +18,8 @@ in
   dot = {
     core = {
       enable = true;
-      audio.enable = false;      # Pi doesn't need PipeWire
-      bluetooth.enable = false;  # Disable for now
+      audio.enable = false; # Pi doesn't need PipeWire
+      bluetooth.enable = false; # Disable for now
       ssh.enable = true;
     };
 

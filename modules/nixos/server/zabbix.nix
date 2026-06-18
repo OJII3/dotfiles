@@ -8,7 +8,12 @@
 #   dot.server.zabbix.openFirewall   - Open firewall ports
 #   dot.server.zabbix.agent.enable   - Enable Zabbix agent on this host
 #
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.server.zabbix;
 in
@@ -63,7 +68,7 @@ in
       frontend = "nginx";
       database = {
         type = "pgsql";
-        host = "";  # Use local socket
+        host = ""; # Use local socket
       };
       server = {
         address = "localhost";
@@ -71,8 +76,14 @@ in
       };
       nginx.virtualHost = {
         listen = [
-          { addr = "0.0.0.0"; port = cfg.port; }
-          { addr = "[::]"; port = cfg.port; }
+          {
+            addr = "0.0.0.0";
+            port = cfg.port;
+          }
+          {
+            addr = "[::]";
+            port = cfg.port;
+          }
         ];
       };
     };

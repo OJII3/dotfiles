@@ -51,7 +51,10 @@
       enable = lib.mkEnableOption "greetd login manager";
 
       greeter = lib.mkOption {
-        type = lib.types.enum [ "autologin" "tuigreet" ];
+        type = lib.types.enum [
+          "autologin"
+          "tuigreet"
+        ];
         default = "tuigreet";
         description = "Greeter type: autologin (direct login) or tuigreet (TUI greeter)";
       };

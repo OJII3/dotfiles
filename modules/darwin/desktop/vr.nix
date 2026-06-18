@@ -1,6 +1,11 @@
 # VR development configuration
 # Applied when dot.darwin.desktop.vr.enable is true
-{ config, lib, username, ... }:
+{
+  config,
+  lib,
+  username,
+  ...
+}:
 let
   cfg = config.dot.darwin.desktop;
 in

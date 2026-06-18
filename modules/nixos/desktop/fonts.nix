@@ -1,5 +1,10 @@
 # Fonts configuration
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.desktop;
 in
@@ -22,9 +27,18 @@ in
       fontDir.enable = true;
       fontconfig = {
         defaultFonts = {
-          serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
-          sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
-          monospace = [ "UDEV Gothic 35NF" "Noto Color Emoji" ];
+          serif = [
+            "Noto Serif CJK JP"
+            "Noto Color Emoji"
+          ];
+          sansSerif = [
+            "Noto Sans CJK JP"
+            "Noto Color Emoji"
+          ];
+          monospace = [
+            "UDEV Gothic 35NF"
+            "Noto Color Emoji"
+          ];
           emoji = [ "Noto Color Emoji" ];
         };
       };
