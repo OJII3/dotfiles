@@ -48,8 +48,10 @@
         "nix-fmt-check-${system}"
         { src = ./.; }
         ''
-          cd $src
-          ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci
+          cp -rL $src src
+          chmod -R u+w src
+          cd src
+          ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
           touch $out
         '';
     });

@@ -13,7 +13,7 @@
 `flake.nix` の `outputs` 関数を変更し、以下を追加する:
 
 - `formatter.<system>`: `nixfmt-tree` パッケージを返す (公式の treefmt ラッパー)
-- `checks.<system>.formatting`: `treefmt --ci` を走らせ、未整形があれば失敗する derivation を返す
+- `checks.<system>.formatting`: ソースを writable な作業ディレクトリにコピーし `treefmt --ci --tree-root "$PWD"` を走らせる derivation を返す
 
 対象システムは `nixpkgs.lib.systems.flakeExposed` で自動展開する (x86_64-linux, aarch64-linux, x86_64-darwin, aarch64-darwin, その他 6 システム)。
 
@@ -43,8 +43,10 @@ in {
       "nix-fmt-check-${system}"
       { src = ./.; }
       ''
-        cd $src
-        ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci
+        cp -rL $src src
+        chmod -R u+w src
+        cd src
+        ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
         touch $out
       '';
   });
@@ -67,3 +69,5 @@ in {
 - `nixfmt-tree` (nixpkgs-unstable に収録。内部で `treefmt` を使い、`nixfmt` (RFC 166) を `.nix` ファイルに自動適用する公式ラッパー)
 - `treefmt --ci` で未整形検出、フォーマットも同コマンドで実行可能
 - 注意: 旧名の `nixfmt-rfc-style` は deprecated で `pkgs.nixfmt` にリネーム済み。`nixfmt-tree` を使うのが推奨
+- check derivation ではソースを `cp -rL` で writable な作業ディレクトリにコピーし `chmod -R u+w` で書き込み権限を付与する必要がある (Nix store は read-only)
+- `treefmt --tree-root` で実際のルートディレクトリを明示しないと、treefmt が config ファイルのある `/nix/store` をルートと誤認する
