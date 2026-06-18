@@ -24,11 +24,12 @@ in
           "nix-command"
           "flakes"
         ];
-        trusted-substituters = [
+        substituters = [
+          "https://cache.numtide.com"
           "https://ros.cachix.org"
         ];
         trusted-public-keys = [
-          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
           "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo="
         ];
       };
