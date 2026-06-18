@@ -40,10 +40,6 @@
       url = "github:obra/superpowers/v5.1.0";
       flake = false;
     };
-    # node_modules の FOD ハッシュが上流ピンの nixpkgs(bun バージョン)前提で
-    # 計算されているため follows させない。main(HEAD)は darwin 用ハッシュが
-    # 更新漏れしていることがあるためリリースタグに固定する。
-    opencode.url = "github:sst/opencode/v1.17.4";
     claude-code-nix.url = "github:sadjow/claude-code-nix";
     codex-cli-nix.url = "github:sadjow/codex-cli-nix";
     antigravity-nix.url = "github:jacopone/antigravity-nix";
