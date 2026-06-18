@@ -14,7 +14,7 @@ in
 {
   config = lib.mkIf cfg.codex.enable {
     home.packages = [
-      inputs.codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.codex
     ];
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
 

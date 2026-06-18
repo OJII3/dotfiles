@@ -14,7 +14,7 @@ in
     programs.jq.enable = true;
     programs.claude-code = {
       enable = true;
-      package = inputs.claude-code-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.claude-code;
     };
 
     programs.zsh.zsh-abbr.abbreviations = {
