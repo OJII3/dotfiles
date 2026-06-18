@@ -52,13 +52,21 @@ let
     }
     {
       name = "playwright";
-      src = pkgs.fetchFromGitHub {
-        owner = "lackeyjb";
-        repo = "playwright-skill";
-        rev = "v4.1.0";
-        sha256 = "sha256-77VxY7ik7UtLVHcLeDS2dfnoaf+zkYB6FMScP63rF9w=";
-      };
-      baseDir = "skills/playwright-skill";
+      src =
+        let
+          upstream = pkgs.fetchFromGitHub {
+            owner = "lackeyjb";
+            repo = "playwright-skill";
+            rev = "v4.1.0";
+            sha256 = "sha256-77VxY7ik7UtLVHcLeDS2dfnoaf+zkYB6FMScP63rF9w=";
+          };
+        in
+        pkgs.runCommand "playwright-skill-pi-compatible" { } ''
+          cp -R ${upstream}/skills/playwright-skill $out
+          chmod -R u+w $out
+          substituteInPlace $out/SKILL.md \
+            --replace-fail "name: Playwright Browser Automation" "name: playwright"
+        '';
     }
     {
       name = "pdf";
