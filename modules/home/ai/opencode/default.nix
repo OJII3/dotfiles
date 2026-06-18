@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   lib,
   pkgs,
@@ -26,6 +27,7 @@ in
     programs.opencode = {
       enable = true;
       context = ./AGENTS.md;
+      package = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.opencode;
     };
     home.file.".config/opencode/agents" = {
       source = ./agents;
