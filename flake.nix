@@ -47,28 +47,30 @@
     codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
   };
 
-  outputs = inputs: let
-    inherit (inputs.nixpkgs) lib;
-    systems = lib.systems.flakeExposed;
-  in {
-    nixosConfigurations = (import ./hosts inputs).nixos;
-    homeConfigurations = (import ./hosts inputs).home-manager;
-    darwinConfigurations = (import ./hosts inputs).nix-darwin;
-    nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droid;
+  outputs =
+    inputs:
+    let
+      inherit (inputs.nixpkgs) lib;
+      systems = lib.systems.flakeExposed;
+    in
+    {
+      nixosConfigurations = (import ./hosts inputs).nixos;
+      homeConfigurations = (import ./hosts inputs).home-manager;
+      darwinConfigurations = (import ./hosts inputs).nix-darwin;
+      nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droid;
 
-    formatter = lib.genAttrs systems (system:
-      inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree
-    );
+      formatter = lib.genAttrs systems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
-    checks = lib.genAttrs systems (system: {
-      formatting = inputs.nixpkgs.legacyPackages.${system}.runCommand
-        "nix-fmt-check-${system}"
-        { src = ./.; }
-        ''
-          cd $src
-          ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci
-          touch $out
-        '';
-    });
-  };
+      checks = lib.genAttrs systems (system: {
+        formatting =
+          inputs.nixpkgs.legacyPackages.${system}.runCommand "nix-fmt-check-${system}" { src = ./.; }
+            ''
+              cp -rL $src src
+              chmod -R u+w src
+              cd src
+              ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
+              touch $out
+            '';
+      });
+    };
 }
