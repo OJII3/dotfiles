@@ -18,5 +18,9 @@
     agy = {
       enable = lib.mkEnableOption "Antigravity AI assistant";
     };
+
+    pi = {
+      enable = lib.mkEnableOption "Pi coding agent";
+    };
   };
 }

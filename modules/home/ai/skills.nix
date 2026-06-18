@@ -24,6 +24,7 @@ let
   skillDirs = {
     claude = ".claude/skills";
     codex = ".codex/skills";
+    pi = ".pi/agent/skills";
   };
 
   # ディレクトリ直下のサブディレクトリ名一覧
