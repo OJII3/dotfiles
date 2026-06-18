@@ -12,10 +12,10 @@
 
 `flake.nix` の `outputs` 関数を変更し、以下を追加する:
 
-- `formatter.<system>`: nixfmt-rfc-style パッケージを返す
-- `checks.<system>.formatting`: `nixfmt --check` を走らせ、未整形があれば失敗する derivation を返す
+- `formatter.<system>`: `nixfmt-tree` パッケージを返す (公式の treefmt ラッパー)
+- `checks.<system>.formatting`: `treefmt --ci` を走らせ、未整形があれば失敗する derivation を返す
 
-対象システムは `nixpkgs.lib.systems.flakeExposed` で自動展開する (x86_64-linux, aarch64-linux, x86_64-darwin, aarch64-darwin)。
+対象システムは `nixpkgs.lib.systems.flakeExposed` で自動展開する (x86_64-linux, aarch64-linux, x86_64-darwin, aarch64-darwin, その他 6 システム)。
 
 ## 変更対象
 
@@ -35,7 +35,7 @@ in {
   nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droid;
 
   formatter = lib.genAttrs systems (system:
-    inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style
+    inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree
   );
 
   checks = lib.genAttrs systems (system: {
@@ -43,7 +43,8 @@ in {
       "nix-fmt-check-${system}"
       { src = ./.; }
       ''
-        ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style}/bin/nixfmt --check $src
+        cd $src
+        ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci
         touch $out
       '';
   });
@@ -63,5 +64,6 @@ in {
 
 ## 採用するツール
 
-- `nixfmt-rfc-style` (RFC 166 準拠の Nix フォーマッタ、nixpkgs-unstable に収録)
-- バイナリ名は `nixfmt`、`--check` フラグで検証モード
+- `nixfmt-tree` (nixpkgs-unstable に収録。内部で `treefmt` を使い、`nixfmt` (RFC 166) を `.nix` ファイルに自動適用する公式ラッパー)
+- `treefmt --ci` で未整形検出、フォーマットも同コマンドで実行可能
+- 注意: 旧名の `nixfmt-rfc-style` は deprecated で `pkgs.nixfmt` にリネーム済み。`nixfmt-tree` を使うのが推奨

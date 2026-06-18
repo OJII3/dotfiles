@@ -6,7 +6,7 @@
 
 **Architecture:** `nixpkgs.lib.systems.flakeExposed` で対象システムを列挙し、`lib.genAttrs` で各システム向けの `formatter` (nixfmt-rfc-style パッケージ) と `checks.formatting` (`nixfmt --check` を走らせる derivation) を生成する。
 
-**Tech Stack:** Nix flakes, nixpkgs-unstable, nixfmt-rfc-style (RFC 166)
+**Tech Stack:** Nix flakes, nixpkgs-unstable, nixfmt-tree (内部で treefmt + nixfmt (RFC 166) を使用)
 
 ---
 
@@ -40,7 +40,7 @@
     nixOnDroidConfigurations = (import ./hosts inputs).nix-on-droid;
 
     formatter = lib.genAttrs systems (system:
-      inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style
+      inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree
     );
 
     checks = lib.genAttrs systems (system: {
@@ -48,7 +48,8 @@
         "nix-fmt-check-${system}"
         { src = ./.; }
         ''
-          ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-rfc-style}/bin/nixfmt --check $src
+          cd $src
+          ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci
           touch $out
         '';
     });
