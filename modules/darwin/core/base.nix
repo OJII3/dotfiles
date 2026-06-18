@@ -1,6 +1,11 @@
 # Base darwin configuration
 # Applied when dot.darwin.core.enable is true
-{ config, lib, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 let
   cfg = config.dot.darwin.core;
 in

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   config = lib.mkIf config.dot.core.enable {
     time.timeZone = "Asia/Tokyo";

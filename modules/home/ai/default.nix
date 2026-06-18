@@ -25,7 +25,8 @@ in
   ];
 
   config =
-    lib.mkIf (cfg.claude.enable || cfg.codex.enable || cfg.opencode.enable || cfg.agy.enable || cfg.pi.enable)
+    lib.mkIf
+      (cfg.claude.enable || cfg.codex.enable || cfg.opencode.enable || cfg.agy.enable || cfg.pi.enable)
       {
 
         home.packages =

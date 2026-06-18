@@ -36,7 +36,12 @@ buildGoModule rec {
 
   postInstall = ''
     wrapProgram $out/bin/gwq \
-      --prefix PATH : ${lib.makeBinPath [git tmux]}
+      --prefix PATH : ${
+        lib.makeBinPath [
+          git
+          tmux
+        ]
+      }
 
     export HOME=$TMPDIR
     $out/bin/gwq completion bash > gwq.bash

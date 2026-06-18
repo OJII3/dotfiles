@@ -11,9 +11,9 @@
   dot = {
     core = {
       enable = true;
-      audio.enable = false;      # WSL doesn't need audio
-      bluetooth.enable = false;  # WSL doesn't need Bluetooth
-      ssh.enable = false;        # Use Windows SSH
+      audio.enable = false; # WSL doesn't need audio
+      bluetooth.enable = false; # WSL doesn't need Bluetooth
+      ssh.enable = false; # Use Windows SSH
     };
 
     desktop = {

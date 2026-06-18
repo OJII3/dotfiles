@@ -1,6 +1,12 @@
 # SOPS secrets configuration
 # Applied when dot.darwin.core.sops.enable is true
-{ config, lib, inputs, username, ... }:
+{
+  config,
+  lib,
+  inputs,
+  username,
+  ...
+}:
 let
   cfg = config.dot.darwin.core;
 in
