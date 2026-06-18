@@ -40,8 +40,6 @@
       url = "github:obra/superpowers/v5.1.0";
       flake = false;
     };
-    claude-code-nix.url = "github:sadjow/claude-code-nix";
-    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
     antigravity-nix.url = "github:jacopone/antigravity-nix";
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
     codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
