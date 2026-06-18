@@ -9,6 +9,7 @@
 #               (hook 本体の登録は ./claude/settings.json)。
 #     - OpenCode: ネイティブ plugin がスキル登録 + bootstrap 注入を行う。
 #     - Antigravity: gemini extension として読み込む。
+#     - Pi: skills/ 展開は ./skills.nix が担い、APPEND_SYSTEM.md で bootstrap を促す。
 #
 # バージョンは flake input `superpowers` (flake.lock) で pin される。
 {
@@ -39,6 +40,12 @@ in
     # Antigravity: gemini extension 機構で読み込む(GEMINI.md が using-superpowers を import)。
     (lib.mkIf cfg.agy.enable {
       home.file.".gemini/extensions/superpowers".source = src;
+    })
+
+    # Pi: ネイティブ skill discovery は ~/.pi/agent/skills/ を見る。
+    # bootstrap 指示は APPEND_SYSTEM.md として default system prompt に追記する。
+    (lib.mkIf cfg.pi.enable {
+      home.file.".pi/agent/APPEND_SYSTEM.md".source = ./pi/APPEND_SYSTEM.md;
     })
   ];
 }

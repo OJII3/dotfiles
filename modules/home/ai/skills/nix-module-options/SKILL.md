@@ -1,9 +1,7 @@
-**name:** nix-module-options
-
-**description:** Query NixOS and Home Manager module options programmatically using flake evaluation. Use this skill when the user asks to check if a module exists, explore available options, get option documentation, or verify what options are available in upstream NixOS/Home Manager (not custom user modules). Activates for queries like "does home manager have a module for X", "what options does service Y have", "check nixos options for Z", or "explore available options".
-
-**allowed-tools:** Bash, Read
-
+---
+name: nix-module-options
+description: Query NixOS and Home Manager module options programmatically using flake evaluation. Use this skill when the user asks to check if a module exists, explore available options, get option documentation, or verify what options are available in upstream NixOS/Home Manager.
+allowed-tools: Bash, Read
 ---
 
 ## Nix Module Options Explorer
