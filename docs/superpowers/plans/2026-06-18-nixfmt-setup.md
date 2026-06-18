@@ -32,7 +32,12 @@
 ```nix
   outputs = inputs: let
     inherit (inputs.nixpkgs) lib;
-    systems = lib.systems.flakeExposed;
+    systems = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
   in {
     nixosConfigurations = (import ./hosts inputs).nixos;
     homeConfigurations = (import ./hosts inputs).home-manager;

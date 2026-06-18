@@ -15,7 +15,8 @@
 - `formatter.<system>`: `nixfmt-tree` パッケージを返す (公式の treefmt ラッパー)
 - `checks.<system>.formatting`: ソースを writable な作業ディレクトリにコピーし `treefmt --ci --tree-root "$PWD"` を走らせる derivation を返す
 
-対象システムは `nixpkgs.lib.systems.flakeExposed` で自動展開する (x86_64-linux, aarch64-linux, x86_64-darwin, aarch64-darwin, その他 6 システム)。
+対象システムは明示的にリストする: `x86_64-linux`, `aarch64-linux`, `x86_64-darwin`, `aarch64-darwin`。
+(`lib.systems.flakeExposed` を使うと freebsd などで `nixfmt-tree` の評価が無限再帰するため使わない)
 
 ## 変更対象
 
@@ -26,7 +27,12 @@
 ```nix
 outputs = inputs: let
   inherit (inputs.nixpkgs) lib;
-  systems = lib.systems.flakeExposed;
+  systems = [
+    "x86_64-linux"
+    "aarch64-linux"
+    "x86_64-darwin"
+    "aarch64-darwin"
+  ];
 in {
   # 既存出力は維持
   nixosConfigurations = (import ./hosts inputs).nixos;
@@ -71,3 +77,5 @@ in {
 - 注意: 旧名の `nixfmt-rfc-style` は deprecated で `pkgs.nixfmt` にリネーム済み。`nixfmt-tree` を使うのが推奨
 - check derivation ではソースを `cp -rL` で writable な作業ディレクトリにコピーし `chmod -R u+w` で書き込み権限を付与する必要がある (Nix store は read-only)
 - `treefmt --tree-root` で実際のルートディレクトリを明示しないと、treefmt が config ファイルのある `/nix/store` をルートと誤認する
+- さらに、chown できないグループ (例: `UNKNOWN`) がソースに付与されていると nixfmt の atomic write が失敗する。ローカルで `nix fmt` がエラーになる場合は `chgrp -R users` で修正する
+- システムリストは `lib.systems.flakeExposed` だと広すぎ (`x86_64-freebsd` 等で `nixfmt-tree` の評価が無限再帰)、`lib.systems.doubles.{darwin,linux}` だと狭すぎる (linux 系が大量に含まれる)。明示的に 4 システムを列挙する
