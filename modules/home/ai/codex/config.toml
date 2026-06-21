@@ -19,7 +19,6 @@ notifications = ["agent-turn-complete","approval-requested"]
 
 [shell_environment_policy]
 inherit = "all"
-exclude = ["AWS_*","AZURE_*","*TOKEN*","*SECRET*","*KEY*"]
 
 [analytics]
 enabled = false
