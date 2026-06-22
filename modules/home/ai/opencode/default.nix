@@ -29,6 +29,7 @@ in
       context = ./AGENTS.md;
       package = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.opencode;
     };
+    home.file.".config/opencode/settings.jsonc".source = ./settings.jsonc;
     home.file.".config/opencode/agents" = {
       source = ./agents;
       recursive = true;

@@ -2,4 +2,4 @@
 
 - Speak in Japanese.
 - Use `general` subagent for implemtation tasks, especially in subagent driven development.
-- Use `review` subagent for reviewing code.
+- Use `review` subagent for reviewing code, especially in spec review and code review task.
