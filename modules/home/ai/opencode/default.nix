@@ -14,9 +14,6 @@ let
       uv
       (callPackage ../../../packages/gwq.nix { })
     ]
-    ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
-      terminal-notifier
-    ]
     ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
       libnotify
     ];
@@ -30,6 +27,7 @@ in
       package = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.opencode;
     };
     home.file.".config/opencode/opencode.jsonc".source = ./opencode.jsonc;
+    home.file.".config/opencode/tui.jsonc".source = ./tui.jsonc;
     home.file.".config/opencode/agents" = {
       source = ./agents;
       recursive = true;
