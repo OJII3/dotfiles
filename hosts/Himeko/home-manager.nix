@@ -27,7 +27,7 @@
     dev = {
       enable = true;
       jetbrains.enable = true;
-      mise.enable = false;
+      mise.enable = true;
     };
 
     ai = {
