@@ -32,6 +32,10 @@ in
           "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
           "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo="
         ];
+        trusted-users = [
+          "root"
+          cfg.user.name
+        ];
       };
       gc = {
         automatic = true;
