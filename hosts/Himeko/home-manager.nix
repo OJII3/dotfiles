@@ -33,7 +33,7 @@
     ai = {
       claude.enable = true;
       codex.enable = true;
-      agy.enable = true;
+      agy.enable = false;
       opencode.enable = true;
     };
 
