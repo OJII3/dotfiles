@@ -61,6 +61,10 @@ in
         switch-to-application-3 = [ ];
         switch-to-application-4 = [ ];
         toggle-message-tray = [ "<Super>v" ];
+        toggle-overview = [
+          "<Super>"
+          "<Super><Ctrl>m"
+        ];
       };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
