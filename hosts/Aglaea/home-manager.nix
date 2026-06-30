@@ -41,6 +41,7 @@
       agy.enable = true;
       claude.enable = true;
       codex.enable = true;
+      codexDesktop.enable = true;
       opencode.enable = true;
     };
 
