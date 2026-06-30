@@ -11,6 +11,10 @@
       enable = lib.mkEnableOption "Codex AI assistant";
     };
 
+    codexDesktop = {
+      enable = lib.mkEnableOption "Codex Desktop for Linux (Electron)";
+    };
+
     opencode = {
       enable = lib.mkEnableOption "OpenCode AI assistant";
     };
