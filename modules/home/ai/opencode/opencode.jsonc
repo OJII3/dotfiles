@@ -12,6 +12,8 @@
     "edit": "allow",
     "external_directory": {
       "/tmp/*": "allow"
-    }
+    },
+    "webfetch": "allow",
+    "websearch": "allow"
   }
 }
