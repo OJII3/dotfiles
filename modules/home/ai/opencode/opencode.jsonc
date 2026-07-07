@@ -9,6 +9,9 @@
       ".env.*": "deny",
       ".env.example": "allow"
     },
-    "edit": "allow"
+    "edit": "allow",
+    "external_directory": {
+      "/tmp/*": "allow"
+    }
   }
 }
