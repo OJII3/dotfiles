@@ -31,10 +31,8 @@
       peripheral.keyboard.enable = true;
       androidDev.enable = true;
       bitwarden.enable = true;
-      gaming = {
-        enable = true;
-        vr.enable = true;
-      };
+      gaming.enable = true;
+      vr.enable = true;
     };
 
     hardware = {
