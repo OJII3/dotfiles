@@ -54,6 +54,7 @@ Nix + lazy.nvim 環境で `nvim-treesitter/nvim-treesitter` を `romus204/tree-s
 
 - `tree-sitter-manager.nvim` は Neovim `0.12+` 必須。現環境は `0.12.2` のため問題なし
 - `indent` / `incremental_selection` / `textobjects` は未使用前提で削除する
+  - 現環境でこれらを積極的に使っている操作は確認されていない
   - 将来必要になった場合は別プラグインや nvim 内蔵機能で再導入を検討する
 - parser の更新フローが `nvim-treesitter` と異なるため、既存の `:TSUpdate` 意図と混同しない説明が必要
 
