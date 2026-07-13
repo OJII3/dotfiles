@@ -21,6 +21,7 @@ in
     ./keyd.nix
     ./peripheral.nix
     ./sunshine.nix
+    ./vr.nix
     ./waydroid.nix
     ./gnome.nix
   ];

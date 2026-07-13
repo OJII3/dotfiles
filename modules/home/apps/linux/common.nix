@@ -22,11 +22,12 @@ in
       moonlight-qt
       mpv
       p7zip
-      pkgs-stable.blender
       slack
       unityhub
       vlc
       voicevox
+      pkgs-stable.blender
+      pkgs-stable.parsec-bin
     ];
 
     # 非 NixOS (Ubuntu 等) では Nix store 内の Electron/Chromium アプリが

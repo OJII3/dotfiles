@@ -33,6 +33,10 @@
       enable = lib.mkEnableOption "keyd key remapping";
     };
 
+    vr = {
+      enable = lib.mkEnableOption "VR support (Monado, Immersed, wayvr)";
+    };
+
     gaming = {
       enable = lib.mkEnableOption "gaming support";
 
@@ -40,10 +44,6 @@
         enable = lib.mkEnableOption "Steam" // {
           default = true; # Enable by default when gaming is enabled
         };
-      };
-
-      vr = {
-        enable = lib.mkEnableOption "VR support (Monado, etc.)";
       };
     };
 

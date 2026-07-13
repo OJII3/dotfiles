@@ -2,3 +2,4 @@ termpdf.log
 .dotter/cache*
 result
 .claude
+.worktrees
