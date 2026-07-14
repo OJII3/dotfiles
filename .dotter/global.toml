@@ -8,7 +8,9 @@ depends = []
 "assets/images/silver_wolf.png" = { target = "~/.assets/images/silver_wolf.png", type = "symbolic" }
 
 "modules/windows/powershell/profile.ps1" = "~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
+"modules/windows/powershell/profile.ps1" = "~/OneDrive/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"
 "modules/windows/powershell/scripts/zellij.ps1" = "~/Documents/PowerShell/Scripts/zellij.ps1"
+"modules/windows/powershell/scripts/zellij.ps1" = "~/OneDrive/Documents/PowerShell/Scripts/zellij.ps1"
 "modules/windows/git/.gitconfig" = "~/.gitconfig"
 "modules/windows/git/.gitignore_global" = "~/.gitignore_global"
 "modules/windows/kanata/default.kbd" = "~/.config/kanata/default.kbd"
