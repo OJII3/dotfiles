@@ -19,6 +19,7 @@ in
       gimp
       hunspell
       inkscape-with-extensions
+      mission-center
       moonlight-qt
       mpv
       p7zip

@@ -88,6 +88,21 @@ nix flake update
 nix flake update nixpkgs
 ```
 
+## Secrets Management (sops-nix)
+
+Secrets are encrypted with [sops-nix](https://github.com/Mic92/sops-nix) and stored in `assets/secrets/secrets.json`.
+
+```bash
+# Edit secrets (decrypts in your editor)
+sops assets/secrets/secrets.json
+
+# Encrypt a new file
+sops -e plaintext.json > encrypted.json
+
+# Decrypt to stdout
+sops -d assets/secrets/secrets.json
+```
+
 ## Favorite Apps & Tools
 
 - **Hyprland** - Wayland compositor (custom animations & workspace config)
