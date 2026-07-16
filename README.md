@@ -8,7 +8,7 @@ Declarative configuration management using the `dot.*` options namespace.
 ```
 modules/
 ├── nixos/    # NixOS modules (dot.core, dot.desktop, dot.hardware, dot.networking, dot.server)
-├── darwin/   # nix-darwin modules (dot.darwin.core, dot.darwin.desktop)
+├── darwin/   # nix-darwin modules (dot.darwin.core, dot.darwin.desktop, dot.darwin.networking)
 ├── home/     # Home Manager modules (dot.home.*)
 └── windows/  # Windows setup scripts and dotter-managed files
 ```

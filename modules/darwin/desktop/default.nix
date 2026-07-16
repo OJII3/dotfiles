@@ -4,10 +4,7 @@
 # Options are defined in ./options.nix
 # Config implementations are split into separate files for maintainability.
 #
-{ config, lib, ... }:
-let
-  cfg = config.dot.darwin.desktop;
-in
+{ ... }:
 {
   imports = [
     ./options.nix

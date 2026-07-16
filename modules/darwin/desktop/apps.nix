@@ -6,40 +6,28 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.apps.enable) {
-    homebrew = {
-      enable = true;
-      onActivation = {
-        upgrade = true;
-        autoUpdate = false;
-        cleanup = "uninstall";
-      };
-      casks = [
-        "affinity"
-        "chatgpt"
-        "codex-app"
-        "discord"
-        "figma"
-        "firefox"
-        "fork"
-        "ghostty"
-        "logi-options+"
-        "minecraft"
-        "moonlight"
-        "obs"
-        "opencode-desktop"
-        "parsec"
-        "raycast"
-        "scroll-reverser"
-        "slack"
-        "spaceid"
-        "steam"
-        "telegram"
-        "unity-hub"
-      ];
-      masApps = {
-        tailscale = 1475387142;
-        # cloudflare-one-agent = 6443476492;
-      };
-    };
+    homebrew.casks = [
+      "affinity"
+      "chatgpt"
+      "codex-app"
+      "discord"
+      "figma"
+      "firefox"
+      "fork"
+      "ghostty"
+      "logi-options+"
+      "minecraft"
+      "moonlight"
+      "obs"
+      "opencode-desktop"
+      "parsec"
+      "raycast"
+      "scroll-reverser"
+      "slack"
+      "spaceid"
+      "steam"
+      "telegram"
+      "unity-hub"
+    ];
   };
 }

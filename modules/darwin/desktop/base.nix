@@ -3,8 +3,8 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
+  username,
   ...
 }:
 let
@@ -12,16 +12,9 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [
-      vim
-      git
-      gnumake
-      python312
-    ];
-
     security.pam.services.sudo_local.touchIdAuth = true;
 
-    system.primaryUser = "ojii3";
+    system.primaryUser = username;
     system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
     system.startup.chime = false;
     system.keyboard = {
@@ -31,7 +24,7 @@ in
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         "com.apple.trackpad.scaling" = 10.0;
-        "com.apple.swipescrolldirection" = true; # Natural scrolling
+        "com.apple.swipescrolldirection" = true;
       };
       controlcenter = {
         BatteryShowPercentage = true;
@@ -58,7 +51,7 @@ in
         ];
       };
       screencapture = {
-        location = "/Users/ojii3/Pictures/Screenshots";
+        location = "/Users/${username}/Pictures/Screenshots";
         type = "png";
       };
     };
