@@ -60,6 +60,10 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
+      darwinSystems = [
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
     in
     {
       nixosConfigurations = (import ./hosts inputs).nixos;
@@ -69,43 +73,57 @@
 
       formatter = lib.genAttrs systems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
-      checks = lib.genAttrs systems (system: {
-        formatting =
-          inputs.nixpkgs.legacyPackages.${system}.runCommand "nix-fmt-check-${system}" { src = ./.; }
-            ''
-              cp -rL $src src
-              chmod -R u+w src
-              cd src
-              ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
-              touch $out
-            '';
-
-        darwin-modules =
-          let
-            pkgs = inputs.nixpkgs.legacyPackages.${system};
-            minimalDarwin = inputs.nix-darwin.lib.darwinSystem {
-              inherit system;
-              modules = [
-                ./modules/darwin
-                {
-                  dot.darwin.core.enable = true;
-                  nix.enable = false;
-                  system.stateVersion = 6;
-                }
-              ];
-              specialArgs = {
-                inherit inputs;
-                hostname = "eval-test";
-                username = "eval-test";
+      checks = lib.genAttrs systems (
+        system:
+        {
+          formatting =
+            inputs.nixpkgs.legacyPackages.${system}.runCommand "nix-fmt-check-${system}" { src = ./.; }
+              ''
+                cp -rL $src src
+                chmod -R u+w src
+                cd src
+                ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
+                touch $out
+              '';
+        }
+        // lib.optionalAttrs (builtins.elem system darwinSystems) {
+          darwin-modules =
+            let
+              pkgs = inputs.nixpkgs.legacyPackages.${system};
+              darwin = inputs.nix-darwin.lib.darwinSystem {
+                inherit system;
+                modules = [
+                  ./modules/darwin
+                  {
+                    dot.darwin = {
+                      core.enable = true;
+                      desktop = {
+                        enable = true;
+                        apps.enable = true;
+                      };
+                      networking = {
+                        enable = true;
+                        cloudflared.enable = true;
+                      };
+                    };
+                    nix.enable = false;
+                    system.stateVersion = 6;
+                  }
+                ];
+                specialArgs = {
+                  inherit inputs;
+                  hostname = "eval-test";
+                  username = "eval-test";
+                };
               };
-            };
-          in
-          builtins.seq minimalDarwin.config.system.build.toplevel.drvPath (
-            pkgs.runCommand "darwin-modules" { } ''
-              echo "Darwin module evaluation: OK" >&2
-              touch $out
-            ''
-          );
-      });
+            in
+            builtins.seq darwin.config.system.build.toplevel.drvPath (
+              pkgs.runCommand "darwin-modules" { } ''
+                echo "Darwin module evaluation: OK" >&2
+                touch $out
+              ''
+            );
+        }
+      );
     };
 }

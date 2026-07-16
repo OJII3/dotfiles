@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  username,
   ...
 }:
 let
@@ -9,8 +8,6 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    system.primaryUser = username;
-
     homebrew = {
       enable = true;
       onActivation = {

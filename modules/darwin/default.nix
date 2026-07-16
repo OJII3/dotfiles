@@ -9,6 +9,7 @@
 { ... }:
 {
   imports = [
+    ./base.nix
     ./core
     ./desktop
     ./networking
