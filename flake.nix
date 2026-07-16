@@ -79,6 +79,36 @@
               ${inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree}/bin/treefmt --ci --tree-root "$PWD"
               touch $out
             '';
+
+        darwin-modules =
+          let
+            pkgs = inputs.nixpkgs.legacyPackages.${system};
+            minimalDarwin = inputs.nix-darwin.lib.darwinSystem {
+              inherit system;
+              modules = [
+                ./modules/darwin
+                {
+                  dot.darwin.core.enable = true;
+                  nix.enable = false;
+                  system.stateVersion = 6;
+                }
+              ];
+              specialArgs = {
+                inherit inputs;
+                hostname = "eval-test";
+                username = "eval-test";
+              };
+            };
+            config = minimalDarwin.config.dot.darwin.core.enable;
+          in
+          pkgs.runCommand "darwin-modules"
+            {
+              inherit config;
+            }
+            ''
+              echo "Darwin module standalone evaluation: OK (core.enable = ${builtins.toString config})" >&2
+              touch $out
+            '';
       });
     };
 }
