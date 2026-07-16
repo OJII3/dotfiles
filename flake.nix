@@ -99,16 +99,13 @@
                 username = "eval-test";
               };
             };
-            config = minimalDarwin.config.dot.darwin.core.enable;
           in
-          pkgs.runCommand "darwin-modules"
-            {
-              inherit config;
-            }
-            ''
-              echo "Darwin module standalone evaluation: OK (core.enable = ${builtins.toString config})" >&2
+          builtins.seq minimalDarwin.config.system.build.toplevel.drvPath (
+            pkgs.runCommand "darwin-modules" { } ''
+              echo "Darwin module evaluation: OK" >&2
               touch $out
-            '';
+            ''
+          );
       });
     };
 }
