@@ -8,7 +8,13 @@
     # Shell & Editor
     zsh.enable = true;
     neovim.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      signing = {
+        format = "ssh";
+        key = "/mnt/c/Users/ojii3/.ssh/id_ed25519.pub";
+      };
+    };
     gpg = {
       enable = true;
       pinentryPackage = "qt";
