@@ -52,6 +52,10 @@
       };
     };
 
+    cloudflared = {
+      enable = lib.mkEnableOption "Cloudflared CLI";
+    };
+
     warp = {
       enable = lib.mkEnableOption "Cloudflare WARP" // {
         default = false;
