@@ -15,6 +15,7 @@ in
 {
   imports = [
     ./options.nix
+    ./cloudflared.nix
     ./snmpd.nix
     ./warp.nix
   ];
