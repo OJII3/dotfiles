@@ -21,7 +21,7 @@ modules/nixos/
 │   └── gnome.nix hyprland.nix fonts.nix gaming.nix greetd.nix ...
 ├── hardware/default.nix    # dot.hardware.* (options + config)
 ├── networking/
-│   ├── default.nix options.nix snmpd.nix warp.nix
+│   ├── default.nix options.nix cloudflared.nix snmpd.nix warp.nix
 └── server/
     └── default.nix zabbix.nix librenms.nix prometheus/ loki/ minecraft.nix
 ```
@@ -102,6 +102,7 @@ modules/nixos/
 | `networkManager.enable` | bool | `false` | NetworkManager (サーバーは networkd) |
 | `networkManager.wifi.randomizeMac` | bool | `true` | WiFi MAC アドレスランダム化 |
 | `networkManager.wifi.powersave` | bool | `false` | WiFi 省電力モード |
+| `cloudflared.enable` | bool | `false` | Cloudflared CLI ツール (service 設定なし) |
 | `warp.enable` | bool | `false` | Cloudflare WARP |
 | `snmpd.enable` | bool | `false` | SNMP デーモン |
 
