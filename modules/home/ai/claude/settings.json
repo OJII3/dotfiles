@@ -40,18 +40,6 @@
   "alwaysThinkingEnabled": true,
   "skipAutoPermissionPrompt": true,
   "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup|clear|compact",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bash $HOME/.claude/superpowers/hooks/session-start",
-            "async": false
-          }
-        ]
-      }
-    ],
     "CwdChanged": [
       {
         "hooks": [
