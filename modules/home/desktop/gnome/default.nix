@@ -28,7 +28,7 @@ in
           { package = ext.caffeine; }
           { package = ext.gsconnect; }
           { package = ext.kimpanel; }
-          { package = ext.tailscale-status; }
+          # { package = ext.tailscale-status; }
           { package = ext.color-picker; }
           { package = ext.vicinae; }
           { package = inputs.confetti.packages.${pkgs.stdenv.hostPlatform.system}.gnome-extension; }
