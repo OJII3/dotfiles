@@ -12,7 +12,7 @@
       enable = true;
       signing = {
         format = "ssh";
-        key = "/mnt/c/Users/ojii3/.ssh/id_ed25519.pub";
+        key = "~/.ssh/id_ed25519.pub";
       };
     };
     gpg = {
