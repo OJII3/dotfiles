@@ -69,5 +69,5 @@
     [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
   '';
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 }
