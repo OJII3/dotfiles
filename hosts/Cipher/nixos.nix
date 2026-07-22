@@ -29,6 +29,8 @@
       # Server uses systemd-networkd, not NetworkManager
       networkManager.enable = false;
       snmpd.enable = true;
+      tailscale.enable = false;
+      warp.enable = true;
     };
 
     server = {
@@ -39,10 +41,6 @@
       prometheus.enable = true;
       loki.enable = true;
       # minecraft.enable = true;
-      librenms = {
-        enable = true;
-        hostname = "librenms.local";
-      };
     };
 
     hardware = {
