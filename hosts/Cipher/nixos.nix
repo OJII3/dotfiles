@@ -36,7 +36,7 @@
     server = {
       enable = true;
       autologin.enable = true;
-      adguardHome.enable = true;
+      adguardHome.enable = false;
       gnomeKeyring.enable = true;
       prometheus.enable = true;
       loki.enable = true;
