@@ -31,6 +31,7 @@
       snmpd.enable = true;
       tailscale.enable = false;
       warp.enable = true;
+      dns.resolved.enable = false;
     };
 
     server = {
@@ -54,7 +55,10 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   # Static IP networking
-  networking.useNetworkd = true;
+  networking = {
+    useNetworkd = true;
+    nameservers = [ "192.168.8.1" ];
+  };
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enp3s0";
     networkConfig = {
