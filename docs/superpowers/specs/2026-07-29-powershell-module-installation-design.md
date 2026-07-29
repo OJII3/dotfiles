@@ -50,11 +50,12 @@ Pester tests will cover:
 - comments and blank lines in the manifest are ignored;
 - one failed installation does not prevent later modules from being attempted;
 - the installer reports failure after any module installation fails;
-- `Setup.ps1 -SkipPackages` does not invoke either package installer.
+- the setup integration remains inside the existing `-SkipPackages` guard.
 
 Tests will use temporary manifests and replace package-manager commands at the
 PowerShell command boundary, without accessing the network or changing the
-user's installed modules.
+user's installed modules. The one-line setup integration is verified through
+PowerShell parsing and diff review rather than a source-text assertion.
 
 ## Success Criteria
 
