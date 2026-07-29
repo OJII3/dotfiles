@@ -59,6 +59,7 @@ $windowsDir = $PSScriptRoot
 
 if (-not $SkipPackages) {
     & (Join-Path -Path $windowsDir -ChildPath 'packages\Install.ps1')
+    & (Join-Path -Path $windowsDir -ChildPath 'packages\Install-PowerShellModules.ps1')
 }
 
 if (-not $SkipKanata) {
