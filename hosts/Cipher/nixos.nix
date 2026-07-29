@@ -42,6 +42,16 @@
       prometheus.enable = true;
       loki.enable = true;
       # minecraft.enable = true;
+      postgresql = {
+        enable = true;
+        ensureDatabases = [ "vicissitude" ];
+        ensureUsers = [
+          {
+            name = "vicissitude";
+            password = "vicissitude";
+          }
+        ];
+      };
     };
 
     hardware = {
