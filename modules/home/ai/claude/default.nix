@@ -32,5 +32,12 @@ in
       source = ./hooks/on-env-changed.sh;
       executable = true;
     };
+
+    programs.git = {
+      ignores = [
+        ".claude/local.*"
+        ".claude/worktrees/*"
+      ];
+    };
   };
 }
