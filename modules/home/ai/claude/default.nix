@@ -35,7 +35,7 @@ in
 
     programs.git = {
       ignores = [
-        ".claude/local.*"
+        ".claude/*.local.*"
         ".claude/worktrees/*"
       ];
     };
