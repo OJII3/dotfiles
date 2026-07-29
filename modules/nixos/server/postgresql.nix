@@ -72,6 +72,12 @@ in
         ensureDBOwnership = u.ensureDBOwnership;
         ensureClauses.password = u.password;
       }) cfg.ensureUsers;
+      # ICU locale provider を使うことで、collation データが postgresql パッケージに
+      # ピン留めされ、host の glibc アップデートによる collation version mismatch を避ける。
+      initdbArgs = [
+        "--locale-provider=icu"
+        "--icu-locale=und-x-icu"
+      ];
     };
   };
 }
