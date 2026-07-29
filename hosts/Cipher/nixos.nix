@@ -29,19 +29,28 @@
       # Server uses systemd-networkd, not NetworkManager
       networkManager.enable = false;
       snmpd.enable = true;
+      tailscale.enable = false;
+      warp.enable = true;
+      dns.resolved.enable = false;
     };
 
     server = {
       enable = true;
       autologin.enable = true;
-      adguardHome.enable = true;
+      adguardHome.enable = false;
       gnomeKeyring.enable = true;
       prometheus.enable = true;
       loki.enable = true;
       # minecraft.enable = true;
-      librenms = {
+      postgresql = {
         enable = true;
-        hostname = "librenms.local";
+        ensureDatabases = [ "vicissitude" ];
+        ensureUsers = [
+          {
+            name = "vicissitude";
+            password = "vicissitude";
+          }
+        ];
       };
     };
 
@@ -56,7 +65,10 @@
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
   # Static IP networking
-  networking.useNetworkd = true;
+  networking = {
+    useNetworkd = true;
+    nameservers = [ "192.168.8.1" ];
+  };
   systemd.network.networks."10-lan" = {
     matchConfig.Name = "enp3s0";
     networkConfig = {

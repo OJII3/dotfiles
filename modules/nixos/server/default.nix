@@ -10,6 +10,7 @@
 #   dot.server.librenms.enable - Enable LibreNMS network monitoring
 #   dot.server.loki.enable     - Enable Loki log aggregation
 #   dot.server.minecraft.enable - Enable Minecraft Java Edition server
+#   dot.server.postgresql.enable - Enable PostgreSQL server (local-only)
 #
 {
   config,
@@ -28,6 +29,7 @@ in
     ./prometheus
     ./loki
     ./minecraft.nix
+    ./postgresql.nix
   ];
 
   options.dot.server = {

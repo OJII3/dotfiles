@@ -8,7 +8,7 @@ Declarative configuration management using the `dot.*` options namespace.
 ```
 modules/
 ├── nixos/    # NixOS modules (dot.core, dot.desktop, dot.hardware, dot.networking, dot.server)
-├── darwin/   # nix-darwin modules (dot.darwin.core, dot.darwin.desktop)
+├── darwin/   # nix-darwin modules (dot.darwin.core, dot.darwin.desktop, dot.darwin.networking)
 ├── home/     # Home Manager modules (dot.home.*)
 └── windows/  # Windows setup scripts and dotter-managed files
 ```
@@ -86,6 +86,21 @@ nix flake update
 
 # Update specific input
 nix flake update nixpkgs
+```
+
+## Secrets Management (sops-nix)
+
+Secrets are encrypted with [sops-nix](https://github.com/Mic92/sops-nix) and stored in `assets/secrets/secrets.json`.
+
+```bash
+# Edit secrets (decrypts in your editor)
+sops assets/secrets/secrets.json
+
+# Encrypt a new file
+sops -e plaintext.json > encrypted.json
+
+# Decrypt to stdout
+sops -d assets/secrets/secrets.json
 ```
 
 ## Favorite Apps & Tools

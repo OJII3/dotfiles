@@ -41,6 +41,7 @@ in
           with pkgs;
           [
             gomi
+            python3Packages.pyyaml
             bun
             uv
             (callPackage ../../packages/gwq.nix { })

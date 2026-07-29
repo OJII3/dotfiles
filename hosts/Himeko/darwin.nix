@@ -6,13 +6,18 @@
     core = {
       enable = true;
       fonts.enable = true;
-      networking.enable = true;
       sops.enable = true;
     };
     desktop = {
       enable = true;
       apps.enable = true;
       vr.enable = true;
+    };
+    networking = {
+      enable = true;
+      tailscale.enable = true;
+      openssh.enable = true;
+      cloudflared.enable = true;
     };
   };
 

@@ -15,15 +15,14 @@ Home Manager で各 AI ツールのスキルディレクトリに配置する Ag
 
 ## superpowers
 
-[obra/superpowers](https://github.com/obra/superpowers) は単体スキルではなく複数スキル + 各ハーネス向け導入機構を持つプラグイン。flake input `superpowers` (`flake.lock` で pin) として取り込み、
+[obra/superpowers](https://github.com/obra/superpowers) は複数スキルとハーネス向け導入機構を持つプラグイン。flake input `superpowers` (`flake.lock` で pin) として取り込み、OpenCode の自動検出 plugin としてのみ公開する。
 
-- claude/codex 向けの skills/ 展開は `skills.nix` が自動で行う。
-- hook / opencode plugin / gemini extension といったツール固有の glue は `modules/home/ai/superpowers.nix` が担う。
+Claude、Codex、Antigravity、Pi には superpowers の skills、hook、extension、bootstrap を配布しない。
 
 ## Sources
 
 | Skill | Source | Notes |
 |-------|--------|-------|
 | `missing-tools` | [ryoppippi/dotfiles `agents/skills/missing-tools/SKILL.md`](https://github.com/ryoppippi/dotfiles/blob/31766ba36dd3d7cbad1deb7270f5ba0e56e06e2d/agents/skills/missing-tools/SKILL.md) | Missing CLI tools をグローバルインストールせず、`direnv` / comma / `nix run` / `nix shell` で解決する workflow。 |
-| `superpowers` | [obra/superpowers](https://github.com/obra/superpowers) (`v5.1.0`) | TDD / debugging / planning / collaboration の workflow スキル群 + bootstrap hook。flake input 経由。 |
+| `superpowers` | [obra/superpowers](https://github.com/obra/superpowers) (`v5.1.0`) | OpenCode plugin として読み込む TDD / debugging / planning / collaboration の workflow スキル群。flake input 経由。 |
 | `stop-ai-slop-jp` | [iKora128/stop-ai-slop-jp](https://github.com/iKora128/stop-ai-slop-jp) | 日本語の文章からAI臭を取り除く Claude Skill |

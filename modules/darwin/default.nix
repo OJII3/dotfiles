@@ -6,16 +6,12 @@
 #   dot.darwin.core.enable = true;
 #   dot.darwin.desktop.enable = true;
 #
-{ config, lib, ... }:
+{ ... }:
 {
   imports = [
+    ./base.nix
     ./core
     ./desktop
+    ./networking
   ];
-
-  options.dot.darwin = {
-    # Placeholder for future global darwin options
-    # Each submodule (core, desktop) defines their own options
-    # under options.dot.darwin.<module>.*
-  };
 }

@@ -5,7 +5,6 @@
 #
 # - enable 連動: cfg.<tool>.enable が true のツールにのみリンクする。
 # - 出し分け: 各スキルは tools = [ ... ] で対象ツールを限定できる(既定は全ツール)。
-# - superpowers のような複数スキルを内包するパックは自動展開する。
 #
 # 注: opencode / agy は skills/ 機構ではなく独自のプラグイン/拡張機構を持つため、
 #     skillDirs には含めず ./superpowers.nix 側で個別に対応する。
@@ -118,15 +117,7 @@ let
     }
   ];
 
-  # superpowers パック(skills/ 配下の複数スキルを自動展開)。
-  # hook / opencode plugin / gemini extension は ./superpowers.nix で対応する。
-  superpowersSkills = map (name: {
-    inherit name;
-    src = inputs.superpowers;
-    baseDir = "skills/${name}";
-  }) (subdirsOf (inputs.superpowers + "/skills"));
-
-  allSkills = localSkills ++ remoteSkills ++ superpowersSkills;
+  allSkills = localSkills ++ remoteSkills;
 
   # スキル → 実ソースパス / 対象ツール
   skillSource = skill: if skill ? baseDir then "${skill.src}/${skill.baseDir}" else "${skill.src}";

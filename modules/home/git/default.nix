@@ -32,11 +32,11 @@ in
           defaultBranch = "main";
         };
         user = {
-          signingKey = if config.dot.home.git.tty.enable then "~/.ssh/id_ed25519.pub" else "37547FAD690A6133";
+          signingKey = cfg.git.signing.key;
         };
         commit.gpgSign = true;
         tag.gpgSign = true;
-        gpg.format = lib.mkIf config.dot.home.git.tty.enable "ssh";
+        gpg.format = lib.mkIf (cfg.git.signing.format == "ssh") "ssh";
         ghq = {
           root = "~/src";
         };

@@ -8,7 +8,13 @@
     # Shell & Editor
     zsh.enable = true;
     neovim.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      signing = {
+        format = "ssh";
+        key = "~/.ssh/id_ed25519.pub";
+      };
+    };
     gpg = {
       enable = true;
       pinentryPackage = "qt";
@@ -63,5 +69,5 @@
     [ -f /opt/ros/humble/setup.zsh ] && source /opt/ros/humble/setup.zsh
   '';
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 }

@@ -9,10 +9,6 @@
       enable = lib.mkEnableOption "custom fonts via Homebrew";
     };
 
-    networking = {
-      enable = lib.mkEnableOption "networking configuration";
-    };
-
     sops = {
       enable = lib.mkEnableOption "sops-nix secrets management";
     };

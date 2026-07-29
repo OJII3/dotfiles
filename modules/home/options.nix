@@ -16,11 +16,19 @@
     # Version control
     git = {
       enable = lib.mkEnableOption "Git configuration";
-      tty = {
-        enable = lib.mkEnableOption {
-          type = lib.types.bool;
-          default = false;
-          description = "TTY-specific Git settings";
+      signing = {
+        format = lib.mkOption {
+          type = lib.types.enum [
+            "openpgp"
+            "ssh"
+          ];
+          default = "openpgp";
+          description = "Git signature format";
+        };
+        key = lib.mkOption {
+          type = lib.types.str;
+          default = "37547FAD690A6133";
+          description = "Git signing key";
         };
       };
     };
