@@ -16,5 +16,15 @@ return {
 				domain = "DefaultDomain",
 			}),
 		},
+		{
+			key = "phys:LeftBracket",
+			mods = "SHIFT|CTRL",
+			action = act.ActivatePaneDirection("Prev"),
+		},
+		{
+			key = "phys:RightBracket",
+			mods = "SHIFT|CTRL",
+			action = act.ActivatePaneDirection("Next"),
+		},
 	},
 }
