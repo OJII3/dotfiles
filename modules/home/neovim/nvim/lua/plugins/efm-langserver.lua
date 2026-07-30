@@ -7,7 +7,7 @@ return {
 	config = function()
 		local nvim_lsp_efm = vim.lsp.efm
 		-- local languages = require("efmls-configs.defaults").languages()
-
+		local actionlint = require("efmls-configs.linters.actionlint")
 		local stylua = require("efmls-configs.formatters.stylua")
 		local clang_format = require("efmls-configs.formatters.clang_format")
 		local clang_tidy = require("efmls-configs.linters.clang_tidy")
@@ -23,6 +23,7 @@ return {
 		-- local eslint_linter = require("efmls-configs.linters.eslint")
 		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
+		local oxlint = require("efmls-configs.linters.oxlint")
 		-- local biome = require("efmls-configs.formatters.biome")
 		local nixfmt = require("efmls-configs.formatters.nixfmt")
 		-- Python
@@ -90,8 +91,8 @@ return {
 					cpp = { clang_format, clang_tidy },
 					css = { prettier },
 					haskell = { formulu },
-					javascript = { prettier },
-					javascriptreact = { prettier },
+					javascript = { prettier, oxlint },
+					javascriptreact = { prettier, oxlint },
 					json = { prettier },
 					latex = { latexindent },
 					lua = { stylua },
@@ -100,10 +101,10 @@ return {
 					python = { ruff, black, isort, autopep8, flake8, mypy },
 					rust = { rustfmt },
 					sh = { shellcheck },
-					typescript = { prettier },
-					typescriptreact = { prettier, biome },
+					typescript = { prettier, oxlint },
+					typescriptreact = { prettier, oxlint },
 					typst = { typstyle },
-					yaml = { yamllint },
+					yaml = { yamllint, actionlint },
 				},
 			},
 		})

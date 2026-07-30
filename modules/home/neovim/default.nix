@@ -36,6 +36,7 @@ in
         uv
         bun
         # lsp, formatter, linter --------------------------
+        actionlint
         astro-language-server
         bash-language-server
         biome
