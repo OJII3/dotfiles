@@ -1,4 +1,4 @@
 return {
-			"b0o/schemastore.nvim",
-			ft = { "json", "yaml", "toml" },
+	"b0o/schemastore.nvim",
+	ft = { "json", "yaml", "toml" },
 }

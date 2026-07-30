@@ -1,3 +1,4 @@
 return {
-		"dmmulroy/ts-error-translator", ft = "typescript",
+	"dmmulroy/ts-error-translator",
+	ft = "typescript",
 }

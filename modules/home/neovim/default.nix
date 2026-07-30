@@ -55,8 +55,8 @@ in
         nil
         nixd
         nixfmt
+        oxlint
         prettier
-        ty
         ruff
         rust-analyzer
         shellcheck
@@ -67,6 +67,7 @@ in
         terraform-ls
         texlab
         tinymist
+        ty
         typescript-language-server
         typstyle
         vim-language-server

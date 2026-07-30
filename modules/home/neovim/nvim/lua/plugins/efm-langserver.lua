@@ -23,7 +23,6 @@ return {
 		-- local eslint_linter = require("efmls-configs.linters.eslint")
 		-- local eslint_formatter = require("efmls-configs.formatters.eslint")
 		local prettier = require("efmls-configs.formatters.prettier")
-		local oxlint = require("efmls-configs.linters.oxlint")
 		-- local biome = require("efmls-configs.formatters.biome")
 		local nixfmt = require("efmls-configs.formatters.nixfmt")
 		-- Python
@@ -52,6 +51,17 @@ return {
 			formatCommand = "cmake-format ${--line-width:100} -",
 			formatStdin = true,
 			rootMarkers = { "CMakeLists.txt" },
+		}
+		local oxlint = {
+			lintCommand = string.format("%s %s", "node_modules/.bin/oxlint", "--format agent '${INPUT}'"),
+			rootMarkers = {
+				".oxlintrc.json",
+				".oxlintrc.jsonc",
+				"oxlint.config.js",
+				"oxlint.config.cjs",
+				"oxlint.config.mjs",
+				"oxlint.config.ts",
+			},
 		}
 
 		vim.lsp.config("efm", {

@@ -5,4 +5,3 @@ return {
 	end,
 	event = "BufRead",
 }
-
