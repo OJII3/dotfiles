@@ -11,13 +11,7 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
-    "allow": [
-      "Bash",
-      "Read",
-      "Edit",
-      "WebFetch",
-      "WebSearch"
-    ],
+    "allow": ["Bash", "Read", "Edit", "WebFetch", "WebSearch"],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(rmdir *)",
@@ -39,6 +33,10 @@
   },
   "alwaysThinkingEnabled": true,
   "skipAutoPermissionPrompt": true,
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "hooks": {
     "CwdChanged": [
       {

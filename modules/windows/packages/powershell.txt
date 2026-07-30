@@ -1,0 +1,7 @@
+# PowerShell Gallery modules required by the Windows PowerShell profile.
+# One module name per line.
+
+Microsoft.WinGet.CommandNotFound
+Abbr
+PSFzf
+posh-git

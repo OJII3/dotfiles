@@ -117,6 +117,10 @@ modules/nixos/
 | `adguardHome.enable` | bool | `false` | AdGuard Home DNS (resolved を無効化) |
 | `gnomeKeyring.enable` | bool | `false` | GNOME Keyring (ヘッドレス用) |
 | `zabbix.enable` / `librenms.enable` / `prometheus.enable` / `loki.enable` / `minecraft.enable` | bool | `false` | 各監視/ゲームサーバー |
+| `postgresql.enable` | bool | `false` | PostgreSQL サーバー(ローカルのみ, localhost:5432) |
+| `postgresql.port` | port | `5432` | PostgreSQL の待受ポート |
+| `postgresql.ensureDatabases` | list | `[]` | 作成するデータベース名のリスト |
+| `postgresql.ensureUsers` | list | `[]` | 作成するユーザー(`name`, `password`, `ensureDBOwnership`) |
 
 ## 使用例
 
