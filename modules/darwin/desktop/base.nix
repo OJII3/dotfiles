@@ -18,17 +18,24 @@ in
     system.startup.chime = false;
     system.keyboard = {
       enableKeyMapping = true;
+      nonUS.remapTilde = true;
     };
     system.defaults = {
       NSGlobalDomain = {
+        AppleInterfaceStyleSwitchesAutomatically = true;
         AppleShowAllExtensions = true;
+        AppleSpacesSwitchOnActivate = true;
+
         "com.apple.trackpad.scaling" = 10.0;
         "com.apple.swipescrolldirection" = true;
       };
       controlcenter = {
+        AirDrop = false;
         BatteryShowPercentage = true;
         Bluetooth = false;
-        Display = false;
+        Display = true;
+        FocusModes = false;
+        NowPlaying = false;
         Sound = true;
       };
       finder = {
@@ -37,6 +44,7 @@ in
         CreateDesktop = false;
         NewWindowTarget = "Home";
         ShowPathbar = true;
+        QuitMenuItem = true;
       };
       dock = {
         autohide = true;
@@ -51,6 +59,7 @@ in
       };
       screencapture = {
         location = "/Users/${username}/Pictures/Screenshots";
+        save-selections = false;
         type = "png";
       };
     };
