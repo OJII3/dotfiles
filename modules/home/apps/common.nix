@@ -13,7 +13,6 @@ in
   config = lib.mkIf cfg.common.enable {
     home.packages = with pkgs; [
       jetbrains-toolbox
-      logisim-evolution
       postman
       iperf3
     ];
