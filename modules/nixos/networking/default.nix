@@ -60,6 +60,8 @@ in
       # DNS (systemd-resolved)
       # Use mkDefault so AdGuard Home can override (disable) resolved
       (lib.mkIf cfg.dns.resolved.enable {
+        networking.nameservers = [ "1.1.1.1" ];
+        networking.search = [ "internal.ojii3.dev" ];
         services.resolved = {
           enable = lib.mkDefault true;
           # dnsovertls = "opportunistic";
