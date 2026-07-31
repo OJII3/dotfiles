@@ -12,7 +12,7 @@ remote_connections = true
 
 [sandbox_workspace_write]
 network_access = true
-writable_roots = [ "/dev/pts", "/dev/ptmx", "~/.gnupg" ]
+writable_roots = [ "/dev/pts", "/dev/ptmx", "~/.gnupg", ".git" ]
 
 [tui]
 notifications = ["agent-turn-complete","approval-requested"]
@@ -23,6 +23,25 @@ inherit = "all"
 [analytics]
 enabled = false
 
+[otel]
+environment = "dev"
+log_user_prompt = false
+exporter = { otlp-http = {
+  endpoint = "https://otlp-gateway-prod-ap-northeast-0.grafana.net/otlp/otlp/v1/logs",
+  protocol = "binary",
+  headers = { "Authorization" = "Basic MTU1NDQ2MQ==:${GRAFANA_CLOUD_TOKEN}" }
+}}
+metrics_exporter = { otlp-http = {
+  endpoint = "https://otlp-gateway-prod-ap-northeast-0.grafana.net/otlp/otlp/v1/metrics",
+  protocol = "binary",
+  headers = { "Authorization" = "Basic MTU1NDQ2MQ==:${GRAFANA_CLOUD_TOKEN}" }
+}}
+trace_exporter = { otlp-http = {
+  endpoint = "https://otlp-gateway-prod-ap-northeast-0.grafana.net/otlp/v1/traces",
+  protocol = "binary",
+  headers = { "Authorization" = "Basic MTU1NDQ2MQ==:${GRAFANA_CLOUD_TOKEN}" }
+}}
+
 [mcp_servers.context7]
 command = "bunx"
 args = ["-y", "@upstash/context7-mcp@latest"]
@@ -30,3 +49,7 @@ args = ["-y", "@upstash/context7-mcp@latest"]
 [mcp_servers.devtools]
 command = "bunx"
 args = ["-y", "chrome-devtools-mcp@latest"]
+
+[profiles.full-access]
+sandbox_mode = "danger-full-access"
+ask_for_approval = "never"
