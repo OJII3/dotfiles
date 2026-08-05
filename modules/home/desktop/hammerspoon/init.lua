@@ -97,8 +97,10 @@ local SPACE_HOLD_THRESHOLD = 0.2
 -- アプリ名か bundle ID の部分一致で判定する (小文字で書くこと)。
 local SPACE_EXCLUDED_APPS = { "minecraft" }
 
+
 local spacePressedAt = nil -- space 押下時刻 (押していなければ nil)
 local spaceResolvedAsTap = false -- この押下は既にスペースとして送出済みか
+local spaceCmdEngaged = false -- Cmd を押し下げっぱなしにしているか
 local spaceDisabled = false -- 除外アプリが最前面にいるか
 
 -- 判定を space の打鍵ごとにやると重いので、アプリ切り替え時にだけ更新する
@@ -127,6 +129,35 @@ end)
 appWatcher:start()
 refreshSpaceDisabled()
 
+-- 修飾キーは「キーイベントに flag を混ぜる」のではなく、修飾キー自体を
+-- 独立したイベントとして押し下げる。Apple のドキュメントが指定している方法で、
+-- これをやらないと Cmd+C のようなショートカットが発火しない。
+local function postCmd(isDown)
+  -- 修飾キーは mods を省いた 2 引数形式で作る (ドキュメントの例と同じ形)
+  local event = hs.eventtap.event.newKeyEvent(hs.keycodes.map.cmd, isDown)
+  event:setProperty(eventProps.eventSourceUserData, SYNTHETIC)
+  event:post()
+end
+
+local function releaseSpaceCmd()
+  if spaceCmdEngaged then
+    spaceCmdEngaged = false
+    postCmd(false)
+  end
+end
+
+-- リロード/終了時に Cmd を押しっぱなしのまま残さない
+hs.shutdownCallback = releaseSpaceCmd
+
+-- 閾値まで押し続けられたら本物の Cmd を押し下げる。以降のキーは一切加工せず
+-- そのまま流すだけで、OS が自然に Cmd を効かせてくれる。
+local spaceHoldTimer = hs.timer.delayed.new(SPACE_HOLD_THRESHOLD, function()
+  if spacePressedAt and not spaceResolvedAsTap and not spaceCmdEngaged then
+    spaceCmdEngaged = true
+    postCmd(true)
+  end
+end)
+
 local function handleSpaceKey(event, isDown)
   if isDown then
     -- Option+Space (Raycast) や Cmd+Space のように修飾キーと一緒に押された
@@ -139,6 +170,7 @@ local function handleSpaceKey(event, isDown)
     end
     spacePressedAt = hs.timer.secondsSinceEpoch()
     spaceResolvedAsTap = false
+    spaceHoldTimer:start()
     return true -- tap か hold か決まるまで送出を保留する
   end
 
@@ -147,14 +179,17 @@ local function handleSpaceKey(event, isDown)
     return false
   end
 
+  spaceHoldTimer:stop()
   local heldFor = hs.timer.secondsSinceEpoch() - spacePressedAt
   local alreadySent = spaceResolvedAsTap
+  local wasCmd = spaceCmdEngaged
   spacePressedAt = nil
   spaceResolvedAsTap = false
+  releaseSpaceCmd()
 
+  -- Cmd として使ったあとはスペースを出さない。
   -- 閾値未満で単独で離されたときだけスペースを出す。
-  -- 閾値を超えていたら Cmd のつもりだったとみなして何も出さない。
-  if not alreadySent and heldFor < SPACE_HOLD_THRESHOLD then
+  if not wasCmd and not alreadySent and heldFor < SPACE_HOLD_THRESHOLD then
     postKeyTap({}, "space")
   end
   return true
@@ -174,31 +209,19 @@ spaceTap = hs.eventtap.new({ eventTypes.keyDown, eventTypes.keyUp }, function(ev
     return handleSpaceKey(event, isDown)
   end
 
-  -- ここから先は space 以外のキー
-  if not spacePressedAt or spaceResolvedAsTap then
+  -- ここから先は space 以外のキー。
+  -- Cmd 押し下げ済み、または space を押していないなら何もしない。
+  if spaceCmdEngaged or not spacePressedAt or spaceResolvedAsTap then
     return false
   end
 
-  if hs.timer.secondsSinceEpoch() - spacePressedAt < SPACE_HOLD_THRESHOLD then
-    -- 高速タイピングでの押し重なり (例: "the cat" の空白と次の文字)。
-    -- Cmd ではなく、スペース → そのキーの順に素直に流す。
-    if isDown then
-      spaceResolvedAsTap = true
-      postKeyTap({}, "space")
-    end
-    return false
+  -- Cmd がまだ入っていない = 閾値前。高速タイピングでの押し重なり
+  -- (例: "the cat" の空白と次の文字) なので、スペース → そのキーの順に流す。
+  if isDown then
+    spaceHoldTimer:stop()
+    spaceResolvedAsTap = true
+    postKeyTap({}, "space")
   end
-
-  -- space を閾値以上押しっぱなし = Cmd 修飾として振る舞う。
-  -- setFlags による書き換えは伝播しないので、Cmd を足したイベントを合成し直して
-  -- 元のイベントは捨てる (コールバックの第2戻り値が投稿するイベント)。
-  local flags = event:getFlags()
-  local mods = { "cmd" }
-  for _, name in ipairs(MODIFIER_NAMES) do
-    if name ~= "cmd" and flags[name] then
-      table.insert(mods, name)
-    end
-  end
-  return true, { newSyntheticKeyEvent(mods, event:getKeyCode(), isDown) }
+  return false
 end)
 spaceTap:start()
