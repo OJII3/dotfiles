@@ -96,13 +96,6 @@ Hammerspoon に権限を付与する必要がある (Karabiner 系のドライ�
 | キー | tap | hold |
 |------|-----|------|
 | CapsLock (OS レベルで Control にリマップ済み) | Esc | Ctrl |
-| Space | Space | Command |
-
-Space は通常キーなので、高速タイピングでの押し重なり (例: `the cat` の空白と
-次の文字) を Cmd と誤認しないよう、200ms 以上押し続けたときだけ Cmd として
-振る舞う。副作用として space 長押しによるスペースの連打 (オートリピート) は
-使えなくなる。ゲーム等でジャンプができなくなるアプリは `init.lua` 内の
-`SPACE_EXCLUDED_APPS` で除外する (既定は Minecraft)。
 
 ### dot.darwin.networking
 

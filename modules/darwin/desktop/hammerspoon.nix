@@ -1,8 +1,7 @@
 # Hammerspoon configuration
 # Applied when dot.darwin.desktop.hammerspoon.enable is true
 #
-# キーリマップ (CapsLock tap=Esc/hold=Ctrl, Space tap=Space/hold=Cmd) のための
-# darwin 側の下ごしらえ:
+# キーリマップ (CapsLock tap=Esc/hold=Ctrl) のための darwin 側の下ごしらえ:
 #   1. CapsLock -> Control の OS レベルリマップ (hidutil、ドライバ不要)
 #   2. Hammerspoon.app のインストール
 # tap/hold 判定のロジックは home-manager 側の ~/.hammerspoon/init.lua が担当する。
