@@ -23,14 +23,33 @@ local function isSynthetic(event)
   return event:getProperty(eventProps.eventSourceUserData) == SYNTHETIC
 end
 
+local MODIFIER_NAMES = { "cmd", "alt", "shift", "ctrl", "fn" }
+
+local function hasAnyModifier(flags)
+  for _, name in ipairs(MODIFIER_NAMES) do
+    if flags[name] then
+      return true
+    end
+  end
+  return false
+end
+
+local function newSyntheticKeyEvent(mods, key, isDown)
+  local event = hs.eventtap.event.newKeyEvent(mods, key, isDown)
+  event:setProperty(eventProps.eventSourceUserData, SYNTHETIC)
+  return event
+end
+
 -- キーを1回叩いたことにする (down/up をまとめて合成する)
 local function postKeyTap(mods, key)
   for _, isDown in ipairs({ true, false }) do
-    local event = hs.eventtap.event.newKeyEvent(mods, key, isDown)
-    event:setProperty(eventProps.eventSourceUserData, SYNTHETIC)
-    event:post()
+    newSyntheticKeyEvent(mods, key, isDown):post()
   end
 end
+
+-- 設定を書き換えたら Hammerspoon を再起動せずに反映されるようにする
+configWatcher = hs.pathwatcher.new(hs.configdir, hs.reload)
+configWatcher:start()
 
 --------------------------------------------------------------------------------
 -- CapsLock (= Control): tap = Esc / hold = Ctrl
@@ -108,8 +127,13 @@ end)
 appWatcher:start()
 refreshSpaceDisabled()
 
-local function handleSpaceKey(isDown)
+local function handleSpaceKey(event, isDown)
   if isDown then
+    -- Option+Space (Raycast) や Cmd+Space のように修飾キーと一緒に押された
+    -- space はショートカットなので、tap-hold の対象にせずそのまま通す。
+    if hasAnyModifier(event:getFlags()) then
+      return false
+    end
     if spacePressedAt then
       return true -- オートリピートは捨てる
     end
@@ -118,7 +142,12 @@ local function handleSpaceKey(isDown)
     return true -- tap か hold か決まるまで送出を保留する
   end
 
-  local heldFor = spacePressedAt and (hs.timer.secondsSinceEpoch() - spacePressedAt) or 0
+  -- 保留していない space の離しは素通しする (修飾キー付きで通したもの)
+  if not spacePressedAt then
+    return false
+  end
+
+  local heldFor = hs.timer.secondsSinceEpoch() - spacePressedAt
   local alreadySent = spaceResolvedAsTap
   spacePressedAt = nil
   spaceResolvedAsTap = false
@@ -142,7 +171,7 @@ spaceTap = hs.eventtap.new({ eventTypes.keyDown, eventTypes.keyUp }, function(ev
     if spaceDisabled then
       return false
     end
-    return handleSpaceKey(isDown)
+    return handleSpaceKey(event, isDown)
   end
 
   -- ここから先は space 以外のキー
@@ -160,10 +189,16 @@ spaceTap = hs.eventtap.new({ eventTypes.keyDown, eventTypes.keyUp }, function(ev
     return false
   end
 
-  -- space を閾値以上押しっぱなし = Cmd 修飾として振る舞う
+  -- space を閾値以上押しっぱなし = Cmd 修飾として振る舞う。
+  -- setFlags による書き換えは伝播しないので、Cmd を足したイベントを合成し直して
+  -- 元のイベントは捨てる (コールバックの第2戻り値が投稿するイベント)。
   local flags = event:getFlags()
-  flags.cmd = true
-  event:setFlags(flags)
-  return false
+  local mods = { "cmd" }
+  for _, name in ipairs(MODIFIER_NAMES) do
+    if name ~= "cmd" and flags[name] then
+      table.insert(mods, name)
+    end
+  end
+  return true, { newSyntheticKeyEvent(mods, event:getKeyCode(), isDown) }
 end)
 spaceTap:start()
