@@ -40,14 +40,16 @@
     # Development
     dev = {
       enable = true;
-      jetbrains.enable = true;
+      jetbrains.enable = false;
       mise.enable = true;
+      zellij.enable = true;
     };
 
     ai = {
       claude.enable = true;
-      codex.enable = true;
+      # codex.enable = true;
       agy.enable = true;
+      opencode.enable = true;
     };
 
     # Apps
