@@ -13,7 +13,7 @@ in
       onActivation = {
         upgrade = true;
         autoUpdate = false;
-        cleanup = "uninstall";
+        cleanup = "zap";
       };
     };
   };
