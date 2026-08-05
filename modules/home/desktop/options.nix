@@ -46,7 +46,7 @@
     };
 
     hammerspoon = {
-      enable = lib.mkEnableOption "Hammerspoon (CapsLock tap=Esc/hold=Ctrl)";
+      enable = lib.mkEnableOption "Hammerspoon (CapsLock tap=Esc/hold=Ctrl, Space tap=Space/hold=Cmd)";
     };
 
     theme = {
