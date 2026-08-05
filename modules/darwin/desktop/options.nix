@@ -12,5 +12,9 @@
     vr = {
       enable = lib.mkEnableOption "VR development support (Meta XR Simulator)";
     };
+
+    hammerspoon = {
+      enable = lib.mkEnableOption "Hammerspoon (CapsLock tap=Esc/hold=Ctrl)";
+    };
   };
 }

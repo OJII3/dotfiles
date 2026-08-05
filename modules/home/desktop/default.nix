@@ -15,6 +15,7 @@ in
     ./browser/vivaldi
     ./fcitx5
     ./gnome
+    ./hammerspoon
     ./hypr
     ./hyprland
     # ./kanata

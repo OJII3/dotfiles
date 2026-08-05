@@ -22,7 +22,8 @@ modules/darwin/
 │   ├── options.nix  # dot.darwin.desktop.* オプション定義
 │   ├── base.nix     # 基本設定 (system.defaults, Touch ID)
 │   ├── apps.nix     # GUI アプリ (Homebrew casks)
-│   └── vr.nix       # VR 開発 (Meta XR Simulator)
+│   ├── vr.nix       # VR 開発 (Meta XR Simulator)
+│   └── hammerspoon.nix # Hammerspoon + CapsLock→Control リマップ (キーリマップ)
 ├── networking/
 │   ├── default.nix  # networking モジュールのエントリ
 │   ├── options.nix  # dot.darwin.networking.* オプション定義
@@ -51,6 +52,7 @@ modules/darwin/
       enable = true;
       apps.enable = true;
       vr.enable = true;
+      hammerspoon.enable = true;
     };
     networking = {
       enable = true;
@@ -81,6 +83,19 @@ modules/darwin/
 | `enable` | desktop 設定全体の有効化 (system.defaults 等) |
 | `apps.enable` | GUI アプリ/casks のインストール |
 | `vr.enable` | VR 開発環境 (Meta XR Simulator) |
+| `hammerspoon.enable` | Hammerspoon + CapsLock→Control リマップ (キーリマップ) |
+
+`hammerspoon.enable` は tap/hold 判定のスクリプト (`~/.hammerspoon/init.lua`) を
+Home Manager 側の `dot.home.desktop.hammerspoon.enable` とセットで有効化する。
+初回のみ System Settings > Privacy & Security > Accessibility で
+Hammerspoon に権限を付与する必要がある (Karabiner 系のドライバや
+システム拡張の承認は不要)。
+
+割り当てているキー:
+
+| キー | tap | hold |
+|------|-----|------|
+| CapsLock (OS レベルで Control にリマップ済み) | Esc | Ctrl |
 
 ### dot.darwin.networking
 
