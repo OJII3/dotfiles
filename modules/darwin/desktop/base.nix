@@ -28,6 +28,7 @@ in
 
         "com.apple.trackpad.scaling" = 10.0;
         "com.apple.swipescrolldirection" = true;
+        "com.apple.keyboard.fnState" = true;
       };
       controlcenter = {
         AirDrop = false;
@@ -39,12 +40,13 @@ in
         Sound = true;
       };
       finder = {
-        AppleShowAllFiles = true;
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
         CreateDesktop = false;
+        FXRemoveOldTrashItems = true;
         NewWindowTarget = "Home";
-        ShowPathbar = true;
         QuitMenuItem = true;
+        ShowPathbar = true;
       };
       dock = {
         autohide = true;

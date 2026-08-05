@@ -21,8 +21,5 @@ in
     # nixpkgs 経由だと rebuild のたびに実体パスが変わり Accessibility 権限が
     # 外れうるため、GUI アプリは Homebrew cask で入れる。
     homebrew.casks = [ "hammerspoon" ];
-
-    # system.keyboard.enableKeyMapping は ./base.nix が設定済み (再定義しない)。
-    system.keyboard.remapCapsLockToControl = true;
   };
 }
