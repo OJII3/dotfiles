@@ -12,6 +12,10 @@ in
         message = "dot.darwin.desktop.apps requires homebrew to be enabled (set dot.darwin.core.enable = true)";
       }
     ];
+    homebrew.onActivation = {
+      upgrade = true;
+      cleanup = "zap";
+    };
     homebrew.casks = [
       "affinity"
       "chatgpt"
