@@ -12,6 +12,7 @@
       enable = true;
       apps.enable = true;
       vr.enable = true;
+      hammerspoon.enable = true;
     };
     networking = {
       enable = true;

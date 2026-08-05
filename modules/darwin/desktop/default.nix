@@ -11,5 +11,6 @@
     ./base.nix
     ./apps.nix
     ./vr.nix
+    ./hammerspoon.nix
   ];
 }

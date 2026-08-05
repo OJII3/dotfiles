@@ -44,7 +44,7 @@
 
     obsidian.enable = true;
 
-    desktop.kanata.enable = true;
+    desktop.hammerspoon.enable = true;
   };
 
   programs.zsh.initContent = ''

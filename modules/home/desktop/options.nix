@@ -45,6 +45,10 @@
       enable = lib.mkEnableOption "Kanata key remapping (cross-platform)";
     };
 
+    hammerspoon = {
+      enable = lib.mkEnableOption "Hammerspoon (CapsLock tap=Esc/hold=Ctrl)";
+    };
+
     theme = {
       enable = lib.mkEnableOption "Desktop theme configuration";
     };
