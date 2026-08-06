@@ -15,7 +15,7 @@ in
       git
       gnumake
       python312
-      nur.repos.mrene.iproute2mac
+      iproute2mac
     ];
   };
 }

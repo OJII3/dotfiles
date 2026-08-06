@@ -32,7 +32,6 @@ in
       "slack"
       "spaceid"
       "steam"
-      "telegram"
       "unity-hub"
     ];
   };
