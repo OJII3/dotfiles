@@ -85,18 +85,22 @@ in
         simulator_staging="$(mktemp -d "$simulator_parent/.MetaXRSimulator.XXXXXX")"
         simulator_backup=""
         meta_xr_simulator_restore() {
-          if [ -n "$simulator_backup" ]; then
-            if [ ! -e "$simulator_root" ] && [ ! -L "$simulator_root" ]; then
-              if ! mv "$simulator_backup" "$simulator_root"; then
-                printf '%s\n' "Unable to restore the previous Meta XR Simulator" >&2
-              fi
-            else
-              rm -rf -- "$simulator_backup" || printf '%s\n' "Unable to remove Meta XR Simulator backup" >&2
+          simulator_exit_status=$?
+          trap - EXIT
+
+          if [ "$simulator_exit_status" -ne 0 ] && [ -n "$simulator_backup" ]; then
+            rm -rf -- "$simulator_root" || printf '%s\n' "Unable to remove failed Meta XR Simulator" >&2
+            if ! mv "$simulator_backup" "$simulator_root"; then
+              printf '%s\n' "Unable to restore the previous Meta XR Simulator" >&2
             fi
+          elif [ "$simulator_exit_status" -eq 0 ] && [ -n "$simulator_backup" ]; then
+            rm -rf -- "$simulator_backup" || printf '%s\n' "Unable to remove Meta XR Simulator backup" >&2
           fi
+
           if [ -n "$simulator_staging" ] && [ -e "$simulator_staging" ]; then
             rm -rf -- "$simulator_staging" || printf '%s\n' "Unable to remove Meta XR Simulator staging directory" >&2
           fi
+          exit "$simulator_exit_status"
         }
         trap 'meta_xr_simulator_restore' EXIT
 
@@ -113,23 +117,19 @@ in
         if [ -e "$simulator_root" ] || [ -L "$simulator_root" ]; then
           simulator_backup="$(mktemp -d "$simulator_parent/.MetaXRSimulator.previous.XXXXXX")"
           rmdir "$simulator_backup"
-          mv "$simulator_root" "$simulator_backup"
+          if ! mv "$simulator_root" "$simulator_backup"; then
+            rm -rf -- "$simulator_backup" || printf '%s\n' "Unable to remove Meta XR Simulator backup" >&2
+            simulator_backup=""
+            printf '%s\n' "Unable to prepare the previous Meta XR Simulator for rollback" >&2
+            exit 1
+          fi
         fi
 
         if ! mv "$simulator_staging" "$simulator_root"; then
-          if [ -n "$simulator_backup" ]; then
-            mv "$simulator_backup" "$simulator_root"
-          fi
           printf '%s\n' "Unable to activate staged Meta XR Simulator" >&2
           exit 1
         fi
-
-        if [ -n "$simulator_backup" ]; then
-          rm -rf -- "$simulator_backup"
-        fi
-        simulator_backup=""
         simulator_staging=""
-        trap - EXIT
       else
         simulator_group="$(id -gn "$simulator_user")"
         chown -R "$simulator_user:$simulator_group" "$simulator_root"
