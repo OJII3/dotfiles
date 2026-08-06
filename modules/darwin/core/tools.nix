@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -14,6 +15,7 @@ in
       git
       gnumake
       python312
+      nur.repos.mrene.iproute2mac
     ];
   };
 }

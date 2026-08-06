@@ -67,6 +67,7 @@ let
           nix.enable = false;
           # stateVersion = "6";
         }
+        inputs.nur.modules.darwin.default
       ];
       specialArgs = {
         inherit inputs hostname username;
