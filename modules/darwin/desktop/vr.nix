@@ -88,8 +88,24 @@ in
         simulator_group="$(id -gn "$simulator_user")"
         chown -R "$simulator_user:$simulator_group" "$simulator_staging"
 
-        rm -rf -- "$simulator_root"
-        mv -- "$simulator_staging" "$simulator_root"
+        simulator_backup=""
+        if [ -e "$simulator_root" ] || [ -L "$simulator_root" ]; then
+          simulator_backup="$(mktemp -d "$simulator_parent/.MetaXRSimulator.previous.XXXXXX")"
+          rmdir "$simulator_backup"
+          mv "$simulator_root" "$simulator_backup"
+        fi
+
+        if ! mv "$simulator_staging" "$simulator_root"; then
+          if [ -n "$simulator_backup" ]; then
+            mv "$simulator_backup" "$simulator_root"
+          fi
+          printf '%s\n' "Unable to activate staged Meta XR Simulator" >&2
+          exit 1
+        fi
+
+        if [ -n "$simulator_backup" ]; then
+          rm -rf -- "$simulator_backup"
+        fi
         trap - EXIT
       else
         simulator_group="$(id -gn "$simulator_user")"
