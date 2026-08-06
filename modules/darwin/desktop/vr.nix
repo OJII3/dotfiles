@@ -9,6 +9,9 @@
 }:
 let
   cfg = config.dot.darwin.desktop;
+  simulatorRoot = "/Users/${username}/Library/MetaXR/MetaXRSimulator";
+  simulatorRuntime = "${simulatorRoot}/current/meta_openxr_simulator.json";
+  simulatorSource = "${config.homebrew.prefix}/opt/meta-xr-simulator";
 in
 {
   config = lib.mkIf (cfg.enable && cfg.vr.enable) {
@@ -26,7 +29,13 @@ in
     };
     #
     environment.variables = {
-      XR_RUNTIME_JSON = "/Users/${username}/Library/MetaXR/MetaXRSimulator/71.0.0/meta_xr_simulator.json";
+      XR_RUNTIME_JSON = simulatorRuntime;
+    };
+
+    system.activationScripts = {
+      install-meta-xr-simulator = {
+        text = "";
+      };
     };
   };
 }
