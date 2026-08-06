@@ -21,11 +21,8 @@
     ./terminal
     ./dev
     ./ai
+    ./apps
     # Root-level modules
-    ./apps/common.nix
-    ./apps/linux/common.nix
-    ./apps/linux/gnome.nix
-    ./apps/linux/hyprland.nix
     ./blender-launcher.nix
     ./bitwarden.nix
     ./direnv.nix

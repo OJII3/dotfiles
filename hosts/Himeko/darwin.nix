@@ -19,7 +19,7 @@
       tailscale.enable = true;
       openssh.enable = true;
       cloudflared.enable = false;
-      cloudflareOne.enable = true;
+      # cloudflareOne.enable = true;
     };
   };
 

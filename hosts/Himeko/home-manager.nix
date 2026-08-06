@@ -42,7 +42,7 @@
       darwin.enable = true;
     };
 
-    obsidian.enable = true;
+    obsidian.enable = false;
 
     desktop.hammerspoon.enable = true;
   };
