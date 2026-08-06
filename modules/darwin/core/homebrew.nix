@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  username,
   ...
 }:
 let
@@ -8,6 +9,14 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
+    nix-homebrew = {
+      enable = true;
+      enableRosetta = false;
+      user = username;
+      mutableTaps = false;
+      autoMigrate = true;
+    };
+
     homebrew = {
       enable = true;
       onActivation = {

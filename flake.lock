@@ -107,6 +107,23 @@
         "type": "github"
       }
     },
+    "brew-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785146564,
+        "narHash": "sha256-Sa7/HrfB04H32OJ7/ofxXjiZEbkWtCNOriONYYTL1OA=",
+        "owner": "Homebrew",
+        "repo": "brew",
+        "rev": "b2cfc03346d482f79886de108fee5dc49a6efc10",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Homebrew",
+        "ref": "6.0.13",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
     "bun2nix": {
       "inputs": {
         "flake-parts": [
@@ -973,6 +990,24 @@
         "type": "github"
       }
     },
+    "nix-homebrew": {
+      "inputs": {
+        "brew-src": "brew-src"
+      },
+      "locked": {
+        "lastModified": 1785544760,
+        "narHash": "sha256-qV6OoNuly4ntqpCg7esIeJjUboxSnQNlLPxz+y5h9/o=",
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "rev": "937ce52c7d046310571f3a070713804ead496843",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "type": "github"
+      }
+    },
     "nix-on-droid": {
       "inputs": {
         "home-manager": "home-manager_2",
@@ -1471,6 +1506,22 @@
         "type": "github"
       }
     },
+    "oculus-vr-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1732296592,
+        "narHash": "sha256-lgyvlAJDn+kd5JYodpOTniLwGV8TfFQBp2NFk+gFvF0=",
+        "owner": "oculus-vr",
+        "repo": "homebrew-repo",
+        "rev": "dd52144310f044ae90a1c34bdd452a0228281182",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oculus-vr",
+        "repo": "homebrew-repo",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1528,6 +1579,7 @@
         "hyprpolkitagent": "hyprpolkitagent",
         "llm-agents-nix": "llm-agents-nix",
         "nix-darwin": "nix-darwin_2",
+        "nix-homebrew": "nix-homebrew",
         "nix-on-droid": "nix-on-droid",
         "nix-ros-overlay": "nix-ros-overlay",
         "nixos-hardware": "nixos-hardware",
@@ -1540,6 +1592,7 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
+        "oculus-vr-tap": "oculus-vr-tap",
         "proxmox-nixos": "proxmox-nixos",
         "sops-nix": "sops-nix",
         "superpowers": "superpowers"

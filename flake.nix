@@ -34,12 +34,17 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+    oculus-vr-tap = {
+      url = "github:oculus-vr/homebrew-repo";
       flake = false;
     };
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";

@@ -68,6 +68,7 @@ let
           # stateVersion = "6";
         }
         # inputs.nur.modules.darwin.default
+        inputs.nix-homebrew.darwinModules.nix-homebrew
       ];
       specialArgs = {
         inherit inputs hostname username;
