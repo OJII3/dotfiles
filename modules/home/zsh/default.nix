@@ -40,9 +40,6 @@ in
           "se" = "serie";
           "v" = "nvim";
           "ya" = "yazi";
-        }
-        // lib.optionalAttrs pkgs.stdenv.isDarwin {
-          "brew" = "/opt/homebrew/bin/brew";
         };
       };
 
