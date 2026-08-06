@@ -70,6 +70,12 @@ let
         # inputs.nur.modules.darwin.default
         inputs.nix-homebrew.darwinModules.nix-homebrew
       ];
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
+      };
       specialArgs = {
         inherit inputs hostname username;
       };

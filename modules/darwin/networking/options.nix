@@ -14,5 +14,9 @@
     cloudflared = {
       enable = lib.mkEnableOption "Cloudflared CLI";
     };
+
+    cloudflareOne = {
+      enable = lib.mkEnableOption "Cloudflare One CLI";
+    };
   };
 }

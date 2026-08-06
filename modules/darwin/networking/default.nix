@@ -6,5 +6,6 @@
     ./tailscale.nix
     ./openssh.nix
     ./cloudflared.nix
+    ./cloudflare-one.nix
   ];
 }
