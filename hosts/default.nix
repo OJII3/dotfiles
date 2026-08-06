@@ -30,10 +30,6 @@ let
       };
       extraSpecialArgs = {
         inherit inputs username;
-        pkgs-ros = import inputs.nixpkgs-ros {
-          inherit system;
-          overlays = [ inputs.nix-ros-overlay.overlays.default ];
-        };
         pkgs-stable = import inputs.nixpkgs-stable {
           inherit system overlays;
           config = {
@@ -177,6 +173,7 @@ in
       system = "aarch64-darwin";
       username = "ojii3";
       overlays = [
+        inputs.brew-nix.overlays.default
         (final: prev: {
           direnv = prev.direnv.overrideAttrs (old: {
             doCheck = false;
