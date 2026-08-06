@@ -15,6 +15,13 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.vr.enable) {
+    assertions = [
+      {
+        assertion = config.homebrew.enable;
+        message = "dot.darwin.desktop.vr requires homebrew to be enabled (set dot.darwin.core.enable = true)";
+      }
+    ];
+
     nix-homebrew = {
       taps."oculus-vr/tap" = inputs.oculus-vr-tap;
       trust = {
@@ -76,7 +83,22 @@ in
 
       if [ "$needs_copy" = true ]; then
         simulator_staging="$(mktemp -d "$simulator_parent/.MetaXRSimulator.XXXXXX")"
-        trap 'rm -rf -- "$simulator_staging"' EXIT
+        simulator_backup=""
+        meta_xr_simulator_restore() {
+          if [ -n "$simulator_backup" ]; then
+            if [ ! -e "$simulator_root" ] && [ ! -L "$simulator_root" ]; then
+              if ! mv "$simulator_backup" "$simulator_root"; then
+                printf '%s\n' "Unable to restore the previous Meta XR Simulator" >&2
+              fi
+            else
+              rm -rf -- "$simulator_backup" || printf '%s\n' "Unable to remove Meta XR Simulator backup" >&2
+            fi
+          fi
+          if [ -n "$simulator_staging" ] && [ -e "$simulator_staging" ]; then
+            rm -rf -- "$simulator_staging" || printf '%s\n' "Unable to remove Meta XR Simulator staging directory" >&2
+          fi
+        }
+        trap 'meta_xr_simulator_restore' EXIT
 
         /usr/bin/ditto "$simulator_real_path" "$simulator_staging/$simulator_version"
         if [ ! -f "$simulator_staging/$simulator_version/meta_openxr_simulator.json" ]; then
@@ -88,7 +110,6 @@ in
         simulator_group="$(id -gn "$simulator_user")"
         chown -R "$simulator_user:$simulator_group" "$simulator_staging"
 
-        simulator_backup=""
         if [ -e "$simulator_root" ] || [ -L "$simulator_root" ]; then
           simulator_backup="$(mktemp -d "$simulator_parent/.MetaXRSimulator.previous.XXXXXX")"
           rmdir "$simulator_backup"
@@ -106,6 +127,8 @@ in
         if [ -n "$simulator_backup" ]; then
           rm -rf -- "$simulator_backup"
         fi
+        simulator_backup=""
+        simulator_staging=""
         trap - EXIT
       else
         simulator_group="$(id -gn "$simulator_user")"
