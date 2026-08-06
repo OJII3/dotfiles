@@ -4,6 +4,7 @@
   config,
   lib,
   pkgs,
+  pkgs-stable,
   ...
 }:
 let
@@ -15,10 +16,12 @@ in
       jetbrains-toolbox
       postman
       iperf3
+      slack
     ];
 
     programs = {
       discord.enable = true;
+      firefox.enable = !config.targets.genericLinux.enable; # use system Firefox on generic Linux
     };
   };
 }

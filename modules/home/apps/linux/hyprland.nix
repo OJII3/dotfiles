@@ -16,7 +16,6 @@ in
       nautilus
       nautilus-python
       overskride
-      unityhub
     ];
 
     programs.vscode.enable = true;

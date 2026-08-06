@@ -9,9 +9,16 @@ let
 in
 {
   config = lib.mkIf cfg.darwin.enable {
-    home.packages = with pkgs; [
-      pngpaste
-      raycast
-    ];
+    home.packages =
+      with pkgs;
+      [
+        pngpaste
+        raycast
+
+      ]
+      ++ (with pkgs.brewCasks; [
+        spaceid
+        fork
+      ]);
   };
 }
