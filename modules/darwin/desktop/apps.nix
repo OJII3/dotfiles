@@ -22,8 +22,8 @@ in
       "moonlight"
       "obs"
       "opencode-desktop"
-      "parsec"
-      "scroll-reverser"
+      "parsec" # no hash
+      "scroll-reverser" # broken nixpkgs package, but works with homebrew
       "steam"
       "unity-hub"
     ];
