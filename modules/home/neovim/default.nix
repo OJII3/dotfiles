@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   config,
   lib,
@@ -44,7 +43,6 @@ in
           enableLibcxx = true;
         })
         cmake-language-server
-        matlab-language-server
         dockerfile-language-server
         efm-langserver
         haskell-language-server
@@ -52,6 +50,7 @@ in
         hyprls
         lua-language-server
         marp-cli
+        matlab-language-server
         nil
         nixd
         nixfmt
@@ -62,6 +61,7 @@ in
         shellcheck
         stylelint-lsp
         stylua
+        svelte-language-server
         tailwindcss-language-server
         taplo
         terraform-ls
@@ -70,6 +70,7 @@ in
         ty
         typescript-language-server
         typstyle
+        tinymist
         vim-language-server
         vscode-langservers-extracted
         yaml-language-server
