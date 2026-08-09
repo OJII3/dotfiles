@@ -12,7 +12,7 @@ let
     [
       bun
       uv
-      (callPackage ../../../packages/gwq.nix { })
+      agent-browser
     ]
     ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
       libnotify
