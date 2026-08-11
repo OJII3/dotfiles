@@ -27,6 +27,21 @@ in
           wal.path = "/var/lib/tempo/wal";
           local.path = "/var/lib/tempo/blocks";
         };
+
+        # TraceQL のメトリクスクエリ (count_over_time / quantile_over_time など) は
+        # local-blocks プロセッサがないと動かない。opencode ダッシュボードはこれ頼み。
+        metrics_generator = {
+          processor.local_blocks = {
+            # opencode のスパンは client/internal なので server span 限定を外す。
+            filter_server_spans = false;
+            # 保持期間内の過去データにもクエリできるようにする。
+            flush_to_storage = true;
+          };
+          storage.path = "/var/lib/tempo/generator/wal";
+          traces_storage.path = "/var/lib/tempo/generator/traces";
+        };
+
+        overrides.defaults.metrics_generator.processors = [ "local-blocks" ];
       };
     };
 

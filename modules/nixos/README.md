@@ -150,6 +150,17 @@ opencode は `experimental.openTelemetry` を有効にすると AI SDK のスパ
 LAN に開けるのは Grafana (3000) と OTLP (4317/4318) だけで、Loki (3100) /
 Tempo (3200) / Prometheus (9090) は localhost 限定。
 
+##### ダッシュボード
+
+`observability/dashboards/opencode.json` は **手動インポート専用**で、
+provisioning には載せていない(Grafana 上で編集して育てる前提)。
+Grafana の Dashboards → New → Import から読み込む。データソースは
+provisioning 済みの uid (`tempo` / `loki`) を直接参照しているので、
+インポート時に選び直す必要はない。
+
+集計パネルは TraceQL のメトリクスクエリを使うため、Tempo 側で
+local-blocks プロセッサが必要(`tempo.nix` で設定済み)。
+
 ## 使用例
 
 ### デスクトップ (Aglaea)
