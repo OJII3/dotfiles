@@ -1,19 +1,22 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": "notify",
+  "autoupdate": false,
   "lsp": true,
   "permission": {
     "read": {
       "*": "allow",
       ".env": "deny",
       ".env.*": "deny",
-      ".env.example": "allow"
+      ".env.example": "allow",
+      "/nix/store/**": "allow"
     },
     "edit": "allow",
     "external_directory": {
-      "/tmp/*": "allow"
+      "/tmp/**": "allow"
     },
     "webfetch": "allow",
-    "websearch": "allow"
+    "websearch": "allow",
+    "glob": "allow",
+    "lsp": "allow"
   }
 }
