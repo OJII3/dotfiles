@@ -23,7 +23,13 @@ modules/nixos/
 ├── networking/
 │   ├── default.nix options.nix cloudflared.nix snmpd.nix warp.nix
 └── server/
-    └── default.nix zabbix.nix librenms.nix prometheus/ loki/ minecraft.nix
+    ├── default.nix  # imports のみ
+    ├── options.nix  # dot.server.{enable,autologin,adguardHome,gnomeKeyring}
+    ├── autologin.nix adguard-home.nix gnome-keyring.nix
+    ├── postgresql.nix zabbix.nix librenms.nix minecraft.nix
+    └── observability/
+        ├── default.nix options.nix
+        └── grafana.nix prometheus.nix loki.nix alloy.nix
 ```
 
 ## 使用可能なオプション
@@ -116,11 +122,26 @@ modules/nixos/
 | `autologin.shell` | string | `"zsh"` | ログイン時のシェル |
 | `adguardHome.enable` | bool | `false` | AdGuard Home DNS (resolved を無効化) |
 | `gnomeKeyring.enable` | bool | `false` | GNOME Keyring (ヘッドレス用) |
-| `zabbix.enable` / `librenms.enable` / `prometheus.enable` / `loki.enable` / `minecraft.enable` | bool | `false` | 各監視/ゲームサーバー |
+| `observability.enable` | bool | `false` | 監視スタック一式(Grafana + Prometheus + Loki + Alloy) |
+| `observability.retention` | string | `"168h"` | Loki のログの保持期間 |
+| `observability.claudeCodeTargets` | list | `[ "Aglaea:9464" ... ]` | Claude Code のメトリクスを scrape する対象 |
+| `zabbix.enable` / `librenms.enable` / `minecraft.enable` | bool | `false` | 各監視/ゲームサーバー |
 | `postgresql.enable` | bool | `false` | PostgreSQL サーバー(ローカルのみ, localhost:5432) |
 | `postgresql.port` | port | `5432` | PostgreSQL の待受ポート |
 | `postgresql.ensureDatabases` | list | `[]` | 作成するデータベース名のリスト |
 | `postgresql.ensureUsers` | list | `[]` | 作成するユーザー(`name`, `password`, `ensureDBOwnership`) |
+
+#### 監視スタック (`dot.server.observability`)
+
+Grafana を入口に、テレメトリを 1 ホスト(Cipher)へ集約する。
+
+| 経路 | 送信元 | 受け口 | 保存先 |
+|------|--------|--------|--------|
+| ログ | 各ユニットの journald | Alloy (`loki.source.journal`) | Loki |
+| メトリクス | Claude Code (`OTEL_METRICS_EXPORTER=prometheus`) | Prometheus scrape :9464 | Prometheus |
+
+LAN に開けるのは Grafana (3000) だけで、Loki (3100) / Prometheus (9090) は
+localhost 限定。
 
 ## 使用例
 
@@ -175,7 +196,7 @@ modules/nixos/
   dot = {
     core = { enable = true; audio.enable = false; bluetooth.enable = false; };
     networking.networkManager.enable = false; # systemd-networkd を使用
-    server = { enable = true; autologin.enable = true; adguardHome.enable = true; };
+    server = { enable = true; autologin.enable = true; observability.enable = true; };
     hardware.gpu = "intel";
   };
 ```
