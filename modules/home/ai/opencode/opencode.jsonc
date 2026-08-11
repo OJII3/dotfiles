@@ -8,11 +8,11 @@
       ".env": "deny",
       ".env.*": "deny",
       ".env.example": "allow",
-      "/nix/store/**": "allow"
     },
     "edit": "allow",
     "external_directory": {
-      "/tmp/**": "allow"
+      "/tmp/**": "allow",
+      "/nix/store/**": "allow"
     },
     "webfetch": "allow",
     "websearch": "allow",
