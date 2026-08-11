@@ -22,6 +22,9 @@ in
 
         compactor.compaction.block_retention = cfg.retention;
 
+        # Grafana のダッシュボードは過去 24h を問い合わせるため、既定の 3h では短すぎる。
+        query_frontend.metrics.max_duration = cfg.retention;
+
         storage.trace = {
           backend = "local";
           wal.path = "/var/lib/tempo/wal";
