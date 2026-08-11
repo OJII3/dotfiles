@@ -6,9 +6,9 @@
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 
-## File Access
+## Tool Calling
 
-- use relative paths for file access to avoid building the wrong absolute path then accessing the wrong file.
+- Avoid using absolute path when calling tools. use relative path `.`.
 
 ## Writing GitHub Actions
 
