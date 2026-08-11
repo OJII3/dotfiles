@@ -16,7 +16,6 @@ in
   imports = [
     ./options.nix
     ./skills.nix
-    ./superpowers.nix
     ./claude
     ./codex
     ./codex-desktop
