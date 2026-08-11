@@ -47,7 +47,6 @@ in
         "**/.ruff_cache"
         ".direnv"
         "**/.DS_Store"
-        ".superpowers"
       ];
     };
 

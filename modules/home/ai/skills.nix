@@ -7,7 +7,7 @@
 # - 出し分け: 各スキルは tools = [ ... ] で対象ツールを限定できる(既定は全ツール)。
 #
 # 注: opencode / agy は skills/ 機構ではなく独自のプラグイン/拡張機構を持つため、
-#     skillDirs には含めず ./superpowers.nix 側で個別に対応する。
+#     skillDirs には含めない。
 {
   inputs,
   pkgs,
