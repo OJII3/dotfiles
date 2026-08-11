@@ -36,7 +36,11 @@ in
 
         storage_config.filesystem.directory = "/var/lib/loki/chunks";
 
-        limits_config.retention_period = cfg.retention;
+        limits_config = {
+          retention_period = cfg.retention;
+          # OTLP 取り込みはリソース属性を structured metadata として保存するため必須。
+          allow_structured_metadata = true;
+        };
 
         compactor = {
           working_directory = "/var/lib/loki/compactor";
@@ -52,6 +56,17 @@ in
         type = "loki";
         uid = "loki";
         url = "http://127.0.0.1:${toString port}";
+        # OTLP 経由のログには trace_id が structured metadata として付くので、
+        # ログから該当トレースへ飛べるようにする。
+        jsonData.derivedFields = [
+          {
+            name = "TraceID";
+            matcherType = "label";
+            matcherRegex = "trace_id";
+            url = "\${__value.raw}";
+            datasourceUid = "tempo";
+          }
+        ];
       }
     ];
   };

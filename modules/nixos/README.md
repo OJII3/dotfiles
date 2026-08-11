@@ -29,7 +29,7 @@ modules/nixos/
     ├── postgresql.nix zabbix.nix librenms.nix minecraft.nix
     └── observability/
         ├── default.nix options.nix
-        └── grafana.nix prometheus.nix loki.nix alloy.nix
+        └── grafana.nix prometheus.nix loki.nix tempo.nix alloy.nix
 ```
 
 ## 使用可能なオプション
@@ -122,8 +122,8 @@ modules/nixos/
 | `autologin.shell` | string | `"zsh"` | ログイン時のシェル |
 | `adguardHome.enable` | bool | `false` | AdGuard Home DNS (resolved を無効化) |
 | `gnomeKeyring.enable` | bool | `false` | GNOME Keyring (ヘッドレス用) |
-| `observability.enable` | bool | `false` | 監視スタック一式(Grafana + Prometheus + Loki + Alloy) |
-| `observability.retention` | string | `"168h"` | Loki のログの保持期間 |
+| `observability.enable` | bool | `false` | 監視スタック一式(Grafana + Prometheus + Loki + Tempo + Alloy) |
+| `observability.retention` | string | `"168h"` | Loki のログと Tempo のトレースの保持期間 |
 | `observability.claudeCodeTargets` | list | `[ "Aglaea:9464" ... ]` | Claude Code のメトリクスを scrape する対象 |
 | `zabbix.enable` / `librenms.enable` / `minecraft.enable` | bool | `false` | 各監視/ゲームサーバー |
 | `postgresql.enable` | bool | `false` | PostgreSQL サーバー(ローカルのみ, localhost:5432) |
@@ -133,15 +133,22 @@ modules/nixos/
 
 #### 監視スタック (`dot.server.observability`)
 
-Grafana を入口に、テレメトリを 1 ホスト(Cipher)へ集約する。
+Grafana を入口に、3 系統のテレメトリを 1 ホスト(Cipher)へ集約する。
 
 | 経路 | 送信元 | 受け口 | 保存先 |
 |------|--------|--------|--------|
 | ログ | 各ユニットの journald | Alloy (`loki.source.journal`) | Loki |
+| トレース | opencode (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) | Tempo |
+| ログ | opencode (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) | Loki (ネイティブ OTLP) |
 | メトリクス | Claude Code (`OTEL_METRICS_EXPORTER=prometheus`) | Prometheus scrape :9464 | Prometheus |
 
-LAN に開けるのは Grafana (3000) だけで、Loki (3100) / Prometheus (9090) は
-localhost 限定。
+opencode は `experimental.openTelemetry` を有効にすると AI SDK のスパン
+(`ai.streamText` / `ai.toolCall` など)を出し、`OTEL_EXPORTER_OTLP_ENDPOINT` が
+設定されているときだけ OTLP でエクスポートする。送信側の設定は
+`dot.home.ai.opencode.otel.endpoint`(既定 `http://Cipher:4318`)。
+
+LAN に開けるのは Grafana (3000) と OTLP (4317/4318) だけで、Loki (3100) /
+Tempo (3200) / Prometheus (9090) は localhost 限定。
 
 ## 使用例
 

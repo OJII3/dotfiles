@@ -2,6 +2,7 @@
 #
 # データの流れ:
 #   journald                        -> Alloy -> Loki
+#   opencode (OTLP HTTP :4318)      -> Alloy -> Tempo (traces) / Loki (logs)
 #   Claude Code (Prometheus :9464)  -> Prometheus (scrape)
 { ... }:
 {
@@ -11,5 +12,6 @@
     ./grafana.nix
     ./loki.nix
     ./prometheus.nix
+    ./tempo.nix
   ];
 }
