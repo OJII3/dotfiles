@@ -14,3 +14,7 @@
 
 - When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
 - When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
+
+## Superpowers
+
+- When using superpowers and wrote a spec file, make sure to create pull request so that the user can review them on github.com.
