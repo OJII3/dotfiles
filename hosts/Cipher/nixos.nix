@@ -1,5 +1,5 @@
 # Cipher - Home Server
-# AdGuard Home DNS, static IP, headless autologin
+# 監視スタック (Grafana/Prometheus/Loki/Tempo/Alloy), static IP, headless autologin
 #
 { inputs, pkgs, ... }:
 {
@@ -39,19 +39,8 @@
       autologin.enable = true;
       adguardHome.enable = false;
       gnomeKeyring.enable = true;
-      prometheus.enable = true;
-      loki.enable = true;
+      observability.enable = true;
       # minecraft.enable = true;
-      postgresql = {
-        enable = true;
-        ensureDatabases = [ "vicissitude" ];
-        ensureUsers = [
-          {
-            name = "vicissitude";
-            password = "vicissitude";
-          }
-        ];
-      };
     };
 
     hardware = {

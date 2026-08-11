@@ -1,3 +1,0 @@
-beacons5.gv2.com
-analyze.adguard.com
-*.hoyoverse.com

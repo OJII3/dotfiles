@@ -17,6 +17,16 @@
 
     opencode = {
       enable = lib.mkEnableOption "OpenCode AI assistant";
+
+      otel.endpoint = lib.mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = "http://Cipher:4318";
+        description = ''
+          OTLP HTTP endpoint that opencode exports traces and logs to
+          (`OTEL_EXPORTER_OTLP_ENDPOINT`). Points at Cipher's Alloy receiver.
+          Set to `null` to keep telemetry local to the machine.
+        '';
+      };
     };
 
     agy = {
