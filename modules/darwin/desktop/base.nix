@@ -18,6 +18,18 @@ in
     system.startup.chime = false;
     system.keyboard = {
       enableKeyMapping = true;
+      userKeyMapping = [
+        {
+          # Japanese Kana -> Globe (Fn)
+          HIDKeyboardModifierMappingSrc = 30064771216;
+          HIDKeyboardModifierMappingDst = 1095216660483;
+        }
+        {
+          # Japanese Eisu -> Left Option
+          HIDKeyboardModifierMappingSrc = 30064771217;
+          HIDKeyboardModifierMappingDst = 30064771298;
+        }
+      ];
       nonUS.remapTilde = true;
     };
     system.defaults = {

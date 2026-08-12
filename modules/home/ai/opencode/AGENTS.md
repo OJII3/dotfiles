@@ -15,7 +15,7 @@
 - When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
 - When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
 
---
+---
 
 # Karpathy Guidelines
 

@@ -1,17 +1,76 @@
-Speek in Japanese.
+# Basic Instructions
 
-## 一般的な指示
+- Speak in Japanese.
+- Use `general` subagent for implemtation tasks, especially in subagent driven development.
+- Use `review` subagent for reviewing code, especially in spec review and code review task.
+- Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
+- Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 
-- ユーザーの要求・要件が不明瞭な場合、`AskUserQuestion`を繰り返し使用することで掘り下げを行い、不明瞭な点を解消すること。
-- 実装を最小の変更にする必要はなく、簡潔さや設計の正しさを優先すること。YAGNI原則、KISS原則、DRY原則を遵守すること。ユーザーから要求された場合を除き、後方互換性のための補助機能や代替パス、フォールバックコードは実装しないこと。
-- main ブランチにいる場合はコミットする前に該当のブランチに切り替えるか、新たな作業ブランチを作成してください。
-    - 作業ブランチにいる場合は、こまめに commit を行ってください
-    - 作業が終ったら、push し、プルリクエストを作成してください
-- プルリクエストをマージする操作を行なう際は、基本的にブランチの削除まで行ってください
-- コードの変更は段階的に行い、各段階で動作確認をしてください
-- エラーログは詳細に確認し、根本原因を特定してください
-- コードの変更は、先に仕様やドキュメントを整理し、更新、planしてから行ってください
+## Writing GitHub Actions
 
-### TS/JS プロジェクト(package.json が存在するディレクトリ)の場合
+- When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
+- When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
 
-- `npm run`, `pnpm run`, `bun run` などの代わりに、`nr` を使用してください。
+---
+
+# Karpathy Guidelines
+
+Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+
+**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment. These guidelines do not applicable to large tasks such as wide refactoring.
+
+## 1. Think Before Coding
+
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+
+Before implementing:
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+## 2. Simplicity First
+
+**Minimum code that solves the problem. Nothing speculative.**
+
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+## 3. Surgical Changes
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it - don't delete it.
+
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+The test: Every changed line should trace directly to the user's request.
+
+## 4. Goal-Driven Execution
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
