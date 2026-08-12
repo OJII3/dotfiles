@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "acsandmann-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785807314,
+        "narHash": "sha256-V1IuvyXNtVhEtTioCol9gGUcBLF2hgZ2zLa3WWHPzvI=",
+        "owner": "acsandmann",
+        "repo": "homebrew-tap",
+        "rev": "d05e38e990a1c3f5198fe43543924a75129a79dd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "acsandmann",
+        "repo": "homebrew-tap",
+        "type": "github"
+      }
+    },
     "anthropics-skills": {
       "flake": false,
       "locked": {
@@ -1568,6 +1584,7 @@
     },
     "root": {
       "inputs": {
+        "acsandmann-tap": "acsandmann-tap",
         "anthropics-skills": "anthropics-skills",
         "antigravity-nix": "antigravity-nix",
         "brew-api": "brew-api",

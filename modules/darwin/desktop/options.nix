@@ -16,5 +16,9 @@
     hammerspoon = {
       enable = lib.mkEnableOption "Hammerspoon (CapsLock tap=Esc/hold=Ctrl)";
     };
+
+    rift = {
+      enable = lib.mkEnableOption "Rift wm";
+    };
   };
 }

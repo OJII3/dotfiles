@@ -47,6 +47,10 @@
       url = "github:oculus-vr/homebrew-repo";
       flake = false;
     };
+    acsandmann-tap = {
+      url = "github:acsandmann/homebrew-tap";
+      flake = false;
+    };
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
     nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
@@ -103,12 +107,14 @@
                 inherit system;
                 modules = [
                   ./modules/darwin
+                  inputs.nix-homebrew.darwinModules.nix-homebrew
                   {
                     dot.darwin = {
                       core.enable = true;
                       desktop = {
                         enable = true;
                         apps.enable = true;
+                        rift.enable = true;
                       };
                       networking = {
                         enable = true;

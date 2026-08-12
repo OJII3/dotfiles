@@ -29,6 +29,7 @@ in
     ./xremap
     ./jankyborders.nix
     ./aerospace
+    ./rift
   ];
 
   # Base desktop configuration (if needed)

@@ -44,7 +44,10 @@
 
     obsidian.enable = false;
 
-    desktop.hammerspoon.enable = true;
+    desktop = {
+      hammerspoon.enable = true;
+      rift.enable = true;
+    };
   };
 
   programs.zsh.initContent = ''

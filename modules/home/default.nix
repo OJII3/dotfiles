@@ -18,10 +18,10 @@
     ./options.nix
     # Subdirectories (have their own options.nix)
     ./desktop
-    ./terminal
-    ./dev
     ./ai
     ./apps
+    ./dev
+    ./terminal
     # Root-level modules
     ./blender-launcher.nix
     ./bitwarden.nix
