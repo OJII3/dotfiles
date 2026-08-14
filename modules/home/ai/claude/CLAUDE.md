@@ -5,6 +5,7 @@
 - Use `review` subagent for reviewing code, especially in spec review and code review task.
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
+- Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
 
 ## Writing GitHub Actions
 
