@@ -263,7 +263,7 @@ drag_swap_fraction = 0.3
 #   workspace instead of wrapping around
 # - reapply_app_rules_on_title_change: if true, app rules are re-evaluated when a window's title changes
 enabled = true
-default_workspace_count = 4
+default_workspace_count = 6
 auto_assign_windows = true
 preserve_focus_per_workspace = true
 workspace_auto_back_and_forth = false
@@ -366,7 +366,10 @@ workspace_names = [
 #       ]
 #
 # By default there are no app rules; add or uncomment rules below as needed.
-app_rules = []
+app_rules = [
+  { app_id = "com.hnc.Discord", workspace = 2 },
+  { app_id = "tv.parsec.www", workspace = 3 }
+]
 
 # Modifier combinations that can be reused in key bindings
 # Define common modifier combinations to avoid repetition.
@@ -445,6 +448,8 @@ comb1 = "Alt + Shift"
 "comb1 + 1" = { move_window_to_workspace = 1 }
 "comb1 + 2" = { move_window_to_workspace = 2 }
 "comb1 + 3" = { move_window_to_workspace = 3 }
+"comb1 + 4" = { move_window_to_workspace = 4 }
+"comb1 + 5" = { move_window_to_workspace = 5 }
 
 "Alt + Tab" = "switch_to_last_workspace"
 
