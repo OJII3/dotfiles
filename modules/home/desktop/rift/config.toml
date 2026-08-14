@@ -443,6 +443,8 @@ comb1 = "Alt + Shift"
 "Alt + 1" = { switch_to_workspace = 1 }
 "Alt + 2" = { switch_to_workspace = 2 }
 "Alt + 3" = { switch_to_workspace = 3 }
+"Alt + 4" = { switch_to_workspace = 4 }
+"Alt + 5" = { switch_to_workspace = 5 }
 
 "comb1 + 0" = { move_window_to_workspace = 0 }
 "comb1 + 1" = { move_window_to_workspace = 1 }
