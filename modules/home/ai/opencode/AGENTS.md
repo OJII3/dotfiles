@@ -1,11 +1,10 @@
 # Basic Instructions
 
 - Speak in Japanese.
-- Use `general` subagent for implemtation tasks, especially in subagent driven development.
-- Use `review` subagent for reviewing code, especially in spec review and code review task.
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
+- If you expect the changes to be large, delegate the task to a subagent to avoid losing main context. If you are not sure, ask for confirmation.
 
 ## Tool Calling
 
@@ -79,3 +78,12 @@ For multi-step tasks, state a brief plan:
 ```
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+## 5. Finishing Jobs (added by User)
+
+**Don't leave work half-done.**
+
+When you finish a task:
+- Ensure all tests or validations pass.
+- Ensure all code is committed, pushed, and PRs are created.
+- Ensure all CI/CD pipelines pass.
