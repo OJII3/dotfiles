@@ -10,16 +10,14 @@ let
 in
 {
   imports = [
-    ./options.nix
     ./anyrun
     ./browser/vivaldi
     ./fcitx5
     ./gnome
-    ./hammerspoon
     ./hypr
     ./hyprland
-    # ./kanata
     ./keyd
+    ./options.nix
     ./swaync
     ./theme.nix
     ./uwsm
@@ -27,8 +25,11 @@ in
     ./waybar
     ./wlogout
     ./xremap
-    ./jankyborders.nix
+
+    # darwin
     ./aerospace
+    ./hammerspoon
+    ./jankyborders
     ./rift
   ];
 
