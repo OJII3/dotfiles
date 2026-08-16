@@ -58,7 +58,9 @@ auto_focus_blacklist = []
 #   "rift-cli subscribe cli --event windows_changed --command sh --args -c --args 'sketchybar --trigger rift_windows_changed RIFT_WORKSPACE_NAME=\"$RIFT_WORKSPACE_NAME\" RIFT_WINDOW_COUNT=\"$RIFT_WINDOW_COUNT\"'"
 # ]
 
-run_on_start = []
+run_on_start = [
+  "borders"
+]
 
 # Hot Reloading
 # - If true, rift will watch the config file for changes and reload automatically.
@@ -168,8 +170,8 @@ bottom = 0
 right = 0
 
 [settings.layout.gaps.inner]
-horizontal = 1
-vertical = 1
+horizontal = 8
+vertical = 8
 
 # Example per-display overrides:
 # Replace the quoted key with your display's UUID. Only specify values you want to override.
