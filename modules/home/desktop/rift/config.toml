@@ -168,8 +168,8 @@ bottom = 0
 right = 0
 
 [settings.layout.gaps.inner]
-horizontal = 0
-vertical = 0
+horizontal = 1
+vertical = 1
 
 # Example per-display overrides:
 # Replace the quoted key with your display's UUID. Only specify values you want to override.
