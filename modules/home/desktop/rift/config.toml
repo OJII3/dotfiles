@@ -433,6 +433,8 @@ comb1 = "Alt + Shift"
 
 "Alt + Z" = "toggle_space_activated"
 
+"Alt + Q" = "close_window"
+
 "Alt + H" = { move_focus = "left" }
 "Alt + J" = { move_focus = "down" }
 "Alt + K" = { move_focus = "up" }
