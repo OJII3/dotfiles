@@ -40,7 +40,7 @@ in
 
         "com.apple.trackpad.scaling" = 10.0;
         "com.apple.swipescrolldirection" = true;
-        "com.apple.keyboard.fnState" = true;
+        "com.apple.keyboard.fnState" = false;
       };
       controlcenter = {
         AirDrop = false;
