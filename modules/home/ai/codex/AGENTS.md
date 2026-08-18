@@ -17,7 +17,7 @@
 
 ---
 
-# Karpathy Guidelines
+# Karpathy Guidelines (ojii3 edition)
 
 Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
@@ -79,7 +79,7 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-## 5. Finishing Jobs (added by User)
+## 5. Finishing Jobs
 
 **Don't leave work half-done.**
 
@@ -87,3 +87,5 @@ When you finish a task:
 - Ensure all tests or validations pass.
 - Ensure all code is committed, pushed, and PRs are created.
 - Ensure all CI/CD pipelines pass.
+
+PR is always your goal create PR before being asked.
