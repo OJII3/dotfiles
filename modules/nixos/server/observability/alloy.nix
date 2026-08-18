@@ -43,7 +43,7 @@ in
         }
       }
 
-      // OTLP from agent CLIs (opencode) -> Tempo (traces) / Loki (logs)
+      // OTLP from agent CLIs (opencode / Codex) -> Prometheus / Tempo / Loki
       otelcol.receiver.otlp "default" {
         grpc {
           endpoint = "0.0.0.0:4317"
@@ -54,6 +54,7 @@ in
         }
 
         output {
+          metrics = [otelcol.processor.batch.default.input]
           traces = [otelcol.processor.batch.default.input]
           logs   = [otelcol.processor.batch.default.input]
         }
@@ -61,8 +62,22 @@ in
 
       otelcol.processor.batch "default" {
         output {
+          metrics = [otelcol.exporter.prometheus.default.input]
           traces = [otelcol.exporter.otlp.tempo.input]
           logs   = [otelcol.exporter.otlphttp.loki.input]
+        }
+      }
+
+      // OTLP metrics -> Prometheus remote-write receiver.
+      // The exporter converts OTLP names such as codex.thread.started to
+      // Prometheus names such as codex_thread_started_total.
+      otelcol.exporter.prometheus "default" {
+        forward_to = [prometheus.remote_write.default.receiver]
+      }
+
+      prometheus.remote_write "default" {
+        endpoint {
+          url = "http://127.0.0.1:9090/api/v1/write"
         }
       }
 

@@ -15,6 +15,9 @@ in
         evaluation_interval = "30s";
       };
 
+      # Alloy forwards Codex's OTLP metrics through Prometheus remote write.
+      extraFlags = [ "--web.enable-remote-write-receiver" ];
+
       scrapeConfigs = [
         {
           job_name = "prometheus";
