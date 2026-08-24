@@ -372,7 +372,9 @@ app_rules = [
   { app_id = "com.google.Chrome", workspace = 1 },
   { app_id = "com.openai.codex", workspace = 2 },
   { app_id = "com.hnc.Discord", workspace = 3 },
-  { app_id = "tv.parsec.www", workspace = 4 }
+  { app_name = "Unity", workspace = 4 },
+  { app_id = "com.jetbrains.rider", workspace = 5 },
+  { app_id = "tv.parsec.www", workspace = 4, floating = true }
 ]
 
 # Modifier combinations that can be reused in key bindings
