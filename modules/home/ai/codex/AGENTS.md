@@ -15,6 +15,11 @@
 - When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
 - When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
 
+## Development Environment
+
+- In most repositories have nix devShell and direnv.
+- If there is a missing cli or utility tools, try using direnv or nix-develop.
+
 ---
 
 # Karpathy Guidelines (ojii3 edition)
