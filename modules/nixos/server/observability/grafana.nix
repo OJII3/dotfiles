@@ -15,6 +15,15 @@ in
         # LAN 内限定運用のため固定値。外部公開する場合は sops 管理に移すこと。
         security.secret_key = "grafana_monitoring_key";
       };
+
+      provision.dashboards.settings.providers = [
+        {
+          name = "Codex";
+          options.path = ./dashboards/codex;
+          disableDeletion = true;
+          allowUiUpdates = false;
+        }
+      ];
     };
   };
 }

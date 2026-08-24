@@ -140,6 +140,8 @@ Grafana を入口に、3 系統のテレメトリを 1 ホスト(Cipher)へ集�
 | ログ | 各ユニットの journald | Alloy (`loki.source.journal`) | Loki |
 | トレース | opencode (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) | Tempo |
 | ログ | opencode (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) | Loki (ネイティブ OTLP) |
+| メトリクス | Codex CLI (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) → Prometheus remote write | Prometheus |
+| トレース / ログ | Codex CLI (OTLP HTTP) | Alloy (`otelcol.receiver.otlp` :4318) | Tempo / Loki |
 | メトリクス | Claude Code (`OTEL_METRICS_EXPORTER=prometheus`) | Prometheus scrape :9464 | Prometheus |
 
 opencode は `experimental.openTelemetry` を有効にすると AI SDK のスパン
@@ -152,6 +154,12 @@ Tempo (3200) / Prometheus (9090) は localhost 限定。
 
 ##### ダッシュボード
 
+`observability/dashboards/codex/codex.json` は Grafana dashboard **25338-codex** の
+ローカル版で、NixOS の Grafana provisioning により自動登録される。Azure Monitor の
+KQL クエリを PromQL に置き換え、データソースは `prometheus` / `loki` の固定 UID を使う。
+Codex CLI の OTLP metrics は Alloy の `otelcol.exporter.prometheus` で Prometheus に
+変換して保存する。
+
 `observability/dashboards/opencode.json` は **手動インポート専用**で、
 provisioning には載せていない(Grafana 上で編集して育てる前提)。
 Grafana の Dashboards → New → Import から読み込む。データソースは
@@ -160,6 +168,10 @@ provisioning 済みの uid (`tempo` / `loki`) を直接参照しているので�
 
 集計パネルは TraceQL のメトリクスクエリを使うため、Tempo 側で
 local-blocks プロセッサが必要(`tempo.nix` で設定済み)。
+
+Codex / opencode の送信先は共通で Cipher の Alloy OTLP HTTP endpoint
+(`http://Cipher:4318`)。Codex の設定は `modules/home/ai/codex/config.toml`、
+OpenCode の設定は `dot.home.ai.opencode.otel.endpoint` で管理する。
 
 ## 使用例
 
