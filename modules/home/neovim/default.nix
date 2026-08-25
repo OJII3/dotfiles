@@ -92,7 +92,7 @@ in
 
     home.file.".clang-tidy".source = ./.clang-tidy;
     home.file.".clang-format".source = ./.clang-format;
-    home.file.".config/yamllint/config" = ./yamllint/config;
+    home.file.".config/yamllint/config".source = ./yamllint/config;
     home.file."${clangdir}/config.yaml".source = ./clangd/config.yaml;
   };
 }
