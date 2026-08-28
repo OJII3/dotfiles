@@ -9,11 +9,18 @@
 ## Tool Calling
 
 - Avoid using absolute path when calling tools like opencode-builtin `read`, `glob` and `grep`. Relative path `.` can be used in these cases.
+- When you got error with missing file or directory, you should check not only cwd and ls but also (absolute/relative) path construction.
+- Using `~` may cause unexpected failure, due to opencode's specifications.
 
 ## Writing GitHub Actions
 
-- When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
+- When writing github actions, check if all actions are no outdated versions. Consider using the latest versions. You should not skip checking even for basic actions like checkout.
 - When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
+
+## Development Environment
+
+- Most repositories have nix devShell (flake.nix) and direnv.
+- If there is a missing cli or utility tools, try using direnv or nix-develop.
 
 ---
 

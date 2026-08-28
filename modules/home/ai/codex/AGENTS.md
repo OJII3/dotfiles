@@ -6,18 +6,14 @@
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
 - If you expect the changes to be large, delegate the task to a subagent to avoid losing main context. If you are not sure, ask for confirmation.
 
-## Tool Calling
-
-- Avoid using absolute path when calling tools like opencode-builtin `read`, `glob` and `grep`. Relative path `.` can be used in these cases.
-
 ## Writing GitHub Actions
 
-- When writing github actions, check if actions are no outdated versions. Consider using the latest versions.
+- When writing github actions, check if all actions are no outdated versions. Consider using the latest versions. You should not skip checking even for basic actions like checkout.
 - When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
 
 ## Development Environment
 
-- In most repositories have nix devShell and direnv.
+- Most repositories have nix devShell (flake.nix) and direnv.
 - If there is a missing cli or utility tools, try using direnv or nix-develop.
 
 ---
