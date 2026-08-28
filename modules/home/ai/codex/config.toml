@@ -7,7 +7,7 @@ web_search = 'cached'
 allow_login_shell = false
 
 [features]
-shell_snapshot = true
+shell_snapshot = false
 remote_connections = true
 
 [sandbox_workspace_write]
@@ -19,6 +19,7 @@ notifications = ["agent-turn-complete","approval-requested"]
 
 [shell_environment_policy]
 inherit = "all"
+experimental_use_profile = true
 
 [analytics]
 enabled = false
