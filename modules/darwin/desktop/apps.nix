@@ -18,7 +18,6 @@ in
       "codex-app"
       "figma"
       "logi-options+"
-      "minecraft"
       "moonlight"
       "obs"
       "opencode-desktop"
