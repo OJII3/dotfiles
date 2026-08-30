@@ -25,7 +25,7 @@ modules/home/
 ├── ai/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # claude, codex, opencode, antigravity
+│   └── */           # claude, codex, opencode, antigravity, orca
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
@@ -93,6 +93,7 @@ modules/home/
       codex.enable = true;
       opencode.enable = true;
       agy.enable = true;
+      orca.enable = true;
     };
 
     # Apps
@@ -197,6 +198,15 @@ modules/home/
 | `codex.enable` | Codex |
 | `opencode.enable` | OpenCode |
 | `agy.enable` | Antigravity |
+| `orca.enable` | Orca AI orchestrator |
+
+Orca は GUI と CLI を同梱しています。Linux の GUI がない環境でも、`orca serve` が必要な X サーバーを Xvfb で起動するため利用できます。Home Manager では Xvfb もランタイムに含めています。
+
+```sh
+LIBGL_ALWAYS_SOFTWARE=1 orca serve --port 6768 --pairing-address 192.0.2.10
+```
+
+`--pairing-address` はリモートクライアントへ案内するアドレスに置き換えてください。現在はユーザーごとの公開範囲やポートを決めず、systemd の自動サービス化は行っていません。
 
 ### Darwin (`dot.home.darwin.*`)
 
