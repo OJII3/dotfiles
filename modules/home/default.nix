@@ -21,6 +21,7 @@
     ./ai
     ./apps
     ./dev
+    ./gaming
     ./terminal
     # Root-level modules
     ./blender-launcher.nix
