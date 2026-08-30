@@ -206,7 +206,7 @@ Orca は GUI と CLI を同梱しています。Linux の GUI がない環境で
 LIBGL_ALWAYS_SOFTWARE=1 orca serve --port 6768 --pairing-address 192.0.2.10
 ```
 
-`--pairing-address` はリモートクライアントへ案内するアドレスに置き換えてください。現在はユーザーごとの公開範囲やポートを決めず、systemd の自動サービス化は行っていません。
+`--pairing-address` はリモートクライアントへ案内するアドレスに置き換えてください。現在はユーザーごとの公開範囲やポートを決めず、systemd の自動サービス化は行っていません。macOS では GUI アプリを `~/Applications/Home Manager Apps/Orca.app` にコピーし、CLI は Home Manager profile に追加します。
 
 ### Darwin (`dot.home.darwin.*`)
 
