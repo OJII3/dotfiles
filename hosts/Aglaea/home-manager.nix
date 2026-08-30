@@ -53,6 +53,8 @@
       };
     };
 
+    gaming.minecraft.enable = true;
+
     # Other
     bitwarden.enable = true;
     blenderLauncher.enable = true;

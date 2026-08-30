@@ -42,6 +42,8 @@
       darwin.enable = true;
     };
 
+    gaming.minecraft.enable = true;
+
     obsidian.enable = false;
 
     desktop = {
