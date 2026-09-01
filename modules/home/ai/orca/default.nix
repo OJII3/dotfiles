@@ -9,7 +9,7 @@ let
   orca = pkgs.callPackage ./package.nix { };
 in
 {
-  config = lib.mkIf cfg.orca.enable {
+  config = lib.mkIf (cfg.enable && cfg.orca.enable) {
     home.packages = [ orca ];
 
     # LaunchServices does not reliably discover app bundles left in the Nix

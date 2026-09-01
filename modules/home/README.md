@@ -89,6 +89,7 @@ modules/home/
 
     # AI
     ai = {
+      enable = true;
       claude.enable = true;
       codex.enable = true;
       opencode.enable = true;
@@ -194,6 +195,7 @@ modules/home/
 
 | オプション | 説明 |
 |-----------|------|
+| `enable` | AI アシスタント共通設定 |
 | `claude.enable` | Claude Code |
 | `codex.enable` | Codex |
 | `opencode.enable` | OpenCode |

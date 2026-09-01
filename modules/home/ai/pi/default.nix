@@ -9,7 +9,7 @@ let
   cfg = config.dot.home.ai;
 in
 {
-  config = lib.mkIf cfg.pi.enable {
+  config = lib.mkIf (cfg.enable && cfg.pi.enable) {
     home.packages = [
       inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.pi
     ];

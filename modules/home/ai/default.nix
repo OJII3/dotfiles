@@ -25,36 +25,26 @@ in
     ./pi
   ];
 
-  config =
-    lib.mkIf
-      (
-        cfg.claude.enable
-        || cfg.codex.enable
-        || cfg.codexDesktop.enable
-        || cfg.opencode.enable
-        || cfg.agy.enable
-        || cfg.orca.enable
-        || cfg.pi.enable
-      )
-      {
+  config = lib.mkIf cfg.enable {
 
-        home.packages =
-          with pkgs;
-          [
-            gomi
-            python3Packages.pyyaml
-            bun
-            uv
-          ]
-          ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
-            terminal-notifier
-          ]
-          ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
-            libnotify
-          ];
+    home.packages =
+      with pkgs;
+      [
+        gomi
+        python3Packages.pyyaml
+        bun
+        uv
+        herdr
+      ]
+      ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
+        terminal-notifier
+      ]
+      ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
+        libnotify
+      ];
 
-        programs.zsh.shellAliases = {
-          "rm" = "gomi";
-        };
-      };
+    programs.zsh.shellAliases = {
+      "rm" = "gomi";
+    };
+  };
 }

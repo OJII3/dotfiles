@@ -10,7 +10,7 @@ let
 in
 {
 
-  config = lib.mkIf cfg.claude.enable {
+  config = lib.mkIf (cfg.enable && cfg.claude.enable) {
     programs.jq.enable = true;
     programs.claude-code = {
       enable = true;
