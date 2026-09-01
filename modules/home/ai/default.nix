@@ -21,6 +21,7 @@ in
     ./codex-desktop
     ./opencode
     ./agy
+    ./orca
     ./pi
   ];
 
@@ -32,6 +33,7 @@ in
         || cfg.codexDesktop.enable
         || cfg.opencode.enable
         || cfg.agy.enable
+        || cfg.orca.enable
         || cfg.pi.enable
       )
       {
