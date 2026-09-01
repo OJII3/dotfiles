@@ -38,6 +38,7 @@
     };
 
     ai = {
+      enable = true;
       agy.enable = true;
       claude.enable = true;
       codex.enable = true;

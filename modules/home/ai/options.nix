@@ -3,6 +3,8 @@
 { lib, ... }:
 {
   options.dot.home.ai = {
+    enable = lib.mkEnableOption "AI assistant configuration";
+
     claude = {
       enable = lib.mkEnableOption "Claude Code AI assistant";
     };

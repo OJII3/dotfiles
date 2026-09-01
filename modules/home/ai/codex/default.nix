@@ -12,7 +12,7 @@ let
   generateConfigScript = ./generate_config.sh;
 in
 {
-  config = lib.mkIf cfg.codex.enable {
+  config = lib.mkIf (cfg.enable && cfg.codex.enable) {
     home.packages = [
       inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.codex
     ];

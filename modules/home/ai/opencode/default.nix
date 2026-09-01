@@ -36,7 +36,7 @@ let
     ];
 in
 {
-  config = lib.mkIf cfg.opencode.enable {
+  config = lib.mkIf (cfg.enable && cfg.opencode.enable) {
     home.packages = commonPackages;
     programs.opencode = {
       enable = true;

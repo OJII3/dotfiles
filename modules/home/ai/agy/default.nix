@@ -22,7 +22,7 @@ let
     ];
 in
 {
-  config = lib.mkIf cfg.agy.enable {
+  config = lib.mkIf (cfg.enable && cfg.agy.enable) {
     home.packages = commonPackages ++ [
       inputs.antigravity-nix.packages."${pkgs.stdenv.hostPlatform.system}".google-antigravity-cli
     ];

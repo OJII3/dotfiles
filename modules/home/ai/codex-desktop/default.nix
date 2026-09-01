@@ -10,7 +10,7 @@ let
   codexCli = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.codex;
 in
 {
-  config = lib.mkIf (cfg.codexDesktop.enable && pkgs.stdenv.hostPlatform.isLinux) {
+  config = lib.mkIf (cfg.enable && cfg.codexDesktop.enable && pkgs.stdenv.hostPlatform.isLinux) {
     programs.codexDesktopLinux = {
       enable = true;
       # Bake CODEX_CLI_PATH into the launcher so Codex Desktop always finds

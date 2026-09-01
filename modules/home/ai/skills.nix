@@ -3,7 +3,7 @@
 # 「skills/<name>/SKILL.md」形式で発見されるスキルを、有効化されたツールの
 # スキルディレクトリへ symlink する汎用エンジン。
 #
-# - enable 連動: cfg.<tool>.enable が true のツールにのみリンクする。
+# - enable 連動: cfg.enable と cfg.<tool>.enable が true のツールにのみリンクする。
 # - 出し分け: 各スキルは tools = [ ... ] で対象ツールを限定できる(既定は全ツール)。
 #
 # 注: opencode / agy は skills/ 機構ではなく独自のプラグイン/拡張機構を持つため、
@@ -136,7 +136,7 @@ let
       }) (filter (skill: elem tool (skillTools skill)) allSkills)
     );
 
-  enabledTools = filter (tool: cfg.${tool}.enable) (attrNames skillDirs);
+  enabledTools = filter (tool: cfg.enable && cfg.${tool}.enable) (attrNames skillDirs);
 in
 {
   home.file = mkMerge (map linksFor enabledTools);
