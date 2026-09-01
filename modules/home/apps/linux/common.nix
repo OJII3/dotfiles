@@ -26,7 +26,7 @@ in
       slack
       unityhub
       vlc
-      voicevox
+      # voicevox
       pkgs-stable.blender
       pkgs-stable.parsec-bin
     ];
