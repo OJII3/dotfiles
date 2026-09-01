@@ -39,7 +39,6 @@
     ai = {
       enable = true;
       codex.enable = true;
-      gemini.enable = true;
     };
 
     # Apps
