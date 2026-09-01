@@ -7,7 +7,7 @@
 }:
 let
   cfg = config.dot.home.ai;
-  basePackage = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.opencode;
+  basePackage = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.opencode2;
   # opencode は OTEL_EXPORTER_OTLP_ENDPOINT が設定されているときだけ OTLP を送る。
   # 環境全体を汚さないよう、shell の環境変数ではなくラッパーで opencode にだけ渡す。
   opencodePackage =
