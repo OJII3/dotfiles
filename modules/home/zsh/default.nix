@@ -69,8 +69,8 @@ in
           "nixpkgs"
           "home-manager"
         ]
-        ++ lib.optionals pkgs.stdenv.isDarwin [ "darwin" ]
-        ++ lib.optionals pkgs.stdenv.isLinux [ "nixos" ];
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [ "darwin" ]
+        ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ "nixos" ];
 
         experimental = {
           render_docs_indexes = {

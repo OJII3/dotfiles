@@ -6,7 +6,8 @@
 }:
 let
   cfg = config.dot.home;
-  clangdir = if pkgs.stdenv.isDarwin then "Library/Preferences/clangd" else ".config/clangd";
+  clangdir =
+    if pkgs.stdenv.hostPlatform.isDarwin then "Library/Preferences/clangd" else ".config/clangd";
 in
 {
   config = lib.mkIf cfg.neovim.enable {

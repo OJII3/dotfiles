@@ -8,7 +8,7 @@
 }:
 let
   cfg = config.dot.home.obsidian;
-  isDarwin = pkgs.stdenv.isDarwin;
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
 in
 {
   config = lib.mkIf cfg.enable {
