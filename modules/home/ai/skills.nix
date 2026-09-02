@@ -49,33 +49,6 @@ let
   # 単体リモートスキル
   remoteSkills = [
     {
-      name = "notebooklm";
-      src = pkgs.fetchFromGitHub {
-        owner = "PleasePrompto";
-        repo = "notebooklm-skill";
-        rev = "v1.3.0";
-        sha256 = "sha256-oOkKuDvKuU8UylYZehT2lyERXla5H81oVddTg3ej2pQ=";
-      };
-    }
-    {
-      name = "playwright";
-      src =
-        let
-          upstream = pkgs.fetchFromGitHub {
-            owner = "lackeyjb";
-            repo = "playwright-skill";
-            rev = "v4.1.0";
-            sha256 = "sha256-77VxY7ik7UtLVHcLeDS2dfnoaf+zkYB6FMScP63rF9w=";
-          };
-        in
-        pkgs.runCommand "playwright-skill-pi-compatible" { } ''
-          cp -R ${upstream}/skills/playwright-skill $out
-          chmod -R u+w $out
-          substituteInPlace $out/SKILL.md \
-            --replace-fail "name: Playwright Browser Automation" "name: playwright"
-        '';
-    }
-    {
       name = "pdf";
       src = inputs.anthropics-skills;
       baseDir = "skills/pdf";
