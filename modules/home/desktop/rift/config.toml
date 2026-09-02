@@ -375,7 +375,8 @@ app_rules = [
   { app_name = "Unity", workspace = 4 },
   { app_id = "tv.parsec.www", workspace = 5, floating = true },
 
-  { app_name = "Meta XR Simulator", floating = true }
+  { app_name = "Meta XR Simulator", floating = true },
+  { title_substring = "Bitwarden", floating = true }
 ]
 
 # Modifier combinations that can be reused in key bindings
