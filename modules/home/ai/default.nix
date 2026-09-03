@@ -43,6 +43,8 @@ in
         libnotify
       ];
 
+    home.file.".config/herdr/config.toml".source = ./herdr/config.toml;
+
     programs.zsh.shellAliases = {
       "rm" = "gomi";
     };
