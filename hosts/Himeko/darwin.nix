@@ -5,6 +5,7 @@
   dot.darwin = {
     core = {
       enable = true;
+      bitwarden.enable = true;
       fonts.enable = true;
       sops.enable = true;
     };

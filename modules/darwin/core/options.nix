@@ -5,6 +5,10 @@
   options.dot.darwin.core = {
     enable = lib.mkEnableOption "core darwin configuration";
 
+    bitwarden = {
+      enable = lib.mkEnableOption "bitwarden password manager";
+    };
+
     fonts = {
       enable = lib.mkEnableOption "custom fonts via Homebrew";
     };

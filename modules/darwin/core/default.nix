@@ -7,11 +7,12 @@
 { ... }:
 {
   imports = [
-    ./options.nix
     ./base.nix
+    ./bitwarden.nix
     ./fonts.nix
-    ./sops.nix
     ./homebrew.nix
+    ./options.nix
+    ./sops.nix
     ./tools.nix
   ];
 }
