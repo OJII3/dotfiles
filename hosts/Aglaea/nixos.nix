@@ -33,7 +33,7 @@
       androidDev.enable = true;
       bitwarden.enable = true;
       gaming.enable = true;
-      vr.enable = true;
+      vr.enable = false;
     };
 
     hardware = {
