@@ -31,6 +31,7 @@
       snmpd.enable = true;
       tailscale.enable = false;
       warp.enable = true;
+      cloudflared.enable = true;
       dns.resolved.enable = false;
     };
 
