@@ -25,7 +25,7 @@ modules/home/
 ├── ai/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # claude, codex, chatgpt, opencode, antigravity, orca
+│   └── */           # claude, codex, opencode, antigravity, orca
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
@@ -92,7 +92,6 @@ modules/home/
       enable = true;
       claude.enable = true;
       codex.enable = true;
-      chatgpt.enable = true;
       opencode.enable = true;
       agy.enable = true;
       orca.enable = true;
@@ -199,7 +198,6 @@ modules/home/
 | `enable` | AI アシスタント共通設定 |
 | `claude.enable` | Claude Code |
 | `codex.enable` | Codex |
-| `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
 | `agy.enable` | Antigravity |
 | `orca.enable` | Orca AI orchestrator |
