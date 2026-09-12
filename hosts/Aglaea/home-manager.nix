@@ -41,7 +41,7 @@
       enable = true;
       agy.enable = true;
       codex.enable = true;
-      codexDesktop.enable = false; # hash broken
+      chatgpt.enable = true;
       dsh.enable = true;
     };
 
