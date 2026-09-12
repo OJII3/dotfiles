@@ -40,10 +40,8 @@
     ai = {
       enable = true;
       agy.enable = true;
-      claude.enable = true;
       codex.enable = true;
       chatgpt.enable = true;
-      opencode.enable = true;
       dsh.enable = true;
     };
 
