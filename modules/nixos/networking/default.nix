@@ -46,9 +46,6 @@ in
               to = 65535;
             }
           ];
-          allowedTCPPorts = [
-            4310 # klein
-          ];
         };
       }
 
