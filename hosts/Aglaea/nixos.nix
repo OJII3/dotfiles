@@ -20,6 +20,7 @@
       networkManager.enable = true;
       tailscale.enable = false;
       warp.enable = true;
+      ssh.enable = true;
     };
 
     desktop = {
