@@ -42,7 +42,7 @@
       agy.enable = true;
       claude.enable = true;
       codex.enable = true;
-      codexDesktop.enable = false; # hash broken
+      chatgpt.enable = true;
       opencode.enable = true;
       dsh.enable = true;
     };

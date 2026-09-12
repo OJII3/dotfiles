@@ -60,7 +60,6 @@
     };
     antigravity-nix.url = "github:jacopone/antigravity-nix";
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
-    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
   };
 
   outputs =
