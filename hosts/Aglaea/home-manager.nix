@@ -44,6 +44,7 @@
       codex.enable = true;
       codexDesktop.enable = false; # hash broken
       opencode.enable = true;
+      dsh.enable = true;
     };
 
     apps = {

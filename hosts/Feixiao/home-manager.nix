@@ -45,6 +45,7 @@
       codex.enable = true;
       agy.enable = true;
       opencode.enable = true;
+      dsh.enable = true;
     };
 
     # Apps
