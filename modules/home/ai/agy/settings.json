@@ -55,7 +55,8 @@
       "run_shell_command(pnpm typecheck)",
       "run_shell_command(rg)",
       "run_shell_command(tail)",
-      "run_shell_command(terminal-notifier)"
+      "run_shell_command(terminal-notifier)",
+      "mcp(*)"
     ]
   },
   "mcpServers": {
