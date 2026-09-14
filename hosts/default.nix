@@ -45,7 +45,6 @@ let
           };
           programs.home-manager.enable = true;
         }
-        inputs.codex-desktop-linux.homeManagerModules.default
       ];
     };
 

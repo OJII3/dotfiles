@@ -13,6 +13,7 @@
       enable = true;
       boot.loader = "systemd-boot";
       virtualisation.podman.enable = true;
+      ssh.enable = true;
     };
 
     networking = {

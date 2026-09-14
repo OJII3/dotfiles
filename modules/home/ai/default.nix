@@ -18,7 +18,7 @@ in
     ./skills.nix
     ./claude
     ./codex
-    ./codex-desktop
+    ./chatgpt
     ./opencode
     ./agy
     ./orca

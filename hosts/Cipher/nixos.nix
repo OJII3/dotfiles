@@ -51,6 +51,13 @@
 
   # ===== Host-specific configuration =====
 
+  networking.firewall.allowedTCPPorts = [
+    5173
+    4173
+    4310
+    3080
+  ];
+
   # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
