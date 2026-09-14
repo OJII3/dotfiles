@@ -2,5 +2,5 @@
 delivery = "system"
 
 [keys]
-navigate_workspace_down = "ctrl+n"
-navigate_workspace_up = "ctrl+p"
+next_workspace = "prefix+ctrl+n"
+previous_workspace = "prefix+ctrl+p"
