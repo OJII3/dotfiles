@@ -1,2 +1,6 @@
 [ui.toast]
 delivery = "system"
+
+[keys]
+navigate_workspace_down = "ctrl+n"
+navigate_workspace_up = "ctrl+p"
