@@ -1,2 +1,6 @@
 [ui.toast]
 delivery = "system"
+
+[keys]
+next_workspace = "prefix+ctrl+n"
+previous_workspace = "prefix+ctrl+p"
