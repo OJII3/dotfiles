@@ -34,7 +34,7 @@
       enable = true;
       claude.enable = true;
       codex.enable = true;
-      agy.enable = false;
+      agy.enable = true;
       opencode.enable = true;
     };
 
