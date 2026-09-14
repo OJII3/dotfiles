@@ -54,8 +54,9 @@
   networking.firewall.allowedTCPPorts = [
     5173
     4173
-    4310
-    3080
+    4310 # klein
+    4311 # yachigravity
+    3080 # dsh
   ];
 
   # Kernel
