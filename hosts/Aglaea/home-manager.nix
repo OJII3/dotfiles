@@ -42,7 +42,7 @@
       agy.enable = true;
       codex.enable = true;
       chatgpt.enable = true;
-      dsh.enable = true;
+      dsh.enable = false;
     };
 
     apps = {
