@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }:
 let
@@ -77,6 +78,7 @@ in
         yaml-language-server
         yamlfmt
         yamllint
+        inputs.moonbit-overlay.packages.${pkgs.system}.moonbit_latest
       ];
     };
 

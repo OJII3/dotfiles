@@ -60,6 +60,10 @@
     };
     antigravity-nix.url = "github:jacopone/antigravity-nix";
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
+    moonbit-overlay = {
+      url = "github:moonbit-community/moonbit-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

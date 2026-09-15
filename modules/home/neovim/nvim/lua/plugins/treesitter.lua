@@ -30,6 +30,7 @@ return {
 					"lua",
 					"markdown",
 					"markdown_inline",
+					"moonbit",
 					"python",
 					"regex",
 					"rust",
@@ -40,6 +41,16 @@ return {
 					"vimdoc",
 					"xml",
 					"yaml",
+				},
+				languages = {
+					moonbit = {
+						install_info = {
+							url = "https://github.com/moonbitlang/tree-sitter-moonbit",
+							files = { "src/parser.c", "src/scanner.c" },
+							branch = "main",
+							queries = "queries",
+						},
+					},
 				},
 				highlight = true,
 			})

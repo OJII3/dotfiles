@@ -1,4 +1,15 @@
 -- 設定したlspを保存する配列
+vim.filetype.add({
+	extension = {
+		mbt = "moonbit",
+	},
+	filename = {
+		["moon.mod"] = "moonbit",
+		["moon.pkg"] = "moonbit",
+		["moon.work"] = "moonbit",
+	},
+})
+
 local lsp_names = {
 	"astro",
 	"bashls",
@@ -20,6 +31,7 @@ local lsp_names = {
 	"lua_ls",
 	"matlab_ls",
 	"mdx_analyzer",
+	"moonbit",
 	"nixd",
 	"roslyn_ls",
 	"stylelint_lsp",
@@ -96,6 +108,10 @@ for _, server_name in ipairs(lsp_names) do
 			exportPdf = "onType",
 			formatterMode = "typstyle",
 		}
+	elseif server_name == "moonbit" then
+		opts.cmd = { "moon-lsp", "--stdio" }
+		opts.filetypes = { "moonbit" }
+		opts.root_markers = { "moon.mod", "moon.mod.json", "moon.work" }
 	elseif server_name == "nixd" then
 		opts.settings = {
 			nix = {

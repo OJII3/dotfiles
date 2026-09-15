@@ -14,6 +14,8 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 })
 
 -- Hyprlang LSP
+vim.cmd("filetype plugin indent on")
+
 vim.filetype.add({
 	pattern = { [".*/hypr.*/.*%.conf"] = "hyprlang" },
 })
