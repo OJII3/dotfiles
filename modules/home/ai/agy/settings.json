@@ -1,5 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
+  "permissions": {
+    "allow": [
+      "read_file(/home/ojii3/src/github.com)"
+    ]
+  },
+  "trustedWorkspaces": [
+    "/home/ojii3",
+    "/home/ojii3/src/github.com/ojii3/antiyachiviy",
+    "/home/ojii3/src/github.com/ojii3/dotfiles"
+  ],
   "security": {
     "auth": {
       "selectedType": "oauth-personal"
