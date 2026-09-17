@@ -1,15 +1,3 @@
--- 設定したlspを保存する配列
-vim.filetype.add({
-	extension = {
-		mbt = "moonbit",
-	},
-	filename = {
-		["moon.mod"] = "moonbit",
-		["moon.pkg"] = "moonbit",
-		["moon.work"] = "moonbit",
-	},
-})
-
 local lsp_names = {
 	"astro",
 	"bashls",
