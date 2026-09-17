@@ -13,9 +13,17 @@ vim.api.nvim_create_autocmd({ "TermOpen" }, {
 	command = "startinsert",
 })
 
--- Hyprlang LSP
+-- Filetype overrides
 vim.cmd("filetype plugin indent on")
 
 vim.filetype.add({
+	extension = {
+		mbt = "moonbit",
+	},
+	filename = {
+		["moon.mod"] = "moonbit",
+		["moon.pkg"] = "moonbit",
+		["moon.work"] = "moonbit",
+	},
 	pattern = { [".*/hypr.*/.*%.conf"] = "hyprlang" },
 })
