@@ -21,7 +21,6 @@ in
     ./chatgpt
     ./opencode
     ./agy
-    ./orca
     ./pi
     ./dsh
   ];
