@@ -7,6 +7,9 @@
 }:
 let
   cfg = config.dot.home.ai;
+  settingsFile = ./settings.json;
+  generateSettingsScript = ./generate_settings.sh;
+  settingsPath = "${config.home.homeDirectory}/.gemini/antigravity-cli/settings.json";
   commonPackages =
     with pkgs;
     [
@@ -27,7 +30,13 @@ in
       inputs.antigravity-nix.packages."${pkgs.stdenv.hostPlatform.system}".google-antigravity-cli
     ];
 
-    # home.file.".gemini/antigravity-cli/settings.json".source = ./settings.json;
     home.file.".gemini/antigravity-cli/AGENTS.md".source = ./AGENTS.md;
+
+    home.activation.agySettingsGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      PATH="${pkgs.ghq}/bin:${pkgs.git}/bin:${pkgs.jq}/bin:$PATH" \
+        ${pkgs.bash}/bin/bash ${generateSettingsScript} \
+        '${settingsFile}' \
+        '${settingsPath}'
+    '';
   };
 }
