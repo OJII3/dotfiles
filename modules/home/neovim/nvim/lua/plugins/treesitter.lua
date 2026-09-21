@@ -54,6 +54,9 @@ return {
 				},
 				highlight = true,
 			})
+			if vim.bo.filetype == "moonbit" then
+				pcall(vim.treesitter.start)
+			end
 		end,
 	},
 }
