@@ -57,6 +57,7 @@
     4310 # klein
     4311 # yachigravity
     3080 # dsh
+    49374 # opencode2
   ];
 
   # Kernel
