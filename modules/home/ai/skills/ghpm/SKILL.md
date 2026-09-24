@@ -1,6 +1,6 @@
 ---
 name: ghpm
-description: 現在のブランチに紐づく GitHub PR を squash merge し、リモートとローカルのブランチを削除する。ユーザーが `$ghpm` と明示的に呼び出したときに使う。
+description: 現在のPRをsquash mergeしてブランチを削除する。
 ---
 
 現在のブランチの PR を squash merge し、マージ後にリモートとローカルのブランチを削除する。

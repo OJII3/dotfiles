@@ -1,7 +1,5 @@
 interface:
   display_name: "ghpm"
-  short_description: "現在の PR を squash merge してブランチを削除"
+  short_description: "PRをsquash mergeしてブランチ削除"
 policy:
-  products:
-    - CODEX
   allow_implicit_invocation: false
