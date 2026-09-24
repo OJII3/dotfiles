@@ -1,0 +1,5 @@
+interface:
+  display_name: "ghpm"
+  short_description: "PRをsquash mergeしてブランチ削除"
+policy:
+  allow_implicit_invocation: false
