@@ -88,5 +88,6 @@ When you finish a task:
 - Ensure all tests or validations pass.
 - Ensure all code is committed, pushed, and PRs are created.
 - Ensure all CI/CD pipelines pass.
+- When instructed to merge a PR, squash-merge it and delete the branch locally and remotely with `gh pr merge -ds`.
 
 PR is always your goal create PR before being asked.
