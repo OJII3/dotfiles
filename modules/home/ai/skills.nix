@@ -43,6 +43,7 @@ let
     map (name: {
       inherit name;
       src = localSkillsDir + "/${name}";
+      tools = if name == "ghpm" then [ "codex" ] else attrNames skillDirs;
     }) (subdirsOf localSkillsDir)
   );
 
