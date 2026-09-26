@@ -35,6 +35,7 @@
     ./neovim
     ./network.nix
     ./obsidian.nix
+    ./podman.nix
     ./ros2
     ./sops.nix
     ./vr.nix

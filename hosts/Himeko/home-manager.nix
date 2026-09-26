@@ -15,6 +15,7 @@
     };
     direnv.enable = true;
     sops.enable = true;
+    podman.enable = true;
 
     # Terminal
     terminal = {

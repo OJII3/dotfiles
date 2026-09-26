@@ -48,6 +48,11 @@
       };
     };
 
+    # Container tools
+    podman = {
+      enable = lib.mkEnableOption "Podman service";
+    };
+
     # Environment
     direnv = {
       enable = lib.mkEnableOption "Direnv integration";
