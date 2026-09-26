@@ -2,11 +2,10 @@ model = "gpt-6-luna"
 model_reasoning_effort = "xhigh"
 network_access = true
 approval_policy = "on-request"
-sandbox_mode = "workspace-write"
+sandbox_mode = "danger-full-access"
 web_search = 'cached'
 # Keep direnv-provided environment from the parent shell by avoiding login shell startup.
 allow_login_shell = false
-default_permissions = "danger-full-access"
 
 [features]
 shell_snapshot = false
