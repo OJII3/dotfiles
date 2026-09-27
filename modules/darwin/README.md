@@ -31,7 +31,6 @@ modules/darwin/
 │   ├── tailscale.nix  # Tailscale (MAS + shell alias)
 │   ├── openssh.nix  # OpenSSH サーバー
 │   └── cloudflared.nix # Cloudflared CLI のみ
-└── karabiner-ts/    # Karabiner-Elements 設定 (別管理)
 ```
 
 ## 使用方法
@@ -88,8 +87,7 @@ modules/darwin/
 `hammerspoon.enable` は tap/hold 判定のスクリプト (`~/.hammerspoon/init.lua`) を
 Home Manager 側の `dot.home.desktop.hammerspoon.enable` とセットで有効化する。
 初回のみ System Settings > Privacy & Security > Accessibility で
-Hammerspoon に権限を付与する必要がある (Karabiner 系のドライバや
-システム拡張の承認は不要)。
+Hammerspoon に権限を付与する必要がある (追加のドライバやシステム拡張の承認は不要)。
 
 割り当てているキー:
 

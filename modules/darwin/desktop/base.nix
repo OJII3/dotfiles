@@ -25,9 +25,9 @@ in
           HIDKeyboardModifierMappingDst = 1095216660483;
         }
         {
-          # Japanese Eisu -> Left Option
+          # Japanese Eisu -> Right Option
           HIDKeyboardModifierMappingSrc = 30064771217;
-          HIDKeyboardModifierMappingDst = 30064771298;
+          HIDKeyboardModifierMappingDst = 30064771302;
         }
       ];
       nonUS.remapTilde = true;

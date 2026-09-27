@@ -1,4 +1,4 @@
--- Karabiner 系のドライバ/カーネル拡張には依存せず、Accessibility 権限のみで動く
+-- Accessibility 権限のみで動く
 -- キーリマップ。
 --
 --   CapsLock : tap = Esc / hold = Ctrl
