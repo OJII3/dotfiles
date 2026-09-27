@@ -13,6 +13,10 @@
       enable = lib.mkEnableOption "GNOME desktop environment (GDM + GNOME Shell)";
     };
 
+    power = {
+      serverLike = lib.mkEnableOption "server-like desktop power behavior";
+    };
+
     fonts = {
       enable = lib.mkEnableOption "custom fonts configuration";
     };

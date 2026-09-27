@@ -164,7 +164,7 @@ modules/home/
 | `enable` | デスクトップ環境 (ベース) |
 | `hyprland.enable` | Hyprland コンポジター |
 | `gnome.enable` | GNOME デスクトップ |
-| `gnome.serverLike` | 蓋を閉じても動作を続け、AC・バッテリー両方でアイドル時スリープを無効化 |
+| `power.serverLike` | GNOME ユーザー設定で蓋閉じ動作とアイドル時スリープを無効化。NixOS 側でも `dot.desktop.power.serverLike` を有効化 |
 | `waybar.enable` | Waybar ステータスバー |
 | `anyrun.enable` | Anyrun ランチャー |
 | `swaync.enable` | SwayNC 通知センター |

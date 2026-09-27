@@ -26,6 +26,7 @@
     desktop = {
       enable = true;
       gnome.enable = true;
+      power.serverLike = true;
       fonts.enable = true;
       keyd.enable = true;
       sunshine.enable = true;
@@ -82,18 +83,6 @@
   ];
   boot.resumeDevice = "/dev/disk/by-uuid/c544cc27-e5b6-4132-8442-4a397fb360ce";
   # (resume_offset for this swapfile is set in boot.kernelParams above.)
-
-  # GDM runs as gdm-greeter and has a separate power profile from Home Manager.
-  # Disable its default idle suspend as well.
-  services.displayManager.gdm.autoSuspend = false;
-
-  # GNOME's lid action is a user-session setting. Ignore the hardware switch
-  # in logind as well, or its suspend request is redirected to hibernate below.
-  services.logind.settings.Login = {
-    HandleLidSwitch = "ignore";
-    HandleLidSwitchExternalPower = "ignore";
-    HandleLidSwitchDocked = "ignore";
-  };
 
   # Redirect suspend requests to hibernate. systemd-suspend.service invokes
   # systemd-sleep hibernate instead, avoiding the broken s2idle firmware path.

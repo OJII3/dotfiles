@@ -20,6 +20,7 @@ in
     ./hyprland.nix
     ./keyd.nix
     ./peripheral.nix
+    ./power.nix
     ./sunshine.nix
     ./vr.nix
     ./waydroid.nix
