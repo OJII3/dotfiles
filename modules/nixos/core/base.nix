@@ -24,17 +24,14 @@ in
           "nix-command"
           "flakes"
         ];
-        substituters = [
-          "https://cache.numtide.com"
+        extra-substituters = [
           "https://ros.cachix.org"
         ];
-        trusted-public-keys = [
-          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+        extra-trusted-public-keys = [
           "ros.cachix.org-1:dSyZxI8geDCJrwgvCOHDoAfOm5sV1wCPjBkKL+38Rvo="
         ];
         trusted-users = [
           "root"
-          cfg.user.name
         ];
       };
       gc = {

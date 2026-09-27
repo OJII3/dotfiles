@@ -10,6 +10,7 @@
 { ... }:
 {
   imports = [
+    ../shared/nix-caches.nix
     ./core
     ./desktop
     ./server
