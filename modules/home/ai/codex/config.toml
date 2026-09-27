@@ -17,6 +17,7 @@ writable_roots = [ "/dev/pts", "/dev/ptmx", "~/.gnupg", ".git" ]
 
 [tui]
 notifications = ["agent-turn-complete","approval-requested"]
+pet = "yachiyo"
 
 [shell_environment_policy]
 inherit = "all"
