@@ -24,9 +24,9 @@
     # Desktop
     desktop = {
       enable = true;
+      power.serverLike = true;
       gnome = {
         enable = true;
-        serverLike = true;
       };
       fcitx5.enable = true;
       keyd.enable = true;

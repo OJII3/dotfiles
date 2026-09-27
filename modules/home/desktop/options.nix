@@ -31,7 +31,10 @@
 
     gnome = {
       enable = lib.mkEnableOption "GNOME desktop configuration";
-      serverLike = lib.mkEnableOption "server-like GNOME power behavior";
+    };
+
+    power = {
+      serverLike = lib.mkEnableOption "server-like desktop power behavior";
     };
 
     keyd = {

@@ -83,7 +83,7 @@ in
         binding = "<Alt>space";
       };
     }
-    // lib.optionalAttrs cfg.gnome.serverLike {
+    // lib.optionalAttrs cfg.power.serverLike {
       "org/gnome/settings-daemon/plugins/power" = {
         lid-close-ac-action = "nothing";
         lid-close-battery-action = "nothing";

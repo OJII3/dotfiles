@@ -59,6 +59,7 @@ modules/nixos/
 |-----------|-----|---------|------|
 | `enable` | bool | `false` | デスクトップ環境(Qt テーマ等の共通設定を含む) |
 | `gnome.enable` | bool | `false` | GNOME デスクトップ (GDM + GNOME Shell)。`greetd.enable` と排他 |
+| `power.serverLike` | bool | `false` | logind の蓋スイッチと GDM の自動サスペンドを無効化。GNOME ユーザー側は Home Manager の同名オプションで設定 |
 | `hyprland.enable` | bool | `false` | Hyprland コンポジタ |
 | `fonts.enable` | bool | `false` | カスタムフォント設定 |
 | `flatpak.enable` | bool | `false` | Flatpak サポート |
