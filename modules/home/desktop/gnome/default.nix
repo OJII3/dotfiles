@@ -83,10 +83,12 @@ in
         binding = "<Alt>space";
       };
     }
-    // lib.optionalAttrs (cfg.gnome.lidCloseAction != null) {
+    // lib.optionalAttrs cfg.gnome.serverLike {
       "org/gnome/settings-daemon/plugins/power" = {
-        lid-close-ac-action = cfg.gnome.lidCloseAction;
-        lid-close-battery-action = cfg.gnome.lidCloseAction;
+        lid-close-ac-action = "nothing";
+        lid-close-battery-action = "nothing";
+        sleep-inactive-ac-timeout = 0;
+        sleep-inactive-battery-timeout = 0;
       };
     };
   };
