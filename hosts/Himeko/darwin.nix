@@ -14,7 +14,7 @@
       apps.enable = true;
       vr.enable = true;
       hammerspoon.enable = true;
-      rift.enable = false;
+      rift.enable = true;
     };
     networking = {
       enable = true;

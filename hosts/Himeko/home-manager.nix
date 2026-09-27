@@ -50,7 +50,7 @@
 
     desktop = {
       hammerspoon.enable = true;
-      rift.enable = false;
+      rift.enable = true;
       jankyborders.enable = true;
     };
   };
