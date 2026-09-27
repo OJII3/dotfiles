@@ -82,6 +82,12 @@ in
         command = "vicinae toggle";
         binding = "<Alt>space";
       };
+    }
+    // lib.optionalAttrs (cfg.gnome.lidCloseAction != null) {
+      "org/gnome/settings-daemon/plugins/power" = {
+        lid-close-ac-action = cfg.gnome.lidCloseAction;
+        lid-close-battery-action = cfg.gnome.lidCloseAction;
+      };
     };
   };
 }

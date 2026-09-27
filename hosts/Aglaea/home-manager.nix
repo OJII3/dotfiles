@@ -24,7 +24,10 @@
     # Desktop
     desktop = {
       enable = true;
-      gnome.enable = true;
+      gnome = {
+        enable = true;
+        lidCloseAction = "nothing";
+      };
       fcitx5.enable = true;
       keyd.enable = true;
       theme.enable = true;
