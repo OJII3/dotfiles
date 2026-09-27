@@ -381,17 +381,18 @@ app_rules = [
 
 # Modifier combinations that can be reused in key bindings
 # Define common modifier combinations to avoid repetition.
-# Example usage: with `comb1 = "Alt + Shift"`, you can write:
+# Example usage: with `comb1 = "AltRight + Shift"`, you can write:
 #   "comb1 + H" = { move_node = "left" }
 [modifier_combinations]
-comb1 = "Alt + Shift"
+comb1 = "AltRight + Shift"
 
 [keys]
 # Key binding syntax
-# - Use quotes around the key: "Alt + Shift + H"
-# - Supported modifiers: Alt, Ctrl, Shift, Meta (Meta = Command ⌘ on macOS)
+# - Use quotes around the key: "AltRight + Shift + H"
+# - Supported modifiers include Alt, AltLeft, AltRight, Ctrl, CtrlLeft, CtrlRight,
+#   Shift, ShiftLeft, ShiftRight, Meta, MetaLeft, MetaRight (Meta = Command ⌘ on macOS)
 # - Arrow keys can be written as ArrowUp/ArrowDown/ArrowLeft/ArrowRight, or just Up/Down/Left/Right
-# - Spacing is flexible: "Alt+Down" and "Alt + Down" are equivalent
+# - Spacing is flexible: "AltRight+Down" and "AltRight + Down" are equivalent
 # - Key values map to commands (see list below)
 
 # Commands
@@ -435,26 +436,26 @@ comb1 = "Alt + Shift"
 # - scroll_strip = { delta = 0.5 }
 # - snap_strip / center_selection
 
-"Alt + Z" = "toggle_space_activated"
+"AltRight + Z" = "toggle_space_activated"
 
-"Alt + Q" = "close_window"
+"AltRight + Q" = "close_window"
 
-"Alt + H" = { move_focus = "left" }
-"Alt + J" = { move_focus = "down" }
-"Alt + K" = { move_focus = "up" }
-"Alt + L" = { move_focus = "right" }
+"AltRight + H" = { move_focus = "left" }
+"AltRight + J" = { move_focus = "down" }
+"AltRight + K" = { move_focus = "up" }
+"AltRight + L" = { move_focus = "right" }
 
 "comb1 + H" = { move_node = "left" }
 "comb1 + J" = { move_node = "down" }
 "comb1 + K" = { move_node = "up" }
 "comb1 + L" = { move_node = "right" }
 
-"Alt + 0" = { switch_to_workspace = 0 }
-"Alt + 1" = { switch_to_workspace = 1 }
-"Alt + 2" = { switch_to_workspace = 2 }
-"Alt + 3" = { switch_to_workspace = 3 }
-"Alt + 4" = { switch_to_workspace = 4 }
-"Alt + 5" = { switch_to_workspace = 5 }
+"AltRight + 0" = { switch_to_workspace = 0 }
+"AltRight + 1" = { switch_to_workspace = 1 }
+"AltRight + 2" = { switch_to_workspace = 2 }
+"AltRight + 3" = { switch_to_workspace = 3 }
+"AltRight + 4" = { switch_to_workspace = 4 }
+"AltRight + 5" = { switch_to_workspace = 5 }
 
 "comb1 + 0" = { move_window_to_workspace = 0 }
 "comb1 + 1" = { move_window_to_workspace = 1 }
@@ -463,59 +464,59 @@ comb1 = "Alt + Shift"
 "comb1 + 4" = { move_window_to_workspace = 4 }
 "comb1 + 5" = { move_window_to_workspace = 5 }
 
-"Alt + Tab" = "switch_to_last_workspace"
+"AltRight + Tab" = "switch_to_last_workspace"
 
 # commands to change the layout engine of the active workspace
-# "Alt + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
-# "Alt + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
-# "Alt + Ctrl + 3" = { set_workspace_layout = { mode = "master_stack" } }
-# "Alt + Ctrl + 4" = { set_workspace_layout = { mode = "scrolling" } }
+# "AltRight + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
+# "AltRight + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
+# "AltRight + Ctrl + 3" = { set_workspace_layout = { mode = "master_stack" } }
+# "AltRight + Ctrl + 4" = { set_workspace_layout = { mode = "scrolling" } }
 
-"Alt + Shift + Left" = { join_window = "left" }
-"Alt + Shift + Right" = { join_window = "right" }
-"Alt + Shift + Up" = { join_window = "up" }
-"Alt + Shift + Down" = { join_window = "down" }
-"Alt + Comma" = "toggle_stack"
-"Alt + Slash" = "toggle_orientation"
-"Alt + Ctrl + E" = "unjoin_windows"
+"AltRight + Shift + Left" = { join_window = "left" }
+"AltRight + Shift + Right" = { join_window = "right" }
+"AltRight + Shift + Up" = { join_window = "up" }
+"AltRight + Shift + Down" = { join_window = "down" }
+"AltRight + Comma" = "toggle_stack"
+"AltRight + Slash" = "toggle_orientation"
+"AltRight + Ctrl + E" = "unjoin_windows"
 
-"Alt + Shift + Space" = "toggle_window_floating"
-"Alt + F" = "toggle_fullscreen"
-"Alt + Shift + F" = "toggle_fullscreen_within_gaps"
+"AltRight + Shift + Space" = "toggle_window_floating"
+"AltRight + F" = "toggle_fullscreen"
+"AltRight + Shift + F" = "toggle_fullscreen_within_gaps"
 "comb1 + Ctrl + Space" = "toggle_focus_floating" # briefly bring focus to floating window
 
 # smartly resize windows
-"Alt + Shift + Equal" = "resize_window_grow"
-"Alt + Shift + Minus" = "resize_window_shrink"
+"AltRight + Shift + Equal" = "resize_window_grow"
+"AltRight + Shift + Minus" = "resize_window_shrink"
 # Example vertical bindings for windows stacked in a scrolling-layout column:
-# "Alt + Ctrl + Equal" = { resize_window_grow = "vertical" }
-# "Alt + Ctrl + Minus" = { resize_window_shrink = "vertical" }
+# "AltRight + Ctrl + Equal" = { resize_window_grow = "vertical" }
+# "AltRight + Ctrl + Minus" = { resize_window_shrink = "vertical" }
 # Use "smart" to resize the nearest applicable split automatically.
 
 # Move mouse cursor to display by index (0-based) or UUID
 # Examples:
-# "Alt + Shift + A" = { move_mouse_to_display = 0 }
-# "Alt + Shift + S" = { move_mouse_to_display = 1 }
-# "Alt + Shift + D" = { move_mouse_to_display = "e9a4f5a1-2f8b-45c1-9f4e-5a6b7c8d9e0f" }
+# "AltRight + Shift + A" = { move_mouse_to_display = 0 }
+# "AltRight + Shift + S" = { move_mouse_to_display = 1 }
+# "AltRight + Shift + D" = { move_mouse_to_display = "e9a4f5a1-2f8b-45c1-9f4e-5a6b7c8d9e0f" }
 # Focus another display (direction/index/uuid)
-# "Alt + Shift + F" = { focus_display = "right" }
+# "AltRight + Shift + F" = { focus_display = "right" }
 
 # Move a window to a display (by index, UUID, or direction)
-# "Alt + Ctrl + Up" = { move_window_to_display = { selector = "up" } }
-# "Alt + Ctrl + Down" = { move_window_to_display = { selector = "down" } }
-# "Alt + Ctrl + Left" = { move_window_to_display = { selector = "left" } }
-# "Alt + Ctrl + Right" = { move_window_to_display = { selector = "right" } }
-# "Alt + Ctrl + A" = { move_window_to_display = { selector = 0 } }
+# "AltRight + Ctrl + Up" = { move_window_to_display = { selector = "up" } }
+# "AltRight + Ctrl + Down" = { move_window_to_display = { selector = "down" } }
+# "AltRight + Ctrl + Left" = { move_window_to_display = { selector = "left" } }
+# "AltRight + Ctrl + Right" = { move_window_to_display = { selector = "right" } }
+# "AltRight + Ctrl + A" = { move_window_to_display = { selector = 0 } }
 
 # if mission control is enabled
 # this will show an exploded view of the windows in the active workspace
-# "Alt + Ctrl + Shift + M" = "show_mission_control_current"
+# "AltRight + Ctrl + Shift + M" = "show_mission_control_current"
 # this will show the mission control view shown in the readme
-# "Alt + Ctrl + M" = "show_mission_control_all"
+# "AltRight + Ctrl + M" = "show_mission_control_all"
 
-"Alt + Enter" = { "exec" = ["/bin/bash", "-c", "open -a ghostty"] }
+"AltRight + Enter" = { "exec" = ["/bin/bash", "-c", "open -a ghostty"] }
 
-"Alt + Shift + D" = "debug" # prints layout tree
+"AltRight + Shift + D" = "debug" # prints layout tree
 
-"Alt + Ctrl + S" = "serialize"
-"Alt + Ctrl + Q" = "save_and_exit"
+"AltRight + Ctrl + S" = "serialize"
+"AltRight + Ctrl + Q" = "save_and_exit"
