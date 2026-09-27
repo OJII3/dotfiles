@@ -8,6 +8,7 @@ web_search = 'cached'
 allow_login_shell = false
 
 [features]
+hooks = true
 shell_snapshot = false
 remote_connections = true
 

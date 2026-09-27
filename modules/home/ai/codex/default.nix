@@ -8,7 +8,8 @@
 let
   cfg = config.dot.home.ai;
   seedToml = ./config.toml;
-  codexConfigPath = "${config.home.homeDirectory}/.codex/config.toml";
+  codexHome = "${config.home.homeDirectory}/.codex";
+  codexConfigPath = "${codexHome}/config.toml";
   generateConfigScript = ./generate_config.sh;
 in
 {
@@ -25,6 +26,12 @@ in
         ${pkgs.bash}/bin/bash ${generateConfigScript} \
         '${seedToml}' \
         '${codexConfigPath}'
+    '';
+
+    home.activation.herdrCodexIntegration = lib.hm.dag.entryAfter [ "codexConfigGenerate" ] ''
+      # config.toml is generated above, so run Herdr's installer afterward.
+      CODEX_HOME=${lib.escapeShellArg codexHome} \
+        ${pkgs.herdr}/bin/herdr integration install codex
     '';
   };
 }
