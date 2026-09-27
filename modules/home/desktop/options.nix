@@ -31,21 +31,7 @@
 
     gnome = {
       enable = lib.mkEnableOption "GNOME desktop configuration";
-
-      lidCloseAction = lib.mkOption {
-        type = lib.types.nullOr (
-          lib.types.enum [
-            "blank"
-            "hibernate"
-            "interactive"
-            "nothing"
-            "shutdown"
-            "suspend"
-          ]
-        );
-        default = null;
-        description = "GNOME action when closing the laptop lid, on AC and battery power; null keeps the GNOME defaults.";
-      };
+      serverLike = lib.mkEnableOption "server-like GNOME power behavior";
     };
 
     keyd = {

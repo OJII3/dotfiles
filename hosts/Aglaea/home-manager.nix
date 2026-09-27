@@ -26,7 +26,7 @@
       enable = true;
       gnome = {
         enable = true;
-        lidCloseAction = "nothing";
+        serverLike = true;
       };
       fcitx5.enable = true;
       keyd.enable = true;
