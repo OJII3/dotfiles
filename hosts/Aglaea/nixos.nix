@@ -83,11 +83,17 @@
   boot.resumeDevice = "/dev/disk/by-uuid/c544cc27-e5b6-4132-8442-4a397fb360ce";
   # (resume_offset for this swapfile is set in boot.kernelParams above.)
 
-  # Redirect every suspend request to hibernate. GNOME's power menu, the lid
-  # switch, and idle auto-suspend all invoke systemd-suspend.service; pointing
-  # its ExecStart at `systemd-sleep hibernate` makes them all hibernate instead,
-  # avoiding the broken s2idle firmware path entirely. Drop this block once the
-  # BIOS suspend regression is fixed.
+  # GNOME's lid action is a user-session setting. Ignore the hardware switch
+  # in logind as well, or its suspend request is redirected to hibernate below.
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
+
+  # Redirect suspend requests to hibernate. systemd-suspend.service invokes
+  # systemd-sleep hibernate instead, avoiding the broken s2idle firmware path.
+  # Drop this block once the BIOS suspend regression is fixed.
   systemd.services.systemd-suspend.serviceConfig.ExecStart = [
     ""
     "${pkgs.systemd}/lib/systemd/systemd-sleep hibernate"
