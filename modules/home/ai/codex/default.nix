@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   lib,
   pkgs,
   ...
@@ -14,9 +13,24 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.codex.enable) {
-    home.packages = [
-      inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.codex
-    ];
+    home.file.".local/bin/codex" = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
+      text = ''
+        #!/bin/sh
+        set -eu
+
+        for app in /Applications/ChatGPT.app "$HOME/Applications/ChatGPT.app"; do
+          codex="$app/Contents/Resources/codex-cli/bin/codex"
+          if [ -x "$codex" ]; then
+            exec "$codex" "$@"
+          fi
+        done
+
+        printf '%s\n' 'ChatGPT.app の Codex CLI が見つかりません。ChatGPT.app をインストールまたは更新してください。' >&2
+        exit 127
+      '';
+      executable = true;
+    };
+
     home.file.".codex/AGENTS.md".source = ./AGENTS.md;
     home.file.".codex/pets/yachiyo".source = ./pets/yachiyo;
 
