@@ -49,6 +49,7 @@
       enable = true;
       claude.enable = true;
       codex.enable = true;
+      chatgpt.enable = true;
       agy.enable = true;
       opencode.enable = true;
       dsh.enable = true;

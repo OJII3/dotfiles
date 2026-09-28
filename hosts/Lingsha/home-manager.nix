@@ -39,6 +39,7 @@
     ai = {
       enable = true;
       codex.enable = true;
+      chatgpt.enable = true;
     };
 
     # Apps
