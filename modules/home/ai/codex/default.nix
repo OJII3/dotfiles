@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -13,6 +14,10 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.codex.enable) {
+    home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isLinux [
+      inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.codex
+    ];
+
     home.file.".local/bin/codex" = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
       text = ''
         #!/bin/sh
