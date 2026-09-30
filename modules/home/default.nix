@@ -13,7 +13,11 @@
 #
 { pkgs, ... }:
 {
+  nix.package = pkgs.nix;
+
   imports = [
+    # Shared Nix binary caches
+    ../shared/nix-caches.nix
     # Options
     ./options.nix
     # Subdirectories (have their own options.nix)
