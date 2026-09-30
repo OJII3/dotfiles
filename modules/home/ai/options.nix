@@ -36,5 +36,11 @@
     orca = {
       enable = lib.mkEnableOption "Orca AI orchestrator (Linux only)";
     };
+
+    t3code = {
+      enable = lib.mkEnableOption "T3 Code coding agent";
+
+      backgroundService.enable = lib.mkEnableOption "T3 Code background service";
+    };
   };
 }

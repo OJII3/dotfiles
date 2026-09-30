@@ -24,6 +24,7 @@ in
     ./pi
     ./dsh
     ./orca
+    ./t3code
   ];
 
   config = lib.mkIf cfg.enable {
