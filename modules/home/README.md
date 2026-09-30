@@ -203,15 +203,17 @@ modules/home/
 | `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
 | `agy.enable` | Antigravity |
-| `orca.enable` | Orca AI orchestrator |
+| `orca.enable` | Orca AI orchestrator (Linux only) |
 
-Orca は GUI と CLI を同梱した Linux 向けパッケージです。Linux の GUI がない環境でも、`orca serve` が必要な X サーバーを Xvfb で起動するため利用できます。Home Manager では Xvfb もランタイムに含めています。
+Orca は GUI と CLI を同梱した Linux 向けパッケージです。`orca.enable` を有効にすると、Home Manager がユーザー systemd サービスをログイン時に起動します。サービスは `CloudflareWARP` の IPv4 アドレスを自動取得してペアリング先に使い、異常終了時は再起動します。Orca のパッケージには Xvfb も含まれています。
 
 ```sh
-LIBGL_ALWAYS_SOFTWARE=1 orca serve --port 6768 --pairing-address 192.0.2.10
+journalctl --user -b -g orca_server_ready --no-pager
+systemctl --user stop orca.service
+systemctl --user restart orca.service
 ```
 
-`--pairing-address` はリモートクライアントへ案内するアドレスに置き換えてください。現在はユーザーごとの公開範囲やポートを決めず、systemd の自動サービス化は行っていません。
+起動時に出力されたペアリング URL は `journalctl` で確認できます。サービスは TCP `6768` を使います。WARP 経由で接続する端末も同じ Cloudflare Zero Trust 組織に登録してください。
 
 ### Darwin (`dot.home.darwin.*`)
 

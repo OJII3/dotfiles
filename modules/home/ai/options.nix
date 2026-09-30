@@ -32,5 +32,9 @@
     dsh = {
       enable = lib.mkEnableOption "dsh coding agent";
     };
+
+    orca = {
+      enable = lib.mkEnableOption "Orca AI orchestrator (Linux only)";
+    };
   };
 }
