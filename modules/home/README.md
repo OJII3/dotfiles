@@ -203,9 +203,9 @@ modules/home/
 | `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
 | `agy.enable` | Antigravity |
-| `orca.enable` | Orca AI orchestrator |
+| `orca.enable` | Orca AI orchestrator (Linux only) |
 
-Orca は GUI と CLI を同梱した Linux 向けパッケージです。Linux の GUI がない環境でも、`orca serve` が必要な X サーバーを Xvfb で起動するため利用できます。Home Manager では Xvfb もランタイムに含めています。
+Orca は GUI と CLI を同梱した Linux 向けパッケージです。Linux の GUI がない環境でも、`orca serve` が必要な X サーバーを Xvfb で起動するため利用できます。Home Manager は Xvfb を含む `llm-agents-nix` のパッケージを使います。
 
 ```sh
 LIBGL_ALWAYS_SOFTWARE=1 orca serve --port 6768 --pairing-address 192.0.2.10

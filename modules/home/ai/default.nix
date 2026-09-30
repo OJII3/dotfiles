@@ -23,6 +23,7 @@ in
     ./agy
     ./pi
     ./dsh
+    ./orca
   ];
 
   config = lib.mkIf cfg.enable {
