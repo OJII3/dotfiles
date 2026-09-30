@@ -53,6 +53,7 @@
       agy.enable = true;
       opencode.enable = true;
       dsh.enable = true;
+      orca.enable = true;
     };
 
     # Apps
