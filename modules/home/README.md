@@ -208,7 +208,7 @@ modules/home/
 Orca は GUI と CLI を同梱した Linux 向けパッケージです。`orca.enable` を有効にすると、Home Manager がユーザー systemd サービスをログイン時に起動します。サービスは `CloudflareWARP` の IPv4 アドレスを自動取得してペアリング先に使い、異常終了時は再起動します。Orca のパッケージには Xvfb も含まれています。
 
 ```sh
-journalctl --user -u orca.service -b --no-pager
+journalctl --user -b -g orca_server_ready --no-pager
 systemctl --user stop orca.service
 systemctl --user restart orca.service
 ```
