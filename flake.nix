@@ -58,6 +58,7 @@
       flake = false;
     };
     antigravity-nix.url = "github:jacopone/antigravity-nix";
+    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
     moonbit-overlay = {
       url = "github:moonbit-community/moonbit-overlay";
