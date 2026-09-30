@@ -53,6 +53,10 @@
       chatgpt.enable = true;
       orca.enable = true;
       dsh.enable = false;
+      t3code = {
+        enable = true;
+        backgroundService.enable = true;
+      };
     };
 
     apps = {
