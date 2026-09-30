@@ -1658,6 +1658,22 @@
         "type": "github"
       }
     },
+    "orca-tap": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790710878,
+        "narHash": "sha256-Srdgd0XljKSzA4xIvv++wE5I55YOSIG7Zve6DZ5iRbg=",
+        "owner": "stablyai",
+        "repo": "homebrew-orca",
+        "rev": "a6dd9b50ef8c70f0442ba7d7d90c022ec805bcd3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stablyai",
+        "repo": "homebrew-orca",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1730,6 +1746,7 @@
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
         "oculus-vr-tap": "oculus-vr-tap",
+        "orca-tap": "orca-tap",
         "proxmox-nixos": "proxmox-nixos",
         "sops-nix": "sops-nix"
       }
