@@ -36,7 +36,10 @@
       claude.enable = true;
       codex.enable = true;
       agy.enable = true;
-      t3code.enable = true;
+      t3code = {
+        enable = true;
+        backgroundService.enable = true;
+      };
       # opencode.enable = true;
     };
 

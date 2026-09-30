@@ -40,6 +40,10 @@
       enable = true;
       codex.enable = true;
       chatgpt.enable = true;
+      t3code = {
+        enable = true;
+        backgroundService.enable = true;
+      };
     };
 
     # Apps
