@@ -27,7 +27,7 @@ in
         Type = "simple";
         WorkingDirectory = config.home.homeDirectory;
         Environment = [ "T3CODE_HOME=${serviceHome}" ];
-        ExecStart = "${t3code}/bin/t3 serve";
+        ExecStart = "${t3code}/bin/t3 serve --host ${cfg.t3code.backgroundService.host} --port 3773";
         Restart = "on-failure";
         RestartSec = 5;
       };
@@ -41,6 +41,10 @@ in
         ProgramArguments = [
           "${t3code}/bin/t3"
           "serve"
+          "--host"
+          cfg.t3code.backgroundService.host
+          "--port"
+          "3773"
         ];
         EnvironmentVariables.T3CODE_HOME = serviceHome;
         WorkingDirectory = config.home.homeDirectory;

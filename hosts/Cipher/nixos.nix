@@ -59,7 +59,10 @@
     3080 # dsh
     49374 # opencode2
   ];
-  networking.firewall.interfaces.CloudflareWARP.allowedTCPPorts = [ 6768 ];
+  networking.firewall.interfaces.CloudflareWARP.allowedTCPPorts = [
+    6768 # orca
+    3773 # t3code
+  ];
 
   # Kernel
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
