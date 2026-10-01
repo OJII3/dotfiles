@@ -16,6 +16,8 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.t3code.enable) {
+    home.sessionVariables.T3CODE_HOME = serviceHome;
+
     home.packages = [
       t3code
       t3codeDesktop
