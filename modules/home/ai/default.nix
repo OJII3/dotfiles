@@ -23,7 +23,6 @@ in
     ./agy
     ./pi
     ./dsh
-    ./orca
     ./t3code
   ];
 

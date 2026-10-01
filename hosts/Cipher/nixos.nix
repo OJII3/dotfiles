@@ -60,7 +60,6 @@
     49374 # opencode2
   ];
   networking.firewall.interfaces.CloudflareWARP.allowedTCPPorts = [
-    6768 # orca
     3773 # t3code
   ];
 
