@@ -22,7 +22,6 @@ in
 
       sessionVariables = {
         PATH = "$HOME/.local/bin:$HOME/.cache/.bun/bin:$PATH";
-        T3CODE_HOME = "$HOME/.t3-service";
       };
 
       shellAliases = {
