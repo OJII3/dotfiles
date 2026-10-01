@@ -15,7 +15,7 @@
 ## Writing GitHub Actions
 
 - When writing github actions, check if all actions are no outdated versions. Consider using the latest versions. You should not skip checking even for basic actions like checkout.
-- When writing github actions, pin actions' version with its hash, not with tags. Adding an comment is recommended for readability.
+- Manage GitHub Actions dependencies with `gh actions-lock`. Use release refs such as `@v4` in workflows instead of manually pinning commit SHAs. Install the extension with `gh extension install github/gh-actions-lock` if needed, then run `gh actions-lock` after adding workflows or changing `uses` dependencies and commit `.github/workflows/actions.lock`. Run `gh actions-lock --relock` to update existing pins to the current upstream commits.
 
 ## Development Environment
 
