@@ -50,7 +50,6 @@
       claude.enable = true;
       codex.enable = true;
       chatgpt.enable = true;
-      orca.enable = true;
       agy.enable = true;
       opencode.enable = true;
       dsh.enable = true;

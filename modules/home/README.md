@@ -25,7 +25,7 @@ modules/home/
 ├── ai/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # claude, codex, chatgpt, opencode, antigravity, orca, t3code
+│   └── */           # claude, codex, chatgpt, opencode, antigravity, t3code
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
@@ -95,7 +95,6 @@ modules/home/
       chatgpt.enable = true;
       opencode.enable = true;
       agy.enable = true;
-      orca.enable = true;
       t3code = {
         enable = true;
         backgroundService.enable = true;
@@ -207,20 +206,9 @@ modules/home/
 | `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
 | `agy.enable` | Antigravity |
-| `orca.enable` | Orca AI orchestrator (Linux only) |
 | `t3code.enable` | T3 Code CLI and desktop app |
 | `t3code.backgroundService.enable` | T3 Code background service |
 | `t3code.backgroundService.host` | Background service bind address (default `127.0.0.1`) |
-
-Orca は GUI と CLI を同梱した Linux 向けパッケージです。`orca.enable` を有効にすると、Home Manager がユーザー systemd サービスをログイン時に起動します。サービスは `CloudflareWARP` の IPv4 アドレスを自動取得してペアリング先に使い、異常終了時は再起動します。Orca のパッケージには Xvfb も含まれています。
-
-```sh
-journalctl --user -b -g orca_server_ready --no-pager
-systemctl --user stop orca.service
-systemctl --user restart orca.service
-```
-
-起動時に出力されたペアリング URL は `journalctl` で確認できます。サービスは TCP `6768` を使います。WARP 経由で接続する端末も同じ Cloudflare Zero Trust 組織に登録してください。
 
 T3 Code は `llm-agents.nix` から CLI とデスクトップアプリを導入します。`t3code.backgroundService.enable` は macOS で LaunchAgent、Linux で systemd ユーザーサービスを作ります。サービスはデスクトップ内蔵サーバーと状態を共有しないよう `~/.t3-service` を使い、標準では `127.0.0.1:3773` で待ち受けます。Cipher では Cloudflare WARP インターフェースからの接続用に `3773/tcp` を許可します。サービス側の接続設定では `T3CODE_HOME="$HOME/.t3-service" t3 connect` を使ってください。起動サービスは Home Manager が管理するため、CLI 側のバックグラウンドサービス登録は選ばないでください。
 

@@ -51,7 +51,6 @@
       agy.enable = true;
       codex.enable = true;
       chatgpt.enable = true;
-      orca.enable = true;
       dsh.enable = false;
       t3code = {
         enable = true;
