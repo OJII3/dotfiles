@@ -33,7 +33,7 @@
     # Development
     dev = {
       enable = true;
-      mise.enable = true;
+      mise.enable = false;
     };
 
     ai = {

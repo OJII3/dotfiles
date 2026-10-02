@@ -43,7 +43,7 @@
     dev = {
       enable = true;
       jetbrains.enable = true;
-      mise.enable = true;
+      mise.enable = false;
     };
 
     ai = {
