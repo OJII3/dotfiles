@@ -370,7 +370,7 @@ workspace_names = [
 # By default there are no app rules; add or uncomment rules below as needed.
 app_rules = [
   { app_id = "com.google.Chrome", workspace = 1 },
-  { app_id = "org.nixos.T3 Code (Alpha)", workspace = 1 },
+  { app_id = "org.nixos.T3 Code (Alpha)", workspace = 2 },
   { app_id = "com.openai.codex", workspace = 2 },
   { app_id = "com.hnc.Discord", workspace = 3 },
   { app_name = "Unity", workspace = 4 },
