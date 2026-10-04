@@ -28,7 +28,10 @@ in
       Service = {
         Type = "simple";
         WorkingDirectory = config.home.homeDirectory;
-        Environment = [ "T3CODE_HOME=${serviceHome}" ];
+        Environment = [
+          "T3CODE_HOME=${serviceHome}"
+          "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+        ];
         ExecStart = "${t3code}/bin/t3 serve --host ${cfg.t3code.backgroundService.host} --port 3773";
         Restart = "on-failure";
         RestartSec = 5;
