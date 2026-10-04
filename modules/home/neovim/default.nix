@@ -78,7 +78,6 @@ in
         yaml-language-server
         yamlfmt
         yamllint
-        inputs.moonbit-overlay.packages.${pkgs.stdenv.hostPlatform.system}.latest
       ];
     };
 
