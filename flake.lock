@@ -1024,6 +1024,27 @@
         "type": "github"
       }
     },
+    "moonbit-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": "treefmt-nix_2"
+      },
+      "locked": {
+        "lastModified": 1790755937,
+        "narHash": "sha256-foDrxX1RyxDf/v82gIY7hS74pjMV89o4ZwIEbs1qUd0=",
+        "owner": "moonbit-community",
+        "repo": "moonbit-overlay",
+        "rev": "5da4de8ddf6cc392416530653deafec242745eca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moonbit-community",
+        "repo": "moonbit-overlay",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -1311,7 +1332,7 @@
         "nixpkgs": "nixpkgs_12",
         "nvfetcher": "nvfetcher",
         "systems": "systems_7",
-        "treefmt-nix": "treefmt-nix_2"
+        "treefmt-nix": "treefmt-nix_3"
       },
       "locked": {
         "lastModified": 1790999903,
@@ -1693,6 +1714,7 @@
         "hyprland": "hyprland",
         "hyprpolkitagent": "hyprpolkitagent",
         "llm-agents-nix": "llm-agents-nix",
+        "moonbit-overlay": "moonbit-overlay",
         "nix-darwin": "nix-darwin_2",
         "nix-homebrew": "nix-homebrew",
         "nix-on-droid": "nix-on-droid",
@@ -1925,6 +1947,27 @@
       }
     },
     "treefmt-nix_2": {
+      "inputs": {
+        "nixpkgs": [
+          "moonbit-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786901030,
+        "narHash": "sha256-WSFCsDSE5ffgD2MqzkM2CYjeFiKhRF/dJUN8uedb6YE=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "27b3b12a8e6375f28ebe122f07d230ca5459bbfa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "treefmt-nix_3": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs-xr",
