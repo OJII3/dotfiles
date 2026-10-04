@@ -11,6 +11,7 @@ let
   codexHome = "${config.home.homeDirectory}/.codex";
   codexConfigPath = "${codexHome}/config.toml";
   generateConfigScript = ./generate_config.sh;
+  herdr = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.herdr;
 in
 {
   config = lib.mkIf (cfg.enable && cfg.codex.enable) {
@@ -50,7 +51,7 @@ in
     home.activation.herdrCodexIntegration = lib.hm.dag.entryAfter [ "codexConfigGenerate" ] ''
       # config.toml is generated above, so run Herdr's installer afterward.
       CODEX_HOME=${lib.escapeShellArg codexHome} \
-        ${pkgs.herdr}/bin/herdr integration install codex
+        ${herdr}/bin/herdr integration install codex
     '';
   };
 }
