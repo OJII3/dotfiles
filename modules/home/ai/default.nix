@@ -14,15 +14,16 @@ let
 in
 {
   imports = [
-    ./options.nix
-    ./skills.nix
+    ./agy
+    ./chatgpt
     ./claude
     ./codex
-    ./chatgpt
-    ./opencode
-    ./agy
-    ./pi
     ./dsh
+    ./herdr
+    ./opencode
+    ./options.nix
+    ./pi
+    ./skills.nix
     ./t3code
   ];
 
@@ -35,7 +36,6 @@ in
         python3Packages.pyyaml
         bun
         uv
-        herdr
       ]
       ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isDarwin) [
         terminal-notifier
@@ -43,8 +43,6 @@ in
       ++ lib.lists.optionals (pkgs.stdenv.hostPlatform.isLinux) [
         libnotify
       ];
-
-    home.file.".config/herdr/config.toml".source = ./herdr/config.toml;
 
     programs.zsh.shellAliases = {
       "rm" = "gomi";

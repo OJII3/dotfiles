@@ -4,3 +4,6 @@ delivery = "system"
 [keys]
 navigate_workspace_down = "n"
 navigate_workspace_up = "p"
+
+[terminal]
+kitty_graphics = true
