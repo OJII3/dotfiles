@@ -369,7 +369,7 @@ workspace_names = [
 #
 # By default there are no app rules; add or uncomment rules below as needed.
 app_rules = [
-  { app_name = "Obsidian", workspace = 2, floating = true, size = { w = 1000, h = 600 } },
+  { app_name = "Obsidian", workspace = 2, floating = true, size = { w = 1200, h = 600 } },
   { app_id = "com.google.Chrome", workspace = 1 },
   { app_id = "org.nixos.T3 Code (Alpha)", workspace = 2 },
   { app_id = "com.openai.codex", workspace = 2 },
