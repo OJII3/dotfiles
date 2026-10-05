@@ -50,7 +50,7 @@
 
     gaming.minecraft.enable = true;
 
-    obsidian.enable = false;
+    obsidian.enable = true;
 
     desktop = {
       hammerspoon.enable = true;

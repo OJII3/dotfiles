@@ -8,11 +8,9 @@
 }:
 let
   cfg = config.dot.home.obsidian;
-  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
 in
 {
   config = lib.mkIf cfg.enable {
-    # Install Obsidian package (Linux only, macOS uses Homebrew cask)
-    home.packages = lib.mkIf (!isDarwin) [ pkgs.obsidian ];
+    home.packages = [ pkgs.obsidian ];
   };
 }

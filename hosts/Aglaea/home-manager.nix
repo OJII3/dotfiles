@@ -75,6 +75,7 @@
     bitwarden.enable = true;
     blenderLauncher.enable = true;
     network.enable = true;
+    obsidian.enable = true;
   };
 
   home.stateVersion = "26.05";
