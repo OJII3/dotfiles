@@ -468,10 +468,6 @@ comb1 = "AltRight + Shift"
 
 "AltRight + Tab" = "switch_to_last_workspace"
 
-# Toggle Obsidian from any workspace. It lives on workspace 0, so opening it
-# first switches there; pressing the shortcut again while Obsidian is active hides it.
-"AltRight + O" = { "exec" = ["/bin/bash", "-c", "if /usr/bin/osascript -e 'tell application \"System Events\" to get frontmost of process \"Obsidian\"' | /usr/bin/grep -q true; then /usr/bin/osascript -e 'tell application \"Obsidian\" to hide'; else rift-cli execute workspace switch 0; open -a Obsidian; fi"] }
-
 # commands to change the layout engine of the active workspace
 # "AltRight + Ctrl + 1" = { set_workspace_layout = { mode = "traditional" } }
 # "AltRight + Ctrl + 2" = { set_workspace_layout = { mode = "bsp" } }
