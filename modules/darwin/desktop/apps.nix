@@ -20,6 +20,7 @@ in
       "logi-options+"
       "moonlight"
       "obs"
+      "obsidian"
       "opencode-desktop"
       "parsec" # no hash
       "scroll-reverser" # broken nixpkgs package, but works with homebrew
