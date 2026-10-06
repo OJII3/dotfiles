@@ -4,6 +4,17 @@
     ../../modules/home
   ];
 
+  programs.ssh = {
+    enable = true;
+    settings."*" = {
+      IdentitiesOnly = "yes";
+      IdentityFile = "~/.ssh/gpg-agent.pub";
+    };
+  };
+
+  home.file.".ssh/gpg-agent.pub".text =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICirSl3nlg3z3VID3ondlBDy7teYu74pnRPFhvj2LfkH";
+
   dot.home = {
     # Shell & Editor
     zsh.enable = true;
