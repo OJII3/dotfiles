@@ -47,6 +47,13 @@
       claude.enable = true;
       codex.enable = true;
       agy.enable = true;
+      t3code = {
+        enable = true;
+        backgroundService = {
+          enable = true;
+          host = "100.96.0.10";
+        };
+      };
     };
 
     # Apps
