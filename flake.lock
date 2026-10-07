@@ -1687,6 +1687,27 @@
         "type": "github"
       }
     },
+    "openlogi": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay_2"
+      },
+      "locked": {
+        "lastModified": 1790942082,
+        "narHash": "sha256-i9rD1ZuMww8RbXaCgOzfv+4jM2lKemL4fPUUrqzgbyY=",
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "rev": "4863a45e256d80404b95232b513793cbccb5d6d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AprilNEA",
+        "repo": "OpenLogi",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1759,6 +1780,7 @@
         "nixpkgs-xr": "nixpkgs-xr",
         "nur": "nur",
         "oculus-vr-tap": "oculus-vr-tap",
+        "openlogi": "openlogi",
         "proxmox-nixos": "proxmox-nixos",
         "sops-nix": "sops-nix"
       }
@@ -1792,6 +1814,27 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "91e1f7a0017065360f447622d11b7ce6ed04772f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "openlogi",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1790756160,
+        "narHash": "sha256-NPs4nNLxCpho3Ctj8O7t/bzmX0zR8r0zndKghAFEz5U=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "ed3a19fd0439ed618ec5fe1e12f0ba69a8be38b5",
         "type": "github"
       },
       "original": {

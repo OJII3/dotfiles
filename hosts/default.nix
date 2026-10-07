@@ -98,6 +98,7 @@ in
       username = "ojii3";
       modules = [
         ./Aglaea/nixos.nix
+        inputs.openlogi.nixosModules.default
         inputs.nixpkgs-xr.nixosModules.nixpkgs-xr
       ];
     };
