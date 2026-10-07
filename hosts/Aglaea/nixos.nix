@@ -26,7 +26,7 @@
     desktop = {
       enable = true;
       gnome.enable = true;
-      power.serverLike = true;
+      # power.serverLike = true;
       fonts.enable = true;
       keyd.enable = true;
       sunshine.enable = true;
