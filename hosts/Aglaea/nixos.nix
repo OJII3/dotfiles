@@ -44,6 +44,8 @@
     };
   };
 
+  programs.openlogi.enable = true;
+
   # ===== Host-specific configuration =====
 
   # Kernel

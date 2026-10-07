@@ -19,6 +19,7 @@ in
       ++ (with pkgs.brewCasks; [
         spaceid
         fork
+        openlogi
       ]);
   };
 }
