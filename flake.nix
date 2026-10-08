@@ -54,8 +54,6 @@
       url = "github:acsandmann/homebrew-tap";
       flake = false;
     };
-    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/develop";
-    nixpkgs-ros.follows = "nix-ros-overlay/nixpkgs";
     confetti.url = "github:ojii3/confetti";
     anthropics-skills = {
       url = "github:anthropics/skills/main";

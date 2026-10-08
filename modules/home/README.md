@@ -125,7 +125,6 @@ modules/home/
     kdeconnect.enable = true;
     gnomeKeyring.enable = true;
     vr.enable = true;
-    ros2.enable = true;
   };
 }
 ```
@@ -149,7 +148,6 @@ modules/home/
 | `kdeconnect.enable` | KDE Connect |
 | `gnomeKeyring.enable` | GNOME Keyring |
 | `vr.enable` | VR サポート (OpenComposite) |
-| `ros2.enable` | ROS2 ロボティクスフレームワーク |
 
 ### Apps (`dot.home.apps.*`)
 

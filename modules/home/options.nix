@@ -132,10 +132,5 @@
         enable = lib.mkEnableOption "macOS-specific apps";
       };
     };
-
-    # ROS2
-    ros2 = {
-      enable = lib.mkEnableOption "ROS2 robotics framework";
-    };
   };
 }
