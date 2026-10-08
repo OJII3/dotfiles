@@ -27,7 +27,7 @@ in
 {
   config = lib.mkIf (cfg.enable && cfg.agy.enable) {
     home.packages = commonPackages ++ [
-      inputs.antigravity-nix.packages."${pkgs.stdenv.hostPlatform.system}".google-antigravity-cli
+      inputs.llm-agents-nix.packages."${pkgs.stdenv.hostPlatform.system}".antigravity-cli
     ];
 
     home.file.".gemini/antigravity-cli/AGENTS.md".source = ./AGENTS.md;
