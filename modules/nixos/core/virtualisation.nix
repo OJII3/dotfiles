@@ -1,5 +1,5 @@
 # Container runtimes: Podman / Docker.
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
   cfg = config.dot.core;
 in
@@ -11,6 +11,7 @@ in
         virtualisation.podman = {
           enable = true;
           dockerCompat = cfg.virtualisation.podman.dockerCompat;
+          extraPackages = [ pkgs.podman-compose ];
           defaultNetwork.settings.dns_enabled = true;
         };
       })
