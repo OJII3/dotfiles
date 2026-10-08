@@ -49,6 +49,9 @@ in
       };
 
       initContent = ''
+        if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+          source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+        fi
         zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
         ${builtins.readFile ./scripts/ghq-fzf.sh}
         ${builtins.readFile ./scripts/zellij.sh}
