@@ -26,6 +26,7 @@ in
     ./vr.nix
     ./waydroid.nix
     ./gnome.nix
+    ./virt-manager.nix
   ];
 
   # Base desktop configuration

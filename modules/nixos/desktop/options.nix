@@ -97,5 +97,9 @@
     bitwarden = {
       enable = lib.mkEnableOption "Bitwarden desktop password manager";
     };
+
+    virtManager = {
+      enable = lib.mkEnableOption "virt-manager with local QEMU/KVM support";
+    };
   };
 }

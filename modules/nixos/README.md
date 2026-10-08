@@ -77,6 +77,7 @@ modules/nixos/
 | `peripheral.keyboard.enable` | bool | `false` | Keychron キーボード udev ルール (VIA) |
 | `androidDev.enable` | bool | `false` | Android 開発ツール (adb, Meta Quest udev) |
 | `bitwarden.enable` | bool | `false` | Bitwarden Desktop |
+| `virtManager.enable` | bool | `false` | virt-manager とローカル QEMU/KVM (libvirt) |
 
 ### dot.hardware
 
