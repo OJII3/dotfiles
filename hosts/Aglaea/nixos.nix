@@ -32,6 +32,7 @@
       keyd.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
+      virtManager.enable = true;
       peripheral.keyboard.enable = true;
       androidDev.enable = true;
       bitwarden.enable = true;
