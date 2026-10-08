@@ -11,6 +11,14 @@
 
     gnome = {
       enable = lib.mkEnableOption "GNOME desktop environment (GDM + GNOME Shell)";
+
+      touchpad = {
+        topDeadZoneMm = lib.mkOption {
+          type = lib.types.ints.between 0 20;
+          default = 0;
+          description = "Ignore contacts starting within this distance of the keyboard-side edge on the Aglaea ThinkPad. 0 disables the filter.";
+        };
+      };
     };
 
     power = {

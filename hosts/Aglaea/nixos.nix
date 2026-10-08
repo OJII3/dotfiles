@@ -26,6 +26,7 @@
     desktop = {
       enable = true;
       gnome.enable = true;
+      gnome.touchpad.topDeadZoneMm = 5;
       # power.serverLike = true;
       fonts.enable = true;
       keyd.enable = true;
