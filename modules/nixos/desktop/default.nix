@@ -22,6 +22,7 @@ in
     ./peripheral.nix
     ./power.nix
     ./sunshine.nix
+    ./touchpad-area-filter.nix
     ./vr.nix
     ./waydroid.nix
     ./gnome.nix
