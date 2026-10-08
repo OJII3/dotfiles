@@ -21,16 +21,17 @@ See each directory's README for details:
 
 ## Hosts
 
-| Host | Type | Hardware | Configuration |
-|------|------|----------|---------------|
-| **Aglaea** | Desktop | ThinkPad E14 Gen 6 | NixOS + GNOME |
-| **Bronya** | Desktop | i5-13th + RTX 3060 | NixOS + Hyprland (decommissioned) |
+| Host | Type | Configuration |
+|------|------|---------------|
+| **Aglaea** (decommitioned) | Laptop | NixOS + Home Manager |
+| **Bronya** (decommitioned) | Desktop | NixOS + Home Manager |
 | **Cipher** | Server | GMKTec G3 | NixOS + AdGuard Home |
-| **Cyrene** | WSL | i5-13th + RTX 3060 | NixOS-WSL |
-| **Himeko** | Laptop | MacBook Pro M2 | nix-darwin |
-| **Lingsha** | Laptop | ThinkPad E14 Gen 6 | Ubuntu + Home Manager |
-| **Welt** | SBC | Raspberry Pi 4B | Raspberry Pi OS + Home Manager |
-| **SilverWolf** | Tablet | Xiaomi Pad 6s Pro | nix-on-droid |
+| **Cyrene** | WSL | NixOS-WSL + Home Manager |
+| **Evanescia** | Laptop | Ubuntu + Home Manager |
+| **Himeko** | MacBook | nix-darwin |
+| **Lingsha** | Desktop | Ubuntu + Home Manager |
+| **Welt** | Raspberry Pi 4B |  | Raspberry Pi OS + Home Manager |
+| **SilverWolf** | Android | nix-on-droid |
 
 ### State Versions
 
@@ -102,19 +103,3 @@ sops -e plaintext.json > encrypted.json
 # Decrypt to stdout
 sops -d assets/secrets/secrets.json
 ```
-
-## Favorite Apps & Tools
-
-- **Hyprland** - Wayland compositor (custom animations & workspace config)
-- **Neovim** - Lua-based config with LSP/DAP/Treesitter integration
-- **Zsh** - zinit + p10k, custom functions & aliases
-- **Ghostty** - GPU-accelerated terminal
-- **fcitx5 + SKK** - Japanese input (custom SKK dictionaries)
-- **keyd** - Key remapping (CapsLock → Ctrl/Esc)
-- **Waybar** - Status bar (custom CSS/modules)
-- **swaync** - Notification center
-- **anyrun** - App launcher
-- **mise** - Runtime version manager
-- **direnv** - Per-directory environment variables
-- **Tailscale** - Mesh VPN
-- **sops-nix** - Secrets management
