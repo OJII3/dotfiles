@@ -157,6 +157,12 @@ in
       overlays = [ ];
       modules = [ ./Feixiao/home-manager.nix ];
     };
+    "ojii3@Evanescia" = mkHomeManagerConfiguration {
+      system = "x86_64-linux";
+      username = "ojii3";
+      overlays = [ ];
+      modules = [ ./Evanescia/home-manager.nix ];
+    };
     "ojii3@Lingsha" = mkHomeManagerConfiguration {
       system = "x86_64-linux";
       username = "ojii3";
