@@ -61,8 +61,6 @@
       url = "github:anthropics/skills/main";
       flake = false;
     };
-    antigravity-nix.url = "github:jacopone/antigravity-nix";
-    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
     moonbit-overlay = {
       url = "github:moonbit-community/moonbit-overlay";
@@ -81,7 +79,6 @@
         "aarch64-darwin"
       ];
       darwinSystems = [
-        "x86_64-darwin"
         "aarch64-darwin"
       ];
     in
