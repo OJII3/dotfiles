@@ -1,5 +1,4 @@
 {
-  inputs,
   config,
   lib,
   pkgs,
@@ -80,11 +79,6 @@ in
           "--ozone-platform-hint=auto"
           "--enable-wayland-ime"
         ];
-      };
-      codexDesktopLinux = {
-        enable = true;
-        remoteMobileControl.enable = true;
-        remoteControl.enable = true;
       };
     };
 
