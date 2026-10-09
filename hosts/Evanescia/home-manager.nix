@@ -54,10 +54,10 @@
       opencode.enable = true;
       dsh.enable = true;
       t3code = {
-        enable = false;
+        enable = true;
         backgroundService = {
           enable = true;
-          host = "100.96.0.6";
+          host = "100.96.0.13";
         };
       };
     };
