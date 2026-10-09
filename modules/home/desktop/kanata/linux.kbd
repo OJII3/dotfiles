@@ -7,6 +7,11 @@
   spc
   muhenkan
   ralt
+  rctl
+  e
+  a
+  n
+  p
 )
 
 (defvar
@@ -19,6 +24,10 @@
   spc      (tap-hold-press $tap-time $hold-time spc lmet)
   muhenkan (tap-hold-press $tap-time $hold-time spc lmet)
   ralt     (tap-hold-press $tap-time $hold-time kana ralt)
+  e        (fork e (unmod (rctl) end) (rctl))
+  a        (fork a (unmod (rctl) home) (rctl))
+  n        (fork n (unmod (rctl) down) (rctl))
+  p        (fork p (unmod (rctl) up) (rctl))
 )
 
 (deflayer base
@@ -26,4 +35,9 @@
   @spc
   @muhenkan
   @ralt
+  rctl
+  @e
+  @a
+  @n
+  @p
 )
