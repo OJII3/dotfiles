@@ -68,6 +68,7 @@
     # Other
     bitwarden.enable = true;
     network.enable = true;
+    obsidian.enable = true;
   };
 
   targets.genericLinux = {
