@@ -16,6 +16,7 @@ in
     ./gnome
     ./hypr
     ./hyprland
+    ./kanata
     ./keyd
     ./options.nix
     ./swaync

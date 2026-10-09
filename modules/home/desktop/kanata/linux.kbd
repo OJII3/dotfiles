@@ -1,0 +1,43 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps
+  spc
+  muhenkan
+  ralt
+  rctl
+  e
+  a
+  n
+  p
+)
+
+(defvar
+  tap-time  200
+  hold-time 200
+)
+
+(defalias
+  caps     (tap-hold-press $tap-time $hold-time esc lctl)
+  spc      (tap-hold-press $tap-time $hold-time spc lmet)
+  muhenkan (tap-hold-press $tap-time $hold-time spc lmet)
+  ralt     (tap-hold-press $tap-time $hold-time kana ralt)
+  e        (fork e (unmod (rctl) end) (rctl))
+  a        (fork a (unmod (rctl) home) (rctl))
+  n        (fork n (unmod (rctl) down) (rctl))
+  p        (fork p (unmod (rctl) up) (rctl))
+)
+
+(deflayer base
+  @caps
+  @spc
+  @muhenkan
+  @ralt
+  rctl
+  @e
+  @a
+  @n
+  @p
+)
