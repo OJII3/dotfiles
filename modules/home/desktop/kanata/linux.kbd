@@ -1,0 +1,29 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps
+  spc
+  muhenkan
+  ralt
+)
+
+(defvar
+  tap-time  200
+  hold-time 200
+)
+
+(defalias
+  caps     (tap-hold-press $tap-time $hold-time esc lctl)
+  spc      (tap-hold-press $tap-time $hold-time spc lmet)
+  muhenkan (tap-hold-press $tap-time $hold-time spc lmet)
+  ralt     (tap-hold-press $tap-time $hold-time kana ralt)
+)
+
+(deflayer base
+  @caps
+  @spc
+  @muhenkan
+  @ralt
+)
