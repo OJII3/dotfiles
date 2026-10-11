@@ -29,6 +29,7 @@ in
 
       # utilities
       bat
+      bottom
       btop
       fastfetch
       fd
