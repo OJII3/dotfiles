@@ -30,6 +30,7 @@ See each directory's README for details:
 | **Evanescia** | Laptop | Ubuntu + Home Manager |
 | **Himeko** | MacBook | nix-darwin |
 | **Lingsha** | Desktop | Ubuntu + Home Manager |
+| **March7th** | | Ubuntu + Home Manager |
 | **Welt** | Raspberry Pi 4B |  | Raspberry Pi OS + Home Manager |
 | **SilverWolf** | Android | nix-on-droid |
 
