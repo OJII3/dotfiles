@@ -40,7 +40,7 @@
         enable = true;
         backgroundService = {
           enable = true;
-          host = "100.96.0.11";
+          host = "0.0.0.0";
         };
       };
       # opencode.enable = true;
