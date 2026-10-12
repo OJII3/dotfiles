@@ -38,7 +38,10 @@
       agy.enable = true;
       t3code = {
         enable = true;
-        backgroundService.enable = true;
+        backgroundService = {
+          enable = true;
+          host = "0.0.0.0";
+        };
       };
       # opencode.enable = true;
     };
