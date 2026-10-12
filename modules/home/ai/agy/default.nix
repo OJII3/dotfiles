@@ -30,7 +30,7 @@ in
       inputs.llm-agents-nix.packages."${pkgs.stdenv.hostPlatform.system}".antigravity-cli
     ];
 
-    home.file.".gemini/antigravity-cli/AGENTS.md".source = ./AGENTS.md;
+    home.file.".gemini/AGENTS.md".source = ./AGENTS.md;
 
     home.activation.agySettingsGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       PATH="${pkgs.ghq}/bin:${pkgs.git}/bin:${pkgs.jq}/bin:$PATH" \
