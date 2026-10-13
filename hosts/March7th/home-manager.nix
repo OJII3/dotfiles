@@ -4,6 +4,11 @@
     ../../modules/home
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    nvidia.acceptLicense = true;
+  };
+
   dot.home = {
     # Shell & Editor
     zsh.enable = true;
@@ -75,6 +80,12 @@
     enable = true;
     gpu = {
       enable = true;
+      nvidia = {
+        enable = true;
+        # Must match the NVIDIA driver version installed on Ubuntu.
+        version = "595.99.02";
+        sha256 = "sha256-6HR3lYv3YwcFSTJL1a1slI66btIQ5EAFs+/4SUD24ew=";
+      };
     };
   };
 
