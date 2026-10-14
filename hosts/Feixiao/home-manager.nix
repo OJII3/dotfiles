@@ -57,7 +57,6 @@
         enable = true;
         backgroundService = {
           enable = true;
-          host = "100.96.0.6";
         };
       };
     };
