@@ -207,9 +207,9 @@ modules/home/
 | `agy.enable` | Antigravity |
 | `t3code.enable` | T3 Code CLI and desktop app |
 | `t3code.backgroundService.enable` | T3 Code background service |
-| `t3code.backgroundService.host` | Background service bind address (default `127.0.0.1`) |
+| `t3code.backgroundService.host` | Background service bind address (default `0.0.0.0`) |
 
-T3 Code は `llm-agents.nix` から CLI とデスクトップアプリを導入します。`t3code.backgroundService.enable` は macOS で LaunchAgent、Linux で systemd ユーザーサービスを作ります。サービスはデスクトップ内蔵サーバーと状態を共有しないよう `~/.t3-service` を使い、標準では `127.0.0.1:3773` で待ち受けます。Cipher では Cloudflare WARP インターフェースからの接続用に `3773/tcp` を許可します。サービス側の接続設定では `T3CODE_HOME="$HOME/.t3-service" t3 connect` を使ってください。起動サービスは Home Manager が管理するため、CLI 側のバックグラウンドサービス登録は選ばないでください。
+T3 Code は `llm-agents.nix` から CLI とデスクトップアプリを導入します。`t3code.backgroundService.enable` は macOS で LaunchAgent、Linux で systemd ユーザーサービスを作ります。サービスはデスクトップ内蔵サーバーと状態を共有しないよう `~/.t3-service` を使い、標準では `0.0.0.0:3773` で待ち受けます。Cipher では Cloudflare WARP インターフェースからの接続用に `3773/tcp` を許可します。サービス側の接続設定では `T3CODE_HOME="$HOME/.t3-service" t3 connect` を使ってください。起動サービスは Home Manager が管理するため、CLI 側のバックグラウンドサービス登録は選ばないでください。
 
 ### Darwin (`dot.home.darwin.*`)
 
