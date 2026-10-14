@@ -1,5 +1,10 @@
 # Container runtimes: Podman / Docker.
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.dot.core;
 in
