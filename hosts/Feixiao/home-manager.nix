@@ -12,7 +12,6 @@
       enable = true;
       signing = {
         format = "ssh";
-        key = "~/.keys/git-signing";
       };
     };
     gpg = {

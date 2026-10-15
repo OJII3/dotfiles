@@ -1,6 +1,6 @@
 # Home Manager module options
 # All option definitions for dot.home.*
-{ lib, ... }:
+{ config, lib, ... }:
 {
   options.dot.home = {
     # Shell
@@ -27,7 +27,8 @@
         };
         key = lib.mkOption {
           type = lib.types.str;
-          default = "37547FAD690A6133";
+          default =
+            if config.dot.home.git.signing.format == "ssh" then "~/.keys/git-signing" else "37547FAD690A6133";
           description = "Git signing key";
         };
       };
