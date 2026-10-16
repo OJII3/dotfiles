@@ -10,6 +10,9 @@
     neovim.enable = true;
     git = {
       enable = true;
+      signing = {
+        format = "ssh";
+      };
     };
     gpg = {
       enable = true;
