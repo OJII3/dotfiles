@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "bunx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "mcp-deepwiki": {
+      "command": "bunx",
+      "args": ["-y", "mcp-deepwiki@latest"]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "$CONTEXT7_API_KEY",
+        "Accept": "application/json, text/event-stream"
+      }
+    },
+    "voicevox": {
+      "command": "bunx",
+      "args": ["@t09tanaka/mcp-simple-voicevox"]
+    }
+  }
+}

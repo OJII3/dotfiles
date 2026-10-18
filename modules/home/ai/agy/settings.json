@@ -2,13 +2,13 @@
   "$schema": "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/schemas/settings.schema.json",
   "permissions": {
     "allow": [
-      "read_file(/home/ojii3/src/github.com)"
+      "read_file(/home/ojii3/src/github.com)",
+      "read_file(/Users/ojii3/src/github.com)"
     ]
   },
   "trustedWorkspaces": [
     "/home/ojii3",
-    "/home/ojii3/src/github.com/ojii3/antiyachiviy",
-    "/home/ojii3/src/github.com/ojii3/dotfiles"
+    "/Users/ojii3"
   ],
   "security": {
     "auth": {
@@ -22,9 +22,6 @@
       "enabled": true,
       "maxAge": "1w"
     }
-  },
-  "context": {
-    "fileName": ["AGENTS.md"]
   },
   "ui": {
     "showStatusInTitle": true,
@@ -40,33 +37,8 @@
     "allowed": [
       "google_web_search",
       "run_shell_command(*)",
-      "mcp(*)",
-      "read_file(/home/ojii3/src/github.com/)"
+      "read_file(/home/ojii3/src/github.com/)",
+      "read_file(/Users/ojii3/src/github.com/)"
     ]
-  },
-  "mcpServers": {
-    "chrome-devtools": {
-      "command": "bunx",
-      "args": ["-y", "chrome-devtools-mcp@latest"]
-    },
-    "playwright": {
-      "command": "bunx",
-      "args": ["@playwright/mcp@latest"]
-    },
-    "mcp-deepwiki": {
-      "command": "bunx",
-      "args": ["-y", "mcp-deepwiki@latest"]
-    },
-    "context7": {
-      "httpUrl": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "$CONTEXT7_API_KEY",
-        "Accept": "application/json, text/event-stream"
-      }
-    },
-    "voicevox": {
-      "command": "bunx",
-      "args": ["@t09tanaka/mcp-simple-voicevox"]
-    }
   }
 }

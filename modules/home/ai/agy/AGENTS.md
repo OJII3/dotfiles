@@ -1,13 +1,5 @@
 # Basic Instructions
 
-## CLIについて
-
-- 文字列やファイルの検索には `grep` ではなく `rg` を使う。
-
-## ドキュメントについて
-
-- ドキュメントを参照する際は、各ツール・ライブラリのドキュメント用 MCP または Context7 MCP を使う。
-
 - Speak in Japanese.
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
@@ -98,4 +90,4 @@ When you finish a task:
 - Ensure all code is committed, pushed, and PRs are created.
 - Ensure all CI/CD pipelines pass.
 
-PR is always your goal create PR before being asked.
+Creating a PR is always your goal. Rreate a PR before being asked.

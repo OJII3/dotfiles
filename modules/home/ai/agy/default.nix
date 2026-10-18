@@ -31,6 +31,7 @@ in
     ];
 
     home.file.".gemini/AGENTS.md".source = ./AGENTS.md;
+    home.file.".gemini/config/mcp_config.json".source = ./mcp_config.json;
 
     home.activation.agySettingsGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       PATH="${pkgs.ghq}/bin:${pkgs.git}/bin:${pkgs.jq}/bin:$PATH" \
