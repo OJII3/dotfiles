@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ ... }:
 {
   imports = [
     ../../modules/home
@@ -61,7 +61,10 @@
     };
 
     # Apps
-    apps.linux.common.enable = true;
+    apps.linux = {
+      common.enable = true;
+      openlogi.enable = true;
+    };
 
     # Other
     bitwarden.enable = true;
@@ -81,6 +84,4 @@
   '';
 
   home.stateVersion = "26.05";
-
-  home.packages = [ inputs.openlogi.packages.${pkgs.system}.default ];
 }
