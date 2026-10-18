@@ -46,6 +46,7 @@
     };
 
     apps = {
+      bambuStudio.enable = true;
       common.enable = true;
       darwin.enable = true;
     };

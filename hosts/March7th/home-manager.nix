@@ -66,6 +66,7 @@
     };
 
     # Apps
+    apps.bambuStudio.enable = true;
     apps.linux.common.enable = true;
 
     # Other
