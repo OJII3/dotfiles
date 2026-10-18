@@ -153,6 +153,7 @@ modules/home/
 
 | オプション | 説明 |
 |-----------|------|
+| `bambuStudio.enable` | Bambu Studio (Linux / macOS) |
 | `common.enable` | クロスプラットフォームアプリ (JetBrains Toolbox, Slack, Postman 等) |
 | `linux.common.enable` | 一般的な Linux デスクトップアプリ (Discord, Blender, VLC 等) |
 | `linux.hyprland.enable` | Hyprland 専用アプリ (Nautilus, Evince 等) |

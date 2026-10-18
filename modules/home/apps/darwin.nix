@@ -18,7 +18,6 @@ in
       ]
       ++ (with pkgs.brewCasks; [
         spaceid
-        bambu-studio
         fork
         openlogi
       ]);

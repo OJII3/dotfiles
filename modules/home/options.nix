@@ -112,6 +112,9 @@
 
     # Apps
     apps = {
+      bambuStudio = {
+        enable = lib.mkEnableOption "Bambu Studio";
+      };
       # Cross-platform (macOS & Linux)
       common = {
         enable = lib.mkEnableOption "Common cross-platform apps (JetBrains Toolbox, Slack, etc.)";
