@@ -13,6 +13,7 @@ in
     home.packages = with pkgs; [
       # TODO: openldap ビルド失敗のため一時的に無効化
       # (bottles.override { removeWarningPopup = true; })
+      bambu-studio
       discord
       figma-linux
       gimp
