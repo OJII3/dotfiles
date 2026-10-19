@@ -22,6 +22,7 @@ in
       "obs"
       "opencode-desktop"
       "parsec" # no hash
+      "raycast"
       "scroll-reverser" # broken nixpkgs package, but works with homebrew
       "steam"
       "unity-hub"
