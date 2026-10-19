@@ -67,6 +67,7 @@
 
     # Apps
     apps.bambuStudio.enable = true;
+    apps.vicinae.enable = true;
     apps.linux.common.enable = true;
 
     # Other
