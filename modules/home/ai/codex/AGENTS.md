@@ -90,4 +90,4 @@ When you finish a task:
 - Ensure all code is committed, pushed, and PRs are created.
 - Ensure all CI/CD pipelines pass.
 
-PR is always your goal create PR before being asked.
+Creating a PR is always your goal. Rreate a PR before being asked.
