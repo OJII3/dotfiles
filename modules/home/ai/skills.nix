@@ -10,7 +10,6 @@
 #     skillDirs には含めない。
 {
   inputs,
-  pkgs,
   lib,
   config,
   ...
@@ -31,6 +30,7 @@ let
   skillDirs = {
     claude = ".claude/skills";
     codex = ".codex/skills";
+    agy = ".gemini/config/skills";
     pi = ".pi/agent/skills";
   };
 
@@ -43,7 +43,7 @@ let
     map (name: {
       inherit name;
       src = localSkillsDir + "/${name}";
-      tools = if name == "ghpm" then [ "codex" ] else attrNames skillDirs;
+      tools = attrNames skillDirs;
     }) (subdirsOf localSkillsDir)
   );
 
