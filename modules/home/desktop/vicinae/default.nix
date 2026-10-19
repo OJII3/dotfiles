@@ -3,8 +3,7 @@ let
   cfg = config.dot.home.desktop;
 in
 {
-  # vicinae is used with gnome
-  config = lib.mkIf cfg.gnome.enable {
+  config = lib.mkIf (cfg.gnome.enable || cfg.vicinae.enable) {
     programs.vicinae = {
       enable = true;
       systemd = {
