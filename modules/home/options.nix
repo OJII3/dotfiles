@@ -130,14 +130,6 @@
         gnome = {
           enable = lib.mkEnableOption "GNOME-specific apps";
         };
-        openlogi = {
-          enable = lib.mkEnableOption "OpenLogi Logitech device manager";
-          launchAtLogin = lib.mkOption {
-            type = lib.types.bool;
-            default = true;
-            description = "Whether to start the OpenLogi agent with graphical sessions.";
-          };
-        };
       };
       # macOS-specific apps
       darwin = {

@@ -63,7 +63,6 @@
     # Apps
     apps.linux = {
       common.enable = true;
-      openlogi.enable = true;
     };
 
     # Other
