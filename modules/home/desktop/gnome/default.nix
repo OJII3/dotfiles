@@ -7,6 +7,7 @@
 }:
 let
   cfg = config.dot.home.desktop;
+  vicinaeEnabled = config.dot.home.apps.vicinae.enable;
 in
 {
   config = lib.mkIf cfg.gnome.enable {
@@ -30,9 +31,9 @@ in
           { package = ext.kimpanel; }
           # { package = ext.tailscale-status; }
           { package = ext.color-picker; }
-          { package = ext.vicinae; }
           { package = inputs.confetti.packages.${pkgs.stdenv.hostPlatform.system}.gnome-extension; }
-        ];
+        ]
+        ++ lib.optionals vicinaeEnabled [ { package = ext.vicinae; } ];
     };
 
     dconf.settings = {
@@ -69,14 +70,16 @@ in
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
-        ];
+        ]
+        ++ lib.optional vicinaeEnabled "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "Launch Terminal";
         command = "ghostty";
         binding = "<Super>Return";
       };
+    }
+    // lib.optionalAttrs vicinaeEnabled {
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
         name = "Launch Vicinae";
         command = "vicinae toggle";

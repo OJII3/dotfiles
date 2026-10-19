@@ -33,10 +33,6 @@
       enable = lib.mkEnableOption "GNOME desktop configuration";
     };
 
-    vicinae = {
-      enable = lib.mkEnableOption "Vicinae launcher";
-    };
-
     power = {
       serverLike = lib.mkEnableOption "server-like desktop power behavior";
     };

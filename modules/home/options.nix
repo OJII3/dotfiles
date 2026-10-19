@@ -112,6 +112,9 @@
 
     # Apps
     apps = {
+      vicinae = {
+        enable = lib.mkEnableOption "Vicinae launcher";
+      };
       bambuStudio = {
         enable = lib.mkEnableOption "Bambu Studio";
       };

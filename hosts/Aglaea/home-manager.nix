@@ -57,6 +57,7 @@
     };
 
     apps = {
+      vicinae.enable = true;
       common.enable = true;
       linux = {
         common.enable = true;
