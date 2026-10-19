@@ -22,7 +22,6 @@ in
     ./swaync
     ./theme.nix
     ./uwsm
-    ./vicinae
     ./waybar
     ./wlogout
     ./xremap

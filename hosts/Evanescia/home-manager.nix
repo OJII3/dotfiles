@@ -24,12 +24,13 @@
     # Desktop
     desktop = {
       enable = true;
-      vicinae.enable = true;
       fcitx5.enable = true;
       kanata.enable = true;
       theme.enable = true;
       browser.vivaldi.enable = true;
     };
+
+    apps.vicinae.enable = true;
 
     # Terminal
     terminal = {
