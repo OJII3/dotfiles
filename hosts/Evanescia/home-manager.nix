@@ -24,6 +24,7 @@
     # Desktop
     desktop = {
       enable = true;
+      vicinae.enable = true;
       fcitx5.enable = true;
       kanata.enable = true;
       theme.enable = true;
