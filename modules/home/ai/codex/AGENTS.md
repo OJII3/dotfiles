@@ -16,6 +16,7 @@
 ## Development Environment
 
 - Most repositories have nix devShell (flake.nix) and direnv.
+- When starting a nearly empty new project, consider using flake-parts to create its `flake.nix`.
 - If there is a missing cli or utility tools, try using direnv or nix-develop.
 
 ---
