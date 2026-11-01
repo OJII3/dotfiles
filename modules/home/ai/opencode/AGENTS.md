@@ -5,12 +5,8 @@
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
 - If you expect the changes to be large, delegate the task to a subagent to avoid losing main context. If you are not sure, ask for confirmation.
-
-## Tool Calling
-
-- Avoid using absolute path when calling tools like opencode-builtin `read`, `glob` and `grep`. Relative path `.` can be used in these cases.
-- When you got error with missing file or directory, you should check not only cwd and ls but also (absolute/relative) path construction.
-- Using `~` may cause unexpected failure, due to opencode's specifications.
+- When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
+- When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
 
 ## Writing GitHub Actions
 
@@ -20,11 +16,13 @@
 ## Development Environment
 
 - Most repositories have nix devShell (flake.nix) and direnv.
+- When starting a nearly empty new project, consider using flake-parts to create its `flake.nix`.
+- When adding a `flake.nix`, add `.envrc` and `.direnv/` to `.gitignore`.
 - If there is a missing cli or utility tools, try using direnv or nix-develop.
 
 ---
 
-# Karpathy Guidelines
+# Karpathy Guidelines (ojii3 edition)
 
 Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
@@ -86,7 +84,7 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
 
-## 5. Finishing Jobs (added by User)
+## 5. Finishing Jobs
 
 **Don't leave work half-done.**
 
@@ -94,3 +92,5 @@ When you finish a task:
 - Ensure all tests or validations pass.
 - Ensure all code is committed, pushed, and PRs are created.
 - Ensure all CI/CD pipelines pass.
+
+Creating a PR is always your goal. Rreate a PR before being asked.
