@@ -103,7 +103,7 @@ When a task changes code or repository state, end your reply with this block:
 - **Verified**: <command and result, or "not run: <reason>">
 - **PR**: [#<number>](<url>), or "none: <reason>"
 - **PR status**: <draft | open | merged | closed>, or "none: <reason>"
-- **CI**: <pass | fail | running | not configured>
+- **CI**: <k/n passed>, or "not configured" if no checks exist
 
 Rules:
 - Never report a check you did not run as passing.
