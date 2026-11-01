@@ -107,6 +107,8 @@ When a task changes code or repository state, end your reply with this block:
 
 確認したことを箇条書きで
 
+## 状態
+
 - **branch**: <head branch name>, or "なし: <reason>"
 - **PR**: [#<number> <title>](<url>), or "なし: <reason>"
 - **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
