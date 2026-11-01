@@ -94,3 +94,15 @@ When you finish a task:
 - Ensure all CI/CD pipelines pass.
 
 Creating a PR is always your goal. Rreate a PR before being asked.
+
+## Completion Report
+
+When a task changes code or repository state, end your reply with this block:
+
+- **Verified**: <lint, format, tests, and other behavior checks, with results>
+- **PR**: [#<number> <title>](<url>), or "なし: <reason>"
+- **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
+- **checks**: <k/n passed>, or "なし" if no checks exist
+
+Rules:
+- Skip this block for Q&A or investigation-only replies.
