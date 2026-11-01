@@ -94,3 +94,17 @@ When you finish a task:
 - Ensure all CI/CD pipelines pass.
 
 Creating a PR is always your goal. Rreate a PR before being asked.
+
+## Completion Report
+
+When a task changes code or repository state, end your reply with this block:
+
+変更: <what changed, one line>
+検証: <command and result, or "not run: <reason>">
+PR: [#<number>](<url>), or "none: <reason>">
+
+Rules:
+- Never report a check you did not run as passing.
+- Do not omit fields; write `none` or `not run: <reason>` explicitly.
+- Keep each field to one line. Put details above the block.
+- Skip this block for Q&A or investigation-only replies.
