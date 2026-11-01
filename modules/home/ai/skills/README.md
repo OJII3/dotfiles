@@ -19,3 +19,4 @@ Home Manager で各 AI ツールのスキルディレクトリに配置する Ag
 |-------|--------|-------|
 | `missing-tools` | [ryoppippi/dotfiles `agents/skills/missing-tools/SKILL.md`](https://github.com/ryoppippi/dotfiles/blob/31766ba36dd3d7cbad1deb7270f5ba0e56e06e2d/agents/skills/missing-tools/SKILL.md) | Missing CLI tools をグローバルインストールせず、`direnv` / comma / `nix run` / `nix shell` で解決する workflow。 |
 | `stop-ai-slop-jp` | [iKora128/stop-ai-slop-jp](https://github.com/iKora128/stop-ai-slop-jp) | 日本語の文章からAI臭を取り除く Claude Skill |
+| `latex-to-typst` | [christopherkenny/skills `skills/latex-to-typst`](https://github.com/christopherkenny/skills/tree/main/skills/latex-to-typst) | LaTeX (.tex) を Typst (.typ) へ変換するリファレンス集。MIT (LICENSE 同梱)。[brycewang-stanford/Auto-Empirical-Research-Skills](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills) 経由で入手。 |
