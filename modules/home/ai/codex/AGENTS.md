@@ -105,7 +105,4 @@ When a task changes code or repository state, end your reply with this block:
 - **checks**: <k/n passed>, or "なし" if no checks exist
 
 Rules:
-- Never report a check you did not run as passing.
-- Do not omit fields; write `none`, `なし`, or `not run: <reason>` explicitly.
-- Keep each field to one line. Put details above the block.
 - Skip this block for Q&A or investigation-only replies.
