@@ -101,7 +101,7 @@ When a task changes code or repository state, end your reply with this block:
 
 - **Verified**: <lint, format, tests, and other behavior checks, with results>
 - **PR**: [#<number>](<url>), or "none: <reason>"
-- **PR status**: <draft | open | merged | closed>, or "none: <reason>"
+- **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
 - **CI**: <k/n passed>, or "not configured" if no checks exist
 
 Rules:
