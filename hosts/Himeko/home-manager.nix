@@ -33,9 +33,10 @@
 
     ai = {
       enable = true;
-      claude.enable = true;
+      claude.enable = false;
       codex.enable = true;
       agy.enable = true;
+      opencode.enable = true;
       t3code = {
         enable = true;
         backgroundService = {
