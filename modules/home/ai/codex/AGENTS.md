@@ -99,8 +99,7 @@ Creating a PR is always your goal. Rreate a PR before being asked.
 
 When a task changes code or repository state, end your reply with this block:
 
-- **Changed**: <what changed, one line>
-- **Verified**: <command and result, or "not run: <reason>">
+- **Verified**: <lint, format, tests, and other behavior checks, with results>
 - **PR**: [#<number>](<url>), or "none: <reason>"
 - **PR status**: <draft | open | merged | closed>, or "none: <reason>"
 - **CI**: <k/n passed>, or "not configured" if no checks exist
