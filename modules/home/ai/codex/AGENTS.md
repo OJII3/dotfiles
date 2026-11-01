@@ -100,12 +100,12 @@ Creating a PR is always your goal. Rreate a PR before being asked.
 When a task changes code or repository state, end your reply with this block:
 
 - **Verified**: <lint, format, tests, and other behavior checks, with results>
-- **PR**: [#<number> <title>](<url>), or "none: <reason>"
+- **PR**: [#<number> <title>](<url>), or "なし: <reason>"
 - **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
-- **checks**: <k/n passed>, or "not configured" if no checks exist
+- **checks**: <k/n passed>, or "なし" if no checks exist
 
 Rules:
 - Never report a check you did not run as passing.
-- Do not omit fields; write `none` or `not run: <reason>` explicitly.
+- Do not omit fields; write `none`, `なし`, or `not run: <reason>` explicitly.
 - Keep each field to one line. Put details above the block.
 - Skip this block for Q&A or investigation-only replies.
