@@ -5,6 +5,7 @@
 - Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
 - If you expect the changes to be large, delegate the task to a subagent to avoid losing main context. If you are not sure, ask for confirmation.
+- When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
 - When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
 
 ## Writing GitHub Actions
@@ -15,6 +16,8 @@
 ## Development Environment
 
 - Most repositories have nix devShell (flake.nix) and direnv.
+- When starting a nearly empty new project, consider using flake-parts to create its `flake.nix`.
+- When adding a `flake.nix`, add `.envrc` and `.direnv/` to `.gitignore`.
 - If there is a missing cli or utility tools, try using direnv or nix-develop.
 
 ---
@@ -91,3 +94,16 @@ When you finish a task:
 - Ensure all CI/CD pipelines pass.
 
 Creating a PR is always your goal. Rreate a PR before being asked.
+
+## Completion Report
+
+When a task changes code or repository state, end your reply with this block:
+
+- **Verified**: <lint, format, tests, and other behavior checks, with results>
+- **branch**: <head branch name>, or "なし: <reason>"
+- **PR**: [#<number> <title>](<url>), or "なし: <reason>"
+- **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
+- **checks**: <k/n passed>, or "なし" if no checks exist
+
+Rules:
+- Skip this block for Q&A or investigation-only replies.

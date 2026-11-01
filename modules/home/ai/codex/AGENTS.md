@@ -100,6 +100,7 @@ Creating a PR is always your goal. Rreate a PR before being asked.
 When a task changes code or repository state, end your reply with this block:
 
 - **Verified**: <lint, format, tests, and other behavior checks, with results>
+- **branch**: <head branch name>, or "なし: <reason>"
 - **PR**: [#<number> <title>](<url>), or "なし: <reason>"
 - **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
 - **checks**: <k/n passed>, or "なし" if no checks exist
