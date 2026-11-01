@@ -7,7 +7,9 @@ Home Manager installs a proxy and its `localharness_external` sidecar at:
 ```
 
 After activating Home Manager, set Antigravity's **Binary path** in T3 Code to
-`~/.local/lib/agy-acp-rules-proxy/agy-acp-rules-proxy`. Then start a new thread.
+the absolute path `/home/ojii3/.local/lib/agy-acp-rules-proxy/agy-acp-rules-proxy`
+(adjust the home directory for your machine). T3 does not expand `~` in this
+setting. Then start a new thread.
 
 The proxy forwards ACP traffic to T3's active managed server and prepends
 `~/.gemini/AGENTS.md` to the first `session/prompt` for each session. ACP has no
