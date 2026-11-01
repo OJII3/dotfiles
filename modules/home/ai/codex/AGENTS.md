@@ -99,9 +99,11 @@ Creating a PR is always your goal. Rreate a PR before being asked.
 
 When a task changes code or repository state, end your reply with this block:
 
-- 変更: <what changed, one line>
-- 検証: <command and result, or "not run: <reason>">
-- PR: [#<number>](<url>), or "none: <reason>">
+- **Changed**: <what changed, one line>
+- **Verified**: <command and result, or "not run: <reason>">
+- **PR**: [#<number>](<url>), or "none: <reason>"
+- **PR status**: <draft | open | merged | closed>, or "none: <reason>"
+- **CI**: <pass | fail | running | not configured>
 
 Rules:
 - Never report a check you did not run as passing.
