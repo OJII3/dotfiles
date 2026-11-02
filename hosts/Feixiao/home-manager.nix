@@ -27,7 +27,7 @@
       fcitx5.enable = true;
       keyd.enable = true;
       theme.enable = true;
-      browser.vivaldi.enable = true;
+      browser.vivaldi.enable = false;
     };
 
     # Terminal
@@ -39,9 +39,9 @@
     # Development
     dev = {
       enable = true;
-      jetbrains.enable = true;
+      jetbrains.enable = false;
       mise.enable = false;
-      zellij.enable = true;
+      zellij.enable = false;
     };
 
     ai = {
@@ -51,7 +51,7 @@
       chatgpt.enable = true;
       agy.enable = true;
       opencode.enable = true;
-      dsh.enable = true;
+      dsh.enable = false;
       t3code = {
         enable = true;
         backgroundService = {

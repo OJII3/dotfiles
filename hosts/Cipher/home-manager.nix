@@ -12,7 +12,6 @@
       enable = true;
       signing = {
         format = "ssh";
-        key = "~/.ssh/id_ed25519.pub";
       };
     };
     gpg = {
@@ -24,25 +23,23 @@
 
     # Terminal
     terminal = {
-      enable = true;
-      ghostty.enable = true;
+      enable = false;
     };
 
     # Development
     dev = {
       enable = true;
-      vscode.enable = true;
-      mise.enable = true;
-      zellij.enable = true;
+      mise.enable = false;
+      zellij.enable = false;
     };
 
     ai = {
       enable = true;
-      claude.enable = true;
+      claude.enable = false;
       codex.enable = true;
       agy.enable = true;
       opencode.enable = true;
-      dsh.enable = true;
+      dsh.enable = false;
       t3code = {
         enable = true;
         backgroundService = {
@@ -51,10 +48,19 @@
       };
     };
 
+    apps.linux.common.enable = true;
+
     # Other
     network.enable = true;
-    gnomeKeyring.enable = true;
-    kdeconnect.enable = true;
+    gnomeKeyring.enable = false;
+    kdeconnect.enable = false;
+  };
+
+  targets.genericLinux = {
+    enable = true;
+    gpu = {
+      enable = false;
+    };
   };
 
   home.stateVersion = "26.05";
