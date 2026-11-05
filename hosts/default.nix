@@ -26,6 +26,9 @@ let
         inherit system overlays;
         config = {
           allowUnfree = true;
+          # fcitx5-gtk の gtk2-immodule.cache が gtk2 (broken 扱い) を参照するため、
+          # gtk2 が削除される NixOS 27.05 までは警告に留める。
+          problems.handlers."gtk+".broken = "warn";
         };
       };
       extraSpecialArgs = {
@@ -34,6 +37,7 @@ let
           inherit system overlays;
           config = {
             allowUnfree = true;
+            problems.handlers."gtk+".broken = "warn";
           };
         };
       };
