@@ -950,6 +950,23 @@
         "type": "github"
       }
     },
+    "moonbit-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793599671,
+        "narHash": "sha256-7InAl5wcg/sviVnrlb6c1mHBlOa7rhfv4r1pjL9dpxI=",
+        "owner": "moonbitlang",
+        "repo": "skills",
+        "rev": "321f9b7effe4667a478032895ff7f4a5755f56f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "moonbitlang",
+        "ref": "master",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -1590,6 +1607,7 @@
         "hyprpolkitagent": "hyprpolkitagent",
         "llm-agents-nix": "llm-agents-nix",
         "moonbit-overlay": "moonbit-overlay",
+        "moonbit-skills": "moonbit-skills",
         "nix-darwin": "nix-darwin_2",
         "nix-homebrew": "nix-homebrew",
         "nix-on-droid": "nix-on-droid",

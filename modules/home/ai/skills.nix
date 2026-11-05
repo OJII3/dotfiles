@@ -89,7 +89,25 @@ let
       src = inputs.anthropics-skills;
       baseDir = "skills/xlsx";
     }
-  ];
+  ]
+  ++
+    map
+      (name: {
+        inherit name;
+        src = inputs.moonbit-skills;
+        baseDir = "skills/${name}";
+      })
+      [
+        "make-moonbit-c-bindings"
+        "moonbit-agent-guide"
+        "moonbit-c-binding"
+        "moonbit-extract-spec-test"
+        "moonbit-orientation"
+        "moonbit-proof"
+        "moonbit-refactoring"
+        "moonbit-spec-test-development"
+        "ocaml2moonbit-migration"
+      ];
 
   allSkills = localSkills ++ remoteSkills;
 

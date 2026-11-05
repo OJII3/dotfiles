@@ -59,6 +59,10 @@
       url = "github:anthropics/skills/main";
       flake = false;
     };
+    moonbit-skills = {
+      url = "github:moonbitlang/skills/master";
+      flake = false;
+    };
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
     moonbit-overlay = {
       url = "github:moonbit-community/moonbit-overlay";
