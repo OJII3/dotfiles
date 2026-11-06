@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -8,7 +9,11 @@ let
   cfg = config.dot.home.desktop;
 in
 {
+  imports = [ inputs.nix-hazkey.homeModules.hazkey ];
+
   config = lib.mkIf cfg.fcitx5.enable {
+    services.hazkey.enable = true;
+
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";
