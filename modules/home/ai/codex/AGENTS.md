@@ -97,8 +97,9 @@ Creating a PR is always your goal. Rreate a PR before being asked.
 
 ## Completion Report
 
-When a task changes code or repository state, end your reply with this block:
+When a task changes code or repository state, end your reply with the block below. Skip this block for Q&A or investigation-only replies.
 
+```markdown
 ## 変更内容
 
 変更内容を箇条書きで
@@ -113,6 +114,4 @@ When a task changes code or repository state, end your reply with this block:
 - **PR**: [#<number> <title>](<url>), or "なし: <reason>"
 - **merge status**: <mergeable | blocked | merged | closed>, or "none: <reason>"
 - **checks**: <k/n passed>, or "なし" if no checks exist
-
-Rules:
-- Skip this block for Q&A or investigation-only replies.
+```
