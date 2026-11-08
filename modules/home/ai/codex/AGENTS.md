@@ -8,6 +8,17 @@
 - When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
 - When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
 
+## Writing Japanese
+
+- 一文一義。読点で節を繋げず、文を分ける。
+- 主語は人間に置く。「課題が浮き彫りになる」のように、モノに人間の動詞をさせない。
+- 見出しは名詞句にする。「○○は△△だ」という主張を見出しにしない。
+- 言い切れることは言い切る。「〜と考えられます」「〜と言えるでしょう」で濁さない。
+- 「〜することができます」は「〜できる」に、「〜という」の連発は削る。
+- 全角ダッシュ ──、全角の英数字、中黒での3項並列、装飾絵文字、`**` の残骸を残さない。
+- 「です・ます」と「だ・である」を混ぜない。文書内でどちらかに統一する。
+- 箇条書きは文末表現を揃える。「〜する」と体言止めを混ぜない。
+
 ## Writing GitHub Actions
 
 - When writing github actions, check if all actions are no outdated versions. Consider using the latest versions. You should not skip checking even for basic actions like checkout.
