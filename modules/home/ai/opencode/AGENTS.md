@@ -95,7 +95,7 @@ When you finish a task:
 
 Creating a PR is always your goal. Rreate a PR before being asked.
 
-## Completion Report
+### Completion Report
 
 When a task changes code or repository state, end your reply with the block below. Skip this block for Q&A or investigation-only replies.
 
