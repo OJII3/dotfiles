@@ -107,6 +107,20 @@ let
         "moonbit-refactoring"
         "moonbit-spec-test-development"
         "ocaml2moonbit-migration"
+      ]
+  ++
+    map
+      (name: {
+        inherit name;
+        src = inputs.wandb-skills;
+        baseDir = "skills/${name}";
+      })
+      [
+        "agentlens-tracing-instrument"
+        "wandb-autoresearch"
+        "wandb-eval-tables"
+        "wandb-primary"
+        "weave-instrument"
       ];
 
   allSkills = localSkills ++ remoteSkills;

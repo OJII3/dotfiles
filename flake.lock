@@ -1644,7 +1644,8 @@
         "oculus-vr-tap": "oculus-vr-tap",
         "openlogi": "openlogi",
         "proxmox-nixos": "proxmox-nixos",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "wandb-skills": "wandb-skills"
       }
     },
     "rust-overlay": {
@@ -1877,6 +1878,23 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "wandb-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1793988303,
+        "narHash": "sha256-IUMyTXXTNHFUlp1SYPpTfOBXyTTDTsCf0eSA1NpdkFM=",
+        "owner": "wandb",
+        "repo": "skills",
+        "rev": "10aac21c75e7bced8fb5dd760e49e7d0ff0f87dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wandb",
+        "ref": "main",
+        "repo": "skills",
         "type": "github"
       }
     },
