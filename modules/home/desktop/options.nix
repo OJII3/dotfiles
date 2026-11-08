@@ -37,10 +37,6 @@
       serverLike = lib.mkEnableOption "server-like desktop power behavior";
     };
 
-    keyd = {
-      enable = lib.mkEnableOption "Keyd key remapping (Home Manager)";
-    };
-
     xremap = {
       enable = lib.mkEnableOption "Xremap key remapping";
     };

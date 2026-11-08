@@ -172,7 +172,6 @@ modules/home/
 | `swaync.enable` | SwayNC 通知センター |
 | `wlogout.enable` | Wlogout ログアウトメニュー |
 | `fcitx5.enable` | Fcitx5 入力メソッド |
-| `keyd.enable` | Keyd キーリマッピング |
 | `kanata.enable` | Kanata キーリマッピング (Linux) |
 | `xremap.enable` | Xremap キーリマッピング |
 | `theme.enable` | デスクトップテーマ |

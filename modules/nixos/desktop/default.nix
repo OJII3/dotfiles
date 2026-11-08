@@ -18,7 +18,6 @@ in
     ./gaming.nix
     ./greetd.nix
     ./hyprland.nix
-    ./keyd.nix
     ./peripheral.nix
     ./power.nix
     ./sunshine.nix

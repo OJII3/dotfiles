@@ -66,7 +66,6 @@ modules/nixos/
 | `flatpak.enable` | bool | `false` | Flatpak サポート |
 | `sunshine.enable` | bool | `false` | Sunshine リモートデスクトップ |
 | `waydroid.enable` | bool | `false` | Waydroid Android コンテナ |
-| `keyd.enable` | bool | `false` | keyd キーリマッピング |
 | `gaming.enable` | bool | `false` | ゲーミングサポート |
 | `gaming.steam.enable` | bool | `true` | Steam (gaming 有効時) |
 | `gaming.vr.enable` | bool | `false` | VR サポート (Monado) |
