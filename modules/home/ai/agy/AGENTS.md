@@ -8,7 +8,9 @@
 - When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
 - When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
 
-## Writing Japanese
+## Writing Japanese Document
+
+When writing research documents or Japanese documentation in a repository, keep the following rules in mind.
 
 - はじめに文書の目的と読み手を想定する。それにより、内容、粒度、文体、専門用語の多さなどが変わる。何を書かないかが重要である。
 - 箇条書きブロック直前の行末にコロンを置くのは避ける。
