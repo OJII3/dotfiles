@@ -46,8 +46,7 @@ in
     programs.opencode = {
       enable = true;
       context = ./AGENTS.md;
-      package =
-        if config.dot.home.sops.enable then opencode2Langfuse else opencode2;
+      package = if config.dot.home.sops.enable then opencode2Langfuse else opencode2;
     };
     home.file.".config/opencode/opencode.jsonc".source = ./opencode.jsonc;
     home.file.".config/opencode/tui.jsonc".source = ./tui.jsonc;
