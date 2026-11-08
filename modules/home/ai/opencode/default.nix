@@ -54,5 +54,6 @@ in
       source = ./agents;
       recursive = true;
     };
+    home.file.".config/opencode/plugins/langfuse-usage.ts".source = ./plugins/langfuse-usage.ts;
   };
 }
