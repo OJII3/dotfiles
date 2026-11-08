@@ -12,6 +12,7 @@
   a
   n
   p
+  h
 )
 
 (defvar
@@ -28,6 +29,7 @@
   a        (switch ((input real caps) (input real rctl)) (unmod home) break () a break)
   n        (switch ((input real caps) (input real rctl)) (unmod down) break () n break)
   p        (switch ((input real caps) (input real rctl)) (unmod up) break () p break)
+  h        (switch ((input real caps) (input real rctl)) (unmod bspc) break () h break)
 )
 
 (deflayer base
@@ -40,4 +42,5 @@
   @a
   @n
   @p
+  @h
 )
