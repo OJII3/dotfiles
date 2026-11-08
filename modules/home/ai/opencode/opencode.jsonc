@@ -18,8 +18,5 @@
     "websearch": "allow",
     "glob": "allow",
     "lsp": "allow"
-  },
-  "experimental": {
-    "openTelemetry": true
   }
 }
