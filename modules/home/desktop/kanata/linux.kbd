@@ -12,6 +12,7 @@
   a
   n
   p
+  h
 )
 
 (defvar
@@ -24,10 +25,11 @@
   spc      (tap-hold-press $tap-time $hold-time spc lmet)
   muhenkan (tap-hold-press $tap-time $hold-time spc lmet)
   ralt     (tap-hold-press $tap-time $hold-time kana ralt)
-  e        (fork e (unmod (rctl) end) (rctl))
-  a        (fork a (unmod (rctl) home) (rctl))
-  n        (fork n (unmod (rctl) down) (rctl))
-  p        (fork p (unmod (rctl) up) (rctl))
+  e        (switch ((input real caps) (input real rctl)) (unmod end) break () e break)
+  a        (switch ((input real caps) (input real rctl)) (unmod home) break () a break)
+  n        (switch ((input real caps) (input real rctl)) (unmod down) break () n break)
+  p        (switch ((input real caps) (input real rctl)) (unmod up) break () p break)
+  h        (switch ((input real caps) (input real rctl)) (unmod bspc) break () h break)
 )
 
 (deflayer base
@@ -40,4 +42,5 @@
   @a
   @n
   @p
+  @h
 )

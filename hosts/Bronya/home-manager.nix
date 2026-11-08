@@ -26,7 +26,7 @@
     desktop = {
       enable = true;
       fcitx5.enable = true;
-      keyd.enable = true;
+      kanata.enable = true;
       theme.enable = true;
       browser.vivaldi.enable = true;
     };

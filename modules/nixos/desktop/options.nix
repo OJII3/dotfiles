@@ -41,10 +41,6 @@
       enable = lib.mkEnableOption "Waydroid Android container";
     };
 
-    keyd = {
-      enable = lib.mkEnableOption "keyd key remapping";
-    };
-
     vr = {
       enable = lib.mkEnableOption "VR support (Monado, Immersed, wayvr)";
     };

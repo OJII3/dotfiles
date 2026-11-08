@@ -29,7 +29,6 @@
       gnome.touchpad.topDeadZoneMm = 5;
       # power.serverLike = true;
       fonts.enable = true;
-      keyd.enable = true;
       sunshine.enable = true;
       waydroid.enable = true;
       virtManager.enable = true;
