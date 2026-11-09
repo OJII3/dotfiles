@@ -30,14 +30,6 @@ let
     cp ${acpRulesProxy}/bin/agy-acp-rules-proxy "$out/bin/"
     cp ${acpHarnessProxy}/bin/localharness_external "$out/bin/"
   '';
-  # Antigravity は OTLP を直接出さないので、フックから Langfuse へ送る。
-  # 認証情報はフックの起動時に sops の復号済みファイルから読む。
-  langfuseHook = pkgs.writeShellScript "agy-langfuse-hook" ''
-    exec ${pkgs.python3}/bin/python3 ${./langfuse-hook.py} "$@" \
-      --endpoint https://jp.cloud.langfuse.com/api/public/otel \
-      --public-key-file ${config.sops.secrets.langfuse_public_key.path} \
-      --secret-key-file ${config.sops.secrets.langfuse_secret_key.path}
-  '';
   commonPackages =
     with pkgs;
     [
@@ -58,19 +50,13 @@ in
       inputs.llm-agents-nix.packages."${pkgs.stdenv.hostPlatform.system}".antigravity-cli
     ];
 
-    home.file = {
-      ".gemini/AGENTS.md".source = ./AGENTS.md;
-      ".gemini/config/mcp_config.json".source = ./mcp_config.json;
-      # T3 checks for the ACP helper beside a custom Binary path.
-      ".local/lib/agy-acp-rules-proxy/agy-acp-rules-proxy".source =
-        "${acpRuntime}/bin/agy-acp-rules-proxy";
-      ".local/lib/agy-acp-rules-proxy/localharness_external".source =
-        "${acpRuntime}/bin/localharness_external";
-    }
-    // lib.optionalAttrs config.dot.home.sops.enable {
-      ".gemini/config/hooks.json".source = ./hooks.json;
-      ".local/lib/agy-langfuse/hook".source = langfuseHook;
-    };
+    home.file.".gemini/AGENTS.md".source = ./AGENTS.md;
+    home.file.".gemini/config/mcp_config.json".source = ./mcp_config.json;
+    # T3 checks for the ACP helper beside a custom Binary path.
+    home.file.".local/lib/agy-acp-rules-proxy/agy-acp-rules-proxy".source =
+      "${acpRuntime}/bin/agy-acp-rules-proxy";
+    home.file.".local/lib/agy-acp-rules-proxy/localharness_external".source =
+      "${acpRuntime}/bin/localharness_external";
 
     home.activation.agySettingsGenerate = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       PATH="${pkgs.ghq}/bin:${pkgs.git}/bin:${pkgs.jq}/bin:$PATH" \
