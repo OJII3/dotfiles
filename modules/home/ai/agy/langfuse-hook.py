@@ -188,10 +188,11 @@ def build_span(event: str, payload: dict) -> dict:
 
     now = time.time_ns()
     entries = read_transcript(payload.get("transcriptPath"))
+    trace_name = f"antigravity/{Path(workspace).name}" if workspace else "antigravity"
     attributes = [
         attribute("gen_ai.conversation.id", conversation),
         attribute("langfuse.session.id", conversation),
-        attribute("langfuse.trace.name", f"antigravity/{Path(workspace).name}" if workspace else "antigravity"),
+        attribute("langfuse.trace.name", trace_name),
         attribute("antigravity.hook.event", event),
     ]
     if workspace:

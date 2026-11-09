@@ -34,7 +34,8 @@ The exporter covers `PostToolUse`, `PostInvocation`, and `Stop`. Spans of one
 conversation share a trace id, and `langfuse.session.id` carries the
 conversation id. Model calls become `generation` observations with
 `gen_ai.usage.*`; tool calls become `span` observations with
-`gen_ai.tool.name`.
+`gen_ai.tool.name`. Antigravity reads `hooks.json` at session start, so start a
+new thread after activating Home Manager.
 
 Token counts and the model name are not part of the hook payload. The exporter
 reads them from `transcriptPath` and from the conversation's SQLite
