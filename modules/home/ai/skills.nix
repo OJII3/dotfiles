@@ -123,7 +123,17 @@ let
         "weave-instrument"
       ];
 
-  allSkills = localSkills ++ remoteSkills;
+  # 一時的に無効化するスキル。定義は残したままリンクを作らない。
+  # 再有効化はここから名前を消す。
+  disabledSkills = [
+    "agentlens-tracing-instrument"
+    "wandb-autoresearch"
+    "wandb-eval-tables"
+    "wandb-primary"
+    "weave-instrument"
+  ];
+
+  allSkills = filter (skill: !(elem skill.name disabledSkills)) (localSkills ++ remoteSkills);
 
   # スキル → 実ソースパス / 対象ツール
   skillSource = skill: if skill ? baseDir then "${skill.src}/${skill.baseDir}" else "${skill.src}";

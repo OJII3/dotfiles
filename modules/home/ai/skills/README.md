@@ -10,6 +10,7 @@ Home Manager で各 AI ツールのスキルディレクトリに配置する Ag
 - **リモートスキル**: `skills.nix` の `remoteSkills` に flake input / `fetchFromGitHub` で定義する。
 - **enable 連動**: `dot.home.ai.<tool>.enable` が有効なツール (`claude` / `codex`) にのみリンクする。
 - **出し分け**: 各スキル定義に `tools = [ ... ]` を付けると対象ツールを限定できる (既定は全ツール)。
+- **無効化**: `skills.nix` の `disabledSkills` に名前を入れると、定義を残したままリンクを作らない。
 
 外部のリポジトリから取り込んだ skill は、出典確認と作者へのリスペクトのため、この README に参照元を残す。
 
