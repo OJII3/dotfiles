@@ -19,7 +19,6 @@ Home Manager で各 AI ツールのスキルディレクトリに配置する Ag
 | Skill | Source | Notes |
 |-------|--------|-------|
 | `missing-tools` | [ryoppippi/dotfiles `agents/skills/missing-tools/SKILL.md`](https://github.com/ryoppippi/dotfiles/blob/31766ba36dd3d7cbad1deb7270f5ba0e56e06e2d/agents/skills/missing-tools/SKILL.md) | Missing CLI tools をグローバルインストールせず、`direnv` / comma / `nix run` / `nix shell` で解決する workflow。 |
-| `stop-ai-slop-jp` | [iKora128/stop-ai-slop-jp](https://github.com/iKora128/stop-ai-slop-jp) | 日本語の文章からAI臭を取り除く Claude Skill |
 | `latex-to-typst` | [christopherkenny/skills `skills/latex-to-typst`](https://github.com/christopherkenny/skills/tree/main/skills/latex-to-typst) | LaTeX (.tex) を Typst (.typ) へ変換するリファレンス集。MIT (LICENSE 同梱)。[brycewang-stanford/Auto-Empirical-Research-Skills](https://github.com/brycewang-stanford/Auto-Empirical-Research-Skills) 経由で入手。 |
 | `stack-diagram` | [caru-ini/stack-diagram `skills/stack-diagram`](https://github.com/caru-ini/stack-diagram/tree/main/skills/stack-diagram) | 技術スタックから公式ロゴ入りのアーキテクチャ図 (HTML / PNG / TSX) を生成する skill。MIT (LICENSE 同梱)、同梱フォントは SIL OFL 1.1。 |
 | `security-audit` | [cloudflare/security-audit-skill `skills/security-audit`](https://github.com/cloudflare/security-audit-skill/tree/main/skills/security-audit) | ソース起点のセキュリティ監査 / ペネトレーションレビュー workflow。攻撃クラス別の companion と `findings.json` の検証スクリプトを同梱。MIT (LICENSE 同梱)。 |
