@@ -24,8 +24,7 @@ in
       secrets.anthropic_api_key = { };
       secrets.morph_api_key = { };
       secrets.context7_api_key = { };
-      secrets.langfuse_public_key = { };
-      secrets.langfuse_secret_key = { };
+      secrets.usage_token = { };
     };
 
     systemd.user.services.sops-nix = {
