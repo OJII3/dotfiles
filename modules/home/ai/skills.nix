@@ -121,7 +121,14 @@ let
         "wandb-eval-tables"
         "wandb-primary"
         "weave-instrument"
-      ];
+      ]
+  ++ [
+    {
+      name = "remotion-best-practices";
+      src = inputs.remotion-skills;
+      baseDir = "skills/remotion-best-practices";
+    }
+  ];
 
   # 一時的に無効化するスキル。定義は残したままリンクを作らない。
   # 再有効化はここから名前を消す。
