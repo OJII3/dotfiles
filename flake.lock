@@ -1618,6 +1618,23 @@
         "type": "github"
       }
     },
+    "remotion-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794425010,
+        "narHash": "sha256-CRt5vSvx9gDranWlOCYk6EupGOWusqu6KPB20XufmYI=",
+        "owner": "remotion-dev",
+        "repo": "skills",
+        "rev": "7e541aa4d7361dfaca0780a565a47307eb7bdfbb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "remotion-dev",
+        "ref": "main",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "acsandmann-tap": "acsandmann-tap",
@@ -1644,6 +1661,7 @@
         "oculus-vr-tap": "oculus-vr-tap",
         "openlogi": "openlogi",
         "proxmox-nixos": "proxmox-nixos",
+        "remotion-skills": "remotion-skills",
         "sops-nix": "sops-nix",
         "wandb-skills": "wandb-skills"
       }

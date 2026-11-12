@@ -72,6 +72,10 @@
       url = "github:wandb/skills/main";
       flake = false;
     };
+    remotion-skills = {
+      url = "github:remotion-dev/skills/main";
+      flake = false;
+    };
     llm-agents-nix.url = "github:numtide/llm-agents.nix";
     moonbit-overlay = {
       url = "github:moonbit-community/moonbit-overlay";
