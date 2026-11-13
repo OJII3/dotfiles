@@ -20,6 +20,7 @@ in
     ./codex
     ./dsh
     ./herdr
+    ./onshape-mcp.nix
     ./opencode
     ./options.nix
     ./pi
