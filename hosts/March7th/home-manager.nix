@@ -21,7 +21,7 @@
     };
     gpg = {
       enable = true;
-      pinentryPackage = "tty";
+      pinentryPackage = "gnome3";
     };
     direnv.enable = true;
     sops.enable = true;
