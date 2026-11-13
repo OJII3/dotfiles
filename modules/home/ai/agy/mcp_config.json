@@ -18,6 +18,9 @@
     "voicevox": {
       "command": "bunx",
       "args": ["@t09tanaka/mcp-simple-voicevox"]
+    },
+    "onshape": {
+      "command": "onshape-mcp"
     }
   }
 }
