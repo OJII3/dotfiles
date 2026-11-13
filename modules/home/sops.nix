@@ -24,6 +24,8 @@ in
       secrets.anthropic_api_key = { };
       secrets.morph_api_key = { };
       secrets.context7_api_key = { };
+      secrets.onshape_access_key = { };
+      secrets.onshape_secret_key = { };
       secrets.usage_token = { };
     };
 
@@ -39,6 +41,8 @@ in
       export GOOGLE_SEARCH_ENGINE_ID="$(<${config.sops.secrets.google_search_engine_id.path})"
       export MORPH_API_KEY="$(<${config.sops.secrets.morph_api_key.path})"
       export CONTEXT7_API_KEY="$(<${config.sops.secrets.context7_api_key.path})"
+      export ONSHAPE_ACCESS_KEY="$(<${config.sops.secrets.onshape_access_key.path})"
+      export ONSHAPE_SECRET_KEY="$(<${config.sops.secrets.onshape_secret_key.path})"
     '';
   };
 }
