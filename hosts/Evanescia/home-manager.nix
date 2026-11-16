@@ -73,6 +73,30 @@
     obsidian.enable = true;
   };
 
+  # snap 版 Bambu Studio は GTK の ibus IM モジュールを読み込むが、snap の
+  # AppArmor ポリシーが fcitx5 の提供する org.freedesktop.IBus への
+  # CreateInputContext を拒否するため、IM モジュールが壊れた状態になり
+  # 文字キーの入力が捨てられる (Backspace や貼り付けは IM を通らないので動く)。
+  # fcitx5 の fcitx4 互換 DBus は snap でも許可されているため、
+  # GTK_IM_MODULE を fcitx にして入力できるようにする。
+  home.file.".local/share/applications/bambu-studio_bambu-studio.desktop".text = ''
+    [Desktop Entry]
+    X-SnapInstanceName=bambu-studio
+    Name=BambuStudio
+    GenericName=3D Printing Software
+    Icon=/snap/bambu-studio/current/meta/gui/icon.png
+    X-SnapAppName=bambu-studio
+    X-SnapCommonID=com.bambulab.BambuStudio
+    Exec=env GTK_IM_MODULE=fcitx /snap/bin/bambu-studio %U
+    Terminal=false
+    Type=Application
+    MimeType=model/stl;model/3mf;application/vnd.ms-3mfdocument;application/prs.wavefront-obj;application/x-amf;x-scheme-handler/bambustudio;model/step;
+    Categories=Graphics;3DGraphics;Engineering;
+    Keywords=3D;Printing;Slicer;slice;3D;printer;convert;gcode;stl;obj;amf;SLA
+    StartupNotify=false
+    StartupWMClass=bambu-studio
+  '';
+
   targets.genericLinux = {
     enable = true;
     gpu = {
