@@ -35,6 +35,13 @@ When writing research documents or Japanese documentation in a repository, keep 
 - When adding a `flake.nix`, add `.envrc` and `.direnv/` to `.gitignore`.
 - If there is a missing cli or utility tools, try using direnv or nix-develop.
 
+## Naming
+
+- Folder names, file names, and symbols must always describe what they contain.
+- The layers of the code design and the semantic layers of the names must match. For example, keep the names in an abstraction layer consistently abstract.
+- Sibling parts that sit at the same abstraction level must have names at that same abstraction level.
+- Do not hesitate to rename existing code even outside the scope of the current change. Breaking changes are always allowed.
+
 ---
 
 # Karpathy Guidelines (ojii3 edition)
