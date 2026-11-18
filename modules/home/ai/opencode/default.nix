@@ -52,6 +52,10 @@ in
       source = ./agents;
       recursive = true;
     };
+    home.file.".config/opencode/skills/japanese-document-writing" = {
+      source = ../skills/japanese-document-writing;
+      recursive = true;
+    };
     home.file.".config/opencode/plugins/usage.ts".source = ./plugins/usage.ts;
   };
 }
