@@ -2,26 +2,10 @@
 
 - Speak in Japanese.
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
-- Using `git worktree` is not a good options in most cases because there are no dev environment or dependincies ready in worktrees.
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
-- If you expect the changes to be large, delegate the task to a subagent to avoid losing main context. If you are not sure, ask for confirmation.
+- Delegate tasks to a subagent to avoid losing main context.
 - When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
 - When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
-
-## Writing Japanese Document
-
-When writing research documents or Japanese documentation in a repository, keep the following rules in mind.
-
-- はじめに文書の目的と読み手を想定する。それにより、内容、粒度、文体、専門用語の多さなどが変わる。何を書かないかが重要である。
-- 箇条書きブロック直前の行末にコロンを置くのは避ける。
-- 学術的な文書において、断定できないものを「できる」と言い切らない。解釈の余地への言及をするかは状況次第である。
-- 良くない事は、良くない事だと分かる述語で書く。「patternが遅くなっても落ちない」は、まるで良い事かのようにも読める。失われる働きを述語にして「patternが遅くなった事を検知できない」と書く。
-- 目的は完全な節で言い切る。「〜できるよう」「〜で使うため」と書く。「〜用に、」のような体言止めの断片にしない。
-- 目的の述語を曖昧な語にしない。「highlightが当たるよう、Xを保持する」ではなく「highlightを判定できるよう、Xを保持する」と書く。「当たる」では、何が成立する事なのかを言い切れていない。
-- 理由の後に2つの事柄を「〜し、〜する」でつなぐと、理由がどちらにかかるか曖昧になる。
-- 文を他所から写す時は、貼り付け先の前後の文脈に合うか確かめ、書いた後に読み直して意味が通るか確かめる。元の文脈を前提にした省略は、貼り付け先では意味が通らない。
-- `**bold**` 等の強調記号で重要性を表現しない。重要なら、語彙、断言の強さ、文の位置で伝わるように文そのものを推敲する。
-- 丸括弧で補足説明を挿入すると、文の構造が曖昧になり読みにくくなる。文意を裏返しただけの括弧注記は削る。「実際に書かれた表記を保持する(正規化後ではない)」の括弧の中は、前半が言えた時点で自明である。
 
 ## Writing GitHub Actions
 
@@ -44,11 +28,9 @@ When writing research documents or Japanese documentation in a repository, keep 
 
 ---
 
-# Karpathy Guidelines (ojii3 edition)
+# Coding Guidelines
 
-Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
-
-**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment. These guidelines do not applicable to large tasks such as wide refactoring.
+**Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment. They do not apply to large tasks such as wide refactoring.
 
 ## 1. Think Before Coding
 
