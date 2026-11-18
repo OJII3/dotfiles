@@ -56,6 +56,10 @@ in
       source = ../skills/japanese-document-writing;
       recursive = true;
     };
+    home.file.".config/opencode/skills/prune-comments-and-docs" = {
+      source = ../skills/prune-comments-and-docs;
+      recursive = true;
+    };
     home.file.".config/opencode/plugins/usage.ts".source = ./plugins/usage.ts;
   };
 }
