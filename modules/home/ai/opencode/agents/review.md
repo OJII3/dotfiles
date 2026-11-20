@@ -1,8 +1,7 @@
 ---
 description: Expensive but smarter agents for reviewing
 mode: subagent
-model: openai/gpt-5.6-luna-fast
-variant: xhigh
+model: mistral/deepseek-v4-1-flash-1017
 permission:
     bash: allow
     edit: allow
