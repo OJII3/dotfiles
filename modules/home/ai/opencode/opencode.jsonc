@@ -2,6 +2,11 @@
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": false,
   "lsp": true,
+  "agents": {
+    "explore": {
+      "model": "mistral/deepseek-v4-1-flash-1017",
+    },
+  },
   "mcp": {
     "onshape": {
       "type": "local",
