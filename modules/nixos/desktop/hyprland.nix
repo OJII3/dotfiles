@@ -2,7 +2,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -10,8 +9,6 @@ let
 in
 {
   config = lib.mkIf (cfg.enable && cfg.hyprland.enable) {
-    environment.systemPackages = [ pkgs.canta-theme ];
-
     services.xserver.xkb = {
       variant = "";
       layout = "us";
