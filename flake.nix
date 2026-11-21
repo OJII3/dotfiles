@@ -11,7 +11,7 @@
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     openlogi = {
-      url = "github:AprilNEA/OpenLogi";
+      url = "github:AprilNEA/OpenLogi?dir=packaging";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";

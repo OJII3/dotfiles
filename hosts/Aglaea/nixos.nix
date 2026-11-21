@@ -45,6 +45,8 @@
     };
   };
 
+  # nixpkgs の programs.openlogi と option が重複するため、flake 側の module を使う。
+  disabledModules = [ "programs/openlogi.nix" ];
   programs.openlogi.enable = true;
 
   # ===== Host-specific configuration =====
@@ -110,9 +112,9 @@
   ];
 
   # sched_ext: scx_lavd is tuned for low-latency interactive/gaming workloads.
-  services.scx = {
+  services.scx-loader = {
     enable = true;
-    scheduler = "scx_lavd";
+    config.default_sched = "scx_lavd";
   };
 
   # GameMode: applies CPU governor / scheduling tweaks while games run.
