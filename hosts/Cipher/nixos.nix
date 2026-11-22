@@ -51,6 +51,13 @@
 
   # ===== Host-specific configuration =====
 
+  # greetd の自動ログインで boot 時から zsh のユーザーセッションは存在するが、
+  # ログアウト・セッション異常終了・greetd の停止/再起動で最後のセッションが
+  # 終わると user manager ごと停止し kopia も落ちるため linger を有効にする。
+  # linger で user manager がセッションから独立し、t3code 等の
+  # default.target サービスも継続する。
+  users.users.ojii3.linger = true;
+
   networking.firewall.allowedTCPPorts = [
     5173
     4173
@@ -61,6 +68,7 @@
   ];
   networking.firewall.interfaces.CloudflareWARP.allowedTCPPorts = [
     3773 # t3code
+    51515 # kopia
   ];
 
   # Kernel

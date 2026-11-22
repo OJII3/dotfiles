@@ -148,6 +148,15 @@ modules/home/
 | `kdeconnect.enable` | KDE Connect |
 | `gnomeKeyring.enable` | GNOME Keyring |
 | `vr.enable` | VR サポート (OpenComposite) |
+| `kopia.enable` | Kopia リポジトリサーバー (ユーザーサービス) |
+
+#### Kopia リポジトリサーバー (`dot.home.kopia`)
+
+Home Manager の systemd ユーザーサービスとして動かす。データは既定で
+`~/.local/share/kopia`、パスワードは sops の `assets/secrets/kopia.yaml` から
+起動時に読む。ログインセッションから独立させるには NixOS 側の
+`users.users.<user>.linger = true` が必要。Cipher では Cloudflare WARP
+インターフェースの 51515/tcp のみ開放し、TLS は終端しない前提。
 
 ### Apps (`dot.home.apps.*`)
 

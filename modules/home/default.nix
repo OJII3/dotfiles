@@ -36,6 +36,7 @@
     ./gpg.nix
     ./kdeconnect.nix
     ./kdewallet.nix
+    ./kopia.nix
     ./neovim
     ./network.nix
     ./obsidian.nix

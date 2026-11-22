@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   imports = [
     ../../modules/home
@@ -20,6 +20,13 @@
     };
     direnv.enable = true;
     sops.enable = true;
+
+    # Kopia repository server
+    kopia = {
+      enable = true;
+      repositoryPasswordFile = config.sops.secrets.kopia_repository_password.path;
+      serverControlPasswordFile = config.sops.secrets.kopia_server_control_password.path;
+    };
 
     # Terminal
     terminal = {

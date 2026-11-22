@@ -27,6 +27,14 @@ in
       secrets.onshape_access_key = { };
       secrets.onshape_secret_key = { };
       secrets.usage_token = { };
+      secrets.kopia_repository_password = lib.mkIf config.dot.home.kopia.enable {
+        sopsFile = ../../assets/secrets/kopia.yaml;
+        format = "yaml";
+      };
+      secrets.kopia_server_control_password = lib.mkIf config.dot.home.kopia.enable {
+        sopsFile = ../../assets/secrets/kopia.yaml;
+        format = "yaml";
+      };
     };
 
     systemd.user.services.sops-nix = {
