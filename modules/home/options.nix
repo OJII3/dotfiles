@@ -1,6 +1,11 @@
 # Home Manager module options
 # All option definitions for dot.home.*
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.dot.home = {
     # Shell
@@ -52,6 +57,55 @@
     # Container tools
     podman = {
       enable = lib.mkEnableOption "Podman service";
+    };
+
+    # Kopia repository server
+    kopia = {
+      enable = lib.mkEnableOption "Kopia repository server (user service)";
+
+      package = lib.mkPackageOption pkgs "kopia" { };
+
+      dataDir = lib.mkOption {
+        type = lib.types.str;
+        default = "${config.home.homeDirectory}/.local/share/kopia";
+        description = "Directory holding the Kopia config file (kopia.config) and the repository (repository/).";
+      };
+
+      listenAddress = lib.mkOption {
+        type = lib.types.str;
+        default = "0.0.0.0";
+        description = "Address the repository server listens on.";
+      };
+
+      port = lib.mkOption {
+        type = lib.types.port;
+        default = 51515;
+        description = "TCP port the repository server listens on.";
+      };
+
+      controlUsername = lib.mkOption {
+        type = lib.types.str;
+        default = "server-control";
+        description = "Username of the server control account.";
+      };
+
+      ui = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Serve the Kopia HTML UI on the same address.";
+      };
+
+      repositoryPasswordFile = lib.mkOption {
+        type = lib.types.nullOr lib.types.path;
+        default = null;
+        description = "File containing the repository password. Required when enabled.";
+      };
+
+      serverControlPasswordFile = lib.mkOption {
+        type = lib.types.nullOr lib.types.path;
+        default = null;
+        description = "File containing the server control password. Required when enabled.";
+      };
     };
 
     # Environment
