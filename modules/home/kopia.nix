@@ -30,13 +30,16 @@ let
     fi
   '';
 
+  # kopia は TLS 証明書なしでの起動を拒否する。Cipher では Cloudflare WARP
+  # インターフェースからのみ到達でき、TLS 終端は前提外なので --insecure を渡す。
   startScript = pkgs.writeShellScript "kopia-server-start" ''
     set -eu
     ${exportPasswords}
     exec ${cfg.kopia.package}/bin/kopia --config-file ${lib.escapeShellArg configFile} server start \
       --address ${lib.escapeShellArg "${cfg.kopia.listenAddress}:${toString cfg.kopia.port}"} \
       --server-control-username ${lib.escapeShellArg cfg.kopia.controlUsername} \
-      --ui=${lib.boolToString cfg.kopia.ui}
+      --insecure \
+      ${lib.optionalString cfg.kopia.ui "--ui"}
   '';
 in
 {
