@@ -13,6 +13,10 @@ in
   config = lib.mkIf (cfg.enable) {
     home.packages = [ herdr ];
 
+    programs.zsh.zsh-abbr.abbreviations = {
+      "h" = "herdr";
+    };
+
     home.file.".config/herdr/config.toml".source = ./config.toml;
   };
 }
