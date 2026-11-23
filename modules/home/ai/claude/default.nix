@@ -17,10 +17,6 @@ in
       package = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.claude-code;
     };
 
-    programs.zsh.zsh-abbr.abbreviations = {
-      "c" = "claude";
-    };
-
     home.file.".local/bin/claude".source = "${config.programs.claude-code.package}/bin/claude";
     home.file.".claude/settings.json".source = ./settings.json;
     home.file.".claude/CLAUDE.md".source = ./CLAUDE.md;
