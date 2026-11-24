@@ -14,6 +14,7 @@ let
     runtimeInputs = [
       orca
       pkgs.ghq
+      pkgs.git
     ];
     text = builtins.readFile ./import-ghq.sh;
   };
