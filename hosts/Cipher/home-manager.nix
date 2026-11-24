@@ -46,7 +46,13 @@
       codex.enable = true;
       agy.enable = true;
       opencode.enable = true;
-      orca.enable = true;
+      orca = {
+        enable = true;
+        backgroundService = {
+          enable = true;
+          pairingAddress = "ws://100.96.0.14:6768";
+        };
+      };
       dsh.enable = false;
       t3code = {
         enable = true;

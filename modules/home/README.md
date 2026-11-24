@@ -214,10 +214,16 @@ Home Manager の systemd ユーザーサービスとして動かす。データ�
 | `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
 | `orca.enable` | Orca (agentic development environment, GUI + CLI) |
+| `orca.backgroundService.enable` | Orca ヘッドレスランタイムを systemd ユーザーサービスとして実行 |
+| `orca.backgroundService.bind` | ランタイムの待ち受けアドレス (default `0.0.0.0`) |
+| `orca.backgroundService.port` | ランタイムの待ち受けポート (default `6768`) |
+| `orca.backgroundService.pairingAddress` | ペアリングリンクに書き込むクライアント向けエンドポイント |
 | `agy.enable` | Antigravity |
 | `t3code.enable` | T3 Code CLI and desktop app |
 | `t3code.backgroundService.enable` | T3 Code background service |
 | `t3code.backgroundService.host` | Background service bind address (default `0.0.0.0`) |
+
+`orca.backgroundService.enable` は `orca serve` を Home Manager の systemd ユーザーサービスとして常駐させます。`bind` と `port` で待ち受け先を指定し、`pairingAddress` はペアリングリンクに載せるクライアント向けのアドレスです。Cipher では Cloudflare WARP インターフェースの `ws://100.96.0.14:6768` を設定します。`pairingAddress` が未指定の場合は Orca が既定の LAN アドレスを選びます。
 
 T3 Code は `llm-agents.nix` から CLI とデスクトップアプリを導入します。`t3code.backgroundService.enable` は macOS で LaunchAgent、Linux で systemd ユーザーサービスを作ります。サービスはデスクトップ内蔵サーバーと状態を共有しないよう `~/.t3-service` を使い、標準では `0.0.0.0:3773` で待ち受けます。Cipher では Cloudflare WARP インターフェースからの接続用に `3773/tcp` を許可します。サービス側の接続設定では `T3CODE_HOME="$HOME/.t3-service" t3 connect` を使ってください。起動サービスは Home Manager が管理するため、CLI 側のバックグラウンドサービス登録は選ばないでください。
 
