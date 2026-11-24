@@ -61,5 +61,7 @@ in
       recursive = true;
     };
     home.file.".config/opencode/plugins/usage.ts".source = ./plugins/usage.ts;
+    # pstack の OpenCode プラグイン。opencode.jsonc から ./pstack/opencode を読む。
+    home.file.".config/opencode/pstack".source = "${inputs.pstack-claude}/plugins/pstack";
   };
 }

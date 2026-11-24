@@ -1600,6 +1600,23 @@
         "type": "github"
       }
     },
+    "pstack-claude": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795442740,
+        "narHash": "sha256-fUsEjhxvURZbUHlyr+aS4/Lp5QQJIK2/no5kfl5FOno=",
+        "owner": "michael-denyer",
+        "repo": "pstack-claude",
+        "rev": "66181d3c70fb605a670578a1b46c23ff0f3caebb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "michael-denyer",
+        "ref": "main",
+        "repo": "pstack-claude",
+        "type": "github"
+      }
+    },
     "remotion-skills": {
       "flake": false,
       "locked": {
@@ -1643,6 +1660,7 @@
         "oculus-vr-tap": "oculus-vr-tap",
         "openlogi": "openlogi",
         "proxmox-nixos": "proxmox-nixos",
+        "pstack-claude": "pstack-claude",
         "remotion-skills": "remotion-skills",
         "sops-nix": "sops-nix",
         "wandb-skills": "wandb-skills"
