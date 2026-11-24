@@ -47,6 +47,7 @@ in
       ni
 
       # cli apps
+      gogcli
       tdf
 
       # languages
