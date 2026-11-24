@@ -53,6 +53,7 @@
       chatgpt.enable = true;
       agy.enable = true;
       opencode.enable = true;
+      orca.enable = true;
       dsh.enable = true;
       t3code = {
         enable = true;

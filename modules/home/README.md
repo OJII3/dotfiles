@@ -25,7 +25,7 @@ modules/home/
 ├── ai/
 │   ├── default.nix
 │   ├── options.nix
-│   └── */           # claude, codex, chatgpt, opencode, antigravity, t3code
+│   └── */           # claude, codex, chatgpt, opencode, orca, antigravity, t3code
 ├── dev/
 │   ├── default.nix
 │   ├── options.nix
@@ -213,6 +213,7 @@ Home Manager の systemd ユーザーサービスとして動かす。データ�
 | `codex.enable` | Codex |
 | `chatgpt.enable` | ChatGPT Desktop |
 | `opencode.enable` | OpenCode |
+| `orca.enable` | Orca (agentic development environment, GUI + CLI) |
 | `agy.enable` | Antigravity |
 | `t3code.enable` | T3 Code CLI and desktop app |
 | `t3code.backgroundService.enable` | T3 Code background service |

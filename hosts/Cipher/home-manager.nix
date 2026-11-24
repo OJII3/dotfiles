@@ -46,6 +46,7 @@
       codex.enable = true;
       agy.enable = true;
       opencode.enable = true;
+      orca.enable = true;
       dsh.enable = false;
       t3code = {
         enable = true;

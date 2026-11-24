@@ -23,6 +23,7 @@ in
     ./onshape-mcp.nix
     ./opencode
     ./options.nix
+    ./orca
     ./pi
     ./skills.nix
     ./t3code

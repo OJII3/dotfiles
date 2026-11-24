@@ -21,6 +21,10 @@
       enable = lib.mkEnableOption "OpenCode AI assistant";
     };
 
+    orca = {
+      enable = lib.mkEnableOption "Orca agentic development environment";
+    };
+
     agy = {
       enable = lib.mkEnableOption "Antigravity AI assistant";
     };
