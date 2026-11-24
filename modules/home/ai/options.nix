@@ -21,6 +21,33 @@
       enable = lib.mkEnableOption "OpenCode AI assistant";
     };
 
+    orca = {
+      enable = lib.mkEnableOption "Orca agentic development environment";
+
+      backgroundService = {
+        enable = lib.mkEnableOption "Orca headless runtime service";
+
+        bind = lib.mkOption {
+          type = lib.types.str;
+          default = "0.0.0.0";
+          description = "Address for the Orca runtime to listen on.";
+        };
+
+        port = lib.mkOption {
+          type = lib.types.port;
+          default = 6768;
+          description = "Port for the Orca runtime to listen on.";
+        };
+
+        pairingAddress = lib.mkOption {
+          type = lib.types.nullOr lib.types.str;
+          default = null;
+          example = "ws://100.96.0.14:6768";
+          description = "Client-advertised endpoint written into pairing links. When null, Orca chooses the default LAN address.";
+        };
+      };
+    };
+
     agy = {
       enable = lib.mkEnableOption "Antigravity AI assistant";
     };
