@@ -47,7 +47,7 @@
       agy.enable = true;
       opencode.enable = true;
       orca = {
-        enable = true;
+        enable = false;
         backgroundService = {
           enable = true;
           pairingAddress = "ws://100.96.0.14:6768";
