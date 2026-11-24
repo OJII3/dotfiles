@@ -52,7 +52,7 @@
       agy.enable = true;
       opencode.enable = true;
       orca = {
-        enable = true;
+        enable = false;
         backgroundService = {
           enable = true;
         };
