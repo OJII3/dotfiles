@@ -1,5 +1,6 @@
 require("base")
 require("autocmd")
+require("ime")
 -- if secrets exists, load it
 local ok, secrets = pcall(require, "secrets")
 if ok then
