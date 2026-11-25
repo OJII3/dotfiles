@@ -19,7 +19,15 @@ return {
       ]])
 	end,
 	keys = {
-		{ "<C-j>", "<Plug>(skkeleton-enable)", mode = "i" },
+		{
+			"<C-j>",
+			function()
+				-- fcitx5 の IME が有効なままだとローマ字がそちらに取られる。
+				require("ime").disable()
+				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Plug>(skkeleton-enable)", true, false, true), "m", false)
+			end,
+			mode = "i",
+		},
 		-- { "<l>", "<Plug>(skkeleton-disable)", mode = "i" },
 	},
 	lazy = false,
