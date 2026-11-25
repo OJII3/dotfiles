@@ -3,6 +3,7 @@
   "autoupdate": false,
   "lsp": true,
   "plugins": ["./pstack/opencode"],
+  "instructions": ["~/.config/opencode/pstack-models.md"],
   "agents": {
     "explore": {
       "model": "mistral/deepseek-v4-1-flash-1017",
