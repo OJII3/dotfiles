@@ -3,7 +3,7 @@
 - Speak in Japanese.
 - Do not leave changes uncommited, except for temporary changes that are not ready to be committed.
 - Do not commit main branch directly except for when explicitly asked to do so. Use a feature branch instead.
-- Delegate tasks to a subagent to avoid losing main context.
+- Delegate tasks to a subagent to avoid losing main context. In T3 Code, delegate with `delegate_task`; use the provider-native subagent tool only when the child stays on your provider with default settings.
 - When delegating tasks to a subagent, do not select top-tier models such as Gemini Argon, GPT Astra, or Claude Fable.
 - When instructed to merge a PR, squash-merge it and delete the branch locally and remotely.
 
