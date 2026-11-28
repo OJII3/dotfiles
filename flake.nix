@@ -55,10 +55,6 @@
       url = "github:oculus-vr/homebrew-repo";
       flake = false;
     };
-    acsandmann-tap = {
-      url = "github:acsandmann/homebrew-tap";
-      flake = false;
-    };
     confetti.url = "github:ojii3/confetti";
     anthropics-skills = {
       url = "github:anthropics/skills/main";
@@ -137,7 +133,6 @@
                       desktop = {
                         enable = true;
                         apps.enable = true;
-                        rift.enable = true;
                       };
                       networking = {
                         enable = true;

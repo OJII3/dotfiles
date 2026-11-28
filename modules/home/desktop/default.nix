@@ -29,7 +29,6 @@ in
     ./aerospace
     ./hammerspoon
     ./jankyborders
-    ./rift
   ];
 
   # Base desktop configuration (if needed)

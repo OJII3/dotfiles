@@ -67,8 +67,5 @@
       enable = lib.mkEnableOption "JankyBorders window borders";
     };
 
-    rift = {
-      enable = lib.mkEnableOption "Rift window manager";
-    };
   };
 }

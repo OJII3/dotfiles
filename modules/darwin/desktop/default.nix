@@ -12,6 +12,5 @@
     ./apps.nix
     ./vr.nix
     ./hammerspoon.nix
-    ./rift.nix
   ];
 }

@@ -58,7 +58,6 @@
 
     desktop = {
       hammerspoon.enable = true;
-      rift.enable = true;
       jankyborders.enable = true;
     };
   };
